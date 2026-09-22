@@ -405,27 +405,20 @@
         "effects": [
           {
             "tier": "supreme+",
-            "targeting_label": "Self",
+            "targeting_label": "Area",
             "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Energy",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "flat",
-                "value": 500.0
-              }
-            ],
-            "persistence": "permanent"
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 3.0
           }
         ],
         "skill_card_tags": [
           {
-            "label": "Energy — Self",
-            "polarity": "buff"
+            "label": "Stun — Area"
           }
         ]
       }
@@ -467,8 +460,7 @@
       ]
     ],
     "benefit_stats": [
-      "atk",
-      "energy"
+      "atk"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -624,7 +616,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "c1250e130f675437d3cc132338649bcb950ceee739c50e8341812dee0ae6db45",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "cf54b2a91d4dc760bb94bef7c21e074951fa88abd670c5581f4d149895c7d00f",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

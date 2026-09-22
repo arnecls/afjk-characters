@@ -126,7 +126,13 @@
             "area_count": 1,
             "type": "debuff",
             "name": "Magic DEF",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 49.0
+              }
+            ]
           },
           {
             "tier": "base",
@@ -342,30 +348,6 @@
             ],
             "duration": 8.0,
             "tick": 1.0
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "battle_phase",
-                "phase": "once_per_battle"
-              }
-            ],
-            "type": "buff",
-            "name": "Max HP",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 560.0
-              }
-            ],
-            "persistence": "temporary"
           }
         ],
         "cooldown": 12.0,
@@ -394,10 +376,6 @@
           },
           {
             "label": "Phys DEF — Area",
-            "polarity": "buff"
-          },
-          {
-            "label": "Max HP — Self (Supreme+)",
             "polarity": "buff"
           }
         ]
@@ -567,9 +545,39 @@
             "This effect can be triggered up to 3 times."
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 3,
+                "stack_comparison": "up_to"
+              }
+            ],
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Max HP — Self",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -805,7 +813,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "e6211618ab3fc7ed0d1de5b217d5d067866ea95fd3866283bf98b97fa8a7e16c",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "e7c3bec6796e258e075794383efd52695edbe8ee3ed0fb8ccd44169dd7678621",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

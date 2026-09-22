@@ -207,7 +207,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 3.0
+                "value": 48.0
               }
             ],
             "persistence": "temporary"
@@ -287,10 +287,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 33.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Oath of Fealty": {
         "category": "skill4",
@@ -339,10 +362,10 @@
             "value": [
               {
                 "type": "flat",
-                "value": 4.0
+                "value": 8.0
               }
             ],
-            "persistence": "temporary"
+            "persistence": "permanent"
           },
           {
             "tier": "mythic+",
@@ -372,6 +395,12 @@
             "type": "buff",
             "name": "ATK SPD",
             "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 16.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -609,7 +638,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "8edee0c5d9f77704c7d9ed4d19df0b11e90820baee03b16cd646eee7b6c8503c",
+    "inputs_hash": "e74ef2857572bd698c104c94acf667241d13b775b0df64834430f9d4245aea9a",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

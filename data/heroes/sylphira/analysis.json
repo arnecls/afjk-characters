@@ -129,11 +129,12 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
             "type": "crowd_control",
             "cc-type": "silence"
           },
@@ -180,7 +181,7 @@
             "label": "Interrupt — Single target"
           },
           {
-            "label": "Silence — Single target"
+            "label": "Silence — Area"
           },
           {
             "label": "Unaffected — Self"
@@ -884,7 +885,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "26fe0b36dc5b1dadd9c39e7ae86b012137fb6f94ac9f2f3cbb993081c76b40c4",
+    "inputs_hash": "2e829e45594d55ba1e31a700283dd7ea1aa79e12ccfbf6a33ad14de5362ade3d",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

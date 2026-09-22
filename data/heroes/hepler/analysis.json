@@ -250,11 +250,11 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Multiple targets",
             "is_max_known": true,
             "target": "ally",
             "area": "single",
-            "target_count": 1,
+            "target_count": 3,
             "type": "dot",
             "healing_type": "over_time",
             "name": "Healing over time",
@@ -266,12 +266,33 @@
             ],
             "duration": 6.0,
             "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 640.0
+              }
+            ],
+            "duration": 15.0
           }
         ],
         "cooldown": 12.0,
         "skill_card_tags": [
           {
-            "label": "HoT",
+            "label": "HoT — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Multiple targets",
             "polarity": "buff"
           }
         ]
@@ -360,33 +381,10 @@
             }
           ]
         },
-        "effects": [
-          {
-            "tier": "mythic+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "ally",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Invincible",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 80.0
-              }
-            ],
-            "persistence": "permanent"
-          }
-        ],
+        "effects": [],
         "skill_range": 1,
-        "skill_card_tags": [
-          {
-            "label": "Invincible",
-            "polarity": "buff"
-          }
-        ]
+        "passive_only": true,
+        "skill_card_tags": []
       },
       "Enhance Force": {
         "category": "skill5",
@@ -672,7 +670,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "5fe8322d7f307e4c12ca4002828623aca960f23a3f886457d13d2477521afab0",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "7aa5c24620e0ceedf7f562f305f8217a1874b566cdb908cadc02208892132060",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

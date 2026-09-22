@@ -224,6 +224,32 @@
               }
             ],
             "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": -1,
+            "area_count": 2,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "conditional"
+              }
+            ],
+            "type": "buff",
+            "name": "Movement speed",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 100.0
+              }
+            ],
+            "duration": 8.0,
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
@@ -240,6 +266,10 @@
           },
           {
             "label": "Max HP — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "Movement speed — Area",
             "polarity": "buff"
           }
         ]
@@ -355,6 +385,12 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
             "type": "buff",
             "name": "Max HP",
             "label": "buff_stat",
@@ -407,10 +443,39 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.5,
+                "comparison": "above"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 6.0
+              }
+            ]
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Max HP-based damage"
+          }
+        ]
       },
       "Enhance Force": {
         "category": "skill5",
@@ -450,7 +515,7 @@
       ],
       [
         "max_hp",
-        "Area"
+        "Area, Single target"
       ]
     ],
     "benefit_stats": [
@@ -630,7 +695,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "e1dc2963630014fe8ae1a609d02609eac2dec1fd2d5e78cbb8e5cc1615a63f0b",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "a6414a4cc2a0f87e7d525f0d67ff27eebfff60039a95649fb537f4960998bc4d",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

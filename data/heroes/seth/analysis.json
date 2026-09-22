@@ -81,7 +81,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 200.0
+                "value": 500.0
               }
             ]
           },
@@ -118,7 +118,7 @@
                 "value": 180.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
           }
         ],
         "initial_energy": 0.0,
@@ -207,41 +207,6 @@
                 "value": 195.0
               }
             ]
-          },
-          {
-            "tier": "mythic+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "unit_type",
-                "unit_type": "non_summoned"
-              }
-            ],
-            "type": "buff",
-            "name": "Energy",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "flat",
-                "value": 200.0
-              }
-            ],
-            "persistence": "permanent"
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "debuff",
-            "name": "Phys DEF",
-            "label": "debuff_defensive"
           }
         ],
         "cooldown": 6.5,
@@ -252,14 +217,6 @@
           },
           {
             "label": "Physical"
-          },
-          {
-            "label": "Energy — Self (Mythic+)",
-            "polarity": "buff"
-          },
-          {
-            "label": "Phys DEF (Supreme+)",
-            "polarity": "debuff"
           }
         ]
       },
@@ -325,6 +282,12 @@
             "type": "buff",
             "name": "Lifedrain",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 10.0
+              }
+            ],
             "persistence": "permanent"
           },
           {
@@ -343,7 +306,7 @@
                 "value": 25.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "permanent"
           },
           {
             "tier": "base",
@@ -407,10 +370,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Hunting Spree": {
         "category": "skill4",
@@ -443,9 +429,38 @@
             }
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 260.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Enhance Force": {
         "category": "skill5",
@@ -455,9 +470,31 @@
             "Seth reduces the target's Phys DEF by an extra 15% for 6s per stack of Bloodlust if he already carries Bloodlust when casting Predator's Lunge."
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Phys DEF",
+            "polarity": "debuff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -465,14 +502,8 @@
         {
           "label": "Invincibility",
           "tier": "base",
-          "targeting": "Single target",
+          "targeting": "Self",
           "description": "Seth becomes invincible and recovers HP equal to 25% of the total damage dealt during this skill."
-        },
-        {
-          "label": "Stacking",
-          "tier": "base",
-          "targeting": "Single target",
-          "description": "Increases damage of Predator's Lunge by an extra 15% for each casting, up to 5 stacks."
         }
       ],
       "requires": []
@@ -639,7 +670,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "787126da86203be9e7aa3979265896b42cfdb7a544b92fbc278789d0ef98fe54",
+    "inputs_hash": "e1e482b188fb592ecfd312eeff90acfbcdd16462d35df601df1d0cf8ab5e1f6a",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

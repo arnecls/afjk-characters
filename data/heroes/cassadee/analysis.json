@@ -194,26 +194,6 @@
                 "value": 300.0
               }
             ]
-          },
-          {
-            "tier": "ex+10",
-            "targeting_label": "Multiple targets",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 3,
-            "type": "crowd_control",
-            "cc-type": "stun"
-          },
-          {
-            "tier": "ex+10",
-            "targeting_label": "Multiple targets",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 3,
-            "type": "crowd_control",
-            "cc-type": "knock_up"
           }
         ],
         "cooldown": 8.0,
@@ -229,10 +209,10 @@
             "label": "Stun — Single target"
           },
           {
-            "label": "Knock up — Multiple targets (EX+10)"
+            "label": "Knock up — Single target (EX+10)"
           },
           {
-            "label": "Stun — Multiple targets (EX+10)"
+            "label": "Stun — Single target (EX+10)"
           }
         ]
       },
@@ -635,7 +615,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "db9b7660d60df2c669ec3d247716936e91a5caa2e5f3d7906a9733dd63d57cac",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "931fda954edeb217035828682cd354024503ca2b0fdc441c7877b2c93c590262",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

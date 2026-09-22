@@ -169,7 +169,7 @@
             "targeting_label": "Arc",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
+            "area": "arc",
             "target_count": -1,
             "area_direction": "front",
             "type": "damage",
@@ -185,11 +185,13 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Multiple targets",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "path",
+            "target_count": 3,
+            "area_direction": "selected_target",
+            "area_count": 2,
             "type": "debuff",
             "name": "Magic DEF",
             "label": "debuff_defensive",
@@ -213,7 +215,7 @@
             "polarity": "debuff"
           },
           {
-            "label": "Magic DEF",
+            "label": "Magic DEF — path",
             "polarity": "debuff"
           }
         ]
@@ -263,9 +265,10 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 280.0
+                "value": 320.0
               }
-            ]
+            ],
+            "duration": 10.0
           },
           {
             "tier": "base",
@@ -289,7 +292,8 @@
                 "value": 320.0
               }
             ],
-            "persistence": "permanent"
+            "duration": 10.0,
+            "persistence": "temporary"
           }
         ],
         "cooldown": 10.0,
@@ -342,6 +346,13 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.5,
+                "comparison": "below"
+              }
+            ],
             "type": "buff",
             "name": "Ranged DEF",
             "label": "buff_defensive",
@@ -396,11 +407,12 @@
         "effects": [
           {
             "tier": "ex+10",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
             "type": "crowd_control",
             "cc-type": "bind",
             "duration": 6.0
@@ -408,7 +420,7 @@
         ],
         "skill_card_tags": [
           {
-            "label": "Bind — Single target (EX+10)"
+            "label": "Bind — Area (EX+10)"
           }
         ]
       },
@@ -428,9 +440,21 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "controlled"
+              }
+            ],
             "type": "debuff",
             "name": "Magic DEF",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
@@ -609,7 +633,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "3e7bafb7cbb4725f4b8ab0547d5177038b7f493f84e4b18638c17d83a70da331",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "a63e6ded8dd22541282cbbb1a903a2311e2ed08a01eb11bfb2e3c67474306521",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

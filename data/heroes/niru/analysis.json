@@ -55,11 +55,40 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "fatal_blow",
+                "ally": true
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 45.0
+              }
+            ]
+          }
+        ],
         "cooldown": 1.0,
         "initial_energy": 0.0,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Direct healing",
+            "polarity": "buff"
+          }
+        ]
       },
       "Soul Reaping": {
         "category": "skill1",
@@ -193,6 +222,25 @@
                 "value": 195.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 5.0
+              }
+            ]
           }
         ],
         "cooldown": 8.0,
@@ -200,6 +248,9 @@
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "Max HP-based damage"
           }
         ]
       },
@@ -227,10 +278,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 29.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "HP — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Ethereal Form": {
         "category": "skill4",
@@ -325,22 +399,6 @@
           "tier": "ex+5",
           "targeting": "All units",
           "description": "The spirit will not lose HP over time until all allies enter Spirit form for 8s."
-        },
-        {
-          "label": "Named ally on team",
-          "tier": "supreme+",
-          "targeting": "Allies",
-          "description": "When Spirit Devour heals Shemira or Daimon, it also increases their Phys DEF and Magic DEF by 60% for 8s.",
-          "grants": [
-            {
-              "label": "Phys DEF",
-              "magnitude": "high"
-            },
-            {
-              "label": "Magic DEF",
-              "magnitude": "high"
-            }
-          ]
         }
       ],
       "requires": [
@@ -362,6 +420,10 @@
       [
         "magic",
         "All units, Single target"
+      ],
+      [
+        "max_hp",
+        "All units"
       ],
       [
         "lost_hp",
@@ -513,7 +575,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "ece885fdc700f8ac242d00a575906bbef76c6a1fe035d75296986a23aed5ee86",
+    "inputs_hash": "e4b02da02a41f52ed5e535c491653020b64ca5abf63fe05337d450984dbbe794",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

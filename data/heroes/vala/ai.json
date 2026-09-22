@@ -70,7 +70,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 420.0
+                    "value": 445.0
                   }
                 ]
               },
@@ -356,6 +356,37 @@
             ],
             "special_provides": [],
             "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "defeat"
+                  }
+                ],
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       },
@@ -378,7 +409,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 20.0
+                    "value": 10.0
                   }
                 ]
               }

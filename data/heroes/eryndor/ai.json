@@ -16,6 +16,12 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": -1,
+                "conditions": [
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_summoned"
+                  }
+                ],
                 "type": "debuff",
                 "name": "ATK",
                 "label": "debuff_offensive",
@@ -33,6 +39,12 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": -1,
+                "conditions": [
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_summoned"
+                  }
+                ],
                 "type": "debuff",
                 "name": "Max HP",
                 "label": "debuff_stat",
@@ -50,6 +62,12 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": -1,
+                "conditions": [
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_summoned"
+                  }
+                ],
                 "type": "damage",
                 "name": "Magic",
                 "damage_type": "magic",
@@ -111,7 +129,7 @@
                 "label": "Stat steal",
                 "tier": "base",
                 "targeting": "All units",
-                "description": "An enemy that loses the game surrenders ATK and max HP to Eryndor, up to three times."
+                "description": "An enemy that loses the game surrenders ATK and max HP to Eryndor, up to three times; total gains are capped at 100% plus 10% Skill Power of each corresponding stat."
               }
             ],
             "special_requires": [
@@ -268,12 +286,6 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "battle_phase",
-                    "phase": "conditional"
-                  }
-                ],
                 "type": "buff",
                 "name": "Haste",
                 "label": "buff_offensive",
@@ -342,6 +354,10 @@
                   {
                     "type": "battle_phase",
                     "phase": "permanent"
+                  },
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_boss"
                   }
                 ],
                 "type": "debuff",
@@ -361,6 +377,16 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "permanent"
+                  },
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_boss"
+                  }
+                ],
                 "type": "debuff",
                 "name": "Stat buffs",
                 "label": "debuff_stat"
@@ -390,6 +416,10 @@
                   {
                     "type": "battle_phase",
                     "phase": "start_of_battle"
+                  },
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_summoned"
                   }
                 ],
                 "type": "debuff",
@@ -413,6 +443,10 @@
                   {
                     "type": "battle_phase",
                     "phase": "start_of_battle"
+                  },
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_summoned"
                   }
                 ],
                 "type": "buff",
@@ -434,7 +468,7 @@
                 "label": "Stat steal",
                 "tier": "supreme+",
                 "targeting": "All units",
-                "description": "At battle start, Eryndor collects a share of every non-summoned enemy's basic stats."
+                "description": "At battle start, Eryndor collects 7% of every non-summoned enemy's basic stats, capped at 35% of each corresponding stat."
               }
             ],
             "special_requires": []

@@ -349,7 +349,8 @@
             "area": "single",
             "target_count": 1,
             "type": "crowd_control",
-            "cc-type": "stun"
+            "cc-type": "stun",
+            "duration": 3.0
           },
           {
             "tier": "mythic+",
@@ -665,7 +666,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "813188513ffdcf16e74d81ee60f3fc6ca8d105e0180706be00aef179386c8032",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "fcd950aca3ab01a73483e088dbe3d0786b668caf58856125304f72694c0fef10",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

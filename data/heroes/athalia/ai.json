@@ -90,12 +90,6 @@
             ],
             "special_provides": [
               {
-                "label": "Cheat death",
-                "tier": "base",
-                "targeting": "Self",
-                "description": "When Athalia is defeated, her unyielding resolve manifests as a lance that continues to attack enemies on the battlefield, with her ATK reduced by 35%."
-              },
-              {
                 "label": "Invincibility",
                 "tier": "base",
                 "targeting": "Self",
@@ -186,7 +180,13 @@
                 "type": "buff",
                 "name": "Execution",
                 "label": "buff_offensive",
-                "persistence": "unknown"
+                "persistence": "unknown",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 50.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -268,7 +268,13 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
-                "persistence": "permanent"
+                "persistence": "temporary",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 62.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -301,7 +307,26 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Crit",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -356,10 +381,9 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
-                "type": "damage",
-                "damage_type": "physical",
-                "name": "Physical",
-                "label": "damage_normal",
+                "type": "debuff",
+                "name": "Shield",
+                "label": "debuff_defensive",
                 "value": [
                   {
                     "type": "percentage",

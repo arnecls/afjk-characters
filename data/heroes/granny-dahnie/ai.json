@@ -11,11 +11,12 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
                 "type": "debuff",
                 "name": "Energy",
                 "label": "debuff_stat",
@@ -28,21 +29,24 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
                 "type": "crowd_control",
-                "cc-type": "bind"
+                "cc-type": "stun",
+                "duration": 3.0
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
                 "type": "dot",
                 "damage_type": "hp_loss",
                 "name": "HP loss",
@@ -55,24 +59,6 @@
                 ],
                 "duration": 3,
                 "tick": 1.0
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "damage",
-                "damage_type": "hp_loss",
-                "name": "HP loss",
-                "label": "damage_hp_loss",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 160.0
-                  }
-                ]
               }
             ],
             "summon_effects": [],
@@ -264,7 +250,7 @@
                     "value": 50.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "temporary"
               },
               {
                 "tier": "mythic+",
@@ -289,7 +275,7 @@
                     "value": 50.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -357,10 +343,15 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
-                "type": "buff",
-                "name": "Haste",
-                "label": "buff_offensive",
-                "persistence": "unknown"
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 120.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

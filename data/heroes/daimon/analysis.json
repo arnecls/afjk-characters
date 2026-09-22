@@ -115,6 +115,40 @@
                 "value": 90.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "duration": 8.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "duration": 8.0
           }
         ],
         "initial_energy": 400.0,
@@ -127,6 +161,14 @@
           },
           {
             "label": "True damage"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Multiple targets",
+            "polarity": "buff"
           }
         ]
       },
@@ -279,6 +321,23 @@
             "target": "ally",
             "area": "single",
             "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 33.0
+              }
+            ],
+            "duration": 8.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
             "type": "buff",
             "name": "Lifedrain",
             "label": "buff_stat",
@@ -289,11 +348,37 @@
               }
             ],
             "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 27.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
           {
+            "label": "ATK",
+            "polarity": "buff"
+          },
+          {
             "label": "Lifedrain",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield",
             "polarity": "buff"
           }
         ]
@@ -686,7 +771,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f0a91a81c90d423c59f5b6bb85e616978d5cf94d1dfbae05430e6c8ad3909dde",
+    "inputs_hash": "ccad80304ea6fbb5690ba1d5988879559b1249faea685973da7710606b50dbf5",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

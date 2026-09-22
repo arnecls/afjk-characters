@@ -79,7 +79,7 @@
                     "value": 70.0
                   }
                 ],
-                "persistence": "permanent"
+                "persistence": "temporary"
               },
               {
                 "tier": "base",

@@ -204,6 +204,30 @@
                   }
                 ],
                 "persistence": "permanent"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ],
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -235,7 +259,8 @@
                     "value": 130.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "duration": 5.0
               },
               {
                 "tier": "mythic+",
@@ -247,7 +272,14 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
-                "persistence": "permanent"
+                "persistence": "temporary",
+                "duration": 5.0,
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 90.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

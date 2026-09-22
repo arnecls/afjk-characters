@@ -25,7 +25,8 @@
                     "value": 20.0
                   }
                 ],
-                "persistence": "unknown"
+                "duration": 10.0,
+                "persistence": "temporary"
               },
               {
                 "tier": "base",
@@ -43,6 +44,7 @@
                     "value": 35.0
                   }
                 ],
+                "duration": 10.0,
                 "persistence": "temporary"
               }
             ],
@@ -63,7 +65,8 @@
                     "value": 20.0
                   }
                 ],
-                "persistence": "unknown"
+                "duration": 10.0,
+                "persistence": "temporary"
               },
               {
                 "tier": "base",
@@ -81,6 +84,7 @@
                     "value": 35.0
                   }
                 ],
+                "duration": 10.0,
                 "persistence": "temporary"
               }
             ],
@@ -259,7 +263,7 @@
                     "value": 60.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "permanent"
               },
               {
                 "tier": "mythic+",
@@ -277,7 +281,7 @@
                     "value": 60.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "permanent"
               }
             ],
             "immunities": [],

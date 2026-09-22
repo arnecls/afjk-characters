@@ -77,60 +77,6 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "unit_type",
-                    "unit_type": "non_summoned"
-                  }
-                ],
-                "type": "damage",
-                "damage_type": "max_hp",
-                "name": "Max HP-based damage",
-                "label": "damage_max_hp",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 15.0
-                  }
-                ]
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "unit_type",
-                    "unit_type": "non_summoned"
-                  }
-                ],
-                "type": "damage",
-                "damage_type": "magic",
-                "name": "Magic",
-                "label": "damage_normal",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 350.0
-                  }
-                ]
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "unit_type",
-                    "unit_type": "non_summoned"
-                  }
-                ],
                 "type": "dot",
                 "damage_type": "hp_loss",
                 "name": "HP loss",
@@ -138,35 +84,11 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 40.0
+                    "value": 65.0
                   }
                 ],
                 "duration": 4,
                 "tick": 1.0
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "unit_type",
-                    "unit_type": "non_summoned"
-                  }
-                ],
-                "type": "damage",
-                "damage_type": "hp_loss",
-                "name": "HP loss",
-                "label": "damage_hp_loss",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 40.0
-                  }
-                ]
               }
             ],
             "summon_effects": [],
@@ -189,20 +111,14 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "unit_type",
-                    "unit_type": "non_summoned"
-                  }
-                ],
                 "type": "damage",
-                "damage_type": "magic",
-                "name": "Magic",
-                "label": "damage_normal",
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "label": "damage_hp_loss",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 250.0
+                    "value": 13.0
                   }
                 ]
               }
@@ -219,7 +135,26 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Healing",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 18.0
+                  }
+                ],
+                "persistence": "permanent",
+                "label": "buff_healing"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -337,5 +272,5 @@
     "skill5": "enemies entering field take damage and are stunned"
   },
   "play_overview": "[[Ludovic]] anchors a **movable healing field** that restores HP for allies inside and damages or stuns **enemies who enter** the zone. He shifts the field to allies or **absorbs nearby enemy HP** to refill stored healing when the pool runs low. Damage skills targeting the top attacker add **HP-loss pressure** alongside the field's passive refill when foes lose HP. Stored healing **scales his battle Healing stat**, while periodic berries **explode for damage and ally heals** in range. Field healing restores when enemies lose HP, so sustained enemy damage keeps his pool topped. He excels in **long attrition fights** with steady enemy traffic through the field. Burst that skips the field or enemies that never step inside waste his heal-damage loop.",
-  "counter_overview": "[[Ludovic]] anchors a **movable healing field** that restores allies inside, **stuns enemies who enter**, and refills when foes lose HP — long attrition fights are his win condition. He is **Unaffected while generating the field**, so do not bank on interrupting that cast. **Lock ally healing** with [[Dunlingr]]'s Curelock or cut it with [[Gwyneth]], then pair [[filter:assassin-delete]] like [[Ravion]] or [[Evie]]; alternatively, **burst past the zone** before berries and HP-loss on your top attacker snowball. Comps that never stand in the field waste his heal-damage loop."
+  "counter_overview": "[[Ludovic]] anchors a **movable healing field** that restores allies inside, **stuns enemies who enter**, and refills when foes lose HP \u2014 long attrition fights are his win condition. He is **Unaffected while generating the field**, so do not bank on interrupting that cast. **Lock ally healing** with [[Dunlingr]]'s Curelock or cut it with [[Gwyneth]], then pair [[filter:assassin-delete]] like [[Ravion]] or [[Evie]]; alternatively, **burst past the zone** before berries and HP-loss on your top attacker snowball. Comps that never stand in the field waste his heal-damage loop."
 }

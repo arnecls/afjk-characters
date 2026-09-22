@@ -124,7 +124,7 @@
           "Skill Range": "Global"
         },
         "description": {
-          "raw": "Kulu summons Boomboom, which bounces 3 times between enemies. The first 2 bounces will target the 2 frontmost enemies, devouring them. For the final bounce, Boomboom will target 1 {{e|rearmost",
+          "raw": "Kulu summons Boomboom, which bounces 3 times between enemies. The first 2 bounces will target the 2 frontmost enemies, devouring them. For the final bounce, Boomboom will target 1 rearmost enemy on the enemy side of the battlefield and releases all devoured enemies upon impact. Each bounce deals 110% (ATK-based) + 10% (SP-based) damage to its target and adjacent units, reducing their movement speed by 60% for 3s. Devoured enemies cannot act or attack and will only take damage from Boomboom. If Boomboom could not find a valid target for the final bounce, it will instead travel 3 tiles deeper into the enemy side, unless blocked by terrain or the battlefield edges.",
           "active": [
             "Kulu summons Boomboom, which bounces 3 times between enemies.",
             "The first 2 bounces will target the 2 frontmost enemies, devouring them.",

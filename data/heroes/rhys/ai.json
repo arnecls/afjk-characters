@@ -60,6 +60,23 @@
                   }
                 ],
                 "persistence": "unknown"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 120.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -136,20 +153,14 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Crit",
-                "label": "buff_offensive",
-                "persistence": "permanent"
-              },
-              {
-                "tier": "legendary+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
                 "name": "Crit DMG boost",
                 "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 38.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],
@@ -184,10 +195,10 @@
             "special_provides": [],
             "special_requires": []
           },
-          "ex+5": {
+          "ex+15": {
             "effects": [
               {
-                "tier": "ex+5",
+                "tier": "ex+15",
                 "targeting_label": "Single target",
                 "is_max_known": true,
                 "target": "enemy",
@@ -201,6 +212,26 @@
                   {
                     "type": "percentage",
                     "value": 240.0
+                  }
+                ]
+              },
+              {
+                "tier": "ex+15",
+                "targeting_label": "Arc",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "arc",
+                "target_count": -1,
+                "area_count": 2,
+                "area_direction": "back",
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
                   }
                 ]
               }
@@ -217,38 +248,7 @@
         "is_max_known": true,
         "tiers": {
           "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Crit",
-                "label": "buff_offensive",
-                "persistence": "unknown"
-              },
-              {
-                "tier": "supreme+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Crit DMG boost",
-                "label": "buff_offensive",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 60.0
-                  }
-                ],
-                "persistence": "unknown"
-              }
-            ],
+            "effects": [],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

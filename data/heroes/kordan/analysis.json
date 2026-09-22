@@ -118,6 +118,7 @@
                 "value": 40.0
               }
             ],
+            "duration": 16.0,
             "persistence": "temporary"
           },
           {
@@ -131,6 +132,33 @@
             "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 36.0
+              }
+            ],
+            "duration": 16.0,
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "buff",
+            "name": "Damage dealt",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 36.0
+              }
+            ],
+            "duration": 16.0,
             "persistence": "temporary"
           }
         ],
@@ -142,6 +170,10 @@
           },
           {
             "label": "ATK — Area",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage dealt — Area",
             "polarity": "buff"
           },
           {
@@ -315,10 +347,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Rage Unleashed": {
         "category": "skill4",
@@ -417,7 +472,7 @@
               }
             ],
             "type": "buff",
-            "name": "DEF",
+            "name": "Phys DEF",
             "label": "buff_defensive",
             "persistence": "permanent"
           },
@@ -449,11 +504,11 @@
             "label": "Lost HP-based damage"
           },
           {
-            "label": "DEF — Self (EX+10)",
+            "label": "Magic DEF — Self (EX+10)",
             "polarity": "buff"
           },
           {
-            "label": "Magic DEF — Self (EX+10)",
+            "label": "Phys DEF — Self (EX+10)",
             "polarity": "buff"
           },
           {
@@ -717,7 +772,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "931e28555f489dfd12f9413c91113c0c595c0bc7a7e45d31df7b1f059e9d4e38",
+    "inputs_hash": "20a8ba7cdcafc6a7563112dc781a226e538e71a7f05eb6d368ba26cbd8581f9b",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -186,7 +186,7 @@
           "Skill Range": "Global"
         },
         "description": {
-          "raw": "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies. He is Unaffected during the skill casting. This skill can be triggered once every 30s.",
+          "raw": "Viperian burns 30% (HP-based) HP 10s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies. He is Unaffected during the skill casting. This skill can be triggered once every 30s.",
           "active": [
             "Viperian burns 30% (HP-based) HP 19s into a battle if his HP ratio is above 90%, dealing 420% (ATK-based) damage to all enemies.",
             "He is Unaffected during the skill casting.",

@@ -177,7 +177,26 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Haste",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -212,6 +231,32 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Ranged DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 50.0
+                  }
+                ],
+                "persistence": "temporary"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       },
@@ -221,7 +266,26 @@
         "tiers": {
           "base": {
             "effects": [],
-            "summon_effects": [],
+            "summon_effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Owned summons",
+                "is_max_known": true,
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 80.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "immunities": [],
             "special_provides": [],
             "special_requires": []
@@ -236,7 +300,8 @@
     "backline-inhibit",
     "high-initial-energy",
     "mass-cc",
-    "summoner"
+    "summoner",
+    "temporary-stat-buffer"
   ],
   "summon_profile": {
     "has_ranged_summons": true,

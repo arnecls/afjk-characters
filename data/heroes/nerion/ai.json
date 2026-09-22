@@ -66,14 +66,7 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [
-              {
-                "label": "Enhanced form",
-                "tier": "supreme+",
-                "targeting": "Single target",
-                "description": "When all non-summoned enemies on the battlefield are under the drowning effect, or if a total of 4 non-summoned enemies have been affected by it, Nerion immediately gains 1000 Energy and becomes permanently empowered by the force of the tide."
-              }
-            ],
+            "special_provides": [],
             "special_requires": [
               {
                 "label": "CC on enemies",
@@ -186,8 +179,27 @@
         "source_hash": "35c505752bbd4618f08549ec56eac19c3743271103b5679681f489d69a5e44b9",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 33.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -227,23 +239,11 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "ATK",
-                "label": "debuff_offensive"
-              },
-              {
-                "tier": "mythic+",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "damage",
-                "damage_type": "magic",
-                "name": "Magic",
-                "label": "damage_normal",
+                "label": "debuff_offensive",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 600.0
+                    "value": 20.0
                   }
                 ]
               },
@@ -254,6 +254,12 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "controlled"
+                  }
+                ],
                 "type": "dot",
                 "damage_type": "dot",
                 "name": "DoT",
@@ -261,11 +267,11 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 600.0
+                    "value": 70.0
                   }
                 ],
                 "duration": 1,
-                "tick": 1.0
+                "tick": 0.5
               }
             ],
             "summon_effects": [],
@@ -289,7 +295,32 @@
                     "type": "percentage",
                     "value": 600.0
                   }
-                ]
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_shield"
+              }
+            ],
+            "type": "buff",
+            "name": "Magic damage",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -303,11 +334,43 @@
         "source_hash": "71b25ebfba043758fa97bcd6cb05c26a69f6db155f38a34191aec1348ad64532",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ],
+                "type": "buff",
+                "name": "DEF Penetration",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Enhanced form",
+                "tier": "supreme+",
+                "targeting": "Self",
+                "description": "When all non-summoned enemies on the battlefield are under the drowning effect, or if a total of 4 non-summoned enemies have been affected by it, Nerion gains 1000 Energy and becomes permanently empowered; while empowered and above 800 Energy, he gains 30 DEF Penetration."
+              }
+            ],
             "special_requires": []
           }
         }

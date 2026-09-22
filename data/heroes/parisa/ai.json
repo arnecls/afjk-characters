@@ -27,6 +27,32 @@
                     "value": 520.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "defeat"
+                  }
+                ],
+                "type": "buff",
+                "name": "Energy",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 60.0
+                  }
+                ],
+                "duration": 5.0,
+                "tick": 1.0,
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -55,7 +81,7 @@
                 "is_max_known": true,
                 "target": "ally",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 2,
                 "type": "buff",
                 "name": "ATK SPD",
                 "label": "buff_offensive",
@@ -73,7 +99,7 @@
                 "is_max_known": true,
                 "target": "ally",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 2,
                 "type": "buff",
                 "name": "ATK",
                 "label": "buff_offensive",

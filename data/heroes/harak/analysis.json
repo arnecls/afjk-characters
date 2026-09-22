@@ -141,24 +141,6 @@
             "label": "debuff_healing"
           },
           {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "damage",
-            "damage_type": "hp_loss",
-            "name": "HP loss",
-            "label": "damage_hp_loss",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 40.0
-              }
-            ]
-          },
-          {
             "type": "immunity",
             "tier": "base",
             "immunity_type": "unaffected",
@@ -180,9 +162,6 @@
           },
           {
             "label": "DoT"
-          },
-          {
-            "label": "HP loss"
           },
           {
             "label": "Healing",
@@ -227,34 +206,11 @@
             }
           ]
         },
-        "effects": [
-          {
-            "tier": "base",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Invincible",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 250.0
-              }
-            ],
-            "persistence": "permanent"
-          }
-        ],
+        "effects": [],
         "cooldown": 15.0,
         "initial_cooldown": 5.0,
-        "skill_card_tags": [
-          {
-            "label": "Invincible — Self",
-            "polarity": "buff"
-          }
-        ]
+        "passive_only": true,
+        "skill_card_tags": []
       },
       "Flesh Feast": {
         "category": "skill2",
@@ -330,17 +286,6 @@
             "persistence": "temporary"
           },
           {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "debuff",
-            "name": "Execution",
-            "label": "debuff_offensive"
-          },
-          {
             "type": "immunity",
             "tier": "base",
             "immunity_type": "unaffected",
@@ -359,10 +304,6 @@
           {
             "label": "Haste — Self",
             "polarity": "buff"
-          },
-          {
-            "label": "Execution",
-            "polarity": "debuff"
           },
           {
             "label": "Unaffected — Self"
@@ -410,7 +351,7 @@
             "value": [
               {
                 "type": "flat",
-                "value": 3.0
+                "value": 12.0
               }
             ],
             "persistence": "permanent"
@@ -549,10 +490,6 @@
       ],
       [
         "dot",
-        "Single target"
-      ],
-      [
-        "hp_loss",
         "Single target"
       ],
       [
@@ -740,7 +677,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "1990cfd23faf6d90ca8ffdee0940e78b939a5ebf46b9c3e36296f2c2dce0ef08",
+    "inputs_hash": "676c671bc1a3a3675622bc69d86f155902b8ea37e7297155511e6a522b776618",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

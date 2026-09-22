@@ -90,6 +90,60 @@
                 "value": 110.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "buff",
+            "name": "Ranged DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 40.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Ranged DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "skill_range": 2,
@@ -101,6 +155,18 @@
           },
           {
             "label": "Haste — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Ranged DEF — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "Ranged DEF — Self",
             "polarity": "buff"
           }
         ]
@@ -153,7 +219,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 14.0
+                "value": 20.0
               }
             ],
             "persistence": "temporary"
@@ -206,7 +272,7 @@
             "area": "single",
             "target_count": 3,
             "type": "buff",
-            "name": "DEF",
+            "name": "Phys DEF",
             "label": "buff_defensive",
             "value": [
               {
@@ -247,7 +313,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 130.0
+                "value": 190.0
               }
             ]
           }
@@ -260,11 +326,11 @@
             "polarity": "buff"
           },
           {
-            "label": "DEF — Multiple targets",
+            "label": "Magic DEF — Multiple targets",
             "polarity": "buff"
           },
           {
-            "label": "Magic DEF — Multiple targets",
+            "label": "Phys DEF — Multiple targets",
             "polarity": "buff"
           }
         ]
@@ -392,23 +458,9 @@
             "Mikola's Courage Sphere remains unaffected in duration if her side gains control of the Honor Arena."
           ]
         },
-        "effects": [
-          {
-            "type": "immunity",
-            "tier": "supreme+",
-            "immunity_type": "unaffected",
-            "timing": "conditional",
-            "targeting_label": "Self",
-            "target": "self",
-            "area": "single",
-            "target_count": 1
-          }
-        ],
-        "skill_card_tags": [
-          {
-            "label": "Unaffected — Self"
-          }
-        ]
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
       }
     },
     "synergy_profile": {
@@ -417,7 +469,7 @@
           "label": "Ally DoT on enemies",
           "tier": "mythic+",
           "targeting": "Area",
-          "description": "After Courage Sphere has been active for 6s, Mikola deals damage equal to 50% of her ATK per second to enemies adjacent to allies carrying Combat Fury."
+          "description": "After Courage Sphere has been active for 6s, Mikola deals damage equal to 70% of her ATK per second to enemies adjacent to allies carrying Combat Fury."
         }
       ],
       "requires": []
@@ -425,7 +477,8 @@
     "damage_entries": [],
     "benefit_stats": [
       "atk",
-      "haste"
+      "haste",
+      "physical_def"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -586,7 +639,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "bdd7a31828f8bfdec5fffab1980ad3bbca4b7671fe0e81d3d05ed46d6127659f",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "f7faba3da0f382cf2da582063601b7444a49db550831437f8b7512f743b63eda",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

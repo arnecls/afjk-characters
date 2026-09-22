@@ -207,6 +207,24 @@
             "target": "ally",
             "area": "single",
             "target_count": 1,
+            "type": "buff",
+            "name": "Dodge chance",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 120.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
             "type": "dot",
             "healing_type": "over_time",
             "name": "Healing over time",
@@ -235,6 +253,10 @@
         "skill_card_tags": [
           {
             "label": "HoT",
+            "polarity": "buff"
+          },
+          {
+            "label": "Dodge chance",
             "polarity": "buff"
           },
           {
@@ -336,6 +358,24 @@
         "effects": [
           {
             "tier": "mythic+",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 400.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+10",
             "targeting_label": "Multiple targets",
             "is_max_known": true,
             "target": "enemy",
@@ -348,7 +388,19 @@
         ],
         "skill_card_tags": [
           {
-            "label": "Stun — Multiple targets"
+            "label": "Direct healing — All units",
+            "polarity": "buff"
+          },
+          {
+            "label": "Direct healing — All units (EX+5)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Direct healing — All units (EX+15)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Stun — Multiple targets (EX+10)"
           }
         ]
       },
@@ -369,31 +421,9 @@
             }
           ]
         },
-        "effects": [
-          {
-            "tier": "supreme+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "debuff",
-            "name": "Max HP",
-            "label": "debuff_stat",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 20.0
-              }
-            ]
-          }
-        ],
-        "skill_card_tags": [
-          {
-            "label": "Max HP",
-            "polarity": "debuff"
-          }
-        ]
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
       }
     },
     "synergy_profile": {
@@ -593,7 +623,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "8bc8d0dc49f7be1452eb1312049f37019351c17cdd94da54891dc93a46312601",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "6775f6dcd4549c21d917c87caf66f521130a9e00b27a5eea654f47073a804237",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

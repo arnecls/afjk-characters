@@ -44,12 +44,6 @@
             ],
             "special_provides": [
               {
-                "label": "Invincibility",
-                "tier": "base",
-                "targeting": "Self",
-                "description": "Kulu is invincible while casting this skill."
-              },
-              {
                 "label": "Enhanced form",
                 "tier": "ex+15",
                 "targeting": "Single target",
@@ -103,39 +97,18 @@
                     "value": 230.0
                   }
                 ]
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "status_condition",
-                    "status": "active_state"
-                  },
-                  {
-                    "type": "battle_phase",
-                    "phase": "conditional"
-                  }
-                ],
-                "type": "buff",
-                "name": "Invincible",
-                "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 210.0
-                  }
-                ],
-                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Invincibility",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "Kulu is invincible while casting this skill."
+              }
+            ],
             "special_requires": []
           }
         }
@@ -193,9 +166,9 @@
             "effects": [
               {
                 "tier": "legendary+",
-                "targeting_label": "Single target",
+                "targeting_label": "Self",
                 "is_max_known": true,
-                "target": "ally",
+                "target": "self",
                 "area": "single",
                 "target_count": 1,
                 "conditions": [
@@ -211,7 +184,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 8.0
+                    "value": 10.0
                   }
                 ],
                 "persistence": "permanent"
@@ -240,7 +213,13 @@
                 "area_count": -1,
                 "type": "debuff",
                 "name": "Damage taken",
-                "label": "debuff_stat"
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ]
               },
               {
                 "tier": "mythic+",
@@ -323,6 +302,6 @@
     "skill4": "enemies gain explosive debuff; defeated become detonation traps",
     "skill5": "ATK speed and Ranged DEF scale with enemy count on own half"
   },
-  "play_overview": "[[Kulu]] opens by **blocking enemy lanes with debris**, then uses skills that **splash to both sides**—allies take reduced friendly-fire damage, but tight formations still suffer. Her ultimate bombards the enemy half with random strikes. Defeated foes can leave **explosive traps**, and her ATK climbs as she damages enemies. She shines when **enemies cluster on their side** and movement paths are contested. **Low raw multipliers** and a modest damage-taken debuff make her a weak pure DPS pick. **Single-target races** or splash-intolerant teams underperform badly.",
-  "counter_overview": "[[Kulu]] **bombs border tiles into debris** at battle start, then **teleports** for knock-ups and dumps frontliners with Boomboom while her ultimate **bombards the enemy half** — she is **Invincible** on the teleport cast and **Unaffected** during the ult channel. Do not bank on interrupts or control during those windows, and do not pin her with single-target assassins as she relocates. Answer with lasting wide ultimates like [[Shemira]] or [[Frieren]], and blunt debris knock-back and teleport knock-ups with [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Callan]] or [[Sylphira]] on the opening debris beat."
+  "play_overview": "[[Kulu]] opens by **blocking enemy lanes with debris**, then uses skills that **splash to both sides**\u2014allies take reduced friendly-fire damage, but tight formations still suffer. Her ultimate bombards the enemy half with random strikes. Defeated foes can leave **explosive traps**, and her ATK climbs as she damages enemies. She shines when **enemies cluster on their side** and movement paths are contested. **Low raw multipliers** and a modest damage-taken debuff make her a weak pure DPS pick. **Single-target races** or splash-intolerant teams underperform badly.",
+  "counter_overview": "[[Kulu]] **bombs border tiles into debris** at battle start, then **teleports** for knock-ups and dumps frontliners with Boomboom while her ultimate **bombards the enemy half** \u2014 she is **Invincible** on the teleport cast and **Unaffected** during the ult channel. Do not bank on interrupts or control during those windows, and do not pin her with single-target assassins as she relocates. Answer with lasting wide ultimates like [[Shemira]] or [[Frieren]], and blunt debris knock-back and teleport knock-ups with [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Callan]] or [[Sylphira]] on the opening debris beat."
 }

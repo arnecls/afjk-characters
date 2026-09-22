@@ -190,7 +190,7 @@
           "Skill Range": "10 tiles"
         },
         "description": {
-          "raw": "When a battle starts, Galahad marks the nearest allied hero, priortizing the one behind her. When Galahad's magic circle is fully formed for the first time, she summons a shadow that recreates the marked ally as they were at the start of battle. The shadow remains on the battlefield for 12s, inheriting 80 of the ally's basic stats and starting with 400 extra Initial Energy. A shadow is not considered a living hero and cannot be targeted by enemies.",
+          "raw": "When a battle starts, Galahad marks the nearest allied hero, prioritizing the one behind her. When Galahad's magic circle is fully formed for the first time, she summons a shadow that recreates the marked ally as they were at the start of battle. The shadow remains on the battlefield for 12 s, inheriting 80% of the ally's basic stats and starting with 400 extra Initial Energy. A shadow is not considered a living hero and cannot be targeted by enemies.",
           "active": [
             "When a battle starts, Galahad marks the nearest allied hero, priortizing the one behind her.",
             "When Galahad's magic circle is fully formed for the first time, she summons a shadow that recreates the marked ally as they were at the start of battle.",

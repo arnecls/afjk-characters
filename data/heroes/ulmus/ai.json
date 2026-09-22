@@ -112,6 +112,46 @@
             "effects": [
               {
                 "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 35.0
+                  }
+                ],
+                "duration": 10.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ],
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 35.0
+                  }
+                ],
+                "duration": 10.0
+              },
+              {
+                "tier": "base",
                 "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
@@ -128,25 +168,6 @@
                     "value": 175.0
                   }
                 ]
-              }
-            ],
-            "summon_effects": [],
-            "immunities": [],
-            "special_provides": [],
-            "special_requires": []
-          },
-          "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Area",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "radius",
-                "target_count": -1,
-                "area_count": 1,
-                "type": "crowd_control",
-                "cc-type": "knock_back"
               }
             ],
             "summon_effects": [],
@@ -175,7 +196,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 3.5
+                    "value": 5.0
                   }
                 ],
                 "duration": 2,
@@ -211,8 +232,27 @@
         "source_hash": "85314ea6081277352e4528ba2f00775e9ce916d9ff1076581c09e456186f0631",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Max HP",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 29.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -250,7 +290,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 80.0
+                    "value": 120.0
                   }
                 ]
               }
@@ -292,8 +332,20 @@
         "source_hash": "7d1f3baed694e6a35a852de2e24ad5b9ea2a9c8b1be14649e2ac1113848d02ea",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "crowd_control",
+                "cc-type": "knock_back"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

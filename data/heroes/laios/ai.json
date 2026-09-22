@@ -80,7 +80,13 @@
                 "area_count": 1,
                 "type": "debuff",
                 "name": "Magic DEF",
-                "label": "debuff_defensive"
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 49.0
+                  }
+                ]
               },
               {
                 "tier": "base",
@@ -262,38 +268,6 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
-          },
-          "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "battle_phase",
-                    "phase": "once_per_battle"
-                  }
-                ],
-                "type": "buff",
-                "name": "Max HP",
-                "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 20.0
-                  }
-                ],
-                "persistence": "temporary"
-              }
-            ],
-            "summon_effects": [],
-            "immunities": [],
-            "special_provides": [],
-            "special_requires": []
           }
         }
       },
@@ -405,8 +379,34 @@
         "source_hash": "bf0aed9a5ba7c7364acbd4f92169b8ba33c57220d0b928a395c7c7048beec6cb",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 3,
+                    "stack_comparison": "up_to"
+                  }
+                ],
+                "type": "buff",
+                "name": "Max HP",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

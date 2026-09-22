@@ -19,7 +19,7 @@
                 "area_count": 1,
                 "type": "crowd_control",
                 "cc-type": "bind",
-                "duration": 2.0
+                "duration": 4.0
               },
               {
                 "tier": "base",
@@ -79,7 +79,25 @@
                     "type": "percentage",
                     "value": 320.0
                   }
-                ]
+                ],
+                "duration": 5
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 320.0
+                  }
+                ],
+                "duration": 5
               },
               {
                 "tier": "base",
@@ -95,7 +113,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 320.0
+                    "value": 235.0
                   }
                 ]
               }
@@ -126,6 +144,32 @@
         "tiers": {
           "base": {
             "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Haste",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -182,6 +226,125 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 60.0
+                  }
+                ],
+                "duration": 8,
+                "persistence": "temporary"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "damage",
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
+                "label": "damage_max_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 2.5
+                  }
+                ]
+              },
+              {
+                "tier": "ex+10",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "damage",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 2.5
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+15": {
+            "effects": [
+              {
+                "tier": "ex+15",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "damage",
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
+                "label": "damage_max_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 2.8
+                  }
+                ]
+              },
+              {
+                "tier": "ex+15",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "damage",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 2.8
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       },
@@ -226,5 +389,5 @@
     "skill5": "reduce incoming ranged damage taken"
   },
   "play_overview": "[[Korin]] jumps to an ally, **shielding them** while dealing **true damage** to nearby enemies on landing. His ultimate sweeps adjacent foes with **immobilize and knockback**, disrupting packed frontlines. Distant targets eat guaranteed crits on his strike skill for reliable burst. Accumulated team ultimates trigger a **true damage buff** that spikes his follow-up hits. He also **reduces incoming ranged damage** for safer positioning in the back half. He is a flexible **front-to-back protector** with burst true damage. Value falls when **no ally needs a jump shield** or enemies stay outside sweep range. Team ultimate accumulation turns his jump-and-sweep combo into reliable burst against large HP targets when allies cast often.",
-  "counter_overview": "[[Korin]] **jumps to the weakest ally** with a shared shield, then dashes for **true damage**, and his ultimate **immobilizes and knocks back** packed fronts. Team ultimate volume later enchants his spear with max-HP true damage, so long ult-spam fights favour him. Keep fronts from clustering into the sweep, and pressure him or the shielded ally before that buff stacks — [[filter:backline-inhibit]] like [[Bonnie]] or [[Evie]], or lasting wide ultimates like [[Gwyneth]] or [[Shemira]], work better than chasing every jump."
+  "counter_overview": "[[Korin]] **jumps to the weakest ally** with a shared shield, then dashes for **true damage**, and his ultimate **immobilizes and knocks back** packed fronts. Team ultimate volume later enchants his spear with max-HP true damage, so long ult-spam fights favour him. Keep fronts from clustering into the sweep, and pressure him or the shielded ally before that buff stacks \u2014 [[filter:backline-inhibit]] like [[Bonnie]] or [[Evie]], or lasting wide ultimates like [[Gwyneth]] or [[Shemira]], work better than chasing every jump."
 }

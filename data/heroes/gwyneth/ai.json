@@ -48,24 +48,6 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "ATK",
-                "label": "buff_offensive",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 0.1
-                  }
-                ],
-                "persistence": "permanent"
-              },
-              {
-                "tier": "base",
                 "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
@@ -118,7 +100,7 @@
                 "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
+                "area": "radius",
                 "target_count": -1,
                 "area_count": 2,
                 "type": "damage",
@@ -146,6 +128,24 @@
         "tiers": {
           "base": {
             "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 550.0
+                  }
+                ]
+              },
               {
                 "tier": "base",
                 "targeting_label": "Single target",
@@ -204,7 +204,7 @@
                 "value": [
                   {
                     "type": "flat",
-                    "value": 20.0
+                    "value": 25.0
                   }
                 ],
                 "persistence": "temporary"
@@ -236,13 +236,21 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 30.0
+                    "value": 20.0
                   }
                 ],
                 "persistence": "permanent"
-              },
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
               {
-                "tier": "mythic+",
+                "tier": "ex+10",
                 "targeting_label": "Single target",
                 "is_max_known": true,
                 "target": "enemy",
@@ -258,17 +266,32 @@
                     "value": 10.0
                   }
                 ]
-              },
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+15": {
+            "effects": [
               {
-                "tier": "mythic+",
-                "targeting_label": "Single target",
+                "tier": "ex+15",
+                "targeting_label": "Self",
                 "is_max_known": true,
-                "target": "enemy",
+                "target": "self",
                 "area": "single",
                 "target_count": 1,
-                "type": "debuff",
-                "name": "Phys DEF",
-                "label": "debuff_defensive"
+                "type": "buff",
+                "name": "Damage dealt",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],

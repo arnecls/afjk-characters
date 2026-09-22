@@ -11,26 +11,7 @@
             "effects": [],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [
-              {
-                "label": "Cheat death",
-                "tier": "base",
-                "targeting": "Self",
-                "description": "Talene transforms into a ball of flame whenever she is defeated."
-              },
-              {
-                "label": "Transformation",
-                "tier": "base",
-                "targeting": "Self",
-                "description": "Talene transforms into a ball of flame whenever she is defeated."
-              },
-              {
-                "label": "Stacking",
-                "tier": "mythic+",
-                "targeting": "Single target",
-                "description": "Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks."
-              }
-            ],
+            "special_provides": [],
             "special_requires": []
           }
         }
@@ -125,7 +106,20 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Cheat death",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "Talene transforms into a ball of flame whenever she is defeated."
+              },
+              {
+                "label": "Transformation",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "Talene transforms into a ball of flame whenever she is defeated."
+              }
+            ],
             "special_requires": []
           }
         }
@@ -176,6 +170,12 @@
                 "tier": "mythic+",
                 "targeting": "Area",
                 "description": "Pyre of Renewal carrier deals damage equal to 50% of their ATK per second to adjacent enemies from battle start until the battle ends."
+              },
+              {
+                "label": "Stacking",
+                "tier": "mythic+",
+                "targeting": "Single target",
+                "description": "Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks."
               }
             ],
             "special_requires": []

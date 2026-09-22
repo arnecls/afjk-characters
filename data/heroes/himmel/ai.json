@@ -93,9 +93,10 @@
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 2,
                 "type": "crowd_control",
-                "cc-type": "knock_down"
+                "cc-type": "knock_down",
+                "duration": 2.0
               },
               {
                 "tier": "base",
@@ -103,7 +104,7 @@
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 2,
                 "type": "damage",
                 "damage_type": "physical",
                 "name": "Physical",
@@ -131,11 +132,11 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Multiple targets",
                 "is_max_known": true,
                 "target": "ally",
                 "area": "single",
-                "target_count": 1,
+                "target_count": 3,
                 "type": "buff",
                 "name": "Basic stats",
                 "label": "buff_stat",
@@ -146,6 +147,22 @@
                   }
                 ],
                 "persistence": "permanent"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 3,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 1500.0
+                  }
+                ]
               },
               {
                 "tier": "base",
@@ -177,8 +194,27 @@
         "source_hash": "e9bfdc0a9bc49eef0b1fbe861642ae3736ba11d3469e6229387e2899eb023675",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Haste",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -194,11 +230,11 @@
             "effects": [
               {
                 "tier": "mythic+",
-                "targeting_label": "Self",
+                "targeting_label": "Multiple targets",
                 "is_max_known": true,
-                "target": "self",
+                "target": "ally",
                 "area": "single",
-                "target_count": 1,
+                "target_count": 2,
                 "type": "buff",
                 "name": "Max HP",
                 "label": "buff_stat",
@@ -208,7 +244,7 @@
                     "value": 250.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               },
               {
                 "tier": "mythic+",
@@ -226,11 +262,40 @@
                     "value": 12.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
-            "immunities": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "ex+10",
+                "immunity_type": "cleanse",
+                "timing": "on_skill",
+                "targeting_label": "Multiple targets",
+                "target": "ally",
+                "area": "single",
+                "target_count": 3
+              }
+            ],
             "special_provides": [
               {
                 "label": "Named ally on team",

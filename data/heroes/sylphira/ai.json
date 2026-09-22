@@ -76,13 +76,14 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "radius",
+                "target_count": -1,
                 "type": "crowd_control",
-                "cc-type": "silence"
+                "cc-type": "silence",
+                "area_count": 2
               },
               {
                 "tier": "base",

@@ -167,33 +167,15 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "debuff",
-                "name": "Vitality",
-                "label": "debuff_defensive"
-              },
-              {
-                "tier": "base",
                 "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "radius",
                 "target_count": -1,
                 "area_count": 1,
-                "type": "damage",
-                "damage_type": "hp_loss",
-                "name": "HP loss",
-                "label": "damage_hp_loss",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 35.0
-                  }
-                ]
+                "type": "debuff",
+                "name": "Vitality",
+                "label": "debuff_defensive"
               }
             ],
             "summon_effects": [],
@@ -257,7 +239,7 @@
                     "value": 35.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],

@@ -92,22 +92,24 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Arc",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "arc",
+                "target_count": -1,
+                "area_count": 2,
                 "type": "crowd_control",
                 "cc-type": "knock_down",
                 "duration": 1.5
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Arc",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "arc",
+                "target_count": -1,
+                "area_count": 2,
                 "type": "damage",
                 "damage_type": "physical",
                 "name": "Physical",
@@ -167,22 +169,30 @@
             "effects": [
               {
                 "tier": "mythic+",
-                "targeting_label": "Single target",
+                "targeting_label": "All units",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 1,
+                "target_count": -1,
+                "area_count": -1,
                 "type": "debuff",
                 "name": "Phys DEF",
-                "label": "debuff_defensive"
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 55.0
+                  }
+                ]
               },
               {
                 "tier": "mythic+",
-                "targeting_label": "Single target",
+                "targeting_label": "All units",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 1,
+                "target_count": -1,
+                "area_count": -1,
                 "type": "debuff",
                 "name": "Magic DEF",
                 "label": "debuff_defensive",
@@ -195,11 +205,12 @@
               },
               {
                 "tier": "mythic+",
-                "targeting_label": "Single target",
+                "targeting_label": "All units",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 1,
+                "target_count": -1,
+                "area_count": -1,
                 "type": "dot",
                 "damage_type": "dot",
                 "name": "DoT",
@@ -207,19 +218,20 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 560.0
+                    "value": 80.0
                   }
                 ],
-                "duration": 2,
+                "duration": 6.0,
                 "tick": 0.5
               },
               {
                 "tier": "mythic+",
-                "targeting_label": "Single target",
+                "targeting_label": "All units",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 1,
+                "target_count": -1,
+                "area_count": -1,
                 "type": "damage",
                 "damage_type": "physical",
                 "name": "Physical",
@@ -339,6 +351,7 @@
                     "value": 5.0
                   }
                 ],
+                "duration": -1,
                 "tick": 1.0,
                 "conditions": [
                   {

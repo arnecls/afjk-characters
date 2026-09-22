@@ -328,7 +328,7 @@
                 "value": 30.0
               }
             ],
-            "persistence": "temporary"
+            "persistence": "permanent"
           },
           {
             "tier": "base",
@@ -349,7 +349,7 @@
               }
             ],
             "type": "buff",
-            "name": "DEF",
+            "name": "Phys DEF",
             "label": "buff_defensive",
             "value": [
               {
@@ -357,7 +357,7 @@
                 "value": 30.0
               }
             ],
-            "persistence": "temporary"
+            "persistence": "permanent"
           },
           {
             "tier": "base",
@@ -378,44 +378,15 @@
               }
             ],
             "type": "buff",
-            "name": "Crit",
-            "label": "buff_offensive",
+            "name": "Magic DEF",
+            "label": "buff_defensive",
             "value": [
               {
-                "type": "flat",
-                "value": 5.0
-              }
-            ],
-            "persistence": "temporary"
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "trigger_condition",
-                "trigger": "defeat",
-                "ally": true
-              },
-              {
-                "type": "duration_gate",
-                "gate": "once_per_battle"
-              }
-            ],
-            "type": "buff",
-            "name": "Crit DMG boost",
-            "label": "buff_offensive",
-            "value": [
-              {
-                "type": "flat",
+                "type": "percentage",
                 "value": 30.0
               }
             ],
-            "persistence": "temporary"
+            "persistence": "permanent"
           }
         ],
         "skill_range": 3,
@@ -425,15 +396,11 @@
             "polarity": "buff"
           },
           {
-            "label": "Crit — Self",
+            "label": "Magic DEF — Self",
             "polarity": "buff"
           },
           {
-            "label": "Crit DMG boost — Self",
-            "polarity": "buff"
-          },
-          {
-            "label": "DEF — Self",
+            "label": "Phys DEF — Self",
             "polarity": "buff"
           }
         ]
@@ -488,7 +455,7 @@
                 "value": 15.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "permanent"
           },
           {
             "tier": "legendary+",
@@ -512,7 +479,7 @@
                 "value": 20.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "permanent"
           }
         ],
         "skill_range": 1,
@@ -684,7 +651,6 @@
       "atk",
       "haste",
       "crit",
-      "crit_dmg_boost",
       "physical_def",
       "magic_def"
     ],
@@ -902,7 +868,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "af214c0c7e72a526293e61000dba2a744a58a6f7b9763964d25dba48550fa4b1",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "ceb4630e33d5c9a6386bac83ded7ccee2b8bee536f24724a10c22f4818460c23",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

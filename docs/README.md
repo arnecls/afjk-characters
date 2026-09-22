@@ -19,6 +19,7 @@ Guides for the hero data pipeline, scoring algorithms, and curated metadata.
 
 Point-in-time audit reports from roster validation runs (for regression context; run `just validate` for current checks):
 
+- [Per-hero audit progress 2026-09-21](validations/audit-hero-data-progress-2026-09-21.md) (90 of 120 in-scope heroes)
 - [High-level 2026-06-16](validation-high-level-2026-06-16.md) (latest high-level)
 - [Detailed 2026-06-16](validation-detailed-2026-06-16.md) (latest detailed)
 - Older: [2026-06-15](validation-high-level-2026-06-15.md), [2026-06-11](validation-high-level-2026-06-11.md)

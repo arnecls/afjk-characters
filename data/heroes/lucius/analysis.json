@@ -335,16 +335,17 @@
             "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "radius",
+            "area": "rectangle",
             "target_count": -1,
-            "area_count": 3,
+            "area_count": 4,
+            "area_direction": "front",
             "type": "debuff",
             "name": "ATK",
             "label": "debuff_offensive",
             "value": [
               {
                 "type": "percentage",
-                "value": 8.0
+                "value": 12.0
               }
             ]
           },
@@ -366,23 +367,6 @@
                 "value": 90.0
               }
             ]
-          },
-          {
-            "tier": "ex+10",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "debuff",
-            "name": "ATK",
-            "label": "debuff_offensive",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 12.0
-              }
-            ]
           }
         ],
         "cooldown": 13.0,
@@ -397,7 +381,7 @@
             "polarity": "debuff"
           },
           {
-            "label": "ATK — Single target (EX+10)",
+            "label": "ATK — Area (EX+10)",
             "polarity": "debuff"
           }
         ]
@@ -581,7 +565,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "cb38144333ae0b672fa9e1ee6100153d30e5bbb27b5464b3f218f3d483611fba",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "df6891bd24a5bf7cd8bd85ca8dbc95ef302a9811c253fe3d4c317ecba336c4dd",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -123,7 +123,31 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
-                "persistence": "permanent"
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 18.0
+                  }
+                ],
+                "persistence": "unknown"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage dealt",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 25.0
+                  }
+                ],
+                "persistence": "unknown"
               },
               {
                 "tier": "base",
@@ -141,7 +165,7 @@
                     "value": 24.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               },
               {
                 "tier": "base",
@@ -276,34 +300,20 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
-                "type": "buff",
-                "name": "Crit",
-                "label": "buff_offensive",
+                "conditions": [
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  }
+                ],
+                "type": "shield",
+                "name": "Shield",
                 "value": [
                   {
-                    "type": "flat",
+                    "type": "percentage",
                     "value": 20.0
                   }
-                ],
-                "persistence": "unknown"
-              },
-              {
-                "tier": "supreme+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Lifedrain",
-                "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 100.0
-                  }
-                ],
-                "persistence": "unknown"
+                ]
               }
             ],
             "summon_effects": [],

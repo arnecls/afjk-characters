@@ -42,26 +42,7 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [
-              {
-                "label": "Invincibility",
-                "tier": "base",
-                "targeting": "Self",
-                "description": "While Soaring, Kazim is invincible and cannot be targeted."
-              },
-              {
-                "label": "Stacking",
-                "tier": "base",
-                "targeting": "Multiple targets",
-                "description": "Every time Kazim marks an enemy as prey, the wind field grants 10 extra Haste to allies within it, up to 3 stacks."
-              },
-              {
-                "label": "Stacking",
-                "tier": "base",
-                "targeting": "Single target",
-                "description": "Every time Kazim marks an enemy as prey, this arrow's damage and range are permanently increased by 20%, up to 3 stacks."
-              }
-            ],
+            "special_provides": [],
             "special_requires": [
               {
                 "label": "Knock up from allies",
@@ -79,24 +60,6 @@
         "tiers": {
           "base": {
             "effects": [
-              {
-                "tier": "base",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Invincible",
-                "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 500.0
-                  }
-                ],
-                "persistence": "permanent"
-              },
               {
                 "tier": "base",
                 "targeting_label": "Single target",
@@ -140,7 +103,14 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Invincibility",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "While Soaring, Kazim is invincible and cannot be targeted."
+              }
+            ],
             "special_requires": []
           }
         }
@@ -153,11 +123,11 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Multiple targets",
+                "targeting_label": "All units",
                 "is_max_known": true,
                 "target": "ally",
-                "area": "single",
-                "target_count": 3,
+                "area": "zone",
+                "target_count": -1,
                 "type": "buff",
                 "name": "Haste",
                 "label": "buff_offensive",
@@ -167,7 +137,8 @@
                     "value": 30.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "area_count": -1
               },
               {
                 "tier": "base",
@@ -204,7 +175,20 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Stacking",
+                "tier": "base",
+                "targeting": "Multiple targets",
+                "description": "Every time Kazim marks an enemy as prey, the wind field grants 10 extra Haste to allies within it, up to 3 stacks."
+              },
+              {
+                "label": "Stacking",
+                "tier": "base",
+                "targeting": "Single target",
+                "description": "Every time Kazim marks an enemy as prey, this arrow's damage and range are permanently increased by 20%, up to 3 stacks."
+              }
+            ],
             "special_requires": []
           }
         }
@@ -219,6 +203,32 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 33.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       },
@@ -227,26 +237,7 @@
         "is_max_known": true,
         "tiers": {
           "mythic+": {
-            "effects": [
-              {
-                "tier": "mythic+",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "ally",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "ATK",
-                "label": "buff_offensive",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 35.0
-                  }
-                ],
-                "persistence": "permanent"
-              }
-            ],
+            "effects": [],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -403,5 +394,5 @@
     "skill5": "knock up stationary rearmost enemy after aerial start; ATK SPD and Energy on prey marks or defeats"
   },
   "play_overview": "[[Kazim]] opens **invincible in Soaring**, diving at airborne enemies to **mark prey** and stunning them after he lands. His ultimate chains **arc knock-ups** into sustained volleys that scale with attack speed. Marked prey takes **bonus normal-attack damage** and periodic max-HP true damage with knock-up. Allies in his zone gain **Haste stacks from prey marks**, which he can absorb doubled after his aerial phase. He shines when **enemies can be kept airborne or marked** for follow-up focus. Fights with **grounded, spread, or knock-up-immune targets** deny his mark loop and aerial payoff.",
-  "counter_overview": "[[Kazim]] opens **invincible and untargetable in Soaring** for about 10s — do not dump burst into that window. He marks airborne prey, then lands into stun volleys and team Haste from marks; after Soaring ends, punish with mid-fight [[Gwyneth]] or lasting [[Shemira]] coverage — not opener assassins into the air. Blunt knock-up with [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Shakir]] or [[Sylphira]] during his volley windows."
+  "counter_overview": "[[Kazim]] opens **invincible and untargetable in Soaring** for about 10s \u2014 do not dump burst into that window. He marks airborne prey, then lands into stun volleys and team Haste from marks; after Soaring ends, punish with mid-fight [[Gwyneth]] or lasting [[Shemira]] coverage \u2014 not opener assassins into the air. Blunt knock-up with [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Shakir]] or [[Sylphira]] during his volley windows."
 }

@@ -297,6 +297,12 @@
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -344,7 +350,7 @@
         },
         "effects": [
           {
-            "tier": "ex+5",
+            "tier": "ex+15",
             "targeting_label": "Self",
             "is_max_known": true,
             "target": "self",
@@ -365,7 +371,7 @@
         "skill_range": 1,
         "skill_card_tags": [
           {
-            "label": "Lifedrain — Self (EX+5)",
+            "label": "Lifedrain — Self (EX+15)",
             "polarity": "buff"
           }
         ]
@@ -606,7 +612,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "a2ac9de92f00fdaf93af2538dc43d7915a794ba1237789b4f6e67a6d312ba91b",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "9746b3e3d24dc62ca9ed5d4f61375bbeb3d37c95199d3872ebcc0b078bf79503",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -57,12 +57,6 @@
                 "tier": "base",
                 "targeting": "Single target",
                 "description": "Kafra prioritizes attacking the enemy who carries Forest Mark."
-              },
-              {
-                "label": "Marked target (focus fire)",
-                "tier": "base",
-                "targeting": "Area",
-                "description": "When a marked enemy is defeated, Kafra and allies within 2 tiles of this enemy recover 100% (ATK-based) + 15% HP every 0.375s for 1.125s."
               }
             ],
             "special_requires": []
@@ -145,6 +139,45 @@
                 "type": "debuff",
                 "name": "Marked target (focus fire)",
                 "label": "debuff_stat"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "healing_type": "over_time",
+                "name": "Healing over time",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 100.0
+                  }
+                ],
+                "tick": 0.375,
+                "duration": 1.125
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "radius",
+                "target_count": -1,
+                "type": "heal",
+                "area_count": 2,
+                "healing_type": "over_time",
+                "name": "Healing over time",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 100.0
+                  }
+                ],
+                "tick": 0.375,
+                "duration": 1.125
               }
             ],
             "summon_effects": [],
@@ -243,6 +276,31 @@
             ],
             "special_provides": [],
             "special_requires": []
+          },
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 350.0
+                  }
+                ],
+                "duration": 5
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       },
@@ -278,5 +336,5 @@
     "skill5": "first battle charge greatly boosts damage"
   },
   "play_overview": "[[Kafra]] marks an enemy, then **charges out-of-range targets** to stun them on approach for a reliable pick. Marks **shave Phys DEF**, and defeating a marked foe grants **self buffs** that keep his momentum going through the fight. His ultimate knocks back and reapplies the mark, while he **interrupts heals** on anyone treating the marked target. First battle charge greatly **boosts damage** for an opening assassination window against backliners. He excels at **hunting marked targets** in melee-heavy teams that can follow his picks. **Immune or heavily shielded marks** waste his charge, and spread lines deny follow-up kills on secondary targets. In melee-oriented teams with frequent picks, his mark-and-charge loop sustains pressure and can match support healing when marked foes die near grouped allies.",
-  "counter_overview": "[[Kafra]] **marks a target**, then **charges out of range** for a stun and Phys DEF shred — his first chase hits hardest, and he **jumps healers** treating the mark while Unaffected. He relocates too often for a clean assassin pin, and **mark kills heal allies** nearby. Answer with lasting wide ultimates like [[Shemira]] or [[Frieren]], soft-inhibit marked prey with [[filter:backline-inhibit]] like [[Evie]] or [[Bonnie]], and keep healers from feeding his chase loop."
+  "counter_overview": "[[Kafra]] **marks a target**, then **charges out of range** for a stun and Phys DEF shred \u2014 his first chase hits hardest, and he **jumps healers** treating the mark while Unaffected. He relocates too often for a clean assassin pin, and **mark kills heal allies** nearby. Answer with lasting wide ultimates like [[Shemira]] or [[Frieren]], soft-inhibit marked prey with [[filter:backline-inhibit]] like [[Evie]] or [[Bonnie]], and keep healers from feeding his chase loop."
 }

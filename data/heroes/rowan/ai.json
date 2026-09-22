@@ -17,16 +17,14 @@
                 "area": "radius",
                 "target_count": -1,
                 "area_count": 2,
-                "type": "buff",
+                "type": "energy",
                 "name": "Energy",
-                "label": "buff_stat",
                 "value": [
                   {
                     "type": "flat",
                     "value": 350.0
                   }
-                ],
-                "persistence": "permanent"
+                ]
               }
             ],
             "summon_effects": [],
@@ -68,16 +66,14 @@
                 "area": "radius",
                 "target_count": -1,
                 "area_count": 2,
-                "type": "buff",
+                "type": "energy",
                 "name": "Energy",
-                "label": "buff_stat",
                 "value": [
                   {
                     "type": "flat",
                     "value": 400.0
                   }
-                ],
-                "persistence": "permanent"
+                ]
               }
             ],
             "summon_effects": [],
@@ -183,21 +179,20 @@
             "effects": [
               {
                 "tier": "mythic+",
-                "targeting_label": "Self",
+                "targeting_label": "Single target",
                 "is_max_known": true,
-                "target": "self",
+                "target": "ally",
                 "area": "single",
                 "target_count": 1,
-                "type": "buff",
-                "name": "Max HP",
-                "label": "buff_stat",
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 70.0
                   }
-                ],
-                "persistence": "permanent"
+                ]
               },
               {
                 "tier": "mythic+",
@@ -254,42 +249,10 @@
         "is_max_known": true,
         "tiers": {
           "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "ATK",
-                "label": "buff_offensive",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 30.0
-                  }
-                ],
-                "persistence": "temporary"
-              }
-            ],
+            "effects": [],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [
-              {
-                "label": "Named ally on team",
-                "tier": "supreme+",
-                "targeting": "Allies",
-                "description": "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her.",
-                "grants": [
-                  {
-                    "label": "Healing",
-                    "magnitude": "average"
-                  }
-                ]
-              }
-            ],
+            "special_provides": [],
             "special_requires": []
           }
         }

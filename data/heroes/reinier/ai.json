@@ -15,7 +15,7 @@
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 2,
                 "conditions": [
                   {
                     "type": "unit_type",
@@ -31,7 +31,7 @@
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 2,
                 "conditions": [
                   {
                     "type": "unit_type",
@@ -162,6 +162,24 @@
                     "value": 12.0
                   }
                 ]
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -261,7 +279,26 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 4.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

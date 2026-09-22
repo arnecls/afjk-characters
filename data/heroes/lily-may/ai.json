@@ -36,7 +36,7 @@
                 "conditions": [
                   {
                     "type": "unit_type",
-                    "unit_type": "boss"
+                    "unit_type": "non_boss"
                   }
                 ],
                 "type": "crowd_control",
@@ -67,9 +67,21 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "unit_type",
+                    "unit_type": "boss"
+                  }
+                ],
                 "type": "buff",
                 "name": "Damage dealt",
                 "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 400.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],
@@ -87,21 +99,8 @@
               }
             ],
             "special_provides": [
-              {
-                "label": "Invincibility",
-                "tier": "base",
-                "targeting": "Single target",
-                "description": "She remains Invincible during these attacks and returns to her original tile afterward."
-              }
             ],
-            "special_requires": [
-              {
-                "label": "Temporary ally stat buffs",
-                "tier": "mythic+",
-                "targeting": "Allies",
-                "description": "Lily May grows once upon receiving a non-permanent stats boost from an ally."
-              }
-            ]
+            "special_requires": []
           }
         }
       },
@@ -150,33 +149,14 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
-            "special_requires": []
-          },
-          "legendary+": {
-            "effects": [
+            "special_provides": [
               {
-                "tier": "legendary+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "DEF Penetration",
-                "label": "buff_defensive",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 16.0
-                  }
-                ],
-                "persistence": "unknown"
+                "label": "Invincibility",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "She remains Invincible during these attacks and returns to her original tile afterward."
               }
             ],
-            "summon_effects": [],
-            "immunities": [],
-            "special_provides": [],
             "special_requires": []
           }
         }
@@ -253,8 +233,27 @@
         "source_hash": "ba1d60d0856d44487a504b00fba942db9ec2d490ae50c450a0260da70d317870",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "DEF Penetration",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 16.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -271,7 +270,14 @@
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
-            "special_requires": []
+            "special_requires": [
+              {
+                "label": "Temporary ally stat buffs",
+                "tier": "mythic+",
+                "targeting": "Allies",
+                "description": "Lily May grows once upon receiving a non-permanent stats boost from an ally."
+              }
+            ]
           }
         }
       },

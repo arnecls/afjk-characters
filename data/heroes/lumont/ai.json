@@ -89,7 +89,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 50.0
+                    "value": 490.0
                   }
                 ]
               },
@@ -103,6 +103,12 @@
                 "type": "buff",
                 "name": "Phys DEF",
                 "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
                 "persistence": "temporary"
               }
             ],

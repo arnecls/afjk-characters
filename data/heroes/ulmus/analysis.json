@@ -187,6 +187,23 @@
         "effects": [
           {
             "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 35.0
+              }
+            ],
+            "duration": 10.0
+          },
+          {
+            "tier": "base",
             "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
@@ -203,17 +220,6 @@
                 "value": 175.0
               }
             ]
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 1,
-            "type": "crowd_control",
-            "cc-type": "knock_back"
           }
         ],
         "cooldown": 14.0,
@@ -223,7 +229,8 @@
             "label": "Physical"
           },
           {
-            "label": "Knock back — Area (Supreme+)"
+            "label": "Shield — Self",
+            "polarity": "buff"
           }
         ]
       },
@@ -273,7 +280,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 3.5
+                "value": 5.0
               }
             ],
             "duration": 2.0,
@@ -333,10 +340,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 29.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Max HP — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Prowling Roots": {
         "category": "skill4",
@@ -396,7 +426,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 80.0
+                "value": 120.0
               }
             ]
           },
@@ -440,9 +470,24 @@
             "Ulmus knocks back adjacent enemies by 1 tile when the shield granted by Verdant Barrier breaks or vanishes."
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "knock_back"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Knock back — Area"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -470,6 +515,7 @@
       ]
     ],
     "benefit_stats": [
+      "max_hp",
       "shield",
       "energy"
     ],
@@ -638,7 +684,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "7add15c77c1babedfb05eeaf1dafdda6ef5e6bbae3c7ab2e758e4e0ad02fd0b7",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "c244a85b1eea4ecf8dabdb2584193c267ecbcbea58269ccd2190135daa5bfe10",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

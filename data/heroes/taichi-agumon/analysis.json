@@ -523,7 +523,14 @@
       }
     },
     "synergy_profile": {
-      "provides": [],
+      "provides": [
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Wargreymon is invincible while casting this skill."
+        }
+      ],
       "requires": []
     },
     "damage_entries": [
@@ -765,7 +772,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "d837cb6f08386f6717b3e75af75a039428196612562d7a3ba79d9f229613753a",
+    "inputs_hash": "089d64704afc016a50dda251e02f4d80d626b24c41109cb157e5762aa2a89148",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

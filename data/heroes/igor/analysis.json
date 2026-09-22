@@ -153,22 +153,14 @@
             ]
           },
           {
-            "tier": "mythic+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "untargetable",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
             "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "hp_threshold",
-                "hp_ratio": 0.7,
-                "comparison": "above"
-              }
-            ],
-            "type": "debuff",
-            "name": "Healing",
-            "label": "debuff_healing"
+            "target_count": 1
           }
         ],
         "cooldown": 1.0,
@@ -178,8 +170,7 @@
             "label": "Physical"
           },
           {
-            "label": "Healing (Mythic+)",
-            "polarity": "debuff"
+            "label": "Untargetable — Self"
           }
         ]
       },
@@ -336,21 +327,46 @@
         },
         "effects": [
           {
-            "tier": "ex+5",
+            "tier": "mythic+",
             "targeting_label": "Single target",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.7,
+                "comparison": "above"
+              }
+            ],
             "type": "debuff",
             "name": "Healing",
-            "label": "debuff_healing"
+            "label": "debuff_healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ]
           }
         ],
         "skill_range": 10,
         "skill_card_tags": [
           {
+            "label": "Healing",
+            "polarity": "debuff"
+          },
+          {
             "label": "Healing (EX+5)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Healing (EX+10)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Healing (EX+15)",
             "polarity": "debuff"
           }
         ]
@@ -559,7 +575,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "00c1f4677f5ad72e54b8d2f15293bcf58fe75bc74fcf75e9bbfe2f5ee692ea5b",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "8430588263fdfd0ea9f92eb5765717d510b2c3e8e5121fc300b9b67cdf93d51a",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

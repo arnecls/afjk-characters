@@ -320,10 +320,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 33.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Abyssal Embrace": {
         "category": "skill4",
@@ -385,23 +408,11 @@
             "target_count": 1,
             "type": "debuff",
             "name": "ATK",
-            "label": "debuff_offensive"
-          },
-          {
-            "tier": "mythic+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "damage",
-            "damage_type": "magic",
-            "name": "Magic",
-            "label": "damage_normal",
+            "label": "debuff_offensive",
             "value": [
               {
                 "type": "percentage",
-                "value": 600.0
+                "value": 20.0
               }
             ]
           },
@@ -412,6 +423,12 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "controlled"
+              }
+            ],
             "type": "dot",
             "damage_type": "dot",
             "name": "DoT",
@@ -419,11 +436,11 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 600.0
+                "value": 70.0
               }
             ],
             "duration": 1.0,
-            "tick": 1.0
+            "tick": 0.5
           },
           {
             "tier": "ex+10",
@@ -440,15 +457,40 @@
                 "value": 600.0
               }
             ]
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_shield"
+              }
+            ],
+            "type": "buff",
+            "name": "Magic damage",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "skill_range": 10,
         "skill_card_tags": [
           {
-            "label": "Magic"
+            "label": "DoT"
           },
           {
-            "label": "DoT"
+            "label": "Magic damage — Self (EX+10)",
+            "polarity": "buff"
           },
           {
             "label": "Shield — Self (EX+10)",
@@ -473,9 +515,38 @@
             "While permanently empowered, Nerion gains 30 extra Penetration if he has more than 800 Energy."
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
+            "type": "buff",
+            "name": "DEF Penetration",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "DEF Penetration — Self",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -483,8 +554,8 @@
         {
           "label": "Enhanced form",
           "tier": "supreme+",
-          "targeting": "Single target",
-          "description": "When all non-summoned enemies on the battlefield are under the drowning effect, or if a total of 4 non-summoned enemies have been affected by it, Nerion immediately gains 1000 Energy and becomes permanently empowered by the force of the tide."
+          "targeting": "Self",
+          "description": "When all non-summoned enemies on the battlefield are under the drowning effect, or if a total of 4 non-summoned enemies have been affected by it, Nerion gains 1000 Energy and becomes permanently empowered; while empowered and above 800 Energy, he gains 30 DEF Penetration."
         }
       ],
       "requires": [
@@ -692,7 +763,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "6cc2293608136509555f8702366d85b1e4c057ec480ac1476fd5ec6615988c33",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "b80ba0152d8a730aeacfbfe69dc2b953cc3a5975445cbaa4bb9786325c21d5b7",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

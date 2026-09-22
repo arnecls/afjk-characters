@@ -8,7 +8,40 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 140.0
+                  }
+                ]
+              }
+            ],
             "summon_effects": [],
             "immunities": [
               {
@@ -72,12 +105,12 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "All units",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "zone",
+                "area": "rectangle",
                 "target_count": -1,
-                "area_count": -1,
+                "area_direction": "front",
                 "type": "damage",
                 "damage_type": "magic",
                 "name": "Magic",
@@ -91,14 +124,32 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "All units",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "zone",
+                "area": "rectangle",
                 "target_count": -1,
-                "area_count": -1,
+                "area_direction": "front",
                 "type": "crowd_control",
                 "cc-type": "knock_down"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 320.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -137,6 +188,12 @@
                 "type": "buff",
                 "name": "Vitality",
                 "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 19.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],

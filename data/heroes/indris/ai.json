@@ -101,20 +101,7 @@
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
-            "special_requires": [
-              {
-                "label": "Multiple debuffs on target",
-                "tier": "base",
-                "targeting": "Enemies",
-                "description": "When an enemy is afflicted by at least 3 different stat reduction debuffs from Indris or his allies, the enemy's weakness is exposed."
-              },
-              {
-                "label": "Passive with internal cooldown",
-                "tier": "base",
-                "targeting": "Enemies",
-                "description": "This effect can trigger once every 4s per enemy."
-              }
-            ]
+            "special_requires": []
           }
         }
       },
@@ -144,11 +131,11 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Multiple targets",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 1,
+                "target_count": 3,
                 "type": "damage",
                 "damage_type": "physical",
                 "name": "Physical",
@@ -164,7 +151,20 @@
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
-            "special_requires": []
+            "special_requires": [
+              {
+                "label": "Multiple debuffs on target",
+                "tier": "base",
+                "targeting": "Enemies",
+                "description": "When an enemy is afflicted by at least 3 different stat reduction debuffs from Indris or his allies, the enemy's weakness is exposed."
+              },
+              {
+                "label": "Passive with internal cooldown",
+                "tier": "base",
+                "targeting": "Enemies",
+                "description": "This effect can trigger once every 4s per enemy."
+              }
+            ]
           }
         }
       },

@@ -19,7 +19,14 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
-                "persistence": "permanent"
+                "persistence": "temporary",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "duration": 5
               },
               {
                 "tier": "base",
@@ -130,7 +137,50 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0,
+                    "modifier": "max_hp"
+                  }
+                ],
+                "duration": 5
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0,
+                    "modifier": "max_hp"
+                  }
+                ],
+                "duration": 5,
+                "conditions": [
+                  {
+                    "type": "affects",
+                    "position": "frontmost"
+                  }
+                ]
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -252,7 +302,44 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
-                "persistence": "permanent"
+                "persistence": "temporary",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ],
+                "duration": 10
+              },
+              {
+                "tier": "ex+15",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "duration": 10,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.5,
+                    "comparison": "below"
+                  },
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  }
+                ],
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],

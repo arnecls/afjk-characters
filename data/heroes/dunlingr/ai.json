@@ -70,7 +70,7 @@
                 "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "radius",
+                "area": "rectangle",
                 "target_count": -1,
                 "area_count": 3,
                 "type": "damage",
@@ -82,26 +82,36 @@
                     "type": "percentage",
                     "value": 55.0
                   }
-                ]
+                ],
+                "area_direction": "front"
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "rectangle",
+                "target_count": -1,
                 "type": "debuff",
                 "name": "Haste",
-                "label": "debuff_offensive"
+                "label": "debuff_offensive",
+                "area_direction": "front",
+                "area_count": 3,
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 60.0
+                  }
+                ],
+                "duration": 4.0
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "rectangle",
+                "target_count": -1,
                 "type": "damage",
                 "damage_type": "lost_hp",
                 "name": "Lost HP-based damage",
@@ -111,7 +121,9 @@
                     "type": "percentage",
                     "value": 3.0
                   }
-                ]
+                ],
+                "area_direction": "front",
+                "area_count": 3
               }
             ],
             "summon_effects": [],
@@ -199,7 +211,7 @@
                 "type": "buff",
                 "name": "ATK",
                 "label": "buff_offensive",
-                "persistence": "temporary"
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -225,7 +237,7 @@
                     "value": 20.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -252,7 +264,13 @@
                 "type": "buff",
                 "name": "ATK SPD",
                 "label": "buff_offensive",
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 50.0
+                  }
+                ]
               },
               {
                 "tier": "supreme+",
@@ -272,54 +290,6 @@
                   }
                 ],
                 "persistence": "temporary"
-              },
-              {
-                "tier": "supreme+",
-                "targeting_label": "All units",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "zone",
-                "target_count": -1,
-                "area_count": -1,
-                "type": "debuff",
-                "name": "Energy",
-                "label": "debuff_stat",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 150.0
-                  }
-                ]
-              },
-              {
-                "tier": "supreme+",
-                "targeting_label": "All units",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "zone",
-                "target_count": -1,
-                "area_count": -1,
-                "type": "debuff",
-                "name": "Haste",
-                "label": "debuff_offensive",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 10.0
-                  }
-                ]
-              },
-              {
-                "tier": "supreme+",
-                "targeting_label": "All units",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "zone",
-                "target_count": -1,
-                "area_count": -1,
-                "type": "debuff",
-                "name": "Vitality",
-                "label": "debuff_defensive"
               }
             ],
             "summon_effects": [],

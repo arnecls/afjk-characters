@@ -86,15 +86,12 @@
                   {
                     "type": "unit_type",
                     "unit_type": "non_boss"
-                  },
-                  {
-                    "type": "unit_type",
-                    "unit_type": "boss"
                   }
                 ],
                 "type": "debuff",
                 "name": "Energy",
-                "label": "debuff_stat"
+                "label": "debuff_stat",
+                "duration": 5.0
               }
             ],
             "summon_effects": [],
@@ -115,7 +112,7 @@
                 "label": "Transformation",
                 "tier": "base",
                 "targeting": "Self",
-                "description": "when the barrier expires, breaks, or is reapplied, it transforms into razor leaves that deal 210% (ATK-based) + 30% damage to Pang's current target."
+                "description": "Pang enters the Unyielding Force stance after the chi burst."
               }
             ],
             "special_requires": []
@@ -174,7 +171,8 @@
                     "type": "percentage",
                     "value": 460.0
                   }
-                ]
+                ],
+                "duration": 9.0
               },
               {
                 "tier": "base",
@@ -201,7 +199,7 @@
                 "type": "immunity",
                 "tier": "base",
                 "immunity_type": "unaffected",
-                "timing": "on_skill",
+                "timing": "form",
                 "targeting_label": "Self",
                 "target": "self",
                 "area": "single",

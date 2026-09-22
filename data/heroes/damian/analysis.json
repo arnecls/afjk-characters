@@ -302,10 +302,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Inventor's Will": {
         "category": "skill4",
@@ -363,7 +386,7 @@
             "value": [
               {
                 "type": "flat",
-                "value": 40.0
+                "value": 55.0
               }
             ],
             "persistence": "temporary"
@@ -608,7 +631,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "168118c2d2a0d1c9461b0b3b889182dca905fcbe467c852ae5b3f68a2b044642",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "07e3bce6224ccd9b8aebc849e6d2d8513dd9351f7fd7c522bf96ff521398f912",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

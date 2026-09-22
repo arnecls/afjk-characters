@@ -106,6 +106,42 @@
                     "value": 250.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 360.0
+                  }
+                ],
+                "duration": 6.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 35.0
+                  }
+                ],
+                "duration": 6.0,
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -134,7 +170,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 14.5
+                    "value": 17.5
                   }
                 ],
                 "persistence": "temporary"
@@ -149,6 +185,12 @@
                 "type": "buff",
                 "name": "Phys DEF",
                 "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 25.0
+                  }
+                ],
                 "persistence": "temporary"
               },
               {
@@ -161,6 +203,12 @@
                 "type": "buff",
                 "name": "Magic DEF",
                 "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 25.0
+                  }
+                ],
                 "persistence": "temporary"
               },
               {
@@ -191,10 +239,38 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 40.0
+                    "value": 60.0
                   }
                 ],
                 "persistence": "permanent"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.4,
+                    "comparison": "below"
+                  },
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  }
+                ],
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

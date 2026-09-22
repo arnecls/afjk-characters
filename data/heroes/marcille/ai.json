@@ -32,7 +32,7 @@
                     "value": 10.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               },
               {
                 "tier": "base",
@@ -57,33 +57,8 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [
-              {
-                "label": "Revive ally",
-                "tier": "mythic+",
-                "targeting": "Single target",
-                "description": "After chanting for 3s, Marcille revives an allied hero and recovers 400% (ATK-based) HP for them."
-              },
-              {
-                "label": "Stacking",
-                "tier": "supreme+",
-                "targeting": "Single target",
-                "description": "During battle, Marcille recovers 10 additional Energy per second for each ally who is currently providing her with a buff, up to 3 stacks."
-              }
-            ],
-            "special_requires": [
-              {
-                "label": "Once per battle",
-                "tier": "mythic+",
-                "description": "However, if Laios is on the team, this skill can revive him one additional time (no position requirement and does not consume the skill's use limit), but this can only trigger once per battle."
-              },
-              {
-                "label": "Named ally on team",
-                "tier": "base",
-                "targeting": "Allies",
-                "description": "If Marcille receives the buff from Laios' cooked meal, she recovers an extra 300 Energy."
-              }
-            ]
+            "special_provides": [],
+            "special_requires": []
           }
         }
       },
@@ -217,21 +192,18 @@
                     "value": 500.0
                   }
                 ]
-              },
-              {
-                "tier": "mythic+",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "crowd_control",
-                "cc-type": "interrupt"
               }
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Revive ally",
+                "tier": "mythic+",
+                "targeting": "Single target",
+                "description": "After chanting for 3s, Marcille revives an allied hero and recovers 400% (ATK-based) HP for them."
+              }
+            ],
             "special_requires": []
           },
           "ex+10": {
@@ -244,16 +216,18 @@
                 "area": "zone",
                 "target_count": -1,
                 "area_count": -1,
-                "type": "damage",
+                "type": "dot",
                 "damage_type": "magic",
                 "name": "Magic",
                 "label": "damage_normal",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 500.0
+                    "value": 250.0
                   }
-                ]
+                ],
+                "duration": 3.0,
+                "tick": 1.0
               }
             ],
             "summon_effects": [],
@@ -275,14 +249,21 @@
                 "type": "immunity",
                 "tier": "supreme+",
                 "immunity_type": "unaffected",
-                "timing": "on_skill",
+                "timing": "conditional",
                 "targeting_label": "Self",
                 "target": "self",
                 "area": "single",
                 "target_count": 1
               }
             ],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Stacking",
+                "tier": "supreme+",
+                "targeting": "Self",
+                "description": "During battle, Marcille recovers 10 additional Energy per second for each ally who is currently providing her with a buff, up to 3 stacks."
+              }
+            ],
             "special_requires": []
           }
         }
@@ -306,5 +287,5 @@
     "skill5": "recover extra energy while buffed by allies"
   },
   "play_overview": "[[Marcille]] must **channel every skill**, trading instant casts for heavy payoff once each completes without interruption. Her ultimate **continuously summons companions** while active, and channeled AoE blasts and blinds **heal allies** mid-fight when channels land cleanly. Channeling the ultimate also **raises battle haste**, and she can **revive one fallen ally** after a completed cast. She needs **protection and time** so channels finish before control cancels them. Fights that **interrupt her setup** leave much of her heal and summon value unrealized.",
-  "counter_overview": "[[Marcille]] **channels every skill** — companions, AoE blasts, blinds, heals, and a **revive** — so payoff only lands if casts finish. Break chants with control CC and use [[Lily May]] on her ultimate wind-up before summons and revive land; she is not unaffected mid-channel. **Delete her early** with [[filter:assassin-delete]] like [[Himmel]] or [[Athalia]] before the first channels resolve, and pair [[Pandora]] with [[Lily May]] if a catcher absorbs the first cancel. Once companions are flooding, lasting [[Shemira]] coverage still pressures the stationary caster."
+  "counter_overview": "[[Marcille]] **channels every skill** \u2014 companions, AoE blasts, blinds, heals, and a **revive** \u2014 so payoff only lands if casts finish. Break chants with control CC and use [[Lily May]] on her ultimate wind-up before summons and revive land; she is not unaffected mid-channel. **Delete her early** with [[filter:assassin-delete]] like [[Himmel]] or [[Athalia]] before the first channels resolve, and pair [[Pandora]] with [[Lily May]] if a catcher absorbs the first cancel. Once companions are flooding, lasting [[Shemira]] coverage still pressures the stationary caster."
 }

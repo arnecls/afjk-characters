@@ -238,7 +238,32 @@
                 "value": 35.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "fatal_blow",
+                "self": true
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 35.0
+              }
+            ],
+            "persistence": "temporary"
           },
           {
             "type": "immunity",
@@ -252,6 +277,10 @@
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
           {
             "label": "Lifedrain — Self",
             "polarity": "buff"
@@ -400,6 +429,12 @@
             "type": "buff",
             "name": "Lifedrain",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ],
             "persistence": "temporary"
           }
         ],
@@ -450,7 +485,9 @@
         "Arc"
       ]
     ],
-    "benefit_stats": [],
+    "benefit_stats": [
+      "atk"
+    ],
     "scalar_stat_shares": {
       "atk": 1.0
     },
@@ -620,7 +657,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f10b4e740e27be7b8ef7f7e0bc0064e247132d6e4fdafb6c19dcc881770ac22b",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "2d2c9c38caa1eee51edae9d411f773c7a8d518a61921dc2154b44e9b0412fe06",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

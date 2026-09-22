@@ -28,13 +28,12 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "damage",
-                "damage_type": "physical",
-                "name": "Physical",
                 "label": "damage_normal",
+                "name": "Physical",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 200.0
+                    "value": 500.0
                   }
                 ]
               },
@@ -46,14 +45,14 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "heal",
-                "healing_type": "direct",
                 "name": "Direct healing",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 25.0
                   }
-                ]
+                ],
+                "healing_type": "direct"
               },
               {
                 "tier": "base",
@@ -63,15 +62,9 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Invincible",
                 "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 180.0
-                  }
-                ],
-                "persistence": "permanent"
+                "name": "Invincible",
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -80,14 +73,8 @@
               {
                 "label": "Invincibility",
                 "tier": "base",
-                "targeting": "Single target",
+                "targeting": "Self",
                 "description": "Seth becomes invincible and recovers HP equal to 25% of the total damage dealt during this skill."
-              },
-              {
-                "label": "Stacking",
-                "tier": "base",
-                "targeting": "Single target",
-                "description": "Increases damage of Predator's Lunge by an extra 15% for each casting, up to 5 stacks."
               }
             ],
             "special_requires": []
@@ -141,57 +128,6 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
-          },
-          "mythic+": {
-            "effects": [
-              {
-                "tier": "mythic+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "unit_type",
-                    "unit_type": "non_summoned"
-                  }
-                ],
-                "type": "buff",
-                "name": "Energy",
-                "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 200.0
-                  }
-                ],
-                "persistence": "permanent"
-              }
-            ],
-            "summon_effects": [],
-            "immunities": [],
-            "special_provides": [],
-            "special_requires": []
-          },
-          "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "debuff",
-                "name": "Phys DEF",
-                "label": "debuff_defensive"
-              }
-            ],
-            "summon_effects": [],
-            "immunities": [],
-            "special_provides": [],
-            "special_requires": []
           }
         }
       },
@@ -209,8 +145,8 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Haste",
                 "label": "buff_offensive",
+                "name": "Haste",
                 "value": [
                   {
                     "type": "flat",
@@ -227,8 +163,14 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Lifedrain",
                 "label": "buff_stat",
+                "name": "Lifedrain",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 10.0
+                  }
+                ],
                 "persistence": "permanent"
               },
               {
@@ -239,15 +181,15 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "DEF",
                 "label": "buff_defensive",
+                "name": "DEF",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 25.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               },
               {
                 "tier": "base",
@@ -257,8 +199,8 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Crit",
                 "label": "buff_offensive",
+                "name": "Crit",
                 "value": [
                   {
                     "type": "flat",
@@ -280,7 +222,26 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "label": "buff_offensive",
+                "name": "ATK",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -298,6 +259,38 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "label": "buff_stat",
+                "name": "Energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 260.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_summoned"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       },
@@ -307,6 +300,32 @@
         "tiers": {
           "base": {
             "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "label": "debuff_defensive",
+                "name": "Phys DEF",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ],
+                "duration": 6
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

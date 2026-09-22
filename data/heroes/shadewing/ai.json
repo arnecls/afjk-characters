@@ -145,13 +145,12 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "damage",
-                "damage_type": "magic",
-                "name": "Magic",
                 "label": "damage_normal",
+                "name": "Magic",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 200.0
+                    "value": 170.0
                   }
                 ]
               },
@@ -163,16 +162,16 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "dot",
-                "damage_type": "dot",
-                "name": "DoT",
                 "label": "dot",
+                "name": "DoT",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 140.0
+                    "value": 200.0
                   }
                 ],
-                "duration": 2,
+                "damage_type": "dot",
+                "duration": 5,
                 "tick": 1.0
               }
             ],
@@ -197,43 +196,64 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Invincible",
                 "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 900.0
-                  }
-                ],
-                "persistence": "permanent"
+                "name": "Invincible",
+                "persistence": "temporary"
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "All units",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "zone",
+                "area_count": -1,
+                "target_count": -1,
                 "type": "debuff",
-                "name": "Phys DEF",
-                "label": "debuff_defensive"
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "debuff",
-                "name": "Magic DEF",
                 "label": "debuff_defensive",
+                "name": "Phys DEF",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 20.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "zone",
+                "area_count": -1,
+                "target_count": -1,
+                "type": "debuff",
+                "label": "debuff_defensive",
+                "name": "Magic DEF",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "zone",
+                "area_count": -1,
+                "target_count": -1,
+                "type": "damage",
+                "label": "damage_max_hp",
+                "name": "Max HP-based damage",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 44.0
+                  }
+                ],
+                "damage_type": "max_hp"
               }
             ],
             "summon_effects": [],
@@ -270,12 +290,30 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Energy",
                 "label": "buff_stat",
+                "name": "Energy",
                 "value": [
                   {
                     "type": "flat",
                     "value": 100.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "label": "buff_stat",
+                "name": "Damage dealt",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 48.0
                   }
                 ],
                 "persistence": "permanent"
@@ -302,15 +340,33 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Lifedrain",
+                "label": "buff_offensive",
+                "name": "ATK",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
                 "label": "buff_stat",
+                "name": "Lifedrain",
                 "value": [
                   {
                     "type": "flat",
                     "value": 30.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],

@@ -167,11 +167,29 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
-                "persistence": "permanent"
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 35.0
+                  }
+                ],
+                "duration": 5.0,
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
-            "immunities": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "base",
+                "immunity_type": "cleanse",
+                "timing": "on_skill",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
             "special_provides": [],
             "special_requires": []
           },
@@ -364,21 +382,7 @@
         "is_max_known": true,
         "tiers": {
           "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Area",
-                "is_max_known": true,
-                "target": "ally",
-                "area": "radius",
-                "target_count": -1,
-                "area_count": 1,
-                "type": "buff",
-                "name": "Magic DEF",
-                "label": "buff_defensive",
-                "persistence": "permanent"
-              }
-            ],
+            "effects": [],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

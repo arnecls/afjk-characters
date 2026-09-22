@@ -67,7 +67,8 @@
                     "value": 40.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "duration": 16
               },
               {
                 "tier": "base",
@@ -80,6 +81,33 @@
                 "type": "buff",
                 "name": "ATK",
                 "label": "buff_offensive",
+                "persistence": "temporary",
+                "duration": 16,
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 36.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "buff",
+                "name": "Damage dealt",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 36.0
+                  }
+                ],
+                "duration": 16,
                 "persistence": "temporary"
               }
             ],
@@ -174,6 +202,32 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       },
@@ -251,7 +305,7 @@
                   }
                 ],
                 "type": "buff",
-                "name": "DEF",
+                "name": "Phys DEF",
                 "label": "buff_defensive",
                 "persistence": "permanent"
               },
@@ -333,5 +387,5 @@
     "skill5": "assist or defeat inside zone repositions caster and circle to new target"
   },
   "play_overview": "[[Kordan]] drops a **hunting zone** that cuts damage taken and outside healing while allies inside gain **ATK and Life Drain**. His slash grants a **proportional self-shield**, and knockdown strikes add direct pressure on isolated targets. First takedown inside the circle **permanently enhances skills**, and further kills **reposition the zone** to chase new prey across the field. He wants **melee allies** fighting inside his ring for the full buff package. His circle denies outside healing to enemies beyond the ring when the zone stays active. **Enemies that never enter the zone** or burst that ends before enhancements trigger waste his setup entirely. Ranged foes outside the circle avoid his damage reduction and healing denial. He needs committed melee allies inside the ring for the full payoff.",
-  "counter_overview": "[[Kordan]] drops a **hunting circle** that cuts outside healing and damage into the ring while buffing allies inside, then **enhances and leaps** after the first kill to chase prey. Keep your line out of the ring or end him before **Rage Unleashed** enhancements — outside healers cannot top up allies parked in the zone. Blunt his fast first ultimate with [[Lily May]], delete early with high-damage melee like [[Himmel]] or [[Perseus]], and once he starts leaping use lasting wide ultimates like [[Shemira]] or [[Gwyneth]] rather than chasing each reposition."
+  "counter_overview": "[[Kordan]] drops a **hunting circle** that cuts outside healing and damage into the ring while buffing allies inside, then **enhances and leaps** after the first kill to chase prey. Keep your line out of the ring or end him before **Rage Unleashed** enhancements \u2014 outside healers cannot top up allies parked in the zone. Blunt his fast first ultimate with [[Lily May]], delete early with high-damage melee like [[Himmel]] or [[Perseus]], and once he starts leaping use lasting wide ultimates like [[Shemira]] or [[Gwyneth]] rather than chasing each reposition."
 }

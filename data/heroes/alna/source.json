@@ -161,16 +161,16 @@
               "level": "2",
               "unlock": null,
               "text": [
-                "Reduces the damage taken by 14% during battle.",
-                "For every 10s the battle lasts, the damage reduction increases by 5%, stacking up to 6 times."
+                "Reduces damage taken by 14% during battle.",
+                "For every 10 s the battle lasts, the damage reduction increases by 6%, stacking up to 5 times."
               ]
             },
             {
               "level": "3",
               "unlock": null,
               "text": [
-                "Reduces the damage taken by 18% during battle.",
-                "For every 10s the battle lasts, the damage reduction increases by 5%, stacking up to 7 times."
+                "Reduces damage taken by 18% during battle.",
+                "For every 10 s the battle lasts, the damage reduction increases by 7%, stacking up to 5 times."
               ]
             }
           ]

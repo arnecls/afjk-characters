@@ -178,7 +178,7 @@
         "unlock": "Unlocks at Mythic+",
         "meta": {},
         "description": {
-          "raw": "Shakir can cast his Ultimate once his Energy exceeds 800. Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate.",
+          "raw": "Shakir can cast his Ultimate once his Energy exceeds 700. Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate.",
           "active": [
             "Shakir can cast his Ultimate once his Energy exceeds 800.",
             "Shakir stays in Wolf Form and consumes no Energy within 5s each time after casting the Ultimate."
@@ -202,7 +202,7 @@
               "level": "4",
               "unlock": "Unlocks at EX. +15",
               "text": [
-                "Shakir can cast Ultimate upon reaching over 700 Energy."
+                "Shakir stays in Wolf Form and consumes no Energy within 8s each time after casting his Ultimate."
               ]
             }
           ]

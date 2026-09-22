@@ -48,6 +48,12 @@
                 "tier": "base",
                 "targeting": "Single target",
                 "description": "Florabelle summons Spiny when a battle starts."
+              },
+              {
+                "label": "Summoning",
+                "tier": "base",
+                "targeting": "Single target",
+                "description": "Florabelle summons Smashy at a selected tile when using the skill actively."
               }
             ],
             "special_requires": []
@@ -208,9 +214,9 @@
             "summon_effects": [
               {
                 "tier": "ex+10",
-                "targeting_label": "Owned summons",
+                "targeting_label": "All summons",
                 "is_max_known": true,
-                "target": "own_summons",
+                "target": "all_summons",
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
@@ -222,13 +228,13 @@
                     "value": 27.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "temporary"
               },
               {
                 "tier": "ex+10",
-                "targeting_label": "Owned summons",
+                "targeting_label": "All summons",
                 "is_max_known": true,
-                "target": "own_summons",
+                "target": "all_summons",
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
@@ -240,7 +246,7 @@
                     "value": 32.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "temporary"
               }
             ],
             "immunities": [],

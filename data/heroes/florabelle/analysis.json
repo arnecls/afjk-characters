@@ -353,9 +353,9 @@
           },
           {
             "tier": "ex+10",
-            "targeting_label": "Owned summons",
+            "targeting_label": "All summons",
             "is_max_known": true,
-            "target": "own_summons",
+            "target": "all_summons",
             "area": "single",
             "target_count": 1,
             "type": "buff",
@@ -367,13 +367,13 @@
                 "value": 27.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "temporary"
           },
           {
             "tier": "ex+10",
-            "targeting_label": "Owned summons",
+            "targeting_label": "All summons",
             "is_max_known": true,
-            "target": "own_summons",
+            "target": "all_summons",
             "area": "single",
             "target_count": 1,
             "type": "buff",
@@ -385,7 +385,7 @@
                 "value": 32.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
@@ -394,11 +394,11 @@
             "polarity": "buff"
           },
           {
-            "label": "Haste — Owned (EX+10)",
+            "label": "Haste — Summons (EX+10)",
             "polarity": "buff"
           },
           {
-            "label": "Lifedrain — Owned (EX+10)",
+            "label": "Lifedrain — Summons (EX+10)",
             "polarity": "buff"
           }
         ]
@@ -659,7 +659,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f0232e0bb5aa6063c10f98a3995cc3a1dae1e76d4fc4c87f28af664ea2db64aa",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "a04d6b40356ca5179642bb3b97afb3d8b9a5641b881bdbdcdef96e99a7c1bb52",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

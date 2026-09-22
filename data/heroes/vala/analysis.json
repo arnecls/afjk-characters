@@ -467,6 +467,29 @@
             "persistence": "temporary"
           },
           {
+            "tier": "ex+10",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "defeat"
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ]
+          },
+          {
             "type": "immunity",
             "tier": "mythic+",
             "immunity_type": "untargetable",
@@ -479,6 +502,10 @@
         ],
         "skill_range": 3,
         "skill_card_tags": [
+          {
+            "label": "Direct healing — Self (EX+10)",
+            "polarity": "buff"
+          },
           {
             "label": "Haste — Self",
             "polarity": "buff"
@@ -519,7 +546,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 20.0
+                "value": 10.0
               }
             ]
           }
@@ -779,7 +806,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "9eae4f77a1f380d0eccd8d42dec3c702fe68c68c4852ecf96b401f9cee7ce577",
+    "inputs_hash": "516f6590a0f8dfb835ed08e1d609dfc0fd94a0d99cdd9462d2cdc9969dc8f971",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

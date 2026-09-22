@@ -150,6 +150,23 @@
                     "value": 250.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 3,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 250.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],

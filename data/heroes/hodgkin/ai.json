@@ -257,36 +257,14 @@
                 ],
                 "type": "debuff",
                 "name": "Phys DEF",
-                "label": "debuff_defensive"
-              },
-              {
-                "tier": "supreme+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Energy",
-                "label": "buff_stat",
+                "label": "debuff_defensive",
                 "value": [
                   {
-                    "type": "flat",
-                    "value": 150.0
+                    "type": "percentage",
+                    "value": 15.0
                   }
                 ],
-                "persistence": "permanent"
-              },
-              {
-                "tier": "supreme+",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "debuff",
-                "name": "Vitality",
-                "label": "debuff_defensive"
+                "duration": 10
               }
             ],
             "summon_effects": [],

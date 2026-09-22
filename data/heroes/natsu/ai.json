@@ -122,7 +122,8 @@
                     "type": "flat",
                     "value": 80.0
                   }
-                ]
+                ],
+                "duration": 5.0
               },
               {
                 "tier": "base",
@@ -210,35 +211,15 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "trigger_condition",
-                    "trigger": "defeat",
-                    "ally": true
-                  },
-                  {
-                    "type": "duration_gate",
-                    "gate": "once_per_battle"
-                  }
-                ],
                 "type": "buff",
                 "name": "ATK",
-                "label": "buff_offensive",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 30.0
                   }
                 ],
-                "persistence": "temporary"
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
+                "persistence": "permanent",
                 "conditions": [
                   {
                     "type": "trigger_condition",
@@ -250,24 +231,24 @@
                     "gate": "once_per_battle"
                   }
                 ],
+                "label": "buff_offensive"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
                 "type": "buff",
-                "name": "DEF",
-                "label": "buff_defensive",
+                "name": "Phys DEF",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 30.0
                   }
                 ],
-                "persistence": "temporary"
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
+                "persistence": "permanent",
                 "conditions": [
                   {
                     "type": "trigger_condition",
@@ -279,16 +260,7 @@
                     "gate": "once_per_battle"
                   }
                 ],
-                "type": "buff",
-                "name": "Crit",
-                "label": "buff_offensive",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 5.0
-                  }
-                ],
-                "persistence": "temporary"
+                "label": "buff_defensive"
               },
               {
                 "tier": "base",
@@ -297,6 +269,15 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
+                "type": "buff",
+                "name": "Magic DEF",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "permanent",
                 "conditions": [
                   {
                     "type": "trigger_condition",
@@ -308,16 +289,7 @@
                     "gate": "once_per_battle"
                   }
                 ],
-                "type": "buff",
-                "name": "Crit DMG boost",
-                "label": "buff_offensive",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 5.0
-                  }
-                ],
-                "persistence": "temporary"
+                "label": "buff_defensive"
               }
             ],
             "summon_effects": [],
@@ -362,7 +334,7 @@
                     "value": 15.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               },
               {
                 "tier": "legendary+",
@@ -386,7 +358,7 @@
                     "value": 20.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],

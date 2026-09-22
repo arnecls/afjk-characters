@@ -200,6 +200,45 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 2,
+                "type": "dot",
+                "damage_type": "dot",
+                "name": "DoT",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 45.0
+                  }
+                ],
+                "duration": 10,
+                "tick": 1.0,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "cast",
+                    "self": true,
+                    "skill_type": "ultimate"
+                  },
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       },

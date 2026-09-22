@@ -215,10 +215,10 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 140.0
+                "value": 200.0
               }
             ],
-            "duration": 2.0,
+            "duration": 5.0,
             "tick": 1.0
           }
         ],
@@ -290,26 +290,34 @@
                 "value": 900.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "All units",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
             "type": "debuff",
             "name": "Phys DEF",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "All units",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
             "type": "debuff",
             "name": "Magic DEF",
             "label": "debuff_defensive",
@@ -319,20 +327,42 @@
                 "value": 20.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 44.0
+              }
+            ]
           }
         ],
         "skill_range": 1,
         "skill_card_tags": [
           {
+            "label": "Max HP-based damage"
+          },
+          {
             "label": "Invincible — Self",
             "polarity": "buff"
           },
           {
-            "label": "Magic DEF",
+            "label": "Magic DEF — All units",
             "polarity": "debuff"
           },
           {
-            "label": "Phys DEF",
+            "label": "Phys DEF — All units",
             "polarity": "debuff"
           }
         ]
@@ -416,10 +446,32 @@
               }
             ],
             "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage dealt",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 48.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_range": 3,
         "skill_card_tags": [
+          {
+            "label": "Damage dealt — Self",
+            "polarity": "buff"
+          },
           {
             "label": "Energy — Self",
             "polarity": "buff"
@@ -445,6 +497,24 @@
             "area": "single",
             "target_count": 1,
             "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
             "name": "Lifedrain",
             "label": "buff_stat",
             "value": [
@@ -453,10 +523,14 @@
                 "value": 30.0
               }
             ],
-            "persistence": "temporary"
+            "persistence": "permanent"
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
           {
             "label": "Lifedrain — Self",
             "polarity": "buff"
@@ -508,6 +582,10 @@
       [
         "dot",
         "Single target"
+      ],
+      [
+        "max_hp",
+        "All units"
       ],
       [
         "lost_hp",
@@ -713,7 +791,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "a5ff1f6036018f6d48cab1ecab62114e1afcc710d10dcffc731de7b44f86117d",
+    "inputs_hash": "74d782a67805a0aa6c66e6bfe046d05d736af32ed14e5575a2dbf7f59c3668ff",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

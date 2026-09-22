@@ -23,7 +23,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 660.0
+                    "value": 360.0
                   }
                 ]
               },
@@ -41,35 +41,16 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 620.0
-                  }
-                ]
-              }
-            ],
-            "summon_effects": [],
-            "immunities": [],
-            "special_provides": [],
-            "special_requires": []
-          },
-          "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Energy",
-                "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 250.0
+                    "value": 600.0
                   }
                 ],
-                "persistence": "permanent"
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.4,
+                    "comparison": "below"
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -116,36 +97,6 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
-            "special_requires": []
-          },
-          "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "debuff",
-                "name": "Vitality",
-                "label": "debuff_defensive"
-              }
-            ],
-            "summon_effects": [],
-            "immunities": [
-              {
-                "type": "immunity",
-                "tier": "supreme+",
-                "immunity_type": "unaffected",
-                "timing": "permanent",
-                "targeting_label": "Self",
-                "target": "self",
-                "area": "single",
-                "target_count": 1
-              }
-            ],
             "special_provides": [],
             "special_requires": []
           }
@@ -259,6 +210,14 @@
                     "type": "percentage",
                     "value": 15.0
                   }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "kill",
+                    "self": true,
+                    "skill_type": "ultimate"
+                  }
                 ]
               },
               {
@@ -276,6 +235,14 @@
                   {
                     "type": "percentage",
                     "value": 15.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "kill",
+                    "self": true,
+                    "skill_type": "ultimate"
                   }
                 ]
               }
@@ -297,16 +264,22 @@
                 "tier": "supreme+",
                 "targeting_label": "Single target",
                 "is_max_known": true,
-                "target": "enemy",
+                "target": "self",
                 "area": "single",
                 "target_count": 1,
-                "type": "debuff",
-                "name": "Max HP",
-                "label": "debuff_stat",
+                "type": "energy",
                 "value": [
                   {
-                    "type": "percentage",
-                    "value": 20.0
+                    "type": "flat",
+                    "value": 250.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "kill",
+                    "self": true,
+                    "skill_type": "ultimate"
                   }
                 ]
               }

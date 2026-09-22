@@ -68,7 +68,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 12.0
+                "value": 14.0
               }
             ],
             "persistence": "temporary"
@@ -90,6 +90,25 @@
                 "value": 300.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Arc",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 15.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "skill_range": 3,
@@ -101,6 +120,10 @@
           },
           {
             "label": "ATK — Arc",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK SPD — Arc",
             "polarity": "buff"
           }
         ]
@@ -150,7 +173,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 50.0
+                "value": 65.0
               }
             ],
             "duration": 5.0,
@@ -202,11 +225,12 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "All units",
             "is_max_known": true,
             "target": "ally",
-            "area": "single",
-            "target_count": 1,
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
             "type": "heal",
             "healing_type": "direct",
             "name": "Direct healing",
@@ -244,7 +268,7 @@
             "label": "Magic"
           },
           {
-            "label": "Direct healing",
+            "label": "Direct healing — All units",
             "polarity": "buff"
           }
         ]
@@ -273,10 +297,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 29.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "HP — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Grand Entrance": {
         "category": "skill4",
@@ -321,9 +368,121 @@
             "name": "Vitality",
             "label": "buff_defensive",
             "persistence": "permanent"
+          },
+          {
+            "tier": "ex+5",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 14.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "ex+5",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 15.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "ex+5",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 65.0
+              }
+            ],
+            "duration": 5.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "ex+5",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "Direct healing (EX+5)",
+            "polarity": "buff"
+          },
+          {
+            "label": "HoT (EX+5)",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK (EX+5)",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK SPD (EX+5)",
+            "polarity": "buff"
+          },
           {
             "label": "Vitality (EX+5)",
             "polarity": "buff"
@@ -339,9 +498,31 @@
             "This effect can only be triggered once each time this skill is used."
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Direct healing",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -497,7 +678,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "0393c9c2960a04c4a840b92ee23c523deeae5a4d4e4e52640c5a58932e321674",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "6bd532d198b55ca65b07cde61c3f5c68bdd5779a90ab52cb03bc89d31dbfc0c5",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

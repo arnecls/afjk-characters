@@ -73,6 +73,31 @@
                 "value": 520.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "defeat"
+              }
+            ],
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "duration": 5.0,
+            "persistence": "temporary"
           }
         ],
         "skill_range": 10,
@@ -80,6 +105,10 @@
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
           }
         ]
       },
@@ -527,7 +556,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f06d17762ac553374d92a66faf1c6e64bba68ef2d8d20b2ecef60fa274e0c63c",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "f00606dfc3991783ef636655d3249a3a70d6010f3da62590577b75c8d6556dbd",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

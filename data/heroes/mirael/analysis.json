@@ -309,12 +309,47 @@
                 "value": 185.0
               }
             ]
+          },
+          {
+            "tier": "ex+5",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "cast",
+                "self": true,
+                "skill_type": "ultimate"
+              },
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 45.0
+              }
+            ],
+            "duration": 10.0,
+            "tick": 1.0
           }
         ],
         "skill_range": 1,
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "DoT (EX+5)"
           }
         ]
       },
@@ -351,7 +386,7 @@
       ],
       [
         "dot",
-        "Single target"
+        "Multiple targets, Single target"
       ]
     ],
     "benefit_stats": [
@@ -491,7 +526,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "cdd199b2ad042d040cc8adade69fc5c11e590d291cbb7dc48cbc1b2e815e5981",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "c4b6c0301ffd474e212eb60fc543e2611bac82cae3a71ae0027bf6edeb41bb21",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

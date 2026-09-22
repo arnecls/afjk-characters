@@ -225,11 +225,11 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Multiple targets",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": 1,
+            "target_count": 3,
             "type": "damage",
             "damage_type": "physical",
             "name": "Physical",
@@ -520,7 +520,7 @@
     "damage_entries": [
       [
         "physical",
-        "Single target"
+        "Multiple targets, Single target"
       ],
       [
         "max_hp",
@@ -719,7 +719,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "9900fa405ad1907e482753f6f7a0c5c2ea1d8f7bb49f037dc5ba808398bd856c",
+    "inputs_hash": "3de8d4c9e6f60263ed89926bffd9f187ce7fca71d1d97d2d8c21d7d9e2e27cdc",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

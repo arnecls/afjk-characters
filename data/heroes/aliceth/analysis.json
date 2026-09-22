@@ -291,11 +291,22 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Multiple targets",
+            "targeting_label": "Single target",
             "is_max_known": true,
-            "target": "ally",
+            "target": "enemy",
             "area": "single",
-            "target_count": 3,
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Marked target (focus fire)",
+            "label": "debuff_stat"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
             "type": "buff",
             "name": "DEF Penetration",
             "label": "buff_defensive",
@@ -306,22 +317,11 @@
               }
             ],
             "persistence": "temporary"
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Multiple targets",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 3,
-            "type": "debuff",
-            "name": "Marked target (focus fire)",
-            "label": "debuff_stat"
           }
         ],
         "skill_card_tags": [
           {
-            "label": "DEF Penetration — Multiple targets",
+            "label": "DEF Penetration — Self",
             "polarity": "buff"
           },
           {
@@ -329,7 +329,7 @@
             "polarity": "debuff"
           },
           {
-            "label": "Marked target (focus fire) — Multiple targets",
+            "label": "Marked target (focus fire)",
             "polarity": "debuff"
           }
         ]
@@ -379,34 +379,12 @@
               }
             ],
             "persistence": "permanent"
-          },
-          {
-            "tier": "legendary+",
-            "targeting_label": "Multiple targets",
-            "is_max_known": true,
-            "target": "ally",
-            "area": "single",
-            "target_count": 3,
-            "type": "buff",
-            "name": "ATK",
-            "label": "buff_offensive",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 16.0
-              }
-            ],
-            "persistence": "permanent"
           }
         ],
         "skill_range": 1,
         "skill_card_tags": [
           {
             "label": "ATK — Self",
-            "polarity": "buff"
-          },
-          {
-            "label": "ATK — Multiple targets",
             "polarity": "buff"
           }
         ]
@@ -607,14 +585,8 @@
         {
           "label": "Marked target (focus fire)",
           "tier": "base",
-          "targeting": "Multiple targets",
-          "description": "She and allies with Brightfeather both prioritize attacking the marked enemy, and their attacks against that enemy gain an extra 35 + 5 Penetration."
-        },
-        {
-          "label": "Marked target (focus fire)",
-          "tier": "base",
           "targeting": "Single target",
-          "description": "After Aliceth locks on the same enemy for 6s or casts her Ultimte, the Mark of Judgement is enhanced."
+          "description": "She and allies with Brightfeather both prioritize attacking the marked enemy, and their attacks against that enemy gain an extra 35 + 5 Penetration."
         },
         {
           "label": "Instant defeat",
@@ -652,7 +624,8 @@
       ]
     ],
     "benefit_stats": [
-      "atk"
+      "atk",
+      "def_penetration"
     ],
     "scalar_stat_shares": {
       "atk": 0.8235294117647058,
@@ -879,7 +852,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "62941714d30e5eb057c7a8938a3028973199381e0babbc985be221686b97ae3e",
+    "inputs_hash": "e4afe45ae6ba34c1aa501bb83cc863ca6ed57cd020dc1efcdd8ab4dc59c9e096",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -41,7 +41,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 29.0
+                    "value": 30.0
                   }
                 ],
                 "duration": -1,
@@ -99,38 +99,17 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "status_condition",
-                    "status": "debuffed"
-                  },
-                  {
-                    "type": "trigger_condition",
-                    "trigger": "normal_attack"
-                  }
-                ],
-                "type": "debuff",
-                "name": "DoT",
-                "label": "dot",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 29.0
-                  }
-                ]
-              }
-            ],
+            "effects": [],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Stacking",
+                "tier": "base",
+                "targeting": "Single target",
+                "description": "Normal attacks permanently increase Dart Poison base damage on a poisoned target."
+              }
+            ],
             "special_requires": []
           }
         }
@@ -201,6 +180,35 @@
                 "description": "Odie immediately defeats poisoned enemies when their HP drops below a scaling Dart Poison threshold."
               }
             ],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 600.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
             "special_requires": []
           }
         }

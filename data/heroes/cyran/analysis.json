@@ -407,7 +407,7 @@
             "value": [
               {
                 "type": "flat",
-                "value": 20.0
+                "value": 30.0
               }
             ],
             "persistence": "temporary"
@@ -451,7 +451,13 @@
             "area_count": -1,
             "type": "debuff",
             "name": "ATK SPD",
-            "label": "debuff_offensive"
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ]
           },
           {
             "tier": "mythic+",
@@ -742,7 +748,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "94f9fd4e88e935c52e1274ae02d3541a8871377e86e3189249e1ad16ffd43aaf",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "358de98289bb5b9a408d4fe28be0eff5c82972eec39058be64c25b0a03e60853",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

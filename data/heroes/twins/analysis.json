@@ -62,11 +62,11 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Multiple targets",
+            "targeting_label": "Self",
             "is_max_known": true,
-            "target": "ally",
+            "target": "self",
             "area": "single",
-            "target_count": 3,
+            "target_count": 1,
             "type": "buff",
             "name": "Max HP",
             "label": "buff_stat",
@@ -122,7 +122,7 @@
             "polarity": "buff"
           },
           {
-            "label": "Max HP — Multiple targets",
+            "label": "Max HP — Self",
             "polarity": "buff"
           },
           {
@@ -310,6 +310,23 @@
         "effects": [
           {
             "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 180.0
+              }
+            ],
+            "duration": 4.4
+          },
+          {
+            "tier": "base",
             "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
@@ -325,7 +342,7 @@
             "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
+            "area": "radius",
             "target_count": -1,
             "area_count": 1,
             "type": "damage",
@@ -366,6 +383,10 @@
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "Shield — Multiple targets",
+            "polarity": "buff"
           },
           {
             "label": "Blind — Area"
@@ -563,6 +584,7 @@
     ],
     "benefit_stats": [
       "haste",
+      "max_hp",
       "energy"
     ],
     "scalar_stat_shares": {
@@ -794,7 +816,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "384588f7a59f41667e00789fd9744daa2dece6d9ab60f5e422278b3e07cd5f50",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "280a239441aa9fbd84471ea321d92283cffdb1669a174beb42c73f66d3e4d031",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

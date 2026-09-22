@@ -126,7 +126,8 @@
                     "value": 70.0
                   }
                 ],
-                "persistence": "permanent"
+            "duration": 10.0,
+            "persistence": "temporary"
               },
               {
                 "tier": "base",
@@ -191,6 +192,30 @@
                 ],
                 "persistence": "unknown"
               },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "defeat",
+                "enemy": true
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
+          },
               {
                 "tier": "base",
                 "targeting_label": "Area",
@@ -402,14 +427,14 @@
         "source_hash": "e7ab032fb6725a4a28c4c03751b6c017bb521f818837518bbfc8f3bc7e042f97",
         "is_max_known": true,
         "tiers": {
-          "base": {
+      "supreme+": {
             "effects": [],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [
               {
                 "label": "Cheat death",
-                "tier": "base",
+            "tier": "supreme+",
                 "targeting": "Self",
                 "description": "When Zorya would take a fatal blow, she channels all her Energy to survive and immediately enters her dormant state."
               }

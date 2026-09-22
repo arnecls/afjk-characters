@@ -175,7 +175,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 50.0
+                "value": 490.0
               }
             ]
           },
@@ -189,6 +189,12 @@
             "type": "buff",
             "name": "Phys DEF",
             "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
             "persistence": "temporary"
           }
         ],
@@ -723,7 +729,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "9422f7eb88ee1ed808f0ba0041596cd34ac1aab05f4327970284f7f4dfa5b3b1",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "512a7e948ef0e9aa468ea9bcce33c5af1b6edfd4878c9fd1ab4e03a1e174a1c2",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

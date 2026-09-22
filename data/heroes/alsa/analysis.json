@@ -115,6 +115,29 @@
             "label": "debuff_stat"
           },
           {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
+            "duration": 7.0
+          },
+          {
             "type": "immunity",
             "tier": "base",
             "immunity_type": "immune",
@@ -130,6 +153,10 @@
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
           },
           {
             "label": "Movement speed — Area",
@@ -699,7 +726,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "be17ee65a0357d9241587b1f3e3afd453ce6da10e36f65f3a498819f9304de0f",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "a7c8fea4d68c8db46c6991489adf3cb1233130a459443c3e8b993c41632cf525",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

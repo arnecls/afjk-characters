@@ -92,7 +92,7 @@
             "conditions": [
               {
                 "type": "unit_type",
-                "unit_type": "boss"
+                "unit_type": "non_boss"
               }
             ],
             "type": "crowd_control",
@@ -123,9 +123,21 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "boss"
+              }
+            ],
             "type": "buff",
             "name": "Damage dealt",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 400.0
+              }
+            ],
             "persistence": "permanent"
           },
           {
@@ -229,24 +241,6 @@
               }
             ],
             "persistence": "permanent"
-          },
-          {
-            "tier": "legendary+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "DEF Penetration",
-            "label": "buff_defensive",
-            "value": [
-              {
-                "type": "flat",
-                "value": 16.0
-              }
-            ],
-            "persistence": "unknown"
           }
         ],
         "cooldown": 20.0,
@@ -257,10 +251,6 @@
           },
           {
             "label": "Invincible — Self",
-            "polarity": "buff"
-          },
-          {
-            "label": "DEF Penetration — Self (Legendary+)",
             "polarity": "buff"
           }
         ]
@@ -394,10 +384,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "DEF Penetration",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 16.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "DEF Penetration — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Rainfall Bliss": {
         "category": "skill4",
@@ -476,7 +489,7 @@
         {
           "label": "Invincibility",
           "tier": "base",
-          "targeting": "Single target",
+          "targeting": "Self",
           "description": "She remains Invincible during these attacks and returns to her original tile afterward."
         }
       ],
@@ -706,7 +719,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "32abeaf495d797b60e47d2aa352ca62e2b23b46b002837f89317ea13d3079b0f",
+    "inputs_hash": "9ece9a262c3015cac9404937e32a63b72b850123962967446fc22aa561d5c320",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

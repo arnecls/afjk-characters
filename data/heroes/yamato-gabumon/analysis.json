@@ -78,7 +78,8 @@
                 "value": 40.0
               }
             ],
-            "persistence": "permanent"
+            "duration": 5.0,
+            "persistence": "temporary"
           },
           {
             "tier": "base",
@@ -131,6 +132,24 @@
                 "value": 36.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 25.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_range": 1,
@@ -144,6 +163,10 @@
           },
           {
             "label": "ATK — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — Self",
             "polarity": "buff"
           },
           {
@@ -261,11 +284,34 @@
             ],
             "duration": 16.0,
             "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
+            "duration": 16.0,
+            "persistence": "temporary"
           }
         ],
         "cooldown": 25.0,
         "skill_range": 1,
         "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
           {
             "label": "Haste — Self",
             "polarity": "buff"
@@ -367,7 +413,7 @@
             "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "radius",
+            "area": "single",
             "target_count": -1,
             "area_count": 1,
             "type": "damage",
@@ -383,12 +429,11 @@
           },
           {
             "tier": "mythic+",
-            "targeting_label": "Area",
+            "targeting_label": "Single target",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": -1,
-            "area_count": 1,
+            "target_count": 1,
             "type": "crowd_control",
             "cc-type": "bind",
             "duration": 2.0
@@ -400,7 +445,7 @@
             "label": "Magic"
           },
           {
-            "label": "Bind — Area"
+            "label": "Bind — Single target"
           }
         ]
       },
@@ -416,6 +461,31 @@
           ]
         },
         "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 3,
+                "stack_comparison": "up_to"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 5.0
+              }
+            ],
+            "persistence": "permanent"
+          },
           {
             "tier": "supreme+",
             "targeting_label": "Area",
@@ -441,6 +511,10 @@
           {
             "label": "HoT — Area",
             "polarity": "buff"
+          },
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
           }
         ]
       }
@@ -452,7 +526,7 @@
     "damage_entries": [
       [
         "magic",
-        "Area"
+        "Area, Single target"
       ],
       [
         "dot",
@@ -667,7 +741,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "b73ba3979deeca1e6bef2593469a1807c4c9d7faf4b9d58a77eb4a3932df2408",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "f0085e69a4bb861e1b1a7c5d2952c6485394c9a616d519a299ce3633e71d0d20",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

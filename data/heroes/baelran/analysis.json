@@ -276,9 +276,10 @@
             "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "radius",
+            "area": "rectangle",
             "target_count": -1,
-            "area_count": 2,
+            "area_count": 3,
+            "area_direction": "front",
             "type": "damage",
             "damage_type": "physical",
             "name": "Physical",
@@ -295,9 +296,10 @@
             "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "radius",
+            "area": "rectangle",
             "target_count": -1,
-            "area_count": 2,
+            "area_count": 3,
+            "area_direction": "front",
             "type": "crowd_control",
             "cc-type": "knock_down",
             "duration": 2.0
@@ -724,7 +726,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "a634a5e187b4e47d6595d65c8e2f8ec7d22f746d6dbd010bbd09c9abb2e3deb8",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "aba8eedda1589f33565dd08b858c1054351c73c53f1505e8a336be3e8ce55429",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

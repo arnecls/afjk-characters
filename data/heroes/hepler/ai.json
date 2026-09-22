@@ -55,14 +55,7 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [
-              {
-                "label": "Invincibility",
-                "tier": "mythic+",
-                "targeting": "Single target",
-                "description": "While in animal form, the ally becomes invincible for 3s."
-              }
-            ],
+            "special_provides": [],
             "special_requires": []
           }
         }
@@ -153,6 +146,42 @@
                 ],
                 "duration": 6,
                 "tick": 1.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 3,
+                "type": "dot",
+                "healing_type": "over_time",
+                "name": "Healing over time",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 160.0
+                  }
+                ],
+                "duration": 6,
+                "tick": 1.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 3,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 640.0
+                  }
+                ],
+                "duration": 15
               }
             ],
             "summon_effects": [],
@@ -193,29 +222,17 @@
         "is_max_known": true,
         "tiers": {
           "mythic+": {
-            "effects": [
-              {
-                "tier": "mythic+",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "ally",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Invincible",
-                "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 80.0
-                  }
-                ],
-                "persistence": "permanent"
-              }
-            ],
+            "effects": [],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Invincibility",
+                "tier": "mythic+",
+                "targeting": "Single target",
+                "description": "While in animal form, the ally becomes invincible for 3s."
+              }
+            ],
             "special_requires": []
           }
         }

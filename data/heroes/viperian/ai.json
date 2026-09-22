@@ -67,6 +67,30 @@
                     "value": 1.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.3,
+                    "comparison": "below"
+                  }
+                ],
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 14.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -110,6 +134,23 @@
                     "value": 240.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 100.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -127,11 +168,12 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "All units",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
                 "conditions": [
                   {
                     "type": "duration_gate",
@@ -298,6 +340,30 @@
                     "value": 14.0
                   }
                 ]
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "defeat"
+                  }
+                ],
+                "type": "buff",
+                "name": "Energy",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 80.0
+                  }
+                ],
+                "persistence": "unknown"
               }
             ],
             "summon_effects": [],

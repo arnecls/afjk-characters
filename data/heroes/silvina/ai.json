@@ -22,7 +22,7 @@
                 "value": [
                   {
                     "type": "flat",
-                    "value": 200.0
+                    "value": 300.0
                   }
                 ]
               },
@@ -79,13 +79,12 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "damage",
-                "damage_type": "physical",
-                "name": "Physical",
                 "label": "damage_normal",
+                "name": "Physical",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 450.0
+                    "value": 365.0
                   }
                 ]
               },
@@ -98,7 +97,7 @@
                 "target_count": 1,
                 "type": "crowd_control",
                 "cc-type": "stun",
-                "duration": 5.0
+                "duration": 5
               }
             ],
             "summon_effects": [],
@@ -113,7 +112,25 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "label": "damage_normal",
+                "name": "Physical",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 180.0
+                  }
+                ]
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -126,7 +143,26 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "label": "buff_offensive",
+                "name": "Crit",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 40.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -157,6 +193,31 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "label": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 600.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       },
@@ -174,8 +235,15 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "debuff",
+                "label": "debuff_defensive",
                 "name": "Vitality",
-                "label": "debuff_defensive"
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 60.0
+                  }
+                ],
+                "duration": 3
               }
             ],
             "summon_effects": [],

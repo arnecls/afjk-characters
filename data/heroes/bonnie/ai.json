@@ -11,11 +11,12 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "All units",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
                 "type": "damage",
                 "damage_type": "magic",
                 "name": "Magic",
@@ -172,12 +173,11 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Area",
+                "targeting_label": "Multiple targets",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "radius",
-                "target_count": -1,
-                "area_count": 2,
+                "area": "single",
+                "target_count": 6,
                 "type": "damage",
                 "damage_type": "magic",
                 "name": "Magic",
@@ -188,24 +188,6 @@
                     "value": 55.0
                   }
                 ]
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Invincible",
-                "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 50.0
-                  }
-                ],
-                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -219,8 +201,27 @@
         "source_hash": "e40e956cfd6022b08e372e2d57dc72a3302d6c0ef13d5657a69bccdd1751aacd",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

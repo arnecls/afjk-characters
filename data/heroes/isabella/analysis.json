@@ -77,6 +77,7 @@
             "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
+            "duration": 8.0,
             "persistence": "temporary"
           },
           {
@@ -89,6 +90,7 @@
             "type": "buff",
             "name": "Phys DEF",
             "label": "buff_defensive",
+            "duration": 8.0,
             "persistence": "temporary"
           },
           {
@@ -101,6 +103,7 @@
             "type": "buff",
             "name": "Magic DEF",
             "label": "buff_defensive",
+            "duration": 8.0,
             "persistence": "temporary"
           },
           {
@@ -113,6 +116,7 @@
             "type": "buff",
             "name": "ATK SPD",
             "label": "buff_offensive",
+            "duration": 8.0,
             "persistence": "temporary"
           },
           {
@@ -125,6 +129,7 @@
             "type": "buff",
             "name": "Haste",
             "label": "buff_offensive",
+            "duration": 8.0,
             "persistence": "temporary"
           },
           {
@@ -143,6 +148,7 @@
                 "value": 15.0
               }
             ],
+            "duration": 8.0,
             "persistence": "temporary"
           }
         ],
@@ -523,13 +529,7 @@
     },
     "synergy_profile": {
       "provides": [],
-      "requires": [
-        {
-          "label": "Once per battle",
-          "tier": "base",
-          "description": "This effect can only trigger once every 5s."
-        }
-      ]
+      "requires": []
     },
     "damage_entries": [
       [
@@ -722,7 +722,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "09fffa80a3e53ebfac9113ee56ac99790bccae2745d9817bd0865d4876957d2f",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "cb840a070511a569960137daaa48d19fceae3f661a1236c10ff40992154817b5",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

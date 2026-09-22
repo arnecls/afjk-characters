@@ -121,6 +121,30 @@
             ]
           },
           {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.3,
+                "comparison": "below"
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 14.0
+              }
+            ]
+          },
+          {
             "type": "immunity",
             "tier": "base",
             "immunity_type": "unaffected",
@@ -141,6 +165,10 @@
           },
           {
             "label": "HP loss"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
           },
           {
             "label": "Unaffected — Self"
@@ -196,6 +224,23 @@
                 "value": 265.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 100.0
+              }
+            ]
           }
         ],
         "cooldown": 8.0,
@@ -204,6 +249,10 @@
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
           }
         ]
       },
@@ -242,11 +291,12 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "All units",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": 1,
+            "target_count": -1,
+            "area_count": -1,
             "conditions": [
               {
                 "type": "duration_gate",
@@ -463,11 +513,39 @@
                 "value": 14.0
               }
             ]
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "defeat"
+              }
+            ],
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 80.0
+              }
+            ],
+            "persistence": "unknown"
           }
         ],
         "skill_card_tags": [
           {
             "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self",
             "polarity": "buff"
           }
         ]
@@ -492,7 +570,8 @@
       ]
     ],
     "benefit_stats": [
-      "haste"
+      "haste",
+      "energy"
     ],
     "scalar_stat_shares": {
       "atk": 0.8,
@@ -659,7 +738,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "28c10d2a412b8f1b78a80c154483bb9968b4adbe788900a119ec51da7033d89c",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "28fd05f60fb5f70b20ac4f55d99f0622a970d072dd9921e1e041019d988aac2b",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

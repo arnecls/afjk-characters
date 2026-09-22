@@ -123,13 +123,13 @@
                 "target_count": -1,
                 "area_count": 1,
                 "type": "dot",
-                "damage_type": "dot",
-                "name": "DoT",
+                "damage_type": "magic",
+                "name": "Magic",
                 "label": "dot",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 140.0
+                    "value": 220.0
                   }
                 ],
                 "duration": 3,
@@ -151,26 +151,9 @@
                     "type": "flat",
                     "value": 150.0
                   }
-                ]
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Area",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "radius",
-                "target_count": -1,
-                "area_count": 1,
-                "type": "damage",
-                "damage_type": "magic",
-                "name": "Magic",
-                "label": "damage_normal",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 220.0
-                  }
-                ]
+                ],
+                "duration": 3.0,
+                "tick": 1.0
               }
             ],
             "summon_effects": [],

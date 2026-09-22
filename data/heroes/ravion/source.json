@@ -208,7 +208,11 @@
               "level": "3",
               "unlock": "Unlocks at EX. +10",
               "text": [
-                "When Ravion or an ally with their Objective takes a fatal blow, Life Saver is triggered to prevent their defeat, granting a 200% (ATK-based) shield and 20 Life Drain for 5s."
+                "When Ravion or an ally with their Objective takes a fatal blow, Life Saver is triggered to prevent their defeat, granting a 200% (ATK-based) shield and 20 Life Drain for 5 s.",
+                "If an ally triggers Life Saver, they swap positions with Ravion; if Ravion triggers Life Saver, no position swap occurs, but the cooldown of Phantom Gambit is reset.",
+                "Each unit can trigger Life Saver 1 time per battle.",
+                "Allies receive extra shield values based on how much progress they've made on their Objective.",
+                "The closer to completion, the higher the extra shield value, up to 100%."
               ]
             },
             {

@@ -205,22 +205,26 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Arc",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
+            "area_count": 2,
             "type": "crowd_control",
             "cc-type": "knock_down",
             "duration": 1.5
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Arc",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
+            "area_count": 2,
             "type": "damage",
             "damage_type": "physical",
             "name": "Physical",
@@ -241,7 +245,7 @@
             "label": "Physical"
           },
           {
-            "label": "Knock down — Single target"
+            "label": "Knock down — Arc"
           }
         ]
       },
@@ -334,22 +338,30 @@
         "effects": [
           {
             "tier": "mythic+",
-            "targeting_label": "Single target",
+            "targeting_label": "All units",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": 1,
+            "target_count": -1,
+            "area_count": -1,
             "type": "debuff",
             "name": "Phys DEF",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 55.0
+              }
+            ]
           },
           {
             "tier": "mythic+",
-            "targeting_label": "Single target",
+            "targeting_label": "All units",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": 1,
+            "target_count": -1,
+            "area_count": -1,
             "type": "debuff",
             "name": "Magic DEF",
             "label": "debuff_defensive",
@@ -362,11 +374,12 @@
           },
           {
             "tier": "mythic+",
-            "targeting_label": "Single target",
+            "targeting_label": "All units",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": 1,
+            "target_count": -1,
+            "area_count": -1,
             "type": "dot",
             "damage_type": "dot",
             "name": "DoT",
@@ -374,19 +387,20 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 560.0
+                "value": 80.0
               }
             ],
-            "duration": 2.0,
+            "duration": 6.0,
             "tick": 0.5
           },
           {
             "tier": "mythic+",
-            "targeting_label": "Single target",
+            "targeting_label": "All units",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": 1,
+            "target_count": -1,
+            "area_count": -1,
             "type": "damage",
             "damage_type": "physical",
             "name": "Physical",
@@ -435,11 +449,11 @@
             "polarity": "buff"
           },
           {
-            "label": "Magic DEF",
+            "label": "Magic DEF — All units",
             "polarity": "debuff"
           },
           {
-            "label": "Phys DEF",
+            "label": "Phys DEF — All units",
             "polarity": "debuff"
           }
         ]
@@ -475,7 +489,7 @@
                 "value": 5.0
               }
             ],
-            "duration": 2,
+            "duration": -1.0,
             "tick": 1.0
           }
         ],
@@ -494,11 +508,11 @@
     "damage_entries": [
       [
         "physical",
-        "Area, Single target"
+        "All units, Arc, Area, Single target"
       ],
       [
         "dot",
-        "Single target"
+        "All units"
       ]
     ],
     "benefit_stats": [
@@ -669,7 +683,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "634c725f74d43f02b5e713a74f14d0d3b331194f390773e782be5ce51f73543c",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "555bf894cddda49ecfa8a20047e838c5b32c20e61990c63ada872db272b8fc46",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

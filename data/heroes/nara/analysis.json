@@ -7,7 +7,7 @@
     "faction": "graveborn",
     "class": "rogue",
     "role_category": "specialist",
-    "is_energy_provider": false,
+    "is_energy_provider": true,
     "is_melee": true,
     "is_dual_range": false,
     "default_range": 1,
@@ -82,6 +82,13 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.4,
+                "comparison": "below"
+              }
+            ],
             "type": "damage",
             "damage_type": "true",
             "name": "True damage",
@@ -89,27 +96,9 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 620.0
+                "value": 600.0
               }
             ]
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Energy",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "flat",
-                "value": 250.0
-              }
-            ],
-            "persistence": "permanent"
           }
         ],
         "skill_range": 1,
@@ -120,10 +109,6 @@
           },
           {
             "label": "True damage"
-          },
-          {
-            "label": "Energy — Self (Supreme+)",
-            "polarity": "buff"
           }
         ]
       },
@@ -188,27 +173,6 @@
                 "value": 4.0
               }
             ]
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "debuff",
-            "name": "Vitality",
-            "label": "debuff_defensive"
-          },
-          {
-            "type": "immunity",
-            "tier": "supreme+",
-            "immunity_type": "unaffected",
-            "timing": "permanent",
-            "targeting_label": "Self",
-            "target": "self",
-            "area": "single",
-            "target_count": 1
           }
         ],
         "cooldown": 4.0,
@@ -217,14 +181,7 @@
             "label": "HP loss"
           },
           {
-            "label": "Vitality (Supreme+)",
-            "polarity": "debuff"
-          },
-          {
             "label": "Displace — Single target"
-          },
-          {
-            "label": "Unaffected — Self (Supreme+)"
           }
         ]
       },
@@ -412,6 +369,14 @@
             "area": "radius",
             "target_count": -1,
             "area_count": 2,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "kill",
+                "self": true,
+                "skill_type": "ultimate"
+              }
+            ],
             "type": "damage",
             "damage_type": "max_hp",
             "name": "Max HP-based damage",
@@ -431,6 +396,14 @@
             "area": "radius",
             "target_count": -1,
             "area_count": 2,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "kill",
+                "self": true,
+                "skill_type": "ultimate"
+              }
+            ],
             "type": "heal",
             "healing_type": "direct",
             "name": "Direct healing",
@@ -475,24 +448,33 @@
             "tier": "supreme+",
             "targeting_label": "Single target",
             "is_max_known": true,
-            "target": "enemy",
+            "target": "ally",
             "area": "single",
             "target_count": 1,
-            "type": "debuff",
-            "name": "Max HP",
-            "label": "debuff_stat",
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "kill",
+                "self": true,
+                "skill_type": "ultimate"
+              }
+            ],
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
             "value": [
               {
-                "type": "percentage",
-                "value": 20.0
+                "type": "flat",
+                "value": 250.0
               }
-            ]
+            ],
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
           {
-            "label": "Max HP",
-            "polarity": "debuff"
+            "label": "Energy",
+            "polarity": "buff"
           }
         ]
       }
@@ -702,7 +684,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "c69b3525f7e32d5a7f2ce320a6741d817ad3713c51103c1b13c52b1ef7c66b17",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "a3fc7d1c95d3d2aa702d833819f8451e5dc7b06cb2eba124137e4162ef9b6817",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

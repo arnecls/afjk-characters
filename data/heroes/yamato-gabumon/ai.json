@@ -78,6 +78,43 @@
                     "value": 36
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Haste",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 25
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15
+                  }
+                ],
+                "duration": 5,
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -95,7 +132,7 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Area",
+                "targeting_label": "Single target",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
@@ -158,6 +195,25 @@
                   {
                     "type": "flat",
                     "value": 40
+                  }
+                ],
+                "persistence": "temporary",
+                "duration": 16
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 25
                   }
                 ],
                 "persistence": "temporary",
@@ -230,7 +286,7 @@
               },
               {
                 "tier": "mythic+",
-                "targeting_label": "Area",
+                "targeting_label": "Single target",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
@@ -238,6 +294,24 @@
                 "type": "crowd_control",
                 "cc-type": "bind",
                 "duration": 2
+              },
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "name": "Magic",
+                "damage_type": "magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 360
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -253,6 +327,31 @@
         "tiers": {
           "supreme+": {
             "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 3,
+                    "stack_comparison": "up_to"
+                  }
+                ],
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 5
+                  }
+                ],
+                "persistence": "permanent"
+              },
               {
                 "tier": "supreme+",
                 "targeting_label": "Area",

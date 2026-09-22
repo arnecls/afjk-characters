@@ -84,7 +84,7 @@
                 "value": 10.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "permanent"
           },
           {
             "tier": "base",
@@ -360,16 +360,6 @@
             ]
           },
           {
-            "tier": "mythic+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "crowd_control",
-            "cc-type": "interrupt"
-          },
-          {
             "tier": "ex+10",
             "targeting_label": "All units",
             "is_max_known": true,
@@ -377,30 +367,29 @@
             "area": "zone",
             "target_count": -1,
             "area_count": -1,
-            "type": "damage",
-            "damage_type": "magic",
-            "name": "Magic",
-            "label": "damage_normal",
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
             "value": [
               {
                 "type": "percentage",
-                "value": 500.0
+                "value": 250.0
               }
-            ]
+            ],
+            "duration": 3.0,
+            "tick": 1.0
           }
         ],
         "cooldown": 6.0,
         "initial_cooldown": 6.0,
         "skill_card_tags": [
           {
-            "label": "Magic (EX+10)"
+            "label": "DoT (EX+10)"
           },
           {
             "label": "Direct healing",
             "polarity": "buff"
-          },
-          {
-            "label": "Interrupt — Single target"
           }
         ]
       },
@@ -418,7 +407,7 @@
             "type": "immunity",
             "tier": "supreme+",
             "immunity_type": "unaffected",
-            "timing": "on_skill",
+            "timing": "conditional",
             "targeting_label": "Self",
             "target": "self",
             "area": "single",
@@ -443,28 +432,20 @@
         {
           "label": "Stacking",
           "tier": "supreme+",
-          "targeting": "Single target",
+          "targeting": "Self",
           "description": "During battle, Marcille recovers 10 additional Energy per second for each ally who is currently providing her with a buff, up to 3 stacks."
         }
       ],
-      "requires": [
-        {
-          "label": "Once per battle",
-          "tier": "mythic+",
-          "description": "However, if Laios is on the team, this skill can revive him one additional time (no position requirement and does not consume the skill's use limit), but this can only trigger once per battle."
-        },
-        {
-          "label": "Named ally on team",
-          "tier": "base",
-          "targeting": "Allies",
-          "description": "If Marcille receives the buff from Laios' cooked meal, she recovers an extra 300 Energy."
-        }
-      ]
+      "requires": []
     },
     "damage_entries": [
       [
         "magic",
-        "All units, Area, Single target"
+        "Area, Single target"
+      ],
+      [
+        "dot",
+        "All units"
       ]
     ],
     "benefit_stats": [
@@ -661,7 +642,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "d82b534c215c4a667541f49bc86c3eeeaa2a01e75d1c2b174fcc682e1c6bc565",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "a20a982b9f66ebf6ea44516bec8bbf90aa8daea68a66ede0ec5ea9222ee56940",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -48,24 +48,14 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
                 "type": "crowd_control",
                 "cc-type": "sleep",
-                "duration": 1.0
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "crowd_control",
-                "cc-type": "bind",
                 "duration": 1.0
               }
             ],
@@ -248,8 +238,8 @@
                 "tier": "ex+10",
                 "immunity_type": "unaffected",
                 "timing": "conditional",
-                "targeting_label": "Self",
-                "target": "self",
+                "targeting_label": "Single target",
+                "target": "ally",
                 "area": "single",
                 "target_count": 1
               }
@@ -267,50 +257,15 @@
             "effects": [
               {
                 "tier": "supreme+",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
                 "type": "crowd_control",
                 "cc-type": "stun",
                 "duration": 2.0
-              },
-              {
-                "tier": "supreme+",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "crowd_control",
-                "cc-type": "interrupt"
-              },
-              {
-                "tier": "supreme+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "duration_gate",
-                    "gate": "first_time"
-                  },
-                  {
-                    "type": "battle_phase",
-                    "phase": "conditional"
-                  }
-                ],
-                "type": "shield",
-                "name": "Shield",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 300.0
-                  }
-                ]
               }
             ],
             "summon_effects": [],

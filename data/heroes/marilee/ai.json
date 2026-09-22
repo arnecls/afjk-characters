@@ -15,7 +15,7 @@
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 2,
                 "type": "damage",
                 "damage_type": "physical",
                 "name": "Physical",
@@ -107,7 +107,7 @@
                     "value": 17.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "temporary"
               },
               {
                 "tier": "base",
@@ -119,7 +119,13 @@
                 "type": "buff",
                 "name": "ATK SPD",
                 "label": "buff_offensive",
-                "persistence": "unknown"
+                "persistence": "temporary",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 25.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -134,7 +140,26 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Crit DMG Boost",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 50.0
+                  }
+                ],
+                "persistence": "permanent",
+                "label": "buff_offensive"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -176,62 +201,32 @@
                   }
                 ],
                 "persistence": "permanent"
-              },
-              {
-                "tier": "mythic+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "stack_count",
-                    "stacks": 6,
-                    "stack_comparison": "at_max"
-                  },
-                  {
-                    "type": "trigger_condition",
-                    "trigger": "normal_attack"
-                  }
-                ],
-                "type": "damage",
-                "damage_type": "true",
-                "name": "True damage",
-                "label": "damage_true",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 1.0
-                  }
-                ]
               }
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [
-              {
-                "label": "DoT conversion",
-                "tier": "mythic+",
-                "targeting": "Self",
-                "description": "Normal attacks deal true damage after Battlefield Learning reaches max stacks."
-              }
-            ],
+            "special_provides": [],
             "special_requires": []
           },
           "ex+10": {
             "effects": [
               {
                 "tier": "ex+10",
-                "targeting_label": "Single target",
+                "targeting_label": "Self",
                 "is_max_known": true,
-                "target": "ally",
+                "target": "self",
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
                 "name": "ATK",
                 "label": "buff_offensive",
-                "persistence": "permanent"
+                "persistence": "permanent",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 8.5
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -269,5 +264,5 @@
     "skill5": "trigger ATK speed bonus condition more easily"
   },
   "play_overview": "[[Marilee]] **leaps to distant tiles** while firing on targets, then strings **stunning enhanced shots** every few normal attacks for steady control from range. She gains ATK and attack speed **when no enemy sits adjacent**, rewarding rear or isolated placement away from melee pressure. Each ally ultimate **stacks her ATK**, culminating in **true damage at max stacks** that spikes her burst window late. Battle crit damage climbs over time, and easier bonus-attack triggers **keep her DPS scaling** through longer engagements. She falters when **enemies close distance** or when few allies cycle ultimates to feed her stacks.",
-  "counter_overview": "[[Marilee]] **leaps across the field** while shooting, stuns on enhanced normals, and **stacks ATK from ally ultimates** until normals deal **true damage**. Isolation, with no adjacent foe, fuels her ATK and attack speed, so **close the gap** to deny that bonus. She relocates too often for assassin pins — use lasting wide ultimates like [[Shemira]] or [[Frieren]], or mid-fight [[filter:backline-inhibit]] like [[Bonnie]] or [[Evie]]. End the fight before max ATK stacks convert her shots into true damage."
+  "counter_overview": "[[Marilee]] **leaps across the field** while shooting, stuns on enhanced normals, and **stacks ATK from ally ultimates** until normals deal **true damage**. Isolation, with no adjacent foe, fuels her ATK and attack speed, so **close the gap** to deny that bonus. She relocates too often for assassin pins \u2014 use lasting wide ultimates like [[Shemira]] or [[Frieren]], or mid-fight [[filter:backline-inhibit]] like [[Bonnie]] or [[Evie]]. End the fight before max ATK stacks convert her shots into true damage."
 }

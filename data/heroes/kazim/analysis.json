@@ -138,24 +138,6 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Invincible",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 500.0
-              }
-            ],
-            "persistence": "permanent"
-          },
-          {
-            "tier": "base",
             "targeting_label": "Single target",
             "is_max_known": true,
             "target": "enemy",
@@ -198,10 +180,6 @@
         "skill_card_tags": [
           {
             "label": "Physical"
-          },
-          {
-            "label": "Invincible — Self",
-            "polarity": "buff"
           },
           {
             "label": "Marked target (focus fire)",
@@ -251,11 +229,12 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Multiple targets",
+            "targeting_label": "All units",
             "is_max_known": true,
             "target": "ally",
-            "area": "single",
-            "target_count": 3,
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
             "type": "buff",
             "name": "Haste",
             "label": "buff_offensive",
@@ -307,7 +286,7 @@
             "label": "Physical"
           },
           {
-            "label": "Haste — Multiple targets",
+            "label": "Haste — All units",
             "polarity": "buff"
           },
           {
@@ -339,10 +318,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 33.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Raptor's Vigil": {
         "category": "skill4",
@@ -378,24 +380,6 @@
           ]
         },
         "effects": [
-          {
-            "tier": "mythic+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "ally",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "ATK",
-            "label": "buff_offensive",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 35.0
-              }
-            ],
-            "persistence": "permanent"
-          },
           {
             "tier": "ex+10",
             "targeting_label": "Single target",
@@ -450,10 +434,6 @@
           },
           {
             "label": "True damage (EX+10)"
-          },
-          {
-            "label": "ATK",
-            "polarity": "buff"
           },
           {
             "label": "Knock up — Single target (EX+10)"
@@ -793,7 +773,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "ea1420ca3e6fe22b4a2964ab8528999cc76896ba7cda8978a5f51ad21c850b5c",
+    "inputs_hash": "f3030af048e41291e5d084b1654d949c3ae4d99e54eb22410d84cecae5fc04de",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

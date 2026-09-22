@@ -19,23 +19,7 @@
                 "type": "buff",
                 "name": "Invincible",
                 "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 180.0
-                  }
-                ],
-                "persistence": "permanent"
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "crowd_control",
-                "cc-type": "displace"
+                "persistence": "temporary"
               },
               {
                 "tier": "base",
@@ -55,16 +39,18 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
-                "type": "damage",
+                "type": "dot",
                 "damage_type": "magic",
-                "name": "Magic",
-                "label": "damage_normal",
+                "name": "Magic damage",
+                "label": "dot",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 198.0
                   }
-                ]
+                ],
+                "duration": 8.0,
+                "tick": 1.0
               },
               {
                 "tier": "base",
@@ -144,6 +130,24 @@
                     "value": 25.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 250.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -179,11 +183,11 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Multiple targets",
                 "is_max_known": true,
                 "target": "ally",
                 "area": "single",
-                "target_count": 1,
+                "target_count": 2,
                 "type": "heal",
                 "healing_type": "direct",
                 "name": "Direct healing",
@@ -193,6 +197,25 @@
                     "value": 60.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "dot",
+                "healing_type": "over_time",
+                "name": "Healing over time",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 120.0
+                  }
+                ],
+                "duration": 1.0,
+                "tick": 1.0
               }
             ],
             "summon_effects": [],
@@ -206,8 +229,27 @@
         "source_hash": "ba516d26e172928c5d0208d18384c70aed288bde59af7bed63df8548e1f287f3",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Healing",
+                "label": "buff_healing",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 19.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -223,11 +265,11 @@
             "effects": [
               {
                 "tier": "mythic+",
-                "targeting_label": "Single target",
+                "targeting_label": "All units",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "zone",
+                "target_count": -1,
                 "type": "debuff",
                 "name": "Damage dealt",
                 "label": "debuff_stat",
@@ -236,24 +278,26 @@
                     "type": "percentage",
                     "value": 35.0
                   }
-                ]
+                ],
+                "area_count": -1
               },
               {
                 "tier": "mythic+",
-                "targeting_label": "Multiple targets",
+                "targeting_label": "All units",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 3,
+                "area": "zone",
+                "target_count": -1,
                 "type": "debuff",
                 "name": "Debuff duration",
                 "label": "debuff_stat",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 30.0
+                    "value": 50.0
                   }
-                ]
+                ],
+                "area_count": -1
               }
             ],
             "summon_effects": [],
@@ -265,11 +309,11 @@
             "effects": [
               {
                 "tier": "ex+5",
-                "targeting_label": "Single target",
+                "targeting_label": "All units",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "zone",
+                "target_count": -1,
                 "type": "debuff",
                 "name": "Debuff duration",
                 "label": "debuff_stat",
@@ -278,7 +322,34 @@
                     "type": "percentage",
                     "value": 50.0
                   }
-                ]
+                ],
+                "area_count": -1
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "type": "debuff",
+                "name": "Magic damage",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 25.0
+                  }
+                ],
+                "area_count": -1
               }
             ],
             "summon_effects": [],

@@ -92,24 +92,6 @@
                 "name": "Healing",
                 "label": "healing",
                 "duration": 6.0
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "damage",
-                "damage_type": "hp_loss",
-                "name": "HP loss",
-                "label": "damage_hp_loss",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 40.0
-                  }
-                ]
               }
             ],
             "summon_effects": [],
@@ -155,26 +137,7 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [
-              {
-                "tier": "base",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Invincible",
-                "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 250.0
-                  }
-                ],
-                "persistence": "permanent"
-              }
-            ],
+            "effects": [],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -223,17 +186,6 @@
                   }
                 ],
                 "persistence": "temporary"
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "debuff",
-                "name": "Execution",
-                "label": "debuff_offensive"
               }
             ],
             "summon_effects": [],
@@ -273,7 +225,7 @@
                 "value": [
                   {
                     "type": "flat",
-                    "value": 3.0
+                    "value": 12.0
                   }
                 ],
                 "persistence": "permanent"

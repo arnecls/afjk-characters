@@ -529,6 +529,13 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 3,
+                "stack_comparison": "at_max"
+              }
+            ],
             "type": "damage",
             "damage_type": "true",
             "name": "True damage",
@@ -801,7 +808,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "cbb0dceeeb407cfa0856d473469bd334bce32bc4d3d9a58b849ce7db9660d20d",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "abf74719183db5905643bd95900018ac0a31887afb5f767eeae7429cd8325b5d",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

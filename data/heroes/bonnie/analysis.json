@@ -57,11 +57,12 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "All units",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
             "type": "damage",
             "damage_type": "magic",
             "name": "Magic",
@@ -270,12 +271,11 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Area",
+            "targeting_label": "Multiple targets",
             "is_max_known": true,
             "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 2,
+            "area": "single",
+            "target_count": 3,
             "type": "damage",
             "damage_type": "magic",
             "name": "Magic",
@@ -286,24 +286,6 @@
                 "value": 55.0
               }
             ]
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Invincible",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 50.0
-              }
-            ],
-            "persistence": "permanent"
           }
         ],
         "cooldown": 10.0,
@@ -311,10 +293,6 @@
         "skill_card_tags": [
           {
             "label": "Magic"
-          },
-          {
-            "label": "Invincible — Self",
-            "polarity": "buff"
           }
         ]
       },
@@ -342,10 +320,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Blight Surge": {
         "category": "skill4",
@@ -479,7 +480,7 @@
     "damage_entries": [
       [
         "magic",
-        "Area, Single target"
+        "All units, Multiple targets, Single target"
       ],
       [
         "dot",
@@ -638,7 +639,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "5c5f2281a9e4c740b98fd7f3a41796b663c6ed4908d60d881ff284fa3de738e7",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "78cb33e4a0085a686414d374075ad41842728de657c5e1a0cb612ab27dc7384c",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

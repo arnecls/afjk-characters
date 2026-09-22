@@ -60,11 +60,12 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
             "type": "debuff",
             "name": "Energy",
             "label": "debuff_stat",
@@ -77,21 +78,24 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
             "type": "crowd_control",
-            "cc-type": "bind"
+            "cc-type": "stun",
+            "duration": 3.0
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
             "type": "dot",
             "damage_type": "dot",
             "name": "DoT",
@@ -104,24 +108,6 @@
             ],
             "duration": 3.0,
             "tick": 1.0
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "damage",
-            "damage_type": "hp_loss",
-            "name": "HP loss",
-            "label": "damage_hp_loss",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 160.0
-              }
-            ]
           },
           {
             "type": "immunity",
@@ -141,14 +127,11 @@
             "label": "DoT"
           },
           {
-            "label": "HP loss"
-          },
-          {
-            "label": "Energy",
+            "label": "Energy — Area",
             "polarity": "debuff"
           },
           {
-            "label": "Bind — Single target"
+            "label": "Stun — Area"
           },
           {
             "label": "Unaffected — Self"
@@ -433,7 +416,7 @@
                 "value": 50.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "temporary"
           },
           {
             "tier": "mythic+",
@@ -458,7 +441,7 @@
                 "value": 50.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "temporary"
           },
           {
             "tier": "ex+5",
@@ -534,15 +517,20 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
-            "type": "buff",
-            "name": "Haste",
-            "label": "buff_offensive",
-            "persistence": "unknown"
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 120.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
           {
-            "label": "Haste — Self",
+            "label": "Direct healing — Self",
             "polarity": "buff"
           }
         ]
@@ -559,15 +547,10 @@
       ],
       [
         "dot",
-        "Single target"
-      ],
-      [
-        "hp_loss",
-        "Single target"
+        "Area"
       ]
     ],
     "benefit_stats": [
-      "haste",
       "physical_def",
       "magic_def"
     ],
@@ -740,7 +723,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "6414f5af7ac30b030fcce85bebf1862fee161b716cb2a255c09e6e955f18e155",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "eef4e249ddc93e9222d4c5e6d74370b8a1b0ad610bfb01304c3d9f01efa4a735",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -254,18 +254,6 @@
               }
             ],
             "persistence": "temporary"
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Execution",
-            "label": "buff_offensive",
-            "persistence": "temporary"
           }
         ],
         "cooldown": 22.0,
@@ -276,10 +264,6 @@
           },
           {
             "label": "ATK SPD — Self",
-            "polarity": "buff"
-          },
-          {
-            "label": "Execution — Self (Supreme+)",
             "polarity": "buff"
           }
         ]
@@ -424,9 +408,32 @@
             }
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Execution",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Execution — Self",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -441,7 +448,7 @@
           "label": "Execution scaling",
           "tier": "supreme+",
           "targeting": "Single target",
-          "description": "When he reaches max Intoxication stacks, his Execution increases by 25 further."
+          "description": "Dionel increases Execution by 20 within the duration of Nectar Feast if it's been activated."
         }
       ],
       "requires": [
@@ -622,7 +629,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "37dbc43e0243a1cffce10d38d69214d5f09dcc3c5156656070701c9f03eb8f3f",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "33c267b27b3cdfacba1d99dfbd64205641322a11b636f5268425a3e2aa4ea88a",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

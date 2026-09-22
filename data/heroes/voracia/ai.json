@@ -67,6 +67,30 @@
                     "value": 45
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ],
+                "type": "buff",
+                "name": "DEF Penetration",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 70
+                  }
+                ],
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -167,6 +191,31 @@
                 ],
                 "duration": 5,
                 "tick": 0.5
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ],
+                "type": "damage",
+                "name": "Magic",
+                "damage_type": "magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300
+                  }
+                ]
               }
             ],
             "summon_effects": [],

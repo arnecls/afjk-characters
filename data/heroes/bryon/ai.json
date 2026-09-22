@@ -184,7 +184,8 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "crowd_control",
-                "cc-type": "stun"
+                "cc-type": "stun",
+                "duration": 3.0
               },
               {
                 "tier": "mythic+",

@@ -122,6 +122,30 @@
             ]
           },
           {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
+            "type": "buff",
+            "name": "DEF Penetration",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 70.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
             "type": "immunity",
             "tier": "base",
             "immunity_type": "unaffected",
@@ -139,6 +163,10 @@
           },
           {
             "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "DEF Penetration — Self",
             "polarity": "buff"
           },
           {
@@ -268,6 +296,31 @@
             ],
             "duration": 5.0,
             "tick": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 330.0
+              }
+            ]
           }
         ],
         "cooldown": 7.0,
@@ -276,6 +329,9 @@
         "skill_card_tags": [
           {
             "label": "DoT"
+          },
+          {
+            "label": "Magic"
           }
         ]
       },
@@ -688,7 +744,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "4fc4e58695d6d0c32731501342ef5eae4aa8ceecad4de7baef587b4a8dcff5f6",
+    "inputs_hash": "0aad7737b4c79b3ac8b8c60975ad9c2b527094184a5309f8df5617a464758dbe",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

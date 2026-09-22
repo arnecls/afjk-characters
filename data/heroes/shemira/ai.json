@@ -17,15 +17,31 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "damage",
-                "damage_type": "magic",
-                "name": "Magic",
                 "label": "damage_normal",
+                "name": "Magic",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 165.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 55.0
+                  }
+                ],
+                "healing_type": "direct"
               }
             ],
             "summon_effects": [],
@@ -77,22 +93,39 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Area",
+                "targeting_label": "Single target",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "radius",
-                "target_count": -1,
-                "area_count": 1,
+                "area": "single",
+                "target_count": 1,
                 "type": "damage",
-                "damage_type": "max_hp",
-                "name": "Max HP-based damage",
                 "label": "damage_max_hp",
+                "name": "Max HP-based damage",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 33.0
                   }
-                ]
+                ],
+                "damage_type": "max_hp"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "label": "damage_true",
+                "name": "True damage",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 33.0
+                  }
+                ],
+                "damage_type": "true"
               },
               {
                 "tier": "base",
@@ -101,17 +134,36 @@
                 "target": "enemy",
                 "area": "radius",
                 "target_count": -1,
-                "area_count": 1,
                 "type": "damage",
-                "damage_type": "true",
-                "name": "True damage",
-                "label": "damage_true",
+                "label": "damage_max_hp",
+                "name": "Max HP-based damage",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 33.0
+                    "value": 22.0
                   }
-                ]
+                ],
+                "damage_type": "max_hp",
+                "area_count": 1
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "type": "damage",
+                "label": "damage_true",
+                "name": "True damage",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 22.0
+                  }
+                ],
+                "damage_type": "true",
+                "area_count": 1
               }
             ],
             "summon_effects": [],
@@ -186,6 +238,32 @@
                     "value": 3.0
                   }
                 ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "label": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ],
+                "duration": 5
               }
             ],
             "summon_effects": [],

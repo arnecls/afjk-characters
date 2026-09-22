@@ -302,6 +302,12 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stack_comparison": "at_max"
+                  }
+                ],
                 "type": "buff",
                 "name": "Phys DEF",
                 "label": "buff_defensive",
@@ -327,6 +333,12 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stack_comparison": "at_max"
+                  }
+                ],
                 "type": "buff",
                 "name": "Magic DEF",
                 "label": "buff_defensive",
@@ -410,6 +422,12 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stack_comparison": "at_max"
+                  }
+                ],
                 "type": "buff",
                 "name": "Phys DEF",
                 "label": "buff_defensive",
@@ -428,6 +446,12 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stack_comparison": "at_max"
+                  }
+                ],
                 "type": "buff",
                 "name": "Magic DEF",
                 "label": "buff_defensive",
@@ -509,6 +533,12 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stack_comparison": "at_max"
+                  }
+                ],
                 "type": "buff",
                 "name": "Phys DEF",
                 "label": "buff_defensive",
@@ -527,6 +557,12 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stack_comparison": "at_max"
+                  }
+                ],
                 "type": "buff",
                 "name": "Magic DEF",
                 "label": "buff_defensive",

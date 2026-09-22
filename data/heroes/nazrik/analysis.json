@@ -73,33 +73,12 @@
                 "value": 720.0
               }
             ]
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "damage",
-            "damage_type": "physical",
-            "name": "Physical",
-            "label": "damage_normal",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 790.0
-              }
-            ]
           }
         ],
         "initial_energy": 200.0,
         "skill_card_tags": [
           {
             "label": "True damage"
-          },
-          {
-            "label": "Physical"
           }
         ]
       },
@@ -148,14 +127,21 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "damage",
+                "self": true
+              }
+            ],
             "type": "damage",
-            "damage_type": "physical",
-            "name": "Physical",
-            "label": "damage_normal",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
             "value": [
               {
                 "type": "percentage",
-                "value": 38.5
+                "value": 8.0
               }
             ]
           },
@@ -166,15 +152,32 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "damage",
+                "self": true
+              },
+              {
+                "type": "unit_type",
+                "unit_type": "non_boss"
+              }
+            ],
             "type": "debuff",
             "name": "Max HP",
-            "label": "debuff_stat"
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 8.0
+              }
+            ]
           }
         ],
         "skill_range": 10,
         "skill_card_tags": [
           {
-            "label": "Physical"
+            "label": "Max HP-based damage"
           },
           {
             "label": "Max HP",
@@ -227,7 +230,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 300.0
+                "value": 90.0
               }
             ]
           },
@@ -312,9 +315,22 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 15,
+                "stack_comparison": "at_max"
+              }
+            ],
             "type": "buff",
             "name": "Crit",
             "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 36.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -369,7 +385,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Crit Resist",
-            "label": "debuff_offensive"
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 32.0
+              }
+            ]
           },
           {
             "tier": "ex+10",
@@ -380,7 +402,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Vitality",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ]
           },
           {
             "tier": "ex+10",
@@ -391,7 +419,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Damage taken",
-            "label": "debuff_stat"
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ]
           }
         ],
         "skill_range": 10,
@@ -429,7 +463,7 @@
           "label": "Stacking",
           "tier": "base",
           "targeting": "Single target",
-          "description": "Additionally, each hit inflicts 5 stacks of Rend on the enemy, up to 30 stacks."
+          "description": "Each hit inflicts 5 stacks of Rend on the enemy, up to 30 stacks."
         }
       ],
       "requires": []
@@ -437,6 +471,10 @@
     "damage_entries": [
       [
         "physical",
+        "Single target"
+      ],
+      [
+        "max_hp",
         "Single target"
       ],
       [
@@ -631,7 +669,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "8b6111c633bbe3b7df8f45e10a7ea316340f6bd78c72000652bd4ac54f8effd1",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "c01619cc3b4e134f47a136ec6640a19ddd6bb640993ad04beda6434a5e16d2d7",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

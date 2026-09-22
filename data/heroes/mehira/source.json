@@ -39,21 +39,21 @@
               "level": "3",
               "unlock": "Unlocks at Level 111",
               "text": [
-                "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based)."
+                "Increases the powerful blast damage to 210% (ATK-based) + 25% (SP-based)."
               ]
             },
             {
               "level": "4",
               "unlock": "Unlocks at Level 171",
               "text": [
-                "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based)."
+                "Increases the powerful blast damage to 230% (ATK-based) + 25% (SP-based)."
               ]
             },
             {
               "level": "5",
               "unlock": "Unlocks at Level 231",
               "text": [
-                "Increases the powerful blast damage to 190% (ATK-based) + 25% (SP-based)."
+                "Increases the powerful blast damage to 250% (ATK-based) + 25% (SP-based)."
               ]
             }
           ]

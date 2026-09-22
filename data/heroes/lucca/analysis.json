@@ -292,7 +292,14 @@
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
-            "persistence": "permanent"
+            "value": [
+              {
+                "type": "percentage",
+                "value": 35.0
+              }
+            ],
+            "duration": 5.0,
+            "persistence": "temporary"
           },
           {
             "tier": "supreme+",
@@ -310,6 +317,16 @@
                 "value": 15.0
               }
             ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "cleanse",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
           }
         ],
         "cooldown": 12.0,
@@ -322,6 +339,9 @@
           {
             "label": "Damage taken — Self",
             "polarity": "buff"
+          },
+          {
+            "label": "Cleanse — Self"
           }
         ]
       },
@@ -501,27 +521,9 @@
             }
           ]
         },
-        "effects": [
-          {
-            "tier": "supreme+",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "ally",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 1,
-            "type": "buff",
-            "name": "Magic DEF",
-            "label": "buff_defensive",
-            "persistence": "permanent"
-          }
-        ],
-        "skill_card_tags": [
-          {
-            "label": "Magic DEF — Area",
-            "polarity": "buff"
-          }
-        ]
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
       }
     },
     "synergy_profile": {
@@ -698,7 +700,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "0de0d86b5b54cd555e4f164a058c0bf8c45e58cb69614282a7cb5b2be9d382f7",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "43f84d8ac34df97d46e2dcb7b2ad007b8c2d2dd5cac1bb998c7b03f8b03d3903",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

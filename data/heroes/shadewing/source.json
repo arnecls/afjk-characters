@@ -109,7 +109,7 @@
           "Skill Range": "1 tile"
         },
         "description": {
-          "raw": "When a battle starts, Shadewing soars into the enemy formation, inflicting Withering Curse on all enemies. During the flight, Shadewing is invincible. Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value. When the curse value reaches the lesser of 20% of an enemy's max HP or 400% of Shadewing's initial ATK,, the curse lashes out, dealing damage equal to + 4% (SP-based) of the enemy's max HP. This damage cannot exceed 600% (ATK-based) + 90% (SP-based). The curse lashes out at most once every 3s per enemy.",
+          "raw": "When a battle starts, Shadewing soars into the enemy formation, inflicting Withering Curse on all enemies. During the flight, Shadewing is invincible. Withering Curse reduces enemies' Phys & Magic DEF by 20% and converts any continuous damage they take into curse value. When the curse value reaches the lesser of 20% of an enemy's max HP or 400% of Shadewing's initial ATK, the curse lashes out, dealing damage equal to 25% + 4% (SP-based) of the enemy's max HP. This damage cannot exceed 600% (ATK-based) + 90% (SP-based). The curse lashes out at most once every 3s per enemy.",
           "active": [
             "When a battle starts, Shadewing soars into the enemy formation, inflicting Withering Curse on all enemies.",
             "During the flight, Shadewing is invincible.",

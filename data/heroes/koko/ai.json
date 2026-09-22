@@ -20,25 +20,34 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
-                "persistence": "permanent"
+                "persistence": "temporary",
+                "duration": 12,
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 55.0
+                  }
+                ]
               },
               {
                 "tier": "base",
-                "targeting_label": "Multiple targets",
+                "targeting_label": "All units",
                 "is_max_known": true,
                 "target": "ally",
-                "area": "single",
-                "target_count": 3,
+                "area": "zone",
+                "target_count": -1,
                 "type": "buff",
                 "name": "Lifedrain",
                 "label": "buff_stat",
                 "value": [
                   {
                     "type": "flat",
-                    "value": 30.0
+                    "value": 40.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "area_count": -1,
+                "duration": 12
               },
               {
                 "tier": "base",
@@ -131,10 +140,11 @@
                 "value": [
                   {
                     "type": "flat",
-                    "value": 6.0
+                    "value": 25.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "duration": 6
               }
             ],
             "summon_effects": [],
@@ -377,5 +387,5 @@
     "skill5": "ally fed by heal gains temporary vitality boost"
   },
   "play_overview": "[[Koko]] feeds allies or herself to **recover HP and raise stats**, then inspires everyone with **damage reduction and buffs** on ultimate. Her strike skill deals heavy damage with debuffs, and fed allies gain a **temporary Vitality boost** after each meal. Ultimate also grants her an **extra shield**, and battle Haste keeps casts flowing. She blends **healing, buffing, and soft offense** in one slot. Healing is **modest compared to top supports**. Fights that **burst her before ultimate** see little team-wide value. She needs fight length for her ultimate to matter.",
-  "counter_overview": "[[Koko]]'s Arena threat is a **slow team-wide ultimate** that blankets **damage reduction and Life Drain**, while her feast heals and buffs the weakest ally between casts. Burst her **before Full Energy** lands — once the DR window is up, attrition favours her line and recorded damage pays back as true damage. Delete early with [[filter:assassin-delete]] like [[Ravion]] or [[Himmel]], blunt the ultimate with [[Lily May]], or race a sped-up carry with [[filter:energy-provider]] like [[Thador]] or [[Rowan]]."
+  "counter_overview": "[[Koko]]'s Arena threat is a **slow team-wide ultimate** that blankets **damage reduction and Life Drain**, while her feast heals and buffs the weakest ally between casts. Burst her **before Full Energy** lands \u2014 once the DR window is up, attrition favours her line and recorded damage pays back as true damage. Delete early with [[filter:assassin-delete]] like [[Ravion]] or [[Himmel]], blunt the ultimate with [[Lily May]], or race a sped-up carry with [[filter:energy-provider]] like [[Thador]] or [[Rowan]]."
 }

@@ -313,6 +313,12 @@
             "type": "buff",
             "name": "Crit",
             "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 24.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -371,7 +377,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 15.0
+                "value": 30.0
               }
             ]
           }
@@ -379,6 +385,14 @@
         "skill_card_tags": [
           {
             "label": "Magic DEF — Area",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Magic DEF — Area (EX+10)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Magic DEF — Area (EX+15)",
             "polarity": "debuff"
           }
         ]
@@ -577,7 +591,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "5b19b882653cacee55c20dad0645bd3b6e9095aab495c45871f31bc7529b4974",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "fa5d1c4268acca2b2fd92a7b53bf06e0dd2c72cfbbdcd9e93bc5c14971e3beaf",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

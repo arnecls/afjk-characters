@@ -11,11 +11,11 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Multiple targets",
+                "targeting_label": "Single target",
                 "is_max_known": true,
                 "target": "ally",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 1,
                 "type": "buff",
                 "name": "ATK",
                 "label": "buff_offensive",
@@ -23,11 +23,11 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Multiple targets",
+                "targeting_label": "Single target",
                 "is_max_known": true,
                 "target": "ally",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 1,
                 "type": "buff",
                 "name": "Haste",
                 "label": "buff_offensive",
@@ -68,30 +68,6 @@
                     "value": 660.0
                   }
                 ]
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "ally",
-                "area": "single",
-                "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "battle_phase",
-                    "phase": "conditional"
-                  }
-                ],
-                "type": "buff",
-                "name": "Energy",
-                "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 75.0
-                  }
-                ],
-                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -117,6 +93,30 @@
                 "type": "buff",
                 "name": "ATK",
                 "label": "buff_offensive",
+                "persistence": "temporary"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "conditional"
+                  }
+                ],
+                "type": "buff",
+                "name": "Energy",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 75.0
+                  }
+                ],
                 "persistence": "temporary"
               }
             ],
@@ -152,19 +152,30 @@
                 "is_max_known": true,
                 "target": "ally",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 2,
                 "type": "shield",
                 "name": "Shield",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 800.0
+                    "value": 900.0
                   }
                 ]
               }
             ],
             "summon_effects": [],
-            "immunities": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "ex+10",
+                "immunity_type": "unaffected",
+                "timing": "conditional",
+                "targeting_label": "Multiple targets",
+                "target": "ally",
+                "area": "single",
+                "target_count": 2
+              }
+            ],
             "special_provides": [],
             "special_requires": []
           }
@@ -192,7 +203,7 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
-                "persistence": "permanent"
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],

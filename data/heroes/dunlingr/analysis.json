@@ -133,9 +133,10 @@
             "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "radius",
+            "area": "rectangle",
             "target_count": -1,
             "area_count": 3,
+            "area_direction": "front",
             "type": "damage",
             "damage_type": "magic",
             "name": "Magic",
@@ -149,22 +150,32 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "rectangle",
+            "target_count": -1,
+            "area_count": 3,
+            "area_direction": "front",
             "type": "debuff",
             "name": "Haste",
-            "label": "debuff_offensive"
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ]
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "rectangle",
+            "target_count": -1,
+            "area_count": 3,
+            "area_direction": "front",
             "type": "damage",
             "damage_type": "lost_hp",
             "name": "Lost HP-based damage",
@@ -188,7 +199,7 @@
             "label": "Lost HP-based damage"
           },
           {
-            "label": "Haste",
+            "label": "Haste — Area",
             "polarity": "debuff"
           }
         ]
@@ -346,7 +357,7 @@
             "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
-            "persistence": "temporary"
+            "persistence": "permanent"
           },
           {
             "tier": "ex+15",
@@ -364,7 +375,7 @@
                 "value": 20.0
               }
             ],
-            "persistence": "temporary"
+            "persistence": "permanent"
           }
         ],
         "skill_range": 3,
@@ -408,6 +419,12 @@
             "type": "buff",
             "name": "ATK SPD",
             "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ],
             "persistence": "temporary"
           },
           {
@@ -428,54 +445,6 @@
               }
             ],
             "persistence": "temporary"
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "All units",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "zone",
-            "target_count": -1,
-            "area_count": -1,
-            "type": "debuff",
-            "name": "Energy",
-            "label": "debuff_stat",
-            "value": [
-              {
-                "type": "flat",
-                "value": 150.0
-              }
-            ]
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "All units",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "zone",
-            "target_count": -1,
-            "area_count": -1,
-            "type": "debuff",
-            "name": "Haste",
-            "label": "debuff_offensive",
-            "value": [
-              {
-                "type": "flat",
-                "value": 10.0
-              }
-            ]
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "All units",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "zone",
-            "target_count": -1,
-            "area_count": -1,
-            "type": "debuff",
-            "name": "Vitality",
-            "label": "debuff_defensive"
           }
         ],
         "skill_card_tags": [
@@ -486,18 +455,6 @@
           {
             "label": "Lifedrain — All units",
             "polarity": "buff"
-          },
-          {
-            "label": "Energy — All units",
-            "polarity": "debuff"
-          },
-          {
-            "label": "Haste — All units",
-            "polarity": "debuff"
-          },
-          {
-            "label": "Vitality — All units",
-            "polarity": "debuff"
           }
         ]
       }
@@ -526,7 +483,7 @@
       ],
       [
         "lost_hp",
-        "Single target"
+        "Area"
       ]
     ],
     "benefit_stats": [
@@ -675,7 +632,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "0810dfc40589ebb83a6e9b3be54adcd71a37881218aa785dd5dad2b4287fc8f9",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "4ed4ce0a9a8ff4f078a7545c452d1272bb6e6304e2ee49e17d0a86a7d8ba0d98",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

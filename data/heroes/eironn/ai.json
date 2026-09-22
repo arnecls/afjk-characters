@@ -47,7 +47,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 350.0
+                    "value": 330.0
                   }
                 ]
               }
@@ -88,7 +88,7 @@
                 "targeting_label": "Arc",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
+                "area": "arc",
                 "target_count": -1,
                 "area_direction": "front",
                 "type": "damage",
@@ -98,17 +98,17 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 270.0
+                    "value": 250.0
                   }
                 ]
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Multiple targets",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "path",
+                "target_count": -1,
                 "type": "debuff",
                 "name": "Magic DEF",
                 "label": "debuff_defensive",
@@ -117,7 +117,9 @@
                     "type": "percentage",
                     "value": 40.0
                   }
-                ]
+                ],
+                "area_direction": "selected_target",
+                "area_count": 2
               }
             ],
             "summon_effects": [],
@@ -145,9 +147,10 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 280.0
+                    "value": 320.0
                   }
-                ]
+                ],
+                "duration": 10.0
               },
               {
                 "tier": "base",
@@ -168,10 +171,11 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 320.0
+                    "value": 80.0
                   }
                 ],
-                "persistence": "permanent"
+                "persistence": "temporary",
+                "duration": 10.0
               }
             ],
             "summon_effects": [],
@@ -199,11 +203,36 @@
                 "label": "buff_defensive",
                 "value": [
                   {
-                    "type": "percentage",
-                    "value": 50.0
+                    "type": "flat",
+                    "value": 23.0
                   }
                 ],
                 "persistence": "permanent"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Ranged DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 12.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.5,
+                    "comparison": "below"
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -221,14 +250,15 @@
             "effects": [
               {
                 "tier": "ex+10",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "radius",
+                "target_count": -1,
                 "type": "crowd_control",
                 "cc-type": "bind",
-                "duration": 6.0
+                "duration": 6.0,
+                "area_count": 2
               }
             ],
             "summon_effects": [],
@@ -253,7 +283,19 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Magic DEF",
-                "label": "debuff_defensive"
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "controlled"
+                  }
+                ]
               }
             ],
             "summon_effects": [],

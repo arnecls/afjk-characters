@@ -113,7 +113,7 @@
           "Skill Range": "Global"
         },
         "description": {
-          "raw": "Pippa summons magical plants in the area with the most enemies. The plants cover a 1-tile area and persist for 3s. Every second, the plants deal 140% (ATK-based) + 20% (SP-based) damage to enemies within and reduce their Energy by 150. If this skill goes out of control, the plants last only ls, drifting like a moonflower.",
+          "raw": "Pippa summons magical plants in the area with the most enemies. The plants cover a 1-tile area and persist for 3s. Every second, the plants deal 140% (ATK-based) + 20% (SP-based) damage to enemies within and reduce their Energy by 150. If this skill goes out of control, the plants last only 1s, drifting like a moonflower.",
           "active": [
             "Pippa summons magical plants in the area with the most enemies.",
             "The plants cover a 1-tile area and persist for 3s.",

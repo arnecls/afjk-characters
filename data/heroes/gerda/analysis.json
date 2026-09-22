@@ -95,24 +95,14 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
             "type": "crowd_control",
             "cc-type": "sleep",
-            "duration": 1.0
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "crowd_control",
-            "cc-type": "bind",
             "duration": 1.0
           }
         ],
@@ -126,10 +116,7 @@
             "polarity": "buff"
           },
           {
-            "label": "Bind — Single target"
-          },
-          {
-            "label": "Sleep — Single target"
+            "label": "Sleep — Area"
           }
         ]
       },
@@ -423,15 +410,15 @@
             "tier": "ex+10",
             "immunity_type": "unaffected",
             "timing": "conditional",
-            "targeting_label": "Self",
-            "target": "self",
+            "targeting_label": "Single target",
+            "target": "ally",
             "area": "single",
             "target_count": 1
           }
         ],
         "skill_card_tags": [
           {
-            "label": "Unaffected — Self (EX+10)"
+            "label": "Unaffected (EX+10)"
           }
         ]
       },
@@ -455,62 +442,20 @@
         "effects": [
           {
             "tier": "supreme+",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
             "type": "crowd_control",
             "cc-type": "stun",
             "duration": 2.0
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "crowd_control",
-            "cc-type": "interrupt"
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "duration_gate",
-                "gate": "first_time"
-              },
-              {
-                "type": "battle_phase",
-                "phase": "conditional"
-              }
-            ],
-            "type": "shield",
-            "name": "Shield",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 300.0
-              }
-            ]
           }
         ],
         "skill_card_tags": [
           {
-            "label": "Shield — Self",
-            "polarity": "buff"
-          },
-          {
-            "label": "Interrupt — Single target"
-          },
-          {
-            "label": "Stun — Single target"
+            "label": "Stun — Area"
           }
         ]
       }
@@ -688,7 +633,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "1ff5d0e8d3bbe42ee25164ddd829af565fd05e7671b26ccb0a23b6ed250c4c4f",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "4ca15a8abd97dfbc414195ebda29dce05e3cb91935ecf459eaccec54b754317b",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

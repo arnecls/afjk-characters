@@ -23,7 +23,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 30.0
+                    "value": 36.0
                   }
                 ]
               },
@@ -59,6 +59,25 @@
         "tiers": {
           "base": {
             "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Arc",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "arc",
+                "target_count": -1,
+                "area_direction": "front",
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 215.0
+                  }
+                ]
+              },
               {
                 "tier": "base",
                 "targeting_label": "Arc",
@@ -166,6 +185,12 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],
@@ -180,10 +205,10 @@
         "source_hash": "0168c7c3be72f39233bc271c53a1c78b7ce7b4c011eafad31dc5deb38032e693",
         "is_max_known": true,
         "tiers": {
-          "ex+5": {
+          "ex+15": {
             "effects": [
               {
-                "tier": "ex+5",
+                "tier": "ex+15",
                 "targeting_label": "Self",
                 "is_max_known": true,
                 "target": "self",

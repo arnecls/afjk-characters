@@ -92,7 +92,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 250.0
+                "value": 55.0
               }
             ],
             "duration": 1.0,
@@ -180,7 +180,8 @@
                 "type": "percentage",
                 "value": 200.0
               }
-            ]
+            ],
+            "duration": 6.0
           },
           {
             "tier": "base",
@@ -336,10 +337,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Bitter Requiem": {
         "category": "skill4",
@@ -391,7 +415,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 1.0
+                "value": 85.0
               }
             ]
           }
@@ -421,7 +445,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Vitality",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
@@ -649,7 +679,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "21e0d45586dc6f0de61833f85993cb71c0a131cb7ea17d266185bcc5ad1a5fa8",
+    "inputs_hash": "72d2833a9fc90d33160f371b5e957335eec8448a36e9b57efe1871b45670ebc0",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

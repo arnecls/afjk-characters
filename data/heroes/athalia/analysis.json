@@ -198,6 +198,12 @@
             "type": "buff",
             "name": "Execution",
             "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ],
             "persistence": "unknown"
           },
           {
@@ -325,7 +331,13 @@
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
-            "persistence": "permanent"
+            "value": [
+              {
+                "type": "percentage",
+                "value": 62.0
+              }
+            ],
+            "persistence": "temporary"
           },
           {
             "type": "immunity",
@@ -385,10 +397,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Crit",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Crit — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Divine Verdict": {
         "category": "skill4",
@@ -469,10 +504,9 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
-            "type": "damage",
-            "damage_type": "physical",
-            "name": "Physical",
-            "label": "damage_normal",
+            "type": "debuff",
+            "name": "Shield",
+            "label": "shield",
             "value": [
               {
                 "type": "percentage",
@@ -483,19 +517,14 @@
         ],
         "skill_card_tags": [
           {
-            "label": "Physical"
+            "label": "Shield",
+            "polarity": "debuff"
           }
         ]
       }
     },
     "synergy_profile": {
       "provides": [
-        {
-          "label": "Cheat death",
-          "tier": "base",
-          "targeting": "Self",
-          "description": "When Athalia is defeated, her unyielding resolve manifests as a lance that continues to attack enemies on the battlefield, with her ATK reduced by 35%."
-        },
         {
           "label": "Invincibility",
           "tier": "base",
@@ -514,7 +543,7 @@
     "damage_entries": [
       [
         "physical",
-        "Area, Single target"
+        "Area"
       ],
       [
         "lost_hp",
@@ -714,7 +743,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "70df04b03b15dd0440dfcdb0e943d30d6ef3b61505f67dd4d457169c70f27c6e",
+    "inputs_hash": "fc8bb6ce24f1bb8a4eb517a2173b577915063ab4e6bcf51188d85b365ab2c625",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

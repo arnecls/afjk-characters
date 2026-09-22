@@ -159,7 +159,7 @@
                     "value": 70.0
                   }
                 ],
-                "persistence": "permanent"
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -264,6 +264,58 @@
           },
           "ex+10": {
             "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+5": {
+            "effects": [],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "ex+5",
+                "immunity_type": "cleanse",
+                "timing": "conditional",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+15": {
+            "effects": [
+              {
+                "tier": "ex+15",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.6,
+                    "comparison": "below"
+                  }
+                ],
+                "type": "dot",
+                "healing_type": "over_time",
+                "name": "Healing over time",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 5.0
+                  }
+                ],
+                "duration": 12.0,
+                "tick": 1.0
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

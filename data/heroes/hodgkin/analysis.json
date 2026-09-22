@@ -427,49 +427,18 @@
             ],
             "type": "debuff",
             "name": "Phys DEF",
-            "label": "debuff_defensive"
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Energy",
-            "label": "buff_stat",
+            "label": "debuff_defensive",
             "value": [
               {
-                "type": "flat",
-                "value": 150.0
+                "type": "percentage",
+                "value": 15.0
               }
-            ],
-            "persistence": "permanent"
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "debuff",
-            "name": "Vitality",
-            "label": "debuff_defensive"
+            ]
           }
         ],
         "skill_card_tags": [
           {
-            "label": "Energy — Self",
-            "polarity": "buff"
-          },
-          {
             "label": "Phys DEF",
-            "polarity": "debuff"
-          },
-          {
-            "label": "Vitality",
             "polarity": "debuff"
           }
         ]
@@ -503,8 +472,7 @@
       ]
     ],
     "benefit_stats": [
-      "atk",
-      "energy"
+      "atk"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -690,7 +658,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "e4dd6aa7f0ddffa8b69e931399843a602f77002b97227159ce6e8e046fb99265",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "62505a51755db267ff733ad4b18a77afd6dc8357128fb5ad101d7724482c9345",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

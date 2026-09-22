@@ -139,10 +139,6 @@
               {
                 "type": "unit_type",
                 "unit_type": "non_boss"
-              },
-              {
-                "type": "unit_type",
-                "unit_type": "boss"
               }
             ],
             "type": "debuff",
@@ -300,7 +296,8 @@
                 "type": "percentage",
                 "value": 460.0
               }
-            ]
+            ],
+            "duration": 9.0
           },
           {
             "tier": "base",
@@ -324,7 +321,7 @@
             "type": "immunity",
             "tier": "base",
             "immunity_type": "unaffected",
-            "timing": "on_skill",
+            "timing": "form",
             "targeting_label": "Self",
             "target": "self",
             "area": "single",
@@ -504,7 +501,7 @@
           "label": "Transformation",
           "tier": "base",
           "targeting": "Self",
-          "description": "when the barrier expires, breaks, or is reapplied, it transforms into razor leaves that deal 210% (ATK-based) + 30% damage to Pang's current target."
+          "description": "Pang enters the Unyielding Force stance after the chi burst."
         }
       ],
       "requires": []
@@ -746,7 +743,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "3547930b0f3cb56b6acce97cd53e37cac0dd16104b6f843c22610903a6cb9b73",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "c8238d84487424dc3581219972b03203c2c394f272cc7c69e66d92123b2ad56f",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -79,12 +79,33 @@
                 "value": 165.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 55.0
+              }
+            ]
           }
         ],
         "initial_energy": 300.0,
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
           }
         ]
       },
@@ -353,6 +374,23 @@
                 "value": 300.0
               }
             ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ],
+            "duration": 5.0
           }
         ],
         "skill_card_tags": [
@@ -361,6 +399,10 @@
           },
           {
             "label": "True damage (EX+10)"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
           },
           {
             "label": "Max HP (EX+10)",
@@ -612,7 +654,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "0b105af7f2210042db4a22f792d409f61ee2d48b3fefb6468f9fd663431fd8f8",
+    "inputs_hash": "09fd75b634af7ddcaf699b2a9ff226143e56a79a65bdecc9d2c94875b8627fa4",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

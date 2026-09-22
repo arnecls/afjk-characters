@@ -33,14 +33,7 @@
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
-            "special_requires": [
-              {
-                "label": "Passive with internal cooldown",
-                "tier": "base",
-                "targeting": "Allies",
-                "description": "This effect can trigger once every 8 - 1s per ally."
-              }
-            ]
+            "special_requires": []
           },
           "mythic+": {
             "effects": [],
@@ -98,11 +91,54 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.5,
+                    "comparison": "below"
+                  }
+                ],
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 130.0
+                  }
+                ]
+              }
+            ],
             "summon_effects": [],
-            "immunities": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "base",
+                "immunity_type": "cleanse",
+                "timing": "on_skill",
+                "targeting_label": "Single target",
+                "target": "ally",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
             "special_provides": [],
-            "special_requires": []
+            "special_requires": [
+              {
+                "label": "Passive with internal cooldown",
+                "tier": "base",
+                "targeting": "Allies",
+                "description": "This effect can trigger once every 8 - 1s per ally."
+              }
+            ]
           }
         }
       },
@@ -155,7 +191,8 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
-                "persistence": "permanent"
+                "duration": 9,
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],

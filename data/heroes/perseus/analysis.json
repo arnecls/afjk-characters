@@ -180,6 +180,42 @@
                 "value": 250.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 360.0
+              }
+            ],
+            "duration": 6.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 35.0
+              }
+            ],
+            "duration": 6.0,
+            "persistence": "temporary"
           }
         ],
         "cooldown": 8.0,
@@ -187,6 +223,14 @@
         "skill_card_tags": [
           {
             "label": "Physical"
+          },
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
           }
         ]
       },
@@ -253,6 +297,12 @@
             "type": "buff",
             "name": "Phys DEF",
             "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
             "persistence": "temporary"
           },
           {
@@ -265,6 +315,12 @@
             "type": "buff",
             "name": "Magic DEF",
             "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
             "persistence": "temporary"
           },
           {
@@ -295,14 +351,46 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 40.0
+                "value": 60.0
               }
             ],
             "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.4,
+                "comparison": "below"
+              },
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ]
           }
         ],
         "skill_range": 1,
         "skill_card_tags": [
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
           {
             "label": "ATK — Multiple targets",
             "polarity": "buff"
@@ -690,7 +778,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "97c63e6a95f62179b2b5e426c6c8fd675988d57a750e906d6c17209e47763013",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "64ff4d7b43a74f49888c692add3716e5b2cbd91b9c215741f56492844f2a1617",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

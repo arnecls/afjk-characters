@@ -64,6 +64,40 @@
                     "value": 28.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "duration": 8.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 2,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "duration": 8.0
               }
             ],
             "summon_effects": [],
@@ -161,6 +195,23 @@
                 "target": "ally",
                 "area": "single",
                 "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 33.0
+                  }
+                ],
+                "duration": 8.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
                 "type": "buff",
                 "name": "Lifedrain",
                 "label": "buff_stat",
@@ -168,6 +219,24 @@
                   {
                     "type": "flat",
                     "value": 15.0
+                  }
+                ],
+                "persistence": "temporary"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 27.0
                   }
                 ],
                 "persistence": "temporary"

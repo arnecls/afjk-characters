@@ -25,7 +25,7 @@
                     "value": 50.0
                   }
                 ],
-                "persistence": "permanent"
+                "persistence": "temporary"
               },
               {
                 "tier": "base",
@@ -140,7 +140,7 @@
                     "value": 8.0
                   }
                 ],
-                "persistence": "permanent"
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -196,15 +196,15 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "ATK",
                 "label": "buff_offensive",
+                "name": "ATK",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 6.0
+                    "value": 10.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -227,60 +227,113 @@
                 "target": "enemy",
                 "area": "radius",
                 "target_count": -1,
+                "type": "dot",
+                "label": "damage_hp_loss",
+                "name": "HP loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ],
+                "damage_type": "hp_loss",
+                "duration": 10,
+                "tick": 1.0,
                 "area_count": 3,
                 "conditions": [
                   {
                     "type": "duration_gate",
                     "gate": "first_time"
                   }
-                ],
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
                 "type": "dot",
-                "damage_type": "hp_loss",
-                "name": "HP loss",
                 "label": "damage_hp_loss",
+                "name": "HP loss",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 14.0
                   }
                 ],
+                "damage_type": "hp_loss",
                 "duration": 10,
-                "tick": 1.0
-              },
+                "tick": 1.0,
+                "area_count": 3,
+                "conditions": [
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
               {
-                "tier": "mythic+",
+                "tier": "ex+10",
                 "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "radius",
                 "target_count": -1,
-                "area_count": 3,
                 "type": "crowd_control",
                 "cc-type": "stun",
-                "duration": 0.1
-              },
+                "duration": 0.1,
+                "area_count": 3
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+15": {
+            "effects": [
               {
-                "tier": "mythic+",
+                "tier": "ex+15",
                 "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "radius",
                 "target_count": -1,
+                "type": "dot",
+                "label": "damage_hp_loss",
+                "name": "HP loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ],
+                "damage_type": "hp_loss",
+                "duration": 10,
+                "tick": 1.0,
                 "area_count": 3,
                 "conditions": [
                   {
                     "type": "duration_gate",
                     "gate": "first_time"
-                  }
-                ],
-                "type": "damage",
-                "damage_type": "hp_loss",
-                "name": "HP loss",
-                "label": "damage_hp_loss",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 14.0
                   }
                 ]
               }

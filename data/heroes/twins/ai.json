@@ -11,18 +11,18 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Multiple targets",
+                "targeting_label": "Self",
                 "is_max_known": true,
-                "target": "ally",
+                "target": "self",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 1,
                 "type": "buff",
                 "name": "Max HP",
                 "label": "buff_stat",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 60.0
+                    "value": 50.0
                   }
                 ],
                 "persistence": "permanent"
@@ -222,6 +222,23 @@
             "effects": [
               {
                 "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 2,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 180.0
+                  }
+                ],
+                "duration": 4.4
+              },
+              {
+                "tier": "base",
                 "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
@@ -237,7 +254,7 @@
                 "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
+                "area": "radius",
                 "target_count": -1,
                 "area_count": 1,
                 "type": "damage",
@@ -247,7 +264,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 195.0
+                    "value": 150.0
                   }
                 ]
               },

@@ -162,60 +162,6 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
-            "conditions": [
-              {
-                "type": "unit_type",
-                "unit_type": "non_summoned"
-              }
-            ],
-            "type": "damage",
-            "damage_type": "max_hp",
-            "name": "Max HP-based damage",
-            "label": "damage_max_hp",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 15.0
-              }
-            ]
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "unit_type",
-                "unit_type": "non_summoned"
-              }
-            ],
-            "type": "damage",
-            "damage_type": "magic",
-            "name": "Magic",
-            "label": "damage_normal",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 350.0
-              }
-            ]
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "unit_type",
-                "unit_type": "non_summoned"
-              }
-            ],
             "type": "dot",
             "damage_type": "dot",
             "name": "DoT",
@@ -223,51 +169,18 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 50.0
+                "value": 65.0
               }
             ],
             "duration": 4.0,
             "tick": 1.0
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "unit_type",
-                "unit_type": "non_summoned"
-              }
-            ],
-            "type": "damage",
-            "damage_type": "hp_loss",
-            "name": "HP loss",
-            "label": "damage_hp_loss",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 40.0
-              }
-            ]
           }
         ],
         "cooldown": 8.0,
         "initial_cooldown": 3.0,
         "skill_card_tags": [
           {
-            "label": "Max HP-based damage"
-          },
-          {
-            "label": "Magic"
-          },
-          {
             "label": "DoT"
-          },
-          {
-            "label": "HP loss"
           }
         ]
       },
@@ -311,20 +224,14 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
-            "conditions": [
-              {
-                "type": "unit_type",
-                "unit_type": "non_summoned"
-              }
-            ],
             "type": "damage",
-            "damage_type": "magic",
-            "name": "Magic",
-            "label": "damage_normal",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
             "value": [
               {
                 "type": "percentage",
-                "value": 250.0
+                "value": 13.0
               }
             ]
           }
@@ -333,7 +240,7 @@
         "initial_cooldown": 5.0,
         "skill_card_tags": [
           {
-            "label": "Magic"
+            "label": "HP loss"
           }
         ]
       },
@@ -364,10 +271,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Healing",
+            "label": "buff_healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 2400.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Healing — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Ephemeral Berries": {
         "category": "skill4",
@@ -516,10 +446,6 @@
       ],
       [
         "hp_loss",
-        "Single target"
-      ],
-      [
-        "max_hp",
         "Single target"
       ]
     ],
@@ -699,7 +625,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "9fb8509b84789afa58e6a945d7f392d88d84b134281a2bdea50287d0247689c5",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "3db2dbc75f5e209dc61f1bb5ba4846cb35804d664d73075ef69b2ee75b07181c",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -16,9 +16,22 @@
                 "target": "enemy",
                 "area": "zone",
                 "target_count": -1,
-                "area_count": -1,
                 "type": "crowd_control",
-                "cc-type": "frighten"
+                "area_count": -1,
+                "cc-type": "frighten",
+                "duration": 5.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "zone",
+                "target_count": -1,
+                "type": "crowd_control",
+                "area_count": -1,
+                "cc-type": "frighten",
+                "duration": 5.0
               },
               {
                 "tier": "base",
@@ -27,11 +40,10 @@
                 "target": "enemy",
                 "area": "zone",
                 "target_count": -1,
-                "area_count": -1,
                 "type": "dot",
+                "area_count": -1,
                 "damage_type": "hp_loss",
                 "name": "HP loss",
-                "label": "damage_hp_loss",
                 "value": [
                   {
                     "type": "percentage",
@@ -39,18 +51,29 @@
                   }
                 ],
                 "duration": 5,
-                "tick": 0.5
+                "tick": 0.5,
+                "label": "damage_hp_loss"
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "All units",
                 "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "debuff",
-                "name": "ATK",
-                "label": "debuff_offensive"
+                "target": "ally",
+                "area": "zone",
+                "target_count": -1,
+                "type": "dot",
+                "area_count": -1,
+                "damage_type": "hp_loss",
+                "name": "HP loss",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 70.0
+                  }
+                ],
+                "duration": 5,
+                "tick": 0.5,
+                "label": "damage_hp_loss"
               },
               {
                 "tier": "base",
@@ -59,17 +82,36 @@
                 "target": "enemy",
                 "area": "zone",
                 "target_count": -1,
+                "type": "debuff",
                 "area_count": -1,
-                "type": "damage",
-                "damage_type": "hp_loss",
-                "name": "HP loss",
-                "label": "damage_hp_loss",
+                "name": "ATK",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 70.0
+                    "value": 10.0
                   }
-                ]
+                ],
+                "duration": 8.0,
+                "label": "debuff_offensive"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "zone",
+                "target_count": -1,
+                "type": "debuff",
+                "area_count": -1,
+                "name": "ATK",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "duration": 8.0,
+                "label": "debuff_offensive"
               }
             ],
             "summon_effects": [],
@@ -108,7 +150,8 @@
                 "type": "buff",
                 "name": "Invincible",
                 "label": "buff_stat",
-                "persistence": "permanent"
+                "duration": 4.0,
+                "persistence": "temporary"
               },
               {
                 "tier": "base",
@@ -117,9 +160,13 @@
                 "target": "ally",
                 "area": "single",
                 "target_count": 1,
-                "type": "buff",
-                "name": "Energy",
-                "label": "buff_stat",
+                "type": "energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 1000.0
+                  }
+                ],
                 "persistence": "permanent"
               },
               {
@@ -138,6 +185,7 @@
                     "value": 50.0
                   }
                 ],
+                "duration": 10.0,
                 "persistence": "temporary"
               }
             ],
@@ -168,13 +216,67 @@
                 "target": "ally",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "cast",
+                    "self": true
+                  }
+                ],
                 "type": "heal",
                 "healing_type": "direct",
                 "name": "Direct healing",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 290.0
+                    "value": 320.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "cast",
+                    "self": true
+                  }
+                ],
+                "type": "energy",
+                "name": "Energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 120.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "cast",
+                    "self": true
+                  }
+                ],
+                "type": "debuff",
+                "name": "Damage taken",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
                   }
                 ]
               },
@@ -185,35 +287,20 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "cast",
+                    "self": true
+                  }
+                ],
                 "type": "debuff",
                 "name": "Damage taken",
-                "label": "debuff_stat"
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "debuff",
-                "name": "Energy",
-                "label": "debuff_stat"
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "debuff",
-                "name": "Vitality",
-                "label": "debuff_defensive",
+                "label": "debuff_stat",
                 "value": [
                   {
-                    "type": "flat",
-                    "value": 45.0
+                    "type": "percentage",
+                    "value": 10.0
                   }
                 ]
               },
@@ -232,7 +319,61 @@
                     "type": "flat",
                     "value": 45.0
                   }
-                ]
+                ],
+                "duration": 10.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Energy Regen Reduction",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 45.0
+                  }
+                ],
+                "duration": 10.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Vitality",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 45.0
+                  }
+                ],
+                "duration": 10.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "crowd_control",
+                "cc-type": "blind",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 45.0
+                  }
+                ],
+                "duration": 10.0
               }
             ],
             "summon_effects": [],
@@ -250,21 +391,46 @@
             "effects": [
               {
                 "tier": "legendary+",
-                "targeting_label": "Single target",
+                "targeting_label": "Self",
                 "is_max_known": true,
-                "target": "ally",
+                "target": "self",
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Max HP",
-                "label": "buff_stat",
+                "name": "HP",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 24.0
                   }
                 ],
-                "persistence": "permanent"
+                "persistence": "permanent",
+                "label": "buff_stat"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "HP",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "debuff",
+                    "self": true
+                  }
+                ],
+                "label": "buff_stat"
               }
             ],
             "summon_effects": [],
@@ -279,17 +445,18 @@
         "is_max_known": true,
         "tiers": {
           "mythic+": {
-            "effects": [
+            "effects": [],
+            "summon_effects": [
               {
                 "tier": "mythic+",
-                "targeting_label": "Self",
+                "targeting_label": "Owned summons",
                 "is_max_known": true,
-                "target": "self",
+                "target": "own_summons",
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
                 "name": "Energy",
-                "label": "buff_stat",
+                "label": "buff_summon_stat",
                 "value": [
                   {
                     "type": "flat",
@@ -299,7 +466,6 @@
                 "persistence": "permanent"
               }
             ],
-            "summon_effects": [],
             "immunities": [],
             "special_provides": [
               {
@@ -322,7 +488,13 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "ATK",
-                "label": "debuff_offensive"
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

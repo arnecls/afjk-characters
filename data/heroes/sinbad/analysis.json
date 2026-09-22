@@ -72,7 +72,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 240.0
+                "value": 280.0
               }
             ]
           }
@@ -149,8 +149,31 @@
             "area": "single",
             "target_count": 1,
             "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
             "name": "Damage taken",
-            "label": "debuff_stat"
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ]
           },
           {
             "type": "immunity",
@@ -168,6 +191,10 @@
         "skill_card_tags": [
           {
             "label": "Physical"
+          },
+          {
+            "label": "ATK",
+            "polarity": "debuff"
           },
           {
             "label": "Damage taken",
@@ -261,10 +288,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 33.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Adaptive Prowess": {
         "category": "skill4",
@@ -310,7 +360,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "ATK SPD",
-            "label": "debuff_offensive"
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ]
           },
           {
             "tier": "mythic+",
@@ -321,15 +377,21 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Energy",
-            "label": "debuff_stat"
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ]
           },
           {
             "tier": "mythic+",
-            "targeting_label": "Multiple targets",
+            "targeting_label": "Single target",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": 3,
+            "target_count": 1,
             "type": "debuff",
             "name": "Magic DEF",
             "label": "debuff_defensive",
@@ -342,25 +404,37 @@
           },
           {
             "tier": "mythic+",
-            "targeting_label": "Multiple targets",
+            "targeting_label": "Single target",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": 3,
+            "target_count": 1,
             "type": "debuff",
             "name": "Phys DEF",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
           },
           {
             "tier": "mythic+",
-            "targeting_label": "Multiple targets",
+            "targeting_label": "Single target",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": 3,
+            "target_count": 1,
             "type": "debuff",
             "name": "Vitality",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ]
           },
           {
             "tier": "ex+10",
@@ -371,7 +445,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "ATK",
-            "label": "debuff_offensive"
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
           },
           {
             "tier": "ex+15",
@@ -382,7 +462,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Damage taken",
-            "label": "debuff_stat"
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ]
           }
         ],
         "skill_range": 1,
@@ -396,19 +482,23 @@
             "polarity": "debuff"
           },
           {
-            "label": "Magic DEF — Multiple targets",
+            "label": "Magic DEF",
             "polarity": "debuff"
           },
           {
-            "label": "Phys DEF — Multiple targets",
+            "label": "Phys DEF",
             "polarity": "debuff"
           },
           {
-            "label": "Vitality — Multiple targets",
+            "label": "Vitality",
             "polarity": "debuff"
           },
           {
             "label": "ATK (EX+10)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "ATK (EX+15)",
             "polarity": "debuff"
           },
           {
@@ -647,7 +737,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "6ecca6adff7f5c15f667377c05a234ff95e139af2d23afa4cd32268d9da37ca9",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "fcf65c69f271b8d2777500a8f3201328f64cb479952854af505070d4a09d6393",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

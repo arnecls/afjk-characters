@@ -59,6 +59,22 @@
         },
         "effects": [
           {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ]
+          },
+          {
             "type": "immunity",
             "tier": "base",
             "immunity_type": "unaffected",
@@ -71,6 +87,10 @@
         ],
         "initial_energy": 0.0,
         "skill_card_tags": [
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          },
           {
             "label": "Unaffected — Self"
           }
@@ -111,12 +131,13 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "All units",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "zone",
+            "area": "single",
             "target_count": -1,
-            "area_count": -1,
+            "area_count": 2,
+            "area_direction": "front",
             "type": "damage",
             "damage_type": "magic",
             "name": "Magic",
@@ -124,18 +145,19 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 240.0
+                "value": 320.0
               }
             ]
           },
           {
             "tier": "base",
-            "targeting_label": "All units",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "zone",
+            "area": "rectangle",
             "target_count": -1,
-            "area_count": -1,
+            "area_count": 2,
+            "area_direction": "front",
             "type": "crowd_control",
             "cc-type": "knock_down"
           }
@@ -148,7 +170,7 @@
             "label": "Magic"
           },
           {
-            "label": "Knock down — All units"
+            "label": "Knock down — Area"
           }
         ]
       },
@@ -227,6 +249,12 @@
             "type": "buff",
             "name": "Vitality",
             "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 19.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -417,7 +445,7 @@
     "damage_entries": [
       [
         "magic",
-        "All units"
+        "Area, Single target"
       ]
     ],
     "benefit_stats": [
@@ -598,7 +626,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f40ebe605f0b667b7259cf30f85bb9ed33e165ca7b2e6e3c273ce246130c0a8a",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "a2a1ae5782100868eedf154c2172a19b390a2e0dc8ff0a2586d3bcd83fb85f6e",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

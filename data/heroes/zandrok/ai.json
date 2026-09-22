@@ -141,6 +141,32 @@
                   }
                 ],
                 "persistence": "temporary"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": -1,
+                "area_count": 2,
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "conditional"
+                  }
+                ],
+                "type": "buff",
+                "name": "Movement speed",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 100.0
+                  }
+                ],
+                "persistence": "temporary",
+                "duration": 8.0
               }
             ],
             "summon_effects": [],
@@ -224,6 +250,30 @@
                     "value": 24.0
                   }
                 ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ],
+                "type": "buff",
+                "name": "Max HP",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ],
                 "persistence": "temporary"
               }
             ],
@@ -239,7 +289,33 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.5,
+                    "comparison": "above"
+                  }
+                ],
+                "type": "damage",
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
+                "label": "damage_max_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 6.0
+                  }
+                ]
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

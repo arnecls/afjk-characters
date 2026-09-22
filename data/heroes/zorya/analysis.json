@@ -214,7 +214,8 @@
                 "value": 70.0
               }
             ],
-            "persistence": "permanent"
+            "duration": 10.0,
+            "persistence": "temporary"
           },
           {
             "tier": "base",
@@ -322,6 +323,30 @@
           },
           {
             "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "defeat",
+                "enemy": true
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
             "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
@@ -366,6 +391,10 @@
           },
           {
             "label": "Lost HP-based damage"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
           },
           {
             "label": "Lifedrain — Self",
@@ -569,7 +598,7 @@
         },
         {
           "label": "Cheat death",
-          "tier": "base",
+          "tier": "supreme+",
           "targeting": "Self",
           "description": "When Zorya would take a fatal blow, she channels all her Energy to survive and immediately enters her dormant state."
         }
@@ -813,7 +842,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "51d919198d7736b5bdf63c6a0bbbeb2e58a122fa873667535f67de396287fb23",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "7cda22ffc73926273de63adc045ed32f129a5f3339374dd57a12e952adc63bbb",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -25,7 +25,7 @@
                     "value": 25.0
                   }
                 ],
-                "persistence": "permanent"
+                "persistence": "temporary"
               },
               {
                 "tier": "base",
@@ -34,23 +34,20 @@
                 "target": "ally",
                 "area": "single",
                 "target_count": 1,
-                "type": "buff",
-                "name": "Attack range",
-                "label": "buff_stat",
+                "type": "range_increase",
                 "value": [
                   {
-                    "type": "percentage",
-                    "value": 550.0
+                    "type": "flat",
+                    "value": 3.0
                   }
-                ],
-                "persistence": "permanent"
+                ]
               },
               {
                 "tier": "base",
                 "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
+                "area": "radius",
                 "target_count": -1,
                 "area_count": 2,
                 "type": "damage",
@@ -66,22 +63,24 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
                 "type": "debuff",
                 "name": "Vitality",
                 "label": "debuff_defensive"
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
                 "type": "dot",
                 "damage_type": "dot",
                 "name": "DoT",
@@ -119,14 +118,7 @@
                 "target_count": 1
               }
             ],
-            "special_provides": [
-              {
-                "label": "Invincibility",
-                "tier": "ex+15",
-                "targeting": "Single target",
-                "description": "After Gunnar's HP ratio remains above 35% for 3s, the ally within his Doomfield becomes invincible and gains extra ATK equal to 45% of Gunnar's initial ATK."
-              }
-            ],
+            "special_provides": [],
             "special_requires": []
           }
         }
@@ -139,12 +131,12 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "All units",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "zone",
+                "area": "radius",
                 "target_count": -1,
-                "area_count": -1,
+                "area_count": 1,
                 "type": "damage",
                 "damage_type": "physical",
                 "name": "Physical",
@@ -201,6 +193,40 @@
             "effects": [
               {
                 "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 600.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "path",
+                "target_count": -1,
+                "area_direction": "back",
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 400.0
+                  }
+                ],
+                "duration": 6.0
+              },
+              {
+                "tier": "base",
                 "targeting_label": "Single target",
                 "is_max_known": true,
                 "target": "ally",
@@ -209,6 +235,12 @@
                 "type": "buff",
                 "name": "ATK SPD",
                 "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 40.0
+                  }
+                ],
                 "persistence": "temporary"
               }
             ],
@@ -229,24 +261,36 @@
                 "tier": "legendary+",
                 "targeting_label": "Single target",
                 "is_max_known": true,
-                "target": "ally",
+                "target": "self",
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
                 "name": "Ranged DEF",
                 "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 15.0
+                  }
+                ],
                 "persistence": "permanent"
               },
               {
                 "tier": "legendary+",
                 "targeting_label": "Single target",
                 "is_max_known": true,
-                "target": "ally",
+                "target": "self",
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
                 "name": "Vitality",
                 "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 15.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],
@@ -314,20 +358,27 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Invincible",
-                "label": "buff_stat",
+                "name": "ATK",
+                "label": "buff_offensive",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 35.0
+                    "value": 45.0
                   }
                 ],
-                "persistence": "permanent"
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Invincibility",
+                "tier": "ex+15",
+                "targeting": "Single target",
+                "description": "After Gunnar's HP ratio remains above 35% for 3s, the ally within his Doomfield becomes invincible and gains extra ATK equal to 45% of Gunnar's initial ATK."
+              }
+            ],
             "special_requires": []
           }
         }
@@ -349,6 +400,18 @@
                 "type": "debuff",
                 "name": "Healing",
                 "label": "healing"
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "debuff",
+                "name": "Shield",
+                "label": "shield"
               }
             ],
             "summon_effects": [],

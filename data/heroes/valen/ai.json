@@ -306,21 +306,15 @@
             "effects": [
               {
                 "tier": "supreme+",
-                "targeting_label": "Self",
+                "targeting_label": "Area",
                 "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Energy",
-                "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 500.0
-                  }
-                ],
-                "persistence": "permanent"
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "crowd_control",
+                "cc-type": "stun",
+                "duration": 3.0
               }
             ],
             "summon_effects": [],

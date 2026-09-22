@@ -60,6 +60,71 @@
         },
         "effects": [
           {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 3250.0
+              }
+            ],
+            "duration": 12.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_shield"
+              }
+            ],
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_shield"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
             "type": "immunity",
             "tier": "base",
             "immunity_type": "immune",
@@ -72,6 +137,18 @@
         ],
         "initial_energy": 0.0,
         "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          },
           {
             "label": "Immune — Self"
           }
@@ -415,6 +492,7 @@
     ],
     "benefit_stats": [
       "atk",
+      "haste",
       "shield"
     ],
     "scalar_stat_shares": {
@@ -626,7 +704,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "894562790932971b38c8a2a509c63ebb6960a00a69ee72a41d2400f4726f3fc9",
+    "inputs_hash": "c6d5edcf68fa7cb8b9ee6156a6c841191953e5064a190fd38e384458abdffa9a",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

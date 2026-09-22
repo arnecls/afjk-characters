@@ -52,7 +52,7 @@
                   }
                 ],
                 "duration": 7,
-                "tick": 1.0
+                "tick": 2.0
               }
             ],
             "summon_effects": [],
@@ -74,7 +74,7 @@
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 2,
                 "type": "crowd_control",
                 "cc-type": "bind",
                 "duration": 2.25
@@ -85,7 +85,7 @@
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 3,
+                "target_count": 2,
                 "type": "dot",
                 "damage_type": "dot",
                 "name": "DoT",

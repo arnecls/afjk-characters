@@ -62,6 +62,30 @@
                 "type": "debuff",
                 "name": "Movement speed",
                 "label": "debuff_stat"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 25.0,
+                    "modifier": "max_hp"
+                  }
+                ],
+                "duration": 7,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -204,7 +228,7 @@
                     "value": 18.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               },
               {
                 "tier": "legendary+",

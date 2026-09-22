@@ -62,7 +62,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 250.0
+                    "value": 55.0
                   }
                 ],
                 "duration": 1,
@@ -121,7 +121,8 @@
                     "type": "percentage",
                     "value": 200.0
                   }
-                ]
+                ],
+                "duration": 6.0
               },
               {
                 "tier": "base",
@@ -137,7 +138,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 600.0
+                    "value": 280.0
                   }
                 ]
               }
@@ -240,8 +241,27 @@
         "source_hash": "e9bfdc0a9bc49eef0b1fbe861642ae3736ba11d3469e6229387e2899eb023675",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Haste",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -270,7 +290,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 1.0
+                    "value": 85.0
                   }
                 ]
               }
@@ -303,7 +323,13 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Vitality",
-                "label": "debuff_defensive"
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 50.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

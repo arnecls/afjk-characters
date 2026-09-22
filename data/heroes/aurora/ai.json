@@ -28,21 +28,27 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Self",
+                "targeting_label": "Single target",
                 "is_max_known": true,
-                "target": "self",
+                "target": "enemy",
                 "area": "single",
                 "target_count": 1,
-                "type": "buff",
-                "name": "Invincible",
-                "label": "buff_stat",
+                "type": "damage",
+                "name": "Magic",
+                "label": "damage_normal",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 320.0
                   }
                 ],
-                "persistence": "permanent"
+                "damage_type": "magic",
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ]
               },
               {
                 "tier": "base",
@@ -98,7 +104,7 @@
                     "value": 50.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "temporary"
               }
             ],
             "immunities": [],
@@ -181,8 +187,8 @@
                 "target_count": -1,
                 "area_count": 2,
                 "type": "crowd_control",
-                "cc-type": "bind",
-                "duration": 1.125
+                "cc-type": "stun",
+                "duration": 5.125
               }
             ],
             "summon_effects": [],
@@ -265,7 +271,13 @@
                     "value": 25.0
                   }
                 ],
-                "persistence": "permanent"
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "unit_type",
+                    "unit_type": "melee"
+                  }
+                ]
               }
             ],
             "immunities": [
@@ -274,8 +286,8 @@
                 "tier": "mythic+",
                 "immunity_type": "unaffected",
                 "timing": "on_skill",
-                "targeting_label": "Self",
-                "target": "self",
+                "targeting_label": "Owned summons",
+                "target": "own_summons",
                 "area": "single",
                 "target_count": 1
               }

@@ -26,36 +26,11 @@
                     "value": 720.0
                   }
                 ]
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "damage",
-                "damage_type": "physical",
-                "name": "Physical",
-                "label": "damage_normal",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 790.0
-                  }
-                ]
               }
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [
-              {
-                "label": "Stacking",
-                "tier": "base",
-                "targeting": "Single target",
-                "description": "Additionally, each hit inflicts 5 stacks of Rend on the enemy, up to 30 stacks."
-              }
-            ],
+            "special_provides": [],
             "special_requires": []
           }
         }
@@ -74,13 +49,19 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "damage",
-                "damage_type": "physical",
-                "name": "Physical",
-                "label": "damage_normal",
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 38.5
+                    "value": 8.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "damage",
+                    "self": true
                   }
                 ]
               },
@@ -93,12 +74,35 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Max HP",
-                "label": "debuff_stat"
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 8.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "damage",
+                    "self": true
+                  },
+                  {
+                    "type": "unit_type",
+                    "unit_type": "non_boss"
+                  }
+                ]
               }
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Stacking",
+                "tier": "base",
+                "targeting": "Single target",
+                "description": "Each hit inflicts 5 stacks of Rend on the enemy, up to 30 stacks."
+              }
+            ],
             "special_requires": []
           }
         }
@@ -118,14 +122,14 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Healing",
-                "label": "healing",
+                "label": "debuff_healing",
                 "value": [
                   {
-                    "type": "percentage",
-                    "value": 300.0
+                    "type": "flat",
+                    "value": 90.0
                   }
                 ],
-                "duration": 3.0
+                "duration": 15.0
               },
               {
                 "tier": "base",
@@ -152,7 +156,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 430.0
+                    "value": 390.0
                   }
                 ]
               }
@@ -180,7 +184,38 @@
                 "type": "buff",
                 "name": "Crit",
                 "label": "buff_offensive",
-                "persistence": "permanent"
+                "persistence": "permanent",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 36.0
+                  }
+                ]
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Crit",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 18.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 15,
+                    "stack_comparison": "at_max"
+                  }
+                ],
+                "label": "buff_offensive"
               }
             ],
             "summon_effects": [],
@@ -205,7 +240,13 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Crit Resist",
-                "label": "debuff_offensive"
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 32.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -224,7 +265,13 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Vitality",
-                "label": "debuff_defensive"
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 50.0
+                  }
+                ]
               },
               {
                 "tier": "ex+10",
@@ -235,7 +282,13 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Damage taken",
-                "label": "debuff_stat"
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

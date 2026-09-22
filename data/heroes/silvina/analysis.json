@@ -67,7 +67,7 @@
             "value": [
               {
                 "type": "flat",
-                "value": 200.0
+                "value": 300.0
               }
             ]
           },
@@ -208,10 +208,32 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 180.0
+              }
+            ]
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          }
+        ]
       },
       "Hero Focus": {
         "category": "skill3",
@@ -237,10 +259,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Crit",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 40.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Crit — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Shield of Light": {
         "category": "skill4",
@@ -285,10 +330,30 @@
             "type": "crowd_control",
             "cc-type": "frighten",
             "duration": 4.0
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 600.0
+              }
+            ]
           }
         ],
         "skill_range": 1,
         "skill_card_tags": [
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          },
           {
             "label": "Frighten — Area (EX+10)"
           }
@@ -312,7 +377,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Vitality",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
@@ -479,7 +550,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "246b8f4b8f0ad004f3bc157a153ee09830347c4aa52e26c005b2b75942707ce9",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "1df2ed5eecdae5373b86aac09562d9311fdd8239502cbdbae24f40b33b164939",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

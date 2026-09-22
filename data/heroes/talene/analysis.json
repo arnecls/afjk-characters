@@ -373,16 +373,16 @@
           "description": "Talene transforms into a ball of flame whenever she is defeated."
         },
         {
-          "label": "Stacking",
-          "tier": "mythic+",
-          "targeting": "Single target",
-          "description": "Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks."
-        },
-        {
           "label": "Ally DoT on enemies",
           "tier": "mythic+",
           "targeting": "Area",
           "description": "Pyre of Renewal carrier deals damage equal to 50% of their ATK per second to adjacent enemies from battle start until the battle ends."
+        },
+        {
+          "label": "Stacking",
+          "tier": "mythic+",
+          "targeting": "Single target",
+          "description": "Every time the carrier is healed by an amount equal to 500% of their ATK, a kindling will be generated next to them to permanently enhance Talene's Pyre of Renewal, increasing its damage dealt by 50% for up to 3 stacks."
         }
       ],
       "requires": []
@@ -567,7 +567,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "209bbe5f31e85c723eb91207787064d0369921a2f43513997710560561758fb5",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "4094f45f048f4fc33c5ebb8ac5d5d98c146d68d417897630fe13205bf1a3af09",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

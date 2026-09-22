@@ -463,6 +463,10 @@
                 "type": "stack_count",
                 "stacks": 1,
                 "stack_comparison": "at_max"
+              },
+              {
+                "type": "stack_count",
+                "stack_comparison": "at_max"
               }
             ],
             "type": "buff",
@@ -487,6 +491,10 @@
               {
                 "type": "stack_count",
                 "stacks": 1,
+                "stack_comparison": "at_max"
+              },
+              {
+                "type": "stack_count",
                 "stack_comparison": "at_max"
               }
             ],
@@ -876,7 +884,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "a169331ec6a76c52b37d06fd8b50c19e75d36cfbb37dc4eee9cdd3f2024bd050",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "7db43422f4bd364c8599039bf4e195f6280adc56f9ec2e00070899c3d36dcece",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

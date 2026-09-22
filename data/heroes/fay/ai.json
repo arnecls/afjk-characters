@@ -23,7 +23,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 12.0
+                    "value": 14.0
                   }
                 ],
                 "persistence": "temporary"
@@ -45,6 +45,25 @@
                     "value": 300.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Arc",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "arc",
+                "target_count": -1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 15.0
+                  }
+                ],
+                "persistence": "temporary",
+                "area_direction": "front"
               }
             ],
             "summon_effects": [],
@@ -73,7 +92,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 50.0
+                    "value": 65.0
                   }
                 ],
                 "duration": 5,
@@ -95,11 +114,11 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "All units",
                 "is_max_known": true,
                 "target": "ally",
-                "area": "single",
-                "target_count": 1,
+                "area": "zone",
+                "target_count": -1,
                 "type": "heal",
                 "healing_type": "direct",
                 "name": "Direct healing",
@@ -108,7 +127,8 @@
                     "type": "percentage",
                     "value": 150.0
                   }
-                ]
+                ],
+                "area_count": -1
               },
               {
                 "tier": "base",
@@ -125,7 +145,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 175.0
+                    "value": 160.0
                   }
                 ]
               }
@@ -141,8 +161,27 @@
         "source_hash": "fff6820b1f57bb839a003ae90d6944ab8514352a2cc662f2529c39b886ed388b",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "HP",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 29.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -167,6 +206,104 @@
                 "name": "Vitality",
                 "label": "buff_defensive",
                 "persistence": "permanent"
+              },
+              {
+                "tier": "ex+5",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 14.0
+                  }
+                ],
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ]
+              },
+              {
+                "tier": "ex+5",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 15.0
+                  }
+                ],
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ]
+              },
+              {
+                "tier": "ex+5",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "dot",
+                "name": "Healing over time",
+                "label": "dot",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 65.0
+                  }
+                ],
+                "healing_type": "over_time",
+                "duration": 5.0,
+                "tick": 1.0,
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ]
+              },
+              {
+                "tier": "ex+5",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "name": "Direct healing",
+                "label": "healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ],
+                "healing_type": "direct",
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -180,8 +317,26 @@
         "source_hash": "e65d13a57da1596c235c366ab5289d787f7a4042814f171ecb9295867e267471",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ]
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

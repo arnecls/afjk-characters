@@ -125,7 +125,32 @@
                     "value": 35.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "temporary"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "fatal_blow",
+                    "self": true
+                  }
+                ],
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 35.0
+                  }
+                ],
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -232,6 +257,12 @@
                 "type": "buff",
                 "name": "Lifedrain",
                 "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 30.0
+                  }
+                ],
                 "persistence": "temporary"
               }
             ],

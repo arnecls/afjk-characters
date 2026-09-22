@@ -69,7 +69,7 @@
           "Skill Range": "Global"
         },
         "description": {
-          "raw": "Himmel dashes to the 2 enemies with the highest cumulative damage dealt, dealing 340% (ATK-based) + 40% (SP-based) damage and knocking each enemy down for 2s. He then returns to his original position. Himmel remains while casting this skill.",
+          "raw": "Himmel dashes to the 2 enemies with the highest cumulative damage dealt, dealing 340% (ATK-based) + 40% (SP-based) damage and knocking each enemy down for 2s. He then returns to his original position. Himmel remains unaffected while casting this skill.",
           "active": [
             "Himmel dashes to the 2 enemies with the highest cumulative damage dealt, dealing 340% (ATK-based) + 40% (SP-based) damage and knocking each enemy down for 2s.",
             "He then returns to his original position.",

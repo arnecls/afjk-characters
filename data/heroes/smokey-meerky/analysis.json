@@ -74,7 +74,7 @@
                 "value": 50.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
           },
           {
             "tier": "base",
@@ -232,7 +232,7 @@
                 "value": 8.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
           }
         ],
         "skill_range": 5,
@@ -347,10 +347,10 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 6.0
+                "value": 10.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "permanent"
           }
         ],
         "skill_range": 1,
@@ -416,14 +416,14 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 14.0
+                "value": 15.0
               }
             ],
             "duration": 10.0,
             "tick": 1.0
           },
           {
-            "tier": "mythic+",
+            "tier": "ex+10",
             "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
@@ -433,31 +433,6 @@
             "type": "crowd_control",
             "cc-type": "stun",
             "duration": 0.1
-          },
-          {
-            "tier": "mythic+",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 3,
-            "conditions": [
-              {
-                "type": "duration_gate",
-                "gate": "first_time"
-              }
-            ],
-            "type": "damage",
-            "damage_type": "hp_loss",
-            "name": "HP loss",
-            "label": "damage_hp_loss",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 14.0
-              }
-            ]
           }
         ],
         "skill_range": 4,
@@ -466,10 +441,13 @@
             "label": "DoT"
           },
           {
-            "label": "HP loss"
+            "label": "DoT (EX+5)"
           },
           {
-            "label": "Stun — Area"
+            "label": "DoT (EX+15)"
+          },
+          {
+            "label": "Stun — Area (EX+10)"
           }
         ]
       },
@@ -493,10 +471,6 @@
     "damage_entries": [
       [
         "dot",
-        "Area"
-      ],
-      [
-        "hp_loss",
         "Area"
       ]
     ],
@@ -663,7 +637,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "abfc3d09e0d35969af749d4842cc5ddd086dc04816b7a6f0049f051110f25848",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "04084d8124a73788167f168f312d9c67cc2c1f7b42d97053e19d61792ad14b23",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

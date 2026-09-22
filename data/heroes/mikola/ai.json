@@ -43,6 +43,60 @@
                     "value": 110.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 3,
+                "type": "buff",
+                "name": "Ranged DEF",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 10.0
+                  }
+                ],
+                "persistence": "temporary",
+                "label": "buff_defensive"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Haste",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "temporary",
+                "label": "buff_offensive"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Ranged DEF",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 10.0
+                  }
+                ],
+                "persistence": "temporary",
+                "label": "buff_defensive"
               }
             ],
             "summon_effects": [],
@@ -72,7 +126,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 14.0
+                    "value": 20.0
                   }
                 ],
                 "persistence": "temporary"
@@ -99,7 +153,7 @@
                 "area": "single",
                 "target_count": 3,
                 "type": "buff",
-                "name": "DEF",
+                "name": "Phys DEF",
                 "label": "buff_defensive",
                 "value": [
                   {
@@ -140,7 +194,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 130.0
+                    "value": 190.0
                   }
                 ]
               }
@@ -197,7 +251,7 @@
                 "label": "Ally DoT on enemies",
                 "tier": "mythic+",
                 "targeting": "Area",
-                "description": "After Courage Sphere has been active for 6s, Mikola deals damage equal to 50% of her ATK per second to enemies adjacent to allies carrying Combat Fury."
+                "description": "After Courage Sphere has been active for 6s, Mikola deals damage equal to 70% of her ATK per second to enemies adjacent to allies carrying Combat Fury."
               }
             ],
             "special_requires": []
@@ -217,7 +271,7 @@
                 "value": [
                   {
                     "type": "flat",
-                    "value": 70.0
+                    "value": 30.0
                   }
                 ],
                 "persistence": "temporary"
@@ -237,18 +291,7 @@
           "supreme+": {
             "effects": [],
             "summon_effects": [],
-            "immunities": [
-              {
-                "type": "immunity",
-                "tier": "supreme+",
-                "immunity_type": "unaffected",
-                "timing": "conditional",
-                "targeting_label": "Self",
-                "target": "self",
-                "area": "single",
-                "target_count": 1
-              }
-            ],
+            "immunities": [],
             "special_provides": [],
             "special_requires": []
           }

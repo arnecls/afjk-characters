@@ -106,7 +106,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 20.0
+                "value": 18.0
               }
             ]
           },
@@ -301,18 +301,57 @@
             "targeting_label": "Multiple targets",
             "is_max_known": true,
             "target": "ally",
-            "area": "single",
+            "area": "radius",
             "target_count": 3,
+            "area_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
             "type": "buff",
             "name": "ATK SPD",
             "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ],
             "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 90.0
+              }
+            ]
           }
         ],
         "skill_range": 1,
         "skill_card_tags": [
           {
             "label": "ATK SPD — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self",
             "polarity": "buff"
           }
         ]
@@ -341,10 +380,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Soulshock Riposte": {
         "category": "skill4",
@@ -409,7 +471,33 @@
             "type": "buff",
             "name": "Lifedrain",
             "label": "buff_stat",
-            "persistence": "unknown"
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "duration": 10.0,
+            "persistence": "temporary"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 80.0
+              }
+            ],
+            "duration": 10.0,
+            "persistence": "temporary"
           },
           {
             "type": "immunity",
@@ -426,6 +514,10 @@
         "skill_card_tags": [
           {
             "label": "Energy — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK SPD — Self (EX+10)",
             "polarity": "buff"
           },
           {
@@ -462,15 +554,31 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_shield"
+              },
+              {
+                "type": "trigger_condition",
+                "trigger": "normal_attack"
+              }
+            ],
             "type": "buff",
-            "name": "Haste",
-            "label": "buff_offensive",
-            "persistence": "unknown"
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
           {
-            "label": "Haste — Self",
+            "label": "Energy — Self",
             "polarity": "buff"
           }
         ]
@@ -496,7 +604,6 @@
     ],
     "benefit_stats": [
       "atk_spd",
-      "haste",
       "shield",
       "energy"
     ],
@@ -705,7 +812,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "7913fda626ff207f02d8ad3f3c2cdc2a4bd94262d3e24299ee08472e4821702d",
+    "inputs_hash": "081265d0bea7a4d664faf83a9daee8e98d29fb99df55f9c41c6e5eb69c442355",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

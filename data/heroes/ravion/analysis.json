@@ -172,9 +172,10 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 12.0
+                "value": 15.0
               }
             ],
+            "duration": 30.0,
             "persistence": "temporary"
           },
           {
@@ -204,7 +205,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "ATK",
-            "label": "debuff_offensive"
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
           },
           {
             "tier": "base",
@@ -232,16 +239,6 @@
             "target_count": 1,
             "type": "crowd_control",
             "cc-type": "knock_down"
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "crowd_control",
-            "cc-type": "displace"
           },
           {
             "tier": "base",
@@ -294,9 +291,6 @@
             "polarity": "debuff"
           },
           {
-            "label": "Displace — Single target"
-          },
-          {
             "label": "Knock down — Single target"
           },
           {
@@ -346,17 +340,6 @@
             "area": "radius",
             "target_count": -1,
             "area_count": 1,
-            "type": "crowd_control",
-            "cc-type": "displace"
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 1,
             "type": "damage",
             "damage_type": "physical",
             "name": "Physical",
@@ -385,9 +368,6 @@
         "skill_card_tags": [
           {
             "label": "Physical"
-          },
-          {
-            "label": "Displace — Area"
           },
           {
             "label": "Unaffected — Self"
@@ -494,7 +474,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 25.0
+                "value": 35.0
               }
             ],
             "persistence": "permanent"
@@ -530,6 +510,29 @@
                 "phase": "once_per_battle"
               }
             ],
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ],
+            "duration": 5.0
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "once_per_battle"
+              }
+            ],
             "type": "buff",
             "name": "Lifedrain",
             "label": "buff_stat",
@@ -539,6 +542,7 @@
                 "value": 20.0
               }
             ],
+            "duration": 5.0,
             "persistence": "temporary"
           }
         ],
@@ -554,6 +558,10 @@
           },
           {
             "label": "Lifedrain (EX+10)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield (EX+10)",
             "polarity": "buff"
           }
         ]
@@ -837,7 +845,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "8eaed94e2ceaa9bb7238740bef529b766fbaf66119d16c692bc034a8c629ce20",
+    "inputs_hash": "2ee53c792e90e9483d8987a84192485f611f3de1d796c0165fdf1d04634e2264",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

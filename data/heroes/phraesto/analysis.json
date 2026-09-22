@@ -75,6 +75,23 @@
                 "value": 380.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 160.0
+              }
+            ]
           }
         ],
         "cooldown": 1.25,
@@ -84,6 +101,10 @@
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
           }
         ]
       },
@@ -133,6 +154,12 @@
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 14.0
+              }
+            ],
             "persistence": "permanent"
           },
           {
@@ -229,7 +256,30 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Vitality",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 45.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Haste",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ]
           },
           {
             "tier": "base",
@@ -253,21 +303,22 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Self",
             "is_max_known": true,
-            "target": "enemy",
+            "target": "self",
             "area": "single",
             "target_count": 1,
-            "type": "damage",
-            "damage_type": "hp_loss",
-            "name": "HP loss",
-            "label": "damage_hp_loss",
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
             "value": [
               {
                 "type": "percentage",
-                "value": 2.4
+                "value": 4.5
               }
-            ]
+            ],
+            "duration": 6.0,
+            "tick": 1.0
           }
         ],
         "cooldown": 11.0,
@@ -280,7 +331,12 @@
             "label": "DoT"
           },
           {
-            "label": "HP loss"
+            "label": "HoT — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste",
+            "polarity": "debuff"
           },
           {
             "label": "Vitality",
@@ -326,6 +382,30 @@
             "type": "buff",
             "name": "Magic DEF",
             "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ],
+            "persistence": "unknown"
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Phys DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ],
             "persistence": "unknown"
           }
         ],
@@ -333,6 +413,10 @@
         "skill_card_tags": [
           {
             "label": "Magic DEF — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Phys DEF — Self",
             "polarity": "buff"
           }
         ]
@@ -456,15 +540,12 @@
       [
         "dot",
         "Single target"
-      ],
-      [
-        "hp_loss",
-        "Single target"
       ]
     ],
     "benefit_stats": [
       "healing",
       "energy",
+      "physical_def",
       "magic_def"
     ],
     "scalar_stat_shares": {
@@ -661,7 +742,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "6b0e112daaed234c734125ad9ac30b81495c22da4f8699d34dde65c46b8189ec",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "2e6ca72f455348d88dc2ec0cdbb883c252d3ba60e90af72f6c9651b01a9ab82c",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

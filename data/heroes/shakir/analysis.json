@@ -122,7 +122,7 @@
                 "value": 25.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
           },
           {
             "type": "immunity",
@@ -203,7 +203,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 240.0
+                "value": 440.0
               }
             ]
           }
@@ -258,15 +258,33 @@
             "area": "single",
             "target_count": 1,
             "type": "buff",
+            "name": "Ranged DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
             "name": "Lifedrain",
             "label": "buff_stat",
             "value": [
               {
                 "type": "flat",
-                "value": 30.0
+                "value": 45.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "temporary"
           },
           {
             "type": "immunity",
@@ -282,6 +300,10 @@
         "skill_card_tags": [
           {
             "label": "Lifedrain — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Ranged DEF — Self",
             "polarity": "buff"
           },
           {
@@ -327,6 +349,12 @@
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 22.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -392,7 +420,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Vitality",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
@@ -422,7 +456,8 @@
     ],
     "benefit_stats": [
       "haste",
-      "max_hp"
+      "max_hp",
+      "physical_def"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -596,7 +631,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "e730d650b99da41ad765e52ad27a08c10f9cdfd0794d3f5205b701a46b1ed823",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "89a8b61fa4e39acf188aaaf3391aae2e65425b19960b9db9897b0499459d5817",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

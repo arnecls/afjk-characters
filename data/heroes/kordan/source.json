@@ -203,7 +203,7 @@
               "level": "3",
               "unlock": "Unlocks at EX. +10",
               "text": [
-                "Each assist or defeat Kordan achieves against a non-summoned enemy inside the hunting circle permanently increases his Phys & Magic DEF by 40, staking up to 3 times.",
+                "Each assist or defeat Kordan achieves against a non-summoned enemy inside the hunting circle permanently increases his Phys & Magic DEF by 40%, stacking up to 3 times.",
                 "Each assist or defeat also restores 15% of his max HP every second for 3s."
               ]
             },

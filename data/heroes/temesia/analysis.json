@@ -289,20 +289,19 @@
             ]
           },
           {
-            "tier": "supreme+",
-            "targeting_label": "Single target",
+            "tier": "base",
+            "targeting_label": "Self",
             "is_max_known": true,
-            "target": "enemy",
+            "target": "self",
             "area": "single",
             "target_count": 1,
-            "type": "damage",
-            "damage_type": "max_hp",
-            "name": "Max HP-based damage",
-            "label": "damage_max_hp",
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
             "value": [
               {
                 "type": "percentage",
-                "value": 30.0
+                "value": 10.0
               }
             ]
           }
@@ -313,7 +312,8 @@
             "label": "Physical"
           },
           {
-            "label": "Max HP-based damage (Supreme+)"
+            "label": "Direct healing — Self",
+            "polarity": "buff"
           },
           {
             "label": "Damage dealt",
@@ -587,10 +587,6 @@
         "Area, Single target"
       ],
       [
-        "max_hp",
-        "Single target"
-      ],
-      [
         "true",
         "Area"
       ]
@@ -779,7 +775,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "327ca5abd393d0596d1feaef20c27a4508f67ed510e7f1e749ea72163009c695",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "36adacbd583af05970b3216adcc85921cfac92c05c88e4fa01f35346b3609566",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

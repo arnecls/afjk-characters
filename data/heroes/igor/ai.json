@@ -74,34 +74,18 @@
               }
             ],
             "summon_effects": [],
-            "immunities": [],
-            "special_provides": [],
-            "special_requires": []
-          },
-          "mythic+": {
-            "effects": [
+            "immunities": [
               {
-                "tier": "mythic+",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
+                "type": "immunity",
+                "tier": "base",
+                "immunity_type": "untargetable",
+                "timing": "on_skill",
+                "targeting_label": "Self",
+                "target": "self",
                 "area": "single",
-                "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "hp_threshold",
-                    "hp_ratio": 0.7,
-                    "comparison": "above"
-                  }
-                ],
-                "type": "debuff",
-                "name": "Healing",
-                "label": "healing",
-                "duration": 4.0
+                "target_count": 1
               }
             ],
-            "summon_effects": [],
-            "immunities": [],
             "special_provides": [],
             "special_requires": []
           }
@@ -178,6 +162,39 @@
         "source_hash": "4ed034dace02238286ced95a348e4f401dc6578ff03783d70c29c829afb86a9b",
         "is_max_known": true,
         "tiers": {
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.7,
+                    "comparison": "above"
+                  }
+                ],
+                "type": "debuff",
+                "name": "Healing",
+                "label": "healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
+                  }
+                ],
+                "duration": 4.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
           "ex+5": {
             "effects": [
               {
@@ -187,10 +204,75 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.7,
+                    "comparison": "above"
+                  }
+                ],
                 "type": "debuff",
                 "name": "Healing",
                 "label": "healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
+                  }
+                ],
                 "duration": 5.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Healing",
+                "label": "healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
+                  }
+                ],
+                "duration": 5.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+15": {
+            "effects": [
+              {
+                "tier": "ex+15",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Healing",
+                "label": "healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
+                  }
+                ],
+                "duration": 6.0
               }
             ],
             "summon_effects": [],

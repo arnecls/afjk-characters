@@ -248,7 +248,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 140.0
+                "value": 220.0
               }
             ],
             "duration": 3.0,
@@ -271,25 +271,6 @@
                 "value": 150.0
               }
             ]
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 1,
-            "type": "damage",
-            "damage_type": "magic",
-            "name": "Magic",
-            "label": "damage_normal",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 220.0
-              }
-            ]
           }
         ],
         "cooldown": 9.0,
@@ -297,9 +278,6 @@
         "skill_card_tags": [
           {
             "label": "DoT"
-          },
-          {
-            "label": "Magic"
           },
           {
             "label": "Energy — Area",
@@ -518,7 +496,7 @@
     "damage_entries": [
       [
         "magic",
-        "Area, Single target"
+        "Single target"
       ],
       [
         "dot",
@@ -730,7 +708,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "4071db8c2f2bbbb812ed75d68904f4a09658478cfbf0a8f2e7f1ee929fb09c06",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "14ccfd5f5c7643abd3c6b22457a3e5f1eac570a8985a91d31b6d8af8d6538285",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

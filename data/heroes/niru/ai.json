@@ -8,7 +8,32 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 45.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "fatal_blow",
+                    "ally": true
+                  }
+                ]
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [
@@ -86,7 +111,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 600.0
+                    "value": 120.0
                   }
                 ]
               }
@@ -119,7 +144,26 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 195.0
+                    "value": 180.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": -1,
+                "area_count": -1,
+                "type": "damage",
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
+                "label": "damage_max_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 5.0
                   }
                 ]
               }
@@ -135,8 +179,27 @@
         "source_hash": "fff6820b1f57bb839a003ae90d6944ab8514352a2cc662f2529c39b886ed388b",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "HP",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 29.0
+                  }
+                ],
+                "persistence": "permanent",
+                "label": "buff_stat"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -178,24 +241,7 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [
-              {
-                "label": "Named ally on team",
-                "tier": "supreme+",
-                "targeting": "Allies",
-                "description": "When Spirit Devour heals Shemira or Daimon, it also increases their Phys DEF and Magic DEF by 60% for 8s.",
-                "grants": [
-                  {
-                    "label": "Phys DEF",
-                    "magnitude": "high"
-                  },
-                  {
-                    "label": "Magic DEF",
-                    "magnitude": "high"
-                  }
-                ]
-              }
-            ],
+            "special_provides": [],
             "special_requires": []
           }
         }

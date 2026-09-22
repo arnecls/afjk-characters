@@ -170,15 +170,15 @@
             "area": "single",
             "target_count": 1,
             "type": "buff",
-            "name": "Invincible",
+            "name": "Energy",
             "label": "buff_stat",
             "value": [
               {
-                "type": "percentage",
-                "value": 220.0
+                "type": "flat",
+                "value": 150.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
           },
           {
             "tier": "base",
@@ -188,12 +188,12 @@
             "area": "single",
             "target_count": 1,
             "type": "buff",
-            "name": "Energy",
-            "label": "buff_stat",
+            "name": "ATK",
+            "label": "buff_offensive",
             "value": [
               {
-                "type": "flat",
-                "value": 150.0
+                "type": "percentage",
+                "value": 2.0
               }
             ],
             "persistence": "permanent"
@@ -246,11 +246,11 @@
             "label": "Physical"
           },
           {
-            "label": "Energy — Self",
+            "label": "ATK — Self",
             "polarity": "buff"
           },
           {
-            "label": "Invincible — Self",
+            "label": "Energy — Self",
             "polarity": "buff"
           },
           {
@@ -297,6 +297,23 @@
         "effects": [
           {
             "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "duration": 3.0
+          },
+          {
+            "tier": "base",
             "targeting_label": "Arc",
             "is_max_known": true,
             "target": "enemy",
@@ -324,22 +341,6 @@
                 "value": 145.0
               }
             ]
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "ally",
-            "area": "single",
-            "target_count": 1,
-            "type": "shield",
-            "name": "Shield",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 20.0
-              }
-            ]
           }
         ],
         "cooldown": 3.0,
@@ -349,7 +350,7 @@
             "label": "Physical"
           },
           {
-            "label": "Shield (Supreme+)",
+            "label": "Shield",
             "polarity": "buff"
           },
           {
@@ -468,7 +469,7 @@
           "label": "Invincibility",
           "tier": "base",
           "targeting": "Self",
-          "description": "While in the air, she is Invincible, recovering 40 Energy per second, and increasing 2% ATK till the battle ends."
+          "description": "While in the air, she is Invincible."
         }
       ],
       "requires": []
@@ -659,7 +660,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "ad11e9921a61343c73d6f7d9c152a329e9e2e01594c73d429ceae37a939df418",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "6d4945a764f65bc6095faef053b3c6ca0ec6175aa5f13219ed1df9e9eb9e95ab",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

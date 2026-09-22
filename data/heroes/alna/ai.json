@@ -70,6 +70,66 @@
                     "value": 55.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "healing_type": "over_time",
+                "name": "Healing over time",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 55.0
+                  }
+                ],
+                "duration": 10,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_blizzard"
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "type": "debuff",
+                "name": "Attack range",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 2.0
+                  }
+                ],
+                "area_count": -1
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "zone",
+                "target_count": -1,
+                "type": "debuff",
+                "name": "Attack range",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 2.0
+                  }
+                ],
+                "area_count": -1
               }
             ],
             "summon_effects": [],
@@ -266,50 +326,6 @@
             ],
             "special_requires": []
           },
-          "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Area",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "radius",
-                "target_count": -1,
-                "area_count": 1,
-                "conditions": [
-                  {
-                    "type": "duration_gate",
-                    "gate": "first_time"
-                  }
-                ],
-                "type": "debuff",
-                "name": "Vitality",
-                "label": "debuff_defensive"
-              },
-              {
-                "tier": "supreme+",
-                "targeting_label": "Area",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "radius",
-                "target_count": -1,
-                "area_count": 1,
-                "conditions": [
-                  {
-                    "type": "duration_gate",
-                    "gate": "first_time"
-                  }
-                ],
-                "type": "crowd_control",
-                "cc-type": "bind",
-                "duration": 2.0
-              }
-            ],
-            "summon_effects": [],
-            "immunities": [],
-            "special_provides": [],
-            "special_requires": []
-          },
           "mythic+": {
             "effects": [],
             "summon_effects": [],
@@ -360,6 +376,49 @@
                   }
                 ],
                 "persistence": "temporary"
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "conditions": [
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  }
+                ],
+                "type": "debuff",
+                "name": "Vitality",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 50.0
+                  }
+                ],
+                "duration": 10
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "conditions": [
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  }
+                ],
+                "type": "crowd_control",
+                "cc-type": "bind",
+                "duration": 2.0
               }
             ],
             "summon_effects": [],
@@ -387,6 +446,6 @@
     "skill4": "immunity to damage and control effects",
     "skill5": "shared stat buff; first immunity exit freezes nearby enemies"
   },
-  "play_overview": "Before battle, [[Alna]] selects a same-row **Winter Warrior**, whose survival is central to her protection plan. At battle start, she applies field-wide **Haste reduction** and cycles **damage and control immunity**, with her skill set able to extend those protections to the partner. Her blizzard removes enemy Haste buffs and deals persistent damage, while [[Alna]] and the Winter Warrior recover from damage over time. She is strongest when a protected carry can exploit the time she buys, as in **[[Alna]]–[[Frieren]]** or **[[Alna]]–[[Sylphira]]** shells. Her value drops if the Winter Warrior is exposed or enemies resist Haste reduction, and her later immunity and durability scaling need time to matter.",
-  "counter_overview": "[[Alna]]'s opening frost slows the whole fight while her Winter Warrior shares her protection, so do not rely on a slow attrition plan. The [[Pandora]]–[[Zorya]]–[[Athalia]] line is a tested option, while [[Eironn]] offers an alternative that disrupts the opening. If the enemy core leans on healing, use [[filter:heal-inhibitor]] like [[Gwyneth]] or [[Frieren]], and focus the paired carry when the Winter Warrior cannot be reached. Against her battle-start setup, [[Eironn]] is the timely grouping option; do not wait for a slow mid-fight answer."
+  "play_overview": "Before battle, [[Alna]] selects a same-row **Winter Warrior**, whose survival is central to her protection plan. At battle start, she applies field-wide **Haste reduction** and cycles **damage and control immunity**, with her skill set able to extend those protections to the partner. Her blizzard removes enemy Haste buffs and deals persistent damage, while [[Alna]] and the Winter Warrior recover from damage over time. She is strongest when a protected carry can exploit the time she buys, as in **[[Alna]]\u2013[[Frieren]]** or **[[Alna]]\u2013[[Sylphira]]** shells. Her value drops if the Winter Warrior is exposed or enemies resist Haste reduction, and her later immunity and durability scaling need time to matter.",
+  "counter_overview": "[[Alna]]'s opening frost slows the whole fight while her Winter Warrior shares her protection, so do not rely on a slow attrition plan. The [[Pandora]]\u2013[[Zorya]]\u2013[[Athalia]] line is a tested option, while [[Eironn]] offers an alternative that disrupts the opening. If the enemy core leans on healing, use [[filter:heal-inhibitor]] like [[Gwyneth]] or [[Frieren]], and focus the paired carry when the Winter Warrior cannot be reached. Against her battle-start setup, [[Eironn]] is the timely grouping option; do not wait for a slow mid-fight answer."
 }

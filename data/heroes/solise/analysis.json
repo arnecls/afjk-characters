@@ -263,6 +263,22 @@
                 "value": 250.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 3,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 250.0
+              }
+            ]
           }
         ],
         "cooldown": 7.0,
@@ -270,6 +286,10 @@
         "skill_card_tags": [
           {
             "label": "Direct healing — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Multiple targets",
             "polarity": "buff"
           }
         ]
@@ -620,7 +640,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "b66663a0888691d89649b3a008141f96172b8774ee4af83792a8c454f6eef8fb",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "f3d16ccba0464862a74642b33a52946871d480e7dca0edc43f7c7cd15254c1be",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

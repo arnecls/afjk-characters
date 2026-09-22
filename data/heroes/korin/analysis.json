@@ -65,7 +65,7 @@
             "area_count": 1,
             "type": "crowd_control",
             "cc-type": "bind",
-            "duration": 2.0
+            "duration": 4.0
           },
           {
             "tier": "base",
@@ -147,9 +147,9 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Self",
             "is_max_known": true,
-            "target": "ally",
+            "target": "self",
             "area": "single",
             "target_count": 1,
             "type": "shield",
@@ -159,7 +159,8 @@
                 "type": "percentage",
                 "value": 320.0
               }
-            ]
+            ],
+            "duration": 5.0
           },
           {
             "tier": "base",
@@ -187,7 +188,7 @@
             "label": "True damage"
           },
           {
-            "label": "Shield",
+            "label": "Shield — Self",
             "polarity": "buff"
           }
         ]
@@ -252,10 +253,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Vine Arms": {
         "category": "skill4",
@@ -304,7 +328,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 2.0
+                "value": 2.8
               }
             ]
           },
@@ -323,9 +347,28 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 2.0
+                "value": 2.8
               }
             ]
+          },
+          {
+            "tier": "ex+5",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "duration": 8.0,
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
@@ -334,6 +377,22 @@
           },
           {
             "label": "True damage"
+          },
+          {
+            "label": "Max HP-based damage (EX+10)"
+          },
+          {
+            "label": "True damage (EX+10)"
+          },
+          {
+            "label": "Max HP-based damage (EX+15)"
+          },
+          {
+            "label": "True damage (EX+15)"
+          },
+          {
+            "label": "ATK SPD — Self (EX+5)",
+            "polarity": "buff"
           }
         ]
       },
@@ -388,7 +447,8 @@
     "benefit_stats": [
       "atk_spd",
       "haste",
-      "max_hp"
+      "max_hp",
+      "shield"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -524,7 +584,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "3f3dac0942214fbecbb91ae279eea6a8cd3b601a853a8332b71baab27436b9e7",
+    "inputs_hash": "26bfba3bf6ef7235bfd84f352dad9b723dec1771bd59bdeddc3ef114a911305e",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

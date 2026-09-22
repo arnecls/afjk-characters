@@ -421,6 +421,13 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 3,
+                "stack_comparison": "at_max"
+              }
+            ],
                 "type": "damage",
                 "damage_type": "true",
                 "name": "True damage",

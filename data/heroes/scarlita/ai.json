@@ -66,14 +66,7 @@
                 "target_count": 1
               }
             ],
-            "special_provides": [
-              {
-                "label": "Invincibility",
-                "tier": "base",
-                "targeting": "Self",
-                "description": "While in the air, she is Invincible, recovering 40 Energy per second, and increasing 2% ATK till the battle ends."
-              }
-            ],
+            "special_provides": [],
             "special_requires": []
           }
         }
@@ -91,16 +84,16 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
-                "type": "buff",
-                "name": "Invincible",
-                "label": "buff_stat",
+                "type": "energy",
+                "name": "Energy",
                 "value": [
                   {
-                    "type": "percentage",
-                    "value": 220.0
+                    "type": "flat",
+                    "value": 40
                   }
                 ],
-                "persistence": "permanent"
+                "persistence": "temporary",
+                "tick": 1
               },
               {
                 "tier": "base",
@@ -110,12 +103,12 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Energy",
-                "label": "buff_stat",
+                "name": "ATK",
+                "label": "buff_offensive",
                 "value": [
                   {
-                    "type": "flat",
-                    "value": 40.0
+                    "type": "percentage",
+                    "value": 2.0
                   }
                 ],
                 "persistence": "permanent"
@@ -165,7 +158,14 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Invincibility",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "While in the air, she is Invincible."
+              }
+            ],
             "special_requires": []
           }
         }
@@ -176,6 +176,23 @@
         "tiers": {
           "base": {
             "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "duration": 3
+              },
               {
                 "tier": "base",
                 "targeting_label": "Arc",
@@ -203,30 +220,6 @@
                   {
                     "type": "percentage",
                     "value": 145.0
-                  }
-                ]
-              }
-            ],
-            "summon_effects": [],
-            "immunities": [],
-            "special_provides": [],
-            "special_requires": []
-          },
-          "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "ally",
-                "area": "single",
-                "target_count": 1,
-                "type": "shield",
-                "name": "Shield",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 20.0
                   }
                 ]
               }

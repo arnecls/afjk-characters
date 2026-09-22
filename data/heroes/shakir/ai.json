@@ -74,7 +74,7 @@
                     "value": 25.0
                   }
                 ],
-                "persistence": "permanent"
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -116,13 +116,12 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "damage",
-                "damage_type": "physical",
-                "name": "Physical",
                 "label": "damage_normal",
+                "name": "Physical",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 240.0
+                    "value": 440.0
                   }
                 ]
               }
@@ -148,15 +147,33 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Lifedrain",
-                "label": "buff_stat",
+                "label": "buff_defensive",
+                "name": "Ranged DEF",
                 "value": [
                   {
                     "type": "flat",
                     "value": 30.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "label": "buff_stat",
+                "name": "Lifedrain",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 45.0
+                  }
+                ],
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -191,8 +208,14 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Damage taken",
                 "label": "buff_stat",
+                "name": "Damage taken",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 22.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],
@@ -230,8 +253,15 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "debuff",
+                "label": "debuff_defensive",
                 "name": "Vitality",
-                "label": "debuff_defensive"
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 60.0
+                  }
+                ],
+                "duration": 4
               }
             ],
             "summon_effects": [],

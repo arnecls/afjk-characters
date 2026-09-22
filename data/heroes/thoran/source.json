@@ -189,7 +189,7 @@
           "Skill Range": "Global"
         },
         "description": {
-          "raw": "Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take 50% of the damage for this ally until the battle ends. When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP. After that, Thoran no longer takes damage for this ally.",
+          "raw": "Before a battle starts, Thoran signs a pact with the ally 1 tile behind him, agreeing to take 50% of the damage for this ally until the battle ends. When Thoran takes a fatal blow, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this amount. After that, Thoran no longer takes damage for this ally.",
           "active": [
             "Before a battle starts, Thoran signs a pact with the ally on the tile behind him, agreeing to take 50% of the damage for this ally until the battle ends.",
             "When Thoran is defeated, this ally sacrifices 85% of their current HP to save and heal Thoran by 150% of this portion of HP.",

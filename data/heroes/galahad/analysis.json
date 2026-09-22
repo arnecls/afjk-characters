@@ -293,10 +293,27 @@
         "effects": [
           {
             "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 600.0
+              }
+            ],
+            "duration": 8.0
+          },
+          {
+            "tier": "base",
             "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
+            "area": "radius",
             "target_count": -1,
             "area_count": 1,
             "type": "damage",
@@ -317,6 +334,10 @@
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "Shield",
+            "polarity": "buff"
           }
         ]
       },
@@ -719,7 +740,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "0402da901b32fd9bc19f77c105b3b9f73a49a77f3a6dfc032dc94fed74b1d787",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "6837bb0abccc9380972d49631b3ead4d96095297089fdaa149f37e057485f899",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -284,7 +284,8 @@
                 "value": 16.0
               }
             ],
-            "persistence": "permanent"
+            "duration": 5.0,
+            "persistence": "temporary"
           }
         ],
         "cooldown": 12.0,
@@ -738,7 +739,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "ef0b577ec74a3f79213c2ecc28676b0541232af962106ba04080aeb7cca7ae6b",
+    "inputs_hash": "f2b09cdce98e8ddd9cc0f0f73603a0515f8d956cbcafc4918ad15dc6156a9ef5",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

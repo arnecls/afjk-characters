@@ -246,10 +246,38 @@
             "type": "debuff",
             "name": "Marked target (focus fire)",
             "label": "debuff_stat"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 100.0
+              }
+            ],
+            "duration": 1.125,
+            "tick": 0.375
           }
         ],
         "skill_range": 1,
         "skill_card_tags": [
+          {
+            "label": "HoT — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "HoT — Area",
+            "polarity": "buff"
+          },
           {
             "label": "Marked target (focus fire)",
             "polarity": "debuff"
@@ -381,6 +409,23 @@
             ]
           },
           {
+            "tier": "ex+5",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 350.0
+              }
+            ],
+            "duration": 5.0
+          },
+          {
             "type": "immunity",
             "tier": "mythic+",
             "immunity_type": "unaffected",
@@ -396,6 +441,10 @@
         "skill_card_tags": [
           {
             "label": "Physical"
+          },
+          {
+            "label": "Shield — Self (EX+5)",
+            "polarity": "buff"
           },
           {
             "label": "Haste",
@@ -426,12 +475,6 @@
           "tier": "base",
           "targeting": "Single target",
           "description": "Kafra prioritizes attacking the enemy who carries Forest Mark."
-        },
-        {
-          "label": "Marked target (focus fire)",
-          "tier": "base",
-          "targeting": "Area",
-          "description": "When a marked enemy is defeated, Kafra and allies within 2 tiles of this enemy recover 100% (ATK-based) + 15% HP every 0.375s for 1.125s."
         }
       ],
       "requires": []
@@ -590,7 +633,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "0da2850ba6878a047d62845b7194b8bc07038e74934a212e3ba9526e40586014",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "c40703feba835a093a739d90cd689673a3b352eec266b705d6ba477d8ec78663",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

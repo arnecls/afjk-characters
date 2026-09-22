@@ -203,31 +203,23 @@
                     "type": "percentage",
                     "value": 15.0
                   }
-                ]
-              }
-            ],
-            "summon_effects": [],
-            "immunities": [],
-            "special_provides": [],
-            "special_requires": []
-          },
-          "supreme+": {
-            "effects": [
+                ],
+                "duration": 5.0
+              },
               {
-                "tier": "supreme+",
-                "targeting_label": "Single target",
+                "tier": "base",
+                "targeting_label": "Self",
                 "is_max_known": true,
-                "target": "enemy",
+                "target": "self",
                 "area": "single",
                 "target_count": 1,
-                "type": "damage",
-                "damage_type": "max_hp",
-                "name": "Max HP-based damage",
-                "label": "damage_max_hp",
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 30.0
+                    "value": 10.0
                   }
                 ]
               }

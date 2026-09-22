@@ -331,10 +331,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Winning Resolve": {
         "category": "skill4",
@@ -396,24 +419,12 @@
             "area": "single",
             "target_count": 1,
             "type": "buff",
-            "name": "Crit",
-            "label": "buff_offensive",
-            "persistence": "unknown"
-          },
-          {
-            "tier": "mythic+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
             "name": "Crit DMG boost",
             "label": "buff_offensive",
             "value": [
               {
                 "type": "flat",
-                "value": 20.0
+                "value": 65.0
               }
             ],
             "persistence": "unknown"
@@ -423,10 +434,6 @@
         "skill_card_tags": [
           {
             "label": "ATK — Self",
-            "polarity": "buff"
-          },
-          {
-            "label": "Crit — Self",
             "polarity": "buff"
           },
           {
@@ -463,62 +470,10 @@
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
-            "persistence": "permanent"
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "shield",
-            "name": "Shield",
             "value": [
               {
                 "type": "percentage",
-                "value": 800.0
-              }
-            ]
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "status_condition",
-                "status": "active_shield"
-              }
-            ],
-            "type": "buff",
-            "name": "Crit",
-            "label": "buff_offensive",
-            "value": [
-              {
-                "type": "flat",
-                "value": 25.0
-              }
-            ],
-            "persistence": "temporary"
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Energy",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "flat",
-                "value": 300.0
+                "value": 35.0
               }
             ],
             "persistence": "permanent"
@@ -526,19 +481,7 @@
         ],
         "skill_card_tags": [
           {
-            "label": "Crit — Self",
-            "polarity": "buff"
-          },
-          {
             "label": "Damage taken — Self",
-            "polarity": "buff"
-          },
-          {
-            "label": "Energy — Self",
-            "polarity": "buff"
-          },
-          {
-            "label": "Shield — Self",
             "polarity": "buff"
           }
         ]
@@ -558,10 +501,8 @@
       "atk",
       "haste",
       "max_hp",
-      "shield",
       "crit",
-      "crit_dmg_boost",
-      "energy"
+      "crit_dmg_boost"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -732,7 +673,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "af3110aefd462a5ea7b761c7e50c6de549160dcf86219dbef4e7571fc9c119a4",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "4467eb0448b540b683314b02eb6a08db8d20d4614a8d66d954949dec67d17ed2",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

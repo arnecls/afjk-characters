@@ -61,11 +61,11 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Multiple targets",
+            "targeting_label": "Single target",
             "is_max_known": true,
             "target": "ally",
             "area": "single",
-            "target_count": 3,
+            "target_count": 1,
             "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
@@ -73,11 +73,11 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Multiple targets",
+            "targeting_label": "Single target",
             "is_max_known": true,
             "target": "ally",
             "area": "single",
-            "target_count": 3,
+            "target_count": 1,
             "type": "buff",
             "name": "Haste",
             "label": "buff_offensive",
@@ -95,11 +95,11 @@
         "initial_energy": 600.0,
         "skill_card_tags": [
           {
-            "label": "ATK — Multiple targets",
+            "label": "ATK",
             "polarity": "buff"
           },
           {
-            "label": "Haste — Multiple targets",
+            "label": "Haste",
             "polarity": "buff"
           }
         ]
@@ -151,39 +151,11 @@
                 "value": 660.0
               }
             ]
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "ally",
-            "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "battle_phase",
-                "phase": "conditional"
-              }
-            ],
-            "type": "buff",
-            "name": "Energy",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "flat",
-                "value": 75.0
-              }
-            ],
-            "persistence": "permanent"
           }
         ],
         "cooldown": 6.0,
         "initial_cooldown": 2.0,
         "skill_card_tags": [
-          {
-            "label": "Energy",
-            "polarity": "buff"
-          },
           {
             "label": "Shield",
             "polarity": "buff"
@@ -235,11 +207,39 @@
             "name": "ATK",
             "label": "buff_offensive",
             "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "conditional"
+              }
+            ],
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 75.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
           {
             "label": "ATK",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy",
             "polarity": "buff"
           }
         ]
@@ -317,15 +317,28 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 800.0
+                "value": 900.0
               }
             ]
+          },
+          {
+            "type": "immunity",
+            "tier": "mythic+",
+            "immunity_type": "unaffected",
+            "timing": "conditional",
+            "targeting_label": "Multiple targets",
+            "target": "ally",
+            "area": "single",
+            "target_count": 3
           }
         ],
         "skill_card_tags": [
           {
             "label": "Shield — Multiple targets",
             "polarity": "buff"
+          },
+          {
+            "label": "Unaffected — Multiple targets"
           }
         ]
       },
@@ -354,7 +367,7 @@
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
-            "persistence": "permanent"
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
@@ -518,7 +531,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "a4e17968e68c68320da0039f56aa53410ab4e50b34d2ae7baa879c7bc60dd72c",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "b4f52fb264afc9f91f62f2e7ba94ab0f5626add19f60bd722fe1a6108db0c56f",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

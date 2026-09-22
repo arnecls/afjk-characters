@@ -31,14 +31,7 @@
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
-            "special_requires": [
-              {
-                "label": "Temporary ally stat buffs",
-                "tier": "mythic+",
-                "targeting": "Allies",
-                "description": "When Silven receives a temporary stat buff from an ally, he immediately recovers 300 Energy and permanently gains 4 Penetration."
-              }
-            ]
+            "special_requires": []
           }
         }
       },
@@ -103,8 +96,8 @@
                 "label": "buff_defensive",
                 "value": [
                   {
-                    "type": "percentage",
-                    "value": 3.0
+                    "type": "flat",
+                    "value": 48.0
                   }
                 ],
                 "persistence": "temporary"
@@ -158,7 +151,26 @@
         "is_max_known": true,
         "tiers": {
           "base": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "label": "buff_offensive",
+                "name": "ATK SPD",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 33.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -180,15 +192,15 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "DEF Penetration",
                 "label": "buff_defensive",
+                "name": "DEF Penetration",
                 "value": [
                   {
                     "type": "flat",
-                    "value": 4.0
+                    "value": 8.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "permanent"
               },
               {
                 "tier": "mythic+",
@@ -198,8 +210,8 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Energy",
                 "label": "buff_stat",
+                "name": "Energy",
                 "value": [
                   {
                     "type": "flat",
@@ -216,15 +228,46 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "ATK SPD",
                 "label": "buff_offensive",
+                "name": "ATK SPD",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 16.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "label": "buff_offensive",
+                "name": "ATK SPD",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 16.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
-            "special_requires": []
+            "special_requires": [
+              {
+                "label": "Temporary ally stat buffs",
+                "tier": "mythic+",
+                "targeting": "Allies",
+                "description": "When Silven receives a temporary stat buff from an ally, he immediately recovers 300 Energy and permanently gains 4 Penetration."
+              }
+            ]
           }
         }
       },

@@ -71,7 +71,7 @@
                 "value": 350.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
           }
         ],
         "cooldown": 1.0,
@@ -155,7 +155,7 @@
                 "value": 400.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
           }
         ],
         "skill_range": 1,
@@ -341,21 +341,20 @@
         "effects": [
           {
             "tier": "mythic+",
-            "targeting_label": "Self",
+            "targeting_label": "Single target",
             "is_max_known": true,
-            "target": "self",
+            "target": "ally",
             "area": "single",
             "target_count": 1,
-            "type": "buff",
-            "name": "Max HP",
-            "label": "buff_stat",
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
             "value": [
               {
                 "type": "percentage",
                 "value": 70.0
               }
-            ],
-            "persistence": "permanent"
+            ]
           },
           {
             "tier": "mythic+",
@@ -396,11 +395,11 @@
         ],
         "skill_card_tags": [
           {
-            "label": "Magic DEF",
+            "label": "Direct healing",
             "polarity": "buff"
           },
           {
-            "label": "Max HP — Self",
+            "label": "Magic DEF",
             "polarity": "buff"
           },
           {
@@ -426,32 +425,9 @@
             }
           ]
         },
-        "effects": [
-          {
-            "tier": "supreme+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "ATK",
-            "label": "buff_offensive",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 30.0
-              }
-            ],
-            "persistence": "temporary"
-          }
-        ],
-        "skill_card_tags": [
-          {
-            "label": "ATK — Self",
-            "polarity": "buff"
-          }
-        ]
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
       }
     },
     "synergy_profile": {
@@ -461,18 +437,6 @@
           "tier": "base",
           "targeting": "Single target",
           "description": "Rowan calls on Bradduck to attack an enemy, dealing 150% (ATK-based) + 20% damage and absorbing 70 Energy."
-        },
-        {
-          "label": "Named ally on team",
-          "tier": "supreme+",
-          "targeting": "Allies",
-          "description": "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her.",
-          "grants": [
-            {
-              "label": "Healing",
-              "magnitude": "average"
-            }
-          ]
         }
       ],
       "requires": [
@@ -490,9 +454,7 @@
       ]
     ],
     "benefit_stats": [
-      "atk",
       "haste",
-      "max_hp",
       "energy"
     ],
     "scalar_stat_shares": {
@@ -659,7 +621,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "508650f455e3cf566e851e49de0f8974bd067bc6fe647ed9d203c0e9386ed831",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "d09f7bbdba8f1f6cbbd5441c783384e12c09ebdbd4ef8ba0944583fabccb22bd",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

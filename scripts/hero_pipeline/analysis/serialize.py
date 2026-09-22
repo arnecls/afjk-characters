@@ -966,6 +966,38 @@ def convert_schema_effect(effect: dict[str, Any], *, summon: bool = False) -> An
             **spatial,
         )
 
+    if etype == "energy":
+        return rs.Effect(
+            category="buff",
+            label=effect.get("name", "Energy"),
+            tier=tier,
+            targeting=targeting,
+            numeric=numeric,
+            qualitative="",
+            conditional=conditional,
+            conditions=schema_conditions,
+            duration=float(duration) if duration is not None else None,
+            tick=float(tick) if tick is not None else None,
+            persistence=persistence or "temporary",
+            **spatial,
+        )
+
+    if etype == "range_increase":
+        return rs.Effect(
+            category="buff",
+            label=effect.get("name", "Range Increase"),
+            tier=tier,
+            targeting=targeting,
+            numeric=numeric,
+            qualitative="",
+            conditional=conditional,
+            conditions=schema_conditions,
+            duration=float(duration) if duration is not None else None,
+            tick=float(tick) if tick is not None else None,
+            persistence=persistence or "temporary",
+            **spatial,
+        )
+
     name = effect.get("name", etype.replace("_", " ").title())
     return rs.Effect(
         category="buff",

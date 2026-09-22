@@ -76,29 +76,12 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Invincible",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 300.0
-              }
-            ],
-            "persistence": "permanent"
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Arc",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
             "type": "crowd_control",
             "cc-type": "charm",
             "duration": 2.25
@@ -111,11 +94,7 @@
             "label": "Magic"
           },
           {
-            "label": "Invincible — Self",
-            "polarity": "buff"
-          },
-          {
-            "label": "Charm — Single target"
+            "label": "Charm — Arc"
           }
         ]
       },
@@ -156,11 +135,12 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Arc",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
             "type": "damage",
             "damage_type": "max_hp",
             "name": "Max HP-based damage",
@@ -174,11 +154,12 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Arc",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "arc",
+            "target_count": -1,
+            "area_direction": "front",
             "type": "damage",
             "damage_type": "magic",
             "name": "Magic",
@@ -261,20 +242,49 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Multiple targets",
+            "targeting_label": "Single target",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": 3,
+            "target_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1.2
+              }
+            ],
+            "duration": -1.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
             "type": "debuff",
             "name": "Vitality",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ]
           }
         ],
         "skill_range": 1,
         "skill_card_tags": [
           {
-            "label": "Vitality — Multiple targets",
+            "label": "DoT"
+          },
+          {
+            "label": "Vitality",
             "polarity": "debuff"
           }
         ]
@@ -314,6 +324,12 @@
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -375,18 +391,6 @@
               }
             ],
             "persistence": "permanent"
-          },
-          {
-            "tier": "ex+10",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "ally",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Damage taken",
-            "label": "buff_stat",
-            "persistence": "permanent"
           }
         ],
         "skill_card_tags": [
@@ -395,7 +399,11 @@
             "polarity": "buff"
           },
           {
-            "label": "Damage taken (EX+10)",
+            "label": "Magic damage (EX+10)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Magic damage (EX+15)",
             "polarity": "buff"
           }
         ]
@@ -448,11 +456,15 @@
     "damage_entries": [
       [
         "magic",
-        "Area, Single target"
+        "Arc, Area"
+      ],
+      [
+        "dot",
+        "Single target"
       ],
       [
         "max_hp",
-        "Single target"
+        "Arc"
       ]
     ],
     "benefit_stats": [
@@ -622,7 +634,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "822bbe483f7db60a6972747618912fe14c0e9c0f85bb67e21125e32b5bf1816b",
-    "algorithm_hash": "e23de057c3ba7e59883840e7ea1675699e64fc11628989bbd3710aeca0e2e323"
+    "inputs_hash": "3eac0b55fefae5674c3a7c90e8fb24f46c09b403f30e187a22b8f8eeb1066ab5",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

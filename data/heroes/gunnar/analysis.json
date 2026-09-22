@@ -75,7 +75,7 @@
                 "value": 25.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
           },
           {
             "tier": "base",
@@ -85,7 +85,7 @@
             "area": "single",
             "target_count": 1,
             "type": "buff",
-            "name": "Attack range",
+            "name": "Range Increase",
             "label": "buff_stat",
             "value": [
               {
@@ -93,14 +93,14 @@
                 "value": 550.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
           },
           {
             "tier": "base",
             "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
+            "area": "radius",
             "target_count": -1,
             "area_count": 2,
             "type": "damage",
@@ -116,22 +116,24 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
             "type": "debuff",
             "name": "Vitality",
             "label": "debuff_defensive"
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
             "type": "dot",
             "damage_type": "dot",
             "name": "DoT",
@@ -179,11 +181,11 @@
             "polarity": "buff"
           },
           {
-            "label": "Attack range",
+            "label": "Range Increase",
             "polarity": "buff"
           },
           {
-            "label": "Vitality",
+            "label": "Vitality — Area",
             "polarity": "debuff"
           },
           {
@@ -230,12 +232,12 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "All units",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "zone",
+            "area": "radius",
             "target_count": -1,
-            "area_count": -1,
+            "area_count": 1,
             "type": "damage",
             "damage_type": "physical",
             "name": "Physical",
@@ -327,6 +329,40 @@
         "effects": [
           {
             "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 600.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "path",
+            "target_count": 3,
+            "area_direction": "back",
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 400.0
+              }
+            ],
+            "duration": 6.0
+          },
+          {
+            "tier": "base",
             "targeting_label": "Single target",
             "is_max_known": true,
             "target": "ally",
@@ -335,6 +371,12 @@
             "type": "buff",
             "name": "ATK SPD",
             "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 40.0
+              }
+            ],
             "persistence": "temporary"
           }
         ],
@@ -343,6 +385,14 @@
         "skill_card_tags": [
           {
             "label": "ATK SPD",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — path",
             "polarity": "buff"
           }
         ]
@@ -385,6 +435,12 @@
             "type": "buff",
             "name": "Ranged DEF",
             "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
             "persistence": "permanent"
           },
           {
@@ -397,6 +453,12 @@
             "type": "buff",
             "name": "Vitality",
             "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 15.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -487,15 +549,15 @@
             "area": "single",
             "target_count": 1,
             "type": "buff",
-            "name": "Invincible",
-            "label": "buff_stat",
+            "name": "ATK",
+            "label": "buff_offensive",
             "value": [
               {
                 "type": "percentage",
-                "value": 1400.0
+                "value": 45.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
           }
         ],
         "skill_range": 3,
@@ -508,7 +570,7 @@
             "polarity": "buff"
           },
           {
-            "label": "Invincible (EX+15)",
+            "label": "ATK (EX+15)",
             "polarity": "buff"
           }
         ]
@@ -534,11 +596,27 @@
             "type": "debuff",
             "name": "Healing",
             "label": "debuff_healing"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "debuff",
+            "name": "Shield",
+            "label": "shield"
           }
         ],
         "skill_card_tags": [
           {
             "label": "Healing — Area",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Shield — Area",
             "polarity": "debuff"
           }
         ]
@@ -558,11 +636,11 @@
     "damage_entries": [
       [
         "physical",
-        "All units, Area, Single target"
+        "Area, Single target"
       ],
       [
         "dot",
-        "Single target"
+        "Area"
       ],
       [
         "max_hp",
@@ -570,7 +648,8 @@
       ]
     ],
     "benefit_stats": [
-      "atk_spd"
+      "atk_spd",
+      "shield"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -756,7 +835,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "9a340a588b6cef04ed4a89a7c511381efdfb9f2622467910ddc6e09dcede6960",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "ffed16d9ecc3e323e800db7405fef0f1737944cdd4a0c7acddd8b87a11ebfa80",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

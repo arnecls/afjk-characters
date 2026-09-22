@@ -123,7 +123,14 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Invincibility",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "Wargreymon is invincible while casting this skill."
+              }
+            ],
             "special_requires": []
           }
         }

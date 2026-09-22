@@ -300,10 +300,32 @@
                 "value": 12.0
               }
             ]
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_range": 1,
         "skill_card_tags": [
+          {
+            "label": "ATK",
+            "polarity": "buff"
+          },
           {
             "label": "ATK",
             "polarity": "debuff"
@@ -431,9 +453,32 @@
             "Reinier increases the allied herp's ATK by 4% till the battle ends if they're in a symmetrical position with an enemy hero."
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 4.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "ATK",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -621,7 +666,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "925460be2b538f440b65931e4879b420b6bf56130843248ca1240cdbe002cacd",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "f3458eba6ba9e0bf47411e29d7fa236d2f1e4b493533594b2b8426a14fbfbc80",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

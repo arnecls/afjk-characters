@@ -158,7 +158,8 @@
                     "type": "percentage",
                     "value": 22.0
                   }
-                ]
+                ],
+                "duration": 5.0
               }
             ],
             "summon_effects": [
@@ -178,7 +179,8 @@
                     "value": 16.0
                   }
                 ],
-                "persistence": "permanent"
+                "persistence": "temporary",
+                "duration": 5.0
               }
             ],
             "immunities": [],

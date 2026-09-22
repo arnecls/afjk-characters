@@ -73,23 +73,6 @@
                 "value": 290.0
               }
             ]
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "debuff",
-            "name": "Phys DEF",
-            "label": "debuff_defensive",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 25.0
-              }
-            ]
           }
         ],
         "cooldown": 1.0,
@@ -99,10 +82,6 @@
         "skill_card_tags": [
           {
             "label": "Physical"
-          },
-          {
-            "label": "Phys DEF (Supreme+)",
-            "polarity": "debuff"
           }
         ]
       },
@@ -150,6 +129,12 @@
             "type": "buff",
             "name": "ATK SPD",
             "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 45.0
+              }
+            ],
             "persistence": "temporary"
           },
           {
@@ -166,7 +151,7 @@
             "value": [
               {
                 "type": "flat",
-                "value": 25.0
+                "value": 120.0
               }
             ],
             "persistence": "permanent"
@@ -225,18 +210,6 @@
             "target_count": -1,
             "area_count": -1,
             "type": "debuff",
-            "name": "ATK",
-            "label": "debuff_offensive"
-          },
-          {
-            "tier": "base",
-            "targeting_label": "All units",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "zone",
-            "target_count": -1,
-            "area_count": -1,
-            "type": "debuff",
             "name": "Phys DEF",
             "label": "debuff_defensive",
             "value": [
@@ -273,10 +246,6 @@
             "label": "Physical"
           },
           {
-            "label": "ATK — All units",
-            "polarity": "debuff"
-          },
-          {
             "label": "Phys DEF — All units",
             "polarity": "debuff"
           }
@@ -306,10 +275,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 33.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Meteor Catastrophe": {
         "category": "skill4",
@@ -352,6 +344,12 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "shielded"
+              }
+            ],
             "type": "damage",
             "damage_type": "physical",
             "name": "Physical",
@@ -380,6 +378,12 @@
             "label": "Physical"
           },
           {
+            "label": "Physical (EX+10)"
+          },
+          {
+            "label": "Physical (EX+15)"
+          },
+          {
             "label": "Stun — Single target (EX+10)"
           }
         ]
@@ -401,9 +405,31 @@
             }
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Phys DEF",
+            "polarity": "debuff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -563,7 +589,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "0d85c424b942b98d206839e25f037e4a1068c50fa8f58c629e784a9cbae078ff",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "73e6b7fe462c71d06a8434cc5af59d4ac4e3844b8f4f8a3351b3454d5eb4d37b",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -86,29 +86,17 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Invincible",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 320.0
-              }
-            ],
-            "persistence": "permanent"
-          },
-          {
-            "tier": "base",
             "targeting_label": "Single target",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
             "type": "damage",
             "damage_type": "magic",
             "name": "Magic",
@@ -136,7 +124,7 @@
                 "value": 50.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
@@ -145,10 +133,6 @@
           },
           {
             "label": "Haste — Summons",
-            "polarity": "buff"
-          },
-          {
-            "label": "Invincible — Self",
             "polarity": "buff"
           },
           {
@@ -264,14 +248,14 @@
             "target_count": -1,
             "area_count": 2,
             "type": "crowd_control",
-            "cc-type": "bind",
-            "duration": 1.125
+            "cc-type": "stun",
+            "duration": 5.125
           }
         ],
         "skill_range": 3,
         "skill_card_tags": [
           {
-            "label": "Bind — Area"
+            "label": "Stun — Area"
           }
         ]
       },
@@ -390,6 +374,12 @@
             "target": "all_summons",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "unit_type",
+                "unit_type": "melee"
+              }
+            ],
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_summon_stat",
@@ -406,8 +396,8 @@
             "tier": "mythic+",
             "immunity_type": "unaffected",
             "timing": "on_skill",
-            "targeting_label": "Self",
-            "target": "self",
+            "targeting_label": "Owned summons",
+            "target": "own_summons",
             "area": "single",
             "target_count": 1
           }
@@ -423,7 +413,7 @@
             "polarity": "buff"
           },
           {
-            "label": "Unaffected — Self"
+            "label": "Unaffected — Owned"
           }
         ]
       },
@@ -712,7 +702,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f89cf3ae93f5b4db424edd0555f69fcb6c3826ff662a16ff80bfb4ae4f3702bd",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "88685a9730237d079bd7b97f52db34e68c29308813b7633f12472953fc44ca93",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

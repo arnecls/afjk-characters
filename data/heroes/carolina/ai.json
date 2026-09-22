@@ -197,6 +197,12 @@
                 "type": "buff",
                 "name": "Crit",
                 "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 24.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],
@@ -228,6 +234,58 @@
                   {
                     "type": "percentage",
                     "value": 15.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "debuff",
+                "name": "Magic DEF",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 25.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+15": {
+            "effects": [
+              {
+                "tier": "ex+15",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "debuff",
+                "name": "Magic DEF",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
                   }
                 ]
               }

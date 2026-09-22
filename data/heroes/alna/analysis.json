@@ -119,6 +119,49 @@
                 "value": 55.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_blizzard"
+              }
+            ],
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 55.0
+              }
+            ],
+            "duration": 10.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "debuff",
+            "name": "Attack range",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 2.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
@@ -128,6 +171,14 @@
           {
             "label": "Direct healing — Self",
             "polarity": "buff"
+          },
+          {
+            "label": "HoT",
+            "polarity": "buff"
+          },
+          {
+            "label": "Attack range — All units",
+            "polarity": "debuff"
           },
           {
             "label": "Haste — All units",
@@ -409,42 +460,6 @@
         },
         "effects": [
           {
-            "tier": "supreme+",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 1,
-            "conditions": [
-              {
-                "type": "duration_gate",
-                "gate": "first_time"
-              }
-            ],
-            "type": "debuff",
-            "name": "Vitality",
-            "label": "debuff_defensive"
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 1,
-            "conditions": [
-              {
-                "type": "duration_gate",
-                "gate": "first_time"
-              }
-            ],
-            "type": "crowd_control",
-            "cc-type": "bind",
-            "duration": 2.0
-          },
-          {
             "type": "immunity",
             "tier": "mythic+",
             "immunity_type": "immune",
@@ -457,13 +472,6 @@
         ],
         "cooldown": 20.0,
         "skill_card_tags": [
-          {
-            "label": "Vitality — Area (Supreme+)",
-            "polarity": "debuff"
-          },
-          {
-            "label": "Bind — Area (Supreme+)"
-          },
           {
             "label": "Immune — Self"
           }
@@ -496,12 +504,61 @@
               }
             ],
             "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "conditions": [
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
+            "type": "debuff",
+            "name": "Vitality",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "conditions": [
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
+            "type": "crowd_control",
+            "cc-type": "bind",
+            "duration": 2.0
           }
         ],
         "skill_card_tags": [
           {
             "label": "Basic stats",
             "polarity": "buff"
+          },
+          {
+            "label": "Vitality — Area",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Bind — Area"
           }
         ]
       }
@@ -716,7 +773,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "bfbccfbc3ddb3b7c1bf86c9fd1297024f6a1033923eec8700c196ecbabe9425d",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "168c856b1dfc87f1d00248bad07883b4ef85eb3e1a308a472b6ae5046617371b",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }
