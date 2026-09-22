@@ -11,16 +11,6 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "crowd_control",
-                "cc-type": "interrupt"
-              },
-              {
-                "tier": "base",
                 "targeting_label": "Self",
                 "is_max_known": true,
                 "target": "self",
@@ -50,7 +40,7 @@
                 "value": [
                   {
                     "type": "flat",
-                    "value": 30.0
+                    "value": 25.0
                   }
                 ],
                 "persistence": "unknown"
@@ -71,6 +61,24 @@
                   {
                     "type": "percentage",
                     "value": 440.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 180.0
                   }
                 ]
               },
@@ -110,20 +118,7 @@
                 "target_count": 1
               }
             ],
-            "special_provides": [
-              {
-                "label": "Dispel debuffs",
-                "tier": "mythic+",
-                "targeting": "Self",
-                "description": "Every time the score plays, it removes all dispellable debuffs from Sylphira and restores 40% of her max HP and 250 Energy."
-              },
-              {
-                "label": "Stacking",
-                "tier": "mythic+",
-                "targeting": "Single target",
-                "description": "While the score is active, collecting more beats makes it play 10% faster and further increases Sylphira's Haste by 3, up to 10 stacks."
-              }
-            ],
+            "special_provides": [],
             "special_requires": []
           }
         }
@@ -147,7 +142,7 @@
                 "value": [
                   {
                     "type": "flat",
-                    "value": 120.0
+                    "value": 150.0
                   }
                 ]
               },
@@ -165,7 +160,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 180.0
+                    "value": 200.0
                   }
                 ]
               }
@@ -183,6 +178,24 @@
         "tiers": {
           "base": {
             "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 220.0
+                  }
+                ]
+              },
               {
                 "tier": "base",
                 "targeting_label": "Area",
@@ -298,11 +311,44 @@
               },
               {
                 "tier": "mythic+",
-                "targeting_label": "Area",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
+                  }
+                ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "energy",
+                "name": "Energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 250.0
+                  }
+                ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Multiple targets",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "radius",
-                "target_count": -1,
+                "target_count": 2,
                 "area_count": 2,
                 "type": "damage",
                 "damage_type": "true",
@@ -311,17 +357,17 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 20.0
+                    "value": 25.0
                   }
                 ]
               },
               {
                 "tier": "mythic+",
-                "targeting_label": "Area",
+                "targeting_label": "Multiple targets",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "radius",
-                "target_count": -1,
+                "target_count": 2,
                 "area_count": 2,
                 "type": "damage",
                 "damage_type": "max_hp",
@@ -330,7 +376,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 20.0
+                    "value": 25.0
                   }
                 ]
               }
