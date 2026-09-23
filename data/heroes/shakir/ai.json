@@ -227,7 +227,7 @@
         }
       },
       "Ex. Skill": {
-        "source_hash": "f1f0cc5ea6f081db229ce3c8d12048da149974365786f36ff9810429be88b38f",
+        "source_hash": "ca3e46d628ccd7cc4f193433ece4bcda1fc3170937f0ae2eb37105279f74d908",
         "is_max_known": true,
         "tiers": {
           "base": {

@@ -331,9 +331,11 @@ class RoundTripTests(unittest.TestCase):
         tags = rs.format_skill_card_tags(hero, "skill1")
         labels = tag_labels(tags)
         self.assertIn("Stun — Single target", labels)
-        self.assertIn("Stun — Multiple targets (EX+10)", labels)
+        # Skill1 upgrades (71/131/191) scale damage only; EX+10
+        # keeps single-target scope per source text.
+        self.assertIn("Stun — Single target (EX+10)", labels)
         self.assertIn("Knock up — Single target", labels)
-        self.assertIn("Knock up — Multiple targets (EX+10)", labels)
+        self.assertIn("Knock up — Single target (EX+10)", labels)
 
     def test_skill_card_cc_tag_includes_single_target(self):
         self.assertEqual(
@@ -367,22 +369,23 @@ class RoundTripTests(unittest.TestCase):
         ]
         self.assertTrue(base_knockup)
         self.assertEqual(base_knockup[0]["targeting"], "Single target")
-
-        ex10_stun = [
-            e
-            for e in effects
-            if e["category"] == "cc" and e["label"] == "Stun" and e["tier"] == "EX+10"
-        ]
-        self.assertTrue(ex10_stun)
-        self.assertEqual(ex10_stun[0]["targeting"], "Multiple targets")
-
-        ex10_knockup = [
-            e
-            for e in effects
-            if e["category"] == "cc" and e["label"] == "Knock up" and e["tier"] == "EX+10"
-        ]
-        self.assertTrue(ex10_knockup)
-        self.assertEqual(ex10_knockup[0]["targeting"], "Multiple targets")
+        # Skill1 upgrades scale damage only and keep single-target
+        # scope, so the merge collapses base/EX+10 into one row
+        # per CC label.
+        self.assertEqual(
+            len([
+                e for e in effects
+                if e["category"] == "cc" and e["label"] == "Stun"
+            ]),
+            1,
+        )
+        self.assertEqual(
+            len([
+                e for e in effects
+                if e["category"] == "cc" and e["label"] == "Knock up"
+            ]),
+            1,
+        )
 
     def test_cross_skill_enhancement_tags_include_ascension_tier(self):
         hero, _data = self._hero_by_title_prefix("Cassadee")
@@ -403,7 +406,9 @@ class RoundTripTests(unittest.TestCase):
             if e["category"] == "damage" and e["area"] == "path"
         ]
         self.assertEqual(len(path_damage), 1)
-        self.assertEqual(path_damage[0]["label"], "Physical")
+        # Batch-d audit (2026-09-22): source reads "10% (HP-based)
+        # damage", not Physical.
+        self.assertEqual(path_damage[0]["label"], "Max HP-based damage")
         self.assertEqual(path_damage[0]["area_count"], 5)
         self.assertEqual(path_damage[0]["area_direction"], "front")
         active_area = [
@@ -475,7 +480,8 @@ class RoundTripTests(unittest.TestCase):
         self.assertEqual(disarm[0]["targeting"], "Single target")
         shields = [e for e in skill1["effects"] if e["label"] == "Shield"]
         self.assertEqual(len(shields), 1)
-        self.assertEqual(shields[0]["numeric"], 340.0)
+        # Batch-b audit (2026-09-22): source reads "to 400%", not 340.
+        self.assertEqual(shields[0]["numeric"], 400.0)
         self.assertEqual(shields[0]["targeting"], "Self")
         tags = rs.format_skill_card_tags(hero, "skill1")
         labels = tag_labels(tags)
@@ -914,13 +920,9 @@ class RoundTripTests(unittest.TestCase):
             {"type": "trigger_condition", "trigger": "normal_attack"},
             true_hit["conditions"],
         )
-        provides = [
-            se for se in ex["special_effects"] if se["kind"] == "provides"
-        ]
-        self.assertTrue(
-            any(se["label"] == "DoT conversion" for se in provides),
-            provides,
-        )
+        # "DoT conversion" was a pre-sidecar legacy label: no
+        # detector or text emits it. The conversion is covered
+        # by the True damage row above.
 
     def test_aliceth_aegis_wings_blind_cc(self):
         processed = io.load_processed()
@@ -1399,9 +1401,15 @@ class SkillOverviewTests(unittest.TestCase):
         ult_tags = rs.format_skill_card_tags(hero, "ultimate")
         self.assertIn("Physical", tag_labels(ult_tags))
         mythic_tags = rs.format_skill_card_tags(hero, "skill4")
-        self.assertNotIn("True damage", tag_labels(mythic_tags))
         mythic_labels = tag_labels(mythic_tags)
+        # Batch-b audit (2026-09-22): "true damage equal to 20%
+        # of max HP" is delivery-wins True damage (Shemira
+        # precedent), so the explicit combo surfaces as True.
         self.assertTrue(
+            any(label.startswith("True damage") for label in mythic_labels),
+            mythic_labels,
+        )
+        self.assertFalse(
             any(label.startswith("Max HP-based damage") for label in mythic_labels),
             mythic_labels,
         )

@@ -273,7 +273,7 @@
         }
       },
       "Ex. Skill": {
-        "source_hash": "3011c0e0b1dc65fb5bcbb4903f36c618acefd3bd5b808fd7861163a2bb6ea0f7",
+        "source_hash": "7395beb9fd2dcb0140e8fb4a1907e9c70b3415ebd9f6e359d17aa27727244b5e",
         "is_max_known": true,
         "tiers": {
           "mythic+": {

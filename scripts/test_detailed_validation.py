@@ -253,9 +253,10 @@ class ConfirmedTargetInversionTests(unittest.TestCase):
                 self.assertEqual(matches[0]["target"], expected_target)
                 self.assertNotEqual(matches[0]["target"], old_target)
 
-    def test_niru_named_ally_def_buffs_stay_conditional(self):
-        # The DEF boost only lands when Shemira or Daimon is on the team, so
-        # it belongs in special_provides.grants, not in unconditional effects.
+    def test_niru_supreme_holds_heal_block_only(self):
+        # No Shemira/Daimon DEF text exists anywhere in niru's
+        # kit, so Supreme+ holds only the text-backed heal block
+        # ("prevents the enemy from recovering HP for 8s").
         sidecar = ses.load_sidecar("Niru")
         self.assertIsNotNone(sidecar)
         assert sidecar is not None
@@ -267,13 +268,14 @@ class ConfirmedTargetInversionTests(unittest.TestCase):
         }
         self.assertNotIn("Phys DEF", buff_names)
         self.assertNotIn("Magic DEF", buff_names)
-        granted = {
-            grant.get("label")
-            for provide in tier["special_provides"]
-            for grant in provide.get("grants", [])
-        }
-        self.assertIn("Phys DEF", granted)
-        self.assertIn("Magic DEF", granted)
+        blocks = [
+            row for row in tier["effects"]
+            if row.get("type") == "debuff"
+            and row.get("name") == "Healing"
+        ]
+        self.assertEqual(len(blocks), 1)
+        self.assertEqual(blocks[0].get("target"), "enemy")
+        self.assertEqual(blocks[0].get("duration"), 8.0)
 
     def test_edited_sidecars_are_schema_valid(self):
         for hero in sorted(self.EDITED_SIDECARS):

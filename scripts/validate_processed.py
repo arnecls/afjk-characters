@@ -288,6 +288,14 @@ def check_semantic(processed: dict[str, Any]) -> dict[str, list[str]]:
                         text,
                     ):
                         continue
+                    if cc == "displace" and re.search(
+                        r"\bteleports? \d+ times?\b|"
+                        r"\bteleport moves \w+ to\b",
+                        text,
+                    ):
+                        # Self-teleport mobility (Ravion Phantom
+                        # Gambit), not enemy displacement.
+                        continue
                     if not re.search(pat, text):
                         continue
                     if not _cc_has_real_match(

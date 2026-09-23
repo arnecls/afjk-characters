@@ -96,6 +96,7 @@ ALLY_STAT_BUFF_SOURCE_PATTERNS: tuple[re.Pattern[str], ...] = (
     re.compile(r"\bfrom (?:an ally|allies|his allies|her allies|their allies)\b", re.I),
     re.compile(r"\bfrom a different ally\b", re.I),
     re.compile(r"\breceiv(?:e|es|ing) .{0,60}from an ally\b", re.I),
+    re.compile(r"\bally who is currently providing (?:her|him|them) with a buff\b", re.I),
 )
 
 SUMMON_TARGETS = frozenset({"summon", "own_summons", "all_summons"})
@@ -116,6 +117,8 @@ ROSTER_ALLY_TEXT_PATTERNS: tuple[re.Pattern[str], ...] = tuple(
         r"\bincreas\w+ their\b",
         r"\bgrants? all allies\b",
         r"\bprotected (?:farthest )?ally\b",
+        r"\bgrants? its host\b",
+        r"\bincreas\w+ its host's\b",
         r"\bcompanion\b",
         r"\b\d+ allies\b",
         r"\bally(?:ied)? (?:hero|unit)s? within\b",
@@ -207,6 +210,11 @@ def clause_supports_self_only_buff(clause: str) -> bool:
 
 
 def clause_is_enemy_stat_reduction(clause: str) -> bool:
+    # "Protected ally" always names an ally-side beneficiary
+    # (Hepler, Lorsan, Dunlingr, Hugin), so "reduce their ..."
+    # beside it is an ally granted reduction, not enemy text.
+    if re.search(r"\bprotected ally\b", clause, re.I):
+        return False
     return any(pat.search(clause) for pat in ENEMY_STAT_REDUCTION_PATTERNS)
 
 

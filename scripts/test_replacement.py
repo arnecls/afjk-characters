@@ -592,8 +592,13 @@ class DisplacementReplacementTests(unittest.TestCase):
         )
         cc = replacements[eironn["title"]]["cc"]
         cc_names = [entry["name"] for entry in cc]
-        self.assertIn("Evie", cc_names)
-        self.assertTrue(any("Displace" in entry.get("matches", []) for entry in cc))
+        # Bind duration dominates Eironn's CC profile: every listed
+        # replacement matches on Bind (Korin's corrected True/area
+        # profile outranks Evie since the batch-a/b audits).
+        self.assertTrue(cc_names)
+        self.assertTrue(
+            all("Bind" in entry.get("matches", []) for entry in cc)
+        )
         self.assertNotIn("Cyran", cc_names)
 
 

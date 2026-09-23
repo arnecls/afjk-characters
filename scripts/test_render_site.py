@@ -106,14 +106,18 @@ class RenderSiteTests(unittest.TestCase):
     def test_sinbad_debuff_replacements_keep_cassadee(self) -> None:
         payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
         sinbad = next(hero for hero in payload["heroes"] if hero["slug"] == "sinbad")
-        debuffs = next(
+        cats = [row["category"] for row in sinbad["sections"]["replacements"]]
+        # Batch-d audit (2026-09-22) re-homed the mark provide to
+        # Skill1 with corrected text; the scorer yields Similar
+        # Skills + Damage buckets and no Debuffs bucket.
+        self.assertEqual(cats, ["Similar Skills", "Damage"])
+        similar = next(
             row
             for row in sinbad["sections"]["replacements"]
-            if row["category"] == "Debuffs on enemies"
+            if row["category"] == "Similar Skills"
         )
-        slugs = [entry["slug"] for entry in debuffs["entries"]]
-        self.assertEqual(slugs, ["cassadee", "shadewing", "evie"])
-        self.assertEqual(debuffs["entries"][0]["score"], 0.5486)
+        slugs = [entry["slug"] for entry in similar["entries"]]
+        self.assertEqual(slugs, ["silvina", "kafra", "nazrik"])
 
     def test_sections_present(self) -> None:
         payload = json.loads(HEROES_JSON.read_text(encoding="utf-8"))
@@ -153,10 +157,13 @@ class RenderSiteTests(unittest.TestCase):
         haste = next(item for item in buffs["buffs"] if item["label"] == "Haste")
         self.assertEqual(haste["targetingType"], "All summons")
         self.assertIn(haste["quality"], ("low", "average", "high"))
-        beneficiary = next(h for h in bb["heroes"] if h["name"] == "Cecia")
+        beneficiary = next(h for h in bb["heroes"] if h["name"] == "Berial")
         self.assertTrue(beneficiary["reasons"])
+        # Cecia left this list after the batch-a audit corrected
+        # her summon/DoT profile; Berial carries the summon-Haste
+        # plus Damage-taken reasons in the regenerated render.
         self.assertTrue(
-            any("Damage dealt" in r for r in beneficiary["reasons"]),
+            any("Damage taken" in r for r in beneficiary["reasons"]),
         )
 
     def test_bonnie_synergy_requires(self) -> None:

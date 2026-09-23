@@ -114,7 +114,7 @@
         }
       },
       "Skill2": {
-        "source_hash": "acf0c1fd8169eb44332cfd062c2d88ad4c618bb9db36205ef5365b2506cd2411",
+        "source_hash": "4df985d8bc3de7b1c3fbe562c661c4d328c14ff809300b1924836937860960b4",
         "is_max_known": true,
         "tiers": {
           "base": {

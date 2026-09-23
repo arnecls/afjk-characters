@@ -184,6 +184,43 @@
         "source_hash": "4a1cd9e15f6ac85bff2129b40b34fd9a3a921f5fbe752a946a5f347673aead46",
         "is_max_known": true,
         "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 6,
+                    "stack_comparison": "at_max"
+                  },
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "normal_attack"
+                  }
+                ],
+                "type": "damage",
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 1.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
           "mythic+": {
             "effects": [
               {

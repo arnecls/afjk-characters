@@ -3400,7 +3400,7 @@ Common buffers are **Rolan**, **Lorsan**, **Smokey & Meerky**, or **Solise**.
   - ATK SPD via Haste (multiple targets, average) `signature fuel`
   - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Rowan**
-  - Direct healing (single target, average)
+  - Direct healing (area, average)
   - Energy via Energy recovery (energy potion, start of battle) `signature fuel`
 
 ### Units benefitting most from Dunlingr
@@ -9282,7 +9282,7 @@ Marcille provides Direct healing to single targets `low`.
 - **Signature skill**: Mid-Air Shot (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `self-repositioner`
-- **Damage types**: Physical `low`
+- **Damage types**: Physical `low`, True damage `low`
 
 #### Play overview
 
@@ -9368,9 +9368,9 @@ Common buffers are **Shadewing**, **Kordan**, **Kruger**, or **Laios**.
 
 **Best overall replacement**
 
-- Atalanta (88% `Damage` `Crowd Control`)
 - Vala (82% `Damage` `Crowd Control`)
-- Gwyneth (77% `Damage` `Crowd Control`)
+- Faramor (64% `Damage` `Crowd Control`)
+- Nazrik (64% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
@@ -9381,8 +9381,8 @@ Common buffers are **Shadewing**, **Kordan**, **Kruger**, or **Laios**.
 **Damage**
 
 - Himmel (100% `Physical` `True damage`)
-- Gwyneth (100% `Physical`)
 - Faramor (100% `Physical` `True damage`)
+- Athalia (100% `Physical` `True damage`)
 
 **Crowd Control**
 
@@ -9399,6 +9399,7 @@ Common buffers are **Shadewing**, **Kordan**, **Kruger**, or **Laios**.
 #### Damage types dealt by Marilee
 
 - Physical — Multiple targets, Single target
+- True damage — Single target — `low`
 
 #### Crowd Control provided by Marilee
 
@@ -12813,8 +12814,6 @@ Common buffers are **Twins** or **Smokey & Meerky**.
 
 ### Units benefitting most from Satrana
 
-Satrana provides Magic damage (Mythic+) to single targets `average`.
-
 - Bonnie (4.6 / 5)
 
 ### Units that can act as a replacement for Satrana
@@ -12854,10 +12853,6 @@ Satrana provides Magic damage (Mythic+) to single targets `average`.
 - Magic — Arc, Area
 - DoT — Single target
 - Max HP-based damage — Arc
-
-#### Buffs provided by Satrana
-
-- Magic damage (Mythic+) — Single target — `average`
 
 #### Debuffs provided by Satrana
 
@@ -15268,6 +15263,7 @@ These are the **4** strongest pairings:
 - **Signature skill**: Resurrection (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
 - **Behavior tags**: `cheat-death` `counterattack` `hp-loss` `life-drain`
+- **Ally composition**: place ally 1 tile behind at battle prep (Soul Pact damage share and revive)
 - **Damage types**: Physical `average`
 
 #### Play overview

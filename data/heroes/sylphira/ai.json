@@ -4,7 +4,7 @@
     "title": "Sylphira - Sovereign of Song",
     "skills": {
       "Ultimate": {
-        "source_hash": "f86b56c5958beaa68cde5dbdd4a167bc81a54bd6ffd503423c74066fc3a766f8",
+        "source_hash": "72135a7514845c0d5c78a64e6c2c756e99ec94d57ebe0deba604d1f631a49097",
         "is_max_known": true,
         "tiers": {
           "base": {
@@ -279,7 +279,7 @@
         }
       },
       "Ex. Skill": {
-        "source_hash": "94b5a6944d0baff431a8c98bde87de757a5f440bc4634ca4e416124456f469f2",
+        "source_hash": "d9e81cb6c3bbcb4559e1cf2375720a9584f226250f982e9c3b55b41192de372f",
         "is_max_known": true,
         "tiers": {
           "mythic+": {

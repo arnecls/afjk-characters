@@ -266,36 +266,11 @@
         }
       },
       "Ex. Skill": {
-        "source_hash": "c119cebd98038ab26054313adb4c03e7f1974ff7658a210e1e8daa1486753bf9",
+        "source_hash": "e697fa0eeac9919351ded0c6c77741278c26578ac93b081e60e867b528aaea4b",
         "is_max_known": true,
         "tiers": {
           "mythic+": {
-            "effects": [
-              {
-                "tier": "mythic+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "conditions": [
-                  {
-                    "type": "trigger_condition",
-                    "trigger": "fatal_blow",
-                    "self": true
-                  }
-                ],
-                "type": "heal",
-                "healing_type": "direct",
-                "name": "Direct healing",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 150.0
-                  }
-                ]
-              }
-            ],
+            "effects": [],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [

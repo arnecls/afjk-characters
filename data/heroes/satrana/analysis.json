@@ -401,9 +401,9 @@
           },
           {
             "tier": "mythic+",
-            "targeting_label": "Single target",
+            "targeting_label": "Self",
             "is_max_known": true,
-            "target": "ally",
+            "target": "self",
             "area": "single",
             "target_count": 1,
             "type": "buff",
@@ -420,7 +420,7 @@
         ],
         "skill_card_tags": [
           {
-            "label": "Magic damage",
+            "label": "Magic damage — Self",
             "polarity": "buff"
           },
           {
@@ -428,11 +428,11 @@
             "polarity": "buff"
           },
           {
-            "label": "Magic damage (EX+10)",
+            "label": "Magic damage — Self (EX+10)",
             "polarity": "buff"
           },
           {
-            "label": "Magic damage (EX+15)",
+            "label": "Magic damage — Self (EX+15)",
             "polarity": "buff"
           }
         ]
@@ -664,7 +664,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "67aa30bc410d4c0ce7eb618ac0dc4e3af7a0e4ed82f69a14cad67cb1e09fddc1",
+    "inputs_hash": "07f7f8f51e44cfadf4c9588658d01930a8c257df31cd2473560120ea342a737a",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -1160,7 +1160,7 @@ def detect_placement_constraints(
         (
             re.compile(
                 r"signs a pact with the ally "
-                r"(?:placed 1 tile|on the tile) behind (?:him|her)",
+                r"(?:placed 1 tile|on the tile|1 tile) behind (?:him|her)",
                 re.I,
             ),
             "ally_placement",

@@ -93,7 +93,7 @@
         }
       },
       "Skill1": {
-        "source_hash": "919bbaf8f35201ce1fcc6a2d517ad6ca6ff72a9c85891f8fc071dfd0c23d868e",
+        "source_hash": "006cf5e4189debbe5465f695e41d752fc8dcfbbf4101eeac093af74bd65cf197",
         "is_max_known": true,
         "tiers": {
           "base": {
@@ -183,7 +183,7 @@
         }
       },
       "Unlocks at Legendary+": {
-        "source_hash": "d668d79bf38d9d3e4166cc3a958cd48dfd043a3e2a65a55f7515c07b24cf01cd",
+        "source_hash": "588a3b050c7fe40cdcb58a017325395eb995e8a34331d5bf19f5280e7b28c65b",
         "is_max_known": true,
         "tiers": {
           "legendary+": {

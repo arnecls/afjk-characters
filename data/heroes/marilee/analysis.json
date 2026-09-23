@@ -342,6 +342,35 @@
         },
         "effects": [
           {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 6,
+                "stack_comparison": "at_max"
+              },
+              {
+                "type": "trigger_condition",
+                "trigger": "normal_attack"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1.0
+              }
+            ]
+          },
+          {
             "tier": "mythic+",
             "targeting_label": "Self",
             "is_max_known": true,
@@ -380,6 +409,9 @@
         "skill_range": 1,
         "skill_card_tags": [
           {
+            "label": "True damage"
+          },
+          {
             "label": "ATK — Self",
             "polarity": "buff"
           },
@@ -417,6 +449,10 @@
       [
         "physical",
         "Multiple targets, Single target"
+      ],
+      [
+        "true",
+        "Single target"
       ]
     ],
     "benefit_stats": [
@@ -548,7 +584,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "42b8ee52614be30b2795151bf40947fe6604cac3e982d1d539c50929b426d5ff",
+    "inputs_hash": "2c6552af5eabffe7c44daafc30f505b9d808441e9731cb791b01cadaf45774bb",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

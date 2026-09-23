@@ -160,7 +160,9 @@
                 "target": "ally",
                 "area": "single",
                 "target_count": 1,
-                "type": "energy",
+                "type": "buff",
+                "name": "Energy",
+                "label": "buff_stat",
                 "value": [
                   {
                     "type": "flat",
