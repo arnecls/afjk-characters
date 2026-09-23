@@ -48,6 +48,13 @@
                 "area": "radius",
                 "target_count": -1,
                 "area_count": 2,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.5,
+                    "comparison": "below"
+                  }
+                ],
                 "type": "heal",
                 "healing_type": "direct",
                 "name": "Direct healing",
@@ -162,6 +169,30 @@
                   }
                 ],
                 "persistence": "permanent"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  }
+                ],
+                "type": "buff",
+                "name": "Haste",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 10.0
+                  }
+                ],
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],

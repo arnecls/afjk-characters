@@ -16,23 +16,6 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
-                "type": "debuff",
-                "name": "Energy",
-                "label": "debuff_stat",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 240.0
-                  }
-                ]
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
                 "type": "crowd_control",
                 "cc-type": "bind"
               },
@@ -69,6 +52,25 @@
                   {
                     "type": "percentage",
                     "value": 250.0
+                  }
+                ],
+                "duration": -1,
+                "tick": 2.5
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Energy",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 120.0
                   }
                 ],
                 "duration": -1,
@@ -115,7 +117,7 @@
                     "value": 100.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               },
               {
                 "tier": "base",
@@ -235,6 +237,34 @@
             "special_provides": [],
             "special_requires": []
           },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "dot",
+                "damage_type": "dot",
+                "name": "DoT",
+                "label": "dot",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 330.0
+                  }
+                ],
+                "duration": -1,
+                "tick": 2.5
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
           "ex+15": {
             "effects": [
               {
@@ -307,18 +337,7 @@
               }
             ],
             "summon_effects": [],
-            "immunities": [
-              {
-                "type": "immunity",
-                "tier": "ex+15",
-                "immunity_type": "unaffected",
-                "timing": "conditional",
-                "targeting_label": "Self",
-                "target": "self",
-                "area": "single",
-                "target_count": 1
-              }
-            ],
+            "immunities": [],
             "special_provides": [],
             "special_requires": []
           }

@@ -43,7 +43,7 @@
                     "value": 50.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -160,6 +160,30 @@
                     "value": 300.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.7,
+                    "comparison": "below"
+                  }
+                ],
+                "type": "stat_steal",
+                "stat": "atk",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -223,7 +247,7 @@
                     "value": 52.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],

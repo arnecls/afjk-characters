@@ -53,6 +53,24 @@
                 "duration": 5.0,
                 "tick": 1.0,
                 "persistence": "temporary"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "debuff",
+                "name": "Damage dealt",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -91,6 +109,7 @@
                     "value": 30.0
                   }
                 ],
+                "duration": 10.0,
                 "persistence": "temporary"
               },
               {
@@ -109,6 +128,7 @@
                     "value": 30.0
                   }
                 ],
+                "duration": 10.0,
                 "persistence": "temporary"
               }
             ],

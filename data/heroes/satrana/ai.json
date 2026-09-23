@@ -30,12 +30,12 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Arc",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "arc",
+                "area": "radius",
                 "target_count": -1,
-                "area_direction": "front",
+                "area_count": 2,
                 "type": "crowd_control",
                 "cc-type": "charm",
                 "duration": 2.25
@@ -49,12 +49,6 @@
                 "tier": "base",
                 "targeting": "Self",
                 "description": "She is invincible during the effect."
-              },
-              {
-                "label": "Ally grant (Sparks)",
-                "tier": "base",
-                "targeting": "Area",
-                "description": "Satrana grants Sparks to allies within 2 tiles when a battle starts."
               }
             ],
             "special_requires": []
@@ -121,7 +115,7 @@
                     "value": 100.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -151,7 +145,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 1.2
+                    "value": 2.0
                   }
                 ],
                 "duration": -1,
@@ -170,14 +164,21 @@
                 "value": [
                   {
                     "type": "flat",
-                    "value": 20.0
+                    "value": 60.0
                   }
-                ]
+                ],
+                "duration": -1
               }
             ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [
+              {
+                "label": "Ally grant (Sparks)",
+                "tier": "base",
+                "targeting": "Area",
+                "description": "Satrana grants Sparks to allies within 2 tiles when a battle starts."
+              },
               {
                 "label": "Ally DoT on enemies",
                 "tier": "base",
@@ -225,6 +226,37 @@
         "source_hash": "898a50472f4d95d45c2797efd5142247e81fe2859d1bdd95cc3dc910e4989ffc",
         "is_max_known": true,
         "tiers": {
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "debuff",
+                    "enemy": true
+                  }
+                ],
+                "type": "energy",
+                "name": "Energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 200.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
           "mythic+": {
             "effects": [
               {
@@ -257,6 +289,24 @@
                 "tier": "ex+10",
                 "targeting_label": "Single target",
                 "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Magic damage",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
                 "target": "ally",
                 "area": "single",
                 "target_count": 1,
@@ -279,6 +329,24 @@
           },
           "ex+15": {
             "effects": [
+              {
+                "tier": "ex+15",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Magic damage",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 22.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
               {
                 "tier": "ex+15",
                 "targeting_label": "Single target",

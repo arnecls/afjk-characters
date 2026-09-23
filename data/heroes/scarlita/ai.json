@@ -59,7 +59,7 @@
                 "type": "immunity",
                 "tier": "base",
                 "immunity_type": "unaffected",
-                "timing": "conditional",
+                "timing": "on_skill",
                 "targeting_label": "Self",
                 "target": "self",
                 "area": "single",
@@ -247,7 +247,13 @@
                 "type": "buff",
                 "name": "Execution",
                 "label": "buff_offensive",
-                "persistence": "unknown"
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 6.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],

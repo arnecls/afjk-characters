@@ -44,9 +44,46 @@
                     "value": 160.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "temporary"
               }
             ],
-            "summon_effects": [],
+            "summon_effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Owned summons",
+                "is_max_known": true,
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "temporary"
+              }
+            ],
             "immunities": [],
             "special_provides": [
               {
@@ -88,6 +125,75 @@
                 "tier": "base",
                 "targeting_label": "Single target",
                 "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Energy Recovery",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 14.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "energy",
+                "name": "Energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 80.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 180.0
+                  }
+                ],
+                "duration": 6.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 2,
+                "type": "debuff",
+                "name": "Max HP",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 6.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
@@ -99,6 +205,24 @@
                   {
                     "type": "percentage",
                     "value": 300.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 110.0
                   }
                 ]
               }
@@ -184,7 +308,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 2.4
+                    "value": 3.3
                   }
                 ],
                 "duration": 6,
@@ -239,7 +363,30 @@
                     "value": 50.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.9,
+                    "comparison": "below"
+                  }
+                ],
+                "type": "energy",
+                "name": "Energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 25.0
+                  }
+                ]
               },
               {
                 "tier": "legendary+",
@@ -257,10 +404,70 @@
                     "value": 50.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               }
             ],
-            "summon_effects": [],
+            "summon_effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Owned summons",
+                "is_max_known": true,
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Magic DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Owned summons",
+                "is_max_known": true,
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Phys DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Owned summons",
+                "is_max_known": true,
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.9,
+                    "comparison": "below"
+                  }
+                ],
+                "type": "energy",
+                "name": "Energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 25.0
+                  }
+                ]
+              }
+            ],
             "immunities": [],
             "special_provides": [],
             "special_requires": []
@@ -339,9 +546,45 @@
         "source_hash": "32457bd4b4b39e6c16603a60ae5076c9a89b4abf394a12f6a618b2751d9a7eb6",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
-            "summon_effects": [],
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 570.0
+                  }
+                ],
+                "duration": 12.0
+              }
+            ],
+            "summon_effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Owned summons",
+                "is_max_known": true,
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 570.0
+                  }
+                ],
+                "duration": 12.0
+              }
+            ],
             "immunities": [],
             "special_provides": [],
             "special_requires": []

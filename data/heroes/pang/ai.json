@@ -30,6 +30,54 @@
               },
               {
                 "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "unyielding_force"
+                  }
+                ],
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 70.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "unyielding_force"
+                  }
+                ],
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 150.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
                 "targeting_label": "Self",
                 "is_max_known": true,
                 "target": "self",
@@ -44,7 +92,7 @@
                     "value": 25.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "temporary"
               },
               {
                 "tier": "base",
@@ -188,7 +236,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 500.0
+                    "value": 270.0
                   }
                 ]
               }
@@ -233,7 +281,31 @@
                     "value": 15.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "unyielding_force"
+                  }
+                ],
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -297,7 +369,7 @@
                     "value": 30.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],

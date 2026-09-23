@@ -35,6 +35,25 @@
                 "value": [
                   {
                     "type": "percentage",
+                    "value": 115.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
                     "value": 350.0
                   }
                 ]
@@ -66,19 +85,7 @@
               }
             ],
             "special_provides": [],
-            "special_requires": [
-              {
-                "label": "Temporary ally stat buffs",
-                "tier": "legendary+",
-                "description": "Further increases his ATK by 6% when he has temporary stat buffs from allies."
-              },
-              {
-                "label": "Temporary ally stat buffs",
-                "tier": "mythic+",
-                "targeting": "Allies",
-                "description": "Each temporary stat buff from a different ally also increases his damage dealt by 15% and reduces his damage taken by 15%."
-              }
-            ]
+            "special_requires": []
           }
         }
       },
@@ -104,6 +111,25 @@
                   {
                     "type": "percentage",
                     "value": 250.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 180.0
                   }
                 ]
               },
@@ -302,13 +328,45 @@
                     "value": 15.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "permanent"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "buff",
+                    "self": true
+                  }
+                ],
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
-            "special_requires": []
+            "special_requires": [
+              {
+                "label": "Temporary ally stat buffs",
+                "tier": "legendary+",
+                "targeting": "Allies",
+                "description": "Further increases his ATK by 10% when he has temporary stat buffs from allies."
+              }
+            ]
           }
         }
       },
@@ -325,16 +383,61 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 4,
+                    "stack_comparison": "up_to"
+                  }
+                ],
+                "type": "buff",
+                "name": "Damage dealt",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 4,
+                    "stack_comparison": "up_to"
+                  }
+                ],
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
-            "special_requires": []
+            "special_requires": [
+              {
+                "label": "Temporary ally stat buffs",
+                "tier": "mythic+",
+                "targeting": "Allies",
+                "description": "Each temporary stat buff from a different ally also increases his damage dealt by 15% and reduces his damage taken by 15%."
+              }
+            ]
           },
           "ex+10": {
             "effects": [],
@@ -348,7 +451,8 @@
                 "targeting_label": "Self",
                 "target": "self",
                 "area": "single",
-                "target_count": 1
+                "target_count": 1,
+                "duration": 6.0
               }
             ],
             "special_provides": [],

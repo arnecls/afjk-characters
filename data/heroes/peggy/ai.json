@@ -145,18 +145,18 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Multiple targets",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": 1,
+                "target_count": 2,
                 "type": "debuff",
                 "name": "Ranged damage",
                 "label": "debuff_stat",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 22.0
+                    "value": 25.0
                   }
                 ],
                 "duration": 5.0
@@ -176,7 +176,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 16.0
+                    "value": 20.0
                   }
                 ],
                 "persistence": "temporary",
@@ -208,10 +208,10 @@
                 "value": [
                   {
                     "type": "flat",
-                    "value": 12.0
+                    "value": 15.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -281,10 +281,35 @@
                 "type": "buff",
                 "name": "Damage dealt",
                 "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],
-            "summon_effects": [],
+            "summon_effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "All summons",
+                "is_max_known": true,
+                "target": "all_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage dealt",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 25.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "immunities": [],
             "special_provides": [],
             "special_requires": []
