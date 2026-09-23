@@ -24,7 +24,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 1580.0
+                    "value": 1800.0
                   }
                 ]
               },
@@ -88,9 +88,45 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 275.0
+                    "value": 250.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage dealt",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -121,18 +157,6 @@
                 "area": "radius",
                 "target_count": -1,
                 "area_count": 1,
-                "type": "debuff",
-                "name": "DoT",
-                "label": "dot"
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Area",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "radius",
-                "target_count": -1,
-                "area_count": 1,
                 "type": "damage",
                 "damage_type": "magic",
                 "name": "Magic",
@@ -140,7 +164,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 330.0
+                    "value": 300.0
                   }
                 ]
               },
@@ -175,7 +199,13 @@
                 "area_count": 1,
                 "type": "debuff",
                 "name": "Vitality",
-                "label": "debuff_defensive"
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 50.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -240,6 +270,42 @@
                   }
                 ],
                 "persistence": "temporary"
+              },
+              {
+                "tier": "ex+10",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 85.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 85.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],

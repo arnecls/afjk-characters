@@ -24,7 +24,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 290.0
+                    "value": 270.0
                   }
                 ]
               }
@@ -68,7 +68,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 180.0
+                    "value": 170.0
                   }
                 ]
               }
@@ -110,14 +110,21 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 3.0
+                    "value": 4.5
                   }
                 ]
               }
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Cheat death",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "Igor jumps onto another tombstone to dodge a fatal blow."
+              }
+            ],
             "special_requires": []
           }
         }
@@ -148,6 +155,12 @@
                 "type": "buff",
                 "name": "Lifedrain",
                 "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 12.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],

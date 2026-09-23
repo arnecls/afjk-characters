@@ -57,7 +57,26 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 600.0
+                    "value": 640.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 550.0
                   }
                 ]
               },
@@ -71,7 +90,13 @@
                 "area_count": 2,
                 "type": "debuff",
                 "name": "Vitality",
-                "label": "debuff_defensive"
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 40.0
+                  }
+                ]
               },
               {
                 "tier": "base",
@@ -88,7 +113,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 550.0
+                    "value": 80.0
                   }
                 ],
                 "duration": 15,
@@ -144,7 +169,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 88.0
+                    "value": 80.0
                   }
                 ]
               },
@@ -259,7 +284,7 @@
             "effects": [
               {
                 "tier": "legendary+",
-                "targeting_label": "Single target",
+                "targeting_label": "Self",
                 "is_max_known": true,
                 "target": "self",
                 "area": "single",
@@ -277,7 +302,7 @@
               },
               {
                 "tier": "legendary+",
-                "targeting_label": "Single target",
+                "targeting_label": "Self",
                 "is_max_known": true,
                 "target": "self",
                 "area": "single",
@@ -366,6 +391,18 @@
                     "value": 45.0
                   }
                 ],
+                "persistence": "temporary"
+              },
+              {
+                "tier": "ex+15",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Invincible",
+                "label": "buff_stat",
                 "persistence": "temporary"
               }
             ],

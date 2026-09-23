@@ -79,9 +79,10 @@
                 "value": [
                   {
                     "type": "flat",
-                    "value": 60.0
+                    "value": 90.0
                   }
-                ]
+                ],
+                "duration": 3.3
               },
               {
                 "tier": "base",
@@ -128,25 +129,6 @@
         "tiers": {
           "base": {
             "effects": [
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "ally",
-                "area": "single",
-                "target_count": 1,
-                "type": "dot",
-                "healing_type": "over_time",
-                "name": "Healing over time",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 130.0
-                  }
-                ],
-                "duration": 6,
-                "tick": 1.0
-              },
               {
                 "tier": "base",
                 "targeting_label": "Multiple targets",
@@ -222,7 +204,21 @@
         "is_max_known": true,
         "tiers": {
           "mythic+": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Invincible",
+                "label": "buff_stat",
+                "duration": 3.0,
+                "persistence": "temporary"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [
@@ -231,8 +227,58 @@
                 "tier": "mythic+",
                 "targeting": "Single target",
                 "description": "While in animal form, the ally becomes invincible for 3s."
+              },
+              {
+                "label": "Cheat death",
+                "tier": "mythic+",
+                "targeting": "Single target",
+                "description": "The first time the protected ally would take a fatal blow, they instead ignore the damage."
               }
             ],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Max HP",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
             "special_requires": []
           }
         }
@@ -273,6 +319,50 @@
                 "targeting_label": "Self",
                 "is_max_known": true,
                 "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 10,
+                    "stack_comparison": "up_to"
+                  }
+                ],
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_stat",
+                "persistence": "permanent"
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 10,
+                    "stack_comparison": "up_to"
+                  }
+                ],
+                "type": "buff",
+                "name": "DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 6.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
                 "area": "single",
                 "target_count": 1,
                 "conditions": [

@@ -240,7 +240,8 @@
                     "type": "flat",
                     "value": 40.0
                   }
-                ]
+                ],
+                "duration": 5.0
               },
               {
                 "tier": "mythic+",
@@ -308,8 +309,27 @@
         "source_hash": "64edb3ec43be6ead36c2119dde54f07eb53534f789b7a2da407c615e71f406a9",
         "is_max_known": true,
         "tiers": {
-          "base": {
-            "effects": [],
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 520.0
+                  }
+                ]
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

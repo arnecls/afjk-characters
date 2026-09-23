@@ -11,23 +11,21 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Area",
+                "targeting_label": "Single target",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "radius",
-                "target_count": -1,
-                "area_count": 2,
+                "area": "single",
+                "target_count": 1,
                 "type": "crowd_control",
                 "cc-type": "knock_back"
               },
               {
                 "tier": "base",
-                "targeting_label": "Area",
+                "targeting_label": "Single target",
                 "is_max_known": true,
                 "target": "enemy",
                 "area": "single",
-                "target_count": -1,
-                "area_count": 2,
+                "target_count": 1,
                 "type": "damage",
                 "damage_type": "physical",
                 "name": "Physical",
@@ -35,7 +33,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 260.0
+                    "value": 480.0
                   }
                 ]
               },
@@ -88,6 +86,24 @@
               },
               {
                 "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 260.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
                 "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
@@ -101,7 +117,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 285.0
+                    "value": 390.0
                   }
                 ]
               }
@@ -140,7 +156,13 @@
                 "type": "buff",
                 "name": "Crit",
                 "label": "buff_offensive",
-                "persistence": "unknown"
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 15.0
+                  }
+                ],
+                "persistence": "permanent"
               },
               {
                 "tier": "base",
@@ -151,7 +173,7 @@
                 "target_count": 1,
                 "type": "crowd_control",
                 "cc-type": "stun",
-                "duration": 2.0
+                "duration": 1.0
               },
               {
                 "tier": "base",
@@ -167,7 +189,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 270.0
+                    "value": 240.0
                   }
                 ]
               }
@@ -233,7 +255,7 @@
                     "value": 20.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "temporary"
               },
               {
                 "tier": "mythic+",
@@ -251,7 +273,7 @@
                     "value": 65.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],

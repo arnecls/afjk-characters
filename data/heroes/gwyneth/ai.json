@@ -110,7 +110,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 310.0
+                    "value": 280.0
                   }
                 ]
               }
@@ -160,7 +160,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 550.0
+                    "value": 20.0
                   }
                 ],
                 "duration": 4,
@@ -175,7 +175,13 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Vitality",
-                "label": "debuff_defensive"
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 40.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -207,7 +213,7 @@
                     "value": 25.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],
@@ -266,6 +272,24 @@
                     "value": 10.0
                   }
                 ]
+              },
+              {
+                "tier": "ex+10",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "DEF Penetration",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 60.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],

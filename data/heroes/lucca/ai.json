@@ -58,7 +58,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 260.0
+                    "value": 240.0
                   }
                 ]
               }
@@ -100,7 +100,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 340.0
+                    "value": 400.0
                   }
                 ]
               },
@@ -139,7 +139,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 165.0
+                    "value": 150.0
                   }
                 ]
               }
@@ -260,11 +260,11 @@
             "effects": [
               {
                 "tier": "mythic+",
-                "targeting_label": "Single target",
+                "targeting_label": "Multiple targets",
                 "is_max_known": true,
                 "target": "ally",
                 "area": "single",
-                "target_count": 1,
+                "target_count": -1,
                 "type": "buff",
                 "name": "ATK",
                 "label": "buff_offensive",

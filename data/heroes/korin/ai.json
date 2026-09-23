@@ -16,7 +16,7 @@
                 "target": "enemy",
                 "area": "radius",
                 "target_count": -1,
-                "area_count": 1,
+                "area_count": 2,
                 "type": "crowd_control",
                 "cc-type": "bind",
                 "duration": 4.0
@@ -28,7 +28,7 @@
                 "target": "enemy",
                 "area": "radius",
                 "target_count": -1,
-                "area_count": 1,
+                "area_count": 2,
                 "type": "damage",
                 "damage_type": "physical",
                 "name": "Physical",
@@ -47,7 +47,7 @@
                 "target": "enemy",
                 "area": "radius",
                 "target_count": -1,
-                "area_count": 1,
+                "area_count": 2,
                 "type": "crowd_control",
                 "cc-type": "knock_back"
               }
@@ -113,7 +113,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 235.0
+                    "value": 220.0
                   }
                 ]
               }
@@ -192,25 +192,6 @@
                 "target_count": -1,
                 "area_count": 2,
                 "type": "damage",
-                "damage_type": "max_hp",
-                "name": "Max HP-based damage",
-                "label": "damage_max_hp",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 2.0
-                  }
-                ]
-              },
-              {
-                "tier": "mythic+",
-                "targeting_label": "Area",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "radius",
-                "target_count": -1,
-                "area_count": 2,
-                "type": "damage",
                 "damage_type": "true",
                 "name": "True damage",
                 "label": "damage_true",
@@ -265,25 +246,6 @@
                 "target_count": -1,
                 "area_count": 2,
                 "type": "damage",
-                "damage_type": "max_hp",
-                "name": "Max HP-based damage",
-                "label": "damage_max_hp",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 2.5
-                  }
-                ]
-              },
-              {
-                "tier": "ex+10",
-                "targeting_label": "Area",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "radius",
-                "target_count": -1,
-                "area_count": 2,
-                "type": "damage",
                 "damage_type": "true",
                 "name": "True damage",
                 "label": "damage_true",
@@ -302,25 +264,6 @@
           },
           "ex+15": {
             "effects": [
-              {
-                "tier": "ex+15",
-                "targeting_label": "Area",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "radius",
-                "target_count": -1,
-                "area_count": 2,
-                "type": "damage",
-                "damage_type": "max_hp",
-                "name": "Max HP-based damage",
-                "label": "damage_max_hp",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 2.8
-                  }
-                ]
-              },
               {
                 "tier": "ex+15",
                 "targeting_label": "Area",
@@ -364,6 +307,12 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 25.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],

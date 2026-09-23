@@ -74,7 +74,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 280.0
+                    "value": 300.0
                   }
                 ]
               }
@@ -191,6 +191,12 @@
                 "type": "buff",
                 "name": "Damage taken",
                 "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 36.0
+                  }
+                ],
                 "duration": 9,
                 "persistence": "temporary"
               }

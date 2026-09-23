@@ -125,7 +125,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 150.0
+                    "value": 160.0
                   }
                 ],
                 "area_count": -1
@@ -148,6 +148,80 @@
                     "value": 160.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Phys DEF",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "duration": 5.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Phys DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "duration": 5.0,
+                "persistence": "temporary"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Magic DEF",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "duration": 5.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Magic DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "duration": 5.0,
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -205,6 +279,12 @@
                 "type": "buff",
                 "name": "Vitality",
                 "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 25.0
+                  }
+                ],
                 "persistence": "permanent"
               },
               {

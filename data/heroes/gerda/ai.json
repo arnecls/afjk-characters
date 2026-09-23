@@ -42,7 +42,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 195.0
+                    "value": 180.0
                   }
                 ]
               },
@@ -98,17 +98,18 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 280.0
+                    "value": 260.0
                   }
                 ]
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "ally",
-                "area": "single",
-                "target_count": 1,
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
                 "type": "dot",
                 "healing_type": "over_time",
                 "name": "Healing over time",
@@ -171,7 +172,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 430.0
+                    "value": 150.0
                   }
                 ]
               },
@@ -189,7 +190,8 @@
                     "type": "percentage",
                     "value": 400.0
                   }
-                ]
+                ],
+                "duration": 8.0
               }
             ],
             "summon_effects": [],

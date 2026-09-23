@@ -169,7 +169,32 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Damage taken",
-                "label": "debuff_stat"
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "duration": 5.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 240.0
+                  }
+                ]
               },
               {
                 "tier": "base",
@@ -186,7 +211,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 255.0
+                    "value": 240.0
                   }
                 ]
               },
@@ -263,7 +288,8 @@
                     "type": "percentage",
                     "value": 20.0
                   }
-                ]
+                ],
+                "duration": 7.0
               }
             ],
             "summon_effects": [],

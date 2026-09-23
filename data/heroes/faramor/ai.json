@@ -175,7 +175,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 12.0
+                    "value": 15.0
                   }
                 ],
                 "persistence": "temporary"
@@ -193,7 +193,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 12.0
+                    "value": 15.0
                   }
                 ],
                 "persistence": "temporary"
@@ -293,6 +293,24 @@
                     "value": 85.0
                   }
                 ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],

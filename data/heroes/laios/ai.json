@@ -9,8 +9,39 @@
         "tiers": {
           "base": {
             "effects": [],
-            "summon_effects": [],
-            "immunities": [],
+            "summon_effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Owned summons",
+                "is_max_known": true,
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 120.0
+                  }
+                ],
+                "duration": 10.0,
+                "persistence": "temporary"
+              }
+            ],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "base",
+                "immunity_type": "immune",
+                "timing": "conditional",
+                "targeting_label": "Owned summons",
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
             "special_provides": [
               {
                 "label": "Summoning",
@@ -66,7 +97,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 49.0
+                    "value": 50.0
                   }
                 ]
               },
@@ -84,7 +115,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 49.0
+                    "value": 50.0
                   }
                 ]
               },
@@ -97,7 +128,7 @@
                 "target_count": -1,
                 "area_count": 1,
                 "type": "crowd_control",
-                "cc-type": "bind",
+                "cc-type": "stun",
                 "duration": 3.0
               }
             ],
@@ -137,6 +168,41 @@
                   }
                 ],
                 "persistence": "permanent"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 500.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 560.0
+                  }
+                ]
               },
               {
                 "tier": "base",

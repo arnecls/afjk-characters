@@ -25,7 +25,8 @@
                     "type": "flat",
                     "value": 33.0
                   }
-                ]
+                ],
+                "duration": 5.0
               },
               {
                 "tier": "base",
@@ -91,6 +92,7 @@
                     "value": 33.0
                   }
                 ],
+                "duration": 6.0,
                 "persistence": "temporary"
               },
               {
@@ -109,6 +111,7 @@
                     "value": 50.0
                   }
                 ],
+                "duration": 6.0,
                 "persistence": "temporary"
               },
               {
@@ -124,7 +127,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 90.0
+                    "value": 120.0
                   }
                 ],
                 "duration": 6,
@@ -298,7 +301,18 @@
           "supreme+": {
             "effects": [],
             "summon_effects": [],
-            "immunities": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "supreme+",
+                "immunity_type": "unaffected",
+                "timing": "conditional",
+                "targeting_label": "Single target",
+                "target": "ally",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
             "special_provides": [],
             "special_requires": []
           }

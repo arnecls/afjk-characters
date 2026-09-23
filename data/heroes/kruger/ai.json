@@ -99,7 +99,13 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Phys DEF",
-                "label": "debuff_defensive"
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ]
               },
               {
                 "tier": "base",
@@ -142,18 +148,6 @@
                 "target_count": -1,
                 "area_count": 1,
                 "type": "debuff",
-                "name": "Phys DEF",
-                "label": "debuff_defensive"
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Area",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "radius",
-                "target_count": -1,
-                "area_count": 1,
-                "type": "debuff",
                 "name": "Vulnerable",
                 "label": "debuff_stat"
               },
@@ -178,14 +172,21 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
                 "type": "debuff",
                 "name": "Damage taken",
-                "label": "debuff_stat"
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -211,6 +212,12 @@
                 "type": "buff",
                 "name": "Ranged DEF",
                 "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 26.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],
@@ -243,11 +250,39 @@
                     "value": 30.0
                   }
                 ],
-                "persistence": "unknown"
+                "persistence": "temporary"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 48.0
+                  }
+                ],
+                "duration": 15.0
               }
             ],
             "summon_effects": [],
-            "immunities": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "mythic+",
+                "immunity_type": "immune",
+                "timing": "conditional",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
             "special_provides": [],
             "special_requires": []
           }
@@ -259,6 +294,39 @@
         "tiers": {
           "base": {
             "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 2,
+                    "stack_comparison": "up_to"
+                  }
+                ],
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

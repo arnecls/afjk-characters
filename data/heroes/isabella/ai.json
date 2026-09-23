@@ -166,7 +166,14 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "ATK",
-                "label": "debuff_offensive"
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 75.0
+                  }
+                ],
+                "duration": 5.0
               }
             ],
             "summon_effects": [],
@@ -215,7 +222,8 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "ATK",
-                "label": "debuff_offensive"
+                "label": "debuff_offensive",
+                "duration": 8.0
               },
               {
                 "tier": "mythic+",
@@ -226,7 +234,8 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Phys DEF",
-                "label": "debuff_defensive"
+                "label": "debuff_defensive",
+                "duration": 8.0
               },
               {
                 "tier": "mythic+",
@@ -237,7 +246,8 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Magic DEF",
-                "label": "debuff_defensive"
+                "label": "debuff_defensive",
+                "duration": 8.0
               },
               {
                 "tier": "mythic+",
@@ -248,7 +258,8 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "ATK SPD",
-                "label": "debuff_offensive"
+                "label": "debuff_offensive",
+                "duration": 8.0
               },
               {
                 "tier": "mythic+",
@@ -259,7 +270,8 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Haste",
-                "label": "debuff_offensive"
+                "label": "debuff_offensive",
+                "duration": 8.0
               },
               {
                 "tier": "mythic+",
@@ -270,7 +282,8 @@
                 "target_count": 1,
                 "type": "debuff",
                 "name": "Vitality",
-                "label": "debuff_defensive"
+                "label": "debuff_defensive",
+                "duration": 8.0
               }
             ],
             "summon_effects": [],

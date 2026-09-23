@@ -68,16 +68,9 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
-                "type": "damage",
-                "damage_type": "max_hp",
-                "name": "Max HP-based damage",
-                "label": "damage_max_hp",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 20.0
-                  }
-                ]
+                "type": "crowd_control",
+                "cc-type": "silence",
+                "duration": 8.0
               },
               {
                 "tier": "base",
@@ -300,6 +293,7 @@
                     "value": 60.0
                   }
                 ],
+                "duration": 6.0,
                 "persistence": "temporary"
               }
             ],
@@ -325,7 +319,8 @@
                     "type": "percentage",
                     "value": 20.0
                   }
-                ]
+                ],
+                "duration": 6.0
               }
             ],
             "summon_effects": [],

@@ -11,12 +11,11 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Area",
+                "targeting_label": "Arc",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "radius",
+                "area": "arc",
                 "target_count": -1,
-                "area_count": 2,
                 "type": "damage",
                 "damage_type": "physical",
                 "name": "Physical",
@@ -30,14 +29,33 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Area",
+                "targeting_label": "Arc",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "radius",
+                "area": "arc",
                 "target_count": -1,
-                "area_count": 2,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ],
+                "duration": 3.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Arc",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "arc",
+                "target_count": -1,
                 "type": "crowd_control",
-                "cc-type": "knock_up"
+                "cc-type": "knock_up",
+                "duration": 0.5
               }
             ],
             "summon_effects": [],
@@ -85,7 +103,25 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 550.0
+                    "value": 500.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 400.0
                   }
                 ]
               },
@@ -150,7 +186,8 @@
                 "area_count": 1,
                 "area_direction": "selected_target",
                 "type": "crowd_control",
-                "cc-type": "knock_up"
+                "cc-type": "knock_up",
+                "duration": 0.5
               },
               {
                 "tier": "base",
@@ -168,7 +205,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 440.0
+                    "value": 400.0
                   }
                 ]
               }
@@ -237,7 +274,26 @@
         "is_max_known": true,
         "tiers": {
           "mythic+": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage dealt",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 35.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -253,25 +309,8 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "crowd_control",
-                "cc-type": "knock_up"
-              },
-              {
-                "tier": "ex+10",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "damage",
-                "damage_type": "max_hp",
-                "name": "Max HP-based damage",
-                "label": "damage_max_hp",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 20.0
-                  }
-                ]
+                "cc-type": "knock_up",
+                "duration": 0.25
               },
               {
                 "tier": "ex+10",

@@ -83,6 +83,7 @@
                     "value": 66.0
                   }
                 ],
+                "duration": 10.0,
                 "persistence": "temporary"
               },
               {
@@ -101,6 +102,7 @@
                     "value": 100.0
                   }
                 ],
+                "duration": 10.0,
                 "persistence": "temporary"
               }
             ],
