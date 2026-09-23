@@ -9,3 +9,4 @@ tmp/
 .mypy_cache/
 .DS_Store
 .claude/worktrees/
+.worktrees/
