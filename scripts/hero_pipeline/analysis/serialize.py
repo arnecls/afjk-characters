@@ -998,6 +998,27 @@ def convert_schema_effect(effect: dict[str, Any], *, summon: bool = False) -> An
             **spatial,
         )
 
+    if etype == "stat_steal":
+        # Text-backed steal rows (e.g. salazer) keep
+        # target, value, and persistence end to end.
+        name = effect.get("name") or "Stat Steal"
+        if effect.get("target") == "self":
+            targeting = "Self"
+        return rs.Effect(
+            category="buff",
+            label=name,
+            tier=tier,
+            targeting=targeting,
+            numeric=numeric,
+            qualitative="",
+            conditional=conditional,
+            conditions=schema_conditions,
+            duration=float(duration) if duration is not None else None,
+            tick=float(tick) if tick is not None else None,
+            persistence=persistence,
+            **spatial,
+        )
+
     name = effect.get("name", etype.replace("_", " ").title())
     return rs.Effect(
         category="buff",

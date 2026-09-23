@@ -7,6 +7,7 @@ import unittest
 from hero_pipeline.analysis.conditions import parse_conditions_from_text
 from hero_pipeline.analysis.crowd_control import extract_cc_duration
 from hero_pipeline.analysis.damage import detect_damage_types
+from hero_pipeline.analysis import serialize as hs
 from hero_pipeline.analysis.local import analyze_local
 from hero_pipeline.analysis.numeric import extract_number
 from hero_pipeline.analysis.targeting import _prefer_buff_targeting, detect_targeting
@@ -142,3 +143,54 @@ class DetectorSeamTests(unittest.TestCase):
             _prefer_buff_targeting("Self", "All allies"),
             "All allies",
         )
+
+    def test_stat_steal_roundtrip_keeps_self_value(self) -> None:
+        row = {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": True,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+                {
+                    "type": "hp_threshold",
+                    "hp_ratio": 0.7,
+                    "comparison": "below",
+                }
+            ],
+            "type": "stat_steal",
+            "stat": "atk",
+            "value": [{"type": "percentage", "value": 12.0}],
+            "persistence": "permanent",
+        }
+        working = hs.convert_schema_effect(row)
+        self.assertEqual(working["targeting"], "Self")
+        self.assertEqual(working["numeric"], 12.0)
+        self.assertEqual(working.get("persistence"), "permanent")
+        schema = hs.effect_to_schema(working)
+        self.assertEqual(schema.get("target"), "self")
+        self.assertEqual(schema.get("persistence"), "permanent")
+        self.assertEqual(
+            schema.get("value"), [{"type": "percentage", "value": 12.0}]
+        )
+        self.assertEqual(schema.get("name"), "Stat Steal")
+
+    def test_stat_steal_prefers_target_over_label(self) -> None:
+        row = {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": True,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "stat_steal",
+            "stat": "atk",
+            "value": [{"type": "percentage", "value": 12.0}],
+            "persistence": "permanent",
+        }
+        working = hs.convert_schema_effect(row)
+        self.assertEqual(working["targeting"], "Self")
+        schema = hs.effect_to_schema(working)
+        self.assertEqual(schema.get("target"), "self")
+        self.assertEqual(schema.get("persistence"), "permanent")

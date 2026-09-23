@@ -526,6 +526,19 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
                     return float(raw.split("+")[0].strip())
                 return float(raw)
         return None
+    if label == "Stat Steal" and not is_debuff:
+        # Steal magnitude sits next to the verb; HP
+        # thresholds and "up to" caps must not count.
+        amounts = _all_amounts(
+            text,
+            [
+                r"absorb(?:s|ing)? (\d+(?:\.\d+)?)\s*%",
+                r"steal(?:s|ing)? (\d+(?:\.\d+)?)\s*%",
+            ],
+        )
+        if amounts:
+            return max(amounts)
+        return None
     # Flat stat values (Haste 60+4, ATK SPD 45+5) before generic patterns
     stat_pats = [
         r"haste by (\d+(?:\.\d+)?)",
