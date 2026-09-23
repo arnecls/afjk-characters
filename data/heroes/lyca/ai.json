@@ -59,6 +59,7 @@
                     "value": 45.0
                   }
                 ],
+                "duration": 8.0,
                 "persistence": "temporary"
               },
               {
@@ -76,6 +77,12 @@
                   {
                     "type": "flat",
                     "value": 120.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "battle_start"
                   }
                 ],
                 "persistence": "permanent"
@@ -108,9 +115,10 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 10.0
+                    "value": 12.0
                   }
-                ]
+                ],
+                "duration": 6.5
               },
               {
                 "tier": "base",
@@ -143,10 +151,10 @@
         "source_hash": "35c505752bbd4618f08549ec56eac19c3743271103b5679681f489d69a5e44b9",
         "is_max_known": true,
         "tiers": {
-          "base": {
+          "legendary+": {
             "effects": [
               {
-                "tier": "base",
+                "tier": "legendary+",
                 "targeting_label": "Self",
                 "is_max_known": true,
                 "target": "self",
@@ -214,6 +222,11 @@
                   {
                     "type": "status_condition",
                     "status": "shielded"
+                  },
+                  {
+                    "type": "duration_gate",
+                    "gate": "cooldown",
+                    "interval": 10.0
                   }
                 ],
                 "type": "damage",
@@ -234,6 +247,17 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "shielded"
+                  },
+                  {
+                    "type": "duration_gate",
+                    "gate": "cooldown",
+                    "interval": 10.0
+                  }
+                ],
                 "type": "crowd_control",
                 "cc-type": "stun",
                 "duration": 4.0
@@ -257,6 +281,11 @@
                   {
                     "type": "status_condition",
                     "status": "shielded"
+                  },
+                  {
+                    "type": "duration_gate",
+                    "gate": "cooldown",
+                    "interval": 10.0
                   }
                 ],
                 "type": "damage",
@@ -300,7 +329,14 @@
                     "value": 25.0
                   }
                 ],
-                "duration": 6.0
+                "duration": 6.0,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "skill_cast",
+                    "skill_type": "ultimate"
+                  }
+                ]
               }
             ],
             "summon_effects": [],

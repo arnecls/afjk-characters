@@ -11,11 +11,19 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "rectangle",
+                "area_direction": "front",
+                "target_count": -1,
+                "area_count": 3,
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "debuffed"
+                  }
+                ],
                 "type": "damage",
                 "damage_type": "magic",
                 "name": "Magic",
@@ -58,7 +66,7 @@
                     "value": 45.0
                   }
                 ],
-                "duration": 10,
+                "duration": 14,
                 "tick": 1.0
               }
             ],
@@ -165,6 +173,18 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "cast",
+                    "self": true,
+                    "skill_type": "ultimate"
+                  },
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  }
+                ],
                 "type": "damage",
                 "damage_type": "magic",
                 "name": "Magic",
@@ -184,6 +204,18 @@
                 "area": "radius",
                 "target_count": -1,
                 "area_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "cast",
+                    "self": true,
+                    "skill_type": "ultimate"
+                  },
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  }
+                ],
                 "type": "damage",
                 "damage_type": "magic",
                 "name": "Magic",
@@ -219,7 +251,7 @@
                     "value": 45.0
                   }
                 ],
-                "duration": 10,
+                "duration": 14,
                 "tick": 1.0,
                 "conditions": [
                   {
@@ -246,7 +278,7 @@
         "source_hash": "42336043befa8144142845f97dc9da459cea11c24f8a47ddc7a50bc5cfe667c5",
         "is_max_known": true,
         "tiers": {
-          "base": {
+          "supreme+": {
             "effects": [],
             "summon_effects": [],
             "immunities": [],

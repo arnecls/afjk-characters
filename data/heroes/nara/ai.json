@@ -11,6 +11,27 @@
             "effects": [
               {
                 "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 750.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ]
+              },
+              {
+                "tier": "base",
                 "targeting_label": "Single target",
                 "is_max_known": true,
                 "target": "enemy",
@@ -90,7 +111,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 4.0
+                    "value": 5.0
                   }
                 ]
               }
@@ -146,6 +167,24 @@
                     "value": 175.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 80.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -175,6 +214,31 @@
                   {
                     "type": "percentage",
                     "value": 14.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "kill",
+                    "self": true
+                  }
+                ],
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
                   }
                 ],
                 "persistence": "permanent"
@@ -262,7 +326,7 @@
             "effects": [
               {
                 "tier": "supreme+",
-                "targeting_label": "Single target",
+                "targeting_label": "Self",
                 "is_max_known": true,
                 "target": "self",
                 "area": "single",

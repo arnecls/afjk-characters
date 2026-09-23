@@ -30,14 +30,7 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [
-              {
-                "label": "Stacking",
-                "tier": "mythic+",
-                "targeting": "Multiple targets",
-                "description": "Marilee increases her ATK by 5% when allies cast an Ultimate, up to 6 stacks."
-              }
-            ],
+            "special_provides": [],
             "special_requires": []
           }
         }
@@ -55,6 +48,16 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "normal_attack"
+                  },
+                  {
+                    "type": "count",
+                    "count": 2
+                  }
+                ],
                 "type": "crowd_control",
                 "cc-type": "stun",
                 "duration": 0.5
@@ -66,6 +69,16 @@
                 "target": "enemy",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "normal_attack"
+                  },
+                  {
+                    "type": "count",
+                    "count": 2
+                  }
+                ],
                 "type": "damage",
                 "damage_type": "physical",
                 "name": "Physical",
@@ -139,10 +152,10 @@
         "source_hash": "db09264ff5f208b99d7932dbaa575210b242d4408e7dc85aa49686c9e8bbab99",
         "is_max_known": true,
         "tiers": {
-          "base": {
+          "legendary+": {
             "effects": [
               {
-                "tier": "base",
+                "tier": "legendary+",
                 "targeting_label": "Self",
                 "is_max_known": true,
                 "target": "self",
@@ -187,6 +200,12 @@
                     "stack_comparison": "up_to"
                   },
                   {
+                    "type": "trigger_condition",
+                    "trigger": "skill_cast",
+                    "skill_type": "ultimate",
+                    "ally": true
+                  },
+                  {
                     "type": "battle_phase",
                     "phase": "conditional"
                   }
@@ -205,7 +224,14 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Stacking",
+                "tier": "mythic+",
+                "targeting": "Self",
+                "description": "Marilee increases her ATK by 5% when allies cast an Ultimate, up to 6 stacks."
+              }
+            ],
             "special_requires": []
           },
           "ex+10": {
@@ -240,7 +266,7 @@
         "source_hash": "8b8ac399aae035f54205c5c4ce9916c05d0e73a1cb97f16ca9beaef914892c12",
         "is_max_known": true,
         "tiers": {
-          "base": {
+          "supreme+": {
             "effects": [],
             "summon_effects": [],
             "immunities": [],

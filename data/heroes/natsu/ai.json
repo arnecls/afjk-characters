@@ -290,6 +290,64 @@
                   }
                 ],
                 "label": "buff_defensive"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Crit",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 5.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "defeat",
+                    "ally": true
+                  },
+                  {
+                    "type": "duration_gate",
+                    "gate": "once_per_battle"
+                  }
+                ],
+                "label": "buff_offensive"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Crit DMG Boost",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 5.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "defeat",
+                    "ally": true
+                  },
+                  {
+                    "type": "duration_gate",
+                    "gate": "once_per_battle"
+                  }
+                ],
+                "label": "buff_offensive"
               }
             ],
             "summon_effects": [],

@@ -25,15 +25,16 @@
                     "value": 40.0
                   }
                 ],
+                "duration": 12.0,
                 "persistence": "temporary"
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Multiple targets",
                 "is_max_known": true,
                 "target": "ally",
                 "area": "single",
-                "target_count": 1,
+                "target_count": 3,
                 "type": "heal",
                 "healing_type": "direct",
                 "name": "Direct healing",
@@ -59,6 +60,7 @@
                     "value": 10.0
                   }
                 ],
+                "duration": 12.0,
                 "persistence": "temporary",
                 "label": "buff_defensive"
               },
@@ -77,6 +79,7 @@
                     "value": 30.0
                   }
                 ],
+                "duration": 12.0,
                 "persistence": "temporary",
                 "label": "buff_offensive"
               },
@@ -95,6 +98,7 @@
                     "value": 10.0
                   }
                 ],
+                "duration": 12.0,
                 "persistence": "temporary",
                 "label": "buff_defensive"
               }
@@ -130,6 +134,26 @@
                   }
                 ],
                 "persistence": "temporary"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "type": "heal",
+                "healing_type": "over_time",
+                "name": "Healing over time",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ],
+                "duration": -1,
+                "tick": 1.0
               }
             ],
             "summon_effects": [],
@@ -161,6 +185,7 @@
                     "value": 40.0
                   }
                 ],
+                "duration": 5.0,
                 "persistence": "temporary"
               },
               {
@@ -179,6 +204,7 @@
                     "value": 40.0
                   }
                 ],
+                "duration": 5.0,
                 "persistence": "temporary"
               },
               {

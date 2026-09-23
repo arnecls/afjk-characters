@@ -186,7 +186,7 @@
             "effects": [
               {
                 "tier": "ex+10",
-                "targeting_label": "Single target",
+                "targeting_label": "Self",
                 "is_max_known": true,
                 "target": "self",
                 "area": "single",

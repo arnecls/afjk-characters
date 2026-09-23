@@ -103,22 +103,24 @@
             "effects": [
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
                 "type": "crowd_control",
                 "cc-type": "blind",
                 "duration": 4.4
               },
               {
                 "tier": "base",
-                "targeting_label": "Single target",
+                "targeting_label": "Area",
                 "is_max_known": true,
                 "target": "enemy",
-                "area": "single",
-                "target_count": 1,
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
                 "type": "damage",
                 "damage_type": "magic",
                 "name": "Magic",
@@ -127,6 +129,23 @@
                   {
                     "type": "percentage",
                     "value": 330.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
                   }
                 ]
               }
@@ -183,6 +202,12 @@
                 "target": "ally",
                 "area": "single",
                 "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "duration_gate",
+                    "gate": "once_per_battle"
+                  }
+                ],
                 "type": "heal",
                 "healing_type": "direct",
                 "name": "Direct healing",
@@ -217,9 +242,9 @@
                 "target_count": -1,
                 "area_count": -1,
                 "type": "dot",
-                "damage_type": "magic",
-                "name": "Magic",
-                "label": "damage_normal",
+                "damage_type": "dot",
+                "name": "DoT",
+                "label": "dot",
                 "value": [
                   {
                     "type": "percentage",
@@ -242,7 +267,31 @@
         "is_max_known": true,
         "tiers": {
           "supreme+": {
-            "effects": [],
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 3,
+                    "stack_comparison": "up_to"
+                  }
+                ],
+                "type": "energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 10.0
+                  }
+                ],
+                "tick": 1.0
+              }
+            ],
             "summon_effects": [],
             "immunities": [
               {
@@ -264,7 +313,14 @@
                 "description": "During battle, Marcille recovers 10 additional Energy per second for each ally who is currently providing her with a buff, up to 3 stacks."
               }
             ],
-            "special_requires": []
+            "special_requires": [
+              {
+                "label": "Temporary ally stat buffs",
+                "tier": "supreme+",
+                "targeting": "Self",
+                "description": "Energy recovery scales with each ally currently providing Marcille with a buff, up to 3 stacks."
+              }
+            ]
           }
         }
       }

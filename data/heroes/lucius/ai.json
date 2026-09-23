@@ -22,7 +22,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 470.0
+                    "value": 520.0
                   }
                 ]
               }
@@ -64,7 +64,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 350.0
+                    "value": 70.0
                   }
                 ]
               },
@@ -80,7 +80,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 300.0
+                    "value": 320.0
                   }
                 ]
               },
@@ -208,6 +208,32 @@
                     "value": 90.0
                   }
                 ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 3.0,
+                    "modifier": "max_hp"
+                  }
+                ],
+                "duration": 4
               }
             ],
             "summon_effects": [],
