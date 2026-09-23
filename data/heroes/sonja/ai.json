@@ -24,7 +24,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 220.0
+                    "value": 672.0
                   }
                 ]
               }
@@ -67,6 +67,12 @@
                 "type": "buff",
                 "name": "Haste",
                 "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 12.0
+                  }
+                ],
                 "persistence": "temporary"
               }
             ],
@@ -271,6 +277,32 @@
         "tiers": {
           "base": {
             "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "label": "buff_stat",
+                "name": "Lifedrain",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

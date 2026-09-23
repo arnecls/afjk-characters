@@ -27,6 +27,62 @@
                     "value": 350.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "debuff",
+                "name": "Crit DMG DEF",
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 40.0
+                  }
+                ],
+                "duration": 12.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "type": "heal",
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 80.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -74,7 +130,8 @@
                     "type": "percentage",
                     "value": 380.0
                   }
-                ]
+                ],
+                "duration": 8.0
               }
             ],
             "summon_effects": [],

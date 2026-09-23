@@ -94,7 +94,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 10.0
+                    "value": 12.0
                   }
                 ]
               }
@@ -398,20 +398,21 @@
             "effects": [
               {
                 "tier": "supreme+",
-                "targeting_label": "Single target",
+                "targeting_label": "Self",
                 "is_max_known": true,
-                "target": "enemy",
+                "target": "self",
                 "area": "single",
                 "target_count": 1,
-                "type": "debuff",
+                "type": "buff",
                 "name": "Damage dealt",
-                "label": "debuff_stat",
+                "label": "buff_stat",
                 "value": [
                   {
                     "type": "percentage",
                     "value": 10.0
                   }
-                ]
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],

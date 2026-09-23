@@ -64,9 +64,9 @@
                 "area_count": 5,
                 "area_direction": "front",
                 "type": "damage",
-                "damage_type": "physical",
-                "name": "Physical",
-                "label": "damage_normal",
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
+                "label": "damage_max_hp",
                 "value": [
                   {
                     "type": "percentage",
@@ -88,6 +88,24 @@
                   {
                     "type": "percentage",
                     "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Max HP",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
                   }
                 ],
                 "persistence": "permanent"

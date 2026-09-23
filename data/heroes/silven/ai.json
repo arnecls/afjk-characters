@@ -110,24 +110,6 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "damage",
-                "damage_type": "max_hp",
-                "name": "Max HP-based damage",
-                "label": "damage_max_hp",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 1.5999999999999999
-                  }
-                ]
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "damage",
                 "damage_type": "true",
                 "name": "True damage",
                 "label": "damage_true",
@@ -252,6 +234,24 @@
                   {
                     "type": "flat",
                     "value": 16.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "label": "buff_offensive",
+                "name": "ATK",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
                   }
                 ],
                 "persistence": "permanent"

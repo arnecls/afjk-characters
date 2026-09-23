@@ -184,6 +184,35 @@
                     "value": 55.0
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "lost_hp",
+                "name": "Lost HP-based damage",
+                "label": "damage_lost_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 4.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Marked target (focus fire)",
+                "label": "debuff_stat"
               }
             ],
             "summon_effects": [],

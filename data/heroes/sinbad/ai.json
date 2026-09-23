@@ -30,14 +30,7 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [
-              {
-                "label": "Marked target (focus fire)",
-                "tier": "base",
-                "targeting": "Single target",
-                "description": "When a marked enemy is defeated or when the marks expire, Sinbad starts to assess his enemies again and becomes unaffected during this time."
-              }
-            ],
+            "special_provides": [],
             "special_requires": []
           }
         }
@@ -113,7 +106,14 @@
                 "target_count": 1
               }
             ],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Marked target (focus fire)",
+                "tier": "base",
+                "targeting": "Single target",
+                "description": "He marks the enemy dealing the most damage as the hitter and the one taking the most damage as the guard."
+              }
+            ],
             "special_requires": []
           }
         }

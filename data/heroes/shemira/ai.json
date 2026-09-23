@@ -99,24 +99,6 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "damage",
-                "label": "damage_max_hp",
-                "name": "Max HP-based damage",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 33.0
-                  }
-                ],
-                "damage_type": "max_hp"
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "damage",
                 "label": "damage_true",
                 "name": "True damage",
                 "value": [
@@ -126,25 +108,6 @@
                   }
                 ],
                 "damage_type": "true"
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Area",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "radius",
-                "target_count": -1,
-                "type": "damage",
-                "label": "damage_max_hp",
-                "name": "Max HP-based damage",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 22.0
-                  }
-                ],
-                "damage_type": "max_hp",
-                "area_count": 1
               },
               {
                 "tier": "base",
@@ -192,24 +155,6 @@
         "tiers": {
           "ex+10": {
             "effects": [
-              {
-                "tier": "ex+10",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "single",
-                "target_count": 1,
-                "type": "damage",
-                "damage_type": "max_hp",
-                "name": "Max HP-based damage",
-                "label": "damage_max_hp",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 3.0
-                  }
-                ]
-              },
               {
                 "tier": "ex+10",
                 "targeting_label": "Single target",

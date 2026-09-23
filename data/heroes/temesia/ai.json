@@ -57,18 +57,6 @@
                 "area_count": 1,
                 "type": "crowd_control",
                 "cc-type": "knock_down"
-              },
-              {
-                "tier": "base",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Damage dealt",
-                "label": "buff_stat",
-                "persistence": "permanent"
               }
             ],
             "summon_effects": [],

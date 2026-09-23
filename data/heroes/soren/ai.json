@@ -57,26 +57,7 @@
             "special_requires": []
           },
           "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "Energy",
-                "label": "buff_stat",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 80.0
-                  }
-                ],
-                "persistence": "permanent"
-              }
-            ],
+            "effects": [],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -156,7 +137,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 70.0
+                    "value": 90.0
                   }
                 ],
                 "persistence": "temporary"
@@ -168,24 +149,7 @@
             "special_requires": []
           },
           "supreme+": {
-            "effects": [
-              {
-                "tier": "supreme+",
-                "targeting_label": "Single target",
-                "is_max_known": true,
-                "target": "ally",
-                "area": "single",
-                "target_count": 1,
-                "type": "shield",
-                "name": "Shield",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 100.0
-                  }
-                ]
-              }
-            ],
+            "effects": [],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

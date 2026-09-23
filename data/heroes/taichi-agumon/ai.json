@@ -42,9 +42,27 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 300
+                    "value": 330
                   }
                 ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Max HP",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 100
+                  }
+                ],
+                "persistence": "permanent"
               },
               {
                 "tier": "base",

@@ -42,7 +42,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 242.0
+                    "value": 30.0
                   }
                 ]
               }
@@ -107,6 +107,12 @@
                 "type": "buff",
                 "name": "ATK",
                 "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],
@@ -221,8 +227,32 @@
                 "area": "single",
                 "target_count": 1,
                 "type": "buff",
-                "name": "Magic DEF",
-                "label": "buff_defensive",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 21.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Max HP",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 450.0
+                  }
+                ],
                 "persistence": "permanent"
               }
             ],

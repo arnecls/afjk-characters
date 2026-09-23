@@ -62,25 +62,6 @@
               },
               {
                 "tier": "base",
-                "targeting_label": "Area",
-                "is_max_known": true,
-                "target": "enemy",
-                "area": "rectangle",
-                "target_count": -1,
-                "type": "damage",
-                "area_count": 4,
-                "name": "HP loss",
-                "damage_type": "hp_loss",
-                "label": "damage_hp_loss",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 36
-                  }
-                ]
-              },
-              {
-                "tier": "base",
                 "targeting_label": "Self",
                 "is_max_known": true,
                 "target": "self",
@@ -114,6 +95,24 @@
                   }
                 ],
                 "duration": 5,
+                "persistence": "temporary"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Energy",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 150
+                  }
+                ],
                 "persistence": "temporary"
               }
             ],
