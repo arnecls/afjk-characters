@@ -219,25 +219,6 @@
             "target_count": -1,
             "area_count": 1,
             "type": "damage",
-            "damage_type": "max_hp",
-            "name": "Max HP-based damage",
-            "label": "damage_max_hp",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 33.0
-              }
-            ]
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 1,
-            "type": "damage",
             "damage_type": "true",
             "name": "True damage",
             "label": "damage_true",
@@ -252,9 +233,6 @@
         "cooldown": 8.0,
         "initial_cooldown": 4.0,
         "skill_card_tags": [
-          {
-            "label": "Max HP-based damage"
-          },
           {
             "label": "True damage"
           }
@@ -335,24 +313,6 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
-            "type": "damage",
-            "damage_type": "max_hp",
-            "name": "Max HP-based damage",
-            "label": "damage_max_hp",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 3.0
-              }
-            ]
-          },
-          {
-            "tier": "ex+10",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
             "type": "debuff",
             "name": "Max HP",
             "label": "debuff_stat"
@@ -395,9 +355,6 @@
         ],
         "skill_card_tags": [
           {
-            "label": "Max HP-based damage (EX+10)"
-          },
-          {
             "label": "True damage (EX+10)"
           },
           {
@@ -430,10 +387,6 @@
     "damage_entries": [
       [
         "magic",
-        "Area, Single target"
-      ],
-      [
-        "max_hp",
         "Area, Single target"
       ],
       [
@@ -654,7 +607,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "09fd75b634af7ddcaf699b2a9ff226143e56a79a65bdecc9d2c94875b8627fa4",
+    "inputs_hash": "29a8a563a5190f9e02543fd7c92731e3491eccac91a137bacd1d0d0fff96849b",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

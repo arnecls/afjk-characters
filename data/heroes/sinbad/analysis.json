@@ -548,7 +548,7 @@
           "label": "Marked target (focus fire)",
           "tier": "base",
           "targeting": "Single target",
-          "description": "When a marked enemy is defeated or when the marks expire, Sinbad starts to assess his enemies again and becomes unaffected during this time."
+          "description": "He marks the enemy dealing the most damage as the hitter and the one taking the most damage as the guard."
         }
       ],
       "requires": []
@@ -737,7 +737,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "fcf65c69f271b8d2777500a8f3201328f64cb479952854af505070d4a09d6393",
+    "inputs_hash": "761b7381eee5702341a0b77d9166fe69534c057c55ae0e5c56ae9b5812c03fca",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -128,6 +128,13 @@
             "area": "radius",
             "target_count": -1,
             "area_count": 2,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.5,
+                "comparison": "below"
+              }
+            ],
             "type": "heal",
             "healing_type": "direct",
             "name": "Direct healing",
@@ -286,6 +293,12 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
             "type": "buff",
             "name": "Haste",
             "label": "buff_offensive",
@@ -295,7 +308,7 @@
                 "value": 12.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
           }
         ],
         "skill_range": 1,
@@ -621,7 +634,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "d09f7bbdba8f1f6cbbd5441c783384e12c09ebdbd4ef8ba0944583fabccb22bd",
+    "inputs_hash": "d425ca26e54e26f6d5cfd849514b4ed9ce233487486110e68aeef5a9f2dce85a",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -165,7 +165,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Phys DEF",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 10.0
+              }
+            ]
           },
           {
             "tier": "base",
@@ -240,18 +246,6 @@
             "target_count": -1,
             "area_count": 1,
             "type": "debuff",
-            "name": "Phys DEF",
-            "label": "debuff_defensive"
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 1,
-            "type": "debuff",
             "name": "Vulnerable",
             "label": "debuff_stat"
           },
@@ -276,14 +270,21 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
             "type": "debuff",
             "name": "Damage taken",
-            "label": "debuff_stat"
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ]
           }
         ],
         "cooldown": 2.0,
@@ -293,11 +294,7 @@
             "label": "Physical"
           },
           {
-            "label": "Damage taken",
-            "polarity": "debuff"
-          },
-          {
-            "label": "Phys DEF — Area",
+            "label": "Damage taken — Area",
             "polarity": "debuff"
           },
           {
@@ -341,6 +338,12 @@
             "type": "buff",
             "name": "Ranged DEF",
             "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 26.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -403,13 +406,47 @@
                 "value": 30.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "temporary"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 48.0
+              }
+            ],
+            "duration": 15.0
+          },
+          {
+            "type": "immunity",
+            "tier": "mythic+",
+            "immunity_type": "immune",
+            "timing": "conditional",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
           }
         ],
         "skill_card_tags": [
           {
             "label": "Lifedrain — Self",
             "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Immune — Self"
           }
         ]
       },
@@ -421,9 +458,39 @@
             "Kruger gains a 40% ATK boost until the battle ends when a Vulnerable enemy is defeated by Vital Strike, stacking up to 2 stacks."
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 2,
+                "stack_comparison": "up_to"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -451,6 +518,7 @@
       ]
     ],
     "benefit_stats": [
+      "atk",
       "shield",
       "physical_def"
     ],
@@ -599,7 +667,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "044d8f5ba7f93f0d242ecec899267bfcd103baed45070f7777fb59b149e716a4",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "8685aadf09e1f9ec26d52c0993f6b77eeec521362a9270364b5da8c33364bdc8",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

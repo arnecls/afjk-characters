@@ -220,7 +220,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 88.0
+                "value": 480.0
               }
             ]
           },
@@ -240,7 +240,7 @@
                 "value": 80.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
           }
         ],
         "cooldown": 20.0,
@@ -298,34 +298,23 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 4,
+                "stack_comparison": "up_to"
+              }
+            ],
             "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
             "value": [
               {
                 "type": "percentage",
-                "value": 10.0
+                "value": 14.0
               }
             ],
-            "persistence": "temporary"
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "damage",
-            "damage_type": "max_hp",
-            "name": "Max HP-based damage",
-            "label": "damage_max_hp",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 6.6
-              }
-            ]
+            "persistence": "permanent"
           },
           {
             "tier": "base",
@@ -341,16 +330,13 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 6.6
+                "value": 6.0
               }
             ]
           }
         ],
         "skill_range": 3,
         "skill_card_tags": [
-          {
-            "label": "Max HP-based damage"
-          },
           {
             "label": "True damage"
           },
@@ -505,10 +491,6 @@
     "damage_entries": [
       [
         "magic",
-        "Single target"
-      ],
-      [
-        "max_hp",
         "Single target"
       ],
       [
@@ -719,7 +701,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "9ece9a262c3015cac9404937e32a63b72b850123962967446fc22aa561d5c320",
+    "inputs_hash": "558776cf96fb1fb55058013671c6143dac1ddb384fab839c0970112ab4a0cd63",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

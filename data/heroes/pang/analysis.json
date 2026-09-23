@@ -70,6 +70,12 @@
             "area": "single",
             "target_count": -1,
             "area_count": 2,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "unyielding_force"
+              }
+            ],
             "type": "damage",
             "damage_type": "physical",
             "name": "Physical",
@@ -97,7 +103,7 @@
                 "value": 25.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "temporary"
           },
           {
             "tier": "base",
@@ -378,6 +384,12 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "unyielding_force"
+              }
+            ],
             "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
@@ -387,7 +399,7 @@
                 "value": 15.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "permanent"
           }
         ],
         "skill_range": 1,
@@ -484,7 +496,7 @@
                 "value": 30.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
@@ -743,7 +755,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "c8238d84487424dc3581219972b03203c2c394f272cc7c69e66d92123b2ad56f",
+    "inputs_hash": "4e333bcec3240f707099c32160abf2183fb6c35dbcfeed9ec7b5b3266bd8fda2",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

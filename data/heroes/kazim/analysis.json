@@ -62,12 +62,12 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Area",
+            "targeting_label": "Arc",
             "is_max_known": true,
             "target": "enemy",
-            "area": "radius",
+            "area": "arc",
             "target_count": -1,
-            "area_count": 2,
+            "area_direction": "front",
             "type": "damage",
             "damage_type": "physical",
             "name": "Physical",
@@ -81,14 +81,15 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Area",
+            "targeting_label": "Arc",
             "is_max_known": true,
             "target": "enemy",
-            "area": "radius",
+            "area": "arc",
             "target_count": -1,
-            "area_count": 2,
+            "area_direction": "front",
             "type": "crowd_control",
-            "cc-type": "knock_up"
+            "cc-type": "knock_up",
+            "duration": 0.5
           }
         ],
         "initial_energy": 600.0,
@@ -97,7 +98,7 @@
             "label": "Physical"
           },
           {
-            "label": "Knock up — Area"
+            "label": "Knock up — Arc"
           }
         ]
       },
@@ -256,7 +257,8 @@
             "area_count": 1,
             "area_direction": "selected_target",
             "type": "crowd_control",
-            "cc-type": "knock_up"
+            "cc-type": "knock_up",
+            "duration": 0.5
           },
           {
             "tier": "base",
@@ -381,14 +383,22 @@
         },
         "effects": [
           {
-            "tier": "ex+10",
-            "targeting_label": "Single target",
+            "tier": "mythic+",
+            "targeting_label": "Self",
             "is_max_known": true,
-            "target": "enemy",
+            "target": "self",
             "area": "single",
             "target_count": 1,
-            "type": "crowd_control",
-            "cc-type": "knock_up"
+            "type": "buff",
+            "name": "Damage dealt",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 35.0
+              }
+            ],
+            "persistence": "permanent"
           },
           {
             "tier": "ex+10",
@@ -397,16 +407,9 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
-            "type": "damage",
-            "damage_type": "max_hp",
-            "name": "Max HP-based damage",
-            "label": "damage_max_hp",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 20.0
-              }
-            ]
+            "type": "crowd_control",
+            "cc-type": "knock_up",
+            "duration": 0.25
           },
           {
             "tier": "ex+10",
@@ -430,10 +433,11 @@
         "skill_range": 1,
         "skill_card_tags": [
           {
-            "label": "Max HP-based damage (EX+10)"
+            "label": "True damage (EX+10)"
           },
           {
-            "label": "True damage (EX+10)"
+            "label": "Damage dealt — Self",
+            "polarity": "buff"
           },
           {
             "label": "Knock up — Single target (EX+10)"
@@ -558,11 +562,7 @@
     "damage_entries": [
       [
         "physical",
-        "Area, Single target"
-      ],
-      [
-        "max_hp",
-        "Single target"
+        "Arc, Area, Single target"
       ],
       [
         "true",
@@ -570,6 +570,7 @@
       ]
     ],
     "benefit_stats": [
+      "atk",
       "atk_spd",
       "haste",
       "energy"
@@ -773,7 +774,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f3030af048e41291e5d084b1654d949c3ae4d99e54eb22410d84cecae5fc04de",
+    "inputs_hash": "be4fd332f49734fccc9701d02ef1178d17575a608d4d101f8b9421e7fa31e7b5",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

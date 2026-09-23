@@ -387,12 +387,78 @@
               }
             ],
             "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "defeat",
+                "ally": true
+              },
+              {
+                "type": "duration_gate",
+                "gate": "once_per_battle"
+              }
+            ],
+            "type": "buff",
+            "name": "Crit",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 5.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "defeat",
+                "ally": true
+              },
+              {
+                "type": "duration_gate",
+                "gate": "once_per_battle"
+              }
+            ],
+            "type": "buff",
+            "name": "Crit DMG Boost",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_range": 3,
         "skill_card_tags": [
           {
             "label": "ATK — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Crit — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Crit DMG Boost — Self",
             "polarity": "buff"
           },
           {
@@ -868,7 +934,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "ceb4630e33d5c9a6386bac83ded7ccee2b8bee536f24724a10c22f4818460c23",
+    "inputs_hash": "152603551721f60845dd1f23dcc25f2cdac8a69e33d081ba0fba1d8a9aefdac2",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

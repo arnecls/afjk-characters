@@ -91,7 +91,7 @@
                 "value": 50.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "permanent"
           }
         ],
         "initial_energy": 0.0,
@@ -251,11 +251,40 @@
                 "value": 300.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.7,
+                "comparison": "below"
+              }
+            ],
+            "type": "buff",
+            "name": "Stat Steal",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_card_tags": [
           {
             "label": "Physical"
+          },
+          {
+            "label": "Stat Steal — Self",
+            "polarity": "buff"
           },
           {
             "label": "Bind — Single target"
@@ -365,7 +394,7 @@
                 "value": 52.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "permanent"
           }
         ],
         "skill_range": 1,
@@ -612,7 +641,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "9746b3e3d24dc62ca9ed5d4f61375bbeb3d37c95199d3872ebcc0b078bf79503",
+    "inputs_hash": "2ad659b39ae3e7871dee9929640751828539c5aaf01b1333620476dc15817025",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

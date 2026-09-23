@@ -76,12 +76,12 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Arc",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "arc",
+            "area": "radius",
             "target_count": -1,
-            "area_direction": "front",
+            "area_count": 2,
             "type": "crowd_control",
             "cc-type": "charm",
             "duration": 2.25
@@ -94,7 +94,7 @@
             "label": "Magic"
           },
           {
-            "label": "Charm — Arc"
+            "label": "Charm — Area"
           }
         ]
       },
@@ -187,7 +187,7 @@
                 "value": 100.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "permanent"
           }
         ],
         "cooldown": 6.0,
@@ -254,7 +254,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 1.2
+                "value": 2.0
               }
             ],
             "duration": -1.0,
@@ -273,7 +273,7 @@
             "value": [
               {
                 "type": "flat",
-                "value": 20.0
+                "value": 60.0
               }
             ]
           }
@@ -375,6 +375,31 @@
         },
         "effects": [
           {
+            "tier": "ex+5",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "debuff",
+                "enemy": true
+              }
+            ],
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 200.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
             "tier": "mythic+",
             "targeting_label": "Single target",
             "is_max_known": true,
@@ -396,6 +421,10 @@
         "skill_card_tags": [
           {
             "label": "Magic damage",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self (EX+5)",
             "polarity": "buff"
           },
           {
@@ -468,7 +497,8 @@
       ]
     ],
     "benefit_stats": [
-      "max_hp"
+      "max_hp",
+      "energy"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -634,7 +664,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "3eac0b55fefae5674c3a7c90e8fb24f46c09b403f30e187a22b8f8eeb1066ab5",
+    "inputs_hash": "67aa30bc410d4c0ce7eb618ac0dc4e3af7a0e4ed82f69a14cad67cb1e09fddc1",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

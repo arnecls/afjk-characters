@@ -135,6 +135,7 @@
                 "value": 45.0
               }
             ],
+            "duration": 8.0,
             "persistence": "temporary"
           },
           {
@@ -145,6 +146,12 @@
             "area": "zone",
             "target_count": -1,
             "area_count": -1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "battle_start"
+              }
+            ],
             "type": "buff",
             "name": "Energy",
             "label": "buff_stat",
@@ -215,7 +222,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 10.0
+                "value": 12.0
               }
             ]
           },
@@ -277,7 +284,7 @@
         },
         "effects": [
           {
-            "tier": "base",
+            "tier": "legendary+",
             "targeting_label": "Self",
             "is_max_known": true,
             "target": "self",
@@ -348,6 +355,11 @@
               {
                 "type": "status_condition",
                 "status": "shielded"
+              },
+              {
+                "type": "duration_gate",
+                "gate": "cooldown",
+                "interval": 10.0
               }
             ],
             "type": "damage",
@@ -368,6 +380,17 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "shielded"
+              },
+              {
+                "type": "duration_gate",
+                "gate": "cooldown",
+                "interval": 10.0
+              }
+            ],
             "type": "crowd_control",
             "cc-type": "stun",
             "duration": 4.0
@@ -413,6 +436,13 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "skill_cast",
+                "skill_type": "ultimate"
+              }
+            ],
             "type": "debuff",
             "name": "Phys DEF",
             "label": "debuff_defensive",
@@ -589,7 +619,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "73e6b7fe462c71d06a8434cc5af59d4ac4e3844b8f4f8a3351b3454d5eb4d37b",
+    "inputs_hash": "3fb4844616e247092ffeabab65f36ed2c35e1b2dcaa0fabe04ac34da7a992d49",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

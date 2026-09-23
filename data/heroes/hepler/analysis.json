@@ -164,7 +164,7 @@
             "value": [
               {
                 "type": "flat",
-                "value": 60.0
+                "value": 90.0
               }
             ]
           },
@@ -381,10 +381,78 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Invincible",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 80.0
+              }
+            ],
+            "duration": 3.0,
+            "persistence": "temporary"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 80.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Invincible",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Self (EX+10)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP (EX+10)",
+            "polarity": "buff"
+          }
+        ]
       },
       "Enhance Force": {
         "category": "skill5",
@@ -459,6 +527,12 @@
           "tier": "mythic+",
           "targeting": "Single target",
           "description": "While in animal form, the ally becomes invincible for 3s."
+        },
+        {
+          "label": "Cheat death",
+          "tier": "mythic+",
+          "targeting": "Single target",
+          "description": "The first time the protected ally would take a fatal blow, they instead ignore the damage."
         }
       ],
       "requires": []
@@ -670,7 +744,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "7aa5c24620e0ceedf7f562f305f8217a1874b566cdb908cadc02208892132060",
+    "inputs_hash": "0bc15eb44c53c5cdfd16b5eb46cf5e83fb77681d3dd4c8d0a0afbbfc9f080276",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

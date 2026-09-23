@@ -64,24 +64,6 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 2,
-            "type": "debuff",
-            "name": "Haste",
-            "label": "debuff_offensive",
-            "value": [
-              {
-                "type": "flat",
-                "value": 30.0
-              }
-            ]
-          },
-          {
-            "tier": "base",
             "targeting_label": "All units",
             "is_max_known": true,
             "target": "ally",
@@ -97,6 +79,7 @@
                 "value": 33.0
               }
             ],
+            "duration": 10.0,
             "persistence": "temporary"
           },
           {
@@ -130,7 +113,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 70.0
+                "value": 80.0
               }
             ]
           },
@@ -164,10 +147,6 @@
           },
           {
             "label": "Basic stats — All units",
-            "polarity": "debuff"
-          },
-          {
-            "label": "Haste — Area",
             "polarity": "debuff"
           },
           {
@@ -222,7 +201,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 45.0
+                "value": 60.0
               }
             ]
           },
@@ -239,7 +218,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 45.0
+                "value": 60.0
               }
             ]
           },
@@ -256,7 +235,7 @@
             "value": [
               {
                 "type": "flat",
-                "value": 50.0
+                "value": 70.0
               }
             ]
           },
@@ -740,7 +719,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "3c1023574b7864d9666b30981a01363e5a1d970f97b3833b01689c387219150f",
+    "inputs_hash": "ebdbd4835305ce8a4dd1cc683ff0a9b852b67d1789519cd332fa7ce6c687f2f3",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

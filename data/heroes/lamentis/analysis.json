@@ -65,7 +65,13 @@
             "target_count": 3,
             "type": "debuff",
             "name": "Max HP",
-            "label": "debuff_stat"
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
           },
           {
             "tier": "base",
@@ -113,6 +119,7 @@
                 "value": 60.0
               }
             ],
+            "duration": 10.0,
             "persistence": "temporary"
           },
           {
@@ -131,6 +138,7 @@
                 "value": 60.0
               }
             ],
+            "duration": 10.0,
             "persistence": "temporary"
           }
         ],
@@ -204,7 +212,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 22.0
+                "value": 20.0
               }
             ]
           },
@@ -745,7 +753,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "eb44dde940ab2f50c6d60ecdf80af83702ac242a7d35d7e03a14dde0b75fed04",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "0cce483df36a7d31dbd2cf342891c8c5ab1538908fc8cf37e937ffc4a2d59bfc",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

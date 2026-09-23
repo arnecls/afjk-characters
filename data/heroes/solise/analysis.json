@@ -186,6 +186,12 @@
             "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
             "persistence": "permanent"
           },
           {
@@ -386,18 +392,46 @@
             "area": "single",
             "target_count": 1,
             "type": "buff",
-            "name": "Magic DEF",
-            "label": "buff_defensive",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 21.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 600.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
         "skill_card_tags": [
           {
+            "label": "ATK",
+            "polarity": "buff"
+          },
+          {
             "label": "DEF",
             "polarity": "buff"
           },
           {
-            "label": "Magic DEF",
+            "label": "Max HP",
             "polarity": "buff"
           }
         ]
@@ -640,7 +674,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f3d16ccba0464862a74642b33a52946871d480e7dca0edc43f7c7cd15254c1be",
+    "inputs_hash": "bef0611922754e9e01ea54d0a4349315232d2f078cd0d1c7afcc6e4241e3dd44",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

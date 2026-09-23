@@ -353,10 +353,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Crit",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Crit — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Mystic Recollection": {
         "category": "skill4",
@@ -542,9 +565,32 @@
             "Gains extra 200 initial Energy."
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 200.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -582,7 +628,8 @@
       "atk",
       "atk_spd",
       "haste",
-      "crit"
+      "crit",
+      "energy"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -748,7 +795,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "358de98289bb5b9a408d4fe28be0eff5c82972eec39058be64c25b0a03e60853",
+    "inputs_hash": "7eb789c6c237823f3b5b02b02301ed071a7eb446f7908b1a0c2222122e50aab5",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

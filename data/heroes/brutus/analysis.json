@@ -331,7 +331,7 @@
             "value": [
               {
                 "type": "flat",
-                "value": 8.0
+                "value": 16.0
               }
             ],
             "persistence": "permanent"
@@ -657,7 +657,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "2d2c9c38caa1eee51edae9d411f773c7a8d518a61921dc2154b44e9b0412fe06",
+    "inputs_hash": "d1b3eb384f86b6deee30d286bb344a502b7567bde8a6bf903d5e270de4db7a25",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

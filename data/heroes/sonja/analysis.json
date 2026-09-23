@@ -72,7 +72,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 240.0
+                "value": 672.0
               }
             ]
           },
@@ -96,6 +96,12 @@
             "type": "buff",
             "name": "Haste",
             "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 12.0
+              }
+            ],
             "persistence": "temporary"
           },
           {
@@ -445,9 +451,32 @@
             "Sonja converts 20% of the damage dealt by Tempest Thrusts into self-healing."
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Lifedrain — Self",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -654,7 +683,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "3de8bbcfcf6bfeb1fe788f339e02ecf4ecbd66a3c70f120bb72c30a4d6689ce7",
+    "inputs_hash": "023358132fa273dc61b8461a84e14a554e4053ca24f218179a86d9eb309fce99",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

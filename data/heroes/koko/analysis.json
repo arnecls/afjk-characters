@@ -283,7 +283,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Damage taken",
-            "label": "debuff_stat"
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 10.0
+              }
+            ]
           },
           {
             "tier": "base",
@@ -431,7 +437,8 @@
                 "type": "percentage",
                 "value": 20.0
               }
-            ]
+            ],
+            "duration": 7.0
           },
           {
             "tier": "ex+10",
@@ -523,7 +530,7 @@
     "damage_entries": [
       [
         "physical",
-        "Area"
+        "Area, Single target"
       ]
     ],
     "benefit_stats": [
@@ -681,7 +688,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "6ec0541a7c4a76b772f30398c0a10676628260f2aaaed8ebf7c16f7953e710d8",
+    "inputs_hash": "747821c316d50d31b8d9872c73dae23cd465186e93122876560f4bc6546cccfc",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

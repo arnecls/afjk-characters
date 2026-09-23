@@ -253,18 +253,18 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Multiple targets",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": 1,
+            "target_count": 3,
             "type": "debuff",
             "name": "Ranged damage",
             "label": "debuff_stat",
             "value": [
               {
                 "type": "percentage",
-                "value": 22.0
+                "value": 25.0
               }
             ]
           },
@@ -281,7 +281,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 16.0
+                "value": 20.0
               }
             ],
             "duration": 5.0,
@@ -298,7 +298,7 @@
             "polarity": "buff"
           },
           {
-            "label": "Ranged damage — Single target",
+            "label": "Ranged damage — Multiple targets",
             "polarity": "debuff"
           }
         ]
@@ -347,7 +347,7 @@
                 "value": 15.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "permanent"
           }
         ],
         "skill_range": 1,
@@ -420,6 +420,12 @@
             "type": "buff",
             "name": "Damage dealt",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
             "persistence": "permanent"
           },
           {
@@ -437,6 +443,24 @@
                 "value": 80.0
               }
             ]
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "All summons",
+            "is_max_known": true,
+            "target": "all_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage dealt",
+            "label": "buff_summon_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_range": 10,
@@ -450,6 +474,10 @@
           },
           {
             "label": "Damage dealt — Multiple targets (EX+10)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage dealt — Summons (EX+10)",
             "polarity": "buff"
           }
         ]
@@ -739,7 +767,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f2b09cdce98e8ddd9cc0f0f73603a0515f8d956cbcafc4918ad15dc6156a9ef5",
+    "inputs_hash": "a0a00724ca7f19236ec5d3fd0bbf711e1e02137035f0d2a53418506f084cc6b3",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

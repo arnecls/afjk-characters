@@ -59,23 +59,21 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Area",
+            "targeting_label": "Single target",
             "is_max_known": true,
             "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 2,
+            "area": "single",
+            "target_count": 1,
             "type": "crowd_control",
             "cc-type": "knock_back"
           },
           {
             "tier": "base",
-            "targeting_label": "Area",
+            "targeting_label": "Single target",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": -1,
-            "area_count": 2,
+            "target_count": 1,
             "type": "damage",
             "damage_type": "physical",
             "name": "Physical",
@@ -83,7 +81,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 260.0
+                "value": 480.0
               }
             ]
           },
@@ -115,7 +113,7 @@
             "label": "Physical"
           },
           {
-            "label": "Knock back — Area"
+            "label": "Knock back — Single target"
           },
           {
             "label": "Stun — Single target"
@@ -188,7 +186,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 285.0
+                "value": 390.0
               }
             ]
           },
@@ -261,7 +259,13 @@
             "type": "buff",
             "name": "Crit",
             "label": "buff_offensive",
-            "persistence": "unknown"
+            "value": [
+              {
+                "type": "flat",
+                "value": 15.0
+              }
+            ],
+            "persistence": "permanent"
           },
           {
             "tier": "base",
@@ -272,7 +276,7 @@
             "target_count": 1,
             "type": "crowd_control",
             "cc-type": "stun",
-            "duration": 2.0
+            "duration": 1.0
           },
           {
             "tier": "base",
@@ -409,7 +413,7 @@
                 "value": 20.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "temporary"
           },
           {
             "tier": "mythic+",
@@ -427,7 +431,7 @@
                 "value": 65.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "temporary"
           }
         ],
         "skill_range": 1,
@@ -673,7 +677,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "4467eb0448b540b683314b02eb6a08db8d20d4614a8d66d954949dec67d17ed2",
+    "inputs_hash": "03e5af4acb4f5d78435164f1172b8b0382520770fe421cffd795de7e7d57b485",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

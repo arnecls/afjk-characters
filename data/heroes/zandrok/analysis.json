@@ -147,13 +147,13 @@
             "area_count": 5,
             "area_direction": "front",
             "type": "damage",
-            "damage_type": "physical",
-            "name": "Physical",
-            "label": "damage_normal",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
             "value": [
               {
                 "type": "percentage",
-                "value": 10.0
+                "value": 15.0
               }
             ]
           },
@@ -171,6 +171,24 @@
               {
                 "type": "percentage",
                 "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
               }
             ],
             "persistence": "permanent"
@@ -254,7 +272,7 @@
         ],
         "skill_card_tags": [
           {
-            "label": "Physical"
+            "label": "Max HP-based damage"
           },
           {
             "label": "Haste — Area",
@@ -266,6 +284,10 @@
           },
           {
             "label": "Max HP — Multiple targets",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP — Self",
             "polarity": "buff"
           },
           {
@@ -510,10 +532,6 @@
     },
     "damage_entries": [
       [
-        "physical",
-        "Area"
-      ],
-      [
         "max_hp",
         "Area, Single target"
       ]
@@ -695,7 +713,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "a6414a4cc2a0f87e7d525f0d67ff27eebfff60039a95649fb537f4960998bc4d",
+    "inputs_hash": "cfb9b02b737d978493c614b4b93db6c558e9179438559575b48582ee5fdf56d0",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

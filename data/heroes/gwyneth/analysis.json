@@ -259,7 +259,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 550.0
+                "value": 20.0
               }
             ],
             "duration": 4.0,
@@ -274,7 +274,13 @@
             "target_count": 1,
             "type": "debuff",
             "name": "Vitality",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 40.0
+              }
+            ]
           }
         ],
         "skill_range": 8,
@@ -335,7 +341,7 @@
                 "value": 25.0
               }
             ],
-            "persistence": "temporary"
+            "persistence": "permanent"
           }
         ],
         "skill_range": 1,
@@ -417,6 +423,24 @@
                 "value": 10.0
               }
             ]
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "DEF Penetration",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_range": 8,
@@ -426,6 +450,10 @@
           },
           {
             "label": "Damage dealt — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "DEF Penetration — Self (EX+10)",
             "polarity": "buff"
           },
           {
@@ -468,7 +496,8 @@
     ],
     "benefit_stats": [
       "atk",
-      "atk_spd"
+      "atk_spd",
+      "def_penetration"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -669,7 +698,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "20b633e87ef43a3d57e75420df461582fe91811c14897e14e421cce2a5bdc743",
+    "inputs_hash": "591401991a059c9810b625c6234c82b644d9a72af17cfde82c313c63f1f45782",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

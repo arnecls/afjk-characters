@@ -58,11 +58,48 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_summon_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 120.0
+              }
+            ],
+            "duration": 10.0,
+            "persistence": "temporary"
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "immune",
+            "timing": "conditional",
+            "targeting_label": "Owned summons",
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
         "skill_range": 1,
         "initial_energy": 600.0,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Owned",
+            "polarity": "buff"
+          },
+          {
+            "label": "Immune — Owned"
+          }
+        ]
       },
       "Intimidate": {
         "category": "skill1",
@@ -112,7 +149,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 49.0
+                "value": 50.0
               }
             ]
           },
@@ -130,7 +167,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 49.0
+                "value": 50.0
               }
             ]
           },
@@ -143,7 +180,7 @@
             "target_count": -1,
             "area_count": 1,
             "type": "crowd_control",
-            "cc-type": "bind",
+            "cc-type": "stun",
             "duration": 3.0
           }
         ],
@@ -160,7 +197,7 @@
             "polarity": "debuff"
           },
           {
-            "label": "Bind — Area"
+            "label": "Stun — Area"
           }
         ]
       },
@@ -223,6 +260,24 @@
               }
             ],
             "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 560.0
+              }
+            ]
           },
           {
             "tier": "base",
@@ -354,6 +409,14 @@
         "initial_cooldown": 3.0,
         "skill_range": 1,
         "skill_card_tags": [
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Direct healing — Area",
+            "polarity": "buff"
+          },
           {
             "label": "HoT — Area",
             "polarity": "buff"
@@ -813,7 +876,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "e7c3bec6796e258e075794383efd52695edbe8ee3ed0fb8ccd44169dd7678621",
+    "inputs_hash": "10d5de7e1a5f01fece02e4cae3067dd7889fa9e098dbe34e658f63ee2f7094b0",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

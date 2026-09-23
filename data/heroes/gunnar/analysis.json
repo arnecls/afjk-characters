@@ -110,7 +110,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 600.0
+                "value": 640.0
               }
             ]
           },
@@ -124,7 +124,13 @@
             "area_count": 2,
             "type": "debuff",
             "name": "Vitality",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 40.0
+              }
+            ]
           },
           {
             "tier": "base",
@@ -141,7 +147,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 550.0
+                "value": 88.0
               }
             ],
             "duration": 15.0,
@@ -427,9 +433,9 @@
         "effects": [
           {
             "tier": "legendary+",
-            "targeting_label": "Single target",
+            "targeting_label": "Self",
             "is_max_known": true,
-            "target": "ally",
+            "target": "self",
             "area": "single",
             "target_count": 1,
             "type": "buff",
@@ -445,9 +451,9 @@
           },
           {
             "tier": "legendary+",
-            "targeting_label": "Single target",
+            "targeting_label": "Self",
             "is_max_known": true,
-            "target": "ally",
+            "target": "self",
             "area": "single",
             "target_count": 1,
             "type": "buff",
@@ -465,11 +471,11 @@
         "skill_range": 1,
         "skill_card_tags": [
           {
-            "label": "Ranged DEF",
+            "label": "Ranged DEF — Self",
             "polarity": "buff"
           },
           {
-            "label": "Vitality",
+            "label": "Vitality — Self",
             "polarity": "buff"
           }
         ]
@@ -558,6 +564,24 @@
               }
             ],
             "persistence": "temporary"
+          },
+          {
+            "tier": "ex+15",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Invincible",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1400.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "skill_range": 3,
@@ -571,6 +595,10 @@
           },
           {
             "label": "ATK (EX+15)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Invincible (EX+15)",
             "polarity": "buff"
           }
         ]
@@ -649,7 +677,8 @@
     ],
     "benefit_stats": [
       "atk_spd",
-      "shield"
+      "shield",
+      "physical_def"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -835,7 +864,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "ffed16d9ecc3e323e800db7405fef0f1737944cdd4a0c7acddd8b87a11ebfa80",
+    "inputs_hash": "91b3276ba7af64615f81fa0cfc3430de866ef3de9fa09278030dc687b394a007",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

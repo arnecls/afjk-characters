@@ -70,23 +70,6 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
-            "type": "debuff",
-            "name": "Energy",
-            "label": "debuff_stat",
-            "value": [
-              {
-                "type": "flat",
-                "value": 240.0
-              }
-            ]
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
             "type": "crowd_control",
             "cc-type": "bind"
           },
@@ -127,6 +110,23 @@
             ],
             "duration": -1.0,
             "tick": 2.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Energy",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 120.0
+              }
+            ]
           },
           {
             "type": "immunity",
@@ -213,7 +213,7 @@
                 "value": 100.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "permanent"
           },
           {
             "tier": "base",
@@ -409,6 +409,26 @@
             ]
           },
           {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 330.0
+              }
+            ],
+            "duration": 45.0,
+            "tick": 1.0
+          },
+          {
             "tier": "ex+15",
             "targeting_label": "All units",
             "is_max_known": true,
@@ -445,26 +465,6 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
-            "type": "dot",
-            "damage_type": "dot",
-            "name": "DoT",
-            "label": "dot",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 160.0
-              }
-            ],
-            "duration": 45.0,
-            "tick": 1.0
-          },
-          {
-            "tier": "ex+15",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
             "type": "damage",
             "damage_type": "hp_loss",
             "name": "HP loss",
@@ -475,19 +475,12 @@
                 "value": 160.0
               }
             ]
-          },
-          {
-            "type": "immunity",
-            "tier": "ex+15",
-            "immunity_type": "unaffected",
-            "timing": "conditional",
-            "targeting_label": "Self",
-            "target": "self",
-            "area": "single",
-            "target_count": 1
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "DoT (EX+10)"
+          },
           {
             "label": "Magic (EX+15)"
           },
@@ -503,9 +496,6 @@
           },
           {
             "label": "Bind — All units (EX+15)"
-          },
-          {
-            "label": "Unaffected — Self (EX+15)"
           }
         ]
       },
@@ -807,7 +797,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "a6e7ac91462bf4c40443982e605153723228b15b106bb12b1a58243c841dfbf0",
+    "inputs_hash": "efeab7315fc78d7bef255559bdc1058e32dafcd80e77be8b404e7b4a88af56c8",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

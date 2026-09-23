@@ -104,7 +104,7 @@
             "type": "immunity",
             "tier": "base",
             "immunity_type": "unaffected",
-            "timing": "conditional",
+            "timing": "on_skill",
             "targeting_label": "Self",
             "target": "self",
             "area": "single",
@@ -393,7 +393,13 @@
             "type": "buff",
             "name": "Execution",
             "label": "buff_offensive",
-            "persistence": "unknown"
+            "value": [
+              {
+                "type": "percentage",
+                "value": 6.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_range": 1,
@@ -660,7 +666,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "6d4945a764f65bc6095faef053b3c6ca0ec6175aa5f13219ed1df9e9eb9e95ab",
+    "inputs_hash": "a140e238914c421d11db3bc7b6d7f4b1cbd4f9c387c21dae92e996fabdddf6a0",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

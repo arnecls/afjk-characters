@@ -237,7 +237,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 150.0
+                "value": 160.0
               }
             ]
           },
@@ -259,6 +259,78 @@
                 "value": 175.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 10.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Phys DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 10.0
+              }
+            ],
+            "duration": 5.0,
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Magic DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 10.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Magic DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 10.0
+              }
+            ],
+            "duration": 5.0,
+            "persistence": "temporary"
           }
         ],
         "cooldown": 9.0,
@@ -270,6 +342,22 @@
           {
             "label": "Direct healing — All units",
             "polarity": "buff"
+          },
+          {
+            "label": "Magic DEF",
+            "polarity": "buff"
+          },
+          {
+            "label": "Phys DEF",
+            "polarity": "buff"
+          },
+          {
+            "label": "Magic DEF",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Phys DEF",
+            "polarity": "debuff"
           }
         ]
       },
@@ -367,6 +455,12 @@
             "type": "buff",
             "name": "Vitality",
             "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 25.0
+              }
+            ],
             "persistence": "permanent"
           },
           {
@@ -678,7 +772,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "6bd532d198b55ca65b07cde61c3f5c68bdd5779a90ab52cb03bc89d31dbfc0c5",
+    "inputs_hash": "510bf5dd50768645f5a11a6b30f04f092bb90b0ba0b97172386625dda16afb3a",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

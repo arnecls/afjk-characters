@@ -169,9 +169,10 @@
             "targeting_label": "Arc",
             "is_max_known": true,
             "target": "enemy",
-            "area": "arc",
+            "area": "path",
             "target_count": -1,
-            "area_direction": "front",
+            "area_direction": "selected_target",
+            "area_count": 2,
             "type": "damage",
             "damage_type": "magic",
             "name": "Magic",
@@ -472,7 +473,7 @@
     "damage_entries": [
       [
         "magic",
-        "Arc, Area"
+        "Arc, Area, Multiple targets"
       ]
     ],
     "benefit_stats": [
@@ -633,7 +634,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "a63e6ded8dd22541282cbbb1a903a2311e2ed08a01eb11bfb2e3c67474306521",
+    "inputs_hash": "9702101c00fbfa0e1b0e4bbe14955b8f015f3423ad440a2cdbacfc5943e82ff9",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

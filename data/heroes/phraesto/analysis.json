@@ -92,6 +92,42 @@
                 "value": 160.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_summon_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "cooldown": 1.25,
@@ -104,6 +140,14 @@
           },
           {
             "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Owned",
             "polarity": "buff"
           }
         ]
@@ -166,6 +210,76 @@
             "tier": "base",
             "targeting_label": "Single target",
             "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy Recovery",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 280.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 80.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 180.0
+              }
+            ],
+            "duration": 6.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "debuff",
+            "name": "Max HP",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 6.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
             "target": "enemy",
             "area": "single",
             "target_count": 1,
@@ -191,6 +305,18 @@
           {
             "label": "Damage taken",
             "polarity": "buff"
+          },
+          {
+            "label": "Energy",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP — Multiple targets",
+            "polarity": "debuff"
           }
         ]
       },
@@ -295,7 +421,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 2.4
+                "value": 3.3
               }
             ],
             "duration": 6.0,
@@ -388,7 +514,32 @@
                 "value": 50.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "permanent"
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.9,
+                "comparison": "below"
+              }
+            ],
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 25.0
+              }
+            ],
+            "persistence": "temporary"
           },
           {
             "tier": "legendary+",
@@ -406,17 +557,94 @@
                 "value": 50.0
               }
             ],
-            "persistence": "unknown"
+            "persistence": "permanent"
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Magic DEF",
+            "label": "buff_summon_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Phys DEF",
+            "label": "buff_summon_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.9,
+                "comparison": "below"
+              }
+            ],
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_summon_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 25.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "skill_range": 1,
         "skill_card_tags": [
           {
+            "label": "Energy — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Owned",
+            "polarity": "buff"
+          },
+          {
             "label": "Magic DEF — Self",
             "polarity": "buff"
           },
           {
+            "label": "Magic DEF — Owned",
+            "polarity": "buff"
+          },
+          {
             "label": "Phys DEF — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Phys DEF — Owned",
             "polarity": "buff"
           }
         ]
@@ -516,9 +744,52 @@
             "When both Phraesto and his Illusion are positioned in the same row, they each receive a shield equal to 570% of their ATK when a battle starts, lasting up to 12s."
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 570.0
+              }
+            ],
+            "duration": 12.0
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 570.0
+              }
+            ],
+            "duration": 12.0
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Owned",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -543,6 +814,8 @@
       ]
     ],
     "benefit_stats": [
+      "max_hp",
+      "shield",
       "healing",
       "energy",
       "physical_def",
@@ -742,7 +1015,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "2e6ca72f455348d88dc2ec0cdbb883c252d3ba60e90af72f6c9651b01a9ab82c",
+    "inputs_hash": "4f83e671e9086b18aed7a62e47eeeca9d303db89299fa3b5956fedec6ef22e60",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

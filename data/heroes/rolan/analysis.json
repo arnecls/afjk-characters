@@ -326,11 +326,45 @@
             ],
             "duration": 10.0,
             "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 330.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 3.0
           }
         ],
         "cooldown": 10.0,
         "initial_cooldown": 1.0,
         "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
           {
             "label": "Direct healing — Area",
             "polarity": "buff"
@@ -338,6 +372,9 @@
           {
             "label": "Damage taken — Area",
             "polarity": "buff"
+          },
+          {
+            "label": "Stun — Area"
           }
         ]
       },
@@ -573,6 +610,10 @@
     },
     "damage_entries": [
       [
+        "magic",
+        "Area"
+      ],
+      [
         "dot",
         "Area"
       ],
@@ -801,7 +842,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "4c330c60ed90d789cc30c57ccf6e97452c116cbb92f689a1edea5bf404bffa66",
+    "inputs_hash": "bf2bcdf320b415353bdc8c8554394eb8e17377072a17399ca8632e385d7e7fb5",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

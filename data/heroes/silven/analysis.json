@@ -220,24 +220,6 @@
             "area": "single",
             "target_count": 1,
             "type": "damage",
-            "damage_type": "max_hp",
-            "name": "Max HP-based damage",
-            "label": "damage_max_hp",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 1.5999999999999999
-              }
-            ]
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "type": "damage",
             "damage_type": "true",
             "name": "True damage",
             "label": "damage_true",
@@ -251,9 +233,6 @@
         ],
         "skill_range": 10,
         "skill_card_tags": [
-          {
-            "label": "Max HP-based damage"
-          },
           {
             "label": "True damage"
           },
@@ -402,10 +381,32 @@
               }
             ],
             "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_range": 10,
         "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
           {
             "label": "ATK SPD — Self",
             "polarity": "buff"
@@ -450,15 +451,12 @@
         "Single target"
       ],
       [
-        "max_hp",
-        "Single target"
-      ],
-      [
         "true",
         "Single target"
       ]
     ],
     "benefit_stats": [
+      "atk",
       "atk_spd",
       "energy",
       "def_penetration",
@@ -638,7 +636,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "e74ef2857572bd698c104c94acf667241d13b775b0df64834430f9d4245aea9a",
+    "inputs_hash": "e26aca60e99e096fea6d75417602b83e7b5d02ae724dece66a5e15f81e4563c9",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

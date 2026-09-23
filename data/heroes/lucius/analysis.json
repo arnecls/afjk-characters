@@ -67,7 +67,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 470.0
+                "value": 520.0
               }
             ]
           }
@@ -155,7 +155,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 300.0
+                "value": 320.0
               }
             ]
           },
@@ -367,6 +367,23 @@
                 "value": 90.0
               }
             ]
+          },
+          {
+            "tier": "ex+5",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 3.0
+              }
+            ],
+            "duration": 4.0
           }
         ],
         "cooldown": 13.0,
@@ -375,6 +392,10 @@
         "skill_card_tags": [
           {
             "label": "Physical"
+          },
+          {
+            "label": "Shield — Self (EX+5)",
+            "polarity": "buff"
           },
           {
             "label": "ATK — Area",
@@ -565,7 +586,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "df6891bd24a5bf7cd8bd85ca8dbc95ef302a9811c253fe3d4c317ecba336c4dd",
+    "inputs_hash": "d37327b9f00406539bd8fef0b4a5b74cb9a76c12bf1b949606a7c5f5a1be8b78",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

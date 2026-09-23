@@ -444,6 +444,13 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "buff",
+                "self": true
+              }
+            ],
             "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
@@ -453,7 +460,7 @@
                 "value": 15.0
               }
             ],
-            "persistence": "temporary"
+            "persistence": "permanent"
           }
         ],
         "skill_range": 1,
@@ -507,9 +514,47 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 4,
+                "stack_comparison": "up_to"
+              }
+            ],
+            "type": "buff",
+            "name": "Damage dealt",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 4,
+                "stack_comparison": "up_to"
+              }
+            ],
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
             "persistence": "permanent"
           },
           {
@@ -525,6 +570,10 @@
         ],
         "skill_range": 3,
         "skill_card_tags": [
+          {
+            "label": "Damage dealt — Self",
+            "polarity": "buff"
+          },
           {
             "label": "Damage taken — Self",
             "polarity": "buff"
@@ -553,13 +602,8 @@
         {
           "label": "Temporary ally stat buffs",
           "tier": "legendary+",
-          "description": "Further increases his ATK by 6% when he has temporary stat buffs from allies."
-        },
-        {
-          "label": "Temporary ally stat buffs",
-          "tier": "mythic+",
           "targeting": "Allies",
-          "description": "Each temporary stat buff from a different ally also increases his damage dealt by 15% and reduces his damage taken by 15%."
+          "description": "Further increases his ATK by 10% when he has temporary stat buffs from allies."
         }
       ]
     },
@@ -778,7 +822,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "64ff4d7b43a74f49888c692add3716e5b2cbd91b9c215741f56492844f2a1617",
+    "inputs_hash": "b4d59ad6f420fe998c598732279747bf9838c5285072ba08cd53a91d9293b045",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

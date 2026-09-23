@@ -118,7 +118,26 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 220.0
+                "value": 260.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 4.0
               }
             ]
           },
@@ -138,6 +157,9 @@
         "skill_card_tags": [
           {
             "label": "Physical"
+          },
+          {
+            "label": "Max HP-based damage"
           },
           {
             "label": "Direct healing — Self",
@@ -512,6 +534,10 @@
       [
         "physical",
         "Area, Single target"
+      ],
+      [
+        "max_hp",
+        "Area"
       ]
     ],
     "benefit_stats": [
@@ -684,7 +710,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "c244a85b1eea4ecf8dabdb2584193c267ecbcbea58269ccd2190135daa5bfe10",
+    "inputs_hash": "afc3d0f41715c7196a25603c3669a45f96cf71806259075b1ffe827320298e7e",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -72,7 +72,7 @@
             "value": [
               {
                 "type": "flat",
-                "value": 30.0
+                "value": 40.0
               }
             ]
           },
@@ -349,6 +349,12 @@
             "type": "buff",
             "name": "Vitality",
             "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 19.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -723,7 +729,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "eef4e249ddc93e9222d4c5e6d74370b8a1b0ad610bfb01304c3d9f01efa4a735",
+    "inputs_hash": "d617cb191b3865455b844229c243bcdf0be9103ee86ba65bc0404b0a1716394e",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

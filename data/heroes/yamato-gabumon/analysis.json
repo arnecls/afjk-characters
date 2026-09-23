@@ -116,25 +116,6 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "rectangle",
-            "target_count": -1,
-            "area_count": 4,
-            "type": "damage",
-            "damage_type": "hp_loss",
-            "name": "HP loss",
-            "label": "damage_hp_loss",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 36.0
-              }
-            ]
-          },
-          {
-            "tier": "base",
             "targeting_label": "Self",
             "is_max_known": true,
             "target": "self",
@@ -150,6 +131,24 @@
               }
             ],
             "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 150.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "skill_range": 1,
@@ -159,10 +158,11 @@
             "label": "DoT"
           },
           {
-            "label": "HP loss"
+            "label": "ATK — Self",
+            "polarity": "buff"
           },
           {
-            "label": "ATK — Self",
+            "label": "Energy — Self",
             "polarity": "buff"
           },
           {
@@ -531,10 +531,6 @@
       [
         "dot",
         "Area"
-      ],
-      [
-        "hp_loss",
-        "Area"
       ]
     ],
     "benefit_stats": [
@@ -741,7 +737,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f0085e69a4bb861e1b1a7c5d2952c6485394c9a616d519a299ce3633e71d0d20",
+    "inputs_hash": "2ce5dfb4a1e3d6210dd812d2f5a7b1077c9b4f9da3270eb1a64387f58428e492",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

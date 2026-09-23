@@ -96,34 +96,12 @@
             "type": "crowd_control",
             "cc-type": "stun",
             "duration": 2.5
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Energy",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "flat",
-                "value": 80.0
-              }
-            ],
-            "persistence": "permanent"
           }
         ],
         "initial_energy": 0.0,
         "skill_card_tags": [
           {
             "label": "Physical"
-          },
-          {
-            "label": "Energy — Self (Supreme+)",
-            "polarity": "buff"
           },
           {
             "label": "Knock back — Area"
@@ -267,36 +245,16 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 70.0
+                "value": 90.0
               }
             ],
             "persistence": "temporary"
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "ally",
-            "area": "single",
-            "target_count": 1,
-            "type": "shield",
-            "name": "Shield",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 100.0
-              }
-            ]
           }
         ],
         "skill_range": 1,
         "skill_card_tags": [
           {
             "label": "Damage taken — Self",
-            "polarity": "buff"
-          },
-          {
-            "label": "Shield (Supreme+)",
             "polarity": "buff"
           }
         ]
@@ -660,7 +618,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "b2b75e5fb4a63c4ef790593838dd5ded5d5a6d5a9c298f4655cfb2803d27b9da",
+    "inputs_hash": "0e478ea158c0f9502df44a3ab54c77e241ec666fb01b0faebba2042c0c3fd662",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

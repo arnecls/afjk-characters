@@ -535,26 +535,27 @@
         "effects": [
           {
             "tier": "supreme+",
-            "targeting_label": "Single target",
+            "targeting_label": "Self",
             "is_max_known": true,
-            "target": "enemy",
+            "target": "self",
             "area": "single",
             "target_count": 1,
-            "type": "debuff",
+            "type": "buff",
             "name": "Damage dealt",
-            "label": "debuff_stat",
+            "label": "buff_stat",
             "value": [
               {
                 "type": "percentage",
                 "value": 10.0
               }
-            ]
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_card_tags": [
           {
-            "label": "Damage dealt",
-            "polarity": "debuff"
+            "label": "Damage dealt — Self",
+            "polarity": "buff"
           }
         ]
       }
@@ -806,7 +807,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "516f6590a0f8dfb835ed08e1d609dfc0fd94a0d99cdd9462d2cdc9969dc8f971",
+    "inputs_hash": "ff9861d7f584a3f9b97282fc3447499c81e59f93c25cdbb786e625aad4b7bb78",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

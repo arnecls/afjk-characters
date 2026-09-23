@@ -198,6 +198,7 @@
                 "value": 33.0
               }
             ],
+            "duration": 6.0,
             "persistence": "temporary"
           },
           {
@@ -216,6 +217,7 @@
                 "value": 120.0
               }
             ],
+            "duration": 6.0,
             "persistence": "temporary"
           },
           {
@@ -231,7 +233,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 90.0
+                "value": 120.0
               }
             ],
             "duration": 6.0,
@@ -421,9 +423,23 @@
             }
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "type": "immunity",
+            "tier": "supreme+",
+            "immunity_type": "unaffected",
+            "timing": "conditional",
+            "targeting_label": "Single target",
+            "target": "ally",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Unaffected"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -623,7 +639,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "6775f6dcd4549c21d917c87caf66f521130a9e00b27a5eea654f47073a804237",
+    "inputs_hash": "1ea5fc1a49fffe04988bb57a758843a53cf740fdbe92861ce6b8e478a3906bfe",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

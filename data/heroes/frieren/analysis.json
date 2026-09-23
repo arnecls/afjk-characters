@@ -70,7 +70,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 1580.0
+                "value": 1800.0
               }
             ]
           },
@@ -169,12 +169,56 @@
                 "value": 275.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage dealt",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_range": 7,
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage dealt — Self",
+            "polarity": "buff"
           },
           {
             "label": "Stun — Single target"
@@ -215,18 +259,6 @@
           ]
         },
         "effects": [
-          {
-            "tier": "base",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 1,
-            "type": "debuff",
-            "name": "DoT",
-            "label": "dot"
-          },
           {
             "tier": "base",
             "targeting_label": "Area",
@@ -277,7 +309,13 @@
             "area_count": 1,
             "type": "debuff",
             "name": "Vitality",
-            "label": "debuff_defensive"
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ]
           }
         ],
         "cooldown": 10.0,
@@ -289,10 +327,6 @@
           },
           {
             "label": "DoT"
-          },
-          {
-            "label": "DoT — Area",
-            "polarity": "debuff"
           },
           {
             "label": "Vitality — Area",
@@ -405,9 +439,31 @@
               }
             ],
             "persistence": "temporary"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 85.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "Damage taken — Self (EX+10)",
+            "polarity": "buff"
+          },
           {
             "label": "Haste — Self (EX+10)",
             "polarity": "buff"
@@ -503,7 +559,8 @@
     ],
     "benefit_stats": [
       "atk",
-      "haste"
+      "haste",
+      "max_hp"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -674,7 +731,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "b7360b9a22da7a301bdec5e99b6c4fa81bd62a974381d0dd8eda88e6bcf39dc5",
+    "inputs_hash": "0e568c72f66b5d194122e082212ca81aff41cdf974b9dd826ac5f8772cc8dde7",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

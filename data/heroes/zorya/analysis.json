@@ -131,6 +131,31 @@
             ]
           },
           {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 100,
+                "stack_comparison": "up_to"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
             "type": "immunity",
             "tier": "base",
             "immunity_type": "steadfast",
@@ -148,6 +173,10 @@
           },
           {
             "label": "HoT — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Self",
             "polarity": "buff"
           },
           {
@@ -842,7 +871,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "7cda22ffc73926273de63adc045ed32f129a5f3339374dd57a12e952adc63bbb",
+    "inputs_hash": "7ec36d316e2eb339a101e22fd50d1b0f18c8c2f45ee36923d5ba9a325ae1e534",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

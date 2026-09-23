@@ -56,11 +56,19 @@
         "effects": [
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "rectangle",
+            "target_count": -1,
+            "area_count": 3,
+            "area_direction": "front",
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "debuffed"
+              }
+            ],
             "type": "damage",
             "damage_type": "magic",
             "name": "Magic",
@@ -132,7 +140,7 @@
                 "value": 45.0
               }
             ],
-            "duration": 10.0,
+            "duration": 14.0,
             "tick": 1.0
           }
         ],
@@ -299,6 +307,18 @@
             "area": "radius",
             "target_count": -1,
             "area_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "cast",
+                "self": true,
+                "skill_type": "ultimate"
+              },
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
             "type": "damage",
             "damage_type": "magic",
             "name": "Magic",
@@ -339,7 +359,7 @@
                 "value": 45.0
               }
             ],
-            "duration": 10.0,
+            "duration": 14.0,
             "tick": 1.0
           }
         ],
@@ -526,7 +546,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "c4b6c0301ffd474e212eb60fc543e2611bac82cae3a71ae0027bf6edeb41bb21",
+    "inputs_hash": "6f81e0160ac45cb3c90f4acbaf033738636bcd207e0baed3a4f1f24b867ca97a",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

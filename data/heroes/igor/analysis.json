@@ -222,7 +222,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 3.0
+                "value": 4.5
               }
             ]
           }
@@ -283,6 +283,12 @@
             "type": "buff",
             "name": "Lifedrain",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 12.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -385,7 +391,14 @@
       }
     },
     "synergy_profile": {
-      "provides": [],
+      "provides": [
+        {
+          "label": "Cheat death",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Igor jumps onto another tombstone to dodge a fatal blow."
+        }
+      ],
       "requires": []
     },
     "damage_entries": [
@@ -575,7 +588,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "8430588263fdfd0ea9f92eb5765717d510b2c3e8e5121fc300b9b67cdf93d51a",
+    "inputs_hash": "ff6ffafe847cfe98d97eb521f09aa4d8ee950a5227b212365fb00429b61f4bd2",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

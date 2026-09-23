@@ -148,6 +148,7 @@
                 "value": 10.0
               }
             ],
+            "duration": 5.0,
             "persistence": "temporary"
           }
         ],
@@ -325,7 +326,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "3917981aaa8c83154ddecf6ef23b0bc097f2cb2c90bb210b9c1eaa911bf38ed4",
+    "inputs_hash": "4191f66ec3bcbc05a2fef41d59520bfe708decece244a50a21fb95a1ebb4f247",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

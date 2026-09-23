@@ -79,7 +79,7 @@
             "area_direction": "selected_target",
             "type": "crowd_control",
             "cc-type": "taunt",
-            "duration": 3.0
+            "duration": 4.0
           },
           {
             "tier": "base",
@@ -175,7 +175,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 490.0
+                "value": 450.0
               }
             ]
           },
@@ -195,6 +195,7 @@
                 "value": 30.0
               }
             ],
+            "duration": 7.0,
             "persistence": "temporary"
           }
         ],
@@ -253,7 +254,7 @@
             "area_count": 1,
             "type": "crowd_control",
             "cc-type": "stun",
-            "duration": 2.25
+            "duration": 1.25
           },
           {
             "tier": "base",
@@ -284,9 +285,6 @@
           },
           {
             "label": "Stun — Area"
-          },
-          {
-            "label": "Stun — Area (Supreme+)"
           }
         ]
       },
@@ -381,11 +379,18 @@
         "effects": [
           {
             "tier": "mythic+",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 3,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "damage"
+              }
+            ],
             "type": "debuff",
             "name": "ATK",
             "label": "debuff_offensive",
@@ -398,11 +403,18 @@
           },
           {
             "tier": "mythic+",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 3,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "damage"
+              }
+            ],
             "type": "damage",
             "damage_type": "physical",
             "name": "Physical",
@@ -410,58 +422,26 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 500.0
+                "value": 210.0
               }
             ]
           },
           {
             "tier": "mythic+",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 3,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "damage"
+              }
+            ],
             "type": "crowd_control",
             "cc-type": "knock_up"
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "duration_gate",
-                "gate": "first_time"
-              }
-            ],
-            "type": "shield",
-            "name": "Shield",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 500.0
-              }
-            ]
-          },
-          {
-            "tier": "supreme+",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "duration_gate",
-                "gate": "first_time"
-              }
-            ],
-            "type": "crowd_control",
-            "cc-type": "stun",
-            "duration": 1.0
           },
           {
             "type": "immunity",
@@ -481,18 +461,11 @@
             "label": "Physical"
           },
           {
-            "label": "Shield — Self (Supreme+)",
-            "polarity": "buff"
-          },
-          {
-            "label": "ATK",
+            "label": "ATK — Area",
             "polarity": "debuff"
           },
           {
-            "label": "Knock up — Single target"
-          },
-          {
-            "label": "Stun — Single target (Supreme+)"
+            "label": "Knock up — Area"
           },
           {
             "label": "Unaffected — Self"
@@ -552,7 +525,7 @@
     "damage_entries": [
       [
         "physical",
-        "Area, Single target"
+        "Area"
       ]
     ],
     "benefit_stats": [
@@ -729,7 +702,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "512a7e948ef0e9aa468ea9bcce33c5af1b6edfd4878c9fd1ab4e03a1e174a1c2",
+    "inputs_hash": "6ce58655c21734d925fe148bef223f2709a5ab25bd0d4e0694f193b6cbb91fbc",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

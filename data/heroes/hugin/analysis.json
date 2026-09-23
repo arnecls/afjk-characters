@@ -87,6 +87,7 @@
                 "value": 80.0
               }
             ],
+            "duration": 10.0,
             "persistence": "temporary"
           }
         ],
@@ -150,7 +151,8 @@
                 "type": "percentage",
                 "value": 660.0
               }
-            ]
+            ],
+            "duration": 8.0
           }
         ],
         "cooldown": 6.0,
@@ -268,10 +270,33 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
         "skill_range": 1,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          }
+        ]
       },
       "Steelbound Kinship": {
         "category": "skill4",
@@ -319,7 +344,8 @@
                 "type": "percentage",
                 "value": 900.0
               }
-            ]
+            ],
+            "duration": 8.0
           },
           {
             "type": "immunity",
@@ -367,6 +393,12 @@
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
             "persistence": "temporary"
           }
         ],
@@ -531,7 +563,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "b4f52fb264afc9f91f62f2e7ba94ab0f5626add19f60bd722fe1a6108db0c56f",
+    "inputs_hash": "8e2e8de0094c9c03b4f6d84ffc580d35195fab204b993bcf0737161334fc5432",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

@@ -158,7 +158,7 @@
             "area_count": 3,
             "area_direction": "front",
             "type": "debuff",
-            "name": "Haste",
+            "name": "ATK SPD",
             "label": "debuff_offensive",
             "value": [
               {
@@ -199,7 +199,7 @@
             "label": "Lost HP-based damage"
           },
           {
-            "label": "Haste — Area",
+            "label": "ATK SPD — Area",
             "polarity": "debuff"
           }
         ]
@@ -255,7 +255,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 130.0
+                "value": 160.0
               }
             ]
           }
@@ -304,6 +304,12 @@
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 16.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -357,6 +363,12 @@
             "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 4.0
+              }
+            ],
             "persistence": "permanent"
           },
           {
@@ -632,7 +644,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "4ed4ce0a9a8ff4f078a7545c452d1272bb6e6304e2ee49e17d0a86a7d8ba0d98",
+    "inputs_hash": "063056c8fe3a7d8f53ce246eb390a919ec53b2c1c696faa90ef70fd7687a3b9e",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

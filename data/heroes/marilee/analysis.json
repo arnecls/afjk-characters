@@ -122,6 +122,16 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "normal_attack"
+              },
+              {
+                "type": "count",
+                "count": 2
+              }
+            ],
             "type": "crowd_control",
             "cc-type": "stun",
             "duration": 0.5
@@ -133,6 +143,16 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "normal_attack"
+              },
+              {
+                "type": "count",
+                "count": 2
+              }
+            ],
             "type": "damage",
             "damage_type": "physical",
             "name": "Physical",
@@ -262,7 +282,7 @@
         },
         "effects": [
           {
-            "tier": "base",
+            "tier": "legendary+",
             "targeting_label": "Self",
             "is_max_known": true,
             "target": "self",
@@ -335,6 +355,12 @@
                 "stack_comparison": "up_to"
               },
               {
+                "type": "trigger_condition",
+                "trigger": "skill_cast",
+                "skill_type": "ultimate",
+                "ally": true
+              },
+              {
                 "type": "battle_phase",
                 "phase": "conditional"
               }
@@ -381,7 +407,7 @@
         {
           "label": "Stacking",
           "tier": "mythic+",
-          "targeting": "Multiple targets",
+          "targeting": "Self",
           "description": "Marilee increases her ATK by 5% when allies cast an Ultimate, up to 6 stacks."
         }
       ],
@@ -522,7 +548,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "dec07e5e342bf13acff7a63483e39822eba218d290475491d30413d73bfb1504",
+    "inputs_hash": "42b8ee52614be30b2795151bf40947fe6604cac3e982d1d539c50929b426d5ff",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

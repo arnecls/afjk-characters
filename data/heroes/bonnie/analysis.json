@@ -146,7 +146,7 @@
             "value": [
               {
                 "type": "flat",
-                "value": 30.0
+                "value": 50.0
               }
             ]
           },
@@ -211,7 +211,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 180.0
+                "value": 100.0
               }
             ],
             "duration": 2.0,
@@ -382,11 +382,11 @@
         "effects": [
           {
             "tier": "mythic+",
-            "targeting_label": "Single target",
+            "targeting_label": "Multiple targets",
             "is_max_known": true,
             "target": "enemy",
             "area": "single",
-            "target_count": 1,
+            "target_count": 3,
             "conditions": [
               {
                 "type": "stack_count",
@@ -639,7 +639,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "78cb33e4a0085a686414d374075ad41842728de657c5e1a0cb612ab27dc7384c",
+    "inputs_hash": "63b5b32d04fdc3a423f741ef07feb3b322f8e0f702da27442c41c3de5392e556",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

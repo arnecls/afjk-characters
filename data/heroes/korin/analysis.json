@@ -322,25 +322,6 @@
             "target_count": -1,
             "area_count": 2,
             "type": "damage",
-            "damage_type": "max_hp",
-            "name": "Max HP-based damage",
-            "label": "damage_max_hp",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 2.8
-              }
-            ]
-          },
-          {
-            "tier": "mythic+",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "radius",
-            "target_count": -1,
-            "area_count": 2,
-            "type": "damage",
             "damage_type": "true",
             "name": "True damage",
             "label": "damage_true",
@@ -373,19 +354,10 @@
         ],
         "skill_card_tags": [
           {
-            "label": "Max HP-based damage"
-          },
-          {
             "label": "True damage"
           },
           {
-            "label": "Max HP-based damage (EX+10)"
-          },
-          {
             "label": "True damage (EX+10)"
-          },
-          {
-            "label": "Max HP-based damage (EX+15)"
           },
           {
             "label": "True damage (EX+15)"
@@ -415,6 +387,12 @@
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -433,10 +411,6 @@
     "damage_entries": [
       [
         "physical",
-        "Area"
-      ],
-      [
-        "max_hp",
         "Area"
       ],
       [
@@ -584,7 +558,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "26bfba3bf6ef7235bfd84f352dad9b723dec1771bd59bdeddc3ef114a911305e",
+    "inputs_hash": "5da8ffc66d85adab5c129b69a32904e8e4122d63386a9cae6b86f55b1847375f",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

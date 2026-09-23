@@ -98,6 +98,24 @@
             ],
             "duration": 5.0,
             "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "debuff",
+            "name": "Damage dealt",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
           }
         ],
         "skill_range": 10,
@@ -109,6 +127,10 @@
           {
             "label": "Energy — Self",
             "polarity": "buff"
+          },
+          {
+            "label": "Damage dealt — Area",
+            "polarity": "debuff"
           }
         ]
       },
@@ -160,6 +182,7 @@
                 "value": 30.0
               }
             ],
+            "duration": 10.0,
             "persistence": "temporary"
           },
           {
@@ -178,6 +201,7 @@
                 "value": 30.0
               }
             ],
+            "duration": 10.0,
             "persistence": "temporary"
           }
         ],
@@ -556,7 +580,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f00606dfc3991783ef636655d3249a3a70d6010f3da62590577b75c8d6556dbd",
+    "inputs_hash": "2a3bc5f24b3b8c7fafe64b512a82413966cd1d933c06e1856cfbdfce79b40224",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

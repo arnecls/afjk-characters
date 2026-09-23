@@ -72,15 +72,16 @@
                 "value": 40.0
               }
             ],
+            "duration": 12.0,
             "persistence": "temporary"
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Multiple targets",
             "is_max_known": true,
             "target": "ally",
             "area": "single",
-            "target_count": 1,
+            "target_count": 3,
             "type": "heal",
             "healing_type": "direct",
             "name": "Direct healing",
@@ -107,6 +108,7 @@
                 "value": 300.0
               }
             ],
+            "duration": 12.0,
             "persistence": "temporary"
           },
           {
@@ -125,6 +127,7 @@
                 "value": 40.0
               }
             ],
+            "duration": 12.0,
             "persistence": "temporary"
           },
           {
@@ -143,6 +146,7 @@
                 "value": 300.0
               }
             ],
+            "duration": 12.0,
             "persistence": "temporary"
           }
         ],
@@ -150,7 +154,7 @@
         "initial_energy": 0.0,
         "skill_card_tags": [
           {
-            "label": "Direct healing",
+            "label": "Direct healing — Multiple targets",
             "polarity": "buff"
           },
           {
@@ -223,9 +227,33 @@
               }
             ],
             "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ],
+            "duration": 3.0,
+            "tick": 1.0
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "HoT — All units",
+            "polarity": "buff"
+          },
           {
             "label": "ATK — All units",
             "polarity": "buff"
@@ -280,6 +308,7 @@
                 "value": 40.0
               }
             ],
+            "duration": 5.0,
             "persistence": "temporary"
           },
           {
@@ -298,6 +327,7 @@
                 "value": 40.0
               }
             ],
+            "duration": 5.0,
             "persistence": "temporary"
           },
           {
@@ -639,7 +669,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "f7faba3da0f382cf2da582063601b7444a49db550831437f8b7512f743b63eda",
+    "inputs_hash": "bbfe040c7a1c3388dd160b0de8e0226407a6e82c4e09dc8e17c4c44fefcd694f",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

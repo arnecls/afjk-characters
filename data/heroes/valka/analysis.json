@@ -99,24 +99,6 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
-            "type": "damage",
-            "damage_type": "max_hp",
-            "name": "Max HP-based damage",
-            "label": "damage_max_hp",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 18.0
-              }
-            ]
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Single target",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "single",
-            "target_count": 1,
             "type": "crowd_control",
             "cc-type": "knock_down"
           },
@@ -139,6 +121,23 @@
             ]
           },
           {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 400.0
+              }
+            ]
+          },
+          {
             "type": "immunity",
             "tier": "base",
             "immunity_type": "unaffected",
@@ -153,10 +152,11 @@
         "initial_energy": 1000.0,
         "skill_card_tags": [
           {
-            "label": "Max HP-based damage"
+            "label": "True damage"
           },
           {
-            "label": "True damage"
+            "label": "Direct healing — Self",
+            "polarity": "buff"
           },
           {
             "label": "Haste",
@@ -230,22 +230,6 @@
             "type": "crowd_control",
             "cc-type": "knock_down",
             "duration": 1.0
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "shield",
-            "name": "Shield",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 220.0
-              }
-            ]
           }
         ],
         "cooldown": 5.0,
@@ -253,10 +237,6 @@
         "skill_card_tags": [
           {
             "label": "Physical"
-          },
-          {
-            "label": "Shield — Self",
-            "polarity": "buff"
           },
           {
             "label": "Knock down — Area"
@@ -594,10 +574,6 @@
         "Area"
       ],
       [
-        "max_hp",
-        "Single target"
-      ],
-      [
         "true",
         "Single target"
       ]
@@ -812,7 +788,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "081265d0bea7a4d664faf83a9daee8e98d29fb99df55f9c41c6e5eb69c442355",
+    "inputs_hash": "19659721a8f80c9aa491983098d8b2dca4c3b0f9e0d3c70d2f7b027cc8893f20",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

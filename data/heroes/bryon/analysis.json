@@ -109,7 +109,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 110.0
+                "value": 40.0
               }
             ],
             "duration": 2.0,
@@ -239,12 +239,33 @@
             "type": "debuff",
             "name": "Energy",
             "label": "debuff_stat"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ]
           }
         ],
         "cooldown": 16.0,
         "initial_cooldown": 0.125,
         "skill_range": 5,
         "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
           {
             "label": "Energy",
             "polarity": "debuff"
@@ -369,12 +390,70 @@
                 "value": 450.0
               }
             ]
+          },
+          {
+            "tier": "ex+5",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "fatal_blow",
+                "self": true
+              }
+            ],
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+5",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "fatal_blow",
+                "self": true
+              }
+            ],
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
+            "duration": 5.0,
+            "tick": 1.0
           }
         ],
         "skill_range": 3,
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "Direct healing — Self (EX+5)",
+            "polarity": "buff"
+          },
+          {
+            "label": "HoT — Self (EX+5)",
+            "polarity": "buff"
           },
           {
             "label": "Stun — Single target"
@@ -398,26 +477,9 @@
             }
           ]
         },
-        "effects": [
-          {
-            "tier": "supreme+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "Haste",
-            "label": "buff_offensive",
-            "persistence": "permanent"
-          }
-        ],
-        "skill_card_tags": [
-          {
-            "label": "Haste — Self",
-            "polarity": "buff"
-          }
-        ]
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
       }
     },
     "synergy_profile": {
@@ -666,7 +728,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "fcd950aca3ab01a73483e088dbe3d0786b668caf58856125304f72694c0fef10",
+    "inputs_hash": "376e7ae11ecbdc8db2473245fd4e785e58a0cfc3a254b3c2b91573595670f0c1",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

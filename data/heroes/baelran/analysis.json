@@ -71,13 +71,13 @@
             "target_count": -1,
             "area_count": 2,
             "type": "damage",
-            "damage_type": "physical",
-            "name": "Physical",
-            "label": "damage_normal",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
             "value": [
               {
                 "type": "percentage",
-                "value": 400.0
+                "value": 10.0
               }
             ]
           },
@@ -132,7 +132,7 @@
         "initial_energy": 0.0,
         "skill_card_tags": [
           {
-            "label": "Physical"
+            "label": "Max HP-based damage"
           },
           {
             "label": "True damage"
@@ -527,6 +527,10 @@
         "Area"
       ],
       [
+        "max_hp",
+        "Area"
+      ],
+      [
         "true",
         "Arc, Area, Single target"
       ]
@@ -726,7 +730,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "aba8eedda1589f33565dd08b858c1054351c73c53f1505e8a336be3e8ce55429",
+    "inputs_hash": "6bdba823a97c998cc0394ed41d4d63220da7de8d3f2792a1d3c3e5ae1e685093",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

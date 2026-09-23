@@ -55,10 +55,55 @@
             }
           ]
         },
-        "effects": [],
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 255.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "lost_hp",
+            "name": "Lost HP-based damage",
+            "label": "damage_lost_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 255.0
+              }
+            ]
+          }
+        ],
         "initial_energy": 0.0,
-        "passive_only": true,
-        "skill_card_tags": []
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Lost HP-based damage"
+          }
+        ]
       },
       "Radiant Resurgence": {
         "category": "skill1",
@@ -101,7 +146,7 @@
             "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "radius",
+            "area": "single",
             "target_count": -1,
             "area_count": 1,
             "type": "damage",
@@ -132,12 +177,33 @@
               }
             ],
             "persistence": "unknown"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ]
           }
         ],
         "cooldown": 8.0,
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "Direct healing",
+            "polarity": "buff"
           },
           {
             "label": "Lifedrain — Self",
@@ -208,12 +274,35 @@
                 "value": 160.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "healing_type": "over_time",
+            "name": "Healing over time",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 8.0
+              }
+            ],
+            "duration": 2,
+            "tick": 1.0
           }
         ],
         "skill_range": 3,
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "HoT — Self",
+            "polarity": "buff"
           },
           {
             "label": "Knock back — Area"
@@ -390,7 +479,11 @@
     "damage_entries": [
       [
         "magic",
-        "Area"
+        "All units, Area, Single target"
+      ],
+      [
+        "lost_hp",
+        "All units"
       ]
     ],
     "benefit_stats": [
@@ -567,7 +660,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "4094f45f048f4fc33c5ebb8ac5d5d98c146d68d417897630fe13205bf1a3af09",
+    "inputs_hash": "eb4509366331eac578101297de5bc2a5b6a4756c08b5fbc2abd79ea21779ca5d",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

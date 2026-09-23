@@ -324,6 +324,36 @@
             "duration": 2.0
           },
           {
+            "tier": "mythic+",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "conditions": [
+              {
+                "type": "hp_threshold",
+                "hp_ratio": 0.3,
+                "comparison": "below"
+              },
+              {
+                "type": "unit_type",
+                "unit_type": "non_summoned"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 70.0
+              }
+            ]
+          },
+          {
             "tier": "ex+10",
             "targeting_label": "Single target",
             "is_max_known": true,
@@ -346,6 +376,9 @@
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
           {
             "label": "Stun — All units"
           },
@@ -445,7 +478,7 @@
     "damage_entries": [
       [
         "magic",
-        "Area, Single target"
+        "All units, Area, Single target"
       ]
     ],
     "benefit_stats": [
@@ -626,7 +659,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "a2a1ae5782100868eedf154c2172a19b390a2e0dc8ff0a2586d3bcd83fb85f6e",
+    "inputs_hash": "e68ca4871e975349e489003778056dd5da2ffa40ad1a0891e7a5d77302d693ba",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

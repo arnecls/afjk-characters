@@ -7,7 +7,7 @@
     "faction": "mauler",
     "class": "marksman",
     "role_category": "damage_dealer",
-    "is_energy_provider": true,
+    "is_energy_provider": false,
     "is_melee": false,
     "is_dual_range": false,
     "default_range": 5,
@@ -308,9 +308,9 @@
           },
           {
             "tier": "ex+10",
-            "targeting_label": "Single target",
+            "targeting_label": "Self",
             "is_max_known": true,
-            "target": "ally",
+            "target": "self",
             "area": "single",
             "target_count": 1,
             "conditions": [
@@ -333,7 +333,7 @@
         ],
         "skill_card_tags": [
           {
-            "label": "Energy (EX+10)",
+            "label": "Energy — Self (EX+10)",
             "polarity": "buff"
           },
           {
@@ -395,7 +395,8 @@
       ]
     ],
     "benefit_stats": [
-      "atk_spd"
+      "atk_spd",
+      "energy"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -541,7 +542,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "109a24547e9df8df1c4868c97aabddc0e75e21607417a7d0895398fae4a98a21",
+    "inputs_hash": "66fe73167c209ff025d0b66cab1eae43a7a6f741475c92bb4ddeed7d2929e79c",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

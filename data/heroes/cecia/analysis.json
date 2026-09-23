@@ -112,7 +112,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 185.0
+                "value": 140.0
               }
             ],
             "duration": 2.0,
@@ -131,7 +131,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 185.0
+                "value": 60.0
               }
             ],
             "persistence": "unknown"
@@ -424,7 +424,13 @@
             "type": "buff",
             "name": "ATK SPD",
             "label": "buff_offensive",
-            "persistence": "unknown"
+            "value": [
+              {
+                "type": "flat",
+                "value": 25.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_range": 1,
@@ -870,7 +876,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "103e69baed9783b2add2a51f6869a9f3fde32d345e6cc43c445a9a1a471bacbe",
-    "algorithm_hash": "2fbb0b37784f4578ae5a98545a81bbfe106ff604901544a79e511f249e800217"
+    "inputs_hash": "1784bc2c38dcb8e61b60f7d4e45ea2b763c8c9124e6176279e0e97951f8e2492",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

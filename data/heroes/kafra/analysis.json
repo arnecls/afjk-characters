@@ -463,9 +463,31 @@
             "The damage of Relentless Chase's first casting in battle is increased to 520% (ATK-based)."
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 520.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -633,7 +655,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "c40703feba835a093a739d90cd689673a3b352eec266b705d6ba477d8ec78663",
+    "inputs_hash": "4f4610487f654b41b41d3e61174e9cac8edbb51ee71055474e1fc2ed0aaf882b",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

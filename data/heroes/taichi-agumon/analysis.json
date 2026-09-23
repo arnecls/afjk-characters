@@ -109,6 +109,24 @@
             "area": "single",
             "target_count": 1,
             "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 220.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
             "value": [
@@ -141,6 +159,10 @@
           },
           {
             "label": "Energy — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP — Self",
             "polarity": "buff"
           },
           {
@@ -549,6 +571,7 @@
     ],
     "benefit_stats": [
       "atk",
+      "max_hp",
       "shield",
       "energy",
       "def_penetration"
@@ -772,7 +795,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "089d64704afc016a50dda251e02f4d80d626b24c41109cb157e5762aa2a89148",
+    "inputs_hash": "6a64418a8e12474d1b5fa32af44d22ea872f69c1d93f3e361e52728a1ead9381",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

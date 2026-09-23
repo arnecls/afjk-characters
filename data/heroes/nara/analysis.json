@@ -7,7 +7,7 @@
     "faction": "graveborn",
     "class": "rogue",
     "role_category": "specialist",
-    "is_energy_provider": true,
+    "is_energy_provider": false,
     "is_melee": true,
     "is_dual_range": false,
     "default_range": 1,
@@ -57,6 +57,30 @@
           ]
         },
         "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 750.0
+              }
+            ],
+            "persistence": "temporary"
+          },
           {
             "tier": "base",
             "targeting_label": "Single target",
@@ -109,6 +133,10 @@
           },
           {
             "label": "True damage"
+          },
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
           }
         ]
       },
@@ -170,7 +198,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 4.0
+                "value": 5.0
               }
             ]
           }
@@ -307,13 +335,20 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "kill",
+                "self": true
+              }
+            ],
             "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
             "value": [
               {
                 "type": "percentage",
-                "value": 14.0
+                "value": 20.0
               }
             ],
             "persistence": "permanent"
@@ -446,9 +481,9 @@
         "effects": [
           {
             "tier": "supreme+",
-            "targeting_label": "Single target",
+            "targeting_label": "Self",
             "is_max_known": true,
-            "target": "ally",
+            "target": "self",
             "area": "single",
             "target_count": 1,
             "conditions": [
@@ -473,7 +508,7 @@
         ],
         "skill_card_tags": [
           {
-            "label": "Energy",
+            "label": "Energy — Self",
             "polarity": "buff"
           }
         ]
@@ -684,7 +719,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "a3fc7d1c95d3d2aa702d833819f8451e5dc7b06cb2eba124137e4162ef9b6817",
+    "inputs_hash": "491feb654f34e1e2da6bc76694611389b2c7b74ae22feda1bdf71a0ca82c6250",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

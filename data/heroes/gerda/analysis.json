@@ -187,11 +187,12 @@
           },
           {
             "tier": "base",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "ally",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
             "type": "dot",
             "healing_type": "over_time",
             "name": "Healing over time",
@@ -220,7 +221,7 @@
             "label": "Physical"
           },
           {
-            "label": "HoT",
+            "label": "HoT — Area",
             "polarity": "buff"
           },
           {
@@ -307,7 +308,8 @@
                 "type": "percentage",
                 "value": 400.0
               }
-            ]
+            ],
+            "duration": 8.0
           }
         ],
         "cooldown": 12.0,
@@ -633,7 +635,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "4ca15a8abd97dfbc414195ebda29dce05e3cb91935ecf459eaccec54b754317b",
+    "inputs_hash": "8e65e6fa3887e545630d4d28974fb2603e312a80cd2f6a1a55a62825fc2d411b",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

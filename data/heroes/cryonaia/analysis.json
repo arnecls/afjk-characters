@@ -201,26 +201,6 @@
             "target_count": -1,
             "area_count": 1,
             "area_direction": "selected_target",
-            "type": "damage",
-            "damage_type": "magic",
-            "name": "Magic",
-            "label": "damage_normal",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 77.0
-              }
-            ]
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Area",
-            "is_max_known": true,
-            "target": "enemy",
-            "area": "path",
-            "target_count": -1,
-            "area_count": 1,
-            "area_direction": "selected_target",
             "type": "dot",
             "damage_type": "dot",
             "name": "DoT",
@@ -238,9 +218,6 @@
         "cooldown": 12.0,
         "initial_cooldown": 2.0,
         "skill_card_tags": [
-          {
-            "label": "Magic"
-          },
           {
             "label": "DoT"
           }
@@ -483,7 +460,7 @@
     "damage_entries": [
       [
         "magic",
-        "Area, Single target"
+        "Single target"
       ],
       [
         "dot",
@@ -704,7 +681,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "c6d5edcf68fa7cb8b9ee6156a6c841191953e5064a190fd38e384458abdffa9a",
+    "inputs_hash": "0397f129422363cdfc5637f94d38e071ef49cc05b1ec93967171b86dc93df44c",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

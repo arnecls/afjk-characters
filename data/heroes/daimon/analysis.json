@@ -421,6 +421,12 @@
             "type": "buff",
             "name": "Damage taken",
             "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 18.0
+              }
+            ],
             "persistence": "permanent"
           }
         ],
@@ -771,7 +777,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "ccad80304ea6fbb5690ba1d5988879559b1249faea685973da7710606b50dbf5",
+    "inputs_hash": "a409471ee22e6f96f00aca12abe70747009a69728535fe6b44c268e6919a7b91",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }
