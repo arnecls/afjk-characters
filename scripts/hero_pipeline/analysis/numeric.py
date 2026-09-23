@@ -563,7 +563,8 @@ def extract_number(text: str, label: str = "", *, category: str = "") -> float |
         for m in re.finditer(pat, text, re.I):
             before = t[max(0, m.start() - 35) : m.start()]
             if re.search(
-                r"ratio below|hp below|below \d|(?:atk|hp)-based|\(atk-based\)|"
+                r"ratio below|hp below|below \d|less than\s*$|"
+                r"up to\s*$|(?:atk|hp)-based|\(atk-based\)|"
                 r"deal(?:s|t|ing)? \d",
                 before,
             ):

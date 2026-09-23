@@ -194,3 +194,48 @@ class DetectorSeamTests(unittest.TestCase):
         schema = hs.effect_to_schema(working)
         self.assertEqual(schema.get("target"), "self")
         self.assertEqual(schema.get("persistence"), "permanent")
+
+    def test_unknown_effect_type_raises(self) -> None:
+        row = {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": True,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "not_a_real_type",
+            "value": [{"type": "percentage", "value": 10.0}],
+        }
+        with self.assertRaises(ValueError):
+            hs.convert_schema_effect(row)
+
+    def test_dot_without_subtype_raises(self) -> None:
+        row = {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": True,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "dot",
+            "name": "Damage over time",
+            "value": [{"type": "percentage", "value": 50.0}],
+        }
+        with self.assertRaises(ValueError):
+            hs.convert_schema_effect(row)
+
+    def test_threshold_number_ignored_for_generic_label(self) -> None:
+        value = extract_number(
+            "imprisons an enemy whose HP ratio is less than 70%.",
+            "Crit DMG Boost",
+            category="buff",
+        )
+        self.assertIsNone(value)
+
+    def test_cap_number_ignored_for_generic_label(self) -> None:
+        value = extract_number(
+            "he absorbs up to 50% of his ATK in each battle",
+            "Crit DMG Boost",
+            category="buff",
+        )
+        self.assertIsNone(value)

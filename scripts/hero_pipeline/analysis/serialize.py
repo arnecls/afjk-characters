@@ -1019,18 +1019,19 @@ def convert_schema_effect(effect: dict[str, Any], *, summon: bool = False) -> An
             **spatial,
         )
 
-    name = effect.get("name", etype.replace("_", " ").title())
-    return rs.Effect(
-        category="buff",
-        label=name,
-        tier=tier,
-        targeting=targeting,
-        numeric=numeric,
-        qualitative="",
-        conditional=conditional,
-        conditions=schema_conditions,
-        **spatial,
-    )
+    if (
+        etype == "dot"
+        and not effect.get("healing_type")
+        and not effect.get("damage_type")
+    ):
+        raise ValueError(
+            "dot sidecar row without healing_type or "
+            f"damage_type: {effect.get('name', '?')!r}"
+        )
+    # Unknown sidecar types fail loudly: silent title-casing
+    # once shipped a persistence-less ally "Stat Steal" that
+    # broke just views (salazer, 2026-09-23).
+    raise ValueError(f"unhandled sidecar effect type: {etype!r}")
 
 
 def special_to_synergy_mechanic(se: Any) -> dict[str, Any]:

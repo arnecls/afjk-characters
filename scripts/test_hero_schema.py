@@ -2163,6 +2163,46 @@ class SchemaValidationTests(unittest.TestCase):
         synergies = io.load_synergies()
         hs.validate_synergies(synergies)
 
+    def test_self_target_needs_self_label(self):
+        import skill_effects_store as ses
+
+        doc = {"skills": {"Skill1": {"tiers": {"base": {"effects": [
+            {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": True,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "value": [{"type": "percentage", "value": 10.0}],
+                "persistence": "temporary",
+            }
+        ]}}}}}
+        with self.assertRaises(ValueError):
+            ses._validate_targeting_labels(doc)
+
+    def test_self_label_needs_self_target(self):
+        import skill_effects_store as ses
+
+        doc = {"skills": {"Skill1": {"tiers": {"base": {"effects": [
+            {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": True,
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "value": [{"type": "percentage", "value": 10.0}],
+                "persistence": "temporary",
+            }
+        ]}}}}}
+        with self.assertRaises(ValueError):
+            ses._validate_targeting_labels(doc)
+
 
 class ValidateScriptTests(unittest.TestCase):
     def test_validate_processed_exits_zero(self):

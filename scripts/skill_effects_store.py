@@ -104,6 +104,36 @@ def validate_sidecar_doc(doc: dict[str, Any]) -> None:
     store[schema["$id"]] = schema
     resolver = jsonschema.RefResolver.from_schema(schema, store=store)
     jsonschema.validate(doc, schema, resolver=resolver)
+    _validate_targeting_labels(doc)
+
+
+def _validate_targeting_labels(doc: dict[str, Any]) -> None:
+    # target and targeting_label must agree: a self row
+    # labeled Single target once shipped an ally "Stat
+    # Steal" that broke just views (salazer, 2026-09-23).
+    skills = (doc.get("skills") or {})
+    if not isinstance(skills, dict):
+        return
+    for section, entry in skills.items():
+        tiers = (entry or {}).get("tiers") or {}
+        for tier_key, tier_data in tiers.items():
+            rows = list((tier_data or {}).get("effects", []))
+            rows += list((tier_data or {}).get("summon_effects", []))
+            for row in rows:
+                target = row.get("target")
+                label = row.get("targeting_label")
+                if target == "self" and label != "Self":
+                    raise ValueError(
+                        f"{section} / {tier_key}: target self "
+                        f"needs targeting_label Self, got "
+                        f"{label!r}"
+                    )
+                if label == "Self" and target != "self":
+                    raise ValueError(
+                        f"{section} / {tier_key}: targeting_label "
+                        f"Self needs target self, got "
+                        f"{target!r}"
+                    )
 
 
 def canonical_skill_description(skill: dict[str, Any]) -> dict[str, Any]:
