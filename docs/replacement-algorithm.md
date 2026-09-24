@@ -60,9 +60,9 @@ Instead of math-heavy profiles, this category uses curated [**Behavior Tags**](.
 - Candidates must share at least 1 tag with the Source to be considered.
 
 ### Damage
-Damage profiles look at both the raw damage throughput and the *type* of damage (Physical, Magic, True Damage, DoT).
-- **True Damage Boost**: True Damage (which ignores DEF) is highly valued. True damage output is multiplied by **1.5×** in the profile.
-- **Blend**: The final damage replacement score is a blend: **65%** based on matching True Damage types, and **35%** based on general damage throughput coverage.
+Damage profiles look at both the raw damage throughput and the *type* of damage (Physical, Magic, True damage, HP loss, DoT).
+- **True Damage Boost**: True damage and HP loss (which ignore Phys/Magic DEF and shields) are highly valued. Both outputs are multiplied by **1.5×** in the profile.
+- **Blend**: The final damage replacement score is a blend: **65%** based on matching True Damage types (True damage, HP loss), and **35%** based on general damage throughput coverage.
 
 ### Healing
 Healing profiles look at raw HP restored and the *method* of healing (Direct Burst vs. Healing Over Time).

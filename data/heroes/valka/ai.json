@@ -66,6 +66,24 @@
               },
               {
                 "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
+                "label": "damage_max_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 18.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
                 "targeting_label": "Self",
                 "is_max_known": true,
                 "target": "self",

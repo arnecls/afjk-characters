@@ -123,6 +123,24 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 198.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
             "type": "crowd_control",
             "cc-type": "silence",
             "duration": 8.0
@@ -132,6 +150,9 @@
         "skill_card_tags": [
           {
             "label": "DoT"
+          },
+          {
+            "label": "Magic"
           },
           {
             "label": "Invincible — Self",

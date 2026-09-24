@@ -110,6 +110,25 @@
             "tick": 1.0
           },
           {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 160.0
+              }
+            ]
+          },
+          {
             "type": "immunity",
             "tier": "base",
             "immunity_type": "unaffected",
@@ -125,6 +144,9 @@
         "skill_card_tags": [
           {
             "label": "DoT"
+          },
+          {
+            "label": "HP loss"
           },
           {
             "label": "Energy — Area",
@@ -553,6 +575,10 @@
       ],
       [
         "dot",
+        "Area"
+      ],
+      [
+        "hp_loss",
         "Area"
       ]
     ],

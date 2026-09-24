@@ -333,6 +333,25 @@
             ]
           },
           {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 2.8
+              }
+            ]
+          },
+          {
             "tier": "ex+5",
             "targeting_label": "Self",
             "is_max_known": true,
@@ -357,10 +376,19 @@
             "label": "True damage"
           },
           {
+            "label": "Max HP-based damage"
+          },
+          {
             "label": "True damage (EX+10)"
           },
           {
+            "label": "Max HP-based damage (EX+10)"
+          },
+          {
             "label": "True damage (EX+15)"
+          },
+          {
+            "label": "Max HP-based damage (EX+15)"
           },
           {
             "label": "ATK SPD — Self (EX+5)",
@@ -411,6 +439,10 @@
     "damage_entries": [
       [
         "physical",
+        "Area"
+      ],
+      [
+        "max_hp",
         "Area"
       ],
       [
@@ -558,7 +590,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "5da8ffc66d85adab5c129b69a32904e8e4122d63386a9cae6b86f55b1847375f",
+    "inputs_hash": "ae4a437f8254c817695b1d031c54d50c38ed2e14d764847315ff734cfbc087cd",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

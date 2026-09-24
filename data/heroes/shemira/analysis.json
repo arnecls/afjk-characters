@@ -228,6 +228,25 @@
                 "value": 33.0
               }
             ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 33.0
+              }
+            ]
           }
         ],
         "cooldown": 8.0,
@@ -235,6 +254,9 @@
         "skill_card_tags": [
           {
             "label": "True damage"
+          },
+          {
+            "label": "Max HP-based damage"
           }
         ]
       },
@@ -336,6 +358,24 @@
             ]
           },
           {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 3.0
+              }
+            ]
+          },
+          {
             "tier": "mythic+",
             "targeting_label": "Self",
             "is_max_known": true,
@@ -356,6 +396,9 @@
         "skill_card_tags": [
           {
             "label": "True damage (EX+10)"
+          },
+          {
+            "label": "Max HP-based damage (EX+10)"
           },
           {
             "label": "Shield — Self",
@@ -387,6 +430,10 @@
     "damage_entries": [
       [
         "magic",
+        "Area, Single target"
+      ],
+      [
+        "max_hp",
         "Area, Single target"
       ],
       [
@@ -607,7 +654,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "29a8a563a5190f9e02543fd7c92731e3491eccac91a137bacd1d0d0fff96849b",
+    "inputs_hash": "52c859c3406643c4b6e23d36d1fbea074b933a7436fe01c2abcce244c745b815",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

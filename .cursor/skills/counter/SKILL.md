@@ -158,11 +158,13 @@ asymmetry biases `damage_type` among tagged assassins:
 Magic pressure, not Physical dump into intangibility).
 
 When **both** Phys DEF and Magic DEF are **high**, and/or the kit leans on
-**heavy shields**, prefer assassins whose skill text includes **true damage**
-first (rotate among fits such as [[Himmel]], [[Nara]], [[Vala]], [[Pippa]],
+**heavy shields**, prefer assassins whose skill text includes **true damage
+or HP loss** first (both bypass Phys/Magic DEF and shields;
+rotate among fits such as [[Himmel]], [[Nara]], [[Vala]], [[Pippa]],
 [[Athalia]] — do **not** re-center every high-DEF delete on Athalia). Allow
-non-assassin true-damage pressure only when Gate 5 / timing already selected
-that class (e.g. lasting [[Frieren]] / [[Sylphira]] coverage).
+non-assassin true-damage or HP-loss pressure only when Gate 5 / timing already
+selected that class (e.g. lasting [[Frieren]] / [[Sylphira]] coverage).
+Max HP-based damage alone does not bypass DEF or shields.
 
 Goal: meaningful variance in delete pills — DEF and true damage break the
 repeated stock trio, not replace it with a new single default.
@@ -337,10 +339,11 @@ Do **not** treat global / non-positional team buffs as Gate 6b.
   ([[Himmel]], [[Ravion]], [[Bonnie]]) when fit is equal so the roster file
   does not repeat the same pair on every entry.
 - **DEF / true-damage bias (Gate 2):** use Phys DEF vs Magic DEF ranks and
-  true-damage kit text to diversify delete picks — prefer the matching
-  `damage_type`, then true-damage assassins when both DEFs are high or shields
-  are thick. Immunities override. Still rotate among fit names; do not collapse
-  every Physical-skew or high-DEF case onto [[Athalia]] alone.
+  true-damage or HP-loss kit text to diversify delete picks — prefer the
+  matching `damage_type`, then true-damage or HP-loss assassins when both
+  DEFs are high or shields are thick. Immunities override. Still rotate among
+  fit names; do not collapse every Physical-skew or high-DEF case onto
+  [[Athalia]] alone.
 - **Celestial / Hypogean alternatives:** if any suggested **counter** unit is
   Celestial or Hypogean, always also name a **non-Celestial, non-Hypogean**
   alternative for that same lever in the **same clause** (e.g. `[[Athalia]] or
@@ -376,7 +379,7 @@ Do **not** treat global / non-positional team buffs as Gate 6b.
 | Frontline / melee delete target | Explicit high-damage melee pool (DEF-biased) — see Gate 2 | `[[filter:backline-assassin]]` on the frontliner themselves |
 | Low Phys DEF / higher Magic DEF | Physical assassins ([[Ravion]], [[Himmel]], [[Vala]], …) | Magic dump into the strong DEF |
 | Low Magic DEF / higher Phys DEF | Magic assassins ([[Evie]], [[Nerion]], [[Pippa]], …) | Physical dump into the strong DEF |
-| Both DEF high and/or heavy shields | True-damage assassins ([[Himmel]], [[Nara]], [[Vala]], [[Pippa]], [[Athalia]]) — rotate | Ignoring DEF and defaulting stock trio |
+| Both DEF high and/or heavy shields | True-damage or HP-loss assassins ([[Himmel]], [[Nara]], [[Vala]], [[Pippa]], [[Athalia]]) — rotate | Ignoring DEF and defaulting stock trio |
 | Damage immunity (e.g. phys ethereal) | Opposite damage type / lasting Magic coverage | Matching the immune type |
 | Channel / chant maintenance (no cast immunity) | Control CC ([[Lily May]], stun/sleep packages) | Control CC vs unaffected casts; Lily May ult-Interrupt only (Gate 4a) |
 | Mid-fight tile buff (`static-tile-buffer`) | Displace **buffed ally** ([[Lumont]], [[Eironn]], [[Pippa]], …) | Battle-start-only placement advice; shove Steadfast allies; [[Temesia]] |

@@ -425,6 +425,31 @@
             "tick": 1.0
           },
           {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 3,
+            "conditions": [
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ]
+          },
+          {
             "tier": "ex+10",
             "targeting_label": "Area",
             "is_max_known": true,
@@ -443,10 +468,19 @@
             "label": "DoT"
           },
           {
+            "label": "HP loss"
+          },
+          {
             "label": "DoT (EX+5)"
           },
           {
+            "label": "HP loss (EX+5)"
+          },
+          {
             "label": "DoT (EX+15)"
+          },
+          {
+            "label": "HP loss (EX+15)"
           },
           {
             "label": "Stun — Area (EX+10)"
@@ -473,6 +507,10 @@
     "damage_entries": [
       [
         "dot",
+        "Area"
+      ],
+      [
+        "hp_loss",
         "Area"
       ]
     ],

@@ -64,6 +64,15 @@ def schema_effect_to_effect(
     return hs.convert_schema_effect(effect, summon=summon)
 
 
+def schema_effect_to_effect_list(
+    effect: dict[str, Any], *, summon: bool = False
+) -> list[Any]:
+    """Working effects for one schema row (ticks can emit two)."""
+    from . import serialize as hs
+
+    return hs.convert_schema_effect_list(effect, summon=summon)
+
+
 def synergy_mechanic_to_special(se: dict[str, Any], kind: str) -> Any:
     grants = [
         (grant["label"], grant["magnitude"])
@@ -252,21 +261,21 @@ def working_effects_from_skills(
         for row in skill.get("effects") or []:
             if is_placeholder_schema_effect(row):
                 continue
-            converted = schema_effect_to_effect(row)
-            if stamp_sections:
-                converted = stamp_source_section(converted, section)
-            if is_cc_immunity(converted):
-                raw_immunities.append(converted)
-                slice_row["cc_immunities"].append(converted)
-                continue
-            if row.get("target") in SUMMON_TARGETS:
-                raw_summon.append(converted)
-                slice_row["summon_effects"].append(converted)
-                section_effects.append((section, converted))
-            else:
-                raw_effects.append(converted)
-                slice_row["effects"].append(converted)
-                section_effects.append((section, converted))
+            for converted in schema_effect_to_effect_list(row):
+                if stamp_sections:
+                    converted = stamp_source_section(converted, section)
+                if is_cc_immunity(converted):
+                    raw_immunities.append(converted)
+                    slice_row["cc_immunities"].append(converted)
+                    continue
+                if row.get("target") in SUMMON_TARGETS:
+                    raw_summon.append(converted)
+                    slice_row["summon_effects"].append(converted)
+                    section_effects.append((section, converted))
+                else:
+                    raw_effects.append(converted)
+                    slice_row["effects"].append(converted)
+                    section_effects.append((section, converted))
     profile = analysis.get("synergy_profile") or {}
     specials = [
         synergy_mechanic_to_special(item, "provides")

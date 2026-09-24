@@ -368,10 +368,6 @@ def _text_has_max_hp_damage(text: str) -> bool:
         return True
     return False
 
-def _apply_true_damage_hierarchy(types: list[str], text: str) -> list[str]:
-    """Keep delivery and HP-formula labels when both are explicit."""
-    return types
-
 
 def _text_has_lost_hp_damage(text: str) -> bool:
     """True when damage scales on HP already lost (not heal or direct drain)."""
@@ -715,7 +711,6 @@ def detect_damage_types(text: str, primary_dmg: str) -> list[str]:
             types.append("Magic")
     if _text_has_dot_damage(text) and not _dot_is_discrete_proc(text):
         types.append("DoT")
-    types = _apply_true_damage_hierarchy(types, text)
     if _dot_is_channeled_skill_damage(text):
         types = [dt for dt in types if dt != "Max HP-based damage"]
     if primary_dmg in types and "DoT" in types and not _has_instant_atk_damage(text):

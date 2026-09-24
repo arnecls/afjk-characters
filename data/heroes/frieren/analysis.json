@@ -307,6 +307,25 @@
             "area": "radius",
             "target_count": -1,
             "area_count": 1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 35.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
             "type": "debuff",
             "name": "Vitality",
             "label": "debuff_defensive",
@@ -327,6 +346,9 @@
           },
           {
             "label": "DoT"
+          },
+          {
+            "label": "HP loss"
           },
           {
             "label": "Vitality — Area",
@@ -551,6 +573,10 @@
       [
         "dot",
         "All units, Area"
+      ],
+      [
+        "hp_loss",
+        "Area"
       ],
       [
         "true",

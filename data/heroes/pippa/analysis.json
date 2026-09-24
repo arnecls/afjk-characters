@@ -262,6 +262,25 @@
             "area": "radius",
             "target_count": -1,
             "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 220.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
             "type": "debuff",
             "name": "Energy",
             "label": "debuff_stat",
@@ -278,6 +297,9 @@
         "skill_card_tags": [
           {
             "label": "DoT"
+          },
+          {
+            "label": "Magic"
           },
           {
             "label": "Energy — Area",
@@ -496,7 +518,7 @@
     "damage_entries": [
       [
         "magic",
-        "Single target"
+        "Area, Single target"
       ],
       [
         "dot",

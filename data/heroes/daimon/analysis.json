@@ -506,11 +506,33 @@
             ],
             "duration": 2.0,
             "tick": 0.5
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 3,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 6.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
           {
             "label": "DoT (EX+10)"
+          },
+          {
+            "label": "Max HP-based damage (EX+10)"
           },
           {
             "label": "Frighten — Area"

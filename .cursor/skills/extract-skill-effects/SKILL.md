@@ -115,8 +115,16 @@ just validate
   with capped summon multi-target CC), give each effect its own reach — do not
   inherit Area/All units from a neighboring clause.
 - **True damage categories:** keep direct HP loss separate from True damage.
-  Max-HP and lost-HP labels describe formulas. When a clause explicitly uses
-  a delivery type together with an HP formula, keep the delivery label.
+  Max-HP and lost-HP labels describe amount formulas, not delivery.
+  When a clause explicitly uses a delivery type together with an
+  HP formula (e.g. Daimon Playtime Plunder: `true damage …
+  equal to 20% of max HP`), emit both a delivery row
+  (`damage_true`) and a formula row (`damage_max_hp`) with the
+  same value, tier, and targeting.
+- **HP-loss ticks:** enemy `lose X% (ATK-based) HP per second`
+  or `every Ns` is `type: dot`, `damage_type: hp_loss`
+  (e.g. `damage_hp_loss`), not a generic DoT row. The
+  pipeline renders both a DoT chip and an HP-loss chip.
 - **HP loss modifier vs Damage taken:** use effect name **HP loss modifier**
   (`buff_hp_loss_modifier` / `debuff_hp_loss_modifier`) for more/less HP loss
   taken or HP loss dealt (`OnHpLoss*` / `MakeHpLoss*` hooks). Keep **Damage

@@ -428,12 +428,33 @@
                 "value": 20.0
               }
             ]
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
           }
         ],
         "skill_range": 1,
         "skill_card_tags": [
           {
             "label": "True damage (EX+10)"
+          },
+          {
+            "label": "Max HP-based damage (EX+10)"
           },
           {
             "label": "Damage dealt — Self",
@@ -563,6 +584,10 @@
       [
         "physical",
         "Arc, Area, Single target"
+      ],
+      [
+        "max_hp",
+        "Single target"
       ],
       [
         "true",
@@ -774,7 +799,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "be4fd332f49734fccc9701d02ef1178d17575a608d4d101f8b9421e7fa31e7b5",
+    "inputs_hash": "60375c6a3da7659c333f349937de55c181eae57295b5d36d869570c7c36d7915",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

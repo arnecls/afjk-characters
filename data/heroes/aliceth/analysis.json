@@ -531,6 +531,34 @@
             ],
             "duration": 1.5,
             "tick": 1.0
+          },
+          {
+            "tier": "ex+15",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "blinded"
+              },
+              {
+                "type": "battle_phase",
+                "phase": "on_blind"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ]
           }
         ],
         "skill_range": 4,
@@ -540,6 +568,9 @@
           },
           {
             "label": "DoT (EX+15)"
+          },
+          {
+            "label": "HP loss (EX+15)"
           },
           {
             "label": "Direct healing — Self",
@@ -616,6 +647,10 @@
       ],
       [
         "dot",
+        "Single target"
+      ],
+      [
+        "hp_loss",
         "Single target"
       ],
       [
@@ -852,7 +887,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "e4afe45ae6ba34c1aa501bb83cc863ca6ed57cd020dc1efcdd8ab4dc59c9e096",
+    "inputs_hash": "b404b76d17633cd92375e9248bf9905d1e95db02b8bb62a1ba5bc1d852c55099",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

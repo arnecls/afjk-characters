@@ -309,6 +309,29 @@ def _display_effect(
     return "effect", common
 
 
+def _display_effects(
+    raw: Mapping[str, Any],
+    source_section: str,
+) -> list[tuple[str, dict[str, Any]]]:
+    """Display rows for one schema row.
+
+    Damage-typed ticks emit two rows (DoT plus the
+    delivery/formula label) so CSV columns and filters
+    see both facets of the tick.
+    """
+    kind, first = _display_effect(raw, source_section)
+    token = str(raw.get("damage_type") or "")
+    if (
+        str(raw["type"]) == "dot"
+        and not raw.get("healing_type")
+        and token not in ("", "dot")
+    ):
+        second = copy.deepcopy(first)
+        second["label"] = _display_damage_type(token)
+        return [(kind, first), (kind, second)]
+    return [(kind, first)]
+
+
 def _effect_key(effect: Mapping[str, Any]) -> tuple[str, ...]:
     category = str(effect["category"])
     label = str(effect["label"])
@@ -443,17 +466,18 @@ def _display_analysis(
                 == [{"type": "percentage", "value": 100}]
             ):
                 continue
-            kind, display = _display_effect(raw, section)
-            if kind == "immunity":
-                raw_immunities.append(display)
-            elif raw.get("target") in (
-                "summon",
-                "own_summons",
-                "all_summons",
-            ):
-                raw_summon_effects.append(display)
-            else:
-                raw_effects.append(display)
+            kind_displays = _display_effects(raw, section)
+            for kind, display in kind_displays:
+                if kind == "immunity":
+                    raw_immunities.append(display)
+                elif raw.get("target") in (
+                    "summon",
+                    "own_summons",
+                    "all_summons",
+                ):
+                    raw_summon_effects.append(display)
+                else:
+                    raw_effects.append(display)
     effects = _merge_effects(raw_effects)
     summon_effects = _merge_effects(raw_summon_effects)
     magnitudes = analysis.get("summary_effect_magnitudes") or {}

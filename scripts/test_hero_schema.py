@@ -1406,16 +1406,177 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertIn("Physical", tag_labels(ult_tags))
         mythic_tags = rs.format_skill_card_tags(hero, "skill4")
         mythic_labels = tag_labels(mythic_tags)
-        # Batch-b audit (2026-09-22): "true damage equal to 20%
-        # of max HP" is delivery-wins True damage (Shemira
-        # precedent), so the explicit combo surfaces as True.
+        # "true damage equal to 20% of max HP" carries both
+        # the delivery type and the amount formula.
         self.assertTrue(
             any(label.startswith("True damage") for label in mythic_labels),
             mythic_labels,
         )
-        self.assertFalse(
-            any(label.startswith("Max HP-based damage") for label in mythic_labels),
+        self.assertTrue(
+            any(
+                label.startswith("Max HP-based damage")
+                for label in mythic_labels
+            ),
             mythic_labels,
+        )
+
+    def test_true_plus_max_hp_formula_keeps_both_labels(self):
+        # Explicit "true damage … of max HP" stores a true row
+        # plus a max_hp row with the same value and targeting.
+        for display, category in (
+            ("Shemira", "skill2"),
+            ("Valka", "ultimate"),
+        ):
+            hero = self._hero_analyzed(display)
+            tags = rs.format_skill_card_tags(hero, category)
+            labels = tag_labels(tags)
+            self.assertTrue(
+                any(
+                    label.startswith("True damage") for label in labels
+                ),
+                f"{display} {category}: {labels}",
+            )
+            self.assertTrue(
+                any(
+                    label.startswith("Max HP-based damage")
+                    for label in labels
+                ),
+                f"{display} {category}: {labels}",
+            )
+
+    def test_aliceth_blind_tick_is_hp_loss(self):
+        import skill_effects_store as ses
+
+        sidecar = ses.load_sidecar("Aliceth")
+        self.assertIsNotNone(sidecar)
+        tiers = sidecar["skills"]["Ex. Skill"]["tiers"]
+        rows = [
+            e
+            for e in tiers["ex+15"]["effects"]
+            if e.get("type") == "dot"
+        ]
+        self.assertEqual(len(rows), 1, rows)
+        self.assertEqual(rows[0]["damage_type"], "hp_loss")
+
+    def test_damage_typed_dot_tick_surfaces_both_labels(self):
+        row = {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": True,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "dot",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [{"type": "percentage", "value": 35.0}],
+            "duration": 5,
+            "tick": 0.5,
+        }
+        rows = hs.convert_schema_effect_list(row)
+        self.assertEqual(
+            [r["label"] for r in rows], ["DoT", "HP loss"]
+        )
+        for r in rows:
+            self.assertEqual(r["category"], "damage")
+            self.assertEqual(r["tick"], 0.5)
+            self.assertEqual(r["duration"], 5)
+
+    def test_generic_dot_tick_stays_single_label(self):
+        row = {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": True,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [{"type": "percentage", "value": 40.0}],
+            "duration": 1,
+            "tick": 1.0,
+        }
+        rows = hs.convert_schema_effect_list(row)
+        self.assertEqual([r["label"] for r in rows], ["DoT"])
+
+    def test_all_damage_typed_ticks_keep_both_labels(self):
+        import json
+
+        expected = {
+            "hp_loss": "HP loss",
+            "max_hp": "Max HP-based damage",
+            "lost_hp": "Lost HP-based damage",
+            "true": "True damage",
+            "magic": "Magic",
+            "physical": "Physical",
+        }
+        checked = 0
+        for path in sorted(
+            (ROOT / "data" / "heroes").glob("*/ai.json")
+        ):
+            skills = json.loads(path.read_text())["skill_effects"][
+                "skills"
+            ]
+            for skill in skills.values():
+                for tier in skill.get("tiers", {}).values():
+                    for row in tier.get("effects", []):
+                        token = row.get("damage_type")
+                        if (
+                            row.get("type") != "dot"
+                            or row.get("healing_type")
+                            or token not in expected
+                        ):
+                            continue
+                        checked += 1
+                        labels = [
+                            r["label"]
+                            for r in hs.convert_schema_effect_list(row)
+                        ]
+                        self.assertEqual(
+                            labels,
+                            ["DoT", expected[token]],
+                            f"{path.parent.name}: {row}",
+                        )
+        self.assertGreater(checked, 0, "no typed ticks found")
+
+    def test_frieren_hellfire_chips_show_dot_and_hp_loss(self):
+        hero = self._hero_analyzed("Frieren")
+        labels = tag_labels(rs.format_skill_card_tags(hero, "skill2"))
+        self.assertTrue(
+            any(label.startswith("DoT") for label in labels),
+            labels,
+        )
+        self.assertTrue(
+            any(label.startswith("HP loss") for label in labels),
+            labels,
+        )
+
+    def test_daimon_max_hp_tick_chips_show_dot_and_formula(self):
+        hero = self._hero_analyzed("Daimon")
+        labels = tag_labels(rs.format_skill_card_tags(hero, "skill4"))
+        self.assertTrue(
+            any(label.startswith("DoT") for label in labels),
+            labels,
+        )
+        self.assertTrue(
+            any(
+                label.startswith("Max HP-based damage")
+                for label in labels
+            ),
+            labels,
+        )
+
+    def test_aliceth_blind_tick_chip_shows_hp_loss(self):
+        hero = self._hero_analyzed("Aliceth")
+        labels = tag_labels(rs.format_skill_card_tags(hero, "skill4"))
+        self.assertTrue(
+            any(label.startswith("HP loss") for label in labels),
+            labels,
         )
 
     def test_skill_card_damage_tags_match_skill_slices(self):

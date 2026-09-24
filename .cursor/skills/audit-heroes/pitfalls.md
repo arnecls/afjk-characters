@@ -57,38 +57,34 @@ Examples: Faramor Sanctified Circle, Himmel Heroic Slash, Silven, Valka.
 **Convention:** prefer **true-only** (drop Physical/Magic) when the strike is
 explicitly true without a separate ATK-based component.
 
-### True vs Max HP-based double-tag
+### True + Max HP-based keep-both
 
-`true damage equal to X% (+ Y%) of max HP` is one strike — store **Max
-HP-based damage only**, not generic **True damage** alongside it.
+`true damage equal to X% (+ Y%) of max HP` is one strike with
+two facts: a True damage delivery type and a max-HP amount
+formula. Store **both** — a `true` row and a `max_hp` row
+with the same value, tier, and targeting.
 
-**June 2026 partial fix:** `_apply_true_damage_hierarchy` dedupes when the
-trigger regex matches. Gaps that still produced double labels:
-
-| Gap | Symptom | Example |
-|-----|---------|---------|
-| Intervening target phrase | Regex misses; both labels emitted | Shemira: `true damage to a single enemy equal to …` |
-| Pronoun `their` | `_TRUE_DAMAGE_MAX_HP_RE` missed `their max HP` | Shemira ghost strike |
-| Heal in same sentence | `_text_has_max_hp_damage` false; only True emitted | Valka slash + self-heal clause |
-| Weak regression test | Test asserts True **present**, not Max HP **only** | `test_shemira_true_damage_without_atk_scalar` (fixed) |
+**Open gaps (missing the `max_hp` row):** Indris Spellbane
+Shot, Kazim Raptor's Vigil, Korin Vine Arms, Shemira Ghastly
+Tribute, Shemira Spectral Barrier, Valka Phantom Slasher.
+Reference examples: Daimon Playtime Plunder, Himmel Heroic
+Slash, Sylphira Harmonic Refrain (all store both).
 
 **Audit checklist:**
 
-1. Run true/max-HP pre-scan from `SKILL.md` (pass 1).
+1. Run true/HP-formula pre-scan from `SKILL.md` (pass 1).
 2. Read the **clause** that deals damage, not upgrade cap lines (`cannot exceed
    N% (ATK-based)` is a cap, not a second damage type).
-3. After fix: skill should have one `damage_type: max_hp` row; skill-card tags
-   should not list both `True damage` and `Max HP-based damage`.
-4. Add regression test asserting `True damage` **not in** labels/types.
+3. After fix: skill should have both a `damage_type: true` row and a
+   `damage_type: max_hp` row; skill-card tags should list both
+   `True damage` and `Max HP-based damage`.
+4. Add regression test asserting both `true` and `max_hp` are
+   present.
 
-Resolved: Shemira Ghastly Tribute, Valka Phantom Slasher (slash clauses),
-Daimon Playtime Plunder (passive Stitchy attack). Still open / different
-pattern: Nara Crimson Vengeance (`damage equal to X% of max HP` without
-`true damage` word), Vala Swift Shift (mixed strike types).
-
-**Convention:** when the clause explicitly says **true damage**, prefer
-**True damage** for max-HP-scaled true hits; do not emit a second formula
-label.
+Different pattern, not a gap: Nara Crimson Vengeance (`damage
+equal to X% of max HP` without the `true damage` word is a
+separate physical branch plus a true branch), Vala Swift Shift
+(mixed strike types).
 
 ### DoT false positives
 
@@ -212,7 +208,8 @@ emit **True damage** on the Mythic+ skill card even when the chunk does not
 `deal` damage directly. `detect_damage_types` alone is insufficient —
 `_chunk_deals_enemy_damage` (or similar) must admit conversion phrasing.
 
-Do not confuse with max-HP-scaled true hits (those collapse to Max HP-based).
+Do not confuse with max-HP-scaled true hits (those carry both
+True damage and Max HP-based damage).
 
 ### Detection correct, display wrong
 

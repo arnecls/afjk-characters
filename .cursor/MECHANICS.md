@@ -23,7 +23,9 @@ Proficiency
 How effective your units skills are. Lower proficiency will result in weaker skills.
 
 **True Damage**
-Ignores defense of the target.
+Ignores Phys/Magic DEF and shields. Damage immunity,
+invulnerability, Ranged DEF, and Damage Reduction can still
+affect it.
 
 **Healing**
 Increases the healing and shields that this unit gives.
@@ -49,11 +51,20 @@ Buff effects are only stat buffs, for instance when a unit receives more haste, 
 Physical and Magic damage are both effected by defense and shields, reducing an enemies defense will also increase the amount of physical and magic damage you can do to that target.
 
 **True Damage**
-True damage ignores all defense and shields. Reducing a targets defense or buffing physical/magic damage will not effect true damage.
+True damage ignores Phys/Magic DEF and shields. Reducing a targets defense or
+buffing physical/magic damage will not effect true damage. Damage
+immunity, invulnerability, Ranged DEF, and Damage Reduction can
+still affect it.
 
-**Pure Damage**
-Unlike the two above damage sources, think of pure damage as the enemy damaging himself like poison and not the unit damaging the enemy. Pure damage will go through all shields and defense but it also bypasses damage reduction effects, this is very relevant in endless dream realm where the boss takes reduced damage as you deal more damage to him.
-It also means that stuff like crit, and damage up effects wont increase the amount of pure damage you do.
+**Pure Damage (HP loss)**
+Pure damage is the repo's **HP loss** label: direct HP reduction
+through an HP-loss effect ("lose X% HP"), rather than a damage
+hit. Unlike the two above damage sources, think of pure damage as the enemy
+damaging himself like poison and not the unit damaging the enemy. Pure damage
+will go through all shields and Phys/Magic DEF. It skips normal crit
+processing and damage-taken modifiers, but HP-loss modifiers
+apply. See the
+[four damage categories FAQ](../../afkj-data/docs/faq-general.md#what-are-the-four-damage-categories-commonly-called-true-damage).
 
 ### Pure Damage Dealers
 

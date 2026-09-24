@@ -51,6 +51,7 @@ that fight — i.e. its Assistance effects, not any hero's abilities.
   - Physical
   - Magic
   - Ranged
+- HP formulas (amount, not delivery)
   - Max HP-based damage — damage calculated from **the target's max HP**
   - Lost HP-based damage — damage calculated from **the target's lost HP**
 - Defense ignoring damage types

@@ -20,7 +20,7 @@ Regenerate: `python3 scripts/generate-heroes-overview.py`.
 - **Movement**: stationary (avg attack range 8.0 tiles); walk speed normal
 - **Behavior tags**: `ally-buffer` `backline-assassin` `cheat-death` `execute` `hp-scaling` `mark-target` `non-ult-utility` `temporary-stat-buffer`
 - **Ally composition**: grants Brightfeather to nearest ally in her row
-- **Damage types**: Physical `high`, DoT `low`, Lost HP-based damage `average`
+- **Damage types**: Physical `high`, DoT `low`, HP loss `average`, Lost HP-based damage `average`
 
 #### Play overview
 
@@ -103,9 +103,9 @@ Aliceth provides Attack range to single targets `high` and Fatal blow immunity (
 
 **Damage**
 
-- Alna (100% `Physical` `DoT`)
-- Athalia (100% `Physical` `Lost HP-based damage`)
-- Kordan (100% `Physical` `Lost HP-based damage`)
+- Nara (100% `Physical` `HP loss`)
+- Frieren (81% `HP loss` `DoT`)
+- Saida (81% `HP loss` `DoT`)
 
 **Debuffs on enemies**
 
@@ -134,6 +134,7 @@ Aliceth provides Attack range to single targets `high` and Fatal blow immunity (
 
 - Physical — Area, Single target
 - DoT — Single target — conditional (on blind)
+- HP loss — Single target — `average` — conditional (on blind)
 - Lost HP-based damage — Single target — `average`
 
 #### Buffs provided by Aliceth
@@ -2580,9 +2581,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
+- Frieren (100% `HP loss`)
 - Rolan (100% `HP loss`)
 - Saida (100% `HP loss`)
-- Ludovic (100% `HP loss`)
 
 **Crowd Control**
 
@@ -4336,7 +4337,7 @@ These are the **4** strongest pairings:
 - **Movement**: stationary (avg attack range 7.0 tiles); walk speed fast
 - **Behavior tags**: `aoe-damage` `backline-assassin` `backline-inhibit` `dot-specialist` `heal-inhibitor` `high-damage-ult` `hp-loss` `self-repositioner`
 - **Ally composition**: frontmost ally shares damage reduction with this hero
-- **Damage types**: Magic `high`, DoT `high`, True damage `high`
+- **Damage types**: Magic `high`, DoT `high`, HP loss `high`, True damage `high`
 
 #### Play overview
 
@@ -4419,12 +4420,6 @@ Frieren also requires specific **named allies**
 - Orion (40% `aoe-damage` `dot-specialist` `heal-inhibitor` `high-damage-ult`)
 - Faramor (30% `aoe-damage` `dot-specialist` `heal-inhibitor`)
 
-**Damage**
-
-- Cyran (82% `DoT` `Magic` `True damage`)
-- Himmel (80% `True damage`)
-- Faramor (72% `True damage` `DoT`)
-
 **Crowd Control**
 
 - Himmel (68% `Knock down`)
@@ -4437,6 +4432,7 @@ Frieren also requires specific **named allies**
 
 - Magic — Area, Single target
 - DoT — All units, Area
+- HP loss — Area — `high`
 - True damage — All units — `high`
 
 #### Debuffs provided by Frieren
@@ -4540,6 +4536,7 @@ Galahad provides Shield to single targets `high`.
 **Best overall replacement**
 
 - Saida (64% `Damage` `Crowd Control` `Buffs on allies`)
+- Phraesto (52% `Damage` `Similar Skills` `Buffs on allies`)
 
 **Buffs on allies**
 
@@ -4556,8 +4553,8 @@ Galahad provides Shield to single targets `high`.
 **Damage**
 
 - Saida (100% `Magic`)
+- Viperian (86% `Magic`)
 - Ludovic (85% `Magic`)
-- Rolan (76% `Magic`)
 
 **Debuffs on enemies**
 
@@ -4724,7 +4721,7 @@ Gerda provides Direct healing in an area `average` and Healing over time in an a
 - **Signature skill**: Threshold of Jade (ultimate)
 - **Movement**: moving (melee class); walk speed normal
 - **Behavior tags**: `energy-inhibitor` `hp-loss` `hp-scaling` `taunt`
-- **Damage types**: Physical `low`, DoT `low`
+- **Damage types**: Physical `low`, DoT `low`, HP loss `low`
 
 #### Play overview
 
@@ -4799,10 +4796,6 @@ Common buffers are **Mikola**, **Twins**, or **Solise**.
 
 ### Units that can act as a replacement for Granny Dahnie
 
-**Best overall replacement**
-
-- Hepler (58% `Crowd Control` `Damage`)
-
 **Similar Skills**
 
 - Viperian (33% `energy-inhibitor` `hp-loss`)
@@ -4811,9 +4804,9 @@ Common buffers are **Mikola**, **Twins**, or **Solise**.
 
 **Damage**
 
-- Gunnar (100% `Physical` `DoT`)
-- Gwyneth (100% `Physical` `DoT`)
-- Thador (100% `Physical` `DoT`)
+- Thoran (100% `Physical`)
+- Nara (100% `Physical`)
+- Harak (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -4833,6 +4826,7 @@ Common buffers are **Mikola**, **Twins**, or **Solise**.
 
 - Physical — Single target
 - DoT — Area
+- HP loss — Area — `low`
 
 #### Debuffs provided by Granny Dahnie
 
@@ -5257,7 +5251,7 @@ Hammie provides ATK to single targets `low`.
 - **Signature skill**: Flesh Feast (Skill 2)
 - **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `assassin` `execute` `heal-inhibitor` `hp-loss` `life-drain`
-- **Damage types**: Physical `low`, Lost HP-based damage `low`
+- **Damage types**: Physical `low`, HP loss `low`, Lost HP-based damage `low`
 
 #### Play overview
 
@@ -5331,9 +5325,8 @@ Common buffers are **Thador**, **Shadewing**, **Kordan**, or **Kruger**.
 
 **Best overall replacement**
 
-- Nara (75% `Damage` `Crowd Control` `Similar Skills`)
-- Nazrik (60% `Damage` `Debuffs on enemies`)
-- Kruger (60% `Damage` `Crowd Control`)
+- Nara (78% `Damage` `Crowd Control` `Similar Skills`)
+- Thoran (51% `Damage`)
 
 **Similar Skills**
 
@@ -5343,9 +5336,9 @@ Common buffers are **Thador**, **Shadewing**, **Kordan**, or **Kruger**.
 
 **Damage**
 
-- Faramor (100% `Physical`)
-- Athalia (100% `Physical`)
+- Saida (100% `HP loss`)
 - Aliceth (100% `Physical` `HP loss`)
+- Thoran (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -5369,6 +5362,7 @@ Common buffers are **Thador**, **Shadewing**, **Kordan**, or **Kruger**.
 
 - Physical — Single target
 - DoT — Single target
+- HP loss — Single target — `low`
 - Lost HP-based damage — Single target — `low`
 
 #### Debuffs provided by Harak
@@ -6205,7 +6199,7 @@ battle-start ultimate summons an extra marker
 - **Signature skill**: Spellbane Shot (ultimate)
 - **Movement**: stationary (no finite attack range); walk speed fast
 - **Behavior tags**: `enemy-debuffer` `interrupt`
-- **Damage types**: Physical `low`, True damage `average`
+- **Damage types**: Physical `low`, Max HP-based damage `low`, True damage `average`
 
 #### Play overview
 
@@ -6317,6 +6311,7 @@ Indris also requires units **putting multiple debuffs** on enemies
 #### Damage types dealt by Indris
 
 - Physical — Multiple targets, Single target
+- Max HP-based damage — Single target — `low`
 - True damage — Single target — `average`
 
 #### Debuffs provided by Indris
@@ -6769,7 +6764,7 @@ Common buffers are **Solise**, **Mikola**, **Rowan**, or **Twins**.
 - **Signature skill**: Soaring Falcon (Skill 1)
 - **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `ally-buffer` `aoe-damage` `battle-start-burst` `high-initial-energy` `invincibility` `mark-target` `mass-cc` `non-ult-utility` `temporary-stat-buffer`
-- **Damage types**: Physical `high`, True damage `average`
+- **Damage types**: Physical `high`, Max HP-based damage `average`, True damage `average`
 
 #### Play overview
 
@@ -6889,6 +6884,7 @@ Kazim provides Haste to all units `average`.
 #### Damage types dealt by Kazim
 
 - Physical — Arc, Area, Single target
+- Max HP-based damage — Single target — `average`
 - True damage — Single target — `average`
 
 #### Buffs provided by Kazim
@@ -7214,7 +7210,7 @@ These are the **4** strongest pairings:
 - **Signature skill**: Demonseal Spear (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed normal
 - **Behavior tags**: `ally-shielder`
-- **Damage types**: Physical `low`, True damage `average`
+- **Damage types**: Physical `low`, Max HP-based damage `low`, True damage `average`
 
 #### Play overview
 
@@ -7314,6 +7310,7 @@ Common buffers are **Rolan**, **Twins**, **Smokey & Meerky**, or **Lorsan**.
 #### Damage types dealt by Korin
 
 - Physical — Area
+- Max HP-based damage — Area — `low`
 - True damage — Area, Single target — `average`
 
 #### Crowd Control provided by Korin
@@ -9507,9 +9504,9 @@ Mehira provides HP loss modifier to multiple targets `high` and Haste to multipl
 
 **Damage**
 
+- Frieren (100% `DoT` `Magic` `HP loss`)
 - Saida (100% `Magic` `DoT` `HP loss`)
-- Rolan (83% `Magic` `HP loss`)
-- Ludovic (83% `Magic` `HP loss`)
+- Phraesto (97% `Magic`)
 
 **Debuffs on enemies**
 
@@ -9885,9 +9882,9 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 
 **Damage**
 
+- Frieren (100% `True damage` `HP loss`)
 - Valka (99% `True damage` `Physical`)
 - Faramor (75% `True damage` `Physical`)
-- Frieren (68% `True damage` `HP loss`)
 
 **Crowd Control**
 
@@ -10736,7 +10733,7 @@ Orion provides Shield to multiple targets `low`.
 - **Movement**: stationary (no finite attack range); walk speed normal
 - **Behavior tags**: `enemy-debuffer` `energy-provider` `heal-inhibitor` `hp-loss` `mass-cc` `summoner` `temporary-stat-buffer`
 - **Ally composition**: rearmost ally enters invincible box, then gains Energy and ATK
-- **Damage types**: Magic `high`, DoT `average`
+- **Damage types**: Magic `high`, DoT `average`, HP loss `average`
 
 #### Play overview
 
@@ -10844,8 +10841,8 @@ These are the **4** strongest pairings:
 **Damage**
 
 - Frieren (100% `DoT` `HP loss`)
-- Gwyneth (81% `DoT`)
-- Thador (81% `DoT`)
+- Rolan (85% `HP loss`)
+- Contess (82% `HP loss`)
 
 **Debuffs on enemies**
 
@@ -10862,6 +10859,7 @@ These are the **4** strongest pairings:
 #### Damage types dealt by Pandora
 
 - DoT — All units
+- HP loss — All units — `average`
 
 #### Buffs provided by Pandora
 
@@ -11478,7 +11476,7 @@ These are the **4** strongest pairings:
 - **Behavior tags**: `ally-buffer` `ally-shielder` `aoe-damage` `energy-provider` `heal-inhibitor` `hp-loss` `summoner`
 - **Ally composition**: place allies 1 tile behind this hero and the Illusion for contract buffs
 - **Self placement**: keep this hero and Illusion in the same row (damage reduction and battle-start shields)
-- **Damage types**: Magic `high`
+- **Damage types**: Magic `high`, HP loss `low`
 
 #### Play overview
 
@@ -11591,8 +11589,8 @@ These are the **4** strongest pairings:
 **Damage**
 
 - Frieren (100% `Magic`)
-- Silven (100% `Magic`)
 - Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -11616,6 +11614,7 @@ These are the **4** strongest pairings:
 
 - Magic — Area, Single target
 - DoT — Single target
+- HP loss — Single target — `low`
 
 #### Buffs provided by Phraesto
 
@@ -11750,7 +11749,7 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Shadewing**.
 
 #### Damage types dealt by Pippa
 
-- Magic — Single target
+- Magic — Area, Single target
 - DoT — Area
 - Max HP-based damage — Multiple targets — `average`
 - True damage — Area — `low`
@@ -12308,9 +12307,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
+- Frieren (100% `Magic` `HP loss`)
 - Saida (100% `Magic` `HP loss`)
 - Galahad (93% `Magic`)
-- Contess (82% `HP loss`)
 
 **Crowd Control**
 
@@ -12578,9 +12577,9 @@ Saida provides Shield (Supreme+) to multiple targets `high`.
 
 **Damage**
 
+- Phraesto (100% `Magic`)
 - Mehira (98% `Magic` `DoT` `HP loss`)
-- Galahad (82% `Magic`)
-- Contess (78% `HP loss`)
+- Frieren (89% `Magic` `HP loss` `DoT`)
 
 **Debuffs on enemies**
 
@@ -13433,7 +13432,7 @@ These are the **4** strongest pairings:
 - **Signature skill**: Phantom Procession (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles); walk speed normal
 - **Behavior tags**: `high-damage-ult` `hp-scaling`
-- **Damage types**: Magic `high`, True damage `average`
+- **Damage types**: Magic `high`, Max HP-based damage `low`, True damage `average`
 
 #### Play overview
 
@@ -13541,6 +13540,7 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Shadewing**.
 #### Damage types dealt by Shemira
 
 - Magic — Area, Single target
+- Max HP-based damage — Area, Single target — `low`
 - True damage — Area, Single target — `low`
 
 #### Debuffs provided by Shemira
@@ -13940,7 +13940,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, **Rolan**, or **Lorsan**.
 - **Signature skill**: Special Aroma (ultimate)
 - **Movement**: stationary (no finite attack range); walk speed slow
 - **Behavior tags**: `ally-healer` `aoe-healing` `temporary-stat-buffer`
-- **Damage types**: Magic `low`
+- **Damage types**: Magic `low`, HP loss `low`
 
 #### Play overview
 
@@ -14059,6 +14059,7 @@ These are the **4** strongest pairings:
 #### Damage types dealt by Smokey & Meerky
 
 - DoT — Area
+- HP loss — Area — `low`
 
 #### Buffs provided by Smokey & Meerky
 
@@ -14696,8 +14697,9 @@ Taichi & Agumon provides ATK (Supreme+) in an area `high`.
 
 **Damage**
 
+- Yamato & Gabumon (100% `HP loss`)
 - Nara (95% `Physical` `HP loss`)
-- Thoran (73% `Physical`)
+- Aliceth (93% `Physical` `HP loss`)
 
 **Crowd Control**
 
@@ -15336,7 +15338,9 @@ Common buffers are **Rowan**, **Thador**, **Ravion**, or **Lyca**.
 
 **Damage**
 
+- Aliceth (100% `Physical`)
 - Nara (100% `Physical`)
+- Granny Dahnie (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -16068,7 +16072,7 @@ Common buffers are **Shadewing**, **Kordan**, **Kruger**, or **Laios**.
 - **Signature skill**: Phantom Slasher (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
 - **Behavior tags**: `ally-buffer` `ally-shielder` `counterattack` `high-initial-energy`
-- **Damage types**: Physical `high`, True damage `high`
+- **Damage types**: Physical `high`, Max HP-based damage `low`, True damage `high`
 
 #### Play overview
 
@@ -16176,6 +16180,7 @@ Valka provides ATK SPD to multiple targets `average`.
 #### Damage types dealt by Valka
 
 - Physical — Area
+- Max HP-based damage — Single target — `low`
 - True damage — Single target — `high`
 
 #### Buffs provided by Valka
@@ -16357,7 +16362,7 @@ Velara provides Basic stats to all units `high`, Direct healing to multiple targ
 - **Signature skill**: Crimson Waltz (Mythic+)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles); walk speed slow
 - **Behavior tags**: `aoe-damage` `dot-specialist` `energy-inhibitor` `hp-loss`
-- **Damage types**: Magic `average`
+- **Damage types**: Magic `average`, HP loss `low`
 
 #### Play overview
 
@@ -16434,9 +16439,9 @@ Common buffers are **Thador**, **Evie**, **Kordan**, or **Kruger**.
 
 **Best overall replacement**
 
-- Pippa (68% `Damage` `Debuffs on enemies`)
-- Berial (67% `Damage` `Debuffs on enemies`)
 - Saida (60% `Damage` `Debuffs on enemies`)
+- Galahad (53% `Damage`)
+- Ludovic (50% `Damage`)
 
 **Similar Skills**
 
@@ -16448,7 +16453,7 @@ Common buffers are **Thador**, **Evie**, **Kordan**, or **Kruger**.
 
 - Frieren (100% `Magic` `HP loss`)
 - Rolan (100% `Magic` `HP loss`)
-- Silven (100% `Magic`)
+- Saida (100% `Magic` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -16462,6 +16467,7 @@ Common buffers are **Thador**, **Evie**, **Kordan**, or **Kruger**.
 
 - Magic — All units, Single target
 - DoT — All units
+- HP loss — All units — `low`
 
 #### Debuffs provided by Viperian
 
@@ -16734,7 +16740,7 @@ Common buffers are **Rolan**, **Solise**, **Contess**, or **Daimon**.
 - **Signature skill**: Cocytus Breath (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed fast
 - **Behavior tags**: `aoe-damage` `aoe-healing` `hp-loss` `mass-cc` `non-ult-utility` `self-repositioner`
-- **Damage types**: Magic `high`, DoT `average`
+- **Damage types**: Magic `high`, DoT `average`, HP loss `high`
 
 #### Play overview
 
@@ -16809,6 +16815,11 @@ Yamato & Gabumon provides Healing over time (Supreme+) in an area `high`.
 
 ### Units that can act as a replacement for Yamato & Gabumon
 
+**Best overall replacement**
+
+- Galahad (51% `Damage` `Crowd Control`)
+- Frieren (50% `Damage`)
+
 **Healing**
 
 - Evie (91% `Healing over time` `Healing`)
@@ -16823,9 +16834,9 @@ Yamato & Gabumon provides Healing over time (Supreme+) in an area `high`.
 
 **Damage**
 
-- Frieren (99% `HP loss` `DoT` `Magic`)
-- Cryonaia (73% `Magic` `DoT`)
-- Voracia (73% `Magic` `DoT`)
+- Frieren (100% `HP loss` `DoT` `Magic`)
+- Taichi & Agumon (95% `HP loss`)
+- Galahad (92% `Magic`)
 
 **Crowd Control**
 
@@ -16839,6 +16850,7 @@ Yamato & Gabumon provides Healing over time (Supreme+) in an area `high`.
 
 - Magic — Area, Single target
 - DoT — Area
+- HP loss — Area — `high`
 
 #### Buffs provided by Yamato & Gabumon
 

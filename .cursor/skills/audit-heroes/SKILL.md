@@ -213,7 +213,11 @@ still belong on the skill card when they change how other hits work:
 until `_chunk_deals_enemy_damage` (or equivalent) treats conversion phrasing
 as a damage-type grant. Audit `skill_card_tags`, not only `effects`.
 
-**Phrasing gaps** — dedup fails when the parser misses the link:
+**Missing half of a delivery + formula combo** — a clause
+that explicitly combines True damage with an HP formula must
+carry both labels. Flag text matching
+`true damage … of … max HP` (or lost HP) that lacks either
+`true` or the formula label in the same skill:
 
 | Text pattern | Example hero/skill |
 |--------------|-------------------|
@@ -221,12 +225,16 @@ as a damage-type grant. Audit `skill_card_tags`, not only `effects`.
 | `true damage to the target and adjacent enemies, equal to …` | Daimon Playtime Plunder |
 | `true damage equal to X% of max HP` + heal in same sentence | Valka Phantom Slasher |
 
-**Why partial fixes recur:** June 2026 added hierarchy dedup but the trigger
-regex only matched contiguous `true damage equal to … of target's max HP`.
-Tests that only assert True **is** detected (not that Max HP is the **only**
-label) let regressions slip through. Re-run pre-scan after detection changes.
+Separate strikes in one skill can also carry both labels
+legitimately; confirm against the clause before flagging.
+Re-run pre-scan after detection changes.
 
-**Finding format:** `Shemira (Ghastly Tribute): formula rider -> True damage`
+Damage-typed ticks (`dot` rows with a delivery/formula
+`damage_type`) render two skill-card chips: DoT plus the
+delivery/formula chip (e.g. Frieren Hellfire shows DoT and
+HP loss). A tick showing only the DoT chip is a gap.
+
+**Finding format:** `Shemira (Ghastly Tribute): True damage -> True damage + Max HP-based damage`
 
 `Character (Skill): found -> expected`
  
@@ -508,46 +516,65 @@ for line in silence_hits:
 PY
 ```
 
-### Pre-scan — true / max-HP double-label triage
+### Pre-scan — true / HP-formula gap triage
 
-Run during **pass 1** (label scope). Lists skills storing both `damage_type:
-true` and `damage_type: max_hp`. Confirm each hit against the skill text;
-some combos are legitimate (e.g. separate strikes in one skill).
+Run during **pass 1** (label scope). Lists skills whose text
+explicitly combines True damage with a max-HP or lost-HP
+formula but stores only one of the two labels. Both labels are
+required (delivery type plus amount formula).
 
 ```bash
 python3 - <<'PY'
-import json, re
+import json, re, glob
 from pathlib import Path
 
-processed = json.loads(Path("data/heroes_data_processed.json").read_text())
-# Max-HP-scaled true phrasing; extend when new gaps are found.
-MAX_HP_TRUE_PATS = [
-    r"\btrue damage(?:\s+to[^,]{0,120}?)?,?\s+equal to \d",
-    r"\bdeal(?:s|ing|t)? true damage\b",
+# Explicit delivery + formula phrasing; extend when gaps found.
+TRUE_HP_PATS = [
+    (re.compile(
+        r"true damage[^.]{0,120}?of (?:the )?(?:[\w']+\s){0,3}max hp",
+        re.I), "max_hp"),
+    (re.compile(
+        r"true damage[^.]{0,120}?of (?:the )?(?:[\w']+\s){0,3}lost hp",
+        re.I), "lost_hp"),
 ]
 
 hits = []
-for hero, data in sorted(processed["heroes"].items()):
-    for skill, sk in data.get("skills", {}).items():
-        types = {
-            e.get("damage_type")
-            for e in sk.get("effects", [])
-            if e.get("type") == "damage"
-        }
-        if not ({"true", "max_hp"} <= types):
-            continue
-        raw = sk.get("description", {})
-        text = raw.get("raw", "") if isinstance(raw, dict) else str(raw)
-        tl = text.lower()
-        if any(re.search(p, tl) for p in MAX_HP_TRUE_PATS):
-            names = [
-                e.get("name")
-                for e in sk.get("effects", [])
-                if e.get("type") == "damage"
-            ]
-            hits.append(f"{hero} / {skill}: {names} -> likely Max HP only")
+for src_path in sorted(glob.glob("data/heroes/*/source.json")):
+    hero_dir = Path(src_path).parent
+    ai_path = hero_dir / "ai.json"
+    if not ai_path.exists():
+        continue
+    src = json.loads(Path(src_path).read_text())
+    ai = json.loads(ai_path.read_text())
+    skills = ai.get("skill_effects", {}).get("skills", {})
+    def find_skills(o):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if k == "skills" and isinstance(v, list):
+                    return v
+                r = find_skills(v)
+                if r is not None:
+                    return r
+        elif isinstance(o, list):
+            for v in o:
+                r = find_skills(v)
+                if r is not None:
+                    return r
+    for s in find_skills(src) or []:
+        text = json.dumps(s.get("description"))
+        for pat, want in TRUE_HP_PATS:
+            if not pat.search(text):
+                continue
+            body = skills.get(s.get("section"), {})
+            types = set(re.findall(
+                r'"damage_type":\s*"(\w+)"', json.dumps(body)))
+            if "true" not in types or want not in types:
+                hits.append(
+                    f"{hero_dir.name} / {s.get('section')} / "
+                    f"{s.get('name')}: {sorted(types)} "
+                    f"-> needs true + {want}")
 
-print(f"True+MaxHP candidates: {len(hits)}")
+print(f"True+HP-formula gaps: {len(hits)}")
 for line in hits:
     print(" ", line)
 PY
@@ -673,7 +700,8 @@ Apply `.cursor/AGENTS.md` strictly. Common label confusions:
 | Topic | Correct | Reject / watch |
 |-------|---------|----------------|
 | True damage | True / HP loss / Max HP-based / Lost HP-based as applicable | Also tagging Physical/Magic |
-| Delivery + formula | Delivery label wins when the clause explicitly names True damage or HP loss | Formula label masking the delivery type |
+| Delivery + formula | Keep both labels when the clause explicitly names True damage plus an HP formula | Dropping either the delivery or the formula label |
+| HP-loss base | `lose X% HP` takes its base from the parenthetical scaling label (e.g. ATK-based), not target HP | Assuming "lose X% HP" means % of target HP |
 | DoT | Sustained enemy damage (`every Ns`, poison ticks) | Channeled magic burst; self/summon HP drain |
 | Direct healing | Instant HP restore (`restoring N% HP`) | HoT phrasing (`per second`, `over Ns`) |
 | Healing over time | Sustained restore to allies | Healing-lock cast cost; enemy HP drain |
@@ -718,8 +746,8 @@ Summarize:
 1. **Coverage** — heroes/skills audited, discrepancy rate per pass
 2. **Themes** — top 5 failure patterns (with counts if estimated)
 3. **Critical examples** — 3–5 skills that most affect synergy scoring
-   (include pre-scan hits: false `"buff"` replacements, true+max-HP doubles,
-   **self-debuff rows that fail text check**)
+   (include pre-scan hits: false `"buff"` replacements, true+HP-formula
+   gaps, **self-debuff rows that fail text check**)
 4. **Resolved** — what improved vs last validation doc
 5. **Recommended fixes** — ordered pattern groups, not a flat hero list
 
@@ -744,12 +772,13 @@ DEF by 50% and Magic DEF by 50%` → **DEF buff Self**; any **Phys/Magic DEF
 debuff Self** row is spurious (self stat increase, not reduction).
 
 **High-level — Shemira Ghastly Tribute:** `deal true damage to a single enemy
-equal to 24% + 3% of their max HP` → **True damage** because the clause
-explicitly names the delivery type; do not emit a second formula label.
+equal to 24% + 3% of their max HP` → **True damage + Max HP-based damage**
+because the clause explicitly names both the delivery type and
+the amount formula; dropping either label is a gap.
 
 **High-level — Valka Phantom Slasher:** slash clause has true max-HP damage
-and self-heal in one sentence → **True damage** (heal must not block delivery
-classification).
+and self-heal in one sentence → **True damage + Max HP-based
+damage** (heal must not block either classification).
 
 **Detailed — Kazim Gale Barrage:** `320% (ATK-based) + 140% damage` is
 Physical only — no Max HP-based damage unless text says `of max HP`.

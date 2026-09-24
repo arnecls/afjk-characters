@@ -120,6 +120,24 @@
             "target": "enemy",
             "area": "single",
             "target_count": 1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
             "type": "crowd_control",
             "cc-type": "knock_down"
           },
@@ -162,6 +180,9 @@
           },
           {
             "label": "DoT"
+          },
+          {
+            "label": "HP loss"
           },
           {
             "label": "Healing",
@@ -484,6 +505,10 @@
       ],
       [
         "dot",
+        "Single target"
+      ],
+      [
+        "hp_loss",
         "Single target"
       ],
       [

@@ -100,6 +100,14 @@ _DAMAGE_DISPLAY_ALIASES = {
     "lost_hp": "Lost HP-based damage",
     "dot": "DoT",
 }
+_DOT_DELIVERY_DISPLAY = {
+    "hp_loss": "HP loss",
+    "max_hp": "Max HP-based damage",
+    "lost_hp": "Lost HP-based damage",
+    "true": "True damage",
+    "magic": "Magic",
+    "physical": "Physical",
+}
 _TIMING_DISPLAY_ALIASES = {
     "once_per_battle": "Once",
     "on_skill": "On skill",
@@ -1032,6 +1040,25 @@ def convert_schema_effect(effect: dict[str, Any], *, summon: bool = False) -> An
     # once shipped a persistence-less ally "Stat Steal" that
     # broke just views (salazer, 2026-09-23).
     raise ValueError(f"unhandled sidecar effect type: {etype!r}")
+
+
+def convert_schema_effect_list(
+    effect: dict[str, Any], *, summon: bool = False
+) -> list[Any]:
+    """Working effects for one schema row.
+
+    Damage-typed ticks emit two rows (DoT plus the
+    delivery/formula label) so chips, magnitudes, and
+    replacement profiles see both facets of the tick.
+    """
+    first = convert_schema_effect(effect, summon=summon)
+    if effect.get("type") == "dot" and not effect.get("healing_type"):
+        label = _DOT_DELIVERY_DISPLAY.get(
+            str(effect.get("damage_type") or "")
+        )
+        if label is not None:
+            return [first, {**first, "label": label}]
+    return [first]
 
 
 def special_to_synergy_mechanic(se: Any) -> dict[str, Any]:

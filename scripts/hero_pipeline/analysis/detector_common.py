@@ -484,13 +484,6 @@ _MAX_HP_DAMAGE_EXCLUDE_RE = re.compile(
     re.I,
 )
 
-_TRUE_DAMAGE_MAX_HP_RE = re.compile(
-    r"true damage(?:\s+to[^,]{0,120}?)?,?\s+equal to \d+(?:\.\d+)?(?:\s*%\s*"
-    r"(?:\+\s*\d+(?:\.\d+)?(?:\s*%\s*)?)?)?\s+of (?:the )?(?:each )?"
-    r"(?:target'?s?|targets'?|enemies'?|enemy'?s?|their)\s+max hp",
-    re.I,
-)
-
 _LOST_HP_SCALING_RES = [
     re.compile(p, re.I)
     for p in (

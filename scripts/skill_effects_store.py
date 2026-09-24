@@ -320,8 +320,9 @@ def export_sidecar_from_hero(
     return {"title": hero_record["title"], "skills": skills_out}
 
 
-def _convert_schema_effect(effect: dict[str, Any]) -> tuple[str, Any]:
-    converted = hs.schema_effect_to_effect(effect)
+def _classify_schema_effect(
+    effect: dict[str, Any], converted: Any
+) -> tuple[str, Any]:
     rs = hs._rs()
     if converted.get("immunity_type") and "category" not in converted:
         return ("immunity", converted)
@@ -330,6 +331,16 @@ def _convert_schema_effect(effect: dict[str, Any]) -> tuple[str, Any]:
     if _schema_effect_is_summon(effect):
         return ("summon", converted)
     return ("effect", converted)
+
+
+def _convert_schema_effect_list(
+    effect: dict[str, Any],
+) -> list[tuple[str, Any]]:
+    """Kind-tagged working effects (ticks can emit two rows)."""
+    return [
+        _classify_schema_effect(effect, converted)
+        for converted in hs.convert_schema_effect_list(effect)
+    ]
 
 
 def apply_sidecar_to_hero(hero: Any, doc: dict[str, Any]) -> None:
@@ -347,17 +358,17 @@ def apply_sidecar_to_hero(hero: Any, doc: dict[str, Any]) -> None:
                 earliest_tier = tier
 
             for eff_schema in tier_data.get("effects", []):
-                kind, obj = _convert_schema_effect(eff_schema)
-                if kind == "immunity":
-                    obj["tier"] = tier
-                    sl["cc_immunities"].append(obj)
-                elif kind == "summon":
-                    obj["tier"] = tier
-                    sl["summon_effects"].append(obj)
-                else:
-                    obj["tier"] = tier
-                    obj["source_section"] = section
-                    sl["effects"].append(obj)
+                for kind, obj in _convert_schema_effect_list(eff_schema):
+                    if kind == "immunity":
+                        obj["tier"] = tier
+                        sl["cc_immunities"].append(obj)
+                    elif kind == "summon":
+                        obj["tier"] = tier
+                        sl["summon_effects"].append(obj)
+                    else:
+                        obj["tier"] = tier
+                        obj["source_section"] = section
+                        sl["effects"].append(obj)
 
             for eff_schema in tier_data.get("summon_effects", []):
                 obj = hs.schema_effect_to_effect(eff_schema, summon=True)

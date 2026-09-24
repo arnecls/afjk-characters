@@ -103,6 +103,25 @@
           },
           {
             "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 1.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
             "targeting_label": "Self",
             "is_max_known": true,
             "target": "self",
@@ -143,6 +162,9 @@
           },
           {
             "label": "DoT"
+          },
+          {
+            "label": "HP loss"
           },
           {
             "label": "Direct healing — Self",
@@ -546,6 +568,10 @@
       ],
       [
         "dot",
+        "All units"
+      ],
+      [
+        "hp_loss",
         "All units"
       ]
     ],
