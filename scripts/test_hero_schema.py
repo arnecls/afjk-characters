@@ -1225,6 +1225,10 @@ class SkillOverviewTests(unittest.TestCase):
         self.assertNotIn("##### Ex. Skill", text)
 
     def test_format_skill_cards_aliceth(self):
+        from hero_pipeline.analysis.detector_common import prime_curated_cache
+        from hero_pipeline.storage import load_roster_inputs
+
+        prime_curated_cache(load_roster_inputs())
         hero = self._hero_analyzed("Aliceth")
         summaries = rs._load_skill_summaries().get("Aliceth", {})
         categories = set(summaries)

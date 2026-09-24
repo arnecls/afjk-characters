@@ -10,7 +10,11 @@ from healing_types import (
     HEALING_OVER_TIME_LABEL,
 )
 
-from .project import SECTION_BY_CATEGORY, TIER_ORDER, TRUE_DAMAGE_TYPES
+from .project import (
+    SECTION_BY_CATEGORY,
+    TIER_ORDER,
+    MAGNITUDE_DAMAGE_TYPES,
+)
 
 SKILL_CATEGORY_ORDER = (
     "ultimate",
@@ -144,14 +148,29 @@ ROLE_LABELS = {
     "support": "Support",
     "tank": "Tank",
 }
-DAMAGE_COLUMNS = (
-    ("Magic", "Magic DMG"),
-    ("Physical", "Physical DMG"),
-    ("True damage", "True DMG"),
-    ("HP loss", "HP Loss DMG"),
-    ("Max HP-based damage", "Max HP DMG"),
-    ("Lost HP-based damage", "Lost HP DMG"),
+DAMAGE_COLUMN_GROUPS = (
+    (
+        "Normal DMG",
+        (
+            "Magic",
+            "Physical",
+            "Max HP-based damage",
+            "Lost HP-based damage",
+        ),
+    ),
+    (
+        "Defense ignoring DMG",
+        (
+            "True damage",
+            "HP loss",
+        ),
+    ),
 )
+_DAMAGE_TYPE_TO_COLUMN = {
+    damage_type: column
+    for column, types in DAMAGE_COLUMN_GROUPS
+    for damage_type in types
+}
 CC_TYPES = (
     "Stun",
     "Knock down",
@@ -192,7 +211,7 @@ CSV_COLUMNS = (
     "HoT",
     "Summons",
     "Energy provider",
-    *(column for _, column in DAMAGE_COLUMNS),
+    *(column for column, _ in DAMAGE_COLUMN_GROUPS),
     "Healing",
     "Shields",
     "Crowd Control",
@@ -306,7 +325,7 @@ def format_summary(hero: Mapping[str, Any]) -> str:
                 f" — conditional ({value})" for value in conditional
             )
             magnitude = display["damage_magnitudes"].get(damage_type, "")
-            if magnitude and damage_type in TRUE_DAMAGE_TYPES:
+            if magnitude and damage_type in MAGNITUDE_DAMAGE_TYPES:
                 lines.append(
                     f"- {damage_type} — {targeting} — "
                     f"`{magnitude}`{suffix}"
@@ -1126,12 +1145,12 @@ def build_csv_row(hero: Mapping[str, Any]) -> list[str]:
         if damage_type == "DoT":
             flags["DoT"] = True
             continue
-        column = dict(DAMAGE_COLUMNS).get(damage_type)
+        column = _DAMAGE_TYPE_TO_COLUMN.get(damage_type)
         if not column:
             continue
         trailing = ""
         magnitude = display["damage_magnitudes"].get(damage_type, "")
-        if magnitude and damage_type in TRUE_DAMAGE_TYPES:
+        if magnitude and damage_type in MAGNITUDE_DAMAGE_TYPES:
             conditional = sorted(
                 {
                     effect["conditional"]
@@ -1144,10 +1163,16 @@ def build_csv_row(hero: Mapping[str, Any]) -> list[str]:
             trailing = str(magnitude) + "".join(
                 f" — conditional ({item})" for item in conditional
             )
-        add(
-            column,
-            f"{targeting} — {trailing}" if trailing else str(targeting),
-        )
+        targeting_text = str(targeting or "")
+        if targeting_text and trailing:
+            entry = f"{damage_type} — {targeting_text} — {trailing}"
+        elif targeting_text:
+            entry = f"{damage_type} — {targeting_text}"
+        elif trailing:
+            entry = f"{damage_type} — {trailing}"
+        else:
+            entry = str(damage_type)
+        add(column, entry)
     buff_types = set(BUFF_EFFECT_TYPES)
     debuff_types = set(DEBUFF_EFFECT_TYPES)
     for effect in _buff_effects(hero, include_self=True):
@@ -1246,7 +1271,7 @@ def build_csv_row(hero: Mapping[str, Any]) -> list[str]:
         "yes" if flags.get("HoT") else "",
         "yes" if flags.get("Summons") else "",
         "yes" if analysis.get("is_energy_provider") else "",
-        *["; ".join(cells.get(column, [])) for _name, column in DAMAGE_COLUMNS],
+        *[ordered(column, types) for column, types in DAMAGE_COLUMN_GROUPS],
         "; ".join(cells.get("Healing", [])),
         "; ".join(cells.get("Shields", [])),
         ordered("Crowd Control", CC_TYPES),

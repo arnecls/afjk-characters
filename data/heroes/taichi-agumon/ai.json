@@ -351,6 +351,7 @@
   "behavior_tags": [
     "execute",
     "high-damage-ult",
+    "hp-loss",
     "invincibility",
     "non-ult-utility",
     "temporary-stat-buffer"

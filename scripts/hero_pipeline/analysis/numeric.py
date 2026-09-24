@@ -899,15 +899,20 @@ def _extract_damage_amount(text: str, dmg_type: str) -> float | None:
             r"(\d+(?:\.\d+)?)\s*%\s+of (?:her|his|their) lost hp",
         ]
     elif dmg_type == "HP loss":
+        _based = r"(?:\([^)]*\)\s*)?"
         patterns = [
             r"(?:lose|loses|losing|causes? .{0,30}to lose)\s+"
-            r"(\d+(?:\.\d+)?)\s*%\s*(?:\([^)]*\)\s*)?hp\b",
-            r"(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+hp for every tile",
-            r"hp lost per tile pulled to (\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)",
-            r"(\d+(?:\.\d+)?)\s*%\s*\+\s*(\d+(?:\.\d+)?)\s*%\s+hp for every",
-            r"(?:lose|loses|causes? .{0,30}to lose) "
-            r"(\d+(?:\.\d+)?)\s*%\s*\(atk-based\)\s*\+\s*"
-            r"(\d+(?:\.\d+)?)\s*%\s*hp\b",
+            r"(\d+(?:\.\d+)?)\s*%\s*" + _based + r"hp\b",
+            r"(?:lose|loses|losing|causes? .{0,30}to lose)\s+"
+            r"(\d+(?:\.\d+)?)\s*%\s*" + _based + r"\+\s*"
+            r"(\d+(?:\.\d+)?)\s*%\s*" + _based + r"hp\b",
+            r"(?:lose|loses|losing)\s+hp equal to\s+"
+            r"(\d+(?:\.\d+)?)\s*%\s*" + _based + r"(?:\+\s*"
+            r"(\d+(?:\.\d+)?)\s*%\s*" + _based + r")?per second",
+            r"(\d+(?:\.\d+)?)\s*%\s*" + _based + r"\+\s*"
+            r"(\d+(?:\.\d+)?)\s*%\s*" + _based + r"hp for every",
+            r"hp lost per tile pulled to (\d+(?:\.\d+)?)\s*%?\s*\+\s*"
+            r"(\d+(?:\.\d+)?)",
             r"los(?:e|es|ing) (\d+(?:\.\d+)?)(?:\s*%\s*)? of (?:their|her|his) max hp"
             r" every",
             r"increases? enemy'?s? hp loss to (\d+(?:\.\d+)?)\s*%\s*\(atk-based\)",

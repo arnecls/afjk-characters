@@ -520,6 +520,7 @@
     "ally-shielder",
     "enemy-debuffer",
     "energy-inhibitor",
+    "hp-loss",
     "interrupt",
     "stealth",
     "temporary-stat-buffer",

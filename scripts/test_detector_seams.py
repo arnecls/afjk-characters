@@ -6,7 +6,12 @@ import unittest
 
 from hero_pipeline.analysis.conditions import parse_conditions_from_text
 from hero_pipeline.analysis.crowd_control import extract_cc_duration
-from hero_pipeline.analysis.damage import detect_damage_types
+from hero_pipeline.analysis.damage import (
+    SCORED_DAMAGE_TYPES,
+    detect_damage_types,
+)
+from hero_pipeline.analysis.magnitudes import assign_damage_magnitudes
+from hero_pipeline.analysis.numeric import _extract_damage_amount
 from hero_pipeline.analysis import serialize as hs
 from hero_pipeline.analysis.local import analyze_local
 from hero_pipeline.analysis.numeric import extract_number
@@ -137,6 +142,107 @@ class DetectorSeamTests(unittest.TestCase):
             extract_cc_duration("stuns the enemy for 2s.", "Stun"),
             2.0,
         )
+
+    def test_hp_loss_amount_reads_split_sp_based_hit(self) -> None:
+        self.assertEqual(
+            _extract_damage_amount(
+                "The target loses 3.5% + 0.5% (SP-based) HP for every tile "
+                "they are pulled.",
+                "HP loss",
+            ),
+            4.0,
+        )
+
+    def test_hp_loss_amount_reads_lose_hp_equal_to(self) -> None:
+        self.assertEqual(
+            _extract_damage_amount(
+                "making them lose HP equal to 40% (ATK-based) + 10% "
+                "(SP-based) per second over the next 4s.",
+                "HP loss",
+            ),
+            50.0,
+        )
+
+    def test_hp_loss_amount_reads_split_hp_per_tick(self) -> None:
+        self.assertEqual(
+            _extract_damage_amount(
+                "lose 50% (ATK-based) + 5% (SP-based) HP per 0.5s.",
+                "HP loss",
+            ),
+            55.0,
+        )
+        self.assertEqual(
+            _extract_damage_amount(
+                "taking extra damage equal to 20% of their max HP.",
+                "Max HP-based damage",
+            ),
+            20.0,
+        )
+
+    def test_hp_loss_detection_reads_sp_based_and_equal_to(self) -> None:
+        self.assertEqual(
+            detect_damage_types(
+                "Nara pulls a distant enemy hero toward her. The target "
+                "loses 3.5% + 0.5% (SP-based) HP for every tile they are "
+                "pulled.",
+                "Physical",
+            ),
+            ["HP loss"],
+        )
+        self.assertEqual(
+            detect_damage_types(
+                "Ludovic hurls everblooms at the enemy, making them lose HP "
+                "equal to 40% (ATK-based) + 10% (SP-based) per second.",
+                "Physical",
+            ),
+            ["HP loss"],
+        )
+
+    def test_scored_damage_types_cover_formula_damage(self) -> None:
+        self.assertEqual(
+            SCORED_DAMAGE_TYPES,
+            frozenset(
+                {
+                    "True damage",
+                    "HP loss",
+                    "Max HP-based damage",
+                    "Lost HP-based damage",
+                }
+            ),
+        )
+
+    def test_assign_rates_formula_damage_by_quantile(self) -> None:
+        strong = {
+            "damage_scores": {"Max HP-based damage": 200.0},
+            "damage_magnitudes": {},
+            "damage_entries": [("Max HP-based damage", "Multiple targets")],
+        }
+        weak = {
+            "damage_scores": {"Max HP-based damage": 10.0},
+            "damage_magnitudes": {},
+            "damage_entries": [("Max HP-based damage", "Single target")],
+        }
+        assign_damage_magnitudes([strong, weak])
+        self.assertEqual(strong["damage_magnitudes"]["Max HP-based damage"], "high")
+        self.assertEqual(weak["damage_magnitudes"]["Max HP-based damage"], "low")
+
+    def test_assign_falls_back_to_low_for_unscored_hp_loss(self) -> None:
+        hero = {
+            "damage_scores": {},
+            "damage_magnitudes": {},
+            "damage_entries": [("HP loss", "Single target")],
+        }
+        assign_damage_magnitudes([hero])
+        self.assertEqual(hero["damage_magnitudes"]["HP loss"], "low")
+
+    def test_assign_skips_self_only_hp_loss_fallback(self) -> None:
+        hero = {
+            "damage_scores": {},
+            "damage_magnitudes": {},
+            "damage_entries": [("HP loss", "Self")],
+        }
+        assign_damage_magnitudes([hero])
+        self.assertNotIn("HP loss", hero["damage_magnitudes"])
 
     def test_buff_merge_does_not_widen_self_to_replace_allies(self) -> None:
         self.assertEqual(

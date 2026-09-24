@@ -55,13 +55,23 @@ def load_tags() -> dict[str, list[str]]:
     return {names[hero_id]: tags for hero_id, tags in data.items()}
 
 
+def _column_has_type(row: dict, column: str, damage_type: str) -> bool:
+    cell = (row.get(column) or "").strip()
+    if not cell:
+        return False
+    for entry in cell.split(";"):
+        if entry.strip().split(" — ", 1)[0].strip() == damage_type:
+            return True
+    return False
+
+
 def combo_for_hero(hero: str, tags: dict[str, list[str]], rows: dict) -> str | None:
     hero_tags = tags.get(hero, [])
     row = rows.get(hero, {})
     if "backline-assassin" in hero_tags:
-        magic = bool((row.get("Magic DMG") or "").strip())
-        phys = bool((row.get("Physical DMG") or "").strip())
-        true = bool((row.get("True DMG") or "").strip())
+        magic = _column_has_type(row, "Normal DMG", "Magic")
+        phys = _column_has_type(row, "Normal DMG", "Physical")
+        true = _column_has_type(row, "Defense ignoring DMG", "True damage")
         if true and not magic and not phys:
             return "true-dmg-backline-assassin"
         if magic and not phys:
@@ -70,8 +80,8 @@ def combo_for_hero(hero: str, tags: dict[str, list[str]], rows: dict) -> str | N
             return "phys-backline-assassin"
         return "backline-assassin"
     if "backline-inhibit" in hero_tags:
-        magic = bool((row.get("Magic DMG") or "").strip())
-        phys = bool((row.get("Physical DMG") or "").strip())
+        magic = _column_has_type(row, "Normal DMG", "Magic")
+        phys = _column_has_type(row, "Normal DMG", "Physical")
         if magic and not phys:
             return "magic-backline-inhibit"
         if phys and not magic:

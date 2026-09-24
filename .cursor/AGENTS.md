@@ -51,11 +51,11 @@ that fight — i.e. its Assistance effects, not any hero's abilities.
   - Physical
   - Magic
   - Ranged
-- True damage categories
-  - True damage — a defence-bypassing damage delivery type
-  - HP loss — direct HP reduction through an HP-loss effect
   - Max HP-based damage — damage calculated from **the target's max HP**
   - Lost HP-based damage — damage calculated from **the target's lost HP**
+- Defense ignoring damage types
+  - True damage — a defence-bypassing damage delivery type
+  - HP loss — direct HP reduction through an HP-loss effect
 - Damage over time (DoT)
 
 Damage over time needs to derived from text by look for indicators like "deals
@@ -156,7 +156,10 @@ roster** (same effect label), not same-role peers only.
 - **Crowd control** — duration-based (≥5s → high, ≥2s → average).
 - **HP loss / max-HP / lost-HP / true damage** — composite score from %,
   targeting, and frequency; roster-wide quantiles in
-  `assign_damage_magnitudes()`.
+  `assign_damage_magnitudes()`. A scored damage entry that produced no
+  score (unparseable amount) falls back to `low`, assigned after the
+  bands so it never distorts other ratings; `Self`-only entries
+  (HP costs, not damage) stay unrated.
 
 **Tier** in parentheses (`Mythic+`, `Level 3`, …) is unlock level, not
 strength. **Conditional (rare)** lowers magnitude by two steps; some labels
@@ -256,8 +259,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   500 at full build and first cast within ~5s) or a free/guaranteed early
   ultimate cast (`battle-start-ult`); passive battle-start setup alone does
   not count.
-  When any tier deals **HP loss**, **Max HP-based damage**, **Lost HP-based
-  damage**, or **True damage**, a final `- **True damage**: {type} \`{mag}\`,
+  When any tier deals damage, a final `- **Damage types**: {type} \`{mag}\`,
   …` line lists types (peak per type across tiers; p75 for non-ultimate).
   Computed in `compute_skill_overview()` in
   `analysis/behavior.py`; stored in `behavior.skill_overview`. Speed uses
@@ -267,7 +269,7 @@ Each hero in `heroes-overview.md` starts with `### <name>'s behavior`:
   Skill1/Skill2/Ex with **p75** per metric type. Synergy fuel still uses
   `signature_skill_speed` / `synergy_signature_speed` in processed JSON
   (not shown in the markdown block).
-  After the metric rows (and optional True damage line), **per-category
+  After the metric rows (and optional Damage types line), **per-category
   summaries** appear as `##### {slot}` headers with a short paragraph
   underneath. Summaries come from `data/heroes_data_skill_summary.json`
   (key = display name, then `category` from processed JSON:
@@ -369,9 +371,10 @@ excluded; candidates **2+ tiers below the source on every overlapping mode**
 are excluded. Synergy ranking is unchanged. **Buff/debuff/CC replacement
 profiles keep full targeting weights** (area, all units, etc.) so substitutes
 compare on maximum kit reach; synergy stat-buff scoring does not.
-Assign a small set
-(typically three to five) that describe how the hero is played, not every minor
-skill effect.
+Assign every tag the hero is eligible for — there is no limit on
+tag count. Strong multi-role supports (e.g. Contess) legitimately carry
+many tags. Tags must still describe how the hero is played, not every
+minor skill effect.
 
 - ally-buffer: Grants meaningful offensive or defensive stat buffs to allies.
 - ally-healer: Restores ally HP directly or via healing over time as a core role.
@@ -608,8 +611,8 @@ promoted into the partner list instead (no duplicate common-buffer row).
    defining-tier multiplier (`DEFINING_TIER_SCORE_MULT`). Synergy text uses
    `Enables {label} via {detail}`. Ally-stat-buff enabler scoring uses the
    same movement / static-tile rules as stat-buff synergy lines.
-   **Enemy defense (automatic):** `damage_dealer` receivers whose true-family
-   damage (`True damage` / `Max HP-based damage` / `HP loss`) is absent or
+  **Enemy defense (automatic):** `damage_dealer` receivers whose true-family
+  damage (`True damage` / `HP loss`) is absent or
    only `low` also score providers who lower enemy defenses — type-matched
    Phys/Magic DEF debuffs, combined DEF, Damage taken debuffs, and ally DEF
    Penetration buffs (`score_enemy_defense_synergy`). No sidecar require and

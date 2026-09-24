@@ -56,8 +56,8 @@ Task progress:
 
 - Hero count in `roster.json` must match tag keys (the manifest ID resolves
   **Twins** to the downloaded **Elijah & Lailah** record).
-- Note heroes with fewer than 2 or more than 6 tags after edits.
-- Prefer **3–5 tags** per hero; only exceed for genuinely multi-role kits.
+- There is no limit on tag count: assign every tag the hero is eligible
+  for. Strong multi-role kits legitimately carry many tags.
 
 ### 2. Per-hero review
 

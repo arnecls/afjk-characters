@@ -91,6 +91,10 @@ STAT_CATEGORY_LABELS = {
 TRUE_DAMAGE_TYPES = {
     "True damage",
     "HP loss",
+}
+MAGNITUDE_DAMAGE_TYPES = {
+    "True damage",
+    "HP loss",
     "Max HP-based damage",
     "Lost HP-based damage",
 }

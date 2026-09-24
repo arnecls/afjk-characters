@@ -29,7 +29,6 @@ from .detector_common import (
     DAMAGE_TARGETING_WEIGHT,
     MIN_CYCLE_SECONDS,
     PASSIVE_REFERENCE_CYCLE_SECONDS,
-    TRUE_DAMAGE_TYPES,
     _DOT_EXCLUDE_MIDDLE,
     _LOST_HP_DAMAGE_EXCLUDE_RE,
     _LOST_HP_SCALING_RES,
@@ -43,6 +42,15 @@ from .targeting import (
     _clause_around,
     _is_enemy_damage_threshold_trigger,
     detect_damage_targeting,
+)
+
+SCORED_DAMAGE_TYPES = frozenset(
+    {
+        "True damage",
+        "HP loss",
+        "Max HP-based damage",
+        "Lost HP-based damage",
+    }
 )
 from .numeric import (
     _extract_damage_amount,
@@ -220,12 +228,19 @@ def _text_has_direct_hp_loss_hit(text: str) -> bool:
         t,
     ):
         return True
+    if re.search(
+        r"\b(?:lose|loses|losing)\s+hp equal to\s+"
+        r"\d+(?:\.\d+)?\s*%",
+        t,
+    ):
+        return True
     return bool(
         re.search(
             r"\b(?:lose|loses|losing|causes? .{0,30}to lose) "
             r"\d+(?:\.\d+)?(?:\s*%\s*)?"
             r"(?:\([^)]*\)\s*)?"
-            r"(?:\+\s*\d+(?:\.\d+)?(?:\s*%\s*)?)?\s*hp\b",
+            r"(?:\+\s*\d+(?:\.\d+)?(?:\s*%\s*)?"
+            r"(?:\([^)]*\)\s*)?)?\s*hp\b",
             t,
         )
     )
@@ -536,7 +551,7 @@ def _accumulate_true_damage_scores(hero: HeroRecord, primary_dmg: str) -> None:
             continue
         tgt = detect_damage_targeting(text)
         for d in detect_damage_types(text, primary_dmg):
-            if d not in TRUE_DAMAGE_TYPES:
+            if d not in SCORED_DAMAGE_TYPES:
                 continue
             score = _score_true_damage_chunk(text, d, tgt)
             if score > 0:
