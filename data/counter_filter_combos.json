@@ -77,9 +77,9 @@
           "backline-assassin"
         ]
       },
-      "Magic DMG": {
+      "Normal DMG": {
         "values": [
-          "all"
+          "Magic"
         ]
       }
     }
@@ -101,9 +101,9 @@
           "backline-assassin"
         ]
       },
-      "Physical DMG": {
+      "Normal DMG": {
         "values": [
-          "all"
+          "Physical"
         ]
       }
     }
@@ -125,9 +125,9 @@
           "backline-assassin"
         ]
       },
-      "True DMG": {
+      "Defense ignoring DMG": {
         "values": [
-          "all"
+          "True damage"
         ]
       }
     }
@@ -149,9 +149,9 @@
           "backline-inhibit"
         ]
       },
-      "Magic DMG": {
+      "Normal DMG": {
         "values": [
-          "all"
+          "Magic"
         ]
       }
     }
@@ -173,9 +173,9 @@
           "backline-inhibit"
         ]
       },
-      "Physical DMG": {
+      "Normal DMG": {
         "values": [
-          "all"
+          "Physical"
         ]
       }
     }
@@ -353,9 +353,9 @@
       }
     ],
     "filters": {
-      "Magic DMG": {
+      "Normal DMG": {
         "values": [
-          "all"
+          "Magic"
         ]
       }
     }
@@ -368,9 +368,9 @@
       }
     ],
     "filters": {
-      "Physical DMG": {
+      "Normal DMG": {
         "values": [
-          "all"
+          "Physical"
         ]
       }
     }
@@ -383,9 +383,9 @@
       }
     ],
     "filters": {
-      "True DMG": {
+      "Defense ignoring DMG": {
         "values": [
-          "all"
+          "True damage"
         ]
       }
     }

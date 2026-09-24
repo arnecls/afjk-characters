@@ -704,15 +704,18 @@ cardHtml+
 opts.chromeHtml+"</div>");}
 return cardHtml;}
 function renderGrid(){const state=window.AFKJ.state;const list=window.AFKJ.router.filteredHeroes();state.dom.heroGrid.innerHTML=list.map(function(h){return buildHeroCardHtml(h,{role:"link"});}).join("");state.dom.emptyState.classList.toggle("hidden",list.length>0);scheduleFitHeroCardNames();}
-window.AFKJ.views.grid={renderHeroPortrait:renderHeroPortrait,renderListHeroPortrait:renderListHeroPortrait,renderGridCardFactionIcon:renderGridCardFactionIcon,renderGridCardClassIcon:renderGridCardClassIcon,renderGridCardFactionStack:renderGridCardFactionStack,renderGridCardRole:renderGridCardRole,renderHeroCardWave:renderHeroCardWave,renderCompactCardWave:renderCompactCardWave,buildHeroCardHtml:buildHeroCardHtml,scheduleFitHeroCardNames:scheduleFitHeroCardNames,renderGrid:renderGrid,};})();window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const config=window.AFKJ.config;const chips=window.AFKJ.chips;const gridView=window.AFKJ.views.grid;const escapeHtml=utils.escapeHtml.bind(utils);const CC_EFFECT_TYPES=["Stun","Knock down","Knock up","Knock back","Frighten","Silence","Charm","Sleep","Displace","Bind","Interrupt","Taunt","Blind","Disarm",];const ANTI_CC_EFFECT_TYPES=["Unaffected","Steadfast","Immune","Untargetable","Cleanse",];const BUFF_EFFECT_TYPES=["ATK","Basic stats","ATK SPD","Haste","Crit","DEF Penetration","DEF","Damage taken","HP loss modifier","Damage dealt","Ranged damage","Magic damage","Energy","Execution","Fatal blow immunity","Invincible","Lifedrain","Max HP","Attack range","Ranged DEF","Crit DMG boost","Vitality","Dodge chance","Movement speed",];const DEBUFF_EFFECT_TYPES=["ATK","Basic stats","DoT","Damage taken","HP loss modifier","Damage dealt","Debuff duration","Magic damage","Energy","Execution","Haste","Magic DEF","Max HP","Movement speed","Phys DEF","Vitality","Healing","Crit Resist","Vulnerable","ATK SPD",];const EFFECT_CC_COLUMN="Crowd Control";const EFFECT_ANTI_CC_COLUMN="Crowd Control Counter";const EFFECT_BUFF_COLUMN="Buffs";const EFFECT_DEBUFF_COLUMN="Debuffs";const EFFECT_CC_COLUMNS=[EFFECT_CC_COLUMN];const EFFECT_ANTI_CC_COLUMNS=[EFFECT_ANTI_CC_COLUMN];const EFFECT_BUFF_COLUMNS=[EFFECT_BUFF_COLUMN];const EFFECT_DEBUFF_COLUMNS=[EFFECT_DEBUFF_COLUMN];const CC_EFFECT_TYPE_SET={};CC_EFFECT_TYPES.forEach(function(label){CC_EFFECT_TYPE_SET[label.toLowerCase()]=label;});const ANTI_CC_EFFECT_TYPE_SET={};ANTI_CC_EFFECT_TYPES.forEach(function(label){ANTI_CC_EFFECT_TYPE_SET[label.toLowerCase()]=label;});const BUFF_EFFECT_TYPE_SET={};BUFF_EFFECT_TYPES.forEach(function(label){BUFF_EFFECT_TYPE_SET[label.toLowerCase()]=label;});const DEBUFF_EFFECT_TYPE_SET={};DEBUFF_EFFECT_TYPES.forEach(function(label){DEBUFF_EFFECT_TYPE_SET[label.toLowerCase()]=label;});function canonicalCcEffectType(label){const trimmed=(label||"").trim();if(!trimmed){return"";}
+window.AFKJ.views.grid={renderHeroPortrait:renderHeroPortrait,renderListHeroPortrait:renderListHeroPortrait,renderGridCardFactionIcon:renderGridCardFactionIcon,renderGridCardClassIcon:renderGridCardClassIcon,renderGridCardFactionStack:renderGridCardFactionStack,renderGridCardRole:renderGridCardRole,renderHeroCardWave:renderHeroCardWave,renderCompactCardWave:renderCompactCardWave,buildHeroCardHtml:buildHeroCardHtml,scheduleFitHeroCardNames:scheduleFitHeroCardNames,renderGrid:renderGrid,};})();window.AFKJ=window.AFKJ||{};(function(){const utils=window.AFKJ.utils;const config=window.AFKJ.config;const chips=window.AFKJ.chips;const gridView=window.AFKJ.views.grid;const escapeHtml=utils.escapeHtml.bind(utils);const CC_EFFECT_TYPES=["Stun","Knock down","Knock up","Knock back","Frighten","Silence","Charm","Sleep","Displace","Bind","Interrupt","Taunt","Blind","Disarm",];const ANTI_CC_EFFECT_TYPES=["Unaffected","Steadfast","Immune","Untargetable","Cleanse",];const BUFF_EFFECT_TYPES=["ATK","Basic stats","ATK SPD","Haste","Crit","DEF Penetration","DEF","Damage taken","HP loss modifier","Damage dealt","Ranged damage","Magic damage","Energy","Execution","Fatal blow immunity","Invincible","Lifedrain","Max HP","Attack range","Ranged DEF","Crit DMG boost","Vitality","Dodge chance","Movement speed",];const DEBUFF_EFFECT_TYPES=["ATK","Basic stats","DoT","Damage taken","HP loss modifier","Damage dealt","Debuff duration","Magic damage","Energy","Execution","Haste","Magic DEF","Max HP","Movement speed","Phys DEF","Vitality","Healing","Crit Resist","Vulnerable","ATK SPD",];const EFFECT_CC_COLUMN="Crowd Control";const EFFECT_ANTI_CC_COLUMN="Crowd Control Counter";const EFFECT_BUFF_COLUMN="Buffs";const EFFECT_DEBUFF_COLUMN="Debuffs";const EFFECT_NORMAL_DMG_COLUMN="Normal DMG";const EFFECT_DEFENSE_IGNORING_DMG_COLUMN="Defense ignoring DMG";const EFFECT_CC_COLUMNS=[EFFECT_CC_COLUMN];const EFFECT_ANTI_CC_COLUMNS=[EFFECT_ANTI_CC_COLUMN];const EFFECT_BUFF_COLUMNS=[EFFECT_BUFF_COLUMN];const EFFECT_DEBUFF_COLUMNS=[EFFECT_DEBUFF_COLUMN];const NORMAL_DMG_TYPES=["Magic","Physical","Max HP-based damage","Lost HP-based damage",];const DEFENSE_IGNORING_DMG_TYPES=["True damage","HP loss"];const CC_EFFECT_TYPE_SET={};CC_EFFECT_TYPES.forEach(function(label){CC_EFFECT_TYPE_SET[label.toLowerCase()]=label;});const ANTI_CC_EFFECT_TYPE_SET={};ANTI_CC_EFFECT_TYPES.forEach(function(label){ANTI_CC_EFFECT_TYPE_SET[label.toLowerCase()]=label;});const BUFF_EFFECT_TYPE_SET={};BUFF_EFFECT_TYPES.forEach(function(label){BUFF_EFFECT_TYPE_SET[label.toLowerCase()]=label;});const DEBUFF_EFFECT_TYPE_SET={};DEBUFF_EFFECT_TYPES.forEach(function(label){DEBUFF_EFFECT_TYPE_SET[label.toLowerCase()]=label;});const DMG_EFFECT_TYPE_SET={};NORMAL_DMG_TYPES.concat(DEFENSE_IGNORING_DMG_TYPES).forEach(function(label){DMG_EFFECT_TYPE_SET[label.toLowerCase()]=label;});function canonicalCcEffectType(label){const trimmed=(label||"").trim();if(!trimmed){return"";}
 const lower=trimmed.toLowerCase();return CC_EFFECT_TYPE_SET[lower]||ANTI_CC_EFFECT_TYPE_SET[lower]||"";}
 function canonicalBuffDebuffEffectType(label){const trimmed=(label||"").trim();if(!trimmed){return"";}
 const lower=trimmed.toLowerCase();return BUFF_EFFECT_TYPE_SET[lower]||DEBUFF_EFFECT_TYPE_SET[lower]||"";}
-function canonicalMergedEffectType(label){return canonicalCcEffectType(label)||canonicalBuffDebuffEffectType(label);}
+function canonicalDmgEffectType(label){const trimmed=(label||"").trim();if(!trimmed){return"";}
+return DMG_EFFECT_TYPE_SET[trimmed.toLowerCase()]||"";}
+function canonicalMergedEffectType(label){return(canonicalCcEffectType(label)||canonicalBuffDebuffEffectType(label)||canonicalDmgEffectType(label));}
 function isMergedCcColumn(column){return column===EFFECT_CC_COLUMN||column===EFFECT_ANTI_CC_COLUMN;}
 function isMergedBuffDebuffColumn(column){return column===EFFECT_BUFF_COLUMN||column===EFFECT_DEBUFF_COLUMN;}
-function isMergedEffectColumn(column){return isMergedCcColumn(column)||isMergedBuffDebuffColumn(column);}
-const TIMING_RANK={permanent:50,"start of battle":40,form:35,"on ultimate":30,"on skill":25,once:20,"conditional (frequent)":15,conditional:10,"conditional (rare)":5,};const STRENGTH_RANK={high:3,average:2,low:1,};const DMG_COLUMN_BASE={Magic:"Magic",Physical:"Physical",Ranged:"Ranged",True:"True damage","HP Loss":"HP loss","Max HP":"Max HP damage","Lost HP":"Lost HP-based damage",};let columnFilterPointerHandler=null;function parseCsv(text){const rows=[];let row=[];let field="";let inQuotes=false;for(let i=0;i<text.length;i++){const c=text[i];if(inQuotes){if(c==='"'){if(text[i+1]==='"'){field+='"';i++;}else{inQuotes=false;}}else{field+=c;}}else if(c==='"'){inQuotes=true;}else if(c===","){row.push(field);field="";}else if(c==="\n"||(c==="\r"&&text[i+1]==="\n")){row.push(field);if(row.some(function(cell){return cell.length>0;})){rows.push(row);}
+function isMergedDmgColumn(column){return(column===EFFECT_NORMAL_DMG_COLUMN||column===EFFECT_DEFENSE_IGNORING_DMG_COLUMN);}
+function isMergedEffectColumn(column){return(isMergedCcColumn(column)||isMergedBuffDebuffColumn(column)||isMergedDmgColumn(column));}
+const TIMING_RANK={permanent:50,"start of battle":40,form:35,"on ultimate":30,"on skill":25,once:20,"conditional (frequent)":15,conditional:10,"conditional (rare)":5,};const STRENGTH_RANK={high:3,average:2,low:1,};let columnFilterPointerHandler=null;function parseCsv(text){const rows=[];let row=[];let field="";let inQuotes=false;for(let i=0;i<text.length;i++){const c=text[i];if(inQuotes){if(c==='"'){if(text[i+1]==='"'){field+='"';i++;}else{inQuotes=false;}}else{field+=c;}}else if(c==='"'){inQuotes=true;}else if(c===","){row.push(field);field="";}else if(c==="\n"||(c==="\r"&&text[i+1]==="\n")){row.push(field);if(row.some(function(cell){return cell.length>0;})){rows.push(row);}
 row=[];field="";if(c==="\r"){i++;}}else if(c!=="\r"){field+=c;}}
 if(field.length||row.length){row.push(field);rows.push(row);}
 return rows;}
@@ -720,8 +723,8 @@ function listColumnMeta(columnId){const state=window.AFKJ.state;return state.lis
 function listColumnDisplayLabel(columnId){const meta=listColumnMeta(columnId);return meta?meta.label:columnId;}
 function parseEffectColumnLabel(column){if(column===EFFECT_BUFF_COLUMN){return{base:column,polarity:"buff",tier:""};}
 if(column===EFFECT_DEBUFF_COLUMN){return{base:column,polarity:"debuff",tier:""};}
+if(isMergedDmgColumn(column)){return{base:column,polarity:"damage",tier:""};}
 const meta=listColumnMeta(column);if(meta){return{base:meta.label,polarity:meta.polarity,tier:"",};}
-if(column.endsWith(" DMG")){const short=column.slice(0,-4);return{base:DMG_COLUMN_BASE[short]||short,polarity:"damage",tier:"",};}
 const parsed=chips.parseEffectLabelParts(column);return{base:parsed.base,polarity:null,tier:parsed.tier,};}
 function isTimingSegment(segment){const lower=segment.trim().toLowerCase();if(Object.prototype.hasOwnProperty.call(TIMING_RANK,lower)){return true;}
 if(lower.indexOf("start of battle")!==-1){return true;}
@@ -754,6 +757,7 @@ return String(cellValue||"").trim();}
 const FILTER_GROUP_META=[{id:"targeting",label:"Targeting"},{id:"quality",label:"Magnitude"},{id:"timing",label:"Timing"},{id:"conditional",label:"Conditional"},{id:"other",label:"Other"},];function filterGroupMetaForColumn(column){if(column===EFFECT_CC_COLUMN){return[{id:"effect",label:"Effect"},{id:"targeting",label:"Targeting"},{id:"quality",label:"Magnitude"},];}
 if(column===EFFECT_ANTI_CC_COLUMN){return[{id:"effect",label:"Effect"},{id:"targeting",label:"Targeting"},{id:"timing",label:"Timing"},];}
 if(isMergedBuffDebuffColumn(column)){return[{id:"effect",label:"Effect"},{id:"targeting",label:"Targeting"},{id:"quality",label:"Magnitude"},{id:"conditional",label:"Conditional"},];}
+if(isMergedDmgColumn(column)){return[{id:"effect",label:"Effect"},{id:"targeting",label:"Targeting"},{id:"quality",label:"Magnitude"},{id:"conditional",label:"Conditional"},];}
 return FILTER_GROUP_META;}
 function classifyFilterAtom(value){const trimmed=(value||"").trim();if(!trimmed){return"other";}
 const lower=trimmed.toLowerCase();if(canonicalMergedEffectType(trimmed)){return"effect";}
@@ -775,6 +779,8 @@ return values.slice().sort();}
 function tierFilterSortRank(value){const idx=window.AFKJ.tiers.TIER_FILTER_ORDER.indexOf(value);return idx>=0?idx:99;}
 function mergedEffectFilterSortRank(value,column){if(column===EFFECT_BUFF_COLUMN){const buffIdx=BUFF_EFFECT_TYPES.indexOf(value);return buffIdx>=0?buffIdx:99;}
 if(column===EFFECT_DEBUFF_COLUMN){const debuffIdx=DEBUFF_EFFECT_TYPES.indexOf(value);return debuffIdx>=0?debuffIdx:99;}
+if(column===EFFECT_NORMAL_DMG_COLUMN){const dmgIdx=NORMAL_DMG_TYPES.indexOf(value);return dmgIdx>=0?dmgIdx:99;}
+if(column===EFFECT_DEFENSE_IGNORING_DMG_COLUMN){const dmgIdx=DEFENSE_IGNORING_DMG_TYPES.indexOf(value);return dmgIdx>=0?dmgIdx:99;}
 const ccIdx=CC_EFFECT_TYPES.indexOf(value);if(ccIdx>=0){return ccIdx;}
 const antiIdx=ANTI_CC_EFFECT_TYPES.indexOf(value);if(antiIdx>=0){return antiIdx;}
 return 99;}
@@ -886,9 +892,8 @@ renderEffectCellPart(column,part)+"</span>");}).join("")+"</span>");}
 return rawVal.split(/\s*;\s*/).map(function(part){return renderTableEntry(part.trim());}).join(" ");}
 function renderTableEntry(text){if(/\s*(?:—|–)\s*/.test(text)){return chips.renderRichLine(text);}
 return text.split(/\s*,\s*/).map(function(part){const chip=chips.tryChipify(part.trim());return chip!==null?chip:escapeHtml(part.trim());}).join(" ");}
-function isDmgColumn(column){return!!column&&column.endsWith(" DMG");}
 function isEffectSortColumn(column){if(!column){return false;}
-if(isDmgColumn(column)){return true;}
+if(isMergedDmgColumn(column)){return true;}
 if(column==="Healing"||column==="Shields"){return true;}
 if(listColumnMeta(column)){return true;}
 if(isMergedEffectColumn(column)){return true;}
@@ -1013,7 +1018,8 @@ const eq=pair.indexOf("=");if(eq===-1){return;}
 const column=decodeURIComponent(pair.slice(0,eq));const valPart=pair.slice(eq+1);const values=valPart.split(",").map(decodeURIComponent);result[column]=values;});return Object.keys(result).length?result:null;}
 function resolveFilterValues(column,colIdx,values){if(values.length===1&&values[0]==="all"){return allOptionsForColumn(colIdx);}
 return values.slice();}
-function legacyEffectColumnAlias(column){const meta=(window.AFKJ.state.listColumnsById||{})[column];if(!meta||!meta.label){return null;}
+const LEGACY_DMG_COLUMN_ALIASES={"Magic DMG":{column:"Normal DMG",effect:"Magic"},"Physical DMG":{column:"Normal DMG",effect:"Physical"},"Max HP DMG":{column:"Normal DMG",effect:"Max HP-based damage"},"Lost HP DMG":{column:"Normal DMG",effect:"Lost HP-based damage"},"True DMG":{column:"Defense ignoring DMG",effect:"True damage"},"HP Loss DMG":{column:"Defense ignoring DMG",effect:"HP loss"},};function legacyEffectColumnAlias(column){if(Object.prototype.hasOwnProperty.call(LEGACY_DMG_COLUMN_ALIASES,column)){return LEGACY_DMG_COLUMN_ALIASES[column];}
+const meta=(window.AFKJ.state.listColumnsById||{})[column];if(!meta||!meta.label){return null;}
 if(meta.group==="buff"||meta.polarity==="buff"){return{column:"Buffs",effect:meta.label};}
 if(meta.group==="debuff"||meta.polarity==="debuff"){return{column:"Debuffs",effect:meta.label};}
 return null;}

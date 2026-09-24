@@ -88,10 +88,20 @@ window.AFKJ = window.AFKJ || {};
   const EFFECT_ANTI_CC_COLUMN = "Crowd Control Counter";
   const EFFECT_BUFF_COLUMN = "Buffs";
   const EFFECT_DEBUFF_COLUMN = "Debuffs";
+  const EFFECT_NORMAL_DMG_COLUMN = "Normal DMG";
+  const EFFECT_DEFENSE_IGNORING_DMG_COLUMN = "Defense ignoring DMG";
   const EFFECT_CC_COLUMNS = [EFFECT_CC_COLUMN];
   const EFFECT_ANTI_CC_COLUMNS = [EFFECT_ANTI_CC_COLUMN];
   const EFFECT_BUFF_COLUMNS = [EFFECT_BUFF_COLUMN];
   const EFFECT_DEBUFF_COLUMNS = [EFFECT_DEBUFF_COLUMN];
+
+  const NORMAL_DMG_TYPES = [
+    "Magic",
+    "Physical",
+    "Max HP-based damage",
+    "Lost HP-based damage",
+  ];
+  const DEFENSE_IGNORING_DMG_TYPES = ["True damage", "HP loss"];
 
   const CC_EFFECT_TYPE_SET = {};
   CC_EFFECT_TYPES.forEach(function (label) {
@@ -108,6 +118,12 @@ window.AFKJ = window.AFKJ || {};
   const DEBUFF_EFFECT_TYPE_SET = {};
   DEBUFF_EFFECT_TYPES.forEach(function (label) {
     DEBUFF_EFFECT_TYPE_SET[label.toLowerCase()] = label;
+  });
+  const DMG_EFFECT_TYPE_SET = {};
+  NORMAL_DMG_TYPES.concat(DEFENSE_IGNORING_DMG_TYPES).forEach(function (
+    label
+  ) {
+    DMG_EFFECT_TYPE_SET[label.toLowerCase()] = label;
   });
 
   function canonicalCcEffectType(label) {
@@ -128,8 +144,20 @@ window.AFKJ = window.AFKJ || {};
     return BUFF_EFFECT_TYPE_SET[lower] || DEBUFF_EFFECT_TYPE_SET[lower] || "";
   }
 
+  function canonicalDmgEffectType(label) {
+    const trimmed = (label || "").trim();
+    if (!trimmed) {
+      return "";
+    }
+    return DMG_EFFECT_TYPE_SET[trimmed.toLowerCase()] || "";
+  }
+
   function canonicalMergedEffectType(label) {
-    return canonicalCcEffectType(label) || canonicalBuffDebuffEffectType(label);
+    return (
+      canonicalCcEffectType(label) ||
+      canonicalBuffDebuffEffectType(label) ||
+      canonicalDmgEffectType(label)
+    );
   }
 
   function isMergedCcColumn(column) {
@@ -140,8 +168,19 @@ window.AFKJ = window.AFKJ || {};
     return column === EFFECT_BUFF_COLUMN || column === EFFECT_DEBUFF_COLUMN;
   }
 
+  function isMergedDmgColumn(column) {
+    return (
+      column === EFFECT_NORMAL_DMG_COLUMN ||
+      column === EFFECT_DEFENSE_IGNORING_DMG_COLUMN
+    );
+  }
+
   function isMergedEffectColumn(column) {
-    return isMergedCcColumn(column) || isMergedBuffDebuffColumn(column);
+    return (
+      isMergedCcColumn(column) ||
+      isMergedBuffDebuffColumn(column) ||
+      isMergedDmgColumn(column)
+    );
   }
 
   const TIMING_RANK = {
@@ -160,16 +199,6 @@ window.AFKJ = window.AFKJ || {};
     high: 3,
     average: 2,
     low: 1,
-  };
-
-  const DMG_COLUMN_BASE = {
-    Magic: "Magic",
-    Physical: "Physical",
-    Ranged: "Ranged",
-    True: "True damage",
-    "HP Loss": "HP loss",
-    "Max HP": "Max HP damage",
-    "Lost HP": "Lost HP-based damage",
   };
 
   let columnFilterPointerHandler = null;
@@ -237,19 +266,14 @@ window.AFKJ = window.AFKJ || {};
     if (column === EFFECT_DEBUFF_COLUMN) {
       return { base: column, polarity: "debuff", tier: "" };
     }
+    if (isMergedDmgColumn(column)) {
+      return { base: column, polarity: "damage", tier: "" };
+    }
     const meta = listColumnMeta(column);
     if (meta) {
       return {
         base: meta.label,
         polarity: meta.polarity,
-        tier: "",
-      };
-    }
-    if (column.endsWith(" DMG")) {
-      const short = column.slice(0, -4);
-      return {
-        base: DMG_COLUMN_BASE[short] || short,
-        polarity: "damage",
         tier: "",
       };
     }
@@ -450,6 +474,14 @@ window.AFKJ = window.AFKJ || {};
         { id: "conditional", label: "Conditional" },
       ];
     }
+    if (isMergedDmgColumn(column)) {
+      return [
+        { id: "effect", label: "Effect" },
+        { id: "targeting", label: "Targeting" },
+        { id: "quality", label: "Magnitude" },
+        { id: "conditional", label: "Conditional" },
+      ];
+    }
     return FILTER_GROUP_META;
   }
 
@@ -559,6 +591,14 @@ window.AFKJ = window.AFKJ || {};
     if (column === EFFECT_DEBUFF_COLUMN) {
       const debuffIdx = DEBUFF_EFFECT_TYPES.indexOf(value);
       return debuffIdx >= 0 ? debuffIdx : 99;
+    }
+    if (column === EFFECT_NORMAL_DMG_COLUMN) {
+      const dmgIdx = NORMAL_DMG_TYPES.indexOf(value);
+      return dmgIdx >= 0 ? dmgIdx : 99;
+    }
+    if (column === EFFECT_DEFENSE_IGNORING_DMG_COLUMN) {
+      const dmgIdx = DEFENSE_IGNORING_DMG_TYPES.indexOf(value);
+      return dmgIdx >= 0 ? dmgIdx : 99;
     }
     const ccIdx = CC_EFFECT_TYPES.indexOf(value);
     if (ccIdx >= 0) {
@@ -1138,15 +1178,11 @@ window.AFKJ = window.AFKJ || {};
       .join(" ");
   }
 
-  function isDmgColumn(column) {
-    return !!column && column.endsWith(" DMG");
-  }
-
   function isEffectSortColumn(column) {
     if (!column) {
       return false;
     }
-    if (isDmgColumn(column)) {
+    if (isMergedDmgColumn(column)) {
       return true;
     }
     if (column === "Healing" || column === "Shields") {

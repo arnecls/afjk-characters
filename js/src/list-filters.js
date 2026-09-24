@@ -89,7 +89,21 @@ window.AFKJ = window.AFKJ || {};
     return values.slice();
   }
 
+  const LEGACY_DMG_COLUMN_ALIASES = {
+    "Magic DMG": { column: "Normal DMG", effect: "Magic" },
+    "Physical DMG": { column: "Normal DMG", effect: "Physical" },
+    "Max HP DMG": { column: "Normal DMG", effect: "Max HP-based damage" },
+    "Lost HP DMG": { column: "Normal DMG", effect: "Lost HP-based damage" },
+    "True DMG": { column: "Defense ignoring DMG", effect: "True damage" },
+    "HP Loss DMG": { column: "Defense ignoring DMG", effect: "HP loss" },
+  };
+
   function legacyEffectColumnAlias(column) {
+    if (
+      Object.prototype.hasOwnProperty.call(LEGACY_DMG_COLUMN_ALIASES, column)
+    ) {
+      return LEGACY_DMG_COLUMN_ALIASES[column];
+    }
     const meta = (window.AFKJ.state.listColumnsById || {})[column];
     if (!meta || !meta.label) {
       return null;
