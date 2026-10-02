@@ -254,17 +254,17 @@
     "stat_ranks": {
       "categories": {
         "basic": "high",
-        "offensive": "average",
+        "offensive": "low",
         "defensive": "high",
         "other": "low"
       },
       "stats": {
         "HP": "average",
         "ATK": "high",
-        "Phys DEF": "high",
+        "Phys DEF": "average",
         "Magic DEF": "high",
-        "Haste": "average",
-        "ATK SPD": "average"
+        "Haste": "low",
+        "ATK SPD": "low"
       }
     }
   }

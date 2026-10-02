@@ -241,7 +241,7 @@
       "categories": {
         "basic": "average",
         "offensive": "average",
-        "defensive": "average",
+        "defensive": "low",
         "other": "high"
       },
       "stats": {

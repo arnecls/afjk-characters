@@ -1,0 +1,751 @@
+{
+  "schema_version": 2,
+  "id": "senea",
+  "display_name": "Senea",
+  "local": {
+    "long_name": "Senea - Deathless Songstress",
+    "faction": "graveborn",
+    "class": "marksman",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 10,
+    "release_date": "2026-09-23",
+    "season": "Crown of Ashes",
+    "season_number": 7,
+    "skills": {
+      "Grave Crescendo": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Passive. Senea's normal attacks mesmerize enemies on hit for 8s, reducing their ATK by 10%. When a mesmerized enemy is defeated, they turn into a spectral spectator. Senea can have up to 5 spectral spectators. Active. Upon reaching 1,000 Energy, Senea consumes 200 Energy to begin an impassioned performance. During the performance, Senea gains 120 ATK SPD and automatically casts her normal attacks at her current attack rate. Each of these normal attacks consumes 100 Energy, though this cost decreases as her ATK SPD and Haste increase. These attacks also deal extra true damage equal to 8% + 1.2% (SP-based) of the target's max HP and inflict max HP Reduction equal to 100%. The extra true damage cannot exceed 140% (ATK-based). The performance ends when Senea's Energy is depleted.",
+          "passive": [
+            "Senea's normal attacks mesmerize enemies on hit for 8s, reducing their ATK by 10%.",
+            "When a mesmerized enemy is defeated, they turn into a spectral spectator.",
+            "Senea can have up to 5 spectral spectators."
+          ],
+          "active": [
+            "Upon reaching 1,000 Energy, Senea consumes 200 Energy to begin an impassioned performance.",
+            "During the performance, Senea gains 120 ATK SPD and automatically casts her normal attacks at her current attack rate.",
+            "Each of these normal attacks consumes 100 Energy, though this cost decreases as her ATK SPD and Haste increase.",
+            "These attacks also deal extra true damage equal to 8% + 1.2% (SP-based) of the target's max HP and inflict max HP Reduction equal to 100%.",
+            "The extra true damage cannot exceed 140% (ATK-based).",
+            "The performance ends when Senea's Energy is depleted."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "While Senea's Ultimate is active, increases the extra true damage dealt by each normal attack to 9% + 1.2% (SP-based) of the target's max HP.",
+                "This extra true damage cannot exceed 150% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "While Senea's Ultimate is active, increases the extra true damage dealt by each normal attack to 10% + 1.2% (SP-based) of the target's max HP.",
+                "This extra true damage cannot exceed 160% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "While Senea's Ultimate is active, increases the extra true damage dealt by each normal attack to 11% + 1.2% (SP-based) of the target's max HP.",
+                "This extra true damage cannot exceed 170% (ATK-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "While Senea's Ultimate is active, increases the extra true damage dealt by each normal attack to 12% + 1.2% (SP-based) of the target's max HP.",
+                "This extra true damage cannot exceed 180% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 10.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 120.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Max HP",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 100.0
+              }
+            ]
+          }
+        ],
+        "initial_energy": 500.0,
+        "skill_card_tags": [
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "Max HP-based damage"
+          },
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Max HP",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Melodic Cascade": {
+        "category": "skill1",
+        "description": {
+          "raw": "Senea launches 1 extra projectile with each normal attack. Whenever she receives a temporary stat buff from an ally, the number of extra projectiles increases by 1, up to a maximum of 5. Each ally can trigger this effect only once. After Senea hits an enemy with a normal attack projectile, that enemy takes 25% less damage from projectiles launched by her subsequent normal attacks. Active. Senea performs a special normal attack, replacing the projectiles with 2 musical notes, each dealing 150% (ATK-based) + 18% (SP-based) damage.",
+          "active": [
+            "Senea launches 1 extra projectile with each normal attack.",
+            "Whenever she receives a temporary stat buff from an ally, the number of extra projectiles increases by 1, up to a maximum of 5.",
+            "Each ally can trigger this effect only once.",
+            "After Senea hits an enemy with a normal attack projectile, that enemy takes 25% less damage from projectiles launched by her subsequent normal attacks.",
+            "Senea performs a special normal attack, replacing the projectiles with 2 musical notes, each dealing 150% (ATK-based) + 18% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt by each musical note to 160% (ATK-based) + 18% (SP-based) when this skill is used actively."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt by each musical note to 170% (ATK-based) + 18% (SP-based) when this skill is used actively."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt by each musical note to 180% (ATK-based) + 18% (SP-based) when this skill is used actively."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 198.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 10.0,
+        "initial_cooldown": 1.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Swell of Sorrow": {
+        "category": "skill2",
+        "description": {
+          "raw": "Senea sings a brilliant melody, sending sound waves across the battlefield that deal 170% (ATK-based) + 20% (SP-based) damage to all enemies 3 times. If there are any spectral spectators on the battlefield, each one scatters petals in time with the music, restoring 50 Energy and 100% (ATK-based) HP to Senea.",
+          "active": [
+            "Senea sings a brilliant melody, sending sound waves across the battlefield that deal 170% (ATK-based) + 20% (SP-based) damage to all enemies 3 times.",
+            "If there are any spectral spectators on the battlefield, each one scatters petals in time with the music, restoring 50 Energy and 100% (ATK-based) HP to Senea."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the impact damage to 180% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the impact damage to 190% (ATK-based) + 20% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the impact damage to 200% (ATK-based) + 20% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 220.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 100.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "cooldown": 10.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Increases ATK by 9% during battle, and by an extra 6% when 3 spectral spectators are present.",
+          "active": [
+            "Increases ATK by 9% during battle, and by an extra 6% when 3 spectral spectators are present."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 12% during battle, and by an extra 8% when 3 spectral spectators are present."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Increases ATK by 15% during battle, and by an extra 10% when 3 spectral spectators are present."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 3,
+                "stack_comparison": "at_max"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Crimson Solo": {
+        "category": "skill4",
+        "description": {
+          "raw": "For every 3 normal attacks Senea unleashes during Grave Crescendo, she attracts 1 extra spectral spectator. Once Senea has at least 3 spectral spectators, a stage rises beneath her and she begins a solo performance, remaining steadfast throughout. During the solo performance, each time she lands 15 normal attack hits, every spectral spectator on the battlefield throws a rose at her current target. Each rose deals 190% (ATK-based) true damage.",
+          "active": [
+            "For every 3 normal attacks Senea unleashes during Grave Crescendo, she attracts 1 extra spectral spectator.",
+            "Once Senea has at least 3 spectral spectators, a stage rises beneath her and she begins a solo performance, remaining steadfast throughout.",
+            "During the solo performance, each time she lands 15 normal attack hits, every spectral spectator on the battlefield throws a rose at her current target.",
+            "Each rose deals 190% (ATK-based) true damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the true damage dealt by each spectral spectator's rose to 195% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "If defeated during her solo performance, Senea enters spirit form.",
+                "While under control effects or in spirit form, she continues to use normal attacks, but they deal 15% less damage with 30 less ATK SPD."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the true damage dealt by each spectral spectator's rose to 200% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "mythic+",
+            "immunity_type": "steadfast",
+            "timing": "conditional",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "Steadfast — Self"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Senea immediately attracts 2 spectral spectators when a battle starts.",
+          "active": [
+            "Senea immediately attracts 2 spectral spectators when a battle starts."
+          ]
+        },
+        "effects": [],
+        "passive_only": true,
+        "skill_card_tags": []
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Passive: when a mesmerized enemy is defeated, it becomes a spectral spectator; Senea can have up to 5."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "All units, Multiple targets"
+      ],
+      [
+        "max_hp",
+        "Single target"
+      ],
+      [
+        "true",
+        "Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "atk_spd",
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "senea",
+    "display_name": "Senea",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Senea's normal attacks mesmerize enemies on hit for 8s, reducing their ATK by 10%.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a mesmerized enemy is defeated, they turn into a spectral spectator.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Senea can have up to 5 spectral spectators.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Upon reaching 1,000 Energy, Senea consumes 200 Energy to begin an impassioned performance.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "During the performance, Senea gains 120 ATK SPD and automatically casts her normal attacks at her current attack rate.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each of these normal attacks consumes 100 Energy, though this cost decreases as her ATK SPD and Haste increase.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "These attacks also deal extra true damage equal to 8% + 1.2% (SP-based) of the target's max HP and inflict max HP Reduction equal to 100%.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The extra true damage cannot exceed 140% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The performance ends when Senea's Energy is depleted.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While Senea's Ultimate is active, increases the extra true damage dealt by each normal attack to 9% + 1.2% (SP-based) of the target's max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "This extra true damage cannot exceed 150% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While Senea's Ultimate is active, increases the extra true damage dealt by each normal attack to 10% + 1.2% (SP-based) of the target's max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "This extra true damage cannot exceed 160% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While Senea's Ultimate is active, increases the extra true damage dealt by each normal attack to 11% + 1.2% (SP-based) of the target's max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "This extra true damage cannot exceed 170% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While Senea's Ultimate is active, increases the extra true damage dealt by each normal attack to 12% + 1.2% (SP-based) of the target's max HP.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "This extra true damage cannot exceed 180% (ATK-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Senea launches 1 extra projectile with each normal attack.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Whenever she receives a temporary stat buff from an ally, the number of extra projectiles increases by 1, up to a maximum of 5.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Each ally can trigger this effect only once.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "After Senea hits an enemy with a normal attack projectile, that enemy takes 25% less damage from projectiles launched by her subsequent normal attacks.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Senea performs a special normal attack, replacing the projectiles with 2 musical notes, each dealing 150% (ATK-based) + 18% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by each musical note to 160% (ATK-based) + 18% (SP-based) when this skill is used actively.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by each musical note to 170% (ATK-based) + 18% (SP-based) when this skill is used actively.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by each musical note to 180% (ATK-based) + 18% (SP-based) when this skill is used actively.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Senea sings a brilliant melody, sending sound waves across the battlefield that deal 170% (ATK-based) + 20% (SP-based) damage to all enemies 3 times.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "If there are any spectral spectators on the battlefield, each one scatters petals in time with the music, restoring 50 Energy and 100% (ATK-based) HP to Senea.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 180% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 190% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 200% (ATK-based) + 20% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 9% during battle, and by an extra 6% when 3 spectral spectators are present.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 12% during battle, and by an extra 8% when 3 spectral spectators are present.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Increases ATK by 15% during battle, and by an extra 10% when 3 spectral spectators are present.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "For every 3 normal attacks Senea unleashes during Grave Crescendo, she attracts 1 extra spectral spectator.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Once Senea has at least 3 spectral spectators, a stage rises beneath her and she begins a solo performance, remaining steadfast throughout.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "During the solo performance, each time she lands 15 normal attack hits, every spectral spectator on the battlefield throws a rose at her current target.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Each rose deals 190% (ATK-based) true damage.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the true damage dealt by each spectral spectator's rose to 195% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "If defeated during her solo performance, Senea enters spirit form.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "While under control effects or in spirit form, she continues to use normal attacks, but they deal 15% less damage with 30 less ATK SPD.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the true damage dealt by each spectral spectator's rose to 200% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Senea immediately attracts 2 spectral spectators when a battle starts.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "b8793974da22c623b275f0108dfbd62cdd2efb83e3edf4d0602f1bde824e118b",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
+  }
+}

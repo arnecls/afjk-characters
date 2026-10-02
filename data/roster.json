@@ -1141,6 +1141,24 @@
         "Karma",
         "Twinborn Malice"
       ]
+    },
+    {
+      "id": "aster",
+      "display_name": "Aster",
+      "title": "Aster - Chaos Observer",
+      "order": 126,
+      "aliases": [
+        "Aster"
+      ]
+    },
+    {
+      "id": "senea",
+      "display_name": "Senea",
+      "title": "Senea - Deathless Songstress",
+      "order": 127,
+      "aliases": [
+        "Senea"
+      ]
     }
   ]
 }

@@ -1,0 +1,356 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Senea - Deathless Songstress",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "e1b93578d945f81d2b57301be6254c956eed6bcb58b2894ee1352b3b14e378d7",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "name": "ATK",
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "duration": 8,
+                "type": "debuff"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 120.0
+                  }
+                ],
+                "persistence": "temporary",
+                "type": "buff"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ],
+                "type": "damage"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
+                "label": "damage_max_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ],
+                "type": "damage"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "name": "Max HP",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 100.0
+                  }
+                ],
+                "type": "debuff"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Summoning",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "Passive: when a mesmerized enemy is defeated, it becomes a spectral spectator; Senea can have up to 5."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "043e3425be9ae0f698e1992d43ad4f0b281f99a26c02d1bf9fd520a2b209c7f5",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 2,
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 180.0
+                  }
+                ],
+                "type": "damage"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "364e55e475973fea4f95686aff6fc44bd2267e6dc94715d5dd5c6feb5b009002",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ],
+                "type": "damage"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 100.0
+                  }
+                ],
+                "type": "heal"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "name": "Energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 50.0
+                  }
+                ],
+                "type": "energy"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "12cf4eec1cb0383d2de764437dbf4a255c766682b9bd6c76daa4b82676ada4d4",
+        "is_max_known": true,
+        "tiers": {
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ],
+                "persistence": "permanent",
+                "type": "buff"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 3,
+                    "stack_comparison": "at_max"
+                  }
+                ],
+                "type": "buff"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "9a752b8e4bbc0e1eb4b88c612448fb93090c61e8474f54079b1e553fdef8c0ec",
+        "is_max_known": true,
+        "tiers": {
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ],
+                "type": "damage"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "mythic+",
+                "immunity_type": "steadfast",
+                "timing": "conditional",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "a65f17bd23c9ee074fe83ecae5e0c4891870e5da386291e8fe64c36c5eb2fe59",
+        "is_max_known": true,
+        "tiers": {
+          "supreme+": {
+            "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "aoe-damage",
+    "enemy-debuffer",
+    "high-damage-ult",
+    "high-initial-energy",
+    "invincibility",
+    "summoner"
+  ],
+  "summon_profile": {
+    "has_ranged_summons": true,
+    "sources": [
+      {
+        "section": "Ultimate",
+        "tier": "base"
+      }
+    ]
+  },
+  "skill_summaries": {
+    "ultimate": "Passive: normal attacks mesmerize enemies, reducing ATK, and defeated enemies become companions; Active: channel Energy into rapid normal attacks with true damage based on max HP and max HP reduction",
+    "skill1": "normal attacks launch extra projectiles that grow with ally temporary buffs; Active: fire multiple projectiles dealing magic damage",
+    "skill2": "repeated global AoE magic damage; each companion restores HP and Energy",
+    "skill3": "ATK increases during battle, with an extra increase while enough companions are present",
+    "skill4": "channeling the ultimate attracts more companions, then a solo phase with steadfast makes companions deal true damage; spirit form after defeat keeps attacking",
+    "skill5": "attracts companions when battle starts"
+  },
+  "play_overview": "[[Senea]] is a long-range Marksman who **mesmerizes enemies** with normal attacks, lowering their ATK, and turns defeated enemies into **spectral spectators**. Her ultimate begins from high starting Energy and runs a performance of rapid normal attacks with **max HP-based true damage** and max HP reduction. Spectators heal her, return Energy, and throw **true-damage roses** once her solo begins, while she stays **steadfast**. Extra projectiles grow with ally temporary buffs and global waves hit every enemy. She needs kills to build spectators and Energy to keep the performance going, so early burst or Energy denial cuts her output.",
+  "counter_overview": "[[Senea]] needs 1,000 Energy to start her performance, then deals **max HP-based true damage** with max HP reduction that ignores DEF and shields, while every kill adds a spectator that heals her. With three spectators she keeps attacking after death and while stunned, so the window to act is **before the third spectator**. Both of her DEFs are high, so delete her early with [[filter:true-dmg-backline-assassin]] like [[Himmel]] or [[Athalia]], and lock the start of the performance with [[Lily May]] or [[Dunlingr]]. Cut her spectator sustain with [[filter:heal-inhibitor]] like [[Frieren]] or [[Gwyneth]], and do not rely on a bulky tank to stall her, because the max HP reduction shreds it."
+}

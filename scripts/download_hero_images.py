@@ -22,6 +22,7 @@ import heroes_io as io
 
 YAPHALLA_BASE = "https://www.yaphalla.com"
 FANDOM_API = "https://afk-journey.fandom.com/api.php"
+FANDOM_REFERER = "https://afk-journey.fandom.com/"
 ICONS_DIR = io.ROOT / "site" / "assets" / "icons"
 PORTRAITS_DIR = io.ROOT / "site" / "assets" / "portraits"
 HEROES_JSON = io.ROOT / "site" / "data" / "heroes.json"
@@ -36,9 +37,11 @@ def _http_get(
     url: str,
     user_agent: str = "afkj-heroes-site/1.0",
 ) -> bytes | None:
-    req = urllib.request.Request(
-        url, headers={"User-Agent": user_agent}
-    )
+    headers = {"User-Agent": user_agent}
+    # The Fandom CDN answers 403 to hotlinked requests without a Referer.
+    if urllib.parse.urlsplit(url).hostname == "static.wikia.nocookie.net":
+        headers["Referer"] = FANDOM_REFERER
+    req = urllib.request.Request(url, headers=headers)
     try:
         with urllib.request.urlopen(req, timeout=60) as resp:
             return resp.read()
@@ -105,11 +108,40 @@ def _add_original_format(url: str) -> str:
     )
 
 
+def _fandom_image_url(title: str) -> str | None:
+    """Resolve a Fandom file title to its original-format CDN URL."""
+    payload = json.loads(
+        _http_get(
+            _fandom_api_url(
+                {
+                    "action": "query",
+                    "titles": title,
+                    "prop": "imageinfo",
+                    "iiprop": "url|mime",
+                }
+            ),
+            user_agent="afkj-heroes-site/1.0",
+        )
+        or b"{}"
+    )
+    pages = (payload.get("query") or {}).get("pages") or {}
+    for image_page in pages.values():
+        imageinfo = image_page.get("imageinfo") or []
+        if imageinfo and isinstance(imageinfo[0].get("url"), str):
+            return _add_original_format(imageinfo[0]["url"])
+    return None
+
+
 def _fandom_portrait_url(
     display_name: str,
     aliases: list[str] | None = None,
 ) -> str | None:
+    """Find the combat icon: assumed file name first, then the gallery."""
     names = [display_name, *(aliases or [])]
+    for name in names:
+        url = _fandom_image_url(f"File:Hero {name}.png")
+        if url:
+            return url
     for name in names:
         page = f"{name}/Gallery"
         payload = json.loads(
@@ -129,25 +161,9 @@ def _fandom_portrait_url(
         title = _gallery_image_title(payload, names)
         if not title:
             continue
-        image_payload = json.loads(
-            _http_get(
-                _fandom_api_url(
-                    {
-                        "action": "query",
-                        "titles": title,
-                        "prop": "imageinfo",
-                        "iiprop": "url|mime",
-                    }
-                ),
-                user_agent="afkj-heroes-site/1.0",
-            )
-            or b"{}"
-        )
-        pages = (image_payload.get("query") or {}).get("pages") or {}
-        for image_page in pages.values():
-            imageinfo = image_page.get("imageinfo") or []
-            if imageinfo and isinstance(imageinfo[0].get("url"), str):
-                return _add_original_format(imageinfo[0]["url"])
+        url = _fandom_image_url(title)
+        if url:
+            return url
     return None
 
 

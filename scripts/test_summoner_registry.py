@@ -51,9 +51,9 @@ rs = _load_rs()
 
 
 class SummonerRegistryTests(unittest.TestCase):
-    def test_registry_has_sixteen_summoners(self):
+    def test_registry_has_eighteen_summoners(self):
         heroes = sr.summoner_heroes()
-        self.assertEqual(len(heroes), 16)
+        self.assertEqual(len(heroes), 18)
         self.assertIn("Lucy", heroes)
         self.assertIn("Galahad", heroes)
         self.assertIn("Berial", heroes)

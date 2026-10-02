@@ -247,13 +247,13 @@
         "basic": "average",
         "offensive": "average",
         "defensive": "high",
-        "other": "average"
+        "other": "low"
       },
       "stats": {
-        "HP": "high",
-        "ATK": "average",
+        "HP": "average",
+        "ATK": "low",
         "Phys DEF": "average",
-        "Magic DEF": "high",
+        "Magic DEF": "average",
         "Haste": "average",
         "ATK SPD": "average"
       }

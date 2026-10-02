@@ -264,12 +264,12 @@
         "basic": "average",
         "offensive": "high",
         "defensive": "high",
-        "other": "average"
+        "other": "low"
       },
       "stats": {
         "HP": "high",
         "ATK": "high",
-        "Phys DEF": "average",
+        "Phys DEF": "low",
         "Magic DEF": "low",
         "Haste": "high",
         "ATK SPD": "high"

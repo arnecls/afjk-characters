@@ -286,6 +286,25 @@ validates the resulting PNG/WebP/JPEG bytes. A missing or invalid new portrait
 causes the recipe to fail. Do not substitute page art, full character art, or
 an arbitrary CDN thumbnail.
 
+The downloader finds the combat icon in this order:
+
+1. **Assumed file name:** resolve `File:Hero <Display Name>.png` (then each
+   alias) through the Fandom API. This is the icon the wiki labels
+   "combat icon" on `<Name>/Gallery`.
+2. **Gallery lookup:** list the images of `<Name>/Gallery` and pick the
+   `Hero <Name>` file. The page wikitext may look empty because the gallery
+   template supplies the images; use the API, not the rendered source.
+3. **User-supplied URL:** if both steps find nothing, report the hero
+   **BLOCKED / INCOMPLETE** and ask the user for a direct image URL. Accept
+   it only when it is the `Hero <Name>` file on
+   `static.wikia.nocookie.net`; save it as the portrait and re-run
+   `just render-site`.
+
+The Fandom CDN returns HTTP 403 to requests without
+`Referer: https://afk-journey.fandom.com/`, intermittently and per file. The
+downloader sends the header; a 403 therefore means a real access problem, not
+a missing icon. Do not treat 403 as "no portrait" before checking steps 1-2.
+
 **Completion criterion:** the hero appears exactly once in `Heroes.md`,
 `heroes-overview.md`, `heroes-overview.csv`, and `site/data/heroes.json`; its
 site slug, skill cards, behavior, relationships, and portrait all resolve.

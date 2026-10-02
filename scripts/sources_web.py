@@ -101,7 +101,8 @@ FANDOM_HEADER = (
 
 # Playable heroes from Category:Playable_Heroes (alphabetical).
 HERO_NAMES = [
-    "Aliceth", "Alna", "Alsa", "Antandra", "Arden", "Atalanta", "Athalia",
+    "Aliceth", "Alna", "Alsa", "Antandra", "Arden", "Aster", "Atalanta",
+    "Athalia",
     "Aurora", "Baelran", "Berial", "Bonnie", "Brutus", "Bryon", "Callan",
     "Carolina", "Cassadee", "Cecia", "Chippy", "Contess", "Cryonaia", "Cyran",
     "Daimon", "Damian", "Dionel", "Dunlingr", "Eironn", "Elijah & Lailah",
@@ -114,7 +115,7 @@ HERO_NAMES = [
     "Lyca", "Marcille", "Marilee", "Mehira", "Mikola", "Mirael", "Nara",
     "Natsu", "Nazrik", "Nerion", "Niru", "Odie", "Orion", "Pandora", "Pang", "Parisa",
     "Perseus", "Peggy", "Phraesto", "Pippa", "Ravion", "Reinier", "Rhys", "Rowan",
-    "Rolan", "Saida", "Salazer", "Satrana", "Scarlita", "Seth", "Shadewing",
+    "Rolan", "Saida", "Salazer", "Satrana", "Scarlita", "Senea", "Seth", "Shadewing",
     "Shakir",
     "Shemira", "Silven", "Silvina", "Sinbad", "Smokey & Meerky", "Solise",
     "Sonja", "Soren", "Sylphira", "Taichi & Agumon", "Talene", "Tasi", "Temesia", "Thador",

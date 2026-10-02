@@ -253,7 +253,7 @@
     "walk_speed": "normal",
     "stat_ranks": {
       "categories": {
-        "basic": "high",
+        "basic": "average",
         "offensive": "low",
         "defensive": "high",
         "other": "low"

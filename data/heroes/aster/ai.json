@@ -1,0 +1,580 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Aster - Chaos Observer",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "9878af70c8db1109cb0b73ec59a3b4e1394288ca00f92da65770fb22275cedf9",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 360.0
+                  }
+                ],
+                "type": "damage"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 360.0
+                  }
+                ],
+                "type": "damage"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "cc-type": "stun",
+                "duration": 2,
+                "type": "crowd_control"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "damage_type": "dot",
+                "name": "DoT",
+                "label": "dot",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "duration": 6,
+                "tick": 1.0,
+                "type": "dot"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Summoning",
+                "tier": "base",
+                "targeting": "Area",
+                "description": "Aster summons up to 3 Stars on chosen tiles; a new Star replaces the oldest once the limit is reached."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "a9c358a4efa96abf0b8c8c12a0b817f4578cf63036129b99529f6d9ad33f1c39",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 120.0
+                  }
+                ],
+                "type": "damage"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": -1,
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 90.0
+                  }
+                ],
+                "type": "damage"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": -1,
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 180.0
+                  }
+                ],
+                "type": "damage"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "cc-type": "displace",
+                "type": "crowd_control"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 360.0
+                  }
+                ],
+                "type": "damage"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "781c29d37b9c338b2d7f2937c48b294c4c615e3500676b7ee2e0dfd2901d3779",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "path",
+                "target_count": -1,
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ],
+                "type": "damage"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 90.0
+                  }
+                ],
+                "duration": 9,
+                "type": "shield"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": -1,
+                "name": "Shield",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 360.0
+                  }
+                ],
+                "type": "debuff"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "117c1842733402bcce025d8bee3aaa379f7137c5e8acf429990d463f51b103dc",
+        "is_max_known": true,
+        "tiers": {
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 6.0
+                  }
+                ],
+                "persistence": "permanent",
+                "type": "buff"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 18.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 3,
+                    "stack_comparison": "up_to"
+                  }
+                ],
+                "type": "buff"
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ],
+                "type": "buff"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "d05a192d48f6c0eb95a158ff496cb1b76ade3ead1b74b5027f13e873c8eb2e4d",
+        "is_max_known": true,
+        "tiers": {
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 90.0
+                  }
+                ],
+                "tick": 1.0,
+                "type": "damage"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
+                "label": "damage_max_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 6.0
+                  }
+                ],
+                "tick": 1.0,
+                "type": "damage"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "name": "ATK",
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "type": "debuff"
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "name": "Haste",
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 30.0
+                  }
+                ],
+                "type": "debuff"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+15": {
+            "effects": [
+              {
+                "tier": "ex+15",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "damage_type": "true",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 180.0
+                  }
+                ],
+                "type": "damage"
+              },
+              {
+                "tier": "ex+15",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "name": "Energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 333.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "kill"
+                  }
+                ],
+                "type": "energy"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "ac116e2d1972c8b751ac13f14d7ce8c2a10208f6922456760c3f6649afb8a8ea",
+        "is_max_known": true,
+        "tiers": {
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 3.0
+                  }
+                ],
+                "type": "range_increase"
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "name": "Energy Recovery",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "persistence": "temporary",
+                "type": "buff"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "supreme+",
+                "immunity_type": "unaffected",
+                "timing": "conditional",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              },
+              {
+                "type": "immunity",
+                "tier": "supreme+",
+                "immunity_type": "untargetable",
+                "timing": "conditional",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "aoe-damage",
+    "dot-specialist",
+    "enemy-debuffer",
+    "enemy-grouping",
+    "invincibility",
+    "mass-cc",
+    "summoner"
+  ],
+  "summon_profile": {
+    "has_ranged_summons": false,
+    "sources": [
+      {
+        "section": "Ultimate",
+        "tier": "base"
+      }
+    ]
+  },
+  "skill_summaries": {
+    "ultimate": "summon a capped, replaceable zone summon, then supercharge all summons for AoE magic damage, stun, and DoT burn",
+    "skill1": "Passive: each summon spawns an orbiting object dealing contact damage; Active: displace enemies toward summons, dealing damage",
+    "skill2": "line AoE magic damage on the most crowded lines, gaining a shield from damage dealt and reducing enemy shields",
+    "skill3": "ATK increases during battle, growing with each summon and again after summons transform",
+    "skill4": "summons transform into zones dealing true and max HP-based damage, draining enemy ATK and Haste, restoring Energy on kills",
+    "skill5": "Active displace reach and Energy recovery increase; after transformation, becomes invincible until last hero standing"
+  },
+  "play_overview": "[[Aster]] is a fast Mage who plants up to three **zone summons** with his ultimate, then supercharges them for **AoE magic damage, stun, and burn**. Orbiting objects add contact damage, and Gravitic pulls **drag enemies into the zones**. Darklight beams hit the most crowded lines and return a shield from damage dealt. After the third summon, every zone becomes a **true-damage field** that scales with max HP and drains enemy ATK and Haste. Supreme+ makes him **invincible** until he is the last hero alive. His kit needs Energy to reach three casts and enemies standing near the zones, so slow starts or spread-out enemies and early burst weaken it.",
+  "counter_overview": "[[Aster]] needs **three ultimate casts** to convert his zones, and at Supreme+ he then becomes **untargetable** until he is the last hero alive, so the window to act is **before the third cast**, often about 2 seconds in with an energy partner. Lock his ultimates with [[Lily May]] on the first cast or [[Dunlingr]] Spellbind, and bring early burst such as [[filter:magic-backline-assassin]] like [[Pippa]] or [[Lucy]], since his Magic DEF is lower than his Phys DEF. Answer his zone pulls with [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Sylphira]] or [[Shakir]] for the mid-fight pulls. Once he is untargetable, pressure his surviving allies instead."
+}

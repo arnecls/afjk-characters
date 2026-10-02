@@ -10339,3 +10339,168 @@ Karma grows stronger from the healing he receives. For every 35% of his initial 
 - Skill Range: 1 tile
 
 While affected by his own potions, Karma takes 50% less damage. This effect cannot stack.
+
+## Aster - Chaos Observer
+
+*Hypogean · Mage · Magic*
+
+An ancient being from the Sea of Stars, heralding its arrival with blazing stars and devouring all things with black holes.
+
+### Ultimate
+
+**Stellar Flare**
+*Unlocks at Level 1*
+
+- Skill Range: Global
+- Initial Energy: 200
+
+Aster consumes 600 Energy to target 1 tile, summoning a Star to deal 360% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile. He then supercharges all of his Stars, causing each Star to deal 240% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile and stun them for 2s. Supercharged Stars burn for 6s, dealing 36% (ATK-based) + 6% (SP-based) damage per second to enemies within 1 tile. Up to 3 of Aster's Stars can exist on the battlefield at the same time. If this limit is reached, summoning a new Star replaces the oldest Star with the fewest enemies in range. Only 1 of Aster's own Stars can exist on each tile. When cast automatically, this skill prioritizes tiles with the most enemies that do not overlap with any of his other Stars.
+
+- Level 2 — Unlocks at Level 51: Increases the damage dealt when a Star is supercharged to 270% (ATK-based) + 30% (SP-based), and its burn damage to 42% (ATK-based) + 6% (SP-based) per second.
+- Level 3 — Unlocks at Level 111: Increases the damage dealt when a Star is supercharged to 300% (ATK-based) + 30% (SP-based), and its burn damage to 48% (ATK-based) + 6% (SP-based) per second.
+- Level 4 — Unlocks at Level 171: Increases the damage dealt when a Star is supercharged to 330% (ATK-based) + 30% (SP-based), and its burn damage to 54% (ATK-based) + 6% (SP-based) per second.
+- Level 5 — Unlocks at Level 231: Increases the damage dealt when a Star is supercharged to 360% (ATK-based) + 30% (SP-based), and its burn damage to 60% (ATK-based) + 6% (SP-based) per second.
+
+### Skill1
+
+**Gravitic Maw**
+*Unlocks at Level 11*
+
+- Cooldown: 9s
+- Initial Cooldown: 4s
+- Skill Range: Global
+
+Passive. Whenever Aster summons a Star, 1 Planet is created on an adjacent tile, prioritizing the tile occupied by the adjacent enemy with the lowest HP. This deals 120% (ATK-based) damage to the enemy on that tile. Each Planet orbits its Star once every 6s, dealing 90% (ATK-based) damage to enemies it collides with. An enemy can take this damage 1 time every 3s. Whenever a Planet completes an orbit. it deals 180% (ATK-based) damage to enemies on the central tile. Active. Aster commands all his Stars and Black Holes on the battlefield, pulling enemies within 2 tiles of them toward the nearest Star or Black Hole and dealing 270% (ATK-based) + 30% (SP-based) damage.
+
+- Level 2 — Unlocks at Level 71: Increases the pull damage to 300% (ATK-based) + 30% (SP-based).
+- Level 3 — Unlocks at Level 131: Increases the pull damage to 330% (ATK-based) + 30% (SP-based).
+- Level 4 — Unlocks at Level 191: Increases the pull damage to 360% (ATK-based) + 30% (SP-based).
+
+### Skill2
+
+**Darklight Pulse**
+*Unlocks at Level 31*
+
+- Cooldown: 12s
+- Initial Cooldown: 2s
+- Skill Range: Global
+
+Aster fires pulse beams along 3 lines that cover the most enemies, dealing 210% (ATK-based) + 30% (SP-based) damage to enemies hit. He also gains a shield equal to 90% + 9% (SP-based) of the total actual damage dealt by this skill. The shield lasts 9s. Each time a pulse beam hits an enemy, it also reduces the target's shield value by up to 270% (ATK-based) + 30% (SP-based).
+
+- Level 2 — Unlocks at Level 91: Increases damage dealt to 240% (ATK-based) + 30% (SP-based) and shield value reduction to 300% (ATK-based) + 30% (SP-based).
+- Level 3 — Unlocks at Level 151: Increases damage dealt to × 270% (ATK-based) + 30% (SP-based) and shield value reduction to 330% (ATK-based) + 30% (SP-based).
+- Level 4 — Unlocks at Level 211: Increases damage dealt to 300% (ATK-based) + 30% (SP-based) and shield value reduction to 360% (ATK-based) + 30% (SP-based).
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Aster increases his ATK by 2% during battle. Whenever he summons a Star, his ATK increases by an extra 2%, up to 6%. After converting Stars into Black Holes, his ATK increases further by 6%.
+
+- Level 2: Aster increases his ATK by 4% during battle. Whenever he summons a Star, his ATK increases by an extra 4%, up to 12%. After converting Stars into Black Holes. his ATK increases further by 9%.
+- Level 3: Aster increases his ATK by 6% during battle. Whenever he summons a Star, his ATK increases by an extra 6%, up to 18%. After converting Stars into Black Holes. his ATK increases further by 12%.
+
+### Ex. Skill
+
+**Starless Hollows**
+*Unlocks at Mythic+*
+
+- Skill Range: Global
+
+Passive. After summoning 3 Stars, Aster permanently converts all his Stars into Black Holes and devours the Planets orbiting them. From then on, Stars summoned through Stellar Flare are created directly as Black Holes. Initially, each Black Hole deals 30% (ATK-based) true damage plus extra true damage equal to 2% of the target's max HP to enemies within 1 tile every second. The total damage cannot exceed 60% (ATK-based). When supercharged by Stellar Flare, Black Holes do not burn. Instead, each Black Hole drains 30% ATK and 30 Haste from every enemy within range. The ATK drained increases the damage of all Black Holes, while the Haste drained increases the frequency at which they deal continuous damage. These increases cannot exceed 60% and 60%, respectively. The cumulative ATK a single enemy can lose through this effect cannot exceed 60% of Aster's initial ATK.
+
+- Level 2 — Unlocks at EX. +5: Increases the true damage dealt by Black Holes to enemies within range to 60% (ATK-based) plus 4% of the target's max HP. The total damage cannot exceed 120% (ATK-based).
+- Level 3 — Unlocks at EX. +10: Increases the true damage dealt by Black Holes to enemies within range to 90% (ATK-based) plus 6% of the target's max HP. The total damage cannot exceed 180% (ATK-based).
+- Level 4 — Unlocks at EX. +15: When a Black Hole is supercharged by Stellar Flare, it deals 180% (ATK-based) extra true damage to enemies within range. When an enemy hero is defeated within a Black Hole's range, that Black Hole devours them and restores 333 Energy to Aster.
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+Aster expands Gravitic Maw's pull range to 3 tiles. Aster gains 60% Energy recovery efficiency before converting his Stars into Black Holes. Once converted, he ascends to a higher dimension and becomes permanently invincible until he is the last surviving hero on his team.
+
+## Senea - Deathless Songstress
+
+*Graveborn · Marksman · Magic*
+
+A marksman who captivates crowds with her singing and cripples enemies with relentless normal attacks and projectiles.
+
+### Ultimate
+
+**Grave Crescendo**
+*Unlocks at Level 1*
+
+- Skill Range: Global
+- Initial Energy: 500
+
+Passive. Senea's normal attacks mesmerize enemies on hit for 8s, reducing their ATK by 10%. When a mesmerized enemy is defeated, they turn into a spectral spectator. Senea can have up to 5 spectral spectators. Active. Upon reaching 1,000 Energy, Senea consumes 200 Energy to begin an impassioned performance. During the performance, Senea gains 120 ATK SPD and automatically casts her normal attacks at her current attack rate. Each of these normal attacks consumes 100 Energy, though this cost decreases as her ATK SPD and Haste increase. These attacks also deal extra true damage equal to 8% + 1.2% (SP-based) of the target's max HP and inflict max HP Reduction equal to 100%. The extra true damage cannot exceed 140% (ATK-based). The performance ends when Senea's Energy is depleted.
+
+- Level 2 — Unlocks at Level 51: While Senea's Ultimate is active, increases the extra true damage dealt by each normal attack to 9% + 1.2% (SP-based) of the target's max HP. This extra true damage cannot exceed 150% (ATK-based).
+- Level 3 — Unlocks at Level 111: While Senea's Ultimate is active, increases the extra true damage dealt by each normal attack to 10% + 1.2% (SP-based) of the target's max HP. This extra true damage cannot exceed 160% (ATK-based).
+- Level 4 — Unlocks at Level 171: While Senea's Ultimate is active, increases the extra true damage dealt by each normal attack to 11% + 1.2% (SP-based) of the target's max HP. This extra true damage cannot exceed 170% (ATK-based).
+- Level 5 — Unlocks at Level 231: While Senea's Ultimate is active, increases the extra true damage dealt by each normal attack to 12% + 1.2% (SP-based) of the target's max HP. This extra true damage cannot exceed 180% (ATK-based).
+
+### Skill1
+
+**Melodic Cascade**
+*Unlocks at Level 11*
+
+- Cooldown: 10s
+- Initial Cooldown: 1s
+- Skill Range: Global
+
+Senea launches 1 extra projectile with each normal attack. Whenever she receives a temporary stat buff from an ally, the number of extra projectiles increases by 1, up to a maximum of 5. Each ally can trigger this effect only once. After Senea hits an enemy with a normal attack projectile, that enemy takes 25% less damage from projectiles launched by her subsequent normal attacks. Active. Senea performs a special normal attack, replacing the projectiles with 2 musical notes, each dealing 150% (ATK-based) + 18% (SP-based) damage.
+
+- Level 2 — Unlocks at Level 71: Increases the damage dealt by each musical note to 160% (ATK-based) + 18% (SP-based) when this skill is used actively.
+- Level 3 — Unlocks at Level 131: Increases the damage dealt by each musical note to 170% (ATK-based) + 18% (SP-based) when this skill is used actively.
+- Level 4 — Unlocks at Level 191: Increases the damage dealt by each musical note to 180% (ATK-based) + 18% (SP-based) when this skill is used actively.
+
+### Skill2
+
+**Swell of Sorrow**
+*Unlocks at Level 31*
+
+- Cooldown: 10s
+- Skill Range: Global
+
+Senea sings a brilliant melody, sending sound waves across the battlefield that deal 170% (ATK-based) + 20% (SP-based) damage to all enemies 3 times. If there are any spectral spectators on the battlefield, each one scatters petals in time with the music, restoring 50 Energy and 100% (ATK-based) HP to Senea.
+
+- Level 2 — Unlocks at Level 91: Increases the impact damage to 180% (ATK-based) + 20% (SP-based).
+- Level 3 — Unlocks at Level 151: Increases the impact damage to 190% (ATK-based) + 20% (SP-based).
+- Level 4 — Unlocks at Level 211: Increases the impact damage to 200% (ATK-based) + 20% (SP-based).
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Increases ATK by 9% during battle, and by an extra 6% when 3 spectral spectators are present.
+
+- Level 2: Increases ATK by 12% during battle, and by an extra 8% when 3 spectral spectators are present.
+- Level 3: Increases ATK by 15% during battle, and by an extra 10% when 3 spectral spectators are present.
+
+### Ex. Skill
+
+**Crimson Solo**
+*Unlocks at Mythic+*
+
+- Skill Range: Global
+
+For every 3 normal attacks Senea unleashes during Grave Crescendo, she attracts 1 extra spectral spectator. Once Senea has at least 3 spectral spectators, a stage rises beneath her and she begins a solo performance, remaining steadfast throughout. During the solo performance, each time she lands 15 normal attack hits, every spectral spectator on the battlefield throws a rose at her current target. Each rose deals 190% (ATK-based) true damage.
+
+- Level 2 — Unlocks at EX. +5: Increases the true damage dealt by each spectral spectator's rose to 195% (ATK-based).
+- Level 3 — Unlocks at EX. +10: If defeated during her solo performance, Senea enters spirit form. While under control effects or in spirit form, she continues to use normal attacks, but they deal 15% less damage with 30 less ATK SPD.
+- Level 4 — Unlocks at EX. +15: Increases the true damage dealt by each spectral spectator's rose to 200% (ATK-based).
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+Senea immediately attracts 2 spectral spectators when a battle starts.

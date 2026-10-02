@@ -1,0 +1,975 @@
+{
+  "schema_version": 2,
+  "id": "aster",
+  "display_name": "Aster",
+  "local": {
+    "long_name": "Aster - Chaos Observer",
+    "faction": "hypogean",
+    "class": "mage",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 7,
+    "release_date": "2026-09-23",
+    "season": "Crown of Ashes",
+    "season_number": 7,
+    "skills": {
+      "Stellar Flare": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Aster consumes 600 Energy to target 1 tile, summoning a Star to deal 360% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile. He then supercharges all of his Stars, causing each Star to deal 240% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile and stun them for 2s. Supercharged Stars burn for 6s, dealing 36% (ATK-based) + 6% (SP-based) damage per second to enemies within 1 tile. Up to 3 of Aster's Stars can exist on the battlefield at the same time. If this limit is reached, summoning a new Star replaces the oldest Star with the fewest enemies in range. Only 1 of Aster's own Stars can exist on each tile. When cast automatically, this skill prioritizes tiles with the most enemies that do not overlap with any of his other Stars.",
+          "active": [
+            "Aster consumes 600 Energy to target 1 tile, summoning a Star to deal 360% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile.",
+            "He then supercharges all of his Stars, causing each Star to deal 240% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile and stun them for 2s.",
+            "Supercharged Stars burn for 6s, dealing 36% (ATK-based) + 6% (SP-based) damage per second to enemies within 1 tile.",
+            "Up to 3 of Aster's Stars can exist on the battlefield at the same time.",
+            "If this limit is reached, summoning a new Star replaces the oldest Star with the fewest enemies in range.",
+            "Only 1 of Aster's own Stars can exist on each tile.",
+            "When cast automatically, this skill prioritizes tiles with the most enemies that do not overlap with any of his other Stars."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt when a Star is supercharged to 270% (ATK-based) + 30% (SP-based), and its burn damage to 42% (ATK-based) + 6% (SP-based) per second."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt when a Star is supercharged to 300% (ATK-based) + 30% (SP-based), and its burn damage to 48% (ATK-based) + 6% (SP-based) per second."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt when a Star is supercharged to 330% (ATK-based) + 30% (SP-based), and its burn damage to 54% (ATK-based) + 6% (SP-based) per second."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt when a Star is supercharged to 360% (ATK-based) + 30% (SP-based), and its burn damage to 60% (ATK-based) + 6% (SP-based) per second."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 390.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 2.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 66.0
+              }
+            ],
+            "duration": 6.0,
+            "tick": 1.0
+          }
+        ],
+        "initial_energy": 200.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "Stun — Area"
+          }
+        ]
+      },
+      "Gravitic Maw": {
+        "category": "skill1",
+        "description": {
+          "raw": "Passive. Whenever Aster summons a Star, 1 Planet is created on an adjacent tile, prioritizing the tile occupied by the adjacent enemy with the lowest HP. This deals 120% (ATK-based) damage to the enemy on that tile. Each Planet orbits its Star once every 6s, dealing 90% (ATK-based) damage to enemies it collides with. An enemy can take this damage 1 time every 3s. Whenever a Planet completes an orbit. it deals 180% (ATK-based) damage to enemies on the central tile. Active. Aster commands all his Stars and Black Holes on the battlefield, pulling enemies within 2 tiles of them toward the nearest Star or Black Hole and dealing 270% (ATK-based) + 30% (SP-based) damage.",
+          "passive": [
+            "Whenever Aster summons a Star, 1 Planet is created on an adjacent tile, prioritizing the tile occupied by the adjacent enemy with the lowest HP.",
+            "This deals 120% (ATK-based) damage to the enemy on that tile.",
+            "Each Planet orbits its Star once every 6s, dealing 90% (ATK-based) damage to enemies it collides with.",
+            "An enemy can take this damage 1 time every 3s.",
+            "Whenever a Planet completes an orbit.",
+            "it deals 180% (ATK-based) damage to enemies on the central tile."
+          ],
+          "active": [
+            "Aster commands all his Stars and Black Holes on the battlefield, pulling enemies within 2 tiles of them toward the nearest Star or Black Hole and dealing 270% (ATK-based) + 30% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the pull damage to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the pull damage to 330% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the pull damage to 360% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 390.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "crowd_control",
+            "cc-type": "displace"
+          }
+        ],
+        "cooldown": 9.0,
+        "initial_cooldown": 4.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Displace — Area"
+          }
+        ]
+      },
+      "Darklight Pulse": {
+        "category": "skill2",
+        "description": {
+          "raw": "Aster fires pulse beams along 3 lines that cover the most enemies, dealing 210% (ATK-based) + 30% (SP-based) damage to enemies hit. He also gains a shield equal to 90% + 9% (SP-based) of the total actual damage dealt by this skill. The shield lasts 9s. Each time a pulse beam hits an enemy, it also reduces the target's shield value by up to 270% (ATK-based) + 30% (SP-based).",
+          "active": [
+            "Aster fires pulse beams along 3 lines that cover the most enemies, dealing 210% (ATK-based) + 30% (SP-based) damage to enemies hit.",
+            "He also gains a shield equal to 90% + 9% (SP-based) of the total actual damage dealt by this skill.",
+            "The shield lasts 9s.",
+            "Each time a pulse beam hits an enemy, it also reduces the target's shield value by up to 270% (ATK-based) + 30% (SP-based)."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases damage dealt to 240% (ATK-based) + 30% (SP-based) and shield value reduction to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases damage dealt to × 270% (ATK-based) + 30% (SP-based) and shield value reduction to 330% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases damage dealt to 300% (ATK-based) + 30% (SP-based) and shield value reduction to 360% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 390.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 90.0
+              }
+            ],
+            "duration": 9.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "debuff",
+            "name": "Shield",
+            "label": "shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 360.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 12.0,
+        "initial_cooldown": 2.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Multiple targets",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Aster increases his ATK by 2% during battle. Whenever he summons a Star, his ATK increases by an extra 2%, up to 6%. After converting Stars into Black Holes, his ATK increases further by 6%.",
+          "active": [
+            "Aster increases his ATK by 2% during battle.",
+            "Whenever he summons a Star, his ATK increases by an extra 2%, up to 6%.",
+            "After converting Stars into Black Holes, his ATK increases further by 6%."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Aster increases his ATK by 4% during battle.",
+                "Whenever he summons a Star, his ATK increases by an extra 4%, up to 12%.",
+                "After converting Stars into Black Holes.",
+                "his ATK increases further by 9%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Aster increases his ATK by 6% during battle.",
+                "Whenever he summons a Star, his ATK increases by an extra 6%, up to 18%.",
+                "After converting Stars into Black Holes.",
+                "his ATK increases further by 12%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 3,
+                "stack_comparison": "up_to"
+              },
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 18.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Starless Hollows": {
+        "category": "skill4",
+        "description": {
+          "raw": "Passive. After summoning 3 Stars, Aster permanently converts all his Stars into Black Holes and devours the Planets orbiting them. From then on, Stars summoned through Stellar Flare are created directly as Black Holes. Initially, each Black Hole deals 30% (ATK-based) true damage plus extra true damage equal to 2% of the target's max HP to enemies within 1 tile every second. The total damage cannot exceed 60% (ATK-based). When supercharged by Stellar Flare, Black Holes do not burn. Instead, each Black Hole drains 30% ATK and 30 Haste from every enemy within range. The ATK drained increases the damage of all Black Holes, while the Haste drained increases the frequency at which they deal continuous damage. These increases cannot exceed 60% and 60%, respectively. The cumulative ATK a single enemy can lose through this effect cannot exceed 60% of Aster's initial ATK.",
+          "passive": [
+            "After summoning 3 Stars, Aster permanently converts all his Stars into Black Holes and devours the Planets orbiting them.",
+            "From then on, Stars summoned through Stellar Flare are created directly as Black Holes.",
+            "Initially, each Black Hole deals 30% (ATK-based) true damage plus extra true damage equal to 2% of the target's max HP to enemies within 1 tile every second.",
+            "The total damage cannot exceed 60% (ATK-based).",
+            "When supercharged by Stellar Flare, Black Holes do not burn.",
+            "Instead, each Black Hole drains 30% ATK and 30 Haste from every enemy within range.",
+            "The ATK drained increases the damage of all Black Holes, while the Haste drained increases the frequency at which they deal continuous damage.",
+            "These increases cannot exceed 60% and 60%, respectively.",
+            "The cumulative ATK a single enemy can lose through this effect cannot exceed 60% of Aster's initial ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the true damage dealt by Black Holes to enemies within range to 60% (ATK-based) plus 4% of the target's max HP.",
+                "The total damage cannot exceed 120% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the true damage dealt by Black Holes to enemies within range to 90% (ATK-based) plus 6% of the target's max HP.",
+                "The total damage cannot exceed 180% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "When a Black Hole is supercharged by Stellar Flare, it deals 180% (ATK-based) extra true damage to enemies within range.",
+                "When an enemy hero is defeated within a Black Hole's range, that Black Hole devours them and restores 333 Energy to Aster."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 180.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 6.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "debuff",
+            "name": "Haste",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+15",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "kill"
+              }
+            ],
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 333.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "Max HP-based damage"
+          },
+          {
+            "label": "True damage (EX+15)"
+          },
+          {
+            "label": "Energy — Self (EX+15)",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Area",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Haste — Area",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Aster expands Gravitic Maw's pull range to 3 tiles. Aster gains 60% Energy recovery efficiency before converting his Stars into Black Holes. Once converted, he ascends to a higher dimension and becomes permanently invincible until he is the last surviving hero on his team.",
+          "active": [
+            "Aster expands Gravitic Maw's pull range to 3 tiles.",
+            "Aster gains 60% Energy recovery efficiency before converting his Stars into Black Holes.",
+            "Once converted, he ascends to a higher dimension and becomes permanently invincible until he is the last surviving hero on his team."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Range Increase",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy Recovery",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "type": "immunity",
+            "tier": "supreme+",
+            "immunity_type": "unaffected",
+            "timing": "conditional",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          },
+          {
+            "type": "immunity",
+            "tier": "supreme+",
+            "immunity_type": "untargetable",
+            "timing": "conditional",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Energy Recovery — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Range Increase — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Unaffected — Self"
+          },
+          {
+            "label": "Untargetable — Self"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Area",
+          "description": "Aster summons up to 3 Stars on chosen tiles; a new Star replaces the oldest once the limit is reached."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "Area, Multiple targets, Single target"
+      ],
+      [
+        "dot",
+        "Area"
+      ],
+      [
+        "max_hp",
+        "Area"
+      ],
+      [
+        "true",
+        "Area"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "shield",
+      "energy"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "aster",
+    "display_name": "Aster",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Aster consumes 600 Energy to target 1 tile, summoning a Star to deal 360% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "He then supercharges all of his Stars, causing each Star to deal 240% (ATK-based) + 30% (SP-based) damage to enemies within 1 tile and stun them for 2s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Supercharged Stars burn for 6s, dealing 36% (ATK-based) + 6% (SP-based) damage per second to enemies within 1 tile.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Up to 3 of Aster's Stars can exist on the battlefield at the same time.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "If this limit is reached, summoning a new Star replaces the oldest Star with the fewest enemies in range.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Only 1 of Aster's own Stars can exist on each tile.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When cast automatically, this skill prioritizes tiles with the most enemies that do not overlap with any of his other Stars.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt when a Star is supercharged to 270% (ATK-based) + 30% (SP-based), and its burn damage to 42% (ATK-based) + 6% (SP-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt when a Star is supercharged to 300% (ATK-based) + 30% (SP-based), and its burn damage to 48% (ATK-based) + 6% (SP-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt when a Star is supercharged to 330% (ATK-based) + 30% (SP-based), and its burn damage to 54% (ATK-based) + 6% (SP-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt when a Star is supercharged to 360% (ATK-based) + 30% (SP-based), and its burn damage to 60% (ATK-based) + 6% (SP-based) per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Whenever Aster summons a Star, 1 Planet is created on an adjacent tile, prioritizing the tile occupied by the adjacent enemy with the lowest HP.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "This deals 120% (ATK-based) damage to the enemy on that tile.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Each Planet orbits its Star once every 6s, dealing 90% (ATK-based) damage to enemies it collides with.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "An enemy can take this damage 1 time every 3s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Whenever a Planet completes an orbit.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "it deals 180% (ATK-based) damage to enemies on the central tile.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Aster commands all his Stars and Black Holes on the battlefield, pulling enemies within 2 tiles of them toward the nearest Star or Black Hole and dealing 270% (ATK-based) + 30% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the pull damage to 300% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the pull damage to 330% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the pull damage to 360% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Aster fires pulse beams along 3 lines that cover the most enemies, dealing 210% (ATK-based) + 30% (SP-based) damage to enemies hit.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "He also gains a shield equal to 90% + 9% (SP-based) of the total actual damage dealt by this skill.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The shield lasts 9s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each time a pulse beam hits an enemy, it also reduces the target's shield value by up to 270% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 240% (ATK-based) + 30% (SP-based) and shield value reduction to 300% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage dealt to × 270% (ATK-based) + 30% (SP-based) and shield value reduction to 330% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases damage dealt to 300% (ATK-based) + 30% (SP-based) and shield value reduction to 360% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Aster increases his ATK by 2% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Whenever he summons a Star, his ATK increases by an extra 2%, up to 6%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After converting Stars into Black Holes, his ATK increases further by 6%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Aster increases his ATK by 4% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Whenever he summons a Star, his ATK increases by an extra 4%, up to 12%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After converting Stars into Black Holes.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "his ATK increases further by 9%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Aster increases his ATK by 6% during battle.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Whenever he summons a Star, his ATK increases by an extra 6%, up to 18%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After converting Stars into Black Holes.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "his ATK increases further by 12%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "After summoning 3 Stars, Aster permanently converts all his Stars into Black Holes and devours the Planets orbiting them.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "From then on, Stars summoned through Stellar Flare are created directly as Black Holes.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Initially, each Black Hole deals 30% (ATK-based) true damage plus extra true damage equal to 2% of the target's max HP to enemies within 1 tile every second.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The total damage cannot exceed 60% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "When supercharged by Stellar Flare, Black Holes do not burn.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Instead, each Black Hole drains 30% ATK and 30 Haste from every enemy within range.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The ATK drained increases the damage of all Black Holes, while the Haste drained increases the frequency at which they deal continuous damage.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "These increases cannot exceed 60% and 60%, respectively.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The cumulative ATK a single enemy can lose through this effect cannot exceed 60% of Aster's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the true damage dealt by Black Holes to enemies within range to 60% (ATK-based) plus 4% of the target's max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "The total damage cannot exceed 120% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases the true damage dealt by Black Holes to enemies within range to 90% (ATK-based) plus 6% of the target's max HP.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "The total damage cannot exceed 180% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "When a Black Hole is supercharged by Stellar Flare, it deals 180% (ATK-based) extra true damage to enemies within range.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "When an enemy hero is defeated within a Black Hole's range, that Black Hole devours them and restores 333 Energy to Aster.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Aster expands Gravitic Maw's pull range to 3 tiles.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Aster gains 60% Energy recovery efficiency before converting his Stars into Black Holes.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Once converted, he ascends to a higher dimension and becomes permanently invincible until he is the last surviving hero on his team.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "cb1f0a3441a6306f0db74df794652909691b52023aa9bf27b97437cf0b2f0119",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
+  }
+}

@@ -255,7 +255,7 @@
         "other": "average"
       },
       "stats": {
-        "HP": "average",
+        "HP": "low",
         "ATK": "high",
         "Phys DEF": "average",
         "Magic DEF": "average",
