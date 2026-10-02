@@ -10,6 +10,13 @@
   full skill analysis, roster entry, and portrait.
 - Fixed pipeline issues leading to failing character portrait downloads
 
+### Prydwen tiers
+
+- synced Prydwen meta tiers with the live Prydwen pages: corrected stale
+  ratings for 21 heroes and added the missing ratings for Karma. Chippy,
+  Hammie, Taichi & Agumon and Yamato & Gabumon have no Prydwen rating yet and
+  stay unrated.
+
 ### Character data changes
 
 | Character | What changed |

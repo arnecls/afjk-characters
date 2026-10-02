@@ -232,9 +232,9 @@
     "release_date": "2026-05-01",
     "prydwen_tiers": {
       "afk_stages": "S+",
-      "pvp": "S+",
+      "pvp": "S",
       "dream_realm": "S+",
-      "dream_realm_endless": "S+"
+      "dream_realm_endless": "S"
     },
     "role_category": "specialist"
   },

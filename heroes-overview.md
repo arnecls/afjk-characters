@@ -421,9 +421,9 @@ Alsa also requires units **applying crowd control** to enemies
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -576,8 +576,8 @@ Antandra provides Damage taken (Mythic+) to single targets `high` — conditiona
 **Debuffs on enemies**
 
 - Aster (100% `ATK`)
-- Bonnie (100% `ATK`)
 - Eryndor (100% `ATK`)
+- Bonnie (100% `ATK`)
 
 **Crowd Control**
 
@@ -1403,7 +1403,7 @@ Common buffers are **Twins**, **Rolan**, **Smokey & Meerky**, or **Mikola**.
 
 - Senea (100% `Max HP`)
 - Sylphira (100% `Max HP`)
-- Shemira (100% `Max HP`)
+- Eryndor (100% `Max HP`)
 
 **Crowd Control**
 
@@ -1665,9 +1665,9 @@ Bonnie also requires units **dealing magic damage**
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -1805,7 +1805,7 @@ These are the **4** strongest pairings:
 
 - Himmel (99% `Max HP-based damage` `Physical`)
 - Alna (82% `Physical` `DoT`)
-- Hodgkin (74% `Physical` `Max HP-based damage`)
+- Karma (82% `Physical` `DoT`)
 
 **Debuffs on enemies**
 
@@ -2070,9 +2070,9 @@ Common buffers are **Contess**, **Solise**, **Daimon**, or **Twins**.
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Crowd Control**
 
@@ -2206,9 +2206,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -2340,14 +2340,14 @@ Common buffers are **Twins**, **Smokey & Meerky**, **Rolan**, or **Lorsan**.
 **Damage**
 
 - Frieren (100% `Magic`)
-- Silven (100% `Magic`)
 - Saida (100% `Magic`)
+- Silven (100% `Magic`)
 
 **Debuffs on enemies**
 
-- Evie (100% `Magic DEF`)
 - Thador (100% `Magic DEF`)
-- Eironn (100% `Magic DEF`)
+- Evie (100% `Magic DEF`)
+- Shadewing (100% `Magic DEF`)
 
 **Crowd Control**
 
@@ -2614,7 +2614,7 @@ rare chance for massive single normal attack damage
 
 ### Contess's behavior
 
-`AFK Stages [A+]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S]`, `PVP [S+]`
+`AFK Stages [S+]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S+]`, `PVP [S+]`
 
 - **Signature skill**: Detention Pass (ultimate)
 - **Movement**: stationary (no finite attack range); walk speed slow
@@ -2709,6 +2709,7 @@ These are the **4** strongest pairings:
 
 - Solise (75% `Healing` `Buffs on allies`)
 - Evie (58% `Healing` `Crowd Control`)
+- Hepler (54% `Buffs on allies` `Healing`)
 
 **Buffs on allies**
 
@@ -2730,8 +2731,8 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Frieren (100% `HP loss`)
 - Rolan (100% `HP loss`)
+- Frieren (100% `HP loss`)
 - Saida (100% `HP loss`)
 
 **Crowd Control**
@@ -2778,7 +2779,7 @@ These are the **4** strongest pairings:
 
 ### Cryonaia's behavior
 
-`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [B]`, `PVP [S]`
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [B]`, `PVP [A+]`
 
 - **Signature skill**: Frostveil Domain (ultimate)
 - **Movement**: mostly stationary (avg attack range 5.0 tiles); walk speed normal
@@ -3136,14 +3137,14 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
+- Karma (36% `hp-scaling` `non-ult-utility`)
 - Thador (34% `ally-shielder` `temporary-stat-buffer`)
 - Lumont (34% `non-ult-utility` `temporary-stat-buffer`)
-- Lucy (33% `ally-shielder` `summoner` `temporary-stat-buffer`)
 
 **Damage**
 
-- Frieren (100% `Magic` `True damage`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic` `True damage`)
 - Aster (100% `Magic` `True damage`)
 
 **Crowd Control**
@@ -3285,8 +3286,8 @@ These are the **4** strongest pairings:
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Twins (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -3297,9 +3298,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
-- Silven (100% `Magic`)
+- Frieren (100% `Magic`)
+- Saida (100% `Magic`)
 
 **Crowd Control**
 
@@ -3332,7 +3333,7 @@ These are the **4** strongest pairings:
 
 ### Dionel's behavior
 
-`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Dawn Light (ultimate)
 - **Movement**: moving (avg attack range 0.0 tiles); walk speed normal
@@ -3584,9 +3585,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Crowd Control**
 
@@ -3625,7 +3626,7 @@ These are the **4** strongest pairings:
 
 ### Eironn's behavior
 
-`AFK Stages [S]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
+`AFK Stages [S]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Verdant Cyclone (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
@@ -3697,7 +3698,7 @@ Common buffers are **Twins**, **Rowan**, **Mikola**, or **Smokey & Meerky**.
 
 ### Units benefitting most from Eironn
 
-**10** units include this provider among their top 6 synergy partners. Why the match is common:
+**9** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -3705,8 +3706,8 @@ These are the **4** strongest pairings:
 
 - Alsa (4.1 / 5)
 - Carolina (3.5 / 5)
+- Faramor (3.1 / 5)
 - Nerion (3.1 / 5)
-- Eryndor (2.4 / 5)
 
 ### Units that can act as a replacement for Eironn
 
@@ -3718,8 +3719,8 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
+- Frieren (100% `Magic`)
 - Aster (100% `Magic`)
 
 **Debuffs on enemies**
@@ -3755,7 +3756,7 @@ These are the **4** strongest pairings:
 
 ### Eryndor's behavior
 
-`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S]`
+`AFK Stages [S+]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S]`
 
 - **Signature skill**: Forced Game (ultimate)
 - **Movement**: stationary (avg attack range 8.0 tiles); walk speed normal
@@ -3854,9 +3855,9 @@ Eryndor also requires units **putting debuffs** on enemies
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -3998,9 +3999,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Crowd Control**
 
@@ -4157,8 +4158,8 @@ Faramor also requires units **grouping enemies** and/or units **buffing them**
 
 **Crowd Control**
 
-- Rolan (100% `Stun`)
 - Contess (100% `Stun`)
+- Rolan (100% `Stun`)
 - Aster (100% `Stun`)
 
 ### Summary for Faramor
@@ -4303,9 +4304,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -4480,7 +4481,7 @@ These are the **4** strongest pairings:
 
 ### Frieren's behavior
 
-`AFK Stages [S+]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S+]`, `PVP [S+]`
+`AFK Stages [S+]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S]`, `PVP [S]`
 
 - **Signature skill**: Zoltraak (ultimate)
 - **Movement**: stationary (avg attack range 7.0 tiles); walk speed fast
@@ -4571,9 +4572,9 @@ Frieren also requires specific **named allies**
 
 **Crowd Control**
 
-- Himmel (68% `Knock down`)
-- Cyran (68% `Knock down`)
-- Silven (57% `Knock down`)
+- Baelran (100% `Knock down` `Knock up`)
+- Zorya (85% `Knock down` `Stun`)
+- Callan (71% `Knock down` `Stun`)
 
 ### Summary for Frieren
 
@@ -4689,8 +4690,8 @@ Galahad provides Shield to single targets `high`.
 
 **Buffs on allies**
 
-- Gunnar (100% `Shield`)
 - Contess (100% `Shield`)
+- Gunnar (100% `Shield`)
 - Himmel (100% `Shield`)
 
 **Similar Skills**
@@ -4745,7 +4746,7 @@ Galahad provides Shield to single targets `high`.
 
 ### Gerda's behavior
 
-`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
+`AFK Stages [C]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Spring Therapy (Skill 1)
 - **Movement**: high movement (repositioning skills); walk speed normal
@@ -5084,6 +5085,7 @@ These are the **4** strongest pairings:
 **Best overall replacement**
 
 - Phraesto (54% `Crowd Control`)
+- Hepler (51% `Crowd Control` `Damage`)
 - Faramor (51% `Crowd Control` `Damage`)
 
 **Similar Skills**
@@ -5105,9 +5107,9 @@ These are the **4** strongest pairings:
 
 **Crowd Control**
 
-- Frieren (100% `Stun`)
-- Rolan (100% `Stun`)
 - Contess (100% `Stun`)
+- Rolan (100% `Stun`)
+- Frieren (100% `Stun`)
 
 ### Summary for Gunnar
 
@@ -5527,7 +5529,7 @@ Common buffers are **Thador**, **Shadewing**, **Kordan**, or **Kruger**.
 
 ### Hepler's behavior
 
-`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S]`
 
 - **Signature skill**: Form Shift (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
@@ -5936,8 +5938,8 @@ These are the **4** strongest pairings:
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Twins (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -6589,8 +6591,8 @@ These are the **4** strongest pairings:
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Solise (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -6787,6 +6789,8 @@ Kafra provides Healing over time in an area `average`.
 
 ### Karma's behavior
 
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
+
 - **Signature skill**: Unfettered Carnage (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
 - **Behavior tags**: `aoe-damage` `dot-specialist` `high-initial-energy` `hp-scaling` `non-ult-utility`
@@ -6875,8 +6879,8 @@ Common buffers are **Solise**, **Mikola**, **Rowan**, or **Twins**.
 
 **Damage**
 
-- Alna (100% `Physical` `DoT`)
 - Gwyneth (100% `Physical` `DoT`)
+- Alna (100% `Physical` `DoT`)
 - Kruger (90% `Physical`)
 
 **Crowd Control**
@@ -6908,7 +6912,7 @@ Common buffers are **Solise**, **Mikola**, **Rowan**, or **Twins**.
 
 ### Kazim's behavior
 
-`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [B]`
+`AFK Stages [B]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Soaring Falcon (Skill 1)
 - **Movement**: high movement (repositioning skills); walk speed fast
@@ -7154,8 +7158,8 @@ Koko provides ATK to all units `low`, Damage taken to all units `high`, Direct h
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Himmel (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -7697,7 +7701,7 @@ These are the **4** strongest pairings:
 
 - Gwyneth (100% `Physical`)
 - Athalia (100% `Physical`)
-- Kruger (100% `Physical`)
+- Kazim (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -7840,8 +7844,8 @@ These are the **4** strongest pairings:
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Solise (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -7892,7 +7896,7 @@ These are the **4** strongest pairings:
 
 ### Lamentis's behavior
 
-`AFK Stages [B]`, `Dream Realm [A+]`, `Dream Realm (Endless) [A+]`, `PVP [C]`
+`AFK Stages [B]`, `Dream Realm [A+]`, `Dream Realm (Endless) [A+]`, `PVP [B]`
 
 - **Signature skill**: Omnisight (Mythic+)
 - **Movement**: moving (avg attack range 0.0 tiles); walk speed normal
@@ -7981,8 +7985,8 @@ Common buffers are **Smokey & Meerky**, **Rolan**, **Lorsan**, or **Twins**.
 **Similar Skills**
 
 - Natsu (50% `aoe-damage` `high-initial-energy` `mass-cc`)
+- Karma (42% `aoe-damage` `high-initial-energy` `hp-scaling`)
 - Florabelle (40% `aoe-damage` `summoner`)
-- Valen (40% `aoe-damage` `mass-cc`)
 
 **Damage**
 
@@ -8157,7 +8161,7 @@ Common buffers are **Shadewing**, **Kordan**, **Kruger**, or **Laios**.
 
 ### Lily May's behavior
 
-`AFK Stages [A]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [A]`
+`AFK Stages [A]`, `Dream Realm [B]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Tempest Shot (ultimate)
 - **Movement**: high movement (repositioning skills); walk speed normal
@@ -8515,9 +8519,9 @@ Lucca provides ATK (Mythic+) to multiple targets `low`.
 
 **Buffs on allies**
 
+- Contess (100% `ATK`)
 - Rolan (100% `ATK`)
 - Gunnar (100% `ATK`)
-- Contess (100% `ATK`)
 
 **Similar Skills**
 
@@ -8664,8 +8668,8 @@ Lucius provides Direct healing to multiple targets `average` and Shield in an ar
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Solise (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -8684,7 +8688,7 @@ Lucius provides Direct healing to multiple targets `average` and Shield in an ar
 
 - Contess (100% `ATK`)
 - Aster (100% `ATK`)
-- Ravion (100% `ATK`)
+- Eryndor (100% `ATK`)
 
 **Crowd Control**
 
@@ -8809,8 +8813,8 @@ Lucy provides Shield (Mythic+) to single targets `high` and Ranged DEF (EX+10) t
 **Similar Skills**
 
 - Damian (44% `backline-assassin` `backline-inhibit` `summoner` `temporary-stat-buffer`)
-- Ravion (40% `ally-shielder` `backline-assassin` `temporary-stat-buffer`)
 - Peggy (40% `ally-shielder` `high-initial-energy` `summoner`)
+- Ravion (40% `ally-shielder` `backline-assassin` `temporary-stat-buffer`)
 
 **Damage**
 
@@ -8822,7 +8826,7 @@ Lucy provides Shield (Mythic+) to single targets `high` and Ranged DEF (EX+10) t
 
 - Zandrok (100% `Stun` `Knock up`)
 - Nerion (100% `Stun` `Knock up`)
-- Scarlita (100% `Stun` `Knock up`)
+- Kazim (100% `Stun` `Knock up`)
 
 ### Summary for Lucy
 
@@ -8937,8 +8941,8 @@ Ludovic provides Direct healing to multiple targets `average` and Healing over t
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing over time` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing over time` `Healing`)
 - Solise (100% `Direct healing` `Healing over time` `Healing`)
 
 **Similar Skills**
@@ -9278,7 +9282,7 @@ These are the **4** strongest pairings:
 
 ### Marcille's behavior
 
-`AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [S]`
+`AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
 
 - **Signature skill**: Silver-White Wings that Streak Across the Skies (ultimate)
 - **Movement**: stationary (no finite attack range); walk speed normal
@@ -9378,8 +9382,8 @@ Marcille provides Direct healing to single targets `low`.
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Solise (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -9534,9 +9538,9 @@ Common buffers are **Shadewing**, **Kordan**, **Kruger**, or **Laios**.
 
 **Crowd Control**
 
-- Frieren (100% `Stun`)
+- Contess (100% `Stun`)
 - Rolan (100% `Stun`)
-- Gunnar (100% `Stun`)
+- Frieren (100% `Stun`)
 
 ### Summary for Marilee
 
@@ -9557,7 +9561,7 @@ Common buffers are **Shadewing**, **Kordan**, **Kruger**, or **Laios**.
 
 ### Mehira's behavior
 
-`AFK Stages [S+]`, `Dream Realm [B]`, `Dream Realm (Endless) [B]`, `PVP [S]`
+`AFK Stages [S+]`, `Dream Realm [B]`, `Dream Realm (Endless) [B]`, `PVP [S+]`
 
 - **Signature skill**: Euphoric Rush (ultimate)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed normal
@@ -9800,8 +9804,8 @@ These are the **4** strongest pairings:
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing over time` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing over time` `Healing`)
 - Solise (100% `Direct healing` `Healing over time` `Healing`)
 
 **Similar Skills**
@@ -9924,7 +9928,7 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Shadewing**.
 
 - Frieren (100% `Magic` `DoT`)
 - Aster (100% `Magic` `DoT`)
-- Silven (100% `Magic`)
+- Saida (100% `Magic` `DoT`)
 
 ### Summary for Mirael
 
@@ -10019,8 +10023,8 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Himmel (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -10332,7 +10336,7 @@ Look for units providing: `CRIT`
 
 ### Nerion's behavior
 
-`AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A+]`
+`AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [C]`, `PVP [A]`
 
 - **Signature skill**: Drowning Doom (ultimate)
 - **Movement**: mostly stationary (avg attack range 4.0 tiles); walk speed normal
@@ -10549,8 +10553,8 @@ Niru provides Direct healing to single targets `low`.
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Himmel (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -10688,8 +10692,8 @@ Common buffers are **Thador**, **Evie**, **Kordan**, or **Kruger**.
 
 **Damage**
 
-- Frieren (100% `Magic` `DoT`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic` `DoT`)
 - Aster (100% `Magic` `DoT`)
 
 **Debuffs on enemies**
@@ -10815,8 +10819,8 @@ Orion provides Shield to multiple targets `low`.
 
 **Buffs on allies**
 
-- Gunnar (100% `Shield`)
 - Contess (100% `Shield`)
+- Gunnar (100% `Shield`)
 - Himmel (100% `Shield`)
 
 **Similar Skills**
@@ -10977,8 +10981,8 @@ These are the **4** strongest pairings:
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Solise (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -11121,9 +11125,9 @@ Pang provides ATK (Mythic+) to multiple targets `average`.
 
 **Buffs on allies**
 
+- Contess (100% `ATK`)
 - Rolan (100% `ATK`)
 - Gunnar (100% `ATK`)
-- Contess (100% `ATK`)
 
 **Similar Skills**
 
@@ -11145,8 +11149,8 @@ Pang provides ATK (Mythic+) to multiple targets `average`.
 
 **Crowd Control**
 
-- Rolan (100% `Stun`)
 - Contess (100% `Stun`)
+- Rolan (100% `Stun`)
 - Aster (100% `Stun`)
 
 ### Summary for Pang
@@ -11320,7 +11324,7 @@ These are the **4** strongest pairings:
 
 ### Peggy's behavior
 
-`AFK Stages [S]`, `Dream Realm [A+]`, `Dream Realm (Endless) [A+]`, `PVP [B]`
+`AFK Stages [S]`, `Dream Realm [A+]`, `Dream Realm (Endless) [A+]`, `PVP [A]`
 
 - **Signature skill**: Princess Rally (ultimate)
 - **Movement**: stationary (no finite attack range); walk speed normal
@@ -11420,9 +11424,9 @@ These are the **4** strongest pairings:
 
 **Similar Skills**
 
-- Laios (66% `ally-buffer` `ally-healer` `high-initial-energy` `summoner`)
 - Hepler (60% `ally-healer` `ally-shielder` `high-initial-energy`)
 - Valka (60% `ally-buffer` `ally-shielder` `high-initial-energy`)
+- Twins (42% `ally-buffer` `ally-healer` `ally-shielder`)
 
 **Damage**
 
@@ -11878,8 +11882,8 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Shadewing**.
 
 **Damage**
 
-- Frieren (100% `Magic` `True damage`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic` `True damage`)
 - Aster (100% `Magic` `True damage`)
 
 **Debuffs on enemies**
@@ -12034,7 +12038,7 @@ These are the **4** strongest pairings:
 
 - Thador (100% `Physical`)
 - Faramor (100% `Physical` `Lost HP-based damage`)
-- Athalia (100% `Physical` `Lost HP-based damage`)
+- Peggy (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -12165,8 +12169,8 @@ These are the **4** strongest pairings:
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Himmel (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -12177,9 +12181,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -12463,6 +12467,7 @@ These are the **4** strongest pairings:
 **Crowd Control**
 
 - Orion (100% `Stun`)
+- Hepler (100% `Stun`)
 - Aster (66% `Stun`)
 
 ### Summary for Rolan
@@ -12499,7 +12504,7 @@ These are the **4** strongest pairings:
 
 ### Rowan's behavior
 
-`AFK Stages [A+]`, `Dream Realm [B]`, `Dream Realm (Endless) [B]`, `PVP [A]`
+`AFK Stages [A+]`, `Dream Realm [A]`, `Dream Realm (Endless) [B]`, `PVP [A+]`
 
 - **Signature skill**: Fatal Greed (ultimate)
 - **Movement**: moving (repositions on cast); walk speed normal
@@ -12601,8 +12606,8 @@ These are the **4** strongest pairings:
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Twins (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -12613,15 +12618,15 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
+- Frieren (100% `Magic`)
 - Aster (100% `Magic`)
 
 **Debuffs on enemies**
 
 - Saida (100% `Energy`)
 - Lily May (100% `Energy`)
-- Pippa (100% `Energy`)
+- Granny Dahnie (57% `Energy`)
 
 ### Summary for Rowan
 
@@ -12977,8 +12982,8 @@ Common buffers are **Twins** or **Smokey & Meerky**.
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
+- Frieren (100% `Magic`)
 - Aster (100% `Magic`)
 
 **Debuffs on enemies**
@@ -13096,8 +13101,8 @@ Scarlita provides Shield to single targets `low`.
 
 **Buffs on allies**
 
-- Gunnar (100% `Shield`)
 - Contess (100% `Shield`)
+- Gunnar (100% `Shield`)
 - Himmel (100% `Shield`)
 
 **Similar Skills**
@@ -13424,7 +13429,7 @@ Common buffers are **Kordan**, **Mikola**, **Shadewing**, or **Twins**.
 
 ### Shadewing's behavior
 
-`AFK Stages [A+]`, `Dream Realm [A]`, `Dream Realm (Endless) [A]`, `PVP [A]`
+`AFK Stages [A+]`, `Dream Realm [A]`, `Dream Realm (Endless) [A]`, `PVP [A+]`
 
 - **Signature skill**: Withering Curse (Skill 2)
 - **Movement**: moving (avg attack range 1.0 tiles); walk speed fast
@@ -13526,8 +13531,8 @@ These are the **4** strongest pairings:
 **Damage**
 
 - Frieren (100% `Magic` `DoT`)
-- Saida (100% `Magic` `DoT`)
 - Mehira (100% `Magic` `DoT`)
+- Saida (100% `Magic` `DoT`)
 
 **Debuffs on enemies**
 
@@ -13809,15 +13814,15 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Shadewing**.
 
 **Damage**
 
-- Frieren (100% `Magic` `True damage`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic` `True damage`)
 - Aster (100% `Magic` `True damage`)
 
 **Debuffs on enemies**
 
 - Senea (100% `Max HP`)
 - Sylphira (100% `Max HP`)
-- Baelran (100% `Max HP`)
+- Eryndor (100% `Max HP`)
 
 ### Summary for Shemira
 
@@ -13835,7 +13840,7 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Shadewing**.
 
 ### Silven's behavior
 
-`AFK Stages [S+]`, `Dream Realm [S]`, `Dream Realm (Endless) [A+]`, `PVP [A+]`
+`AFK Stages [S+]`, `Dream Realm [S]`, `Dream Realm (Endless) [A+]`, `PVP [A]`
 
 - **Signature skill**: Gravity Collapse (Skill 1)
 - **Movement**: stationary (avg attack range 12.0 tiles); walk speed normal
@@ -13935,9 +13940,9 @@ Silven also requires units **buffing them**
 
 **Similar Skills**
 
-- Athalia (24% `non-ult-utility`)
-- Gwyneth (24% `non-ult-utility`)
-- Aliceth (22% `mark-target` `non-ult-utility`)
+- Kazim (33% `high-initial-energy` `mark-target` `non-ult-utility`)
+- Karma (33% `high-initial-energy` `non-ult-utility`)
+- Nazrik (30% `mark-target`)
 
 **Damage**
 
@@ -13949,7 +13954,7 @@ Silven also requires units **buffing them**
 
 - Frieren (100% `Knock down`)
 - Himmel (100% `Knock down`)
-- Sylphira (100% `Knock down`)
+- Thador (100% `Knock down`)
 
 ### Summary for Silven
 
@@ -14334,9 +14339,9 @@ These are the **4** strongest pairings:
 
 **Crowd Control**
 
-- Frieren (100% `Stun`)
+- Contess (100% `Stun`)
 - Rolan (100% `Stun`)
-- Gunnar (100% `Stun`)
+- Frieren (100% `Stun`)
 
 ### Summary for Smokey & Meerky
 
@@ -14472,9 +14477,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic`)
 
 ### Summary for Solise
 
@@ -15016,7 +15021,7 @@ Taichi & Agumon provides ATK (Supreme+) in an area `high`.
 
 ### Talene's behavior
 
-`AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [A]`, `PVP [B]`
+`AFK Stages [A]`, `Dream Realm [C]`, `Dream Realm (Endless) [A+]`, `PVP [B]`
 
 - **Signature skill**: Divine Conflagration (ultimate)
 - **Movement**: moving (avg attack range 3.0 tiles); walk speed normal
@@ -15102,8 +15107,8 @@ Talene provides Direct healing to single targets `low`.
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Himmel (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -15114,8 +15119,8 @@ Talene provides Direct healing to single targets `low`.
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
+- Frieren (100% `Magic`)
 - Aster (100% `Magic`)
 
 **Crowd Control**
@@ -15401,7 +15406,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, **Rolan**, or **Mikola**.
 
 ### Thador's behavior
 
-`AFK Stages [S]`, `Dream Realm [A+]`, `Dream Realm (Endless) [A]`, `PVP [A+]`
+`AFK Stages [S]`, `Dream Realm [A+]`, `Dream Realm (Endless) [A]`, `PVP [S]`
 
 - **Signature skill**: Darkmoon Pact (Skill 1)
 - **Movement**: moving (avg attack range 0.2 tiles); walk speed fast
@@ -15496,8 +15501,8 @@ These are the **4** strongest pairings:
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Twins (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -15785,7 +15790,7 @@ These are the **4** strongest pairings:
 
 ### Twins's behavior
 
-`AFK Stages [S]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S+]`, `PVP [A+]`
+`AFK Stages [A+]`, `Dream Realm [S+]`, `Dream Realm (Endless) [S+]`, `PVP [S]`
 
 - **Signature skill**: Starlight Waltz (ultimate)
 - **Movement**: moving / stationary (two units); walk speed normal
@@ -15895,8 +15900,8 @@ These are the **4** strongest pairings:
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Solise (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -15907,15 +15912,15 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Crowd Control**
 
 - Pandora (97% `Blind`)
-- Marcille (81% `Blind`)
 - Hepler (81% `Blind`)
+- Marcille (81% `Blind`)
 
 ### Summary for Twins
 
@@ -16567,6 +16572,7 @@ Velara provides Basic stats to all units `high`, Direct healing to multiple targ
 
 - Indris (3.4 / 5)
 - Callan (3.0 / 5)
+- Eryndor (2.4 / 5)
 
 ### Units that can act as a replacement for Velara
 
@@ -16580,12 +16586,12 @@ Velara provides Basic stats to all units `high`, Direct healing to multiple targ
 
 - Himmel (100% `Shield` `Basic stats`)
 - Solise (100% `Shield`)
-- Hugin (100% `Shield`)
+- Thador (100% `Shield`)
 
 **Healing**
 
-- Rolan (100% `Direct healing` `Healing`)
 - Contess (100% `Direct healing` `Healing`)
+- Rolan (100% `Direct healing` `Healing`)
 - Himmel (100% `Direct healing` `Healing`)
 
 **Similar Skills**
@@ -16596,9 +16602,9 @@ Velara provides Basic stats to all units `high`, Direct healing to multiple targ
 
 **Damage**
 
-- Frieren (100% `Magic`)
 - Rolan (100% `Magic`)
 - Senea (100% `Magic`)
+- Frieren (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -16735,8 +16741,8 @@ Common buffers are **Thador**, **Evie**, **Kordan**, or **Kruger**.
 
 **Damage**
 
-- Frieren (100% `Magic` `HP loss`)
 - Rolan (100% `Magic` `HP loss`)
+- Frieren (100% `Magic` `HP loss`)
 - Saida (100% `Magic` `HP loss`)
 
 **Debuffs on enemies**
@@ -16979,8 +16985,8 @@ Common buffers are **Rolan**, **Solise**, **Contess**, or **Daimon**.
 **Similar Skills**
 
 - Kazim (66% `aoe-damage` `battle-start-burst` `mark-target` `mass-cc` `non-ult-utility`)
-- Eironn (51% `aoe-damage` `battle-start-burst` `mass-cc`)
 - Bonnie (51% `aoe-damage` `battle-start-burst` `non-ult-utility`)
+- Eironn (51% `aoe-damage` `battle-start-burst` `mass-cc`)
 
 **Damage**
 

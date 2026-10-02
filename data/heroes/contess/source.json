@@ -250,10 +250,10 @@
     "range": 6,
     "release_date": "2026-04-09",
     "prydwen_tiers": {
-      "afk_stages": "A+",
+      "afk_stages": "S+",
       "pvp": "S+",
       "dream_realm": "S+",
-      "dream_realm_endless": "S"
+      "dream_realm_endless": "S+"
     },
     "role_category": "support"
   },

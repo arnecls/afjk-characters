@@ -239,7 +239,7 @@
     "release_date": "2025-10-30",
     "prydwen_tiers": {
       "afk_stages": "S+",
-      "pvp": "S",
+      "pvp": "S+",
       "dream_realm": "B",
       "dream_realm_endless": "B"
     },
