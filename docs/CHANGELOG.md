@@ -1,5 +1,38 @@
 # Changelog
 
+## 2026-10-02
+
+### New heroes
+
+- added Aster (Hypogean · Mage · Magic) — Chaos Observer — with full skill
+  analysis, roster entry, and portrait.
+- added Senea (Graveborn · Marksman · Magic) — Deathless Songstress — with
+  full skill analysis, roster entry, and portrait.
+- Fixed pipeline issues leading to failing character portrait downloads
+
+### Character data changes
+
+| Character | What changed |
+|---|---|
+| aster | - Added as new hero |
+| senea | - Added as new hero |
+| callan | - Refreshed relative stat ranks |
+| contess | - Refreshed relative stat ranks |
+| daimon | - Refreshed relative stat ranks |
+| dunlingr | - Refreshed relative stat ranks |
+| granny-dahnie | - Refreshed relative stat ranks |
+| hewynn | - Refreshed relative stat ranks |
+| ludovic | - Refreshed relative stat ranks |
+| lumont | - Refreshed relative stat ranks |
+| mikola | - Refreshed relative stat ranks |
+| phraesto | - Refreshed relative stat ranks |
+| reinier | - Refreshed relative stat ranks |
+| solise | - Refreshed relative stat ranks |
+| temesia | - Refreshed relative stat ranks |
+| thador | - Refreshed relative stat ranks |
+| ulmus | - Refreshed relative stat ranks |
+| velara | - Refreshed relative stat ranks |
+
 ## 2026-09-24
 
 ### Corrected hero data
