@@ -6802,7 +6802,7 @@ Kafra provides Healing over time in an area `average`.
 
 #### Counter proposal
 
-[[Karma]] is a melee frontliner who **snowballs max HP from healing**, then locks Phys DEF, Magic DEF, and Resilience at max stacks while his pool and potion skills keep topping him up; the ultimate stuns then explodes for healing-scaled damage. Cut the heal loop early with [[filter:heal-inhibitor]] like [[Frieren]] / [[Gwyneth]] (or [[Satrana]] / [[Igor]]) so stacks and the explosion stay weak — if they park a dedicated healer, lock ally heals with [[Dunlingr]]'s Curelock or [[Gwyneth]]'s healing cut. Both DEF ranks run high, so finish him with true-damage melee like [[Himmel]] or [[Zorya]] before Steadfast and potion damage reduction make the trade sticky. Do not bank on knockback or pulls once exclusive ranks grant Steadfast.
+[[Karma]] is a melee frontliner who **snowballs max HP from healing**, then stacks Phys DEF, Magic DEF and Resilience while his pool and potions keep topping him up; the ultimate stuns, then explodes for healing-scaled damage. He is **soft early**: he must walk in and drink a potion before his damage reduction starts, so delete him in the first seconds with melee burst like [[Himmel]] or [[Shakir]] before stacks build. Once he is grown, cut the loop with [[filter:heal-inhibitor]] like [[Frieren]] / [[Gwyneth]] (or [[Satrana]] / [[Igor]]), and pressure the healers he leans on; [[Dunlingr]]'s Curelock only helps if they run a dedicated healer. Max-HP cuts such as [[Senea]] shrink his pool, and true damage skips his high DEF. Steadfast (higher exclusive ranks) only blocks displacement, so stuns and charms still land.
 
 #### Stats overview
 

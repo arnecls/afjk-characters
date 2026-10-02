@@ -8,10 +8,11 @@
   analysis, roster entry, and portrait.
 - added Senea (Graveborn · Marksman · Magic) — Deathless Songstress — with
   full skill analysis, roster entry, and portrait.
+
+### Fixes and improvements
+
 - Fixed pipeline issues leading to failing character portrait downloads
-
-### Prydwen tiers
-
+- Updated Karma play texts
 - synced Prydwen meta tiers with the live Prydwen pages: corrected stale
   ratings for 21 heroes and added the missing ratings for Karma. Chippy,
   Hammie, Taichi & Agumon and Yamato & Gabumon have no Prydwen rating yet and
