@@ -507,7 +507,7 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
-                "name": "Energy Recovery",
+                "name": "Energy",
                 "label": "buff_stat",
                 "value": [
                   {

@@ -587,11 +587,11 @@
             "area": "single",
             "target_count": 1,
             "type": "buff",
-            "name": "Energy Recovery",
+            "name": "Energy",
             "label": "buff_stat",
             "value": [
               {
-                "type": "percentage",
+                "type": "flat",
                 "value": 60.0
               }
             ],
@@ -620,7 +620,7 @@
         ],
         "skill_card_tags": [
           {
-            "label": "Energy Recovery — Self",
+            "label": "Energy — Self",
             "polarity": "buff"
           },
           {
@@ -969,7 +969,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "cb1f0a3441a6306f0db74df794652909691b52023aa9bf27b97437cf0b2f0119",
+    "inputs_hash": "1fb280a856851f224a9b686f153149dc88658c3a4c10fe12dbdee74faa74eda0",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }
