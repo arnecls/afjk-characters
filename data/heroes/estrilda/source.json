@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "id": "estrilda",
+  "display_name": "Estrilda",
+  "source": {
+    "title": "Estrilda - Knight of Valor",
+    "name": "Estrilda",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Piercing Onslaught",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "300"
+        },
+        "description": {
+          "raw": "Estrilda targets a tile and charges across the battlefield toward it three times, each time along a different straight path. Each of the first two charges deals 320% (ATK-based) damage to enemies in her path and stuns them for 2s. The final charge goes from the enemy edge of the battlefield to the allied edge of the battlefield, dealing 480% (ATK-based) damage to enemies in her path and stunning them for 3s. Estrilda is invincible during these charges. After the skill ends, Estrilda leaps to the allied edge of the battlefield, landing on the tile whose axis line covers the most enemies, and casts Ride Down.",
+          "active": [
+            "Estrilda targets a tile and charges across the battlefield toward it three times, each time along a different straight path.",
+            "Each of the first two charges deals 320% (ATK-based) damage to enemies in her path and stuns them for 2s.",
+            "The final charge goes from the enemy edge of the battlefield to the allied edge of the battlefield, dealing 480% (ATK-based) damage to enemies in her path and stunning them for 3s.",
+            "Estrilda is invincible during these charges.",
+            "After the skill ends, Estrilda leaps to the allied edge of the battlefield, landing on the tile whose axis line covers the most enemies, and casts Ride Down."
+          ]
+        },
+        "description_lite": "Estrilda charges across the battlefield three times, stunning enemies in her path, then leaps back and casts Ride Down."
+      },
+      {
+        "section": "Skill1",
+        "name": "Gallant Charge",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "7s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "When a battle starts, Estrilda casts Ride Down. Ride Down: After a brief wind-up, Estrilda charges to the enemy edge of the battlefield, dealing 280% (ATK-based) damage to enemies in her path. She pushes the first enemy she strikes forward along her path. If she collides with another enemy, she switches targets and pushes the new enemy instead, continuing until she reaches the edge. The enemy pushed to the edge is knocked into the air, taking 320% (ATK-based) extra damage before being knocked down for 3s. Estrilda remains unaffected throughout the process. Active. Estrilda sweeps her lance, dealing 240% (ATK-based) damage to adjacent enemies.",
+          "active": [
+            "When a battle starts, Estrilda casts Ride Down.",
+            "Ride Down: After a brief wind-up, Estrilda charges to the enemy edge of the battlefield, dealing 280% (ATK-based) damage to enemies in her path.",
+            "She pushes the first enemy she strikes forward along her path.",
+            "If she collides with another enemy, she switches targets and pushes the new enemy instead, continuing until she reaches the edge.",
+            "The enemy pushed to the edge is knocked into the air, taking 320% (ATK-based) extra damage before being knocked down for 3s.",
+            "Estrilda remains unaffected throughout the process.",
+            "Active.",
+            "Estrilda sweeps her lance, dealing 240% (ATK-based) damage to adjacent enemies."
+          ]
+        },
+        "description_lite": "Estrilda casts Ride Down at battle start, charging through enemies and pushing one to the enemy edge, where it is knocked down. Active: sweeps adjacent enemies."
+      },
+      {
+        "section": "Skill2",
+        "name": "Lance Flurry",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "12s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Estrilda unleashes a rapid series of lance strikes against an enemy, dealing 55% (ATK-based) damage 7 times and reducing their ATK by 30% for 12s. If she is at the enemy edge of the battlefield, each hit deals 16% (ATK-based) extra damage.",
+          "active": [
+            "Estrilda unleashes a rapid series of lance strikes against an enemy, dealing 55% (ATK-based) damage 7 times and reducing their ATK by 30% for 12s.",
+            "If she is at the enemy edge of the battlefield, each hit deals 16% (ATK-based) extra damage."
+          ]
+        },
+        "description_lite": "Estrilda strikes an enemy repeatedly and lowers its ATK, dealing extra damage at the enemy edge."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "After Piercing Onslaught ends, Estrilda recovers 300% (ATK-based) HP and gains a 300% (ATK-based) shield. After Ride Down ends, she gains 30 Penetration and 30% ATK for 10s.",
+          "active": [
+            "After Piercing Onslaught ends, Estrilda recovers 300% (ATK-based) HP and gains a 300% (ATK-based) shield.",
+            "After Ride Down ends, she gains 30 Penetration and 30% ATK for 10s."
+          ]
+        },
+        "description_lite": "Estrilda recovers HP and gains a shield after her Ultimate, and gains Penetration and ATK after Ride Down."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Pennon of Valor",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Whenever Ride Down brings Estrilda to the enemy edge of the battlefield, she plants a Pennon of Valor at her position for 15s. Allies within 2 tiles of the Pennon gain 30% ATK and take 20% reduced damage.",
+          "active": [
+            "Whenever Ride Down brings Estrilda to the enemy edge of the battlefield, she plants a Pennon of Valor at her position for 15s.",
+            "Allies within 2 tiles of the Pennon gain 30% ATK and take 20% reduced damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the ATK bonus granted to allies within the Pennon of Valor's range to 35% and the damage reduction to 22%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Estrilda marks any enemy she pushes to the enemy edge of the battlefield with Ride Down.",
+                "Marked enemies take 25% increased damage for 15s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the ATK bonus granted to allies within the Pennon of Valor's range to 40% and the damage reduction to 24%."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Estrilda plants a banner at the enemy edge that boosts nearby allies' ATK and damage reduction, and marks pushed enemies to take increased damage."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Estrilda is invincible during Ride Down, and Ride Down's damage increases by 80%.",
+          "active": [
+            "Estrilda is invincible during Ride Down, and Ride Down's damage increases by 80%."
+          ]
+        },
+        "description_lite": "Estrilda is invincible during Ride Down, which deals increased damage."
+      }
+    ],
+    "tags": "Lightbearer · Rogue · Physical",
+    "faction": "Lightbearer",
+    "class": "Rogue",
+    "damage_type": "Physical",
+    "description": "A light cavalry knight carrying her family's loyalty and glory, darting across the battlefield like a sharp spear thrust at the enemy rear.",
+    "range": 1
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "average",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "average",
+        "ATK SPD": "high"
+      }
+    }
+  }
+}

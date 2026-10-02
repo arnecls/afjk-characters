@@ -249,7 +249,7 @@
         "Phys DEF": "low",
         "Magic DEF": "low",
         "Haste": "low",
-        "ATK SPD": "high"
+        "ATK SPD": "average"
       }
     }
   }

@@ -242,15 +242,15 @@
     "walk_speed": "normal",
     "stat_ranks": {
       "categories": {
-        "basic": "high",
-        "offensive": "high",
+        "basic": "average",
+        "offensive": "average",
         "defensive": "high",
         "other": "high"
       },
       "stats": {
-        "HP": "high",
+        "HP": "average",
         "ATK": "high",
-        "Phys DEF": "high",
+        "Phys DEF": "average",
         "Magic DEF": "average",
         "Haste": "average",
         "ATK SPD": "average"

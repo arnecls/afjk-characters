@@ -1159,6 +1159,15 @@
       "aliases": [
         "Senea"
       ]
+    },
+    {
+      "id": "estrilda",
+      "display_name": "Estrilda",
+      "title": "Estrilda - Knight of Valor",
+      "order": 128,
+      "aliases": [
+        "Estrilda"
+      ]
     }
   ]
 }

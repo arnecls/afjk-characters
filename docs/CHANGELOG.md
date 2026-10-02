@@ -8,6 +8,10 @@
   analysis, roster entry, and portrait.
 - added Senea (Graveborn · Marksman · Magic) — Deathless Songstress — with
   full skill analysis, roster entry, and portrait.
+- added Estrilda (Lightbearer · Rogue · Physical) — Knight of Valor — with
+  full skill analysis, roster entry, and portrait. The hero is unreleased:
+  skill texts come from game data (highest skill ranks only), and Prydwen
+  tiers and release date are not available yet.
 
 ### Fixes and improvements
 
@@ -23,6 +27,7 @@
 | Character | What changed |
 |---|---|
 | aster | - Added as new hero |
+| estrilda | - Added as new hero |
 | senea | - Added as new hero |
 | callan | - Refreshed relative stat ranks |
 | contess | - Refreshed relative stat ranks |

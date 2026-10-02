@@ -1,0 +1,715 @@
+{
+  "schema_version": 2,
+  "id": "estrilda",
+  "display_name": "Estrilda",
+  "local": {
+    "long_name": "Estrilda - Knight of Valor",
+    "faction": "lightbearer",
+    "class": "rogue",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": null,
+    "season": null,
+    "season_number": null,
+    "skills": {
+      "Piercing Onslaught": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Estrilda targets a tile and charges across the battlefield toward it three times, each time along a different straight path. Each of the first two charges deals 320% (ATK-based) damage to enemies in her path and stuns them for 2s. The final charge goes from the enemy edge of the battlefield to the allied edge of the battlefield, dealing 480% (ATK-based) damage to enemies in her path and stunning them for 3s. Estrilda is invincible during these charges. After the skill ends, Estrilda leaps to the allied edge of the battlefield, landing on the tile whose axis line covers the most enemies, and casts Ride Down.",
+          "active": [
+            "Estrilda targets a tile and charges across the battlefield toward it three times, each time along a different straight path.",
+            "Each of the first two charges deals 320% (ATK-based) damage to enemies in her path and stuns them for 2s.",
+            "The final charge goes from the enemy edge of the battlefield to the allied edge of the battlefield, dealing 480% (ATK-based) damage to enemies in her path and stunning them for 3s.",
+            "Estrilda is invincible during these charges.",
+            "After the skill ends, Estrilda leaps to the allied edge of the battlefield, landing on the tile whose axis line covers the most enemies, and casts Ride Down."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "selected_target",
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 480.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "selected_target",
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 3.0
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_ultimate",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 300.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Stun — path"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Gallant Charge": {
+        "category": "skill1",
+        "description": {
+          "raw": "When a battle starts, Estrilda casts Ride Down. Ride Down: After a brief wind-up, Estrilda charges to the enemy edge of the battlefield, dealing 280% (ATK-based) damage to enemies in her path. She pushes the first enemy she strikes forward along her path. If she collides with another enemy, she switches targets and pushes the new enemy instead, continuing until she reaches the edge. The enemy pushed to the edge is knocked into the air, taking 320% (ATK-based) extra damage before being knocked down for 3s. Estrilda remains unaffected throughout the process. Active. Estrilda sweeps her lance, dealing 240% (ATK-based) damage to adjacent enemies.",
+          "active": [
+            "When a battle starts, Estrilda casts Ride Down.",
+            "Ride Down: After a brief wind-up, Estrilda charges to the enemy edge of the battlefield, dealing 280% (ATK-based) damage to enemies in her path.",
+            "She pushes the first enemy she strikes forward along her path.",
+            "If she collides with another enemy, she switches targets and pushes the new enemy instead, continuing until she reaches the edge.",
+            "The enemy pushed to the edge is knocked into the air, taking 320% (ATK-based) extra damage before being knocked down for 3s.",
+            "Estrilda remains unaffected throughout the process.",
+            "Estrilda sweeps her lance, dealing 240% (ATK-based) damage to adjacent enemies."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "selected_target",
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 320.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "selected_target",
+            "type": "crowd_control",
+            "cc-type": "displace"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "selected_target",
+            "type": "crowd_control",
+            "cc-type": "knock_up"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 1,
+            "area_direction": "selected_target",
+            "type": "crowd_control",
+            "cc-type": "knock_down",
+            "duration": 3.0
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "cooldown": 7.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Displace — path"
+          },
+          {
+            "label": "Knock down — path"
+          },
+          {
+            "label": "Knock up — path"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Lance Flurry": {
+        "category": "skill2",
+        "description": {
+          "raw": "Estrilda unleashes a rapid series of lance strikes against an enemy, dealing 55% (ATK-based) damage 7 times and reducing their ATK by 30% for 12s. If she is at the enemy edge of the battlefield, each hit deals 16% (ATK-based) extra damage.",
+          "active": [
+            "Estrilda unleashes a rapid series of lance strikes against an enemy, dealing 55% (ATK-based) damage 7 times and reducing their ATK by 30% for 12s.",
+            "If she is at the enemy edge of the battlefield, each hit deals 16% (ATK-based) extra damage."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "at enemy edge"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 55.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 12.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "ATK",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "After Piercing Onslaught ends, Estrilda recovers 300% (ATK-based) HP and gains a 300% (ATK-based) shield. After Ride Down ends, she gains 30 Penetration and 30% ATK for 10s.",
+          "active": [
+            "After Piercing Onslaught ends, Estrilda recovers 300% (ATK-based) HP and gains a 300% (ATK-based) shield.",
+            "After Ride Down ends, she gains 30 Penetration and 30% ATK for 10s."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ]
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ]
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "Ride Down"
+              }
+            ],
+            "type": "buff",
+            "name": "DEF Penetration",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ],
+            "duration": 10.0,
+            "persistence": "temporary"
+          },
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "Ride Down"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "duration": 10.0,
+            "persistence": "temporary"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "DEF Penetration — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Pennon of Valor": {
+        "category": "skill4",
+        "description": {
+          "raw": "Whenever Ride Down brings Estrilda to the enemy edge of the battlefield, she plants a Pennon of Valor at her position for 15s. Allies within 2 tiles of the Pennon gain 30% ATK and take 20% reduced damage.",
+          "active": [
+            "Whenever Ride Down brings Estrilda to the enemy edge of the battlefield, she plants a Pennon of Valor at her position for 15s.",
+            "Allies within 2 tiles of the Pennon gain 30% ATK and take 20% reduced damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the ATK bonus granted to allies within the Pennon of Valor's range to 35% and the damage reduction to 22%."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Estrilda marks any enemy she pushes to the enemy edge of the battlefield with Ride Down.",
+                "Marked enemies take 25% increased damage for 15s."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the ATK bonus granted to allies within the Pennon of Valor's range to 40% and the damage reduction to 24%."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "Pennon of Valor"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
+            "duration": 15.0,
+            "persistence": "temporary"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "Pennon of Valor"
+              }
+            ],
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 24.0
+              }
+            ],
+            "duration": 15.0,
+            "persistence": "temporary"
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage taken",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ]
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Area",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Area",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Area (EX+5)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Area (EX+5)",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Area (EX+15)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Area (EX+15)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Single target (EX+10)",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Estrilda is invincible during Ride Down, and Ride Down's damage increases by 80%.",
+          "active": [
+            "Estrilda is invincible during Ride Down, and Ride Down's damage increases by 80%."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "Ride Down"
+              }
+            ],
+            "type": "buff",
+            "name": "Damage dealt",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 80.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "type": "immunity",
+            "tier": "supreme+",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Damage dealt — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Estrilda is invincible during the three charges."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "shield",
+      "def_penetration"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "estrilda",
+    "display_name": "Estrilda",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Estrilda targets a tile and charges across the battlefield toward it three times, each time along a different straight path.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each of the first two charges deals 320% (ATK-based) damage to enemies in her path and stuns them for 2s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The final charge goes from the enemy edge of the battlefield to the allied edge of the battlefield, dealing 480% (ATK-based) damage to enemies in her path and stunning them for 3s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Estrilda is invincible during these charges.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "After the skill ends, Estrilda leaps to the allied edge of the battlefield, landing on the tile whose axis line covers the most enemies, and casts Ride Down.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a battle starts, Estrilda casts Ride Down.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Ride Down: After a brief wind-up, Estrilda charges to the enemy edge of the battlefield, dealing 280% (ATK-based) damage to enemies in her path.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "She pushes the first enemy she strikes forward along her path.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If she collides with another enemy, she switches targets and pushes the new enemy instead, continuing until she reaches the edge.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The enemy pushed to the edge is knocked into the air, taking 320% (ATK-based) extra damage before being knocked down for 3s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Estrilda remains unaffected throughout the process.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Estrilda sweeps her lance, dealing 240% (ATK-based) damage to adjacent enemies.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Estrilda unleashes a rapid series of lance strikes against an enemy, dealing 55% (ATK-based) damage 7 times and reducing their ATK by 30% for 12s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "If she is at the enemy edge of the battlefield, each hit deals 16% (ATK-based) extra damage.",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "After Piercing Onslaught ends, Estrilda recovers 300% (ATK-based) HP and gains a 300% (ATK-based) shield.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "After Ride Down ends, she gains 30 Penetration and 30% ATK for 10s.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Whenever Ride Down brings Estrilda to the enemy edge of the battlefield, she plants a Pennon of Valor at her position for 15s.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Allies within 2 tiles of the Pennon gain 30% ATK and take 20% reduced damage.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the ATK bonus granted to allies within the Pennon of Valor's range to 35% and the damage reduction to 22%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Estrilda marks any enemy she pushes to the enemy edge of the battlefield with Ride Down.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Marked enemies take 25% increased damage for 15s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the ATK bonus granted to allies within the Pennon of Valor's range to 40% and the damage reduction to 24%.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Estrilda is invincible during Ride Down, and Ride Down's damage increases by 80%.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "3b42a14aba3248f4fe666358d6b4af7c980410e7f8d823efb795e81536b3f91b",
+    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
+  }
+}

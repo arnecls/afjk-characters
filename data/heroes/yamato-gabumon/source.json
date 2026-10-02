@@ -246,7 +246,7 @@
     "stat_ranks": {
       "categories": {
         "basic": "high",
-        "offensive": "high",
+        "offensive": "average",
         "defensive": "high",
         "other": "high"
       },
