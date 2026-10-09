@@ -1234,7 +1234,7 @@ Common buffers are **Twins**, **Rolan**, **Smokey & Meerky**, or **Mikola**.
 
 ### Units benefitting most from Aurora
 
-Aurora provides Haste to all summons `high`, Damage dealt (Mythic+) to all summons `low`, and Damage taken (Mythic+) to all summons `average`.
+Aurora provides Haste to all summons `high`, Damage dealt (Mythic+) to all summons `low`, and Damage taken (Mythic+) to all summons `low`.
 
 **19** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -1289,7 +1289,7 @@ These are the **4** strongest pairings:
 
 - Haste — All summons — `high`
 - Damage dealt (Mythic+) — All summons — `low`
-- Damage taken (Mythic+) — All summons — `average`
+- Damage taken (Mythic+) — All summons — `low`
 
 #### Debuffs provided by Aurora
 
@@ -3926,7 +3926,7 @@ rapid single-target multi-hit damage that reduces ATK, with bonus damage at the 
 
 ##### Legendary+
 
-after ultimate, self-heal and shield; after charge, gain DEF penetration and ATK
+battle ATK increase
 
 ##### Mythic+
 
@@ -3934,7 +3934,7 @@ charge reaching the enemy edge creates an aura zone boosting ally ATK and damage
 
 ##### Supreme+
 
-invincible during charge, which deals bonus damage
+after ultimate, self-heal and shield; after charge, gain DEF penetration and ATK
 
 ### Units improving Estrilda
 
@@ -3962,7 +3962,7 @@ Common buffers are **Kordan**, **Shadewing**, **Kruger**, or **Laios**.
 
 ### Units benefitting most from Estrilda
 
-Estrilda provides ATK (Mythic+) in an area `high` and Damage taken (Mythic+) in an area `low`.
+Estrilda provides ATK (Mythic+) in an area `high` and Damage taken (Mythic+) in an area `average`.
 
 **27** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -3979,15 +3979,15 @@ These are the **4** strongest pairings:
 
 **Best overall replacement**
 
-- Perseus (90% `Damage`)
-- Antandra (69% `Damage` `Debuffs on enemies`)
-- Lucca (67% `Damage` `Crowd Control`)
+- Perseus (87% `Damage`)
+- Gwyneth (59% `Damage`)
+- Kruger (59% `Damage` `Debuffs on enemies`)
 
 **Buffs on allies**
 
-- Evie (75% `ATK`)
-- Mikola (62% `ATK`)
-- Rolan (60% `Damage taken` `ATK`)
+- Rolan (69% `Damage taken` `ATK`)
+- Evie (64% `ATK`)
+- Koko (54% `Damage taken` `ATK`)
 
 **Similar Skills**
 
@@ -3997,9 +3997,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Alna (100% `Physical`)
-- Antandra (100% `Physical`)
-- Atalanta (100% `Physical`)
+- Athalia (100% `Physical`)
+- Chippy (100% `Physical`)
+- Florabelle (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -4026,7 +4026,7 @@ These are the **4** strongest pairings:
 #### Buffs provided by Estrilda
 
 - ATK (Mythic+) — Area — `high`
-- Damage taken (Mythic+) — Area — `low`
+- Damage taken (Mythic+) — Area — `average`
 
 #### Debuffs provided by Estrilda
 
@@ -12288,7 +12288,7 @@ _No synergy partners matched stat buffs or enablers._
 
 ### Units benefitting most from Reinier
 
-Reinier provides ATK to single targets `low`, Direct healing to single targets `low`, and Damage taken (EX+10) to single targets `average`.
+Reinier provides ATK to single targets `low`, Direct healing to single targets `low`, and Damage taken (EX+10) to single targets `low`.
 
 - Faramor (2.9 / 5)
 - Alsa (2.0 / 5)
@@ -12348,7 +12348,7 @@ Reinier provides ATK to single targets `low`, Direct healing to single targets `
 
 - ATK — Single target — `low`
 - Direct healing — Single target — `low`
-- Damage taken (EX+10) — Single target — `average`
+- Damage taken (EX+10) — Single target — `low`
 
 #### Debuffs provided by Reinier
 
@@ -12573,7 +12573,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, **Mikola**, or **Solise**.
 
 ### Units benefitting most from Rolan
 
-Rolan provides ATK to multiple targets `average`, Cleanse to all units `high`, Damage taken in an area `average`, Direct healing to all units `high`, Haste to multiple targets `high`, Max HP to all units `high`, and Healing over time (EX+15) in an area `average`.
+Rolan provides ATK to multiple targets `high`, Cleanse to all units `high`, Damage taken in an area `average`, Direct healing to all units `high`, Haste to multiple targets `high`, Max HP to all units `high`, and Healing over time (EX+15) in an area `average`.
 
 **78** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -12628,7 +12628,7 @@ These are the **4** strongest pairings:
 
 #### Buffs provided by Rolan
 
-- ATK — Multiple targets — `average`
+- ATK — Multiple targets — `high`
 - Cleanse — All units — `high`
 - Damage taken — Area — `average`
 - Direct healing — All units — `high`
@@ -13781,7 +13781,7 @@ Common buffers are **Rolan**, **Twins**, **Solise**, or **Lorsan**.
 
 ### Units benefitting most from Shakir
 
-Shakir provides Damage taken in an area `average` and Haste in an area `average`.
+Shakir provides Damage taken in an area `low` and Haste in an area `average`.
 
 **12** units include this provider among their top 6 synergy partners. Why the match is common:
 
@@ -13843,7 +13843,7 @@ These are the **4** strongest pairings:
 
 #### Buffs provided by Shakir
 
-- Damage taken — Area — `average`
+- Damage taken — Area — `low`
 - Haste — Area — `average`
 
 #### Debuffs provided by Shakir

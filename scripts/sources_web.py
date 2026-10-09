@@ -106,7 +106,7 @@ HERO_NAMES = [
     "Aurora", "Baelran", "Berial", "Bonnie", "Brutus", "Bryon", "Callan",
     "Carolina", "Cassadee", "Cecia", "Chippy", "Contess", "Cryonaia", "Cyran",
     "Daimon", "Damian", "Dionel", "Dunlingr", "Eironn", "Elijah & Lailah",
-    "Eryndor", "Evie", "Faramor", "Fay", "Florabelle", "Frieren", "Galahad", "Gerda",
+    "Eryndor", "Estrilda", "Evie", "Faramor", "Fay", "Florabelle", "Frieren", "Galahad", "Gerda",
     "Granny Dahnie", "Gunnar", "Gwyneth", "Hammie", "Harak", "Hepler",
     "Hewynn", "Himmel", "Hodgkin", "Hugin", "Igor", "Indris", "Isabella",
     "Kafra", "Karma", "Kazim", "Koko", "Kordan", "Korin", "Kruger", "Kulu", "Laios",

@@ -4,7 +4,7 @@
     "title": "Estrilda - Knight of Valor",
     "skills": {
       "Ultimate": {
-        "source_hash": "a6bd0bfbfd63e447ef46c57698478a6914d1389db4570d5e2309dd93a526deef",
+        "source_hash": "6530d856012bb8f70896bb1543e063cf3d98d6cdf3266c947c8f45d5900cc856",
         "is_max_known": true,
         "tiers": {
           "base": {
@@ -24,7 +24,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 320.0
+                    "value": 300.0
                   }
                 ]
               },
@@ -55,7 +55,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 480.0
+                    "value": 450.0
                   }
                 ]
               },
@@ -98,7 +98,7 @@
         }
       },
       "Skill1": {
-        "source_hash": "01c26356eb43e8b3a6053313bd4f2d8b82533a35ba169e1651a28c14c0fef5d4",
+        "source_hash": "118ba1079913998c3b8aab6a04b42d13103f4c3698aa0d3cd378f61e14ac0761",
         "is_max_known": true,
         "tiers": {
           "base": {
@@ -118,7 +118,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 280.0
+                    "value": 300.0
                   }
                 ]
               },
@@ -186,7 +186,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 240.0
+                    "value": 300.0
                   }
                 ]
               }
@@ -210,7 +210,7 @@
         }
       },
       "Skill2": {
-        "source_hash": "f70ef746cf51f56020aa1fffd263f6531ecf9902bc11dc784ccb44d36b12423f",
+        "source_hash": "0eb003a89121cd181307a0a8e0ae6fd3646ddc816634d9a06b23309e747ddb33",
         "is_max_known": true,
         "tiers": {
           "base": {
@@ -229,7 +229,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 55.0
+                    "value": 60.0
                   }
                 ]
               },
@@ -265,7 +265,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 16.0
+                    "value": 20.0
                   }
                 ],
                 "conditions": [
@@ -284,71 +284,11 @@
         }
       },
       "Unlocks at Legendary+": {
-        "source_hash": "d45405a4bf3df8935161dc4c58be4a41f08c4a5c04cf731606af66013f064a75",
+        "source_hash": "e40e956cfd6022b08e372e2d57dc72a3302d6c0ef13d5657a69bccdd1751aacd",
         "is_max_known": true,
         "tiers": {
           "legendary+": {
             "effects": [
-              {
-                "tier": "legendary+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "heal",
-                "name": "Direct healing",
-                "label": "healing",
-                "healing_type": "direct",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 300.0
-                  }
-                ]
-              },
-              {
-                "tier": "legendary+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "shield",
-                "name": "Shield",
-                "label": "shield",
-                "value": [
-                  {
-                    "type": "percentage",
-                    "value": 300.0
-                  }
-                ]
-              },
-              {
-                "tier": "legendary+",
-                "targeting_label": "Self",
-                "is_max_known": true,
-                "target": "self",
-                "area": "single",
-                "target_count": 1,
-                "type": "buff",
-                "name": "DEF Penetration",
-                "label": "buff_offensive",
-                "value": [
-                  {
-                    "type": "flat",
-                    "value": 30.0
-                  }
-                ],
-                "duration": 10.0,
-                "persistence": "temporary",
-                "conditions": [
-                  {
-                    "type": "skill_mode",
-                    "mode": "Ride Down"
-                  }
-                ]
-              },
               {
                 "tier": "legendary+",
                 "targeting_label": "Self",
@@ -362,17 +302,11 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 30.0
+                    "value": 20.0
                   }
                 ],
-                "duration": 10.0,
-                "persistence": "temporary",
-                "conditions": [
-                  {
-                    "type": "skill_mode",
-                    "mode": "Ride Down"
-                  }
-                ]
+                "persistence": "permanent",
+                "duration": -1.0
               }
             ],
             "summon_effects": [],
@@ -383,7 +317,7 @@
         }
       },
       "Ex. Skill": {
-        "source_hash": "43ee16dd4609d5c231cf4df226f429e87f6c98742d3de48377b5f5dd9ef381c4",
+        "source_hash": "6fdd03ba932c4b1479b86d371dd07e22149b3ada0f6685efcd555e0fecf14076",
         "is_max_known": true,
         "tiers": {
           "mythic+": {
@@ -403,7 +337,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 30.0
+                    "value": 25.0
                   }
                 ],
                 "duration": 15.0,
@@ -465,7 +399,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 35.0
+                    "value": 30.0
                   }
                 ],
                 "duration": 15.0,
@@ -492,7 +426,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 22.0
+                    "value": 25.0
                   }
                 ],
                 "duration": 15.0,
@@ -553,7 +487,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 40.0
+                    "value": 35.0
                   }
                 ],
                 "duration": 15.0,
@@ -580,7 +514,7 @@
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 24.0
+                    "value": 30.0
                   }
                 ],
                 "duration": 15.0,
@@ -601,7 +535,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "cccff50db4ac3e70a524ee6bb45573169d03f0444cc9bde7f9363a14129078f2",
+        "source_hash": "b7cf9b68998adf05803575aaf75aaae12002ab97ef9aa56829ad8b89644ba12f",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -613,16 +547,89 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
-                "type": "buff",
-                "name": "Damage dealt",
-                "label": "buff_stat",
+                "type": "heal",
+                "name": "Direct healing",
+                "label": "healing",
+                "healing_type": "direct",
                 "value": [
                   {
                     "type": "percentage",
-                    "value": 80.0
+                    "value": 300.0
                   }
                 ],
-                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Piercing Onslaught"
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "label": "shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Piercing Onslaught"
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "DEF Penetration",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 25.0
+                  }
+                ],
+                "duration": 15.0,
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Ride Down"
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "duration": 15.0,
+                "persistence": "temporary",
                 "conditions": [
                   {
                     "type": "skill_mode",
@@ -632,26 +639,8 @@
               }
             ],
             "summon_effects": [],
-            "immunities": [
-              {
-                "type": "immunity",
-                "tier": "supreme+",
-                "immunity_type": "unaffected",
-                "timing": "on_skill",
-                "targeting_label": "Self",
-                "target": "self",
-                "area": "single",
-                "target_count": 1
-              }
-            ],
-            "special_provides": [
-              {
-                "label": "Invincibility",
-                "tier": "supreme+",
-                "targeting": "Self",
-                "description": "Estrilda is invincible during Ride Down."
-              }
-            ],
+            "immunities": [],
+            "special_provides": [],
             "special_requires": []
           }
         }
@@ -673,9 +662,9 @@
     "ultimate": "invincible line-AoE charges dealing damage and stun, then leap to the allied edge and recast the charge skill",
     "skill1": "battle-start line-AoE charge pushing an enemy to the edge, then knock up and knock down; active sweeps adjacent enemies",
     "skill2": "rapid single-target multi-hit damage that reduces ATK, with bonus damage at the enemy edge",
-    "skill3": "after ultimate, self-heal and shield; after charge, gain DEF penetration and ATK",
+    "skill3": "battle ATK increase",
     "skill4": "charge reaching the enemy edge creates an aura zone boosting ally ATK and damage reduction; pushed enemies take increased damage",
-    "skill5": "invincible during charge, which deals bonus damage"
+    "skill5": "after ultimate, self-heal and shield; after charge, gain DEF penetration and ATK"
   },
   "play_overview": "[[Estrilda]] charges through the enemy line at battle start and **shoves one target to the far edge** for a knock down. Her ultimate adds three **invincible stun charges**, then she leaps back and repeats the opening charge. She is strongest when each charge reaches the enemy edge, which adds lance damage and plants a **buff zone** for nearby allies. Self-healing, a shield, and bonus ATK after charges keep her aggressive between casts. Her second skill cuts a single target's ATK. She struggles against **Steadfast** or **Unaffected** targets and when allies cannot stay near the buff zone.",
   "counter_overview": "In PVP, [[Estrilda]] casts **Ride Down** at battle start, shoving one of your front units to your back edge, and her ultimate then stuns everything in three charge lines while she is **invincible**. Answer the shove with [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Callan]] on the opening beat. Do not burst or interrupt during the charges; punish her when they end and she stands exposed at the edge. Her Phys DEF and Magic DEF are both high, so use true-damage melee like [[Himmel]] or [[Zorya]] instead of a plain damage dump."
