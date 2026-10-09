@@ -247,12 +247,12 @@
       "categories": {
         "basic": "high",
         "offensive": "average",
-        "defensive": "high",
-        "other": "high"
+        "defensive": "average",
+        "other": "average"
       },
       "stats": {
         "HP": "average",
-        "ATK": "high",
+        "ATK": "average",
         "Phys DEF": "high",
         "Magic DEF": "high",
         "Haste": "high",

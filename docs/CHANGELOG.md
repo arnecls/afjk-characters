@@ -8,9 +8,14 @@
   analysis, roster entry, and portrait.
 - added Senea (Graveborn · Marksman · Magic) — Deathless Songstress — with
   full skill analysis, roster entry, and portrait.
+- added Estrilda (Lightbearer · Rogue · Physical) — Knight of Valor — with
+  full skill analysis, roster entry, and portrait. Skill texts, upgrade tiers,
+  and release date (2026-10-09) come from the live wiki; Prydwen tiers are not
+  published yet.
 
 ### Fixes and improvements
 
+- Added Estrilda to the downloader's hero list
 - Fixed pipeline issues leading to failing character portrait downloads
 - Updated Karma play texts
 - synced Prydwen meta tiers with the live Prydwen pages: corrected stale
@@ -23,6 +28,7 @@
 | Character | What changed |
 |---|---|
 | aster | - Added as new hero |
+| estrilda | - Added as new hero |
 | senea | - Added as new hero |
 | callan | - Refreshed relative stat ranks |
 | contess | - Refreshed relative stat ranks |

@@ -1,0 +1,671 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Estrilda - Knight of Valor",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "6530d856012bb8f70896bb1543e063cf3d98d6cdf3266c947c8f45d5900cc856",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "path",
+                "target_count": -1,
+                "area_direction": "selected_target",
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "path",
+                "target_count": -1,
+                "area_direction": "selected_target",
+                "type": "crowd_control",
+                "cc-type": "stun",
+                "duration": 2.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "path",
+                "target_count": -1,
+                "area_direction": "selected_target",
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 450.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "path",
+                "target_count": -1,
+                "area_direction": "selected_target",
+                "type": "crowd_control",
+                "cc-type": "stun",
+                "duration": 3.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "base",
+                "immunity_type": "unaffected",
+                "timing": "on_ultimate",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
+            "special_provides": [
+              {
+                "label": "Invincibility",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "Estrilda is invincible during the three charges."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "118ba1079913998c3b8aab6a04b42d13103f4c3698aa0d3cd378f61e14ac0761",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "path",
+                "target_count": -1,
+                "area_direction": "selected_target",
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "crowd_control",
+                "cc-type": "displace"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 320.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "crowd_control",
+                "cc-type": "knock_up"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "crowd_control",
+                "cc-type": "knock_down",
+                "duration": 3.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "base",
+                "immunity_type": "unaffected",
+                "timing": "on_skill",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "0eb003a89121cd181307a0a8e0ae6fd3646ddc816634d9a06b23309e747ddb33",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "ATK",
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "duration": 12.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "physical",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "at enemy edge"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "e40e956cfd6022b08e372e2d57dc72a3302d6c0ef13d5657a69bccdd1751aacd",
+        "is_max_known": true,
+        "tiers": {
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "6fdd03ba932c4b1479b86d371dd07e22149b3ada0f6685efcd555e0fecf14076",
+        "is_max_known": true,
+        "tiers": {
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "anchor": "caster",
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 25.0
+                  }
+                ],
+                "duration": 15.0,
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Pennon of Valor"
+                  }
+                ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "anchor": "caster",
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "duration": 15.0,
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Pennon of Valor"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "anchor": "caster",
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "duration": 15.0,
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Pennon of Valor"
+                  }
+                ]
+              },
+              {
+                "tier": "ex+5",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "anchor": "caster",
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 25.0
+                  }
+                ],
+                "duration": 15.0,
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Pennon of Valor"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "is_max_known": true,
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Damage taken",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 25.0
+                  }
+                ],
+                "duration": 15.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+15": {
+            "effects": [
+              {
+                "tier": "ex+15",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "anchor": "caster",
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 35.0
+                  }
+                ],
+                "duration": 15.0,
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Pennon of Valor"
+                  }
+                ]
+              },
+              {
+                "tier": "ex+15",
+                "targeting_label": "Area",
+                "is_max_known": true,
+                "target": "ally",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "anchor": "caster",
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "duration": 15.0,
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Pennon of Valor"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "b7cf9b68998adf05803575aaf75aaae12002ab97ef9aa56829ad8b89644ba12f",
+        "is_max_known": true,
+        "tiers": {
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "name": "Direct healing",
+                "label": "healing",
+                "healing_type": "direct",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Piercing Onslaught"
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "label": "shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Piercing Onslaught"
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "DEF Penetration",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 25.0
+                  }
+                ],
+                "duration": 15.0,
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Ride Down"
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "duration": 15.0,
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Ride Down"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "ally-buffer",
+    "aoe-damage",
+    "battle-start-burst",
+    "enemy-debuffer",
+    "invincibility",
+    "mass-cc",
+    "self-repositioner",
+    "temporary-stat-buffer"
+  ],
+  "summon_profile": null,
+  "skill_summaries": {
+    "ultimate": "invincible line-AoE charges dealing damage and stun, then leap to the allied edge and recast the charge skill",
+    "skill1": "battle-start line-AoE charge pushing an enemy to the edge, then knock up and knock down; active sweeps adjacent enemies",
+    "skill2": "rapid single-target multi-hit damage that reduces ATK, with bonus damage at the enemy edge",
+    "skill3": "battle ATK increase",
+    "skill4": "charge reaching the enemy edge creates an aura zone boosting ally ATK and damage reduction; pushed enemies take increased damage",
+    "skill5": "after ultimate, self-heal and shield; after charge, gain DEF penetration and ATK"
+  },
+  "play_overview": "[[Estrilda]] charges through the enemy line at battle start and **shoves one target to the far edge** for a knock down. Her ultimate adds three **invincible stun charges**, then she leaps back and repeats the opening charge. She is strongest when each charge reaches the enemy edge, which adds lance damage and plants a **buff zone** for nearby allies. Self-healing, a shield, and bonus ATK after charges keep her aggressive between casts. Her second skill cuts a single target's ATK. She struggles against **Steadfast** or **Unaffected** targets and when allies cannot stay near the buff zone.",
+  "counter_overview": "In PVP, [[Estrilda]] casts **Ride Down** at battle start, shoving one of your front units to your back edge, and her ultimate then stuns everything in three charge lines while she is **invincible**. Answer the shove with [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Callan]] on the opening beat. Do not burst or interrupt during the charges; punish her when they end and she stands exposed at the edge. Her Phys DEF and Magic DEF are both high, so use true-damage melee like [[Himmel]] or [[Zorya]] instead of a plain damage dump."
+}

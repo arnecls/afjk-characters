@@ -261,12 +261,12 @@
         "other": "high"
       },
       "stats": {
-        "HP": "high",
+        "HP": "average",
         "ATK": "average",
         "Phys DEF": "high",
         "Magic DEF": "high",
         "Haste": "average",
-        "ATK SPD": "high"
+        "ATK SPD": "average"
       }
     }
   }

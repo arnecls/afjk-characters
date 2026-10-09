@@ -256,7 +256,7 @@
         "ATK": "average",
         "Phys DEF": "high",
         "Magic DEF": "high",
-        "Haste": "high",
+        "Haste": "average",
         "ATK SPD": "high"
       }
     }

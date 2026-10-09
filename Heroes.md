@@ -10504,3 +10504,84 @@ For every 3 normal attacks Senea unleashes during Grave Crescendo, she attracts 
 *Unlocks at Supreme+*
 
 Senea immediately attracts 2 spectral spectators when a battle starts.
+
+## Estrilda - Knight of Valor
+
+*Lightbearer · Rogue · Physical*
+
+A light cavalry warrior who fights for her family's honor, moving freely across the battlefield and piercing enemy defenses with her lance.
+
+### Ultimate
+
+**Piercing Onslaught**
+*Unlocks at Level 1*
+
+- Skill Range: Global
+- Initial Energy: 300
+
+Estrilda targets a tile and charges across the battlefield toward it three times, each time along a different straight path. Each of the first two charges deals 220% (ATK-based) + 30% (SP-based) damage to enemies in her path and stuns them for 2s. The final charge goes from the enemy edge of the battlefield to the allied edge of the battlefield, dealing 330% (ATK-based) + 45% (SP-based) damage to enemies in her path and stunning them for 3s. Estrilda is invincible during these charges. After the skill ends, Estrilda leaps to the allied edge of the battlefield, landing on the tile whose axis line covers the most enemies, and casts Ride Down.
+
+- Level 2 — Unlocks at Level 51: Increases the damage of each of the first two charges to 240% (ATK-based) + 30% (SP-based) and the final charge to 360% (ATK-based) + 45% (SP-based).
+- Level 3 — Unlocks at Level 111: Increases the damage of each of the first two charges to 260% (ATK-based) + 30% (SP-based) and the final charge to 390% (ATK-based) + 45% (SP-based).
+- Level 4 — Unlocks at Level 171: {Increases the damage of each of the first two charges to 280% (ATK-based) + 30% (SP-based) and the final charge to 420% (ATK-based) + 45% (SP-based).
+- Level 5 — Unlocks at Level 231: Increases the damage of each of the first two charges to 300% (ATK-based) + 30% (SP-based) and the final charge to 450% (ATK-based) + 45% (SP-based).
+
+### Skill1
+
+**Gallant Charge**
+*Unlocks at Level 11*
+
+- Cooldown: 7s
+- Skill Range: 1 tile
+
+When a battle starts, Estrilda casts Ride Down. Ride Down: After a brief wind-up, Estrilda charges to the enemy edge of the battlefield, dealing 240% (ATK-based)+ 30% (SP-based) damage to enemies in her path. She pushes the first enemy she strikes forward along her path. If she collides with another enemy, she switches targets and pushes the new enemy instead, continuing until she reaches the edge. The enemy pushed to the edge is knocked into the air, taking 320% (ATK-based) + 32% (SP-based) extra damage before being knocked down for 3s. Estrilda remains unaffected throughout the process. Active. Estrilda sweeps her lance. dealing 240% (ATK-based) + 30% (SP-based) damage to adiacent enemies.
+
+- Level 2 — Unlocks at Level 71: Increases Ride Down's damage to enemies in the path to 260% (ATK-based) + 30% (SP-based) and the lance sweep's damage to 260% (ATK-based) + 30% (SP-based).
+- Level 3 — Unlocks at Level 131: Increases Ride Down's damage to enemies in the path to 280% (ATK-based) + 30% (SP-based) and the lance sweep's damage to 280% (ATK-based) + 30% (SP-based).
+- Level 4 — Unlocks at Level 191: Increases Ride Down's damage to enemies in the path to 300% (ATK-based) + 30% (SP-based) and the lance sweep's damage to 300% (ATK-based) + 30% (SP-based).
+
+### Skill2
+
+**Lance Flurry**
+*Unlocks at Level 31*
+
+- Cooldown: 12s
+- Skill Range: 1 tile
+
+Estrilda unleashes a rapid series of lance strikes against an enemy, dealing 45% (ATK-based) + 6% (SP-based) damage 7 times and reducing their ATK by 30% + 3% (SP-based) for 12s. If she is at the enemy edge of the battlefield, each hit deals 20% (ATK-based) + 2% (SP-based) extra damage.
+
+- Level 2 — Unlocks at Level 91: Increases damage per hit to 50% (ATK-based) + 6% (SP-based) and the ATK reduction to 30% + 3% (SP-based).
+- Level 3 — Unlocks at Level 151: Increases damage per hit to 55% (ATK-based) + 6% (SP-based) and the ATK reduction to 30% + 3% (SP-based).
+- Level 4 — Unlocks at Level 211: Increases damage per hit to 60% (ATK-based) + 6% (SP-based) and the ATK reduction to 30% + 3% (SP-based).
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Increases ATK by 12% during battle.
+
+- Level 2: Increases ATK by 16% during battle.
+- Level 3: Increases ATK by 20% during battle.
+
+### Ex. Skill
+
+**Pennon of Valor**
+*Unlocks at Mythic+*
+
+- Skill Range: 1 tile
+
+Whenever Ride Down brings Estrilda to the enemy's edge of the battlefield, she plants a Pennon of Valor at her position for 15s. Allies within 2 tiles of the Pennon gain ATK equal to 25% of Estrilda's ATK and take 20% reduced damage.
+
+- Level 2 — Unlocks at EX. +5: Increases the ATK bonus granted to allies within the Pennon of Valor's range to 30% and the damage reduction to 25%.
+- Level 3 — Unlocks at EX. +10: Estrilda marks any enemy she pushes to the enemy edge of the battlefield with Ride Down. Marked enemies take 25% increased damage for 15s.
+- Level 4 — Unlocks at EX. +15: Increases the ATK bonus granted to allies within the Pennon of Valor's range to 35% and the damage reduction to 30%.
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+After Piercing Onslaught ends, Estrilda recovers 300% (ATK-based) HP and gains a 300% (ATK-based) shield. After Ride Down ends, she gains 25 Penetration and 20% ATK for 15s.

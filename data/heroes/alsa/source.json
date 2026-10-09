@@ -255,10 +255,10 @@
         "basic": "low",
         "offensive": "high",
         "defensive": "low",
-        "other": "average"
+        "other": "low"
       },
       "stats": {
-        "HP": "average",
+        "HP": "low",
         "ATK": "low",
         "Phys DEF": "average",
         "Magic DEF": "average",

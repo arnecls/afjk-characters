@@ -245,16 +245,16 @@
       "categories": {
         "basic": "low",
         "offensive": "high",
-        "defensive": "average",
+        "defensive": "low",
         "other": "average"
       },
       "stats": {
         "HP": "low",
         "ATK": "average",
         "Phys DEF": "average",
-        "Magic DEF": "average",
+        "Magic DEF": "low",
         "Haste": "low",
-        "ATK SPD": "average"
+        "ATK SPD": "low"
       }
     }
   }

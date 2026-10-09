@@ -252,7 +252,7 @@
         "basic": "low",
         "offensive": "high",
         "defensive": "average",
-        "other": "high"
+        "other": "average"
       },
       "stats": {
         "HP": "low",
