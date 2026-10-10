@@ -657,13 +657,51 @@ def validate_effect_persistence(
     return errors
 
 
+# Runtime labels that count as temporary stat buffs although they are not
+# roster stats: damage dealt increase and damage taken reduction.
+RUNTIME_DAMAGE_MODIFIER_LABELS = frozenset({"Damage dealt", "Damage taken"})
+
+# Extra stat labels the schema stat enum does not cover.
+RUNTIME_EXTRA_STAT_LABELS = frozenset({"Skill Power", "Ultimate Power"})
+
+# Runtime labels never counted as stat buffs (shield, Energy grants,
+# movement, immunities, extra-damage procs, other combat modifiers).
+RUNTIME_NON_STAT_LABELS = frozenset(
+    {
+        "HP loss modifier",
+        "Energy",
+        "Invincible",
+        "Magic damage",
+        "Dodge chance",
+        "Fatal blow immunity",
+        "Ranged damage",
+        "Movement speed",
+        "Unaffected",
+        "Steadfast",
+        "Extra damage",
+        "True damage",
+    }
+)
+
+
 def is_runtime_positive_stat_buff(effect: Any) -> bool:
-    """True for analyzed Effect objects that are roster stat buffs."""
+    """True for analyzed Effect objects that are roster stat buffs.
+
+    Includes damage dealt increase and damage taken reduction. Buff
+    category carries the positive polarity.
+    """
     if effect.get("category") != "buff":
         return False
     label = (effect.get("label") or "").strip()
-    if label in NON_STAT_BUFF_NAMES:
+    if label in RUNTIME_DAMAGE_MODIFIER_LABELS:
+        return True
+    if label in RUNTIME_NON_STAT_LABELS:
         return False
+    fold = label.casefold()
+    if "shield" in fold or "movement" in fold or "immun" in fold:
+        return False
+    if label in RUNTIME_EXTRA_STAT_LABELS:
+        return True
     return hs._stat_from_label(label) is not None or label in (
         "Attack range",
         "Basic stats",

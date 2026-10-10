@@ -308,6 +308,76 @@ class TemporaryBuffSynergyTests(unittest.TestCase):
         self.assertTrue(any("temporary stat buff" in r for r in reasons))
 
 
+class RuntimeTemporaryStatBuffTests(unittest.TestCase):
+    @staticmethod
+    def _buff(label, persistence="temporary", category="buff"):
+        return {
+            "category": category,
+            "label": label,
+            "persistence": persistence,
+        }
+
+    def test_estrilda_pennon_yields_two_temporary_stat_buffs(self):
+        rs = _load_working_analysis()
+        raw = io.load_heroes_data()
+        record = next(r for r in raw["heroes"] if "Estrilda" in r["title"])
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        effects = [
+            e
+            for e in hero["skill_slices"]["Ex. Skill"]["effects"]
+            if e["tier"] == "Mythic+"
+            and bp.is_runtime_temporary_stat_buff(e)
+        ]
+        self.assertEqual(
+            sorted(e["label"] for e in effects), ["ATK", "Damage taken"]
+        )
+
+    def test_damage_dealt_buff_counts(self):
+        self.assertTrue(
+            bp.is_runtime_temporary_stat_buff(self._buff("Damage dealt"))
+        )
+
+    def test_new_stat_labels_count(self):
+        for label in (
+            "Skill Power",
+            "Ultimate Power",
+            "Energy Regen On Hit",
+            "Crit DMG DEF",
+            "Ranged DEF",
+        ):
+            with self.subTest(label=label):
+                self.assertTrue(
+                    bp.is_runtime_temporary_stat_buff(self._buff(label))
+                )
+
+    def test_excluded_labels_do_not_count(self):
+        for label in (
+            "Shield",
+            "Energy",
+            "Movement speed",
+            "Unaffected",
+            "Steadfast",
+            "True damage",
+        ):
+            with self.subTest(label=label):
+                self.assertFalse(
+                    bp.is_runtime_temporary_stat_buff(self._buff(label))
+                )
+
+    def test_debuff_polarity_and_permanent_do_not_count(self):
+        self.assertFalse(
+            bp.is_runtime_temporary_stat_buff(
+                self._buff("Damage taken", category="debuff")
+            )
+        )
+        self.assertFalse(
+            bp.is_runtime_temporary_stat_buff(
+                self._buff("ATK", persistence="permanent")
+            )
+        )
+
+
 class SpecialRequiresValidationTests(unittest.TestCase):
     def test_zandrok_sidecar_lacks_ally_buff_require(self):
         doc = ses.load_sidecar("Zandrok - Desert Ranger")
