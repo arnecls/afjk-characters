@@ -3097,6 +3097,7 @@ def load_scoring_inputs(
                 "signature_first_cast_needs_energy",
                 "ult_speed",
                 "avg_attack_range",
+                "battlefield_position",
             }
         }
         behaviors[entry["id"]] = HeroBehavior(**behavior_fields)

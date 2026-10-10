@@ -721,6 +721,7 @@ def prime_curated_cache(snapshot: Mapping[str, Any]) -> None:
         "melee_overrides": {},
         "movement_overrides": {},
         "placement_constraint_overrides": {},
+        "battlefield_position_overrides": {},
         "skill_corrections": {},
     }
     from .skill_corrections import spec_from_overrides
@@ -750,6 +751,10 @@ def prime_curated_cache(snapshot: Mapping[str, Any]) -> None:
         if overrides.get("placement_constraints"):
             tables["placement_constraint_overrides"][display] = overrides[
                 "placement_constraints"
+            ]
+        if overrides.get("battlefield_position"):
+            tables["battlefield_position_overrides"][entry["id"]] = overrides[
+                "battlefield_position"
             ]
         tables["skill_corrections"][display] = spec_from_overrides(overrides)
     _PER_HERO_CURATED_CACHE.update(tables)

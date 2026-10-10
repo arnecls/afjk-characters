@@ -233,6 +233,8 @@ def _display_effect(
         "area_direction": raw.get("area_direction"),
         "source_section": "",
     }
+    if raw.get("zone_anchor"):
+        common["zone_anchor"] = raw["zone_anchor"]
     if effect_type == "immunity":
         timing_aliases = {
             "once_per_battle": "Once",
@@ -412,6 +414,8 @@ def _merge_effects(effects: list[dict[str, Any]]) -> list[dict[str, Any]]:
         ):
             if effect.get(field) is not None:
                 current[field] = effect[field]
+        if effect.get("zone_anchor") and not current.get("zone_anchor"):
+            current["zone_anchor"] = effect["zone_anchor"]
         if effect.get("area_count") is not None and (
             current.get("area_count") is None or effect["area_count"] != 2
         ):
@@ -510,6 +514,8 @@ def _display_analysis(
                 "targeting": raw.get("targeting", "—"),
                 "description": raw.get("description", ""),
             }
+            if raw.get("distinct_allies") is not None:
+                item["distinct_allies"] = raw["distinct_allies"]
             key = (kind, str(item["label"]), str(item["targeting"]))
             current = seen_specials.get(key)
             if current is None:

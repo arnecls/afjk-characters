@@ -83,6 +83,9 @@ def calibrate_roster(
         signature_by_display_input=behavior_inputs["signatures"],
         placement_overrides_input=behavior_inputs["placement"],
         movement_overrides_input=behavior_inputs["movement"],
+        battlefield_position_overrides_input=behavior_inputs[
+            "battlefield_position"
+        ],
         walk_speeds_input=behavior_inputs["walk_speeds"],
         behavior_tags_input=behavior_inputs["behavior_tags"],
         skill_names_by_display_input=behavior_inputs["skill_names"],
@@ -204,6 +207,7 @@ def _behavior_inputs(snapshot: Mapping[str, Any]) -> dict[str, Any]:
         "signatures": {},
         "placement": {},
         "movement": {},
+        "battlefield_position": {},
         "walk_speeds": {},
         "behavior_tags": {},
         "skill_names": {},
@@ -227,6 +231,10 @@ def _behavior_inputs(snapshot: Mapping[str, Any]) -> dict[str, Any]:
             )
         if overrides.get("movement"):
             result["movement"][hero_id] = copy.deepcopy(overrides["movement"])
+        if overrides.get("battlefield_position"):
+            result["battlefield_position"][hero_id] = overrides[
+                "battlefield_position"
+            ]
         walk_speed = (source_doc.get("external") or {}).get("walk_speed")
         if walk_speed is not None:
             result["walk_speeds"][hero_id] = walk_speed

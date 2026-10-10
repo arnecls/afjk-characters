@@ -80,7 +80,7 @@ def synergy_mechanic_to_special(se: dict[str, Any], kind: str) -> Any:
     ]
     from . import serialize as hs
 
-    return SpecialEffect(
+    special = SpecialEffect(
         kind=kind,
         label=se["label"],
         tier=hs.to_display_tier(se.get("tier", "base")),
@@ -88,6 +88,9 @@ def synergy_mechanic_to_special(se: dict[str, Any], kind: str) -> Any:
         qualitative=se.get("description", ""),
         grants=grants,
     )
+    if se.get("distinct_allies") is not None:
+        special["distinct_allies"] = se["distinct_allies"]
+    return special
 
 
 def merge_effects(
@@ -161,6 +164,8 @@ def merge_effects(
             cur["area"] = eff["area"]
         if eff.get("area_direction") is not None:
             cur["area_direction"] = eff["area_direction"]
+        if eff.get("zone_anchor") and not cur.get("zone_anchor"):
+            cur["zone_anchor"] = eff["zone_anchor"]
         if eff.get("source_section") and (
             not cur.get("source_section")
             or (
@@ -227,6 +232,8 @@ def merge_special_effects(items: list[Any]) -> list[Any]:
                     named_ids=tuple(se.get("named_ids") or ()),
                 )
             )
+            if se.get("distinct_allies") is not None:
+                merged[-1]["distinct_allies"] = se["distinct_allies"]
             continue
         cur = existing[0]
         if TIER_ORDER.get(se["tier"], 99) < TIER_ORDER.get(cur["tier"], 99):
@@ -237,6 +244,10 @@ def merge_special_effects(items: list[Any]) -> list[Any]:
             cur["grants"] = list(se["grants"])
         if se.get("named_ids") and not cur.get("named_ids"):
             cur["named_ids"] = tuple(se["named_ids"])
+        if se.get("distinct_allies") is not None:
+            cur["distinct_allies"] = max(
+                se["distinct_allies"], cur.get("distinct_allies") or 0
+            )
     return merged
 
 
@@ -318,4 +329,5 @@ def _copy_effect(effect: Mapping[str, Any]) -> EffectRecord:
         area=effect.get("area"),
         area_direction=effect.get("area_direction"),
         source_section=effect.get("source_section"),
+        zone_anchor=effect.get("zone_anchor"),
     )

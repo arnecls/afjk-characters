@@ -280,6 +280,11 @@
             }
           },
           "description": "Curated buff grants for named-ally provides."
+        },
+        "distinct_allies": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of distinct allies needed."
         }
       }
     },
@@ -445,6 +450,15 @@
           "type": [
             "number",
             "null"
+          ]
+        },
+        "battlefield_position": {
+          "type": "string",
+          "enum": [
+            "frontline",
+            "enemy_backline",
+            "ally_backline",
+            "roaming"
           ]
         },
         "placement_constraints": {
