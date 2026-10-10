@@ -80,7 +80,69 @@ common roster-wide buffer.
 
 ### Positional & Proximity Restrictions
 - **Positional Tiles**: Buffs that require standing on a specific tile are ignored for highly mobile receivers.
-- **Proximity Auras & Ground Zones**: Buffs tied to an aura around the provider (e.g., Shakir's Lupine Aura) or to ground the provider anchors (e.g., Perseus fertile ground — `standing on` / `within N tiles around`) only score for receivers who fight in melee range (attack range ≤ 3.5).
+- **Proximity Auras**: Buffs tied to an aura around the provider (e.g., Shakir's Lupine Aura) only score for receivers who fight in melee range (attack range ≤ 3.5).
+
+### Buff Zones
+Ally buffs for a zone the provider places (e.g., Perseus fertile ground,
+Estrilda's zone) carry a `zone_anchor` in `ai.json`. Global buffs have none.
+
+- **Zone anchor**: `enemy_backline`, `enemy_target`, `caster`, `summon`, or
+  `fixed_tile`. It resolves to a zone location: `enemy_backline` stays
+  `enemy_backline`; `enemy_target` and `summon` are `frontline`; `fixed_tile`
+  is `ally_backline`; `caster` takes the provider's battlefield position.
+- **Receiver position**: `battlefield_position` is derived from range and tags.
+  Ranged is `ally_backline`. Melee with `assassin`, `backline-assassin`, or
+  `self-repositioner` is `enemy_backline`. Other melee is `frontline`.
+  `roaming`, and any correction, comes only from `battlefield_position` in
+  `overrides.json`. A receiver without a position counts as `frontline`.
+- **Reach**: `BUFF_ZONE_REACH_WEIGHT` maps (zone location, receiver position)
+  to the share of the zone the receiver stands in.
+
+| Zone \ Receiver | enemy_backline | frontline | ally_backline | roaming |
+|---|---|---|---|---|
+| enemy_backline | 1.0 | 0.5 | 0.0 | 0.5 |
+| frontline | 0.5 | 1.0 | 0.0 | 0.5 |
+| ally_backline | 0.0 | 0.25 | 1.0 | 0.0 |
+| roaming (caster) | 0.5 | 0.5 | 0.0 | 0.5 |
+
+- **Scoring**: the stat path multiplies the buff score by the reach weight.
+  Zero reach skips the buff. `score_buff_zone_synergy` adds presence credit
+  for anchored buffs the stat path did not credit:
+  `SYNERGY_STAT_BUFF_REACH_WEIGHT × magnitude × reach ×
+  BUFF_ZONE_PRESENCE_MULT` (0.6). The reason reads
+  `Enables Buff zone (<location>) via <label> (<targeting>, <magnitude>)`.
+- **Direction**: scoring runs provider → receiver. The receiver's position
+  picks the column, the provider's anchor picks the row. Perseus benefits
+  from Estrilda's zone; Estrilda does not benefit from Perseus's.
+- **Grouping uplift**: an enemy-backline zone reaches a frontline receiver at
+  only 0.5. `synergy_pair_extras` rescores that pair with the weight raised
+  to 1.0 and stores the gain as `zone_grouping_uplift` on the pick (Mix index
+  field `groupingUplift`). Mix mode adds it when an enemy-grouping hero is on
+  the team.
+
+### Temporary Stat Buffs
+Receivers that require `Temporary ally stat buffs` (e.g., Perseus) value
+providers whose ally buffs are temporary.
+
+- **Stat set**: stats from the `character_stats` stats map, plus damage
+  dealt and damage taken buffs. Shields, Energy grants, movement speed, CC
+  immunity, and extra-damage procs are excluded.
+- **Persistence**: derived from skill text (`buff_persistence.py`). Only
+  `temporary` buffs count. Finite durations, aura or zone exit, and
+  "for N s" wording mean temporary; "permanently" and "during battle" mean
+  permanent.
+- **Label bonus**: `1 + TEMP_BUFF_LABEL_BONUS ×
+  (min(n, TEMP_BUFF_LABEL_CAP) − 1)` for n distinct buff labels (0.25, cap 6).
+- **Frequency bonus**: `1 + TEMP_BUFF_FREQUENCY_BONUS × (min(applications,
+  TEMP_BUFF_FREQUENCY_CAP) − 1)` (0.15, cap 5). Applications are
+  `round(TEMP_BUFF_WINDOW_SECONDS / cooldown)` (30 s window); a
+  battle-start buff counts once and takes a 1.4× multiplier.
+- **Require multiplier**: `TEMP_BUFF_REQUIRE_MULT` scales the enabler (1.0,
+  neutral).
+- **Distinct allies**: a require with `distinct_allies` set needs buffs from
+  that many different allies. In Mix mode the second provider counts at 1.5×.
+  The Mix index carries `tempBuff` (pick field `temp_buff_score`) and
+  `distinctAllies`.
 
 ---
 

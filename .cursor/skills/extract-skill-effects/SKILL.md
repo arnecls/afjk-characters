@@ -155,6 +155,16 @@ just validate
   etc.). Do **not** use this label when the gate is **own-skill state** (e.g.
   "while buffs granted by Rallying Roar are active") — model that with
   `conditions[]` on the self effect instead.
+- **Buff zones:** set `zone_anchor` on ally buff effects that belong to a
+  zone the hero places or carries (fertile ground, a field at the enemy
+  edge). Choose `enemy_backline` (placed in the enemy backline),
+  `enemy_target` (centered on a targeted enemy), `caster` (follows the
+  caster), `summon` (follows a summon), or `fixed_tile` (a fixed map tile).
+  Omit it for global buffs and for buffs that are not zone-bound. Only ally
+  buffs take it.
+- **Distinct allies:** when the text needs buffs from different allies
+  (e.g. "from two different allies"), set `distinct_allies` to that count on
+  the `Temporary ally stat buffs` `special_requires` entry.
 - **Ally stat-buff targeting:** roster ally buffs use `target: ally` in
   `effects`; owned-summon buffs use `summon_effects` with
   `own_summons`/`all_summons`. Do not model caster+apostle/summon-only
