@@ -710,6 +710,16 @@ def update_ai_by_id(field: str, values: dict[str, Any]) -> None:
         publish_documents(documents)
 
 
+def load_battlefield_position_overrides() -> dict[str, str]:
+    """Typed battlefield_position overrides keyed by hero id."""
+    snapshot = load_roster_inputs()
+    return {
+        hero_id: bundle["overrides"]["battlefield_position"]
+        for hero_id, bundle in snapshot["bundles"].items()
+        if bundle["overrides"].get("battlefield_position")
+    }
+
+
 def update_override_section(section: str, values: dict[str, Any]) -> None:
     manifest = load_manifest()
     bundles = load_bundles(manifest)

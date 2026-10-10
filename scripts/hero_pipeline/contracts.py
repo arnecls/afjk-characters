@@ -54,6 +54,7 @@ class HeroOverrides(TypedDict, total=False):
     signature: dict[str, str]
     movement: dict[str, str]
     melee: dict[str, bool]
+    battlefield_position: str
     placement_constraints: list[dict[str, str]]
     corrections: dict[str, Any]
 

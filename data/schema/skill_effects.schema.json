@@ -45,6 +45,24 @@
         }
       }
     },
+    "specialRequire": {
+      "type": "object",
+      "required": ["label", "tier"],
+      "additionalProperties": false,
+      "description": "A synergyMechanic plus distinct_allies.",
+      "properties": {
+        "label": { "$ref": "https://afkj.local/schema/heroes-data-processed.schema.json#/$defs/synergyMechanic/properties/label" },
+        "tier": { "$ref": "https://afkj.local/schema/heroes-data-processed.schema.json#/$defs/synergyMechanic/properties/tier" },
+        "targeting": { "$ref": "https://afkj.local/schema/heroes-data-processed.schema.json#/$defs/synergyMechanic/properties/targeting" },
+        "description": { "$ref": "https://afkj.local/schema/heroes-data-processed.schema.json#/$defs/synergyMechanic/properties/description" },
+        "grants": { "$ref": "https://afkj.local/schema/heroes-data-processed.schema.json#/$defs/synergyMechanic/properties/grants" },
+        "distinct_allies": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of distinct allies needed. Used by Temporary ally stat buffs."
+        }
+      }
+    },
     "tierEntry": {
       "type": "object",
       "additionalProperties": false,
@@ -76,7 +94,7 @@
         "special_requires": {
           "type": "array",
           "items": {
-            "$ref": "https://afkj.local/schema/heroes-data-processed.schema.json#/$defs/synergyMechanic"
+            "$ref": "#/$defs/specialRequire"
           }
         }
       }
