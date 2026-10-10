@@ -199,7 +199,8 @@
                     "value": 17.5
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "zone_anchor": "caster"
               },
               {
                 "tier": "base",
@@ -217,7 +218,8 @@
                     "value": 25.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "zone_anchor": "caster"
               },
               {
                 "tier": "base",
@@ -235,7 +237,8 @@
                     "value": 25.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "zone_anchor": "caster"
               },
               {
                 "tier": "base",
@@ -435,7 +438,8 @@
                 "label": "Temporary ally stat buffs",
                 "tier": "mythic+",
                 "targeting": "Allies",
-                "description": "Each temporary stat buff from a different ally also increases his damage dealt by 15% and reduces his damage taken by 15%."
+                "description": "Each temporary stat buff from a different ally also increases his damage dealt by 15% and reduces his damage taken by 15%.",
+                "distinct_allies": 2
               }
             ]
           },

@@ -2,5 +2,6 @@
   "schema_version": 1,
   "signature": {
     "signature_override": "skill2"
-  }
+  },
+  "battlefield_position": "roaming"
 }

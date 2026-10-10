@@ -3,5 +3,6 @@
   "movement": {
     "movement": "mostly stationary",
     "note": "pulls enemies; moves on failed pull"
-  }
+  },
+  "battlefield_position": "ally_backline"
 }

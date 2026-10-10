@@ -347,7 +347,8 @@
                     "type": "skill_mode",
                     "mode": "Pennon of Valor"
                   }
-                ]
+                ],
+                "zone_anchor": "enemy_backline"
               },
               {
                 "tier": "mythic+",
@@ -374,7 +375,8 @@
                     "type": "skill_mode",
                     "mode": "Pennon of Valor"
                   }
-                ]
+                ],
+                "zone_anchor": "enemy_backline"
               }
             ],
             "summon_effects": [],
@@ -409,7 +411,8 @@
                     "type": "skill_mode",
                     "mode": "Pennon of Valor"
                   }
-                ]
+                ],
+                "zone_anchor": "enemy_backline"
               },
               {
                 "tier": "ex+5",
@@ -436,7 +439,8 @@
                     "type": "skill_mode",
                     "mode": "Pennon of Valor"
                   }
-                ]
+                ],
+                "zone_anchor": "enemy_backline"
               }
             ],
             "summon_effects": [],
@@ -497,7 +501,8 @@
                     "type": "skill_mode",
                     "mode": "Pennon of Valor"
                   }
-                ]
+                ],
+                "zone_anchor": "enemy_backline"
               },
               {
                 "tier": "ex+15",
@@ -524,7 +529,8 @@
                     "type": "skill_mode",
                     "mode": "Pennon of Valor"
                   }
-                ]
+                ],
+                "zone_anchor": "enemy_backline"
               }
             ],
             "summon_effects": [],

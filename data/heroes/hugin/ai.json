@@ -95,7 +95,8 @@
                 "type": "buff",
                 "name": "ATK",
                 "label": "buff_offensive",
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "zone_anchor": "fixed_tile"
               },
               {
                 "tier": "base",
