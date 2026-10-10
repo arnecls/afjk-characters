@@ -102,6 +102,7 @@ def _effect(row: Mapping[str, Any], section: str) -> EffectRecord | None:
         conditions=conditions,
         area=row.get("area"),
         source_section=section,
+        zone_anchor=row.get("zone_anchor"),
     )
 
 
@@ -184,6 +185,10 @@ def _merge_effects(effects: list[EffectRecord]) -> list[EffectRecord]:
             current["persistence"] = effect["persistence"]
         if effect["area"] is not None:
             current["area"] = effect["area"]
+        if effect.get("zone_anchor") and not current.get("zone_anchor"):
+            current["zone_anchor"] = effect["zone_anchor"]
+        if effect.get("skill_cooldown") and not current.get("skill_cooldown"):
+            current["skill_cooldown"] = effect["skill_cooldown"]
         if effect["numeric"] is not None and (
             current["numeric"] is None or effect["numeric"] > current["numeric"]
         ):
@@ -506,6 +511,92 @@ def receiver_has_ranged_summons(hero: HeroRecord) -> bool:
     if profile is not None:
         return bool(profile.get("has_ranged_summons"))
     return _facts().receiver_has_ranged_summons(hero)
+
+
+BUFF_ZONE_ANCHOR_LOCATION = {
+    "enemy_backline": "enemy_backline",
+    "enemy_target": "frontline",
+    "summon": "frontline",
+    "fixed_tile": "ally_backline",
+}
+# (zone location, receiver battlefield position) -> share of the zone a
+# receiver stands in. Roaming zones (caster anchors) are not in the spec
+# matrix; they reach front and back lines half as well as a fixed zone.
+BUFF_ZONE_REACH_WEIGHT: dict[tuple[str, str], float] = {
+    ("enemy_backline", "enemy_backline"): 1.0,
+    ("frontline", "enemy_backline"): 0.5,
+    ("ally_backline", "enemy_backline"): 0.0,
+    ("enemy_backline", "frontline"): 0.5,
+    ("frontline", "frontline"): 1.0,
+    ("ally_backline", "frontline"): 0.25,
+    ("enemy_backline", "ally_backline"): 0.0,
+    ("frontline", "ally_backline"): 0.0,
+    ("ally_backline", "ally_backline"): 1.0,
+    ("enemy_backline", "roaming"): 0.5,
+    ("frontline", "roaming"): 0.5,
+    ("ally_backline", "roaming"): 0.0,
+    ("roaming", "enemy_backline"): 0.5,
+    ("roaming", "frontline"): 0.5,
+    ("roaming", "ally_backline"): 0.0,
+    ("roaming", "roaming"): 0.5,
+}
+BUFF_ZONE_DEFAULT_RECEIVER_POSITION = "frontline"
+BUFF_ZONE_PRESENCE_MULT = 0.6
+# Scales the Temporary ally stat buffs enabler for receivers requiring it.
+TEMP_BUFF_REQUIRE_MULT = 1.0
+TEMP_BUFF_LABEL_BONUS = 0.25
+TEMP_BUFF_LABEL_CAP = 6
+TEMP_BUFF_FREQUENCY_BONUS = 0.15
+TEMP_BUFF_FREQUENCY_CAP = 5
+TEMP_BUFF_WINDOW_SECONDS = 30.0
+BUFF_ZONE_UPLIFT_ZONE = "enemy_backline"
+BUFF_ZONE_UPLIFT_RECEIVER = "frontline"
+
+
+def _behavior_position(behavior: Mapping[str, Any] | None) -> str | None:
+    if not behavior:
+        return None
+    return behavior.get("battlefield_position") or None
+
+
+def buff_zone_location(
+    effect: EffectRecord,
+    provider_behavior: Mapping[str, Any] | None = None,
+) -> str | None:
+    """Zone location of an anchored effect; None for unanchored effects."""
+    anchor = effect.get("zone_anchor")
+    if not anchor:
+        return None
+    if anchor == "caster":
+        return _behavior_position(provider_behavior) or "frontline"
+    return BUFF_ZONE_ANCHOR_LOCATION.get(anchor, "frontline")
+
+
+def buff_zone_reach_weight(
+    effect: EffectRecord,
+    provider_behavior: Mapping[str, Any] | None,
+    receiver_behavior: Mapping[str, Any] | None,
+    zone_override: float | None = None,
+) -> float | None:
+    """Reach weight of an anchored effect; None for unanchored effects.
+
+    zone_override replaces the weight for enemy-backline zones reaching a
+    frontline receiver (used to measure the grouping uplift).
+    """
+    location = buff_zone_location(effect, provider_behavior)
+    if location is None:
+        return None
+    position = (
+        _behavior_position(receiver_behavior)
+        or BUFF_ZONE_DEFAULT_RECEIVER_POSITION
+    )
+    if (
+        zone_override is not None
+        and location == BUFF_ZONE_UPLIFT_ZONE
+        and position == BUFF_ZONE_UPLIFT_RECEIVER
+    ):
+        return zone_override
+    return BUFF_ZONE_REACH_WEIGHT.get((location, position), 0.0)
 
 
 def ally_buff_applies_to_receiver(
@@ -1286,8 +1377,20 @@ def _format_ally_stat_buff_grant(
     return detail
 
 
+def _temp_buff_applications(effect: EffectRecord, start_of_battle: bool) -> int:
+    """Applications of a temporary buff within a 30s window."""
+    cooldown = effect.get("skill_cooldown")
+    if start_of_battle or not cooldown:
+        return 1
+    return max(1, round(TEMP_BUFF_WINDOW_SECONDS / float(cooldown)))
+
+
 def _ally_stat_buff_synergy(
-    provider: HeroRecord, receiver_movement: str = ""
+    provider: HeroRecord,
+    receiver_movement: str = "",
+    receiver_behavior: Mapping[str, Any] | None = None,
+    provider_behavior: Mapping[str, Any] | None = None,
+    zone_override: float | None = None,
 ) -> tuple[float, int, bool] | None:
     """Providers that grant temporary ally stat buffs (Perseus, Silven enabler)."""
     import buff_persistence as bp
@@ -1308,21 +1411,36 @@ def _ally_stat_buff_synergy(
             ally_buffs.append(effect)
     if not ally_buffs:
         return None
+    start_of_battle = provider_buffs_at_battle_start(provider)
     best_by_label: dict[str, float] = {}
+    applications = 1
     for effect in ally_buffs:
         if not ally_buff_applies_to_receiver(provider, effect, receiver_movement):
             continue
+        reach = buff_zone_reach_weight(
+            effect, provider_behavior, receiver_behavior, zone_override
+        )
+        if reach is not None and reach <= 0:
+            continue
         score = SYNERGY_STAT_BUFF_REACH_WEIGHT * MAG_WEIGHT.get(effect["magnitude"], 1.0)
         score *= effect_synergy_multiplier(effect)
+        if reach is not None:
+            score *= reach
         if score <= 0:
             continue
+        applications = max(
+            applications, _temp_buff_applications(effect, start_of_battle)
+        )
         if effect["label"] not in best_by_label or score > best_by_label[effect["label"]]:
             best_by_label[effect["label"]] = score
     if not best_by_label:
         return None
-    pts = sum(best_by_label.values())
     n = len(best_by_label)
-    start_of_battle = provider_buffs_at_battle_start(provider)
+    label_bonus = 1.0 + TEMP_BUFF_LABEL_BONUS * (min(n, TEMP_BUFF_LABEL_CAP) - 1)
+    frequency_bonus = 1.0 + TEMP_BUFF_FREQUENCY_BONUS * (
+        min(applications, TEMP_BUFF_FREQUENCY_CAP) - 1
+    )
+    pts = sum(best_by_label.values()) * label_bonus * frequency_bonus
     if start_of_battle:
         pts *= 1.4
     return (pts, n, start_of_battle)
@@ -1397,6 +1515,10 @@ def score_enabler_synergy(
     receiver: HeroRecord,
     enabler_matchers: dict[str, Callable[..., tuple[float, str] | None]],
     receiver_movement: str = "",
+    receiver_behavior: Mapping[str, Any] | None = None,
+    provider_behavior: Mapping[str, Any] | None = None,
+    zone_override: float | None = None,
+    only_label: str | None = None,
 ) -> tuple[float, list[str]]:
     if _is_same_hero(provider, receiver):
         return (0.0, [])
@@ -1407,6 +1529,8 @@ def score_enabler_synergy(
     for req in receiver_requires(receiver):
         if req["label"] in SKIP_ENABLER_REQUIRES:
             continue
+        if only_label is not None and req["label"] != only_label:
+            continue
         if req["label"] in seen:
             continue
         if req["label"] == "Named ally on team":
@@ -1415,7 +1539,13 @@ def score_enabler_synergy(
                 continue
             pts, detail = result
         elif req["label"] == "Temporary ally stat buffs":
-            result = _ally_stat_buff_synergy(provider, receiver_movement)
+            result = _ally_stat_buff_synergy(
+                provider,
+                receiver_movement,
+                receiver_behavior,
+                provider_behavior,
+                zone_override,
+            )
             if not result:
                 continue
             pts, buff_count, start_of_battle = result
@@ -1428,16 +1558,17 @@ def score_enabler_synergy(
                 continue
             pts, detail = result
         pts *= DEFINING_TIER_SCORE_MULT.get(req["tier"], 1.0)
+        if req["label"] == "Temporary ally stat buffs":
+            pts *= TEMP_BUFF_REQUIRE_MULT
         seen.add(req["label"])
         total += pts
         if req["label"] == "Temporary ally stat buffs":
-            reasons.append(
-                _format_ally_stat_buff_grant(
-                    buff_count,
-                    short_name(receiver["title"]),
-                    start_of_battle=start_of_battle,
-                )
+            grant = _format_ally_stat_buff_grant(
+                buff_count,
+                short_name(receiver["title"]),
+                start_of_battle=start_of_battle,
             )
+            reasons.append(f"Enables {req['label']} via {grant}")
         else:
             reasons.append(f"Enables {req["label"]} via {detail}")
     return (total, reasons)
@@ -1682,14 +1813,40 @@ def score_synergy(
     receiver_movement: str = "",
     signature_speed: str = "average",
     receiver_behavior: HeroBehaviorRecord | None = None,
+    provider_behavior: HeroBehaviorRecord | None = None,
+    zone_override: float | None = None,
 ) -> tuple[float, list[str]]:
+    total, reasons, _credited = _score_synergy_detail(
+        provider,
+        receiver,
+        receiver_movement,
+        signature_speed,
+        receiver_behavior,
+        provider_behavior,
+        zone_override,
+    )
+    return (total, reasons)
+
+
+def _score_synergy_detail(
+    provider: HeroRecord,
+    receiver: HeroRecord,
+    receiver_movement: str = "",
+    signature_speed: str = "average",
+    receiver_behavior: HeroBehaviorRecord | None = None,
+    provider_behavior: HeroBehaviorRecord | None = None,
+    zone_override: float | None = None,
+) -> tuple[float, list[str], set[str]]:
     provider = _as_mapping(provider)
     receiver = _as_mapping(receiver)
     if receiver_behavior is not None:
         receiver_behavior = _as_mapping(receiver_behavior)
+    if provider_behavior is not None:
+        provider_behavior = _as_mapping(provider_behavior)
     if _is_same_hero(provider, receiver):
-        return (0.0, [])
+        return (0.0, [], set())
     reasons: list[str] = []
+    credited_labels: set[str] = set()
     total = 0.0
     seen_stats: set[str] = set()
     credited_buffs: set[str] = set()
@@ -1712,8 +1869,14 @@ def score_synergy(
                 continue
             if not ally_buff_applies_to_receiver(provider, effect, receiver_movement):
                 continue
+            reach = buff_zone_reach_weight(
+                effect, provider_behavior, receiver_behavior, zone_override
+            )
+            if reach is not None and reach <= 0:
+                continue
             if (
-                effect["label"] in (provider.get("proximity_aura_buff_labels") or ())
+                reach is None
+                and effect["label"] in (provider.get("proximity_aura_buff_labels") or ())
                 and short_name(provider["title"]) not in PROXIMITY_PROVIDER_BLACKLIST
                 and (short_name(receiver["title"]) not in PROXIMITY_RECEIVER_WHITELIST)
                 and (
@@ -1733,6 +1896,8 @@ def score_synergy(
             pts = tw * mw * mult_by_label[effect["label"]]
             pts *= effect_synergy_multiplier(effect)
             pts *= scalar_stat_score_mult(receiver, stat)
+            if reach is not None:
+                pts *= reach
             if pts <= 0:
                 continue
             if effect["label"] == "Energy":
@@ -1761,12 +1926,71 @@ def score_synergy(
                 best_for_stat = (pts, detail, effect["label"])
         if best_for_stat:
             total += best_for_stat[0]
+            credited_labels.add(best_for_stat[2])
             if stat not in seen_stats:
                 seen_stats.add(stat)
                 reasons.append(f"{stat} via {best_for_stat[1]}")
             if stat == "ATK SPD" and best_for_stat[2] == "Haste":
                 credited_buffs.add("Haste")
-    return (total, reasons)
+    return (total, reasons, credited_labels)
+
+
+def score_buff_zone_synergy(
+    provider: HeroRecord,
+    receiver: HeroRecord,
+    receiver_behavior: Mapping[str, Any] | None = None,
+    provider_behavior: Mapping[str, Any] | None = None,
+    receiver_movement: str = "",
+    credited_labels: set[str] | None = None,
+    zone_override: float | None = None,
+) -> tuple[float, list[str]]:
+    """Presence credit for anchored ally buff zones the stat path skipped."""
+    provider = _as_mapping(provider)
+    receiver = _as_mapping(receiver)
+    if _is_same_hero(provider, receiver):
+        return (0.0, [])
+    credited = credited_labels or set()
+    best: dict[str, tuple[float, EffectRecord, float]] = {}
+    for effect in provider["effects"]:
+        if effect["category"] != "buff" or not effect.get("zone_anchor"):
+            continue
+        if effect["targeting"] not in ALLY_TARGETINGS:
+            continue
+        if effect["label"] in credited or effect_synergy_excluded(effect):
+            continue
+        if not ally_buff_applies_to_receiver(provider, effect, receiver_movement):
+            continue
+        reach = buff_zone_reach_weight(
+            effect, provider_behavior, receiver_behavior, zone_override
+        )
+        if not reach or reach <= 0:
+            continue
+        pts = (
+            SYNERGY_STAT_BUFF_REACH_WEIGHT
+            * MAG_WEIGHT.get(effect["magnitude"], 1.0)
+            * effect_synergy_multiplier(effect)
+            * reach
+            * BUFF_ZONE_PRESENCE_MULT
+        )
+        if pts <= 0:
+            continue
+        prev = best.get(effect["label"])
+        if prev is None or pts > prev[0]:
+            best[effect["label"]] = (pts, effect, reach)
+    if not best:
+        return (0.0, [])
+    location = buff_zone_location(
+        next(iter(best.values()))[1], provider_behavior
+    )
+    parts = [
+        f"{label} ({eff['targeting'].lower()}, {eff['magnitude']})"
+        for label, (_pts, eff, _reach) in sorted(
+            best.items(), key=lambda item: (-item[1][0], item[0])
+        )
+    ]
+    zone_name = (location or "frontline").replace("_", " ")
+    total = sum(pts for pts, _eff, _reach in best.values())
+    return (total, [f"Enables Buff zone ({zone_name}) via {', '.join(parts)}"])
 
 
 def score_summon_synergy(
@@ -1820,35 +2044,130 @@ def score_combined_synergy(
     receiver_movement: str = "",
     signature_speed: str = "average",
     role_category: str | None = None,
+    provider_behavior: HeroBehaviorRecord | None = None,
+    zone_override: float | None = None,
 ) -> tuple[float, list[str]]:
     provider = _as_mapping(provider)
     receiver = _as_mapping(receiver)
     receiver_behavior = _as_mapping(receiver_behavior)
+    if provider_behavior is not None:
+        provider_behavior = _as_mapping(provider_behavior)
     if _is_same_hero(provider, receiver):
         return (0.0, [])
-    buff_score, buff_reasons = score_synergy(
-        provider, receiver, receiver_movement, signature_speed, receiver_behavior
+    buff_score, buff_reasons, credited = _score_synergy_detail(
+        provider,
+        receiver,
+        receiver_movement,
+        signature_speed,
+        receiver_behavior,
+        provider_behavior,
+        zone_override,
+    )
+    zone_score, zone_reasons = score_buff_zone_synergy(
+        provider,
+        receiver,
+        receiver_behavior,
+        provider_behavior,
+        receiver_movement,
+        credited,
+        zone_override,
     )
     early_score, early_reasons = score_early_battle_energy_synergy(
         provider, receiver, receiver_behavior
     )
     summon_score, summon_reasons = score_summon_synergy(provider, receiver)
     en_score, en_reasons = score_enabler_synergy(
-        provider, receiver, enabler_matchers, receiver_movement
+        provider,
+        receiver,
+        enabler_matchers,
+        receiver_movement,
+        receiver_behavior,
+        provider_behavior,
+        zone_override,
     )
     def_score, def_reasons = score_enemy_defense_synergy(
         provider, receiver, role_category
     )
     named_score, named_reasons = score_named_ally_provides(provider, receiver)
     return (
-        buff_score + early_score + summon_score + en_score + def_score + named_score,
+        buff_score
+        + zone_score
+        + early_score
+        + summon_score
+        + en_score
+        + def_score
+        + named_score,
         buff_reasons
+        + zone_reasons
         + early_reasons
         + summon_reasons
         + en_reasons
         + def_reasons
         + named_reasons,
     )
+
+
+def synergy_pair_extras(
+    provider: HeroRecord,
+    receiver: HeroRecord,
+    enabler_matchers: dict[str, Callable[..., tuple[float, str] | None]],
+    behavior_by_title: dict[str, HeroBehaviorRecord],
+    role_category: str | None = None,
+) -> dict[str, float]:
+    """Mix-mode extras: zone grouping uplift and temp-buff enabler score."""
+    receiver_behavior = behavior_by_title[receiver["title"]]
+    provider_behavior = behavior_by_title.get(provider["title"])
+    movement = receiver_behavior["movement"]
+    speed = receiver_behavior["synergy_signature_speed"] or "average"
+    extras: dict[str, float] = {}
+    has_zone = any(e.get("zone_anchor") for e in provider["effects"])
+    if has_zone:
+        position = _behavior_position(receiver_behavior)
+        sample = [e for e in provider["effects"] if e.get("zone_anchor")]
+        in_scope = (
+            position == BUFF_ZONE_UPLIFT_RECEIVER
+            and any(
+                buff_zone_location(e, provider_behavior) == BUFF_ZONE_UPLIFT_ZONE
+                for e in sample
+            )
+        )
+        if in_scope:
+            base, _ = score_combined_synergy(
+                provider,
+                receiver,
+                enabler_matchers,
+                receiver_behavior,
+                movement,
+                speed,
+                role_category,
+                provider_behavior,
+            )
+            full, _ = score_combined_synergy(
+                provider,
+                receiver,
+                enabler_matchers,
+                receiver_behavior,
+                movement,
+                speed,
+                role_category,
+                provider_behavior,
+                zone_override=1.0,
+            )
+            uplift = full - base
+            if uplift > 0:
+                extras["zone_grouping_uplift"] = uplift
+    temp_score, _ = score_enabler_synergy(
+        provider,
+        receiver,
+        enabler_matchers,
+        movement,
+        receiver_behavior,
+        provider_behavior,
+        only_label="Temporary ally stat buffs",
+    )
+    if temp_score > 0:
+        extras["temp_buff_score"] = temp_score
+    return extras
 
 
 def rank_synergy_entries(
@@ -1878,6 +2197,7 @@ def rank_synergy_entries(
             receiver_movement,
             signature_speed,
             role_category=receiver_role,
+            provider_behavior=behavior_by_title.get(provider["title"]),
         )
         if score <= 0 or not reasons:
             continue
@@ -2939,6 +3259,34 @@ def build_beneficiaries_index(
     return result
 
 
+# Picks carry zone_grouping_uplift / temp_buff_score when True (both are
+# optional number properties in the synergies schema).
+EMIT_PICK_EXTRAS = True
+
+
+def _synergies_with_extras(
+    receiver: HeroRecord,
+    entries: list[tuple[float, list[str], str]],
+    heroes_by_title: dict[str, HeroRecord],
+    matchers: dict[str, Callable[..., tuple[float, str] | None]],
+    behavior_by_title: dict[str, HeroBehaviorRecord],
+    role_category_by_title: dict[str, str],
+) -> list[dict]:
+    """Synergy picks plus optional zone_grouping_uplift / temp_buff_score."""
+    picks = format_synergy_entries(entries)
+    if not EMIT_PICK_EXTRAS:
+        return picks
+    role = role_category_by_title.get(receiver["title"])
+    for pick in picks:
+        provider = heroes_by_title[pick["provider_id"]]
+        pick.update(
+            synergy_pair_extras(
+                provider, receiver, matchers, behavior_by_title, role
+            )
+        )
+    return picks
+
+
 def _score_all(
     heroes_by_id: dict[str, HeroRecord],
     behavior_by_id: dict[str, HeroBehaviorRecord],
@@ -2953,6 +3301,7 @@ def _score_all(
     factions = {_hero_key(hero): hero["faction"] for hero in heroes}
     melee = {_hero_key(hero): hero["is_melee"] for hero in heroes}
     matchers = _make_enabler_matchers(classes)
+    heroes_by_title = {hero["title"]: hero for hero in heroes}
     entries = build_synergy_entries_by_receiver(
         heroes,
         matchers,
@@ -2980,7 +3329,14 @@ def _score_all(
     return {
         "heroes": {
             hero["id"]: {
-                "synergies": format_synergy_entries(entries[hero["id"]]),
+                "synergies": _synergies_with_extras(
+                    hero,
+                    entries[hero["id"]],
+                    heroes_by_title,
+                    matchers,
+                    behavior_by_id,
+                    roles,
+                ),
                 "beneficiaries": [
                     {"score": score, "hero_id": receiver_id}
                     for score, receiver_id in beneficiaries.get(hero["id"], [])
@@ -3040,6 +3396,8 @@ def load_scoring_inputs(
                 effect = _effect(row, section)
                 if effect is None:
                     continue
+                if skill.get("cooldown"):
+                    effect["skill_cooldown"] = float(skill["cooldown"])
                 if row.get("target") in {"own_summons", "all_summons"}:
                     summon_effects.append(effect)
                 else:

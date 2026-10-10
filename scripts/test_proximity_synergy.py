@@ -144,15 +144,24 @@ class ProximityReachGateTests(unittest.TestCase):
                 )
 
     def test_global_providers_still_match_hugin(self) -> None:
-        for prov in (
-            "Elijah & Lailah - Celestial Twins",
-            "Damian - Woody Wonder",
-        ):
+        for prov in ("Elijah & Lailah - Celestial Twins",):
             with self.subTest(provider=prov):
                 self.assertGreater(
                     self._score(prov, "Hugin - Maverick Smith"),
                     0.0,
                 )
+
+    def test_anchored_zone_uses_reach_matrix_not_proximity(self) -> None:
+        # Damian's summon zone is frontline; Hugin stands in the ally
+        # backline, which a frontline zone never reaches (matrix 0.0).
+        self.assertEqual(
+            self.gen.BUFF_ZONE_REACH_WEIGHT[("frontline", "ally_backline")],
+            0.0,
+        )
+        self.assertEqual(
+            self._score("Damian - Woody Wonder", "Hugin - Maverick Smith"),
+            0.0,
+        )
 
     def test_receiver_can_reach_helper(self) -> None:
         self.assertFalse(

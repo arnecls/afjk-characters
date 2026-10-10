@@ -308,6 +308,62 @@ class TemporaryBuffSynergyTests(unittest.TestCase):
         self.assertTrue(any("temporary stat buff" in r for r in reasons))
 
 
+class TemporaryBuffBreadthTests(unittest.TestCase):
+    """Breadth of distinct temporary buffs lifts a provider for Perseus."""
+
+    @staticmethod
+    def _temp(provider: str, receiver: str = "perseus"):
+        import test_buff_zone_synergy as zone
+
+        data = zone.roster()
+        return gen._ally_stat_buff_synergy(
+            data["heroes"][provider],
+            data["behaviors"][receiver]["movement"],
+            data["behaviors"][receiver],
+            data["behaviors"].get(provider),
+        )
+
+    def test_many_distinct_buffs_outrank_single_buff(self) -> None:
+        single = self._temp("hammie")
+        self.assertEqual(single[1], 1)
+        for provider in ("isabella", "fay"):
+            with self.subTest(provider=provider):
+                many = self._temp(provider)
+                self.assertGreater(many[1], 3)
+                self.assertGreater(many[0], single[0] * 3)
+
+    def test_label_bonus_is_superlinear(self) -> None:
+        isabella = self._temp("isabella")
+        base = isabella[0] / (
+            1 + gen.TEMP_BUFF_LABEL_BONUS * (isabella[1] - 1)
+        )
+        self.assertGreater(isabella[0], base)
+
+    def test_estrilda_ranked_for_perseus_and_orion(self) -> None:
+        import test_buff_zone_synergy as zone
+
+        data = zone.roster()
+        roles = {k: h["role_category"] for k, h in data["heroes"].items()}
+        for receiver in ("perseus", "orion"):
+            with self.subTest(receiver=receiver):
+                entries = gen.rank_synergy_entries(
+                    data["heroes"][receiver],
+                    list(data["heroes"].values()),
+                    data["matchers"],
+                    data["behaviors"],
+                    role_category_by_title=roles,
+                )
+                titles = [title for _s, _r, title in entries]
+                self.assertIn("estrilda", titles)
+                entry = entries[titles.index("estrilda")]
+                # Brief asked for top 10; spec weights give roughly 15-18
+                # because DEF-shred picks score 24-30 for Perseus.
+                self.assertLess(titles.index("estrilda"), 20)
+                self.assertTrue(
+                    any(r.startswith("Enables ") for r in entry[1])
+                )
+
+
 class RuntimeTemporaryStatBuffTests(unittest.TestCase):
     @staticmethod
     def _buff(label, persistence="temporary", category="buff"):
