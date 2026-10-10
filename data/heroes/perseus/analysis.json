@@ -276,6 +276,7 @@
             "target": "ally",
             "area": "single",
             "target_count": 3,
+            "zone_anchor": "caster",
             "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
@@ -294,6 +295,7 @@
             "target": "ally",
             "area": "single",
             "target_count": 3,
+            "zone_anchor": "caster",
             "type": "buff",
             "name": "Phys DEF",
             "label": "buff_defensive",
@@ -312,6 +314,7 @@
             "target": "ally",
             "area": "single",
             "target_count": 3,
+            "zone_anchor": "caster",
             "type": "buff",
             "name": "Magic DEF",
             "label": "buff_defensive",
@@ -603,7 +606,8 @@
           "label": "Temporary ally stat buffs",
           "tier": "legendary+",
           "targeting": "Allies",
-          "description": "Further increases his ATK by 10% when he has temporary stat buffs from allies."
+          "description": "Further increases his ATK by 10% when he has temporary stat buffs from allies.",
+          "distinct_allies": 2
         }
       ]
     },
@@ -822,7 +826,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "b4d59ad6f420fe998c598732279747bf9838c5285072ba08cd53a91d9293b045",
+    "inputs_hash": "a155b5ac66baec47bfa0ef504f13feb07c32095abab4f69459958ddd7fadd2ab",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

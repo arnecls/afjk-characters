@@ -417,6 +417,7 @@
             "target": "ally",
             "area": "single",
             "target_count": 3,
+            "zone_anchor": "summon",
             "type": "buff",
             "name": "Damage dealt",
             "label": "buff_stat",
@@ -767,7 +768,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "91e0980536902b3e69e2753eeb50e0fda0f5ecfc9f04fa7c2e9a619fdc3ac0f3",
+    "inputs_hash": "4dbada4a758efdef0436236aca3f8700e63df1d0e9328ab98104f92e5731be46",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

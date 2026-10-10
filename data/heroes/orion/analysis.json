@@ -600,7 +600,8 @@
           "label": "Temporary ally stat buffs",
           "tier": "base",
           "targeting": "Allies",
-          "description": "Whenever Orion receives a temporary stat buff from an ally, the enchantment on his rapier is extended by 10s, and that ally becomes his Supporter."
+          "description": "Whenever Orion receives a temporary stat buff from an ally, the enchantment on his rapier is extended by 10s, and that ally becomes his Supporter.",
+          "distinct_allies": 2
         }
       ]
     },
@@ -808,7 +809,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "abf74719183db5905643bd95900018ac0a31887afb5f767eeae7429cd8325b5d",
+    "inputs_hash": "125b3ddaf61f9dd9e4e025a7cb31d751fcd739d7fe9f1da2f8c7812af8fce649",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

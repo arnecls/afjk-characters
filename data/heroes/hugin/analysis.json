@@ -205,6 +205,7 @@
             "target": "ally",
             "area": "single",
             "target_count": 1,
+            "zone_anchor": "fixed_tile",
             "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
@@ -563,7 +564,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "8e2e8de0094c9c03b4f6d84ffc580d35195fab204b993bcf0737161334fc5432",
+    "inputs_hash": "37592370128b9b3be21d710e29b95063be3b37af454f86530426322f48596c0b",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }
