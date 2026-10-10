@@ -292,14 +292,52 @@ def build_site_payload(
 def build_mix_synergy_index(view: Mapping[str, Any]) -> dict[str, Any]:
     """Return provider scores keyed by resolved receiver/provider slugs."""
     by_receiver: dict[str, dict[str, float]] = {}
+    grouping_uplift: dict[str, dict[str, float]] = {}
+    temp_buff: dict[str, dict[str, float]] = {}
+    distinct_allies: dict[str, int] = {}
+    groupers: list[str] = []
     for hero in view["heroes"]:
+        slug = hero["slug"]
+        picks = hero["references"]["synergies"]
         providers = {
-            pick["slug"]: round(float(pick["score"]), 4)
-            for pick in hero["references"]["synergies"]
+            pick["slug"]: round(float(pick["score"]), 4) for pick in picks
         }
         if providers:
-            by_receiver[hero["slug"]] = providers
-    return {"byReceiver": by_receiver}
+            by_receiver[slug] = providers
+        uplifts = {
+            pick["slug"]: round(float(pick["zone_grouping_uplift"]), 4)
+            for pick in picks
+            if float(pick.get("zone_grouping_uplift") or 0) > 0
+        }
+        if uplifts:
+            grouping_uplift[slug] = uplifts
+        temps = {
+            pick["slug"]: round(float(pick["temp_buff_score"]), 4)
+            for pick in picks
+            if float(pick.get("temp_buff_score") or 0) > 0
+        }
+        if temps:
+            temp_buff[slug] = temps
+        needed = max(
+            (
+                int(special["distinct_allies"])
+                for special in hero["display"].get("special_effects") or []
+                if special.get("kind") == "requires"
+                and special.get("distinct_allies") is not None
+            ),
+            default=0,
+        )
+        if needed >= 2:
+            distinct_allies[slug] = needed
+        if "enemy-grouping" in (hero["curated"].get("behavior_tags") or []):
+            groupers.append(slug)
+    return {
+        "byReceiver": by_receiver,
+        "groupingUplift": grouping_uplift,
+        "tempBuff": temp_buff,
+        "distinctAllies": distinct_allies,
+        "groupers": sorted(groupers),
+    }
 
 
 def build_mix_config(view: Mapping[str, Any]) -> dict[str, Any]:
