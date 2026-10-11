@@ -856,13 +856,20 @@ window.AFKJ = window.AFKJ || {};
         return a.name.localeCompare(b.name);
       })
       .map(function (ref) {
-        return ref.name;
+        return { name: ref.name, rating: synergyPartnerScoreRating(ref) };
       });
+    const chips = window.AFKJ.chips;
     return (
       '<div class="synergy-overflow-tip-grid">' +
       names
-        .map(function (name) {
-          return "<span>" + escapeHtml(name) + "</span>";
+        .map(function (entry) {
+          return (
+            '<span class="synergy-overflow-tip-item">' +
+            chips.renderCharacterPill(entry.name) +
+            ' <span class="synergy-overflow-tip-score">' +
+            escapeHtml(entry.rating.toFixed(1).replace(/\.0$/, "")) +
+            "/5</span></span>"
+          );
         })
         .join("") +
       "</div>"

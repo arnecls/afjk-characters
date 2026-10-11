@@ -20,6 +20,12 @@
   overrides.
 - Replacement lists in `heroes-overview.md` shifted for heroes whose
   melee/ranged role changed.
+- Web UI: the "score higher than" tooltip in "Units improving <hero>" now
+  lists units as character pills (portrait and name) with their score as
+  `x/5`, shown with one decimal and without a trailing `.0`.
+- Web UI: pills in the tooltip are clickable and open the hero page. The
+  tooltip stays open when the mouse moves into it. Clicking the trigger
+  text pins it until the user clicks outside.
 
 ### Character data changes
 
