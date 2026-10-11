@@ -85,11 +85,23 @@ class BuffZoneSynergyTests(unittest.TestCase):
         )
 
     def test_ally_backline_receivers_get_no_zone(self) -> None:
-        for receiver in ("ravion", "nerion", "silven", "tasi"):
+        for receiver in ("ravion", "nerion", "silven"):
             with self.subTest(receiver=receiver):
                 score, reasons = zone_part("estrilda", receiver)
                 self.assertEqual(score, 0.0)
                 self.assertFalse(has_zone_reason(pair("estrilda", receiver)[1]))
+
+    def test_dual_range_tasi_uses_melee_position(self) -> None:
+        # Tasi is melee and dual-range, and has self-repositioner, so
+        # she fights in the enemy backline and receives the full zone.
+        data = roster()
+        self.assertEqual(
+            data["behaviors"]["tasi"]["battlefield_position"],
+            "enemy_backline",
+        )
+        score, reasons = zone_part("estrilda", "tasi")
+        self.assertGreater(score, 0.0)
+        self.assertTrue(has_zone_reason(pair("estrilda", "tasi")[1]), reasons)
 
     def test_frontline_and_roaming_get_half_weight(self) -> None:
         data = roster()

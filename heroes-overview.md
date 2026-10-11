@@ -3406,10 +3406,6 @@ Dionel also requires units **buffing them**
   - ATK (single target, low, conditional (frequent))
   - ATK SPD via Haste (single target, low) `signature fuel`
   - Enables Temporary ally stat buffs via Grants 6 distinct temporary stat buffs to Dionel
-- **Rolan**
-  - ATK (multiple targets, average)
-  - ATK SPD via Haste (multiple targets, high) `signature fuel`
-  - Enables Temporary ally stat buffs via Grants 4 distinct temporary stat buffs to Dionel
 - **Fay**
   - ATK (arc, low)
   - ATK SPD (arc, low) `signature fuel`
@@ -3421,6 +3417,10 @@ Dionel also requires units **buffing them**
   - ATK (area, average)
   - ATK SPD via Haste (area, high) `signature fuel`
   - Energy (area, low) `signature fuel`
+  - Enables Temporary ally stat buffs via Grants 2 distinct temporary stat buffs to Dionel
+- **Rolan**
+  - ATK (multiple targets, average)
+  - ATK SPD via Haste (multiple targets, high) `signature fuel`
   - Enables Temporary ally stat buffs via Grants 2 distinct temporary stat buffs to Dionel
 - **Ravion**
   - ATK (multiple targets, high)
@@ -4286,10 +4286,6 @@ Faramor also requires units **grouping enemies** and/or units **buffing them**
   - ATK (single target, low, conditional (frequent))
   - Haste (single target, low) `signature fuel`
   - Enables Temporary ally stat buffs via Grants 6 distinct temporary stat buffs to Faramor
-- **Rolan**
-  - ATK (multiple targets, average)
-  - Haste (multiple targets, high) `signature fuel`
-  - Enables Temporary ally stat buffs via Grants 4 distinct temporary stat buffs to Faramor
 - **Fay**
   - ATK (arc, low)
   - Enables Temporary ally stat buffs via Grants 4 distinct temporary stat buffs to Faramor
@@ -4300,6 +4296,9 @@ Faramor also requires units **grouping enemies** and/or units **buffing them**
 - **Perseus**
   - ATK (multiple targets, average)
   - Enables Buff zone (frontline) via Magic DEF (multiple targets, low), Phys DEF (multiple targets, low)
+  - Enables Temporary ally stat buffs via Grants 3 distinct temporary stat buffs to Faramor
+- **Koko**
+  - ATK (all units, low)
   - Enables Temporary ally stat buffs via Grants 3 distinct temporary stat buffs to Faramor
 
 ### Units benefitting most from Faramor
@@ -5255,16 +5254,16 @@ Common buffers are **Twins**, **Rolan**, **Lorsan**, or **Mikola**.
 
 Gunnar provides ATK to single targets `high`, ATK SPD to single targets `average`, Range Increase to single targets `high`, Shield to multiple targets `average`, and Invincible (EX+15) to single targets `high`.
 
-**17** units include this provider among their top 6 synergy partners. Why the match is common:
+**16** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
 These are the **4** strongest pairings: 
 
+- Cyran (4.1 / 5)
 - Fay (3.7 / 5)
 - Indris (3.7 / 5)
 - Senea (2.7 / 5)
-- Silven (2.5 / 5)
 
 ### Units that can act as a replacement for Gunnar
 
@@ -6389,8 +6388,8 @@ These are the **4** strongest pairings:
 
 - Koko (4.7 / 5)
 - Twins (4.4 / 5)
-- Silven (3.6 / 5)
-- Marcille (3.5 / 5)
+- Silven (2.7 / 5)
+- Marcille (2.6 / 5)
 
 ### Units that can act as a replacement for Hugin
 
@@ -8444,9 +8443,6 @@ Lily May also requires units **buffing them**
 - **Isabella**
   - ATK (single target, low, conditional (frequent))
   - Enables Temporary ally stat buffs via Grants 6 distinct temporary stat buffs to Lily May
-- **Rolan**
-  - ATK (multiple targets, average)
-  - Enables Temporary ally stat buffs via Grants 4 distinct temporary stat buffs to Lily May
 - **Mikola**
   - ATK (all units, high)
   - Enables Temporary ally stat buffs via Grants 4 distinct temporary stat buffs to Lily May
@@ -8460,6 +8456,9 @@ Lily May also requires units **buffing them**
   - ATK (area, average)
   - Enables Buff zone (ally backline) via Haste (area, high)
   - Enables Temporary ally stat buffs via Grants 2 distinct temporary stat buffs to Lily May
+- **Sonja**
+  - ATK (multiple targets, average)
+  - Enables Temporary ally stat buffs via Grants 3 distinct temporary stat buffs to Lily May
 
 ### Units benefitting most from Lily May
 
@@ -9583,20 +9582,18 @@ Marcille also requires units **buffing them**
   - Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`
   - Enables Temporary ally stat buffs via Grants 1 distinct temporary stat buff to Marcille
   - Enemy defense via Magic DEF debuff (all units, high)
-- **Rolan**
-  - ATK SPD via Haste (multiple targets, high) `signature fuel`
-  - Enables Temporary ally stat buffs via Grants 4 distinct temporary stat buffs to Marcille
 - **Fay**
   - ATK SPD (arc, low) `signature fuel`
   - Enables Temporary ally stat buffs via Grants 4 distinct temporary stat buffs to Marcille
   - Enemy defense via Magic DEF debuff (single target, low)
-- **Hugin**
-  - ATK SPD via Haste (single target, high) `signature fuel`
-  - Energy (single target, low, conditional (frequent)) `signature fuel`
-  - Enables Buff zone (ally backline) via ATK (single target, low)
-  - Enables Temporary ally stat buffs via Grants 3 distinct temporary stat buffs to Marcille
 - **Mikola**
   - Enables Temporary ally stat buffs via Grants 4 distinct temporary stat buffs to Marcille
+- **Evie**
+  - Enables Temporary ally stat buffs via Grants 1 distinct temporary stat buff to Marcille
+  - Enemy defense via Magic DEF debuff (all units, high)
+- **Koko**
+  - Enables Temporary ally stat buffs via Grants 3 distinct temporary stat buffs to Marcille
+  - Enemy defense via Damage taken debuff (single target, low)
 
 ### Units benefitting most from Marcille
 
@@ -11043,10 +11040,10 @@ Orion also requires units **buffing them**
   - ATK (single target, high)
   - Enables Temporary ally stat buffs via Grants 1 distinct temporary stat buff to Orion
   - Enemy defense via Magic DEF debuff (all units, high)
-- **Rolan**
-  - ATK (multiple targets, average)
-  - Max HP (all units, high)
+- **Fay**
+  - ATK (arc, low)
   - Enables Temporary ally stat buffs via Grants 4 distinct temporary stat buffs to Orion
+  - Enemy defense via Magic DEF debuff (single target, low)
 
 ### Units benefitting most from Orion
 
@@ -11789,11 +11786,6 @@ Perseus also requires units **buffing them**
   - ATK SPD via Haste (single target, low) `signature fuel`
   - Enables Temporary ally stat buffs via Grants 6 distinct temporary stat buffs to Perseus
   - Enemy defense via Phys DEF debuff (single target, low)
-- **Rolan**
-  - ATK (multiple targets, average)
-  - ATK SPD via Haste (multiple targets, high) `signature fuel`
-  - Max HP (all units, high)
-  - Enables Temporary ally stat buffs via Grants 4 distinct temporary stat buffs to Perseus
 - **Thador**
   - Energy (single target, high) `signature fuel`
   - Energy via Energy recovery (350 at battle start, lieutenant) `signature fuel`
@@ -11804,6 +11796,11 @@ Perseus also requires units **buffing them**
   - ATK SPD (arc, low) `signature fuel`
   - Enables Temporary ally stat buffs via Grants 4 distinct temporary stat buffs to Perseus
   - Enemy defense via Phys DEF debuff (single target, low)
+- **Rolan**
+  - ATK (multiple targets, average)
+  - ATK SPD via Haste (multiple targets, high) `signature fuel`
+  - Max HP (all units, high)
+  - Enables Temporary ally stat buffs via Grants 2 distinct temporary stat buffs to Perseus
 
 ### Units benefitting most from Perseus
 
@@ -12256,7 +12253,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, **Rolan**, or **Contess**.
 
 Ravion provides ATK to multiple targets `high`, Energy to multiple targets `average`, Haste (Mythic+) to multiple targets `average`, Lifedrain (EX+10) to single targets `low` — conditional (rare), and Shield (EX+10) to single targets `low` — conditional (rare).
 
-**95** units include this provider among their top 6 synergy partners. Why the match is common:
+**93** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -12683,16 +12680,16 @@ Common buffers are **Twins**, **Smokey & Meerky**, **Hugin**, or **Solise**.
 
 Rolan provides ATK to multiple targets `high`, Cleanse to all units `high`, Damage taken in an area `average`, Direct healing to all units `high`, Haste to multiple targets `high`, Max HP to all units `high`, and Healing over time (EX+15) in an area `average`.
 
-**77** units include this provider among their top 6 synergy partners. Why the match is common:
+**75** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
 These are the **4** strongest pairings: 
 
-- Silven (4.2 / 5)
-- Lily May (4.0 / 5)
-- Perseus (4.0 / 5)
-- Marcille (3.9 / 5)
+- Alsa (4.2 / 5)
+- Nerion (3.6 / 5)
+- Perseus (2.8 / 5)
+- Silven (2.6 / 5)
 
 ### Units that can act as a replacement for Rolan
 
@@ -13780,7 +13777,7 @@ Shadewing also requires units **dealing continuous damage** to enemies
 
 ### Units benefitting most from Shadewing
 
-**28** units include this provider among their top 6 synergy partners. Why the match is common:
+**29** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -14176,10 +14173,6 @@ Silven also requires units **buffing them**
   - ATK SPD via Haste (single target, low) `signature fuel`
   - Phys DEF (single target, low)
   - Enables Temporary ally stat buffs via Grants 6 distinct temporary stat buffs to Silven
-- **Rolan**
-  - ATK (multiple targets, average)
-  - ATK SPD via Haste (multiple targets, high) `signature fuel`
-  - Enables Temporary ally stat buffs via Grants 4 distinct temporary stat buffs to Silven
 - **Mikola**
   - ATK (all units, high)
   - Phys DEF (multiple targets, average)
@@ -14189,16 +14182,18 @@ Silven also requires units **buffing them**
   - ATK SPD (arc, low) `signature fuel`
   - Phys DEF (single target, low)
   - Enables Temporary ally stat buffs via Grants 4 distinct temporary stat buffs to Silven
-- **Hugin**
-  - ATK (single target, low)
-  - ATK SPD via Haste (single target, high) `signature fuel`
-  - Energy (single target, low, conditional (frequent)) `signature fuel`
-  - Enables Temporary ally stat buffs via Grants 3 distinct temporary stat buffs to Silven
 - **Smokey & Meerky**
   - ATK (area, average)
   - ATK SPD via Haste (area, high) `signature fuel`
   - Energy (area, low) `signature fuel`
   - Enables Temporary ally stat buffs via Grants 2 distinct temporary stat buffs to Silven
+- **Koko**
+  - ATK (all units, low)
+  - Enables Temporary ally stat buffs via Grants 3 distinct temporary stat buffs to Silven
+- **Sonja**
+  - ATK (multiple targets, average)
+  - DEF (multiple targets, average)
+  - Enables Temporary ally stat buffs via Grants 3 distinct temporary stat buffs to Silven
 
 ### Units benefitting most from Silven
 
@@ -14869,16 +14864,16 @@ Common buffers are **Rolan**, **Ravion**, **Twins**, or **Solise**.
 
 Sonja provides ATK to multiple targets `average`, DEF to multiple targets `average`, and Magic DEF to multiple targets `low`.
 
-**8** units include this provider among their top 6 synergy partners. Why the match is common:
+**10** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
 These are the **4** strongest pairings: 
 
-- Alna (3.7 / 5)
-- Hepler (3.6 / 5)
-- Silven (2.2 / 5)
-- Lily May (2.1 / 5)
+- Silven (2.8 / 5)
+- Dionel (2.7 / 5)
+- Lily May (2.7 / 5)
+- Faramor (2.3 / 5)
 
 ### Units that can act as a replacement for Sonja
 
@@ -16191,7 +16186,7 @@ Common buffers are **Rolan**, **Lorsan**, or **Parisa**.
 
 Twins provides ATK to multiple targets `high`, Direct healing to multiple targets `average`, Energy to multiple targets `low`, Haste to all units `high`, Shield to multiple targets `low`, Vitality (Mythic+) to multiple targets `low`, Magic DEF (Supreme+) to single targets `low`, and Phys DEF (Supreme+) to single targets `low`.
 
-**77** units include this provider among their top 6 synergy partners. Why the match is common:
+**76** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -17577,6 +17572,9 @@ Common buffers are **Rolan** or **Solise**.
 Zandrok provides Haste in an area `low` — conditional (frequent), Lifedrain in an area `average` — conditional (frequent), Max HP to multiple targets `low`, and Movement speed in an area `high` — conditional (frequent).
 
 - Kazim (5.0 / 5)
+- Marcille (2.6 / 5)
+- Silven (2.6 / 5)
+- Lily May (2.6 / 5)
 
 ### Units that can act as a replacement for Zandrok
 

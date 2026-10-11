@@ -11,6 +11,11 @@ from hero_pipeline.analysis import serialize as hs
 
 PERSISTENCE_VALUES = frozenset({"temporary", "permanent", "unknown"})
 
+# A buff is temporary only when it lasts this many seconds or fewer
+# (measured after Assistance scaling). See "Temporary Stat Buffs" in
+# .cursor/MECHANICS.md. Longer finite buffs count as battle-long.
+TEMPORARY_MAX_SECONDS = 100.0
+
 POSITIVE_STAT_BUFF_LABELS = frozenset(
     {
         "buff_offensive",
@@ -35,7 +40,6 @@ NON_STAT_BUFF_NAMES = frozenset(
         "Dodge chance",
         "Fatal blow immunity",
         "Ranged damage",
-        "Movement speed",
     }
 )
 
@@ -528,6 +532,8 @@ def classify_persistence(
     if duration is not None:
         try:
             dur = float(duration)
+            if dur > TEMPORARY_MAX_SECONDS:
+                return "permanent"
             if dur > 0:
                 return "temporary"
             if dur < 0:
@@ -647,6 +653,12 @@ def validate_effect_persistence(
                     f"{hero_short} {section}: {effect.get('name')!r} has "
                     f"finite duration but permanent persistence"
                 )
+            if dur > TEMPORARY_MAX_SECONDS and persistence == "temporary":
+                errors.append(
+                    f"{hero_short} {section}: {effect.get('name')!r} lasts "
+                    f"{dur:g}s, over the {TEMPORARY_MAX_SECONDS:g}s limit "
+                    f"for temporary persistence"
+                )
             if dur < 0 and persistence == "temporary":
                 errors.append(
                     f"{hero_short} {section}: {effect.get('name')!r} has "
@@ -657,55 +669,71 @@ def validate_effect_persistence(
     return errors
 
 
-# Runtime labels that count as temporary stat buffs although they are not
-# roster stats: damage dealt increase and damage taken reduction.
-RUNTIME_DAMAGE_MODIFIER_LABELS = frozenset({"Damage dealt", "Damage taken"})
-
-# Extra stat labels the schema stat enum does not cover.
-RUNTIME_EXTRA_STAT_LABELS = frozenset({"Skill Power", "Ultimate Power"})
-
-# Runtime labels never counted as stat buffs (shield, Energy grants,
-# movement, immunities, extra-damage procs, other combat modifiers).
-RUNTIME_NON_STAT_LABELS = frozenset(
-    {
-        "HP loss modifier",
-        "Energy",
-        "Invincible",
-        "Magic damage",
-        "Dodge chance",
-        "Fatal blow immunity",
-        "Ranged damage",
+# Stats that qualify as temporary stat buffs. Source of truth: the
+# "Qualifying stats" table in .cursor/MECHANICS.md. Labels are compared
+# case-insensitively and cover the spellings found in skill-effect
+# sidecars (for example Lifedrain, Energy Regen on Hit).
+RUNTIME_QUALIFYING_STAT_LABELS = frozenset(
+    label.casefold()
+    for label in (
+        # Basic ("DEF" and "Basic stats" are generic sidecar spellings)
+        "HP",
+        "ATK",
+        "Phys DEF",
+        "Magic DEF",
+        "DEF",
+        "Basic stats",
+        # Offensive
+        "ATK SPD",
+        "Haste",
+        "Crit",
+        "Crit DMG Boost",
+        "DEF Penetration",
+        "Execution",
+        # Defensive
+        "Vitality",
+        "Life Drain",
+        "Lifedrain",
+        "Crit Resist",
+        "Ranged DEF",
+        "Crit DMG DEF",
+        # Other
+        "Healing",
+        "Assistance",
+        "Debuff Focus",
+        "Resilience",
+        "Energy on Hit",
+        "Energy Regen on Hit",
+        # Rivalry
+        "DMG Boost",
+        "DMG Reduction",
+        "Energy Regen Reduction",
+        # Movement
         "Movement speed",
-        "Unaffected",
-        "Steadfast",
-        "Extra damage",
-        "True damage",
-    }
+        # Energy gain multipliers. The plain "Energy" label is an
+        # Energy grant and never qualifies.
+        "Energy Recovery",
+        # Legacy (no known hero grants them)
+        "Hit",
+        "Dodge",
+        "Crit ratio",
+    )
 )
 
 
 def is_runtime_positive_stat_buff(effect: Any) -> bool:
-    """True for analyzed Effect objects that are roster stat buffs.
+    """True for analyzed Effect objects that are qualifying stat buffs.
 
-    Includes damage dealt increase and damage taken reduction. Buff
-    category carries the positive polarity.
+    Follows the qualifying stat list in MECHANICS.md. Skill-granted
+    Damage dealt / Damage taken, Max HP, Attack range, Skill Power,
+    Ultimate Power, Proficiency, shields, Energy grants, immunities and
+    other combat modifiers do not qualify. Buff category carries the
+    positive polarity.
     """
     if effect.get("category") != "buff":
         return False
-    label = (effect.get("label") or "").strip()
-    if label in RUNTIME_DAMAGE_MODIFIER_LABELS:
-        return True
-    if label in RUNTIME_NON_STAT_LABELS:
-        return False
-    fold = label.casefold()
-    if "shield" in fold or "movement" in fold or "immun" in fold:
-        return False
-    if label in RUNTIME_EXTRA_STAT_LABELS:
-        return True
-    return hs._stat_from_label(label) is not None or label in (
-        "Attack range",
-        "Basic stats",
-    )
+    label = (effect.get("label") or "").strip().casefold()
+    return label in RUNTIME_QUALIFYING_STAT_LABELS
 
 
 def is_runtime_temporary_stat_buff(effect: Any) -> bool:

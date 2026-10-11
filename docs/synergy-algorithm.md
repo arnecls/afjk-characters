@@ -124,9 +124,12 @@ Estrilda's zone) carry a `zone_anchor` in `ai.json`. Global buffs have none.
 Receivers that require `Temporary ally stat buffs` (e.g., Perseus) value
 providers whose ally buffs are temporary.
 
-- **Stat set**: stats from the `character_stats` stats map, plus damage
-  dealt and damage taken buffs. Shields, Energy grants, movement speed, CC
-  immunity, and extra-damage procs are excluded.
+- **Stat set**: the "Qualifying stats" table in `.cursor/MECHANICS.md`
+  (`RUNTIME_QUALIFYING_STAT_LABELS` in `buff_persistence.py`), including
+  Movement speed and rivalry DMG Boost / DMG Reduction. Skill-granted
+  Damage dealt / Damage taken, Max HP, Attack range, Skill Power,
+  Ultimate Power, Proficiency, shields, Energy grants, CC immunity, and
+  extra-damage procs are excluded.
 - **Persistence**: derived from skill text (`buff_persistence.py`). Only
   `temporary` buffs count. Finite durations, aura or zone exit, and
   "for N s" wording mean temporary; "permanently" and "during battle" mean

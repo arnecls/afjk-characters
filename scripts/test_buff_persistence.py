@@ -67,6 +67,46 @@ class BuffPersistenceTests(unittest.TestCase):
         text = "permanently increases their ATK during battle."
         self.assertEqual(bp.classify_persistence(effect, text), "permanent")
 
+    def test_duration_over_limit_is_not_temporary(self):
+        effect = {
+            "type": "buff",
+            "label": "buff_offensive",
+            "name": "ATK",
+            "target": "ally",
+        }
+        for duration, expected in (
+            (100, "temporary"),
+            (100.5, "permanent"),
+            (8, "temporary"),
+        ):
+            with self.subTest(duration=duration):
+                self.assertEqual(
+                    bp.classify_persistence(
+                        {**effect, "duration": duration}, ""
+                    ),
+                    expected,
+                )
+
+    def test_validator_rejects_temporary_over_limit(self):
+        effect = {
+            "type": "buff",
+            "label": "buff_offensive",
+            "name": "ATK",
+            "target": "ally",
+            "persistence": "temporary",
+            "duration": 120,
+        }
+        errors = bp.validate_effect_persistence(
+            effect, section="Ultimate", hero_short="Test"
+        )
+        self.assertTrue(any("over the 100s limit" in e for e in errors))
+        ok = bp.validate_effect_persistence(
+            {**effect, "duration": 100},
+            section="Ultimate",
+            hero_short="Test",
+        )
+        self.assertEqual(ok, [])
+
     def test_round_trip_persistence_on_effect(self):
         rs = _load_working_analysis()
         effect = rs.Effect(
@@ -358,7 +398,9 @@ class TemporaryBuffBreadthTests(unittest.TestCase):
                 entry = entries[titles.index("estrilda")]
                 # Brief asked for top 10; spec weights give roughly 15-18
                 # because DEF-shred picks score 24-30 for Perseus.
-                self.assertLess(titles.index("estrilda"), 20)
+                # Damage taken no longer counts as a temporary stat
+                # buff (MECHANICS.md), so only her ATK buff scores.
+                self.assertLess(titles.index("estrilda"), 25)
                 self.assertTrue(
                     any(r.startswith("Enables ") for r in entry[1])
                 )
@@ -386,18 +428,42 @@ class RuntimeTemporaryStatBuffTests(unittest.TestCase):
             and bp.is_runtime_temporary_stat_buff(e)
         ]
         self.assertEqual(
-            sorted(e["label"] for e in effects), ["ATK", "Damage taken"]
+            sorted(e["label"] for e in effects), ["ATK"]
         )
 
-    def test_damage_dealt_buff_counts(self):
-        self.assertTrue(
-            bp.is_runtime_temporary_stat_buff(self._buff("Damage dealt"))
-        )
+    def test_damage_modifiers_do_not_count(self):
+        # MECHANICS.md: Damage dealt / Damage taken are not stats.
+        for label in ("Damage dealt", "Damage taken"):
+            with self.subTest(label=label):
+                self.assertFalse(
+                    bp.is_runtime_temporary_stat_buff(self._buff(label))
+                )
 
-    def test_new_stat_labels_count(self):
+    def test_qualifying_stat_labels_count(self):
         for label in (
-            "Skill Power",
-            "Ultimate Power",
+            "HP",
+            "ATK",
+            "Phys DEF",
+            "Magic DEF",
+            "ATK SPD",
+            "Haste",
+            "Crit",
+            "Crit DMG boost",
+            "DEF Penetration",
+            "Execution",
+            "Vitality",
+            "Lifedrain",
+            "Life Drain",
+            "Crit Resist",
+            "Healing",
+            "Assistance",
+            "Debuff Focus",
+            "Resilience",
+            "DMG Boost",
+            "DMG Reduction",
+            "Energy Regen Reduction",
+            "Movement speed",
+            "Energy Recovery",
             "Energy Regen On Hit",
             "Crit DMG DEF",
             "Ranged DEF",
@@ -411,10 +477,17 @@ class RuntimeTemporaryStatBuffTests(unittest.TestCase):
         for label in (
             "Shield",
             "Energy",
-            "Movement speed",
             "Unaffected",
             "Steadfast",
+            "Invincible",
             "True damage",
+            "Max HP",
+            "Attack range",
+            "Skill Power",
+            "Ultimate Power",
+            "Proficiency",
+            "HP loss modifier",
+            "Dodge chance",
         ):
             with self.subTest(label=label):
                 self.assertFalse(

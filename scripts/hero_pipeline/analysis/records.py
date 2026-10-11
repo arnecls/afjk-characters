@@ -31,6 +31,7 @@ class EffectRecord(TypedDict):
     area: str | None
     area_direction: str | None
     zone_anchor: NotRequired[str | None]
+    skill_cooldown: NotRequired[float | None]
     source_section: str | None
     scoring_weight: float | None
     signature_cc: bool
@@ -52,6 +53,7 @@ class SpecialEffectRecord(TypedDict):
     qualitative: str
     grants: list[tuple[str, str]]
     named_ids: tuple[str, ...]
+    distinct_allies: NotRequired[int]
 
 
 class SkillSliceRecord(TypedDict):

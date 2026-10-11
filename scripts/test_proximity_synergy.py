@@ -14,7 +14,9 @@ ROOT = SCRIPTS.parent
 sys.path.insert(0, str(SCRIPTS))
 
 from test_helpers import load_working_analysis
+from hero_pipeline.analysis.detector_common import prime_curated_cache
 from hero_pipeline.relationships import scoring as gen
+from hero_pipeline.storage import load_roster_snapshot
 
 
 def _load_rs():
@@ -65,6 +67,10 @@ class ProximityDetectionTests(unittest.TestCase):
 class ProximityReachGateTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
+        # Per-hero overrides (Tasi is melee and dual-range) live in a
+        # process-wide cache that other tests may or may not have
+        # primed. Prime it here so results do not depend on test order.
+        prime_curated_cache(load_roster_snapshot())
         cls.rs = _load_rs()
         cls.gen = gen
         blocks = _hero_blocks()
@@ -174,16 +180,19 @@ class ProximityReachGateTests(unittest.TestCase):
             self.gen.receiver_can_reach_proximity_aura(1.0, 2.0)
         )
 
-    def test_perseus_excludes_long_range_tasi(self) -> None:
+    def test_perseus_aura_skips_long_range_dual_range_tasi(self) -> None:
+        # Tasi is melee and dual-range (override) but her average attack
+        # range is long, so the fertile-ground DEF aura cannot reach her.
+        # Only the non-aura ATK buff may score.
         behavior = self.behavior[self.tasi["title"]]
-        score, _ = self.gen.score_synergy(
+        _score, reasons = self.gen.score_synergy(
             self.perseus,
             self.tasi,
             behavior["movement"],
             behavior["synergy_signature_speed"] or "average",
             behavior,
         )
-        self.assertEqual(score, 0.0)
+        self.assertFalse(any("DEF" in reason for reason in reasons), reasons)
 
     def test_perseus_includes_melee_hepler(self) -> None:
         behavior = self.behavior[self.hepler["title"]]

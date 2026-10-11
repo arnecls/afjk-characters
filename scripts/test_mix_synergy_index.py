@@ -52,7 +52,7 @@ class MixSynergyIndexTests(unittest.TestCase):
         for receivers in uplift.values():
             for value in receivers.values():
                 self.assertGreater(value, 0)
-        for receiver in ("ravion", "nerion", "silven", "tasi"):
+        for receiver in ("ravion", "nerion", "silven"):
             self.assertNotIn("estrilda", uplift.get(receiver, {}))
 
     def test_temp_buff_and_distinct_allies(self) -> None:
