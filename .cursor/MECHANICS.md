@@ -1,5 +1,117 @@
 # Game mechanics
 
+## Map
+
+The battlefield is an **8x8 hex grid**. The top half is the **defending
+side**, the bottom half is the **attacking side**.
+
+In most modes the player attacks, so the attacking side is also called the
+**ally side** and the defending side the **enemy side**. In most contexts
+"enemy side" means the opponent and "ally side" means the player's team.
+Some modes (e.g. Arena defense formations) put the player's team on the
+defending side. Use **attacking / defending** for map geometry and
+**ally / enemy** for team affiliation. Skill text is always relative to the
+player controlling the unit: "allies" are the caster's team, "enemies" the
+opposing team, regardless of which side they stand on.
+
+### Deployment tiles and numbering
+
+Each map defines which tiles can be used for deployment; obstacles (walls,
+blocked tiles) and the deployment layout differ per map. See
+[numbered standard layout](../../afkj-data/docs/battle-tile-positions-numbered.webp)
+and [other maps](../../afkj-data/docs/maps.webp) (Arena V shows a ring of
+deployment tiles around walls; Arena I–IV thumbnails show other layouts).
+
+The usable deployment tiles of a map are numbered **1 to N per side** by the
+same rule on every map:
+
+- Tile **1** is the deployment tile closest to the map center.
+- Numbers grow with distance from the map center, zig-zagging across the
+  rows (not filling one row before the next). Rows are slanted relative to
+  the center, so tile 2 (second row) is closer to the center than tile 3
+  (first row).
+- **Attacking side:** numbering runs right to left, center to border.
+- **Defending side:** the same layout rotated 180° around the map center, so
+  numbering runs left to right. Tile 1 is still the tile closest to the
+  center.
+
+Because numbering is per map, the same tile number can sit at different grid
+positions on different maps.
+
+Standard 13-tile layout as seen on screen (from the numbered image):
+
+```text
+Defending side (top), rows from border to center:
+   9  12
+ 4   7  10  13
+   2   5   8  11
+     1   3   6       <- closest to center
+
+Attacking side (bottom), rows from center to border:
+   6   3   1         <- closest to center
+11   8   5   2
+  13  10   7   4
+        12   9
+```
+
+### Front, rear, and range
+
+- **Front** of a team is the part of its formation closest to the map
+  center; **rear / back / backline** is the part closest to that team's own
+  border. Each team is measured from its own side, so "rearmost enemy" means
+  the opposing unit closest to the opponent's border.
+- In tile numbers: **frontmost = lowest number**, **rearmost = highest
+  number**.
+- **Attack and skill ranges** count tiles: range N reaches targets at most N
+  hex steps from the caster's current tile. Range 1 means adjacent (the same
+  boundary Ranged DEF uses: it reduces damage from non-adjacent enemies).
+
+## Positioning
+
+During a fight a unit does one or more of the following:
+
+- **Stay stationary** — keeps its deployment tile.
+- **Move towards the enemy** — walks towards the opposing side.
+- **Jump** — instantly relocates to a defined position (jump, dash,
+  teleport).
+- **Roam** — keeps repositioning without steadily advancing towards the
+  enemy side (kiting, circling, hunting targets around the map; e.g. Rhys).
+
+**Movement speed** (base walk speed tier plus Movement speed buffs/debuffs)
+determines how fast a unit moves or roams. **Jumps are instant** and are not
+affected by movement speed; Haste only shortens their cooldown, if they have
+one.
+
+### Melee and ranged
+
+This definition is authoritative for analysis and curated overrides:
+
+- A unit that moves or jumps onto the **opponent's side** of the map and
+  fights there is **melee**.
+- A unit that only **briefly** jumps in and then retreats is **not** melee
+  from that jump alone.
+- A **small attack range** is a supporting indicator for melee.
+- **Roaming** units can be melee or ranged; that depends solely on their
+  attack range.
+- Some units **switch roles** mid-fight (melee ↔ ranged).
+
+**Outside the map:** some units are temporarily or permanently outside the
+map and have no grid position while there — e.g. Scarlita during her aerial
+phase before she enters, or Damian, who never enters. Classify them by how
+they fight once they are on the grid (Scarlita is melee once she lands).
+
+### Mapping to pipeline fields
+
+- Movement labels (`stationary`, `mostly stationary`, `moving`,
+  `high movement`, `moving / stationary`) in `compute_movement()` describe
+  how much a unit relocates; jumps are covered by the `self-repositioner`
+  tag.
+- `behavior.walk_speed` (`zero` … `veryfast`) is the base movement speed.
+- `is_melee` from `compute_is_melee()` uses class defaults plus attack
+  range thresholds. It approximates the definition above; per-hero
+  `overrides.json` corrects it where the two disagree.
+- `is_dual_range` marks units that switch between melee and ranged.
+
 ## Stat Explanations
 
 **Vitality**
