@@ -81,8 +81,9 @@ from .skill_meta import (
 )
 
 MELEE_HERO_CLASSES = frozenset({"warrior", "rogue", "tank"})
-MELEE_MAX_RANGE: float = 3.5
-NON_MELEE_MELEE_MAX_RANGE: float = 2.5
+MELEE_MAX_DEFAULT_RANGE: int = 2
+RANGED_MIN_DEFAULT_RANGE: int = 4
+MELEE_MAX_SKILL_RANGE: float = 1.0
 STATIC_TILE_BUFFER_TAG = "static-tile-buffer"
 SUMMONER_STATIONARY_TAG = "summoner"
 
@@ -435,11 +436,6 @@ def _min_positive_offensive_range(skills: list[SkillMetaRecord]) -> float | None
     return min(positive) if positive else None
 
 
-def _max_offensive_attack_range(skills: list[SkillMetaRecord]) -> float | None:
-    positive = _positive_offensive_ranges(skills)
-    return max(positive) if positive else None
-
-
 def _effective_movement_range(skill: SkillMetaRecord) -> float:
     """Listed Skill Range capped by frontal-arc depth when present."""
     assert skill["range_tiles"] is not None
@@ -483,52 +479,59 @@ def compute_is_melee(
     hero_class: str,
     display_name: str = "",
     default_range: int | None = None,
-    melee_max_range: float | None = None,
-    non_melee_melee_max_range: float | None = None,
+    summon_profile: Mapping[str, Any] | None = None,
 ) -> bool:
     """True when the hero primarily fights at melee range.
 
-    Tank, rogue, and warrior default to melee. When the wiki lists a default
-    attack range, that value overrides class defaults and skill-derived
-    ranges. Otherwise offensive skill ranges apply: minimum for melee classes,
-    maximum for non-melee classes.
+    Implements the melee definition in ``.cursor/MECHANICS.md`` (Positioning).
+    Class is only a last resort. Curated overrides win over detection.
     """
-    melee_threshold = (
-        _policy_local("melee_max_range", MELEE_MAX_RANGE)
-        if melee_max_range is None
-        else melee_max_range
+    detected = _detect_is_melee(
+        skills,
+        hero_class=hero_class,
+        default_range=default_range,
+        summon_profile=summon_profile,
     )
-    non_melee_threshold = (
-        _policy_local("non_melee_melee_max_range", NON_MELEE_MELEE_MAX_RANGE)
-        if non_melee_melee_max_range is None
-        else non_melee_melee_max_range
-    )
-    class_default = hero_class.lower() in MELEE_HERO_CLASSES
-
-    if default_range is not None:
-        if class_default:
-            detected = default_range <= melee_threshold
-        else:
-            detected = default_range <= non_melee_threshold
-    else:
-        min_range = _min_positive_offensive_range(skills)
-        max_range = _max_offensive_attack_range(skills)
-        if class_default:
-            if min_range is not None:
-                detected = min_range <= melee_threshold
-            else:
-                detected = True
-        elif max_range is not None:
-            detected = max_range <= non_melee_threshold
-        else:
-            detected = False
-
     curated = curated_display_name(display_name) if display_name else ""
     if curated:
         override = _load_melee_overrides().get(curated, {})
         if "is_melee" in override:
             return bool(override["is_melee"])
     return detected
+
+
+def _detect_is_melee(
+    skills: list[SkillMetaRecord],
+    *,
+    hero_class: str,
+    default_range: int | None,
+    summon_profile: Mapping[str, Any] | None,
+) -> bool:
+    """Classify by default attack range, with tie-breakers for range 3.
+
+    - Off-battlefield heroes fighting through summons take the summon's type.
+    - Default range <= 2 is melee, >= 4 is ranged.
+    - Range 3 (or unknown): shortest offensive skill range of one tile is
+      melee, longer is ranged. Without skill ranges, a melee summon proxy
+      or a melee class decides.
+    """
+    has_summons = summon_profile is not None
+    summon_is_melee = summon_profile is not None and not summon_profile.get(
+        "has_ranged_summons"
+    )
+    if has_summons and _is_off_battlefield(" ".join(s["text"] for s in skills)):
+        return summon_is_melee
+    if default_range is not None:
+        if default_range <= MELEE_MAX_DEFAULT_RANGE:
+            return True
+        if default_range >= RANGED_MIN_DEFAULT_RANGE:
+            return False
+    min_range = _min_positive_offensive_range(skills)
+    if min_range is not None:
+        return min_range <= MELEE_MAX_SKILL_RANGE
+    if summon_is_melee:
+        return True
+    return hero_class.lower() in MELEE_HERO_CLASSES
 
 
 def compute_is_dual_range(

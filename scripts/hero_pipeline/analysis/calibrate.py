@@ -501,6 +501,7 @@ def _serialize_processed(
                     hero_class=hero_class,
                     display_name=analysis["display_name"],
                     default_range=default_range,
+                    summon_profile=bundle["ai"].get("summon_profile"),
                 ),
                 "is_dual_range": bh.compute_is_dual_range(
                     skills, display_name=analysis["display_name"]

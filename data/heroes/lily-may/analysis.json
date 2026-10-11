@@ -8,7 +8,7 @@
     "class": "rogue",
     "role_category": "specialist",
     "is_energy_provider": false,
-    "is_melee": true,
+    "is_melee": false,
     "is_dual_range": false,
     "default_range": 3,
     "release_date": "2024-08-08",
@@ -702,6 +702,6 @@
   },
   "provenance": {
     "inputs_hash": "a959fa15d3bde9366c7dd1ca97c38065acc9ab99c32ae7c158c40c8bc9a7b786",
-    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
+    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
   }
 }

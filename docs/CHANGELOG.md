@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-10-11
+
+### Fixes and improvements
+
+- Melee/ranged detection (`is_melee`) now follows the new definition in
+  `.cursor/MECHANICS.md` instead of the hero class: default attack range of
+  2 or less is melee, 4 or more is ranged, off-battlefield summoners take
+  their summon's type, and range 3 is decided by the shortest skill range.
+  Per-hero overrides cover the cases text cannot show.
+- Reclassified after review: Lily May is now ranged (jump-and-retreat);
+  Lucy, Mehira and Damian are now melee; Tasi is melee and dual-range;
+  Taichi & Agumon is melee and dual-range.
+- Removed the now redundant Berial (`is_melee`) and Vala (`is_dual_range`)
+  overrides; detection gives the same result.
+- Added the Map and Positioning sections to `.cursor/MECHANICS.md` (hex grid,
+  tile numbering, front/rear, range, movement patterns, melee rules).
+- Updated the counter skill and glossary references to the per-hero melee
+  overrides.
+- Replacement lists in `heroes-overview.md` shifted for heroes whose
+  melee/ranged role changed.
+
+### Character data changes
+
+| Character | What changed |
+|---|---|
+| damian | - Now classified as melee |
+| lily-may | - Now classified as ranged |
+| lucy | - Now classified as melee |
+| mehira | - Now classified as melee |
+| taichi-agumon | - Now classified as melee and dual-range |
+| tasi | - Now classified as melee and dual-range |
+
 ## 2026-10-02
 
 ### New heroes

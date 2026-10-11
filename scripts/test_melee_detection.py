@@ -33,9 +33,18 @@ class MeleeDetectionTests(unittest.TestCase):
             )
             hero = hero_from_record(source)
             skills = load_skills_by_title_from_records([source])[hero["title"]]
-            cls.heroes[hero["title"]] = (hero, skills, source, entry["display_name"])
+            summon_profile = snapshot["bundles"][entry["id"]]["ai"].get(
+                "summon_profile"
+            )
+            cls.heroes[hero["title"]] = (
+                hero,
+                skills,
+                source,
+                entry["display_name"],
+                summon_profile,
+            )
 
-    def _match(self, title_prefix: str) -> tuple[object, list, dict, str]:
+    def _match(self, title_prefix: str) -> tuple[object, list, dict, str, dict | None]:
         return next(
             value
             for title, value in self.heroes.items()
@@ -43,44 +52,63 @@ class MeleeDetectionTests(unittest.TestCase):
         )
 
     def _is_melee(self, title_prefix: str) -> bool:
-        hero, skills, source, short = self._match(title_prefix)
+        _hero, skills, source, short, summon_profile = self._match(title_prefix)
         return self.rs.compute_is_melee(
             skills,
             hero_class=source.get("class") or "",
             display_name=short,
             default_range=source.get("range"),
+            summon_profile=summon_profile,
         )
 
     def _is_dual_range(self, title_prefix: str) -> bool:
-        _hero, skills, _source, short = self._match(title_prefix)
+        _hero, skills, _source, short, _summon = self._match(title_prefix)
         return self.rs.compute_is_dual_range(skills, display_name=short)
 
-    def test_melee_class_defaults(self) -> None:
-        for prefix in ("Hepler", "Baelran", "Nara"):
+    def test_short_default_range_is_melee(self) -> None:
+        for prefix in ("Hepler", "Baelran", "Nara", "Niru", "Satrana", "Zorya"):
             with self.subTest(hero=prefix):
                 self.assertTrue(self._is_melee(prefix))
 
-    def test_ranged_class_defaults(self) -> None:
-        for prefix in ("Aliceth", "Marilee", "Frieren"):
+    def test_long_default_range_is_ranged(self) -> None:
+        for prefix in ("Aliceth", "Marilee", "Frieren", "Igor", "Ravion", "Cecia"):
             with self.subTest(hero=prefix):
                 self.assertFalse(self._is_melee(prefix))
+
+    def test_range_three_tie_breakers(self) -> None:
+        cases = {
+            "Lucy": True,
+            "Mehira": True,
+            "Daimon": True,
+            "Lily May": False,
+            "Cassadee": False,
+            "Rowan": False,
+            "Talene": False,
+        }
+        for prefix, expected in cases.items():
+            with self.subTest(hero=prefix):
+                self.assertIs(self._is_melee(prefix), expected)
+
+    def test_off_battlefield_summoner_takes_summon_type(self) -> None:
+        self.assertTrue(self._is_melee("Damian"))
+        self.assertFalse(self._is_melee("Senea"))
 
     def test_validated_exceptions(self) -> None:
         cases = {
             "Berial": True,
             "Chippy": True,
             "Dunlingr": True,
-            "Igor": False,
             "Lumont": True,
             "Dionel": False,
             "Atalanta": False,
-            "Lucy": False,
-            "Mehira": False,
             "Mikola": True,
-            "Satrana": True,
             "Zanie": False,
             "Rhys": False,
             "Nerion": False,
+            "Yamato": False,
+            "Florabelle": False,
+            "Tasi": True,
+            "Taichi": True,
         }
         for prefix, expected in cases.items():
             with self.subTest(hero=prefix):
@@ -89,9 +117,11 @@ class MeleeDetectionTests(unittest.TestCase):
     def test_dual_range_edge_cases(self) -> None:
         self.assertTrue(self._is_dual_range("Talene"))
         self.assertTrue(self._is_dual_range("Vala"))
+        self.assertTrue(self._is_dual_range("Taichi"))
+        self.assertTrue(self._is_dual_range("Tasi"))
         self.assertFalse(self._is_dual_range("Aliceth"))
 
-    def test_default_range_overrides_melee_class(self) -> None:
+    def test_default_range_ignores_class(self) -> None:
         skills: list = []
         self.assertFalse(
             self.rs.compute_is_melee(
@@ -99,8 +129,33 @@ class MeleeDetectionTests(unittest.TestCase):
             )
         )
         self.assertTrue(
+            self.rs.compute_is_melee(skills, hero_class="Mage", default_range=1)
+        )
+
+    def test_range_three_without_skill_ranges(self) -> None:
+        skills: list = []
+        self.assertTrue(
+            self.rs.compute_is_melee(skills, hero_class="Tank", default_range=3)
+        )
+        self.assertFalse(
             self.rs.compute_is_melee(
-                skills, hero_class="Warrior", default_range=1
+                skills, hero_class="Support", default_range=3
+            )
+        )
+        self.assertTrue(
+            self.rs.compute_is_melee(
+                skills,
+                hero_class="Support",
+                default_range=3,
+                summon_profile={"has_ranged_summons": False},
+            )
+        )
+        self.assertFalse(
+            self.rs.compute_is_melee(
+                skills,
+                hero_class="Support",
+                default_range=3,
+                summon_profile={"has_ranged_summons": True},
             )
         )
 

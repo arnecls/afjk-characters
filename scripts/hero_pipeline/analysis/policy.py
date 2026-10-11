@@ -17,8 +17,6 @@ class LocalPolicy(TypedDict, total=False):
     condition_cooldown_reference_seconds: float
     condition_cooldown_floor_mult: float
     condition_rare_downgrade_steps: int
-    melee_max_range: float
-    non_melee_melee_max_range: float
 
 
 class CalibrationPolicy(TypedDict, total=False):
@@ -103,8 +101,6 @@ def effective_defaults() -> PipelinePolicy:
             "condition_cooldown_reference_seconds": 10.0,
             "condition_cooldown_floor_mult": 0.2,
             "condition_rare_downgrade_steps": 2,
-            "melee_max_range": 3.5,
-            "non_melee_melee_max_range": 2.5,
         },
         "calibration": {
             "casting_speed_fast_threshold": 5.0,
