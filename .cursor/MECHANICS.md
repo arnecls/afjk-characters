@@ -83,8 +83,90 @@ Depending on the unit doing pure damage only a few select stats effect it. For P
 
 For Baelran since his pure damage is capped by his HP% instead of his atk% increasing his HP will increase his pure damage, atk speed also helps his pure damage since it applies on every hit, the rest applies normally for him.
 
+## Temporary Stat Buffs
+
+Heroes such as Orion and Perseus react to "temporary stat buffs from allies".
+This section defines what qualifies. Use it whenever deciding whether a buff
+is `persistence: temporary` for synergy matching, or whether a provider
+satisfies a `Temporary ally stat buffs` requirement.
+
+### Qualifying rule
+
+A buff counts as a temporary stat buff from an ally only if **all** of these
+hold:
+
+1. **It raises a stat.** A positive change to one of the stats listed below.
+   Stat reductions (debuffs) never count.
+2. **It is short-lived.** Its duration is 100 seconds or less, measured after
+   Assistance scaling. Passive, permanent, battle-long and "in battle"
+   buffs do not count.
+3. **It comes from another unit.** Self-cast buffs never count.
+4. **The source is on the same team.** Enemy-applied effects never count.
+
+Flat and percentage buffs both count. A buff is judged when it is applied;
+the later expiry or removal of a buff is not a new buff.
+
+Each distinct ally is counted once, no matter how many qualifying buffs that
+ally gives. "Each temporary stat buff from a different ally" therefore means
+one per ally.
+
+### Qualifying stats
+
+| Group | Stats |
+|-------|-------|
+| Basic | HP, ATK, Phys DEF, Magic DEF |
+| Offensive | ATK SPD, Haste, Crit, Crit DMG Boost, DEF Penetration, Execution |
+| Defensive | Vitality, Life Drain, Crit Resist, Ranged DEF, Crit DMG DEF |
+| Other | Healing, Assistance, Debuff Focus, Resilience, Energy on Hit |
+| Rivalry | DMG Boost, DMG Reduction, Energy Regen Reduction |
+| Movement | Movement speed |
+| Energy | Energy gain multipliers and the Energy stat itself |
+| Legacy | Hit and Dodge (not roster stats; no known hero grants them) |
+
+### Not temporary stat buffs
+
+These never trigger "temporary stat buff" effects, even when temporary and
+ally-applied:
+
+- Shields, healing and healing over time, Energy grants.
+- Immunities and anti-CC states (Unaffected, Steadfast, Invincible, ...).
+- Skill-granted **Damage dealt** and **Damage taken** modifiers (these are
+  not the rivalry DMG Boost / DMG Reduction stats), HP loss modifiers.
+- Max HP changes that are not an HP stat increase.
+- Inspiration, Intimidation, Proficiency, Skill Power, Ultimate Power.
+- Attack range, HP or Energy regeneration, damage-over-time scaling.
+- Marks, blessings, stacks and other named effects that grant no stat.
+
+### How the receivers use it
+
+- **Orion** (Velvet Glove): each ally that gives him a qualifying buff becomes
+  his **Supporter** and extends his rapier enchantment by 10s (unless it is
+  permanent). Supreme+ turns every living ally into a Supporter once, without
+  needing a buff.
+- **Perseus**:
+  - *Divine Grace*, per-ally damage dealt / damage taken: follows the full
+    rule above, one step per distinct ally up to the skill's cap.
+  - *Divine Grace*, bonus to the effect of temporary buffs he gains: wider
+    than the text. Only the duration (100s or less) and the stat list are
+    checked, so self-cast and non-ally temporary buffs are amplified too.
+  - *Hero Focus*, extra ATK: wider than the text. Any buff from an ally with
+    100s or less remaining triggers it, with no check on which stat is
+    raised or whether it is a stat buff at all. It stays active while at
+    least one such buff remains.
+
+When classifying a provider's effect, apply the qualifying rule literally:
+a 6s Haste buff on allies is temporary; a battle-long ATK aura, a shield, or
+a "damage taken reduced" effect is not. For Perseus's Hero Focus, treat any
+short ally-applied buff as a trigger.
+
+### Open points
+
+- Whether buffs without a source unit (system or battle-start effects) trigger
+  Hero Focus is unclear; treat as not triggering.
+
 ## Abilities that Applies Temporary Buffs
 
+See [Temporary Stat Buffs](#temporary-stat-buffs) for the exact definition.
 This list seeded the roster audit for **temporary** ally stat-buff providers.
 Effect-level `persistence` in `data/skill_effects/*.json` is the source of
 truth; synergy matches only `persistence: temporary` buffs for receivers with
