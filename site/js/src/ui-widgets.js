@@ -184,6 +184,7 @@ window.AFKJ = window.AFKJ || {};
 
     let tipAnchor = null;
     let tipHideTimer = null;
+    let tipPinned = false;
     const hoverCapable = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
     function tipChipFromEvent(e) {
@@ -215,6 +216,10 @@ window.AFKJ = window.AFKJ || {};
         chipTooltip.textContent = text;
         chipTooltip.classList.remove("chip-tooltip--html");
       }
+      chipTooltip.classList.toggle(
+        "chip-tooltip--pinned",
+        tipPinned || !!(html && chipTooltip.querySelector("a"))
+      );
       chipTooltip.hidden = false;
       positionChipTooltip(anchor);
     }
@@ -226,6 +231,8 @@ window.AFKJ = window.AFKJ || {};
           tipAnchor.classList.remove("chip-tip-active");
         }
         chipTooltip.hidden = true;
+        chipTooltip.classList.remove("chip-tooltip--pinned");
+        tipPinned = false;
         tipAnchor = null;
       }, delay || 0);
     }
@@ -238,7 +245,7 @@ window.AFKJ = window.AFKJ || {};
             return;
           }
           const chip = tipChipFromEvent(e);
-          if (chip) {
+          if (chip && !tipPinned) {
             showChipTooltip(chip);
           }
         },
@@ -253,6 +260,7 @@ window.AFKJ = window.AFKJ || {};
           const chip = tipChipFromEvent(e);
           if (
             chip &&
+            !tipPinned &&
             tipAnchor === chip &&
             !chip.contains(e.relatedTarget)
           ) {
@@ -262,6 +270,19 @@ window.AFKJ = window.AFKJ || {};
         true
       );
     }
+
+    chipTooltip.addEventListener("pointerenter", function () {
+      clearTimeout(tipHideTimer);
+    });
+    chipTooltip.addEventListener("pointerleave", function (e) {
+      if (tipPinned || e.pointerType !== "mouse") {
+        return;
+      }
+      if (tipAnchor && tipAnchor.contains(e.relatedTarget)) {
+        return;
+      }
+      hideChipTooltip(100);
+    });
 
     document.addEventListener("keydown", function (e) {
       const chip = tipChipFromEvent(e);
@@ -286,11 +307,24 @@ window.AFKJ = window.AFKJ || {};
     document.addEventListener(
       "click",
       function (e) {
+        if (tipPinned && chipTooltip.contains(e.target)) {
+          return;
+        }
         const chip = tipChipFromEvent(e);
         if (!chip) {
           if (tipAnchor) {
             hideChipTooltip(0);
           }
+          return;
+        }
+        if (
+          chip.hasAttribute("data-tip-html") &&
+          chipTooltip.querySelector("a")
+        ) {
+          showChipTooltip(chip);
+          tipPinned = true;
+          chipTooltip.classList.add("chip-tooltip--pinned");
+          e.stopPropagation();
           return;
         }
         const touchLike = e.pointerType === "touch" || !hoverCapable;

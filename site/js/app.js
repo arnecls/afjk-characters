@@ -587,21 +587,25 @@ e.preventDefault();e.stopPropagation();if(typeof e.stopImmediatePropagation==="f
 function dismissWelcomeWarning(){root.hidden=true;setBlocked(false);try{localStorage.setItem(config.WELCOME_WARNING_KEY,"1");}catch(e){}}
 dismissBtn.addEventListener("click",dismissWelcomeWarning);["click","mousedown","touchstart"].forEach(function(type){document.addEventListener(type,blockSitePointer,true);});root.addEventListener("keydown",function(e){if(e.key==="Escape"){e.preventDefault();}
 if(e.key==="Tab"){e.preventDefault();dismissBtn.focus();}});setBlocked(true);dismissBtn.focus();}
-function initChipTooltips(){const TIP_CHIP_SELECTOR="[data-tip].chip-has-tip, [data-tip-html].chip-has-tip, .tier-chip[data-tip]";const chipTooltip=document.createElement("div");chipTooltip.id="chip-tooltip";chipTooltip.className="chip-tooltip";chipTooltip.hidden=true;chipTooltip.setAttribute("role","tooltip");document.body.appendChild(chipTooltip);let tipAnchor=null;let tipHideTimer=null;const hoverCapable=window.matchMedia("(hover: hover) and (pointer: fine)").matches;function tipChipFromEvent(e){return e.target.closest(TIP_CHIP_SELECTOR);}
+function initChipTooltips(){const TIP_CHIP_SELECTOR="[data-tip].chip-has-tip, [data-tip-html].chip-has-tip, .tier-chip[data-tip]";const chipTooltip=document.createElement("div");chipTooltip.id="chip-tooltip";chipTooltip.className="chip-tooltip";chipTooltip.hidden=true;chipTooltip.setAttribute("role","tooltip");document.body.appendChild(chipTooltip);let tipAnchor=null;let tipHideTimer=null;let tipPinned=false;const hoverCapable=window.matchMedia("(hover: hover) and (pointer: fine)").matches;function tipChipFromEvent(e){return e.target.closest(TIP_CHIP_SELECTOR);}
 function positionChipTooltip(anchor){const rect=anchor.getBoundingClientRect();chipTooltip.style.left=rect.left+rect.width/2+"px";chipTooltip.style.top=rect.top-8+"px";}
 function showChipTooltip(anchor){const html=anchor.getAttribute("data-tip-html");const text=anchor.getAttribute("data-tip");if(!html&&!text){return;}
 clearTimeout(tipHideTimer);if(tipAnchor&&tipAnchor!==anchor){tipAnchor.classList.remove("chip-tip-active");}
 tipAnchor=anchor;anchor.classList.add("chip-tip-active");if(html){chipTooltip.innerHTML=html;chipTooltip.classList.add("chip-tooltip--html");}else{chipTooltip.textContent=text;chipTooltip.classList.remove("chip-tooltip--html");}
-chipTooltip.hidden=false;positionChipTooltip(anchor);}
+chipTooltip.classList.toggle("chip-tooltip--pinned",tipPinned||!!(html&&chipTooltip.querySelector("a")));chipTooltip.hidden=false;positionChipTooltip(anchor);}
 function hideChipTooltip(delay){clearTimeout(tipHideTimer);tipHideTimer=setTimeout(function(){if(tipAnchor){tipAnchor.classList.remove("chip-tip-active");}
-chipTooltip.hidden=true;tipAnchor=null;},delay||0);}
+chipTooltip.hidden=true;chipTooltip.classList.remove("chip-tooltip--pinned");tipPinned=false;tipAnchor=null;},delay||0);}
 if(hoverCapable){document.addEventListener("pointerover",function(e){if(e.pointerType!=="mouse"){return;}
-const chip=tipChipFromEvent(e);if(chip){showChipTooltip(chip);}},true);document.addEventListener("pointerout",function(e){if(e.pointerType!=="mouse"){return;}
-const chip=tipChipFromEvent(e);if(chip&&tipAnchor===chip&&!chip.contains(e.relatedTarget)){hideChipTooltip(100);}},true);}
-document.addEventListener("keydown",function(e){const chip=tipChipFromEvent(e);if(!chip){return;}
+const chip=tipChipFromEvent(e);if(chip&&!tipPinned){showChipTooltip(chip);}},true);document.addEventListener("pointerout",function(e){if(e.pointerType!=="mouse"){return;}
+const chip=tipChipFromEvent(e);if(chip&&!tipPinned&&tipAnchor===chip&&!chip.contains(e.relatedTarget)){hideChipTooltip(100);}},true);}
+chipTooltip.addEventListener("pointerenter",function(){clearTimeout(tipHideTimer);});chipTooltip.addEventListener("pointerleave",function(e){if(tipPinned||e.pointerType!=="mouse"){return;}
+if(tipAnchor&&tipAnchor.contains(e.relatedTarget)){return;}
+hideChipTooltip(100);});document.addEventListener("keydown",function(e){const chip=tipChipFromEvent(e);if(!chip){return;}
 if(e.key==="Escape"&&tipAnchor===chip){hideChipTooltip(0);chip.blur();return;}
-if((e.key===" "||e.key==="Enter")&&!hoverCapable){e.preventDefault();if(tipAnchor===chip){hideChipTooltip(0);}else{showChipTooltip(chip);}}});document.addEventListener("click",function(e){const chip=tipChipFromEvent(e);if(!chip){if(tipAnchor){hideChipTooltip(0);}
+if((e.key===" "||e.key==="Enter")&&!hoverCapable){e.preventDefault();if(tipAnchor===chip){hideChipTooltip(0);}else{showChipTooltip(chip);}}});document.addEventListener("click",function(e){if(tipPinned&&chipTooltip.contains(e.target)){return;}
+const chip=tipChipFromEvent(e);if(!chip){if(tipAnchor){hideChipTooltip(0);}
 return;}
+if(chip.hasAttribute("data-tip-html")&&chipTooltip.querySelector("a")){showChipTooltip(chip);tipPinned=true;chipTooltip.classList.add("chip-tooltip--pinned");e.stopPropagation();return;}
 const touchLike=e.pointerType==="touch"||!hoverCapable;if(!touchLike){return;}
 e.stopPropagation();if(tipAnchor===chip){hideChipTooltip(0);}else{showChipTooltip(chip);}},true);document.addEventListener("focusin",function(e){const chip=tipChipFromEvent(e);if(chip){showChipTooltip(chip);}});document.addEventListener("focusout",function(e){const chip=tipChipFromEvent(e);if(chip&&tipAnchor===chip){hideChipTooltip(0);}});window.addEventListener("scroll",function(){if(tipAnchor&&!chipTooltip.hidden){positionChipTooltip(tipAnchor);}},true);window.addEventListener("resize",function(){if(tipAnchor&&!chipTooltip.hidden){positionChipTooltip(tipAnchor);}});}
 function initSkillCardPopover(){const state=window.AFKJ.state;const popoverModule=window.AFKJ.skills;const backdrop=document.createElement("div");backdrop.className="skill-card-popover-backdrop";backdrop.hidden=true;const popover=document.createElement("div");popover.id="skill-card-popover";popover.className="skill-card-popover";popover.hidden=true;popover.setAttribute("role","dialog");popover.setAttribute("aria-modal","true");popover.setAttribute("aria-labelledby","skill-popover-title");document.body.appendChild(backdrop);document.body.appendChild(popover);let anchorCard=null;function setCardExpanded(card,expanded){if(!card){return;}
@@ -1417,8 +1421,10 @@ function renderCommonBuffers(buffers){if(!buffers||!buffers.length){return"";}
 const chips=window.AFKJ.chips;const items=buffers.map(function(ref){return chips.renderCharacterPill(ref.name);});return('<div class="synergy-common-buffers">Common buffers are '+
 joinIntroFragments(items)+".</div>");}
 function renderSynergyOverflowTooltipGrid(partners){const names=partners.slice().sort(function(a,b){const ratingDiff=synergyPartnerScoreRating(b)-synergyPartnerScoreRating(a);if(ratingDiff!==0){return ratingDiff;}
-return a.name.localeCompare(b.name);}).map(function(ref){return ref.name;});return('<div class="synergy-overflow-tip-grid">'+
-names.map(function(name){return"<span>"+escapeHtml(name)+"</span>";}).join("")+"</div>");}
+return a.name.localeCompare(b.name);}).map(function(ref){return{name:ref.name,rating:synergyPartnerScoreRating(ref)};});const chips=window.AFKJ.chips;return('<div class="synergy-overflow-tip-grid">'+
+names.map(function(entry){return('<span class="synergy-overflow-tip-item">'+
+chips.renderCharacterPill(entry.name)+' <span class="synergy-overflow-tip-score">'+
+escapeHtml(entry.rating.toFixed(1).replace(/\.0$/,""))+"/5</span></span>");}).join("")+"</div>");}
 function renderSynergyPartnerOverflow(morePartners){if(!morePartners||!morePartners.length){return"";}
 const overflowCount=morePartners.length;const unitLabel=overflowCount===1?"unit":"units";const moreUnitsPhrase=overflowCount+" more "+unitLabel;if(overflowCount<=5){return('<p class="synergy-partner-overflow">There were '+'<span class="synergy-overflow-trigger chip-has-tip" data-tip-html="'+
 escapeHtml(renderSynergyOverflowTooltipGrid(morePartners))+'" tabindex="0" role="button" aria-describedby="chip-tooltip">'+
