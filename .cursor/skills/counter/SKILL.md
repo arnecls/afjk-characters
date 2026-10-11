@@ -128,8 +128,9 @@ S-tier AoE, CC, or shield heroes are not delete tools unless they also fit the
 kill tags.
 
 **Frontline / melee delete target:** when the unit you are deleting is on the
-**melee floor** (Warrior / Rogue / Tank class, plus `is_melee` in
-`data/melee_overrides.json`), do **not** use `backline-assassin` filters or
+**melee floor** (`is_melee` in the hero's `analysis.json`, derived from
+attack range per `.cursor/MECHANICS.md`, plus the `melee` entry in
+`data/heroes/<hero-id>/overrides.json`), do **not** use `backline-assassin` filters or
 `backline-assassin`-tagged picks for that target. Name **1–2 high-damage melee**
 from the Explicit pool below, still applying DEF / shield bias. If the delete
 target is a **rear carry behind a melee tank**, keep `backline-assassin` /

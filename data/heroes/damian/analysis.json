@@ -8,7 +8,7 @@
     "class": "support",
     "role_category": "support",
     "is_energy_provider": false,
-    "is_melee": false,
+    "is_melee": true,
     "is_dual_range": false,
     "default_range": 20,
     "release_date": "2024-03-27",
@@ -632,6 +632,6 @@
   },
   "provenance": {
     "inputs_hash": "07e3bce6224ccd9b8aebc849e6d2d8513dd9351f7fd7c522bf96ff521398f912",
-    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
+    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
   }
 }

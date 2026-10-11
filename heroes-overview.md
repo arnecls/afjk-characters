@@ -5637,9 +5637,9 @@ Common buffers are **Thador**, **Shadewing**, **Kordan**, or **Kruger**.
 
 **Damage**
 
+- Mehira (100% `HP loss`)
 - Saida (100% `HP loss`)
 - Aliceth (100% `Physical` `HP loss`)
-- Thoran (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -8397,10 +8397,6 @@ Lily May also requires units **buffing them**
 
 ### Units that can act as a replacement for Lily May
 
-**Best overall replacement**
-
-- Saida (51% `Crowd Control` `Debuffs on enemies`)
-
 **Similar Skills**
 
 - Kafra (32% `non-ult-utility` `self-repositioner`)
@@ -9808,7 +9804,7 @@ Mehira provides HP loss modifier to multiple targets `high` and Haste to multipl
 
 - Frieren (100% `DoT` `Magic` `HP loss`)
 - Saida (100% `Magic` `DoT` `HP loss`)
-- Phraesto (97% `Magic`)
+- Phraesto (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -10304,6 +10300,7 @@ Natsu also requires specific **named allies**
 **Best overall replacement**
 
 - Marcille (60% `Damage`)
+- Lucy (52% `Damage`)
 - Sylphira (52% `Damage`)
 
 **Similar Skills**
@@ -11890,8 +11887,8 @@ These are the **4** strongest pairings:
 **Damage**
 
 - Frieren (100% `Magic`)
+- Mehira (100% `Magic`)
 - Saida (100% `Magic`)
-- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -12873,8 +12870,8 @@ Saida provides Shield (Supreme+) to multiple targets `high`.
 
 **Damage**
 
+- Mehira (100% `Magic` `DoT` `HP loss`)
 - Phraesto (100% `Magic`)
-- Mehira (98% `Magic` `DoT` `HP loss`)
 - Frieren (89% `Magic` `HP loss` `DoT`)
 
 **Debuffs on enemies**
@@ -14990,7 +14987,7 @@ Common buffers are **Ravion**, **Twins**, **Smokey & Meerky**, or **Rolan**.
 
 - Pippa (56% `Damage` `Debuffs on enemies`)
 - Baelran (53% `Damage` `Crowd Control`)
-- Lily May (50% `Damage` `Debuffs on enemies`)
+- Orion (50% `Damage`)
 
 **Similar Skills**
 
@@ -15116,7 +15113,9 @@ Taichi & Agumon provides ATK (Supreme+) in an area `high`.
 
 **Best overall replacement**
 
+- Estrilda (55% `Crowd Control` `Buffs on allies`)
 - Rolan (54% `Damage` `Crowd Control` `Buffs on allies`)
+- Granny Dahnie (53% `Damage` `Crowd Control`)
 
 **Buffs on allies**
 
@@ -15132,9 +15131,9 @@ Taichi & Agumon provides ATK (Supreme+) in an area `high`.
 
 **Damage**
 
+- Harak (100% `Physical` `HP loss`)
+- Nara (100% `Physical` `HP loss`)
 - Yamato & Gabumon (100% `HP loss`)
-- Nara (95% `Physical` `HP loss`)
-- Aliceth (93% `Physical` `HP loss`)
 
 **Crowd Control**
 
@@ -15390,7 +15389,7 @@ Common buffers are **Rolan**, **Solise**, **Twins**, or **Smokey & Meerky**.
 
 - Frieren (100% `DoT` `Magic`)
 - Aster (100% `DoT` `Magic`)
-- Cyran (100% `DoT` `Magic`)
+- Saida (100% `Magic` `DoT`)
 
 ### Summary for Tasi
 
@@ -17651,8 +17650,8 @@ Zorya also requires allies **casting ultimates**
 **Damage**
 
 - Saida (94% `Magic`)
+- Lucy (94% `Magic`)
 - Niru (94% `Magic` `Lost HP-based damage`)
-- Eironn (91% `Magic`)
 
 **Debuffs on enemies**
 

@@ -8,8 +8,8 @@
     "class": "warrior",
     "role_category": "damage_dealer",
     "is_energy_provider": false,
-    "is_melee": false,
-    "is_dual_range": false,
+    "is_melee": true,
+    "is_dual_range": true,
     "default_range": 7,
     "release_date": "2026-08-18",
     "season": "Crown of Ashes",
@@ -795,7 +795,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "3158f2465f147b20d7b56d2bfa0ef7e479a5b1521f770fe221eb29cab79c25a5",
-    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
+    "inputs_hash": "bdc381c04ae19442ddce7bb3d2371ed035f9735a357b97afaa885df21e84bb9b",
+    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
   }
 }

@@ -8,8 +8,8 @@
     "class": "mage",
     "role_category": "specialist",
     "is_energy_provider": false,
-    "is_melee": false,
-    "is_dual_range": false,
+    "is_melee": true,
+    "is_dual_range": true,
     "default_range": 4,
     "release_date": "2024-10-17",
     "season": "Waves of Intrigue",
@@ -646,7 +646,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "1f8be36381a895cb7348cfe90e7fd7dfdcb2a5b8ac6920fd70a7465dbf29196e",
-    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
+    "inputs_hash": "e7525b563ae073b50f71b6f62e56d487216c87c10aa7b2e65a1b1b0428af03ea",
+    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
   }
 }

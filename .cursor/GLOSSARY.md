@@ -604,7 +604,7 @@ and signature overrides.
 Used in:
 
 - [Movement overrides](data/movement_overrides.json)
-- [Melee overrides](data/melee_overrides.json)
+- Melee overrides: `melee` key in `data/heroes/<hero-id>/overrides.json`
 - [Placement overrides](data/placement_constraint_overrides.json)
 - [Signature skills](data/signature_skills.json)
 

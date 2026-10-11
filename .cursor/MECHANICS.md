@@ -91,13 +91,34 @@ This definition is authoritative for analysis and curated overrides:
   from that jump alone.
 - A **small attack range** is a supporting indicator for melee.
 - **Roaming** units can be melee or ranged; that depends solely on their
-  attack range.
-- Some units **switch roles** mid-fight (melee ↔ ranged).
+  attack range. Roaming includes jumping between randomly placed objects
+  (e.g. Igor's tombstones) and teleport-attack-repeat patterns (Berial).
+- Some units **switch roles** mid-fight (melee ↔ ranged). `is_melee`
+  records the role held for most of the battle; `is_dual_range` is also
+  set (e.g. Taichi & Agumon: ranged at first, melee after transforming).
+- **Inactive, dormant, or rooted phases** do not change a unit's type.
+  The unit is classified by how it fights while active (Callan, Zorya).
+- **Main position:** a unit that attacks from the back and only jumps in
+  and retreats is ranged (Lily May, Ravion).
 
 **Outside the map:** some units are temporarily or permanently outside the
 map and have no grid position while there — e.g. Scarlita during her aerial
-phase before she enters, or Damian, who never enters. Classify them by how
-they fight once they are on the grid (Scarlita is melee once she lands).
+phase before she enters, or Dionel while soaring. Classify them by how they
+fight once they are on the grid (Scarlita is melee once she lands; Dionel
+attacks from range).
+
+**Summons and followers:**
+
+- A unit that fights **only through a moving summon** takes the summon's
+  type, even when the hero never enters the map (Damian, Daimon: melee).
+- A **static summon** does not make the hero melee. Florabelle, Bryon,
+  Lamentis, Peggy and Aurora stay ranged.
+- When the hero **also attacks by themself**, the hero decides (Cecia stays
+  ranged although her summon is melee).
+- Followers that stay **off the map** are ignored (Senea: ranged).
+
+These cases cannot be read from skill text alone; the code covers only the
+off-battlefield case and everything else is curated in `overrides.json`.
 
 ### Mapping to pipeline fields
 
@@ -106,9 +127,12 @@ they fight once they are on the grid (Scarlita is melee once she lands).
   how much a unit relocates; jumps are covered by the `self-repositioner`
   tag.
 - `behavior.walk_speed` (`zero` … `veryfast`) is the base movement speed.
-- `is_melee` from `compute_is_melee()` uses class defaults plus attack
-  range thresholds. It approximates the definition above; per-hero
-  `overrides.json` corrects it where the two disagree.
+- `is_melee` from `compute_is_melee()` approximates the definition above
+  from the default attack range: 2 or less is melee, 4 or more is ranged.
+  Off-battlefield heroes that fight through summons take the summon's
+  type. Range 3 is decided by the shortest offensive skill range (1 tile
+  is melee), then a melee summon, then class. Per-hero `overrides.json`
+  corrects it where the two disagree (e.g. Tasi, Taichi & Agumon).
 - `is_dual_range` marks units that switch between melee and ranged.
 
 ## Stat Explanations

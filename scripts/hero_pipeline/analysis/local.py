@@ -14,7 +14,7 @@ from .postprocess import _postprocess_analyzed_hero
 from .records import HeroRecord
 from .skill_chunks import hero_from_record, load_skills_by_title_from_records
 
-ALGORITHM_VERSION = "local-analysis-v13"
+ALGORITHM_VERSION = "local-analysis-v14"
 
 
 def algorithm_hash() -> str:
@@ -94,6 +94,7 @@ def _analyze_local_bundle(
             hero_class=hero_class if isinstance(hero_class, str) else "",
             display_name=entry["display_name"],
             default_range=default_range,
+            summon_profile=bundle["ai"].get("summon_profile"),
         ),
         is_dual_range=bh.compute_is_dual_range(
             skills,
