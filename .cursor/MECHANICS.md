@@ -28,8 +28,7 @@ same rule on every map:
 - Tile **1** is the deployment tile closest to the map center.
 - Numbers grow with distance from the map center, zig-zagging across the
   rows (not filling one row before the next). Rows are slanted relative to
-  the center, so tile 2 (second row) is closer to the center than tile 3
-  (first row).
+  the center; see the layouts below for the exact order.
 - **Attacking side:** numbering runs right to left, center to border.
 - **Defending side:** the same layout rotated 180° around the map center, so
   numbering runs left to right. Tile 1 is still the tile closest to the
@@ -121,7 +120,7 @@ Every point of vitality, increases the healing and shields that the hero gets. 1
 In order to calculate your chance to crit you take your crit rate - your opponents crit resist. 300 crit against 250 crit defense is a 50% chance to crit the enemy.
 
 **Crit Damage**
-By default crit damage is 150%, and can go up to a maximum of 300% or a minimum of 120%.
+By default crit damage is 150%, and can go up to a maximum of 300% or a minimum of 120%. Exception: enemy-camp crits in Stage, Idol Tower, Dream Boss, Mega Boss and Disaster modes use a fixed 1.03 multiplier.
 
 **Execution**
 Increase in damage to targets below 50% hp. 50 execution is 50% more damage.
@@ -148,10 +147,10 @@ For every point of resilience the duration of debuffs applied to the unit will b
 **Energy on Hit**
 A unit receives a small amount of energy when attacked and each energy on hit point increases the amount of energy received from getting hit by 1%
 
-**Inspiration**
+**Inspiration** (rivalry-only sheet stat)
 For every point of inspiration your team will do 1% more: healing, shielding, extra energy gains and buff effects
 
-**Intimidation**
+**Intimidation** (rivalry-only sheet stat)
 For every point of intimidation the enemy team will do 1% less: healing, shielding, extra energy gains and buff effects
 
 **Buff Effects**
@@ -188,8 +187,11 @@ apply. See the
 - Pandora
 - Saida (if can cc)
 - Mehira
-- Aliceth
 - Gala
+
+Aliceth is not listed: her lost-HP rider is an ordinary hit (shields and
+DEF apply), not direct HP loss. Other HP-loss examples from the docs:
+Frieren (Hellfire) and Contess (Expulsion Notice tick).
 
 Depending on the unit doing pure damage only a few select stats effect it. For Pandora, Phreasto, Ludovic, Harak and Smokey, the only two stats that will increase your pure damage is atk% (pure damage is capped by the units atk) and haste (which will allow you to apply pure damage more often).
 
@@ -233,7 +235,7 @@ one per ally.
 | Rivalry | DMG Boost, DMG Reduction, Energy Regen Reduction |
 | Movement | Movement speed |
 | Energy | Energy gain multipliers and the Energy stat itself |
-| Legacy | Hit and Dodge (not roster stats; no known hero grants them) |
+| Legacy | Hit, Dodge and Crit ratio (not roster stats; no known hero grants them) |
 
 ### Not temporary stat buffs
 
@@ -274,7 +276,8 @@ short ally-applied buff as a trigger.
 ### Open points
 
 - Whether buffs without a source unit (system or battle-start effects) trigger
-  Hero Focus is unclear; treat as not triggering.
+  Hero Focus is untested. The script skips the same-camp check for a nil
+  caster, so they may trigger it. Treat as unknown.
 
 ## Abilities that Applies Temporary Buffs
 
@@ -321,6 +324,10 @@ Phantimals are seasonal allied creatures summoned through **Soul Pact**, which
 replaced Faction Talents. Field three heroes from a faction to unlock that
 faction's Phantimal; Celestials and Hypogeans share one faction pool. Place the
 Phantimal during battle preparation, and it fights as an additional unit.
+
+In seasonal PVP modes (Supreme Arena, Guild Supremacy, Supreme League,
+Clash Fronts, Crystal Clash) Soul Pact also replaces the stat-based Faction
+Bonus. Arena still uses Faction Bonus; Fight Pit and Draft disable it.
 
 Phantimals level through seasonal progression, unlocking or strengthening
 skills. Each can apply a **Spirit Mark** to a position-based ally, granting a
