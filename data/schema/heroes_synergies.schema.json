@@ -80,6 +80,10 @@
         "temp_buff_score": {
           "type": "number",
           "description": "Temporary ally stat buffs enabler component of the score."
+        },
+        "protection_score": {
+          "type": "number",
+          "description": "Protection (ally invincibility / cheat death) component of the score."
         }
       }
     },

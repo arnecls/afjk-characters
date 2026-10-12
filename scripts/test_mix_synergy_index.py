@@ -61,6 +61,15 @@ class MixSynergyIndexTests(unittest.TestCase):
         self.assertEqual(idx["distinctAllies"]["perseus"], 2)
         self.assertEqual(idx["distinctAllies"]["orion"], 2)
 
+    def test_protection_pairs(self) -> None:
+        protection = index()["protection"]
+        self.assertGreater(protection["gwyneth"]["gunnar"], 0)
+        self.assertGreater(protection["frieren"]["alna"], 0)
+        self.assertNotIn("gunnar", protection.get("sylphira", {}))
+        for receivers in protection.values():
+            for value in receivers.values():
+                self.assertGreater(value, 0)
+
     def test_groupers(self) -> None:
         groupers = index()["groupers"]
         self.assertIn("mehira", groupers)
@@ -88,6 +97,7 @@ const index = {
   groupingUplift: { perseus: { estrilda: 2 }, orion: { estrilda: 1 } },
   distinctAllies: { perseus: 2 },
   tempBuff: { perseus: { isabella: 4, other: 3, x: 1 } },
+  protection: { gwyneth: { gunnar: 6 }, frieren: { gunnar: 4 } },
 };
 const no = function () { return false; };
 const out = {
@@ -104,6 +114,12 @@ const out = {
     index, "isabella", ["perseus", "other"], no, 2),
   third: mix.mixDistinctAlliesBonus(
     index, "isabella", ["perseus", "other", "x"], no, 2),
+  protOne: mix.mixProtectionCorrection(index, "gunnar", ["gwyneth"], no, 2),
+  protTwo: mix.mixProtectionCorrection(
+    index, "gunnar", ["gwyneth", "frieren"], no, 2),
+  protMarked: mix.mixProtectionCorrection(
+    index, "gunnar", ["gwyneth", "frieren"],
+    function (s) { return s === "frieren"; }, 2),
 };
 console.log(JSON.stringify(out));
 """
@@ -142,6 +158,13 @@ class MixJsHelperTests(unittest.TestCase):
         self.assertEqual(self.out["first"], 0)
         self.assertEqual(self.out["second"], 2.0)
         self.assertEqual(self.out["third"], 0)
+
+    def test_protection_counts_best_receiver_only(self) -> None:
+        self.assertEqual(self.out["protOne"], 0)
+        # 6 + 4 summed by the base score; only the 6 should remain.
+        self.assertEqual(self.out["protTwo"], -4)
+        # Marked frieren counts 8; gwyneth's 6 is removed.
+        self.assertEqual(self.out["protMarked"], -6)
 
 
 if __name__ == "__main__":

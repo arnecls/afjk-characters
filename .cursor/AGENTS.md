@@ -571,6 +571,18 @@ reviewing or fixing matches, work through both heroes in this order.
    `TEMP_BUFF_WINDOW_SECONDS`), scaled by `TEMP_BUFF_REQUIRE_MULT` (1.0).
    Requires may set `distinct_allies`; the Mix index carries `tempBuff` and
    `distinctAllies`.
+   **Protection:** an automatic path (like enemy defense) credits ally-
+   targeted `Invincibility`, `DMG+CC immunity`, `Fatal blow save` and
+   `Cheat death` provides (`score_protection_synergy` in `scoring.py`).
+   Score = `PROTECTION_BASE_MULT` × tier (one-time saves 0.5×) × carry
+   weight (damage percentile among non-tank/support, 0 below the median) ×
+   fragility multiplier (0.7×–1.3× from roster-wide HP/DEF percentiles in
+   `source.json` `external.stat_ranks.roster_percentiles`). `static-tile-
+   buffer` providers (Gunnar) skip `moving`/`high movement` receivers;
+   receivers tagged `cheat-death`/`invincibility` get half. Only the best
+   effect per pair counts, and Mix keeps only the best protected receiver
+   per provider (`protection` index, `protection_score` pick field).
+   Reason wording: `Protection via <label> (<targeting>, recurring|once)`.
 
 **Units benefitting most from** at the end of each Synergies block is the reverse index:
 heroes who list this unit among their top five synergy partners. When

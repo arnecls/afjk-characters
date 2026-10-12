@@ -236,6 +236,19 @@ MAG_WEIGHT = {"high": 3.0, "average": 2.0, "low": 1.0}
 DAMAGE_DEALER_ROLE = "damage_dealer"
 ENEMY_DEFENSE_BASE_MULT = 2.0
 ENEMY_DEFENSE_SELF_SHRED_MULT = 0.5
+# Protection synergy (ally invincibility / cheat death for fragile carries).
+PROTECTION_BASE_MULT = 16.0
+PROTECTION_ONE_TIME_MULT = 0.5
+PROTECTION_FRAGILITY_MIN = 0.7
+PROTECTION_FRAGILITY_MAX = 1.3
+PROTECTION_CARRY_PCT_FLOOR = 0.5
+PROTECTION_SELF_PROTECTED_MULT = 0.5
+PROTECTION_EXCLUDED_ROLES = frozenset({"tank", "support"})
+PROTECTION_SELF_TAGS = frozenset({"cheat-death", "invincibility"})
+# Providers whose "invincible" ally cannot act while protected.
+PROTECTION_EXCLUDED_PROVIDERS = frozenset({"pandora"})
+_PROTECTION_ONE_TIME_LABELS = frozenset({"Fatal blow save", "Cheat death"})
+_PROTECTION_WINDOW_LABELS = frozenset({"Invincibility", "DMG+CC immunity"})
 _TRUE_FAMILY_DAMAGE_KEYS = frozenset(
     {"True damage", "HP loss", "true", "hp_loss"}
 )
@@ -1207,6 +1220,111 @@ def score_enemy_defense_synergy(
     return (pts, [f"Enemy defense via {detail}"])
 
 
+def provider_protection_effects(provider: HeroRecord) -> list[tuple[str, bool]]:
+    """Ally-targeted protection a provider grants: (label, one_time).
+
+    Window labels (Invincibility, DMG+CC immunity) count as one-time when
+    the provider has a fatal-blow save or cheat death at the same tier,
+    because the window is then the save's aftermath (Aliceth).
+    """
+    provider = _as_mapping(provider)
+    if provider.get("id") in PROTECTION_EXCLUDED_PROVIDERS:
+        return []
+    rows = [
+        s
+        for s in provider.get("special_effects") or []
+        if s["kind"] == "provides"
+        and s["targeting"] != "Self"
+        and s["label"] in _PROTECTION_ONE_TIME_LABELS | _PROTECTION_WINDOW_LABELS
+    ]
+    save_tiers = {
+        s["tier"] for s in rows if s["label"] in _PROTECTION_ONE_TIME_LABELS
+    }
+    found: list[tuple[str, bool]] = []
+    for row in rows:
+        once = row["label"] in _PROTECTION_ONE_TIME_LABELS or (
+            row["tier"] in save_tiers
+        )
+        found.append((row["label"], once))
+    return found
+
+
+def protection_carry_weights(
+    heroes: Mapping[str, HeroRecord],
+) -> dict[str, float]:
+    """0..1 carry weight from damage-profile percentile among damage roles."""
+    totals = {
+        key: sum((hero.get("replacement_damage") or {}).values())
+        for key, hero in heroes.items()
+        if hero.get("role_category") not in PROTECTION_EXCLUDED_ROLES
+    }
+    ordered = sorted(totals, key=lambda key: (totals[key], key))
+    count = len(ordered)
+    weights = {key: 0.0 for key in heroes}
+    if count < 2:
+        return weights
+    floor = PROTECTION_CARRY_PCT_FLOOR
+    for index, key in enumerate(ordered):
+        pct = index / (count - 1)
+        weights[key] = max(0.0, (pct - floor) / (1.0 - floor))
+    return weights
+
+
+def protection_fragility_mult(fragility: float | None) -> float:
+    """Linear MIN (tankiest) .. MAX (most fragile); neutral when unknown."""
+    if fragility is None:
+        return 1.0
+    clamped = min(1.0, max(0.0, float(fragility)))
+    return PROTECTION_FRAGILITY_MIN + clamped * (
+        PROTECTION_FRAGILITY_MAX - PROTECTION_FRAGILITY_MIN
+    )
+
+
+def score_protection_synergy(
+    provider: HeroRecord,
+    receiver: HeroRecord,
+    receiver_movement: str = "",
+) -> tuple[float, list[str]]:
+    """Automatic ally invincibility / cheat-death credit for fragile carries."""
+    provider = _as_mapping(provider)
+    receiver = _as_mapping(receiver)
+    if _is_same_hero(provider, receiver):
+        return (0.0, [])
+    carry = float(receiver.get("carry_weight") or 0.0)
+    if carry <= 0:
+        return (0.0, [])
+    if (
+        receiver_movement in MOVING_RECEIVER_MOVEMENTS
+        and _provider_has_static_tile_buffer_tag(provider)
+    ):
+        return (0.0, [])
+    effects = provider_protection_effects(provider)
+    if not effects:
+        return (0.0, [])
+    best: tuple[str, bool] | None = None
+    for label, once in effects:
+        if best is None or (best[1] and not once):
+            best = (label, once)
+    assert best is not None
+    label, once = best
+    tier = PROTECTION_ONE_TIME_MULT if once else 1.0
+    score = (
+        PROTECTION_BASE_MULT
+        * tier
+        * carry
+        * protection_fragility_mult(receiver.get("fragility"))
+    )
+    if receiver.get("behavior_tags", frozenset()) & PROTECTION_SELF_TAGS:
+        score *= PROTECTION_SELF_PROTECTED_MULT
+    targeting = next(
+        s["targeting"]
+        for s in provider["special_effects"]
+        if s["kind"] == "provides" and s["label"] == label
+    )
+    kind = "once" if once else "recurring"
+    return (score, [f"Protection via {label} ({targeting.lower()}, {kind})"])
+
+
 def match_ranged_damage_allies(
     provider: HeroRecord, hero_class: str = ""
 ) -> tuple[float, str] | None:
@@ -2119,6 +2237,9 @@ def score_combined_synergy(
         provider, receiver, role_category
     )
     named_score, named_reasons = score_named_ally_provides(provider, receiver)
+    prot_score, prot_reasons = score_protection_synergy(
+        provider, receiver, receiver_movement
+    )
     return (
         buff_score
         + zone_score
@@ -2126,14 +2247,16 @@ def score_combined_synergy(
         + summon_score
         + en_score
         + def_score
-        + named_score,
+        + named_score
+        + prot_score,
         buff_reasons
         + zone_reasons
         + early_reasons
         + summon_reasons
         + en_reasons
         + def_reasons
-        + named_reasons,
+        + named_reasons
+        + prot_reasons,
     )
 
 
@@ -2197,6 +2320,9 @@ def synergy_pair_extras(
     )
     if temp_score > 0:
         extras["temp_buff_score"] = temp_score
+    protection, _ = score_protection_synergy(provider, receiver, movement)
+    if protection > 0:
+        extras["protection_score"] = protection
     return extras
 
 
@@ -3550,8 +3676,30 @@ def load_scoring_inputs(
             },
             signature_section=str(scoring.get("signature_section") or ""),
             named_grants=scoring.get("named_grants") or {},
+            fragility=_fragility_from_source(snapshot, entry["id"]),
         )
+    for key, weight in protection_carry_weights(heroes).items():
+        heroes[key]["carry_weight"] = weight
     return heroes, behaviors
+
+
+def _fragility_from_source(
+    snapshot: Mapping[str, Any], hero_id: str
+) -> float | None:
+    """1 - mean(HP pct, mean(Phys DEF pct, Magic DEF pct)), or None."""
+    bundle = (snapshot.get("bundles") or {}).get(hero_id) or {}
+    ranks = ((bundle.get("source") or {}).get("external") or {}).get(
+        "stat_ranks"
+    ) or {}
+    pct = ranks.get("roster_percentiles")
+    if not pct:
+        return None
+    hp = pct.get("HP")
+    phys = pct.get("Phys DEF")
+    magic = pct.get("Magic DEF")
+    if hp is None or phys is None or magic is None:
+        return None
+    return 1.0 - (float(hp) + (float(phys) + float(magic)) / 2.0) / 2.0
 
 
 def score_all(

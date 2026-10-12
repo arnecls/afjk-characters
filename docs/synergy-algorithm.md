@@ -11,7 +11,9 @@ The algorithm evaluates every possible pair of heroes and scores their synergy b
 2. **Summon Buffs**: The provider buffs allied summons, and the receiver is a hero who fields summons.
 3. **Enablers**: The provider satisfies a specific mechanical requirement of the receiver (e.g., applying debuffs for a hero who deals extra damage to debuffed targets).
 
-The final synergy score is the sum of these three paths. The top 5 highest-scoring providers are listed under the receiver's **"Units improving X"** section.
+Two automatic paths need no receiver requirement: enemy-defense reduction for damage dealers, and **Protection** (ally invincibility or cheat death for fragile carries, see [Protection](#protection-invincibility-and-cheat-death)).
+
+The final synergy score is the sum of these paths. The top 5 highest-scoring providers are listed under the receiver's **"Units improving X"** section.
 
 ---
 
@@ -152,6 +154,40 @@ providers whose ally buffs are temporary.
   that many different allies. In Mix mode the second provider counts at 1.5×.
   The Mix index carries `tempBuff` (pick field `temp_buff_score`) and
   `distinctAllies`.
+
+### Protection (Invincibility and Cheat Death)
+
+An automatic path (no `special_requires` entry) for providers that keep an
+ally alive: ally-targeted `Invincibility`, `DMG+CC immunity`, `Fatal blow
+save` or `Cheat death` provides (Gunnar, Alna, Aliceth, Ravion, Hepler). A
+provider whose protected ally cannot act (Pandora) is excluded through
+`PROTECTION_EXCLUDED_PROVIDERS`. Revives and spirit forms do not count.
+Only the best effect per pair scores; effects do not add up.
+
+Score = `PROTECTION_BASE_MULT` × tier × carry weight × fragility multiplier
+× self-protected multiplier.
+
+- **Tier**: recurring protection is 1.0×. One-time protection (`Fatal blow
+  save`, `Cheat death`, or a window granted at the same tier as one) is
+  `PROTECTION_ONE_TIME_MULT` (0.5×).
+- **Carry weight**: the receiver's total `replacement_damage` percentile among
+  heroes that are not `tank` or `support`. It is 0 at or below the 50th
+  percentile and rises linearly to 1.0 for the top hero. Tanks and supports
+  get 0.
+- **Fragility**: `1 - mean(HP percentile, mean(Phys DEF, Magic DEF
+  percentile))`, using roster-wide percentiles from `source.json`
+  `external.stat_ranks.roster_percentiles` (exported by afkj-data). The
+  multiplier runs linearly from 0.7× (tankiest) to 1.3× (most fragile) and is
+  neutral when the data is missing.
+- **Movement**: providers with the `static-tile-buffer` tag (Gunnar) give no
+  credit to `moving` or `high movement` receivers.
+- **Self-protected receivers**: heroes tagged `cheat-death` or `invincibility`
+  get `PROTECTION_SELF_PROTECTED_MULT` (0.5×).
+- **Reason**: `Protection via <label> (<targeting>, recurring|once)`.
+
+A protector covers one ally. The Mix index carries `protection` (pick field
+`protection_score`), and Mix mode keeps only the provider's best protected
+receiver on the team (`mixProtectionCorrection`).
 
 ---
 

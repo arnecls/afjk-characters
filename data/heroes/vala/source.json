@@ -267,6 +267,11 @@
         "Magic DEF": "low",
         "Haste": "high",
         "ATK SPD": "low"
+      },
+      "roster_percentiles": {
+        "HP": 0.3203,
+        "Phys DEF": 0.0703,
+        "Magic DEF": 0.0469
       }
     }
   }

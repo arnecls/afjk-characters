@@ -374,7 +374,14 @@
             ],
             "summon_effects": [],
             "immunities": [],
-            "special_provides": [],
+            "special_provides": [
+              {
+                "label": "Fatal blow save",
+                "tier": "ex+10",
+                "targeting": "Multiple targets",
+                "description": "When Ravion or an ally with their Objective takes a fatal blow, Life Saver is triggered to prevent their defeat, granting a shield and Life Drain."
+              }
+            ],
             "special_requires": []
           }
         }

@@ -35,6 +35,7 @@ class SynergyPolicy(TypedDict, total=False):
     energy_synergy_score_mult: float
     high_damage_ult_energy_pref_mult: float
     implicit_fuel_base: float
+    protection: dict[str, float]
     early_battle_energy_ult_mult: dict[str, float]
     defining_tier_score_mult: dict[str, float]
     proximity_melee_max_range: float
@@ -135,6 +136,14 @@ def effective_defaults() -> PipelinePolicy:
             "energy_synergy_score_mult": 0.72,
             "high_damage_ult_energy_pref_mult": 2.25,
             "implicit_fuel_base": 0.45,
+            "protection": {
+                "base_mult": 16.0,
+                "one_time_mult": 0.5,
+                "fragility_min": 0.7,
+                "fragility_max": 1.3,
+                "carry_pct_floor": 0.5,
+                "self_protected_mult": 0.5,
+            },
             "early_battle_energy_ult_mult": {
                 "slow": 1.25,
                 "average": 1.0,

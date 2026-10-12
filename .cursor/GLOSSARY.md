@@ -931,6 +931,29 @@ Also see:
 - [receiver](#receiver)
 - [enabler](#enabler)
 
+## protection synergy
+
+Automatic synergy path that credits providers of ally invincibility or cheat
+death (Gunnar, Alna, Aliceth, Ravion, Hepler) for receivers that are strong
+carries and fragile (low roster-wide HP and DEF). It needs no
+`special_requires` entry. Gunnar-style `static-tile-buffer` providers give
+nothing to moving receivers, one-time saves score half, and Mix mode counts
+only the provider's best protected receiver. Reason pills read `Protection
+via <label> (<targeting>, recurring|once)`.
+
+Used in:
+
+- [Synergy algorithm](docs/synergy-algorithm.md)
+- [Synergy scoring](scripts/hero_pipeline/relationships/scoring.py)
+- [Mix mode view](site/js/src/views-mix.js)
+
+Also see:
+
+- [synergy](#synergy)
+- [movement](#movement)
+- [static-tile-buffer](#static-tile-buffer)
+- [Anti Crowd-control](#anti-crowd-control)
+
 ## provider
 
 The hero supplying a buff, summon buff, damage type, CC, or special mechanic in

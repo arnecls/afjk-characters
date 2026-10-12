@@ -134,6 +134,12 @@ class HeroRecord(TypedDict, total=False):
     summon_profile: dict[str, Any]
     effective_ally_energy: float
     atk_dependency: float
+    # 0 (tankiest) .. 1 (most fragile); roster-wide HP and DEF percentiles.
+    # None when the source data has no percentiles.
+    fragility: float | None
+    # 0..1 damage-profile percentile among non-tank/support heroes
+    # (0 below the median); set by the scoring loader.
+    carry_weight: float
 
 
 class HeroBehaviorRecord(TypedDict, total=False):

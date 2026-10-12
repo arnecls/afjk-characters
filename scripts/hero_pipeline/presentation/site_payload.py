@@ -294,6 +294,7 @@ def build_mix_synergy_index(view: Mapping[str, Any]) -> dict[str, Any]:
     by_receiver: dict[str, dict[str, float]] = {}
     grouping_uplift: dict[str, dict[str, float]] = {}
     temp_buff: dict[str, dict[str, float]] = {}
+    protection: dict[str, dict[str, float]] = {}
     distinct_allies: dict[str, int] = {}
     groupers: list[str] = []
     for hero in view["heroes"]:
@@ -318,6 +319,13 @@ def build_mix_synergy_index(view: Mapping[str, Any]) -> dict[str, Any]:
         }
         if temps:
             temp_buff[slug] = temps
+        prots = {
+            pick["slug"]: round(float(pick["protection_score"]), 4)
+            for pick in picks
+            if float(pick.get("protection_score") or 0) > 0
+        }
+        if prots:
+            protection[slug] = prots
         needed = max(
             (
                 int(special["distinct_allies"])
@@ -335,6 +343,7 @@ def build_mix_synergy_index(view: Mapping[str, Any]) -> dict[str, Any]:
         "byReceiver": by_receiver,
         "groupingUplift": grouping_uplift,
         "tempBuff": temp_buff,
+        "protection": protection,
         "distinctAllies": distinct_allies,
         "groupers": sorted(groupers),
     }

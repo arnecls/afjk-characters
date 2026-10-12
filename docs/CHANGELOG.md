@@ -4,6 +4,28 @@
 
 ### Fixes and improvements
 
+- Synergy: added the Protection path. Providers of ally invincibility or
+  cheat death (Gunnar, Alna, Aliceth, Ravion, Hepler) now score for strong,
+  fragile carries such as Gwyneth and Frieren. The score combines the
+  receiver's damage percentile (among non-tank and non-support heroes), its
+  fragility from roster-wide HP and DEF percentiles (0.7x to 1.3x), and the
+  protection tier (one-time saves count half). Gunnar gives no credit to
+  moving receivers, and receivers that already protect themselves get half.
+  Mix mode counts only a protector's best protected receiver. The afkj-data
+  exporter now writes `roster_percentiles` into `source.json`. Ravion's
+  EX+10 now provides `Fatal blow save`, and Evie's reveal text is no longer
+  an ally provide.
+- Synergy: Protection details. The path is automatic and needs no
+  `special_requires` entry. Only the best effect per pair scores. The base
+  multiplier (`PROTECTION_BASE_MULT`) is 16. Pandora is excluded because her
+  protected ally cannot act, and revives and spirit forms do not count. The
+  reason reads `Protection via <label> (<targeting>, recurring|once)`. The
+  Mix index carries `protection` (pick field `protection_score`), and the
+  synergies schema allows the new field. Gunnar now appears for Gwyneth, Alna
+  for Frieren and Sylphira, and Gunnar gives nothing to moving carries.
+- Tests and docs: added `scripts/test_protection_synergy.py`, extended
+  `scripts/test_mix_synergy_index.py`, and documented the path in
+  `docs/synergy-algorithm.md`, `.cursor/AGENTS.md` and `.cursor/GLOSSARY.md`.
 - Synergy: added buff zones. Ally buffs for a zone the provider places (for
   example Estrilda's Pennon of Valor) carry a `zone_anchor`. The receiver's
   battlefield position decides how much of the zone it stands in

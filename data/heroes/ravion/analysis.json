@@ -621,7 +621,14 @@
       }
     },
     "synergy_profile": {
-      "provides": [],
+      "provides": [
+        {
+          "label": "Fatal blow save",
+          "tier": "ex+10",
+          "targeting": "Multiple targets",
+          "description": "When Ravion or an ally with their Objective takes a fatal blow, Life Saver is triggered to prevent their defeat, granting a shield and Life Drain."
+        }
+      ],
       "requires": [
         {
           "label": "Boss encounter",
@@ -870,7 +877,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "5600a35ec10348868ba49c717d65f2145b321c92ed285010b208449db9ae92a9",
-    "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
+    "inputs_hash": "002632dd9995337cef208dddc2499e5eb278128c8a5faf1b3b3895ede32cb256",
+    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
   }
 }

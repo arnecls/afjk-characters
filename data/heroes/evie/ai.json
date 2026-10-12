@@ -76,7 +76,7 @@
               {
                 "label": "Invincibility",
                 "tier": "base",
-                "targeting": "All units",
+                "targeting": "Self",
                 "description": "When her Detection reaches 1000, or if all allies are defeated, Evie is revealed and no longer invincible."
               }
             ],
