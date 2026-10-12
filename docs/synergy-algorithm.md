@@ -56,7 +56,7 @@ Heroes rely heavily on their "Signature Skill" (often their Ultimate). If a rece
 *Note: Energy recovery has a global 0.72× penalty to prevent "battery" heroes (like Rowan) from dominating every single synergy list.*
 
 ### High-Damage Ultimate Carries
-Heroes tagged **`high-damage-ult`** whose ultimate is their main damage spike—but who lack **`high-initial-energy`** or **`battle-start-ult`**—benefit more from ally Energy than from comparable Haste. For these receivers only, ally Energy (ongoing buffs and battle-start grants) receives an extra **2.25×** multiplier so batteries rank above Haste providers when effects are otherwise similar. Stronger Haste buffs or multi-effect providers can still win overall.
+Heroes tagged **`high-damage-ult`** whose ultimate is their main damage spike—but who lack **`high-initial-energy`** or **`battle-start-ult`**—benefit more from ally Energy than from comparable Haste. For these receivers only, ally Energy (ongoing buffs and battle-start grants) receives an extra **2.25×** multiplier and is exempt from the 0.45× implicit-fuel penalty (Haste is not penalised either) so batteries rank above Haste providers when effects are otherwise similar. Stronger Haste buffs or multi-effect providers can still win overall.
 
 Current tagged examples: Frieren, Marcille, Shemira. Natsu has both `high-damage-ult` and `high-initial-energy`, so this preference does not apply.
 
@@ -64,8 +64,6 @@ Current tagged examples: Frieren, Marcille, Shemira. Natsu has both `high-damage
 How much a hero gains from an ATK buff depends on how strongly its skills scale on ATK. The scoring fact `atk_dependency` sums every `N% (ATK-based)` percentage in the base skill descriptions. A sentence is multiplied by its explicit `K times` hit count (default 1). Upgrade lines and companion-only sentences are not counted.
 
 ATK multiplier = `1 + min(1, atk_dependency / 1500)`, i.e. 1.0× (no ATK scaling) up to a hard cap of **2.0×**. Heroes with many ATK-scaled skills or high percentages (e.g. Perseus, Estrilda) reach the cap; heroes whose kit barely uses ATK (e.g. Mikola) stay near 1.0×. Max HP buffs keep the share-based boost (`SCALAR_SHARE_BOOST`).
-
-Because Haste is no longer penalised as implicit fuel, the Energy preference of `high-damage-ult` receivers (below) only outranks Haste of lower magnitude.
 
 ### Implicit Fuel
 Even if a hero doesn't explicitly list Energy or ATK SPD as a needed stat, if their signature skill is slow or average, the algorithm will still value these buffs at a reduced rate (0.45× base) because every hero benefits from casting their main skill faster.

@@ -2905,11 +2905,11 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Twins**.
   - ATK (single target, high)
   - Energy (single target, low) `signature fuel`
   - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Carolina**
-  - Enemy defense via Magic DEF debuff (area, average)
 - **Rowan**
   - Energy (area, high) `signature fuel`
   - Energy via Energy recovery (energy potion, start of battle) `signature fuel`
+- **Carolina**
+  - Enemy defense via Magic DEF debuff (area, average)
 - **Lyca**
   - Energy (all units, average) `signature fuel`
   - ATK SPD (all units, average) `signature fuel`
@@ -6451,15 +6451,15 @@ Common buffers are **Ravion**, **Twins**, **Smokey & Meerky**, or **Rolan**.
 
 Hugin provides ATK to single targets `low`, Energy to single targets `average` — conditional (frequent), Haste to single targets `high`, Shield to multiple targets `high`, and Damage taken (Supreme+) to single targets `average`.
 
-**26** units include this provider among their top 6 synergy partners. Why the match is common:
+**27** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 
 These are the **4** strongest pairings: 
 
-- Koko (4.1 / 5)
 - Viperian (2.9 / 5)
+- Cryonaia (2.6 / 5)
 - Silven (2.6 / 5)
 - Marcille (2.6 / 5)
 
@@ -7863,7 +7863,7 @@ These are the **4** strongest pairings:
 - Eryndor (3.7 / 5)
 - Bryon (3.5 / 5)
 - Arden (3.5 / 5)
-- Cryonaia (3.2 / 5)
+- Cryonaia (2.9 / 5)
 
 ### Units that can act as a replacement for Kruger
 
@@ -12099,8 +12099,8 @@ Common buffers are **Rolan**, **Solise**, **Twins**, or **Pandora**.
 Phraesto provides Damage taken to single targets `low`, Energy to single targets `average`, Energy Recovery to single targets `high`, and Shield to single targets `low`.
 
 - Nerion (1.9 / 5)
+- Cryonaia (1.9 / 5)
 - Shemira (1.9 / 5)
-- Marcille (1.5 / 5)
 
 ### Units that can act as a replacement for Phraesto
 
@@ -13952,7 +13952,7 @@ Shadewing also requires units **dealing continuous damage** to enemies
 
 ### Units benefitting most from Shadewing
 
-**27** units include this provider among their top 6 synergy partners. Why the match is common:
+**26** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 

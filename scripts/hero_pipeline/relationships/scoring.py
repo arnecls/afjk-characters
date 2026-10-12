@@ -1938,9 +1938,10 @@ def _score_synergy_detail(
                     continue
                 pts *= ENERGY_SYNERGY_SCORE_MULT
                 pts *= SIGNATURE_FUEL_ENERGY_MULT.get(signature_speed, 1.0)
-                if receiver_prefers_ultimate_energy(receiver):
+                prefers_ult_energy = receiver_prefers_ultimate_energy(receiver)
+                if prefers_ult_energy:
                     pts *= HIGH_DAMAGE_ULT_ENERGY_PREF_MULT
-                if is_implicit:
+                if is_implicit and not prefers_ult_energy:
                     pts *= IMPLICIT_FUEL_BASE
             elif effect["label"] in SIGNATURE_FUEL_LABELS:
                 pts *= fuel_mult
