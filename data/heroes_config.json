@@ -1,4 +1,8 @@
 {
+  "hidden_behavior_tags": [
+    "ally-adjacent-placer",
+    "ally-behind-placer"
+  ],
   "synergy_weights": {
     "targeting_weight": {
       "All units": 5.0,

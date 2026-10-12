@@ -465,6 +465,10 @@ minor skill effect.
   self-survival.
 - self-repositioner: Regularly moves self across the grid via jumps, dashes, or teleports.
 - static-tile-buffer: Buffs an ally only while they remain on a specific placement tile.
+- ally-behind-placer (hidden): Needs an ally placed directly behind this hero
+  at battle prep (Thador, Thoran, Daimon, Lucca). Used for scoring only.
+- ally-adjacent-placer (hidden): Blesses or marks an adjacent ally and
+  prefers the one behind (Faramor, Niru, Cassadee, Galahad). Scoring only.
 - stealth: Enters hidden or untargetable states to avoid focus or enable picks.
 - summoner: Fields battlefield summons — independently acting combat units
   placed on or remaining on the battlefield beyond the cast animation.
@@ -591,6 +595,15 @@ reviewing or fixing matches, work through both heroes in this order.
    buffers cannot stand behind each other) and credits the candidate's
    marginal gain (`mixTileBuffCorrection`).
    Reason wording: `Protection via <label> (<targeting>, recurring|once)`.
+   **Rearmost buffs:** Pandora and Ravion buff the rearmost allies (labels in
+   `REARMOST_BUFF_LABELS`, `scoring.py`). Receivers tagged
+   `static-tile-buffer` or `ally-behind-placer` rarely stand rearmost, so the
+   rearmost part of the pair score is multiplied by 0.1
+   (`REARMOST_UNLIKELY_FACTOR`). `ally-adjacent-placer` gets no penalty.
+   Tags listed in `hidden_behavior_tags` in `heroes_config.json`
+   (`ally-behind-placer`, `ally-adjacent-placer`) are hidden for all heroes.
+   They drive scoring only and are removed from rendered views
+   (`hero_pipeline/hidden_tags.py`).
 
 **Units benefitting most from** at the end of each Synergies block is the reverse index:
 heroes who list this unit among their top five synergy partners. When

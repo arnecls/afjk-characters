@@ -338,6 +338,7 @@
     }
   },
   "behavior_tags": [
+    "ally-adjacent-placer",
     "ally-shielder",
     "aoe-damage",
     "backline-inhibit",

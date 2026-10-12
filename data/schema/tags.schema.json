@@ -17,6 +17,8 @@
     "behaviorTag": {
       "type": "string",
       "enum": [
+        "ally-adjacent-placer",
+        "ally-behind-placer",
         "ally-buffer",
         "ally-healer",
         "ally-shielder",

@@ -393,6 +393,7 @@
     }
   },
   "behavior_tags": [
+    "ally-behind-placer",
     "ally-shielder",
     "high-initial-energy",
     "interrupt"

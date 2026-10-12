@@ -4,6 +4,23 @@
 
 ### New Features
 
+- Synergy: added the rearmost buff penalty. Pandora and Ravion give buffs to
+  the rearmost allies. A hero with an ally directly behind it is rarely
+  rearmost. That hero now gets 10% of the rearmost part of the score.
+- Rearmost buff special cases:
+  - Receivers with a penalty: Gunnar, Hugin, Thador, Thoran, Daimon and
+    Lucca.
+  - Faramor, Niru, Cassadee and Galahad get no penalty. They can pick an
+    ally in front.
+  - Evie gets no penalty. Her quill moves to the ally with the highest
+    damage after 3s.
+  - The penalty applies only to the rearmost buffs. Other effects of the
+    provider keep their score.
+  - Dunlingr is not modelled yet.
+- Added two behavior tags, `ally-behind-placer` and `ally-adjacent-placer`.
+  The list `hidden_behavior_tags` in `heroes_config.json` hides tags for all
+  heroes. Hidden tags stay in the data and in scoring. They do not show in
+  the overview, the CSV or the site.
 - Synergy: added the Protection path. A hero that gives an ally
   invincibility or cheat death now scores for strong, fragile carries.
   Examples of providers: Gunnar, Alna, Aliceth, Ravion, Hepler. Examples of
@@ -58,6 +75,19 @@
 
 ### Character changes
 
+#### Rearmost buffs
+
+| Character | What changed |
+|---|---|
+| gunnar, hugin | - Score from Pandora and Ravion is 10% of the rearmost part |
+| thador, thoran, daimon, lucca | - Added tag `ally-behind-placer`<br>- Score from Pandora and Ravion is 10% of the rearmost part |
+| faramor, niru, cassadee, galahad | - Added tag `ally-adjacent-placer`<br>- Scores do not change |
+
+Examples of new scores: Thador from Ravion 13.62 to 1.36. Hugin from Ravion
+16.86 to 1.69. Gunnar from Pandora 16.52 to 8.42. Gunnar keeps more score
+because his other effects are not rearmost buffs. No other pair score
+changes.
+
 #### Buff zones and requirements
 
 | Character | What changed |
@@ -78,6 +108,17 @@
 
 ### Implementation changes
 
+- Added `REARMOST_BUFF_LABELS`, `REARMOST_UNLIKELY_TAGS` and
+  `REARMOST_UNLIKELY_FACTOR` (0.1) to `scoring.py`. A label applies to all
+  skills of the provider, as with `STATIC_TILE_BUFF_LABELS`.
+- `score_combined_synergy` scores the provider with and without its
+  rearmost buffs. The result is the score without them plus 0.1 times the
+  difference. `temp_buff_score` uses the same split.
+- Added `scripts/hero_pipeline/hidden_tags.py`. It reads
+  `hidden_behavior_tags` from the config. The projection step removes hidden
+  tags from the views. The replacement scoring ignores them for Similar
+  Skills.
+- Added `scripts/test_rearmost_penalty.py`.
 - The Protection path is automatic. It needs no `special_requires` entry.
 - The constant `PROTECTION_BASE_MULT` is 16.
 - The Mix index has the new fields `protection`, `groupingUplift`,

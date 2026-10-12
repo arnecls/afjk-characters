@@ -3189,7 +3189,7 @@ Common buffers are **Rolan**, **Solise**, **Contess**, or **Twins**.
 
 Daimon provides ATK to single targets `high`, Lifedrain to single targets `low`, and Shield to multiple targets `low`.
 
-**35** units include this provider among their top 6 synergy partners. Why the match is common:
+**36** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -4048,7 +4048,7 @@ Common buffers are **Shadewing**, **Kruger**, **Laios**, or **Twins**.
 
 Estrilda provides ATK (Mythic+) in an area `high` and Damage taken (Mythic+) in an area `average`.
 
-**8** units include this provider among their top 6 synergy partners. Why the match is common:
+**9** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -5321,16 +5321,12 @@ scorched area enemies cannot heal or gain shields
 Look for units providing: `ATK SPD / Haste` `Shield` `Physical DEF`  
 Common buffers are **Twins**, **Mikola**, **Rolan**, or **Parisa**.
 
-- **Pandora**
-  - ATK (single target, high)
-  - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
-- **Ravion**
-  - ATK SPD via Haste (multiple targets, average) `signature fuel`
-  - ATK (multiple targets, high)
-  - Energy via Energy recovery (150 early objective, multiple targets) `signature fuel`
 - **Sonja**
   - DEF (multiple targets, average)
   - ATK (multiple targets, average)
+- **Pandora**
+  - ATK (single target, high)
+  - Energy via Energy recovery (1000 at battle start, single target) `signature fuel`
 - **Rowan**
   - Phys DEF (single target, average)
   - Energy via Energy recovery (energy potion, start of battle) `signature fuel`
@@ -5340,6 +5336,10 @@ Common buffers are **Twins**, **Mikola**, **Rolan**, or **Parisa**.
 - **Dunlingr**
   - ATK SPD (all units, average) `signature fuel`
   - ATK (single target, low)
+- **Fay**
+  - ATK SPD (arc, low) `signature fuel`
+  - Phys DEF (single target, low)
+  - ATK (arc, low)
 
 ### Units benefitting most from Gunnar
 
@@ -6453,7 +6453,7 @@ shielded allies reduce their damage taken
 ### Units improving Hugin
 
 Look for units providing: `Haste` `Energy`  
-Common buffers are **Ravion**, **Twins**, **Smokey & Meerky**, or **Rolan**.
+Common buffers are **Twins**, **Smokey & Meerky**, **Rolan**, or **Lorsan**.
 
 - **Hewynn**
   - Haste (single target, average) `signature fuel`
@@ -6476,7 +6476,7 @@ Common buffers are **Ravion**, **Twins**, **Smokey & Meerky**, or **Rolan**.
 
 Hugin provides ATK to single targets `low`, Energy to single targets `average` — conditional (frequent), Haste to single targets `high`, Shield to multiple targets `high`, and Damage taken (Supreme+) to single targets `average`.
 
-**26** units include this provider among their top 6 synergy partners. Why the match is common:
+**27** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -8828,7 +8828,7 @@ recover HP when casting cleanse skill
 ### Units improving Lucca
 
 Look for units providing: `Max HP` `Shield`  
-Common buffers are **Rolan**, **Solise**, **Ravion**, or **Twins**.
+Common buffers are **Rolan**, **Solise**, **Twins**, or **Contess**.
 
 - **Kordan**
   - ATK (area, average)
@@ -10147,7 +10147,7 @@ Common buffers are **Twins**, **Rolan**, **Lorsan**, or **Parisa**.
 
 Mikola provides ATK to all units `average`, Direct healing to multiple targets `high`, Haste to multiple targets `high`, Healing over time to all units `low`, Magic DEF to multiple targets `average`, Phys DEF to multiple targets `average`, Ranged DEF to multiple targets `average`, and Vitality (EX+10) to multiple targets `high`.
 
-**67** units include this provider among their top 6 synergy partners. Why the match is common:
+**68** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on all allies fuel slow signature skills via the signature-fuel weight
 
@@ -11357,7 +11357,7 @@ Common buffers are **Ravion**, **Twins**, **Smokey & Meerky**, or **Rolan**.
 
 Pandora provides ATK to single targets `high`, Direct healing to single targets `high`, Energy to single targets `high`, and Invincible to single targets `high`.
 
-**97** units include this provider among their top 6 synergy partners. Why the match is common:
+**94** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
 - **Energy at battle start** (or right after) accelerates early Ultimate access for slow-ultimate units
@@ -11672,7 +11672,7 @@ Common buffers are **Gunnar**, **Twins**, **Smokey & Meerky**, or **Rolan**.
 
 Parisa provides ATK to multiple targets `high` and ATK SPD to multiple targets `low`.
 
-**34** units include this provider among their top 6 synergy partners. Why the match is common:
+**37** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -12419,7 +12419,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, **Rolan**, or **Lorsan**.
 
 Ravion provides ATK to multiple targets `high`, Energy to multiple targets `average`, Haste (Mythic+) to multiple targets `average`, Lifedrain (EX+10) to single targets `low` — conditional (rare), and Shield (EX+10) to single targets `low` — conditional (rare).
 
-**120** units include this provider among their top 6 synergy partners. Why the match is common:
+**114** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 - **Energy recovery** helps slow-ultimate units reach their first Ultimate sooner
@@ -14126,7 +14126,7 @@ Common buffers are **Rolan**, **Twins**, **Solise**, or **Lorsan**.
 
 Shakir provides Damage taken in an area `low` and Haste in an area `average`.
 
-**23** units include this provider among their top 6 synergy partners. Why the match is common:
+**24** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - **Haste** / **ATK SPD** buffs on multiple allies fuel slow signature skills via the signature-fuel weight
 
@@ -15096,7 +15096,7 @@ Common buffers are **Rolan**, **Twins**, **Ravion**, or **Lorsan**.
 
 Sonja provides ATK to multiple targets `average`, DEF to multiple targets `average`, and Magic DEF to multiple targets `low`.
 
-**13** units include this provider among their top 6 synergy partners. Why the match is common:
+**14** units include this provider among their top 6 synergy partners. Why the match is common:
 
 - ally buffs or enablers that match many receivers' benefit stats or Requires labels
 
@@ -16001,7 +16001,7 @@ passive HP regeneration while bonded ally is alive
 ### Units improving Thador
 
 Look for units providing: `Max HP` `CRIT`  
-Common buffers are **Rolan**, **Ravion**, **Twins**, or **Solise**.
+Common buffers are **Rolan**, **Twins**, **Solise**, or **Parisa**.
 
 - **Mikola**
   - ATK (all units, high)
@@ -16151,7 +16151,7 @@ ultimate additionally drains HP from enemy
 ### Units improving Thoran
 
 Look for units providing: `Max HP` `Energy`  
-Common buffers are **Rolan**, **Ravion**, **Solise**, or **Twins**.
+Common buffers are **Rolan**, **Solise**, **Twins**, or **Contess**.
 
 - **Kordan**
   - ATK (area, average)

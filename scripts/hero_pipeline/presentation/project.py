@@ -12,6 +12,7 @@ from healing_types import (
     healing_type_display,
 )
 
+from ..hidden_tags import visible_behavior_tags
 from ..contracts import (
     CalibratedAnalysis,
     GeneratedSynergies,
@@ -669,7 +670,7 @@ def project_roster(
                 "analysis": cast(CalibratedAnalysis, analysis),
                 "synergies": cast(GeneratedSynergies, stored),
                 "curated": {
-                    "behavior_tags": copy.deepcopy(
+                    "behavior_tags": visible_behavior_tags(
                         bundle["ai"].get("behavior_tags") or []
                     ),
                     "skill_summaries": copy.deepcopy(

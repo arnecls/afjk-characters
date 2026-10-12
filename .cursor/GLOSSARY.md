@@ -1470,3 +1470,18 @@ Also see:
 - [display layer](#display-layer)
 - [chips](#chips)
 - [effect name](#effect-name)
+
+## rearmost buff
+
+An ally buff that goes to the rearmost ally, such as Pandora's box and
+Ravion's Objectives. Receivers with an ally directly behind them
+(`static-tile-buffer`, `ally-behind-placer`) are rarely rearmost, so the
+rearmost part of their pair score is multiplied by 0.1. Labels are in
+`REARMOST_BUFF_LABELS` (`scoring.py`).
+
+## hidden tag
+
+A behavior tag listed in `hidden_behavior_tags` in `data/heroes_config.json`
+(`ally-behind-placer`, `ally-adjacent-placer`). It is hidden for all heroes.
+It stays in `ai.json` and in scoring, but rendered views (overview, CSV,
+site) do not show it.

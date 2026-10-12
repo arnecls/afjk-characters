@@ -14,6 +14,7 @@ from healing_types import (
 )
 
 _healing_profile_label = healing_profile_label
+from ..hidden_tags import visible_behavior_tags
 from ..analysis.records import (
     Effect,
     EffectRecord,
@@ -211,6 +212,21 @@ STATIC_TILE_BUFF_LABELS: dict[str, frozenset[str]] = {
     ),
     "hugin": frozenset({"ATK", "Energy"}),
 }
+
+# Ally buff and provide labels a provider grants only to the rearmost
+# ally (Pandora's box) or the 2 rearmost allies (Ravion's Objectives). Like
+# STATIC_TILE_BUFF_LABELS, merged effects keep one record per label, so a
+# label listed here also covers same-label buffs from the provider's other
+# skills. Evie is absent: her quill leaves the rearmost ally after 3s.
+REARMOST_BUFF_LABELS: dict[str, frozenset[str]] = {
+    "pandora": frozenset({"ATK", "Energy", "Invincible", "Invincibility"}),
+    "ravion": frozenset({"ATK", "Energy", "Haste", "Shield", "Lifedrain"}),
+}
+# Receivers that rarely stand rearmost, because their ally stands one tile
+# behind them. static-tile-buffer covers Gunnar and Hugin.
+REARMOST_UNLIKELY_TAGS = frozenset({STATIC_TILE_BUFFER_TAG, "ally-behind-placer"})
+# Multiplier on a rearmost-targeted buff for such a receiver.
+REARMOST_UNLIKELY_FACTOR = 0.1
 
 STAT_TO_BUFF_LABELS: dict[str, list[str]] = {
     "ATK": ["ATK"],
@@ -528,6 +544,35 @@ def provider_without_tile_buffs(provider: HeroRecord) -> HeroRecord | None:
     provider = _as_mapping(provider)
     labels = STATIC_TILE_BUFF_LABELS.get(provider.get("id") or "")
     if not labels:
+        return None
+    stripped = dict(provider)
+    stripped["effects"] = [
+        e
+        for e in provider["effects"]
+        if e["targeting"] == "Self" or e["label"] not in labels
+    ]
+    stripped["special_effects"] = [
+        s
+        for s in provider.get("special_effects") or []
+        if s["targeting"] == "Self" or s["label"] not in labels
+    ]
+    return cast(HeroRecord, stripped)
+
+
+def provider_without_rearmost_buffs(
+    provider: HeroRecord, receiver: HeroRecord
+) -> HeroRecord | None:
+    """Provider minus its rearmost-targeted ally buffs.
+
+    None unless the provider has such buffs and the receiver rarely stands
+    rearmost (see REARMOST_UNLIKELY_TAGS).
+    """
+    provider = _as_mapping(provider)
+    labels = REARMOST_BUFF_LABELS.get(provider.get("id") or "")
+    if not labels:
+        return None
+    tags = _tag_set(_as_mapping(receiver).get("behavior_tags") or ())
+    if not tags & REARMOST_UNLIKELY_TAGS:
         return None
     stripped = dict(provider)
     stripped["effects"] = [
@@ -2225,6 +2270,40 @@ def score_combined_synergy(
     provider_behavior: HeroBehaviorRecord | None = None,
     zone_override: float | None = None,
 ) -> tuple[float, list[str]]:
+    """Pair score, with rearmost-targeted buffs cut for behind-tile receivers."""
+
+    def raw(prov: HeroRecord) -> tuple[float, list[str]]:
+        return _score_combined_synergy_raw(
+            prov,
+            receiver,
+            enabler_matchers,
+            receiver_behavior,
+            receiver_movement,
+            signature_speed,
+            role_category,
+            provider_behavior,
+            zone_override,
+        )
+
+    full, reasons = raw(provider)
+    without = provider_without_rearmost_buffs(provider, receiver)
+    if without is None:
+        return (full, reasons)
+    rest, _ = raw(without)
+    return (rest + REARMOST_UNLIKELY_FACTOR * (full - rest), reasons)
+
+
+def _score_combined_synergy_raw(
+    provider: HeroRecord,
+    receiver: HeroRecord,
+    enabler_matchers: dict[str, Callable[..., tuple[float, str] | None]],
+    receiver_behavior: HeroBehaviorRecord,
+    receiver_movement: str = "",
+    signature_speed: str = "average",
+    role_category: str | None = None,
+    provider_behavior: HeroBehaviorRecord | None = None,
+    zone_override: float | None = None,
+) -> tuple[float, list[str]]:
     provider = _as_mapping(provider)
     receiver = _as_mapping(receiver)
     receiver_behavior = _as_mapping(receiver_behavior)
@@ -2372,6 +2451,20 @@ def synergy_pair_extras(
         provider_behavior,
         only_label="Temporary ally stat buffs",
     )
+    without_rearmost = provider_without_rearmost_buffs(provider, receiver)
+    if without_rearmost is not None and temp_score > 0:
+        temp_rest, _ = score_enabler_synergy(
+            without_rearmost,
+            receiver,
+            enabler_matchers,
+            movement,
+            receiver_behavior,
+            provider_behavior,
+            only_label="Temporary ally stat buffs",
+        )
+        temp_score = temp_rest + REARMOST_UNLIKELY_FACTOR * (
+            temp_score - temp_rest
+        )
     if temp_score > 0:
         extras["temp_buff_score"] = temp_score
     # Tile-bound protection is part of tile_buff_score instead.
@@ -3302,7 +3395,9 @@ def compute_replacement_scores(
         dbpx = debuff_profiles[hero_x["title"]]
         cpx = cc_profiles[hero_x["title"]]
         hpx = healing_profiles[hero_x["title"]]
-        tags_x = frozenset(hero_x.get("behavior_tags") or ())
+        tags_x = frozenset(
+            visible_behavior_tags(hero_x.get("behavior_tags") or ())
+        )
         energy_eligible = is_energy_provider(hero_x)
         category_scores: dict[str, list[tuple[float, str, list[str]]]] = {
             key: [] for key in REPLACEMENT_CATEGORIES
@@ -3314,7 +3409,9 @@ def compute_replacement_scores(
             dpy = damage_profiles[hero_y["title"]]
             dbpy = debuff_profiles[hero_y["title"]]
             cpy = cc_profiles[hero_y["title"]]
-            tags_y = frozenset(hero_y.get("behavior_tags") or ())
+            tags_y = frozenset(
+                visible_behavior_tags(hero_y.get("behavior_tags") or ())
+            )
             ey = energy_provided[hero_y["title"]]
             category_scores["buff"].append(
                 (

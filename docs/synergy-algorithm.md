@@ -214,6 +214,27 @@ reaches one ally, and that ally cannot also stand behind the other buffer.
   Hugin). The higher-scoring placement decides Hugin's value. A candidate
   that a teammate buffer would rather buff also gains from that buffer.
 
+### Rearmost Buffs
+
+Pandora's box and Ravion's Objectives go to the rearmost ally (the 2
+rearmost allies for Ravion). Evie's quill starts there too, but moves to
+the highest-damage ally after 3s, so she is not penalised.
+
+- **Provider labels**: `REARMOST_BUFF_LABELS` in `scoring.py` lists the ally
+  buff labels each of these providers grants to the rearmost allies. Effects
+  merge per label, so a same-label buff from another skill counts as well.
+- **Unlikely receivers**: heroes whose ally stands directly behind them are
+  rarely rearmost. They carry `static-tile-buffer` (Gunnar, Hugin) or
+  `ally-behind-placer` (Thador, Thoran, Daimon, Lucca).
+- **Penalty**: the rearmost part of the pair score is multiplied by
+  `REARMOST_UNLIKELY_FACTOR` (0.1). The rest of the provider's score is
+  unchanged. The same split applies to `temp_buff_score`.
+- **Adjacent group**: Faramor, Niru, Cassadee and Galahad carry
+  `ally-adjacent-placer`. They buff an adjacent ally and only prefer the one
+  behind, so they can still be rearmost and get no penalty.
+- **Open**: Dunlingr exempts the farthest ally from his order, which blocks
+  the ultimates of every other ally. He is not modelled yet.
+
 ---
 
 ## Path 2: Summon Buffs

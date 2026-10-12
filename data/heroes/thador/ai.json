@@ -428,6 +428,7 @@
     }
   },
   "behavior_tags": [
+    "ally-behind-placer",
     "ally-shielder",
     "enemy-debuffer",
     "energy-provider",

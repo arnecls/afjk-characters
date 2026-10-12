@@ -360,6 +360,7 @@
     }
   },
   "behavior_tags": [
+    "ally-adjacent-placer",
     "ally-buffer",
     "aoe-damage",
     "dot-specialist",

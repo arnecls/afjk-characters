@@ -249,6 +249,7 @@
     }
   },
   "behavior_tags": [
+    "ally-adjacent-placer",
     "ally-healer",
     "assassin",
     "battle-start-ult",

@@ -401,6 +401,7 @@
     }
   },
   "behavior_tags": [
+    "ally-behind-placer",
     "cheat-death",
     "counterattack",
     "hp-loss",

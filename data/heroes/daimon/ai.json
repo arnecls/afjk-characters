@@ -351,6 +351,7 @@
     }
   },
   "behavior_tags": [
+    "ally-behind-placer",
     "ally-shielder",
     "hp-scaling",
     "non-ult-utility",
