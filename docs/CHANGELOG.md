@@ -1,5 +1,66 @@
 # Changelog
 
+## 2026-10-12
+
+### Fixes and improvements
+
+- Synergy: added buff zones. Ally buffs for a zone the provider places (for
+  example Estrilda's Pennon of Valor) carry a `zone_anchor`. The receiver's
+  battlefield position decides how much of the zone it stands in
+  (`BUFF_ZONE_REACH_WEIGHT`). Zone buffs score through the stat path scaled by
+  that reach, plus a presence credit for buffs the stat path did not credit.
+  An enemy-backline zone reaches a frontline receiver at 0.75.
+- Synergy: receivers that require temporary ally stat buffs (Perseus, Orion)
+  now value providers whose ally buffs are temporary. The qualifying stat set
+  was widened (for example Movement speed and rivalry DMG Boost / DMG
+  Reduction). Persistence is derived from the skill text. The score grows
+  with the number of distinct buff labels and how often they apply, and a
+  `distinct_allies` requirement needs buffs from that many different allies.
+- Synergy: Mix mode adds the zone grouping uplift when an enemy-grouping hero
+  is on the team, and gives a second temporary-buff provider a 1.5x bonus.
+  The Mix index now carries `groupingUplift`, `tempBuff` and
+  `distinctAllies`.
+- Synergy: ATK buffs now scale with how much a hero's skills depend on ATK.
+  The new `atk_dependency` scoring fact sums the `N% (ATK-based)` values in
+  the base skill text, times explicit hit counts. The multiplier is
+  `1 + min(1, atk_dependency / 1500)`, so 1.0x to 2.0x. It replaces the
+  share-based 1.75x. ATK buffs score for every hero with ATK-scaled skills,
+  even if ATK is not in their benefit stats. Max HP keeps the share-based
+  boost.
+- Synergy: Haste now scores for every receiver at a neutral weight (1.0x,
+  down from 1.25x) and is no longer penalised as implicit fuel. Receivers with
+  a fast signature skill that do not list ATK SPD match Haste only.
+- Synergy: `high-damage-ult` receivers (Frieren, Marcille, Shemira) are
+  exempt from the 0.45x implicit-fuel penalty for ally Energy, so Energy
+  still outranks Haste for them.
+- Added per-hero `battlefield_position` overrides (frontline, ally backline
+  or roaming) and the `zone_anchor` / `distinct_allies` fields in `ai.json`
+  and the schemas.
+- Documented buff zones, temporary stat buffs and the ATK dependency in
+  `docs/synergy-algorithm.md` and `.cursor/MECHANICS.md`.
+- Fixed `scripts/test_synergy_overflow.js`, which failed since the tooltip
+  started using character pills (missing `heroByName` in the test setup).
+- Regenerated `heroes-overview.md` and the site data (synergy lists, Mix
+  index).
+
+### Character data changes
+
+| Character | What changed |
+|---|---|
+| estrilda | - Added buff zone anchor (enemy backline) |
+| hugin | - Added buff zone anchor (fixed tile) |
+| kordan | - Added buff zone anchor (enemy target)<br>- Position set to frontline |
+| mikola | - Added buff zone anchor (caster) |
+| perseus | - Added buff zone anchor (caster)<br>- Requires buffs from 2 distinct allies |
+| orion | - Requires buffs from 2 distinct allies |
+| shakir | - Added buff zone anchor (caster) |
+| smokey-meerky | - Added buff zone anchor (caster) |
+| damian | - Added buff zone anchor (summon) |
+| peggy | - Added buff zone anchor (summon) |
+| berial, harak, igor, temesia | - Position set to roaming |
+| chippy, gerda, himmel, kafra, lenya, seth, sinbad, soren | - Position set to frontline |
+| lily-may, nara, niru | - Position set to ally backline |
+
 ## 2026-10-11
 
 ### Fixes and improvements
