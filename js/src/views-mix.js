@@ -460,6 +460,29 @@ window.AFKJ = window.AFKJ || {};
     return total;
   }
 
+  // A protector (invincibility / cheat death) covers one ally, so only the
+  // best protected receiver on the team counts. The base sum already added
+  // every receiver's protection score; return the (non-positive) amount to
+  // remove so just the largest marked-weighted score remains.
+  function mixProtectionCorrection(index, candidate, team, isMarked, markMult) {
+    if (!index || !index.protection) {
+      return 0;
+    }
+    let sum = 0;
+    let best = 0;
+    team.forEach(function (receiver) {
+      if (receiver === candidate) {
+        return;
+      }
+      const score =
+        mixIndexPair(index.protection, receiver, candidate) *
+        (isMarked(receiver) ? markMult : 1.0);
+      sum += score;
+      best = Math.max(best, score);
+    });
+    return best - sum;
+  }
+
   function getQualifyingMixFactions() {
     const state = window.AFKJ.state;
     const count = {};
@@ -733,6 +756,9 @@ window.AFKJ = window.AFKJ || {};
       state.mixSynergyIndex, slug, team, isMarked, markMult
     );
     total += mixDistinctAlliesBonus(
+      state.mixSynergyIndex, slug, team, isMarked, markMult
+    );
+    total += mixProtectionCorrection(
       state.mixSynergyIndex, slug, team, isMarked, markMult
     );
     if (hero) {
@@ -1712,6 +1738,7 @@ window.AFKJ = window.AFKJ || {};
     mixHasGrouper: mixHasGrouper,
     mixGroupingUplift: mixGroupingUplift,
     mixDistinctAlliesBonus: mixDistinctAlliesBonus,
+    mixProtectionCorrection: mixProtectionCorrection,
     getQualifyingMixFactions: getQualifyingMixFactions,
     mixHeroSkillTags: mixHeroSkillTags,
     mixHeroBehaviorTags: mixHeroBehaviorTags,
