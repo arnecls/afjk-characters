@@ -3,5 +3,6 @@
   "signature": {
     "signature_override": "ultimate",
     "speed_override": "fast"
-  }
+  },
+  "battlefield_position": "roaming"
 }

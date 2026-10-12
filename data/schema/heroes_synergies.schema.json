@@ -72,6 +72,14 @@
         },
         "score": {
           "type": "number"
+        },
+        "zone_grouping_uplift": {
+          "type": "number",
+          "description": "Extra score if an enemy-backline buff zone fully reached this frontline receiver."
+        },
+        "temp_buff_score": {
+          "type": "number",
+          "description": "Temporary ally stat buffs enabler component of the score."
         }
       }
     },

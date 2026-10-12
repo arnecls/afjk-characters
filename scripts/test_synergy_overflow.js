@@ -20,7 +20,7 @@ const context = {
       return null;
     },
     createElement() {
-      return { setAttribute() {}, appendChild() {} };
+      return { setAttribute() { }, appendChild() { } };
     },
   },
   location: { pathname: "/", protocol: "file:" },
@@ -39,6 +39,10 @@ vm.createContext(context);
   "views-grid.js",
   "views-detail.js",
 ].forEach(loadModule);
+
+// Character pills look heroes up by name; an empty map makes them fall back
+// to the escaped name, as for unknown heroes in the browser.
+context.window.AFKJ.state.heroByName = {};
 
 const renderOverflow =
   context.window.AFKJ.views.detail.renderSynergyPartnerOverflow;

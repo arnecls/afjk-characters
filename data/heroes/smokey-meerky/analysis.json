@@ -122,6 +122,7 @@
             "area": "radius",
             "target_count": -1,
             "area_count": 2,
+            "zone_anchor": "caster",
             "type": "buff",
             "name": "Haste",
             "label": "buff_offensive",
@@ -198,6 +199,7 @@
             "area": "radius",
             "target_count": -1,
             "area_count": 2,
+            "zone_anchor": "caster",
             "type": "buff",
             "name": "ATK",
             "label": "buff_offensive",
@@ -697,7 +699,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "28951dcadf3ece4b0c019961483def4d8e4b9abb6e16366eca29ad15bc87a8af",
+    "inputs_hash": "ab9411f62cc47154c9b12cd65887cc17c253cc3108d03f83d65da19d17763ad2",
     "algorithm_hash": "5327341e1e62bb1f9853efb93732a5dd25f9763dda4104619cfb5e3506a37091"
   }
 }

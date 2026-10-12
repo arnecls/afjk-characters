@@ -82,7 +82,8 @@
                     "value": 30.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "zone_anchor": "caster"
               }
             ],
             "summon_effects": [],
@@ -115,7 +116,8 @@
                     "value": 20.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "zone_anchor": "caster"
               },
               {
                 "tier": "base",

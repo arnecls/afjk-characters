@@ -699,6 +699,55 @@ def _apply_movement_override(
     return entry.get("movement", label), entry.get("note", note)
 
 
+BATTLEFIELD_POSITIONS = frozenset(
+    {"frontline", "enemy_backline", "ally_backline", "roaming"}
+)
+ENEMY_BACKLINE_TAGS = frozenset(
+    {"assassin", "backline-assassin", "self-repositioner"}
+)
+
+
+def derive_battlefield_position(
+    is_melee: bool, tags: frozenset[str] | set[str]
+) -> str:
+    """Derive where a hero fights from range and behavior tags."""
+    if not is_melee:
+        return "ally_backline"
+    if ENEMY_BACKLINE_TAGS & set(tags):
+        return "enemy_backline"
+    return "frontline"
+
+
+def resolve_battlefield_position(
+    derived: str, override: str | None
+) -> str:
+    """An override replaces the derived value."""
+    return override if override else derived
+
+
+def battlefield_position_for(
+    hero_id: str,
+    *,
+    is_melee: bool,
+    tags: frozenset[str] | set[str],
+    overrides: Mapping[str, str],
+) -> str:
+    return resolve_battlefield_position(
+        derive_battlefield_position(is_melee, tags),
+        overrides.get(hero_id),
+    )
+
+
+def _load_battlefield_position_overrides() -> dict[str, str]:
+    """Typed overrides keyed by hero id."""
+    per_hero = _per_hero_curated("battlefield_position_overrides")
+    if per_hero is not None:
+        return per_hero
+    from hero_pipeline.storage import load_battlefield_position_overrides
+
+    return load_battlefield_position_overrides()
+
+
 def compute_casting_scores(
     skills_by_title: dict[str, list[SkillMetaRecord]],
 ) -> dict[str, float]:
@@ -2035,6 +2084,7 @@ def build_behavior_for_heroes(
     signature_by_display_input: dict[str, dict] | None = None,
     placement_overrides_input: dict[str, list[dict]] | None = None,
     movement_overrides_input: dict[str, dict] | None = None,
+    battlefield_position_overrides_input: dict[str, str] | None = None,
     walk_speeds_input: dict[str, str] | None = None,
     behavior_tags_input: dict[str, list[str]] | None = None,
     skill_names_by_display_input: dict[str, dict[str, str]] | None = None,
@@ -2081,6 +2131,11 @@ def build_behavior_for_heroes(
         movement_overrides_input
         if movement_overrides_input is not None
         else _load_movement_overrides()
+    )
+    position_overrides = (
+        battlefield_position_overrides_input
+        if battlefield_position_overrides_input is not None
+        else _load_battlefield_position_overrides()
     )
     walk_speeds = (
         walk_speeds_input
@@ -2135,6 +2190,17 @@ def build_behavior_for_heroes(
             note,
             hero_id if hero_id in movement_overrides else curated,
             movement_overrides,
+        )
+        position = battlefield_position_for(
+            hero_id,
+            is_melee=compute_is_melee(
+                skills,
+                hero_class=hero_class,
+                display_name=display,
+                default_range=hero["default_range"],
+            ),
+            tags=tags,
+            overrides=position_overrides,
         )
         speeds = per_skill_speeds.get(hero["title"], {})
         raw_sig = signature_by_display.get(hero_id) or signature_by_display.get(
@@ -2205,6 +2271,7 @@ def build_behavior_for_heroes(
                 ult_speed=speeds.get("ult", "average"),
                 non_ult_speed=speeds.get("non_ult", "average"),
                 avg_attack_range=avg_range,
+                battlefield_position=position,
                 placement_constraints=placement_constraints,
                 skill_overview=skill_overview,
             )
@@ -2218,6 +2285,7 @@ def build_behavior_for_heroes(
                 ult_speed=speeds.get("ult", "average"),
                 non_ult_speed=speeds.get("non_ult", "average"),
                 avg_attack_range=avg_range,
+                battlefield_position=position,
                 placement_constraints=placement_constraints,
                 skill_overview=skill_overview,
             )

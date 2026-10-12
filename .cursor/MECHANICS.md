@@ -297,12 +297,6 @@ a 6s Haste buff on allies is temporary; a battle-long ATK aura, a shield, or
 a "damage taken reduced" effect is not. For Perseus's Hero Focus, treat any
 short ally-applied buff as a trigger.
 
-### Open points
-
-- Whether buffs without a source unit (system or battle-start effects) trigger
-  Hero Focus is untested. The script skips the same-camp check for a nil
-  caster, so they may trigger it. Treat as unknown.
-
 ## Abilities that Applies Temporary Buffs
 
 See [Temporary Stat Buffs](#temporary-stat-buffs) for the exact definition.

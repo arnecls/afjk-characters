@@ -1227,10 +1227,11 @@ Also see:
 
 ## proximity aura
 
-Provider-attached aura, circle, or **anchored ground zone** (e.g. fertile
-ground allies must stand on) that only helps receivers close enough to stand
-inside it. Synergy scoring checks receiver movement and weighted attack range
-before counting these buffs.
+Provider-attached aura or circle that only helps receivers close enough to
+stand inside it. Synergy scoring checks receiver movement and weighted attack
+range before counting these buffs. Ground zones the provider places on the
+map (e.g. fertile ground) are scored as [buff zones](#buff-zone) by where
+the zone sits, not by receiver attack range.
 
 Used in:
 
@@ -1243,6 +1244,89 @@ Also see:
 - [movement](#movement)
 - [synergy](#synergy)
 - [provider](#provider)
+
+## buff zone
+
+Area on the map where allies standing inside receive a buff (e.g. Perseus
+fertile ground, Estrilda's zone at the enemy edge). Synergy scoring gives a
+receiver credit only for the share of the zone it can stand in, set by the
+zone's [zone anchor](#zone-anchor) and the receiver's
+[battlefield position](#battlefield-position). Unanchored ally buffs are
+global and ignore zones. The `Enables Buff zone (...)` reason marks
+presence credit for zone buffs the stat path did not score.
+
+Used in:
+
+- [Synergy algorithm](docs/synergy-algorithm.md)
+- [Behavior rules](.cursor/AGENTS.md)
+- [Synergy scoring](scripts/hero_pipeline/relationships/scoring.py)
+
+Also see:
+
+- [zone anchor](#zone-anchor)
+- [battlefield position](#battlefield-position)
+- [grouping uplift](#grouping-uplift)
+- [proximity aura](#proximity-aura)
+
+## zone anchor
+
+Optional `zone_anchor` field on an ally buff effect in `ai.json` that says
+where its [buff zone](#buff-zone) is placed: `enemy_backline`, `enemy_target`,
+`caster`, `summon`, or `fixed_tile`. Scoring resolves it to a zone location
+(`enemy_backline`, `frontline`, or `ally_backline`; `caster` follows the
+provider's battlefield position). Global buffs omit it.
+
+Used in:
+
+- [Skill effect schema](data/schema/skills.schema.json)
+- [Extraction rules](.cursor/skills/extract-skill-effects/SKILL.md)
+- [Synergy scoring](scripts/hero_pipeline/relationships/scoring.py)
+
+Also see:
+
+- [buff zone](#buff-zone)
+- [battlefield position](#battlefield-position)
+
+## battlefield position
+
+Where a hero fights: `frontline`, `enemy_backline`, `ally_backline`, or
+`roaming`. `battlefield_position` is derived from range and behavior tags
+(ranged is `ally_backline`; melee with `assassin`, `backline-assassin`, or
+`self-repositioner` is `enemy_backline`; other melee is `frontline`).
+`roaming` and corrections exist only as `battlefield_position` overrides in
+`overrides.json`. It selects the receiver column of the buff zone reach
+matrix.
+
+Used in:
+
+- [Behavior derivation](scripts/hero_pipeline/analysis/behavior.py)
+- [Override schema](data/schema/hero_overrides.schema.json)
+- [Synergy algorithm](docs/synergy-algorithm.md)
+
+Also see:
+
+- [buff zone](#buff-zone)
+- [zone anchor](#zone-anchor)
+
+## grouping uplift
+
+Extra Mix-mode score (`groupingUplift`, from the pick field
+`zone_grouping_uplift`) for a frontline receiver when the provider's buff
+zone sits in the enemy backline. It is the score gain if the zone fully
+reached the receiver. Mix mode applies it only when a hero with the
+`enemy-grouping` tag is on the team, since pulling enemies into the zone is
+what makes the zone reach the frontline.
+
+Used in:
+
+- [Synergy algorithm](docs/synergy-algorithm.md)
+- [Synergy scoring](scripts/hero_pipeline/relationships/scoring.py)
+- [Synergies schema](data/schema/heroes_synergies.schema.json)
+
+Also see:
+
+- [buff zone](#buff-zone)
+- [enabler](#enabler)
 
 ## static-tile-buffer
 

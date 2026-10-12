@@ -33,6 +33,11 @@
       },
       "minProperties": 1
     },
+    "battlefield_position": {
+      "type": "string",
+      "enum": ["frontline", "enemy_backline", "ally_backline", "roaming"],
+      "description": "Replaces the derived behavior.battlefield_position."
+    },
     "placement_constraints": {
       "type": "array",
       "items": {

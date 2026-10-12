@@ -386,6 +386,29 @@ def check_walk_speeds(processed: dict[str, Any]) -> list[str]:
     return errors
 
 
+def battlefield_position_differences(
+    processed: dict[str, Any],
+) -> list[str]:
+    """Heroes whose override differs from the derived position."""
+    from hero_pipeline.analysis.behavior import derive_battlefield_position
+    from hero_pipeline.storage import load_battlefield_position_overrides
+
+    tags = load_ai_by_id("behavior_tags")
+    lines: list[str] = []
+    for hero_id, override in sorted(
+        load_battlefield_position_overrides().items()
+    ):
+        hero = processed["heroes"].get(hero_id)
+        if hero is None:
+            continue
+        derived = derive_battlefield_position(
+            bool(hero.get("is_melee")), frozenset(tags.get(hero_id) or ())
+        )
+        if override != derived:
+            lines.append(f"{hero_id}: override {override}, derived {derived}")
+    return lines
+
+
 def check_skill_summaries(processed: dict[str, Any]) -> list[str]:
     """Validate heroes_data_skill_summary.json coverage and basic lint."""
     processed = _processed_by_display(processed)
@@ -1004,6 +1027,14 @@ def main() -> int:
                     f"semantic {category}: {len(items)} issues "
                     f"(max {args.max_semantic})"
                 )
+
+    position_diffs = battlefield_position_differences(fresh)
+    print(
+        "info: battlefield_position overrides differing from derived: "
+        f"{len(position_diffs)}"
+    )
+    for line in position_diffs:
+        print(f"  - {line}")
 
     if warnings:
         for key, items in warnings.items():

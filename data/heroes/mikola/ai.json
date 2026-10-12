@@ -26,7 +26,8 @@
                   }
                 ],
                 "duration": 12.0,
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "zone_anchor": "caster"
               },
               {
                 "tier": "base",
@@ -62,7 +63,8 @@
                 ],
                 "duration": 12.0,
                 "persistence": "temporary",
-                "label": "buff_defensive"
+                "label": "buff_defensive",
+                "zone_anchor": "caster"
               },
               {
                 "tier": "base",

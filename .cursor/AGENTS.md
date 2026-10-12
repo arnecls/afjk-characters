@@ -538,16 +538,39 @@ reviewing or fixing matches, work through both heroes in this order.
    is detected from skill text (`NON_BUFFABLE_SIGNATURE_RES` in
    `rewrite-summaries.py`).
    **Proximity aura buffs:** provider-attached auras/circles (e.g. Shakir's
-   Lupine Aura) and **provider-anchored ground zones** (e.g. Perseus fertile
-   ground — allies standing on ground within N tiles of the provider) are
-   detected in `rewrite-summaries.py` (`PROVIDER_PROXIMITY_AURA_PATTERNS`).
-   Ally buffs tied to those zones only score for receivers whose **weighted
-   attack range** is melee-close enough to stand in the zone (`receiver_can_reach_proximity_aura` in
+   Lupine Aura) are detected in `rewrite-summaries.py`
+   (`PROVIDER_PROXIMITY_AURA_PATTERNS`). Their ally buffs only score for
+   receivers whose **weighted attack range** is melee-close enough to stand
+   in the aura (`receiver_can_reach_proximity_aura` in
    `generate-heroes-overview.py`; tunables in `heroes_config.json` →
    `proximity_synergy`). Global buffs (Twins dance, etc.) are unaffected.
    Complements the existing rule that skips **positional tile** buffs and
    **`static-tile-buffer`** providers for **moving/high-movement** receivers
    (both `score_synergy` and ally-stat-buff enabler scoring).
+   **Buff zones:** ally buffs for a placed or carried zone (Perseus fertile
+   ground, Estrilda's zone) carry `zone_anchor` in `ai.json` (`enemy_backline`,
+   `enemy_target`, `caster`, `summon`, `fixed_tile`; omitted for global
+   buffs). The receiver's `battlefield_position` (ranged = `ally_backline`;
+   melee + `assassin`/`backline-assassin`/`self-repositioner` =
+   `enemy_backline`; other melee = `frontline`; `roaming` and corrections only
+   via `battlefield_position` in `overrides.json`) selects the column of
+   `BUFF_ZONE_REACH_WEIGHT` in `scoring.py`. Zero reach skips the buff.
+   `score_buff_zone_synergy` adds presence credit
+   (`BUFF_ZONE_PRESENCE_MULT`) with the reason `Enables Buff zone (...)`.
+   Direction is provider → receiver (Perseus benefits from Estrilda, not the
+   reverse). `synergy_pair_extras` emits `zone_grouping_uplift` (Mix index
+   `groupingUplift`) for frontline receivers of enemy-backline zones; Mix
+   mode applies it when an enemy-grouping hero is on the team. Details in
+   `docs/synergy-algorithm.md`.
+   **Temporary stat buffs:** the `Temporary ally stat buffs` enabler counts
+   only `temporary` positive stat buffs (stat-map stats plus damage dealt /
+   damage taken; not shields, Energy, movement speed, CC immunity, or
+   extra-damage procs). Score = sum of best buff per label ×
+   label bonus (`TEMP_BUFF_LABEL_BONUS`, `TEMP_BUFF_LABEL_CAP`) × frequency
+   bonus (`TEMP_BUFF_FREQUENCY_BONUS`, `TEMP_BUFF_FREQUENCY_CAP`,
+   `TEMP_BUFF_WINDOW_SECONDS`), scaled by `TEMP_BUFF_REQUIRE_MULT` (1.0).
+   Requires may set `distinct_allies`; the Mix index carries `tempBuff` and
+   `distinctAllies`.
 
 **Units benefitting most from** at the end of each Synergies block is the reverse index:
 heroes who list this unit among their top five synergy partners. When

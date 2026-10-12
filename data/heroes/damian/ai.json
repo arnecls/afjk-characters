@@ -229,7 +229,8 @@
                     "value": 55.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "zone_anchor": "summon"
               }
             ],
             "summon_effects": [],

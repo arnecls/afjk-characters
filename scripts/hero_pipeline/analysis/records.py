@@ -2,7 +2,15 @@
 
 from __future__ import annotations
 
-from typing import Any, Mapping, TypeGuard, TypedDict, Sequence, cast
+from typing import (
+    Any,
+    Mapping,
+    NotRequired,
+    Sequence,
+    TypeGuard,
+    TypedDict,
+    cast,
+)
 
 
 class EffectRecord(TypedDict):
@@ -22,6 +30,8 @@ class EffectRecord(TypedDict):
     conditions: list[dict[str, Any]]
     area: str | None
     area_direction: str | None
+    zone_anchor: NotRequired[str | None]
+    skill_cooldown: NotRequired[float | None]
     source_section: str | None
     scoring_weight: float | None
     signature_cc: bool
@@ -43,6 +53,7 @@ class SpecialEffectRecord(TypedDict):
     qualitative: str
     grants: list[tuple[str, str]]
     named_ids: tuple[str, ...]
+    distinct_allies: NotRequired[int]
 
 
 class SkillSliceRecord(TypedDict):
@@ -122,6 +133,7 @@ class HeroRecord(TypedDict, total=False):
     behavior_tags: frozenset[str]
     summon_profile: dict[str, Any]
     effective_ally_energy: float
+    atk_dependency: float
 
 
 class HeroBehaviorRecord(TypedDict, total=False):
@@ -139,6 +151,7 @@ class HeroBehaviorRecord(TypedDict, total=False):
     ult_speed: str
     non_ult_speed: str
     avg_attack_range: float | None
+    battlefield_position: str
     placement_constraints: list[PlacementConstraintRecord]
     skill_overview: dict[str, SkillOverviewMetricsRecord]
 
@@ -164,8 +177,9 @@ def Effect(
     scoring_weight: float | None = None,
     signature_cc: bool = False,
     battle_start_energy: bool = False,
+    zone_anchor: str | None = None,
 ) -> EffectRecord:
-    return {
+    record: EffectRecord = {
         "category": category,
         "label": label,
         "tier": tier,
@@ -187,6 +201,9 @@ def Effect(
         "signature_cc": signature_cc,
         "battle_start_energy": battle_start_energy,
     }
+    if zone_anchor is not None:
+        record["zone_anchor"] = zone_anchor
+    return record
 
 
 def CcImmunity(

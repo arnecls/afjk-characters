@@ -380,6 +380,7 @@
                 "phase": "conditional"
               }
             ],
+            "zone_anchor": "summon",
             "type": "buff",
             "name": "Haste",
             "label": "buff_offensive",
@@ -631,7 +632,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "07e3bce6224ccd9b8aebc849e6d2d8513dd9351f7fd7c522bf96ff521398f912",
+    "inputs_hash": "03a96f662477ecc4c719b59fb9c0292a6645a87ac708cd196a1607e6c93a979d",
     "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
   }
 }

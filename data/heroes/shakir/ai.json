@@ -55,7 +55,8 @@
                     "value": 28.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "zone_anchor": "caster"
               },
               {
                 "tier": "base",
@@ -74,7 +75,8 @@
                     "value": 25.0
                   }
                 ],
-                "persistence": "temporary"
+                "persistence": "temporary",
+                "zone_anchor": "caster"
               }
             ],
             "summon_effects": [],

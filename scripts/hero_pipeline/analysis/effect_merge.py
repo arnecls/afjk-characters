@@ -101,6 +101,7 @@ def _copy_effect(effect: EffectRecord) -> EffectRecord:
         area=effect["area"],
         area_direction=effect["area_direction"],
         source_section=effect["source_section"],
+        zone_anchor=effect.get("zone_anchor"),
     )
 
 def _merge_effect_records(into: EffectRecord, src: EffectRecord) -> None:
@@ -163,6 +164,8 @@ def _merge_effect_records(into: EffectRecord, src: EffectRecord) -> None:
         into["area"] = src["area"]
     if src["area_direction"] is not None:
         into["area_direction"] = src["area_direction"]
+    if src.get("zone_anchor") and not into.get("zone_anchor"):
+        into["zone_anchor"] = src["zone_anchor"]
 
 def _merge_effects_from_list(effects: list[EffectRecord]) -> list[EffectRecord]:
     """Merge per-skill effects into one roster-wide list."""
@@ -217,6 +220,8 @@ def _merge_special_effect_records(
                 se["qualitative"],
                 list(se["grants"]),
             )
+            if se.get("distinct_allies") is not None:
+                merged[key]["distinct_allies"] = se["distinct_allies"]
             continue
         if TIER_ORDER.get(se["tier"], 99) < TIER_ORDER.get(cur["tier"], 99):
             cur["tier"] = se["tier"]
@@ -224,6 +229,10 @@ def _merge_special_effect_records(
             cur["qualitative"] = se["qualitative"]
         if se["grants"] and not cur["grants"]:
             cur["grants"] = list(se["grants"])
+        if se.get("distinct_allies") is not None:
+            cur["distinct_allies"] = max(
+                se["distinct_allies"], cur.get("distinct_allies") or 0
+            )
     return list(merged.values())
 
 def _rebuild_hero_aggregates_from_slices(hero: HeroRecord) -> None:

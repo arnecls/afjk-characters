@@ -3,5 +3,6 @@
   "signature": {
     "signature_override": "skill1",
     "speed_override": "fast"
-  }
+  },
+  "battlefield_position": "frontline"
 }

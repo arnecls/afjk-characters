@@ -280,6 +280,11 @@
             }
           },
           "description": "Curated buff grants for named-ally provides."
+        },
+        "distinct_allies": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of distinct allies needed."
         }
       }
     },
@@ -447,6 +452,15 @@
             "null"
           ]
         },
+        "battlefield_position": {
+          "type": "string",
+          "enum": [
+            "frontline",
+            "enemy_backline",
+            "ally_backline",
+            "roaming"
+          ]
+        },
         "placement_constraints": {
           "type": "array",
           "items": {
@@ -598,6 +612,7 @@
         "start_of_battle_output",
         "early_battle_energy",
         "effective_ally_energy",
+        "atk_dependency",
         "shield_payoff",
         "ally_magic",
         "ranged_damage",
@@ -735,6 +750,11 @@
         },
         "effective_ally_energy": {
           "type": "number"
+        },
+        "atk_dependency": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Sum of ATK-based skill percentages (times hit counts); drives the ATK buff multiplier."
         },
         "shield_payoff": {
           "type": "boolean"

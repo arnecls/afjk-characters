@@ -734,6 +734,17 @@
         "anchor": {
           "$ref": "#/$defs/anchor"
         },
+        "zone_anchor": {
+          "type": "string",
+          "enum": [
+            "enemy_backline",
+            "enemy_target",
+            "caster",
+            "summon",
+            "fixed_tile"
+          ],
+          "description": "Optional. Where an ally buff zone is placed. enemy_backline is the enemy backline, enemy_target is the targeted enemy, caster is the casting unit, summon is the caster's summon, fixed_tile is a fixed map tile."
+        },
         "name": {
           "type": "string",
           "minLength": 1,

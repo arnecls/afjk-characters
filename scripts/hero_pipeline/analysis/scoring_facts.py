@@ -112,9 +112,9 @@ _DEF_DEBUFF_MAGIC = frozenset({"Magic DEF"})
 _DEF_DEBUFF_SHARED = frozenset({"DEF", "Damage taken"})
 _DEF_PENETRATION_BUFF = "DEF Penetration"
 
-# Haste increases attack speed; prefer Haste buff over ATK SPD buff for ATK SPD
-# beneficiaries (multiplier breaks ties at equal targeting/magnitude).
-HASTE_FOR_ATK_SPD_SCORE_MULT = 1.25
+# Haste increases attack speed and is a universal high-value buff; it scores
+# for every receiver at the neutral weight (no bonus over other buffs).
+HASTE_SCORE_MULT = 1.0
 
 MAX_SYNERGIES = 10
 MAX_BENEFICIARIES_DISPLAY = 10
@@ -132,6 +132,15 @@ PROXIMITY_PROVIDER_BLACKLIST: frozenset[str] = frozenset()
 
 SCALAR_SHARE_BOOST = 0.75
 SCALAR_BOUND_THRESHOLD = 0.5
+
+# ATK buff multiplier: 1 + min(1, atk_dependency / reference), so 1.0x to 2.0x.
+ATK_DEPENDENCY_REFERENCE = 1500.0
+ATK_DEPENDENCY_MAX_BONUS = 1.0
+_ATK_SCALAR_PERCENT_RE = re.compile(
+    r"(\d+(?:\.\d+)?)%\s*(?:\+\s*\d+(?:\.\d+)?\s*)?\(ATK-based\)", re.I
+)
+_HIT_COUNT_RE = re.compile(r"(\d+)\s+times\b", re.I)
+_SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
 
 FREQUENT_CONDITIONAL_SCORE = 0.85
 
@@ -468,7 +477,7 @@ def buff_labels_for_stat(stat: str) -> list[tuple[str, float]]:
     """Buff labels that satisfy a benefit stat, (label, score multiplier), best first."""
     if stat == "ATK SPD":
         return [
-            ("Haste", HASTE_FOR_ATK_SPD_SCORE_MULT),
+            ("Haste", HASTE_SCORE_MULT),
             ("ATK SPD", 1.0),
         ]
     return [(label, 1.0) for label in STAT_TO_BUFF_LABELS.get(stat, [])]
@@ -1564,10 +1573,46 @@ def receiver_stat_bound(receiver: HeroRecord, stat: str) -> bool:
     return _receiver_scalar_share(receiver, stat) >= SCALAR_BOUND_THRESHOLD
 
 
+def compute_atk_dependency(descriptions: list[str]) -> float:
+    """Sum of ATK-scaling percentages across base skill descriptions.
+
+    Each sentence contributes the sum of its ``N% (ATK-based)`` values,
+    multiplied by an explicit ``K times`` hit count (default 1). Upgrade
+    lines are not passed in, and companion-focused sentences are skipped.
+    """
+    from .detector_common import _chunk_is_companion_focused
+
+    total = 0.0
+    for raw in descriptions:
+        for sentence in _SENTENCE_SPLIT_RE.split(raw or ""):
+            if _chunk_is_companion_focused(sentence):
+                continue
+            percents = [
+                float(value) for value in _ATK_SCALAR_PERCENT_RE.findall(sentence)
+            ]
+            if not percents:
+                continue
+            hits = _HIT_COUNT_RE.search(sentence)
+            total += sum(percents) * (int(hits.group(1)) if hits else 1)
+    return total
+
+
+def atk_dependency_mult(receiver: HeroRecord) -> float:
+    """1.0x to 2.0x multiplier from how strongly skills scale on ATK."""
+    dependency = float(_get(receiver, "atk_dependency") or 0.0)
+    if dependency <= 0:
+        return 1.0
+    return 1.0 + min(
+        ATK_DEPENDENCY_MAX_BONUS, dependency / ATK_DEPENDENCY_REFERENCE
+    )
+
+
 def scalar_stat_score_mult(receiver: HeroRecord, stat: str) -> float:
     """Boost-only multiplier for ATK / Max HP buff synergy on scalar-bound kits."""
     if stat not in ("ATK", "Max HP"):
         return 1.0
+    if stat == "ATK":
+        return atk_dependency_mult(receiver)
     share = _receiver_scalar_share(receiver, stat)
     if share <= 0:
         return 1.0
@@ -1672,14 +1717,22 @@ def common_stat_buffer_names(
 def _stats_for_synergy_scoring(
     receiver: HeroRecord, signature_speed: str
 ) -> list[tuple[str, bool]]:
-    """Return (stat, implicit) pairs to score for stat-buff synergies."""
+    """Return (stat, implicit) pairs to score for stat-buff synergies.
+
+    ATK scores for every receiver whose skills scale on ATK. ATK SPD is
+    always evaluated: receivers with a fast signature skill that do not list
+    it match Haste only (see ``_score_synergy_detail``).
+    """
     benefit = receiver_stats(receiver)
     implicit = set()
-    if signature_speed != "fast":
-        for stat in IMPLICIT_FUEL_STATS:
-            if stat not in benefit:
-                implicit.add(stat)
+    for stat in IMPLICIT_FUEL_STATS:
+        if stat in benefit:
+            continue
+        if stat == "ATK SPD" or signature_speed != "fast":
+            implicit.add(stat)
     stats: list[tuple[str, bool]] = [(s, False) for s in benefit]
+    if "ATK" not in benefit and float(_get(receiver, "atk_dependency") or 0.0) > 0:
+        stats.append(("ATK", False))
     for stat in IMPLICIT_FUEL_STATS:
         if stat in implicit:
             stats.append((stat, True))

@@ -83,6 +83,9 @@ def calibrate_roster(
         signature_by_display_input=behavior_inputs["signatures"],
         placement_overrides_input=behavior_inputs["placement"],
         movement_overrides_input=behavior_inputs["movement"],
+        battlefield_position_overrides_input=behavior_inputs[
+            "battlefield_position"
+        ],
         walk_speeds_input=behavior_inputs["walk_speeds"],
         behavior_tags_input=behavior_inputs["behavior_tags"],
         skill_names_by_display_input=behavior_inputs["skill_names"],
@@ -204,6 +207,7 @@ def _behavior_inputs(snapshot: Mapping[str, Any]) -> dict[str, Any]:
         "signatures": {},
         "placement": {},
         "movement": {},
+        "battlefield_position": {},
         "walk_speeds": {},
         "behavior_tags": {},
         "skill_names": {},
@@ -227,6 +231,10 @@ def _behavior_inputs(snapshot: Mapping[str, Any]) -> dict[str, Any]:
             )
         if overrides.get("movement"):
             result["movement"][hero_id] = copy.deepcopy(overrides["movement"])
+        if overrides.get("battlefield_position"):
+            result["battlefield_position"][hero_id] = overrides[
+                "battlefield_position"
+            ]
         walk_speed = (source_doc.get("external") or {}).get("walk_speed")
         if walk_speed is not None:
             result["walk_speeds"][hero_id] = walk_speed
@@ -286,6 +294,7 @@ def _extra_analysis_fields(
     behavior: Any,
     bundle: Mapping[str, Any],
     id_by_display: Mapping[str, str],
+    analysis: Mapping[str, Any],
 ) -> dict[str, Any]:
     effects: dict[str, dict[str, Any]] = {}
     skill_effect_magnitudes: dict[str, str] = {}
@@ -397,6 +406,12 @@ def _extra_analysis_fields(
         "early_battle_energy": gen.provider_early_battle_ally_energy(working),
         "effective_ally_energy": gen._hero_effective_ally_energy_provided(
             working
+        ),
+        "atk_dependency": gen.compute_atk_dependency(
+            [
+                str((skill.get("description") or {}).get("raw") or "")
+                for skill in (analysis.get("skills") or {}).values()
+            ]
         ),
         "shield_payoff": gen.receiver_benefits_from_external_shields(working),
         "ally_magic": gen.match_ally_enabled_magic_damage(working),
@@ -542,6 +557,7 @@ def _serialize_processed(
                 behavior=behavior_by_id[row["id"]],
                 bundle=snapshot["bundles"][row["id"]],
                 id_by_display=id_by_display,
+                analysis=analyses_by_id[row["id"]],
             )
         )
     return {"heroes": processed_heroes}

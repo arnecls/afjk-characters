@@ -67,6 +67,46 @@ class BuffPersistenceTests(unittest.TestCase):
         text = "permanently increases their ATK during battle."
         self.assertEqual(bp.classify_persistence(effect, text), "permanent")
 
+    def test_duration_over_limit_is_not_temporary(self):
+        effect = {
+            "type": "buff",
+            "label": "buff_offensive",
+            "name": "ATK",
+            "target": "ally",
+        }
+        for duration, expected in (
+            (100, "temporary"),
+            (100.5, "permanent"),
+            (8, "temporary"),
+        ):
+            with self.subTest(duration=duration):
+                self.assertEqual(
+                    bp.classify_persistence(
+                        {**effect, "duration": duration}, ""
+                    ),
+                    expected,
+                )
+
+    def test_validator_rejects_temporary_over_limit(self):
+        effect = {
+            "type": "buff",
+            "label": "buff_offensive",
+            "name": "ATK",
+            "target": "ally",
+            "persistence": "temporary",
+            "duration": 120,
+        }
+        errors = bp.validate_effect_persistence(
+            effect, section="Ultimate", hero_short="Test"
+        )
+        self.assertTrue(any("over the 100s limit" in e for e in errors))
+        ok = bp.validate_effect_persistence(
+            {**effect, "duration": 100},
+            section="Ultimate",
+            hero_short="Test",
+        )
+        self.assertEqual(ok, [])
+
     def test_round_trip_persistence_on_effect(self):
         rs = _load_working_analysis()
         effect = rs.Effect(
@@ -306,6 +346,165 @@ class TemporaryBuffSynergyTests(unittest.TestCase):
         score, reasons = self.go.score_enabler_synergy(koko, perseus, matchers, "")
         self.assertGreater(score, 0)
         self.assertTrue(any("temporary stat buff" in r for r in reasons))
+
+
+class TemporaryBuffBreadthTests(unittest.TestCase):
+    """Breadth of distinct temporary buffs lifts a provider for Perseus."""
+
+    @staticmethod
+    def _temp(provider: str, receiver: str = "perseus"):
+        import test_buff_zone_synergy as zone
+
+        data = zone.roster()
+        return gen._ally_stat_buff_synergy(
+            data["heroes"][provider],
+            data["behaviors"][receiver]["movement"],
+            data["behaviors"][receiver],
+            data["behaviors"].get(provider),
+        )
+
+    def test_many_distinct_buffs_outrank_single_buff(self) -> None:
+        single = self._temp("hammie")
+        self.assertEqual(single[1], 1)
+        for provider in ("isabella", "fay"):
+            with self.subTest(provider=provider):
+                many = self._temp(provider)
+                self.assertGreater(many[1], 3)
+                self.assertGreater(many[0], single[0] * 3)
+
+    def test_label_bonus_is_superlinear(self) -> None:
+        isabella = self._temp("isabella")
+        base = isabella[0] / (
+            1 + gen.TEMP_BUFF_LABEL_BONUS * (isabella[1] - 1)
+        )
+        self.assertGreater(isabella[0], base)
+
+    def test_estrilda_ranked_for_perseus_and_orion(self) -> None:
+        import test_buff_zone_synergy as zone
+
+        data = zone.roster()
+        roles = {k: h["role_category"] for k, h in data["heroes"].items()}
+        for receiver in ("perseus", "orion"):
+            with self.subTest(receiver=receiver):
+                entries = gen.rank_synergy_entries(
+                    data["heroes"][receiver],
+                    list(data["heroes"].values()),
+                    data["matchers"],
+                    data["behaviors"],
+                    role_category_by_title=roles,
+                )
+                titles = [title for _s, _r, title in entries]
+                self.assertIn("estrilda", titles)
+                entry = entries[titles.index("estrilda")]
+                # Brief asked for top 10; spec weights give roughly 15-18
+                # because DEF-shred picks score 24-30 for Perseus.
+                # Damage taken no longer counts as a temporary stat
+                # buff (MECHANICS.md), so only her ATK buff scores.
+                self.assertLess(titles.index("estrilda"), 25)
+                self.assertTrue(
+                    any(r.startswith("Enables ") for r in entry[1])
+                )
+
+
+class RuntimeTemporaryStatBuffTests(unittest.TestCase):
+    @staticmethod
+    def _buff(label, persistence="temporary", category="buff"):
+        return {
+            "category": category,
+            "label": label,
+            "persistence": persistence,
+        }
+
+    def test_estrilda_pennon_yields_two_temporary_stat_buffs(self):
+        rs = _load_working_analysis()
+        raw = io.load_heroes_data()
+        record = next(r for r in raw["heroes"] if "Estrilda" in r["title"])
+        hero = rs.hero_from_record(record)
+        rs.analyze_hero(hero)
+        effects = [
+            e
+            for e in hero["skill_slices"]["Ex. Skill"]["effects"]
+            if e["tier"] == "Mythic+"
+            and bp.is_runtime_temporary_stat_buff(e)
+        ]
+        self.assertEqual(
+            sorted(e["label"] for e in effects), ["ATK"]
+        )
+
+    def test_damage_modifiers_do_not_count(self):
+        # MECHANICS.md: Damage dealt / Damage taken are not stats.
+        for label in ("Damage dealt", "Damage taken"):
+            with self.subTest(label=label):
+                self.assertFalse(
+                    bp.is_runtime_temporary_stat_buff(self._buff(label))
+                )
+
+    def test_qualifying_stat_labels_count(self):
+        for label in (
+            "HP",
+            "ATK",
+            "Phys DEF",
+            "Magic DEF",
+            "ATK SPD",
+            "Haste",
+            "Crit",
+            "Crit DMG boost",
+            "DEF Penetration",
+            "Execution",
+            "Vitality",
+            "Lifedrain",
+            "Life Drain",
+            "Crit Resist",
+            "Healing",
+            "Assistance",
+            "Debuff Focus",
+            "Resilience",
+            "DMG Boost",
+            "DMG Reduction",
+            "Energy Regen Reduction",
+            "Movement speed",
+            "Energy Recovery",
+            "Energy Regen On Hit",
+            "Crit DMG DEF",
+            "Ranged DEF",
+        ):
+            with self.subTest(label=label):
+                self.assertTrue(
+                    bp.is_runtime_temporary_stat_buff(self._buff(label))
+                )
+
+    def test_excluded_labels_do_not_count(self):
+        for label in (
+            "Shield",
+            "Energy",
+            "Unaffected",
+            "Steadfast",
+            "Invincible",
+            "True damage",
+            "Max HP",
+            "Attack range",
+            "Skill Power",
+            "Ultimate Power",
+            "Proficiency",
+            "HP loss modifier",
+            "Dodge chance",
+        ):
+            with self.subTest(label=label):
+                self.assertFalse(
+                    bp.is_runtime_temporary_stat_buff(self._buff(label))
+                )
+
+    def test_debuff_polarity_and_permanent_do_not_count(self):
+        self.assertFalse(
+            bp.is_runtime_temporary_stat_buff(
+                self._buff("Damage taken", category="debuff")
+            )
+        )
+        self.assertFalse(
+            bp.is_runtime_temporary_stat_buff(
+                self._buff("ATK", persistence="permanent")
+            )
+        )
 
 
 class SpecialRequiresValidationTests(unittest.TestCase):

@@ -683,6 +683,9 @@ def _legacy_spatial_from_schema(effect: dict[str, Any]) -> dict[str, Any]:
     area_count = effect.get("area_count")
     if area_count is not None:
         fields["area_count"] = area_count
+    zone_anchor = effect.get("zone_anchor")
+    if zone_anchor:
+        fields["zone_anchor"] = zone_anchor
     return fields
 
 
@@ -719,6 +722,8 @@ def effect_to_schema(
                 seen.add(key)
     if conditions:
         out["conditions"] = conditions
+    if effect.get("zone_anchor"):
+        out["zone_anchor"] = effect["zone_anchor"]
 
     if category == "cc":
         out["type"] = "crowd_control"
@@ -1075,6 +1080,8 @@ def special_to_synergy_mechanic(se: Any) -> dict[str, Any]:
             {"label": label, "magnitude": magnitude}
             for label, magnitude in se["grants"]
         ]
+    if se.get("distinct_allies") is not None:
+        out["distinct_allies"] = se["distinct_allies"]
     return out
 
 

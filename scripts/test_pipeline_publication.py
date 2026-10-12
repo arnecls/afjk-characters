@@ -225,6 +225,7 @@ class CombinedPublicationTests(unittest.TestCase):
                     "start_of_battle_output": False,
                     "early_battle_energy": None,
                     "effective_ally_energy": 0,
+                    "atk_dependency": 0,
                     "shield_payoff": False,
                     "ally_magic": None,
                     "ranged_damage": False,
