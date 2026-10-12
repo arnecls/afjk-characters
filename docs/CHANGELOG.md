@@ -147,6 +147,17 @@ changes.
   `docs/synergy-algorithm.md` and `.cursor/MECHANICS.md`.
 - Regenerated `heroes-overview.md` and the site data.
 
+#### Summoner tag fix
+
+Spectral spectators (Senea) and Stars (Aster) are not battle units. Summon
+buffs, for example Peggy's, cannot target them. Both heroes lose the
+`summoner` tag and their `summon_profile`.
+
+| Character | What changed |
+|---|---|
+| senea | - Removed summoner tag (spectators are not battle units) |
+| aster | - Removed summoner tag (Stars are not battle units) |
+
 ## 2026-10-11
 
 ### New Features

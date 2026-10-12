@@ -331,18 +331,9 @@
     "enemy-debuffer",
     "high-damage-ult",
     "high-initial-energy",
-    "invincibility",
-    "summoner"
+    "invincibility"
   ],
-  "summon_profile": {
-    "has_ranged_summons": true,
-    "sources": [
-      {
-        "section": "Ultimate",
-        "tier": "base"
-      }
-    ]
-  },
+  "summon_profile": null,
   "skill_summaries": {
     "ultimate": "Passive: normal attacks mesmerize enemies, reducing ATK, and defeated enemies become companions; Active: channel Energy into rapid normal attacks with true damage based on max HP and max HP reduction",
     "skill1": "normal attacks launch extra projectiles that grow with ally temporary buffs; Active: fire multiple projectiles dealing magic damage",

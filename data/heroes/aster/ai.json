@@ -555,18 +555,9 @@
     "enemy-debuffer",
     "enemy-grouping",
     "invincibility",
-    "mass-cc",
-    "summoner"
+    "mass-cc"
   ],
-  "summon_profile": {
-    "has_ranged_summons": false,
-    "sources": [
-      {
-        "section": "Ultimate",
-        "tier": "base"
-      }
-    ]
-  },
+  "summon_profile": null,
   "skill_summaries": {
     "ultimate": "summon a capped, replaceable zone summon, then supercharge all summons for AoE magic damage, stun, and DoT burn",
     "skill1": "Passive: each summon spawns an orbiting object dealing contact damage; Active: displace enemies toward summons, dealing damage",

@@ -52,7 +52,10 @@ count when the unit fights on-field.
 
 **Does not count:** Sky Fish dash, magic leaves, Smashy ground strike,
 royal marksman volleys; **spell-form** damage (Mehira voidlings, Shemira
-ghosts).
+ghosts); counters or zones with effects but no battle unit (Senea's
+spectral spectators, Aster's Stars). In build 1.8.11 their scripts have no
+`AddSummonUnit` or `is_summoned`, so summon buffs cannot target them
+(see `afkj-data/docs/summons.md`).
 
 Curated roster: each hero's `ai.json` `summon_profile` field.
 

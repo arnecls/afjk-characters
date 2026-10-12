@@ -473,7 +473,9 @@ minor skill effect.
 - summoner: Fields battlefield summons — independently acting combat units
   placed on or remaining on the battlefield beyond the cast animation.
   Timed or untargetable fighters qualify; transient attacks/effects (e.g.
-  Marcille Sky Fish) do not. Curated roster and source skills live in
+  Marcille Sky Fish) do not. Counters or zones without a battle unit
+  (Senea spectators, Aster Stars) do not qualify; evidence in
+  `afkj-data/docs/summons.md`. Curated roster and source skills live in
   each hero's `ai.json` `summon_profile`.
 - taunt: Forces enemies to attack the hero or redirects enemy focus onto them.
 - temporary-stat-buffer: Grants at least one **temporary** ally stat buff
