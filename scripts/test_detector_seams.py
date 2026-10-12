@@ -8,6 +8,7 @@ from hero_pipeline.analysis.conditions import parse_conditions_from_text
 from hero_pipeline.analysis.crowd_control import extract_cc_duration
 from hero_pipeline.analysis.damage import (
     SCORED_DAMAGE_TYPES,
+    _chunk_deals_enemy_damage,
     detect_damage_types,
 )
 from hero_pipeline.analysis.magnitudes import assign_damage_magnitudes
@@ -97,6 +98,22 @@ class DetectorSeamTests(unittest.TestCase):
             ),
             ["Max HP-based damage"],
         )
+
+    def test_max_hp_rider_with_hp_reduction_clause_is_damage(self) -> None:
+        text = (
+            "These attacks also deal extra true damage equal to 8% + 1.2% "
+            "(SP-based) of the target's max HP and inflict max HP Reduction "
+            "equal to 100%."
+        )
+        self.assertEqual(
+            detect_damage_types(text, "Magic"),
+            ["True damage", "Max HP-based damage"],
+        )
+        self.assertTrue(_chunk_deals_enemy_damage(text, "Magic"))
+
+    def test_summon_true_damage_hit_counts_as_enemy_damage(self) -> None:
+        text = "Each rose deals 190% (ATK-based) true damage."
+        self.assertTrue(_chunk_deals_enemy_damage(text, "Magic"))
 
     def test_true_delivery_keeps_explicit_hp_formula(self) -> None:
         self.assertEqual(

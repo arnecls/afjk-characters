@@ -352,6 +352,9 @@ def _text_has_max_hp_damage(text: str) -> bool:
     for pat in _TARGET_MAX_HP_DAMAGE_RES:
         for m in pat.finditer(text):
             clause = _clause_around(t, m.start())
+            # A trailing "and inflict max HP Reduction ..." rider is a
+            # separate effect, not a reason to reject the damage part.
+            clause = re.sub(r"\b(?:and )?inflict(?:s|ing)?\b.*$", "", clause)
             if _MAX_HP_DAMAGE_EXCLUDE_RE.search(clause):
                 if not re.search(r"\babsorb(?:s|ing)? \d+", clause):
                     continue
@@ -862,6 +865,12 @@ def _chunk_deals_enemy_damage(text: str, primary_dmg: str = "Physical") -> bool:
         return True
     if re.search(
         r"deal(?:s|ing|t)? \d+(?:\.\d+)?%\s*\(atk-based\)\s*extra true damage",
+        t,
+    ):
+        return True
+    if re.search(
+        r"\b(?:each|every) \w+(?: \w+)? deal(?:s|ing|t)? "
+        r"\d+(?:\.\d+)?%\s*\(atk-based\)\s*true damage",
         t,
     ):
         return True

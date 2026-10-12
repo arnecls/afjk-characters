@@ -68,6 +68,19 @@ class PipelineRegressionTests(unittest.TestCase):
         errors = relationship_invariant_errors(self.view)
         self.assertEqual(errors, [])
 
+    def test_single_target_hero_is_not_area_damage_replacement(self) -> None:
+        by_id = {hero["id"]: hero for hero in self.view["heroes"]}
+        refs = by_id["aster"]["references"]["replacements"]
+        damage = {
+            row.get("id") or row.get("hero_id")
+            for key, rows in refs.items()
+            if "damage" in str(key).lower()
+            for row in rows
+        }
+        self.assertTrue(damage)
+        self.assertNotIn("silven", damage)
+        self.assertIn("frieren", damage)
+
     def test_condition_and_soul_pact_regressions(self) -> None:
         by_id = {hero["id"]: hero for hero in self.view["heroes"]}
         arden = by_id["arden"]

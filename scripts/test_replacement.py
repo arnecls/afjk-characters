@@ -941,5 +941,51 @@ class OverallReplacementTests(_RestoreReplacementConstants):
         self.assertEqual(ranked[0]["name"], "Melee")
 
 
+class DamageReplacementCoverageTests(unittest.TestCase):
+    SOURCE = {"Magic": 100.0, "DoT": 60.0, "True damage": 40.0}
+
+    def test_small_true_damage_rider_does_not_earn_full_type_credit(
+        self,
+    ) -> None:
+        rider = {"Magic": 100.0, "True damage": 2.0}
+        full = {"Magic": 100.0, "DoT": 60.0, "True damage": 40.0}
+        low = gen._damage_replacement_coverage(self.SOURCE, rider)
+        high = gen._damage_replacement_coverage(self.SOURCE, full)
+        self.assertAlmostEqual(high, 1.0)
+        self.assertLess(low, 0.5)
+
+    def test_narrower_reach_is_penalized_wider_is_not(self) -> None:
+        same = dict(self.SOURCE)
+        wide_src = gen._damage_replacement_coverage(self.SOURCE, same, 4.0, 4.0)
+        narrow = gen._damage_replacement_coverage(self.SOURCE, same, 4.0, 1.5)
+        self.assertAlmostEqual(narrow, wide_src * 1.5 / 4.0)
+        wider = gen._damage_replacement_coverage(self.SOURCE, same, 1.5, 5.0)
+        self.assertAlmostEqual(wider, wide_src)
+
+    def test_source_without_special_types_uses_throughput_and_reach(
+        self,
+    ) -> None:
+        source = {"Magic": 100.0}
+        score = gen._damage_replacement_coverage(
+            source, {"Magic": 50.0}, 4.0, 2.0
+        )
+        self.assertAlmostEqual(score, 0.5 * 0.5)
+
+    def test_dot_counts_as_type_dimension(self) -> None:
+        source = {"Magic": 50.0, "DoT": 50.0}
+        no_dot = gen._damage_replacement_coverage(source, {"Magic": 50.0})
+        with_dot = gen._damage_replacement_coverage(
+            source, {"Magic": 50.0, "DoT": 50.0}
+        )
+        self.assertAlmostEqual(no_dot, 0.5 * 0.0 + 0.5 * 0.5)
+        self.assertAlmostEqual(with_dot, 1.0)
+
+    def test_physical_output_does_not_replace_magic(self) -> None:
+        score = gen._damage_replacement_coverage(
+            {"Magic": 100.0}, {"Physical": 500.0}
+        )
+        self.assertEqual(score, 0.0)
+
+
 if __name__ == "__main__":
     unittest.main()

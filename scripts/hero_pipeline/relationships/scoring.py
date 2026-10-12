@@ -200,6 +200,9 @@ def _merge_effects(effects: list[EffectRecord]) -> list[EffectRecord]:
 
 
 TRUE_DAMAGE_TYPES = frozenset({"True damage", "HP loss"})
+SPECIAL_DAMAGE_TYPES = TRUE_DAMAGE_TYPES | frozenset(
+    {"DoT", "Max HP-based damage", "Lost HP-based damage"}
+)
 DEFAULT_ROLE_CATEGORY = "specialist"
 STATIC_TILE_BUFFER_TAG = "static-tile-buffer"
 # Ally buff and provide labels a static-tile buffer grants only to the ally
@@ -328,7 +331,7 @@ PRYDWEN_TIER_MODES = ("afk_stages", "dream_realm", "dream_realm_endless", "pvp")
 REPLACEMENT_TIER_MODES = ("afk_stages", "dream_realm", "pvp")
 REPLACEMENT_MAX_TIER_DEFICIT = 2
 TIER_RANK_ORDER = ("C", "B", "A", "A+", "S", "S+")
-REPLACEMENT_TRUE_DAMAGE_BLEND = 0.65
+REPLACEMENT_DAMAGE_TYPE_BLEND = 0.5
 REPLACEMENT_HEALING_THROUGHPUT_BLEND = 0.65
 REPLACEMENT_TRUE_DAMAGE_PROFILE_BOOST = 1.5
 REPLACEMENT_SIGNATURE_CC_BOOST = 1.5
@@ -2953,19 +2956,46 @@ def _hero_cc_profile(
     return (profile, has_signature_cc)
 
 
+def _damage_reach(hero: HeroRecord) -> float:
+    """Widest enemy targeting weight across all of a hero's damage."""
+    best = 0.0
+    for _dt, tgt in hero["damage_entries"]:
+        if tgt == "Self":
+            continue
+        for part in tgt.split(", "):
+            best = max(best, TARGETING_WEIGHT.get(part, 1.0))
+    return best
+
+
 def _damage_replacement_coverage(
-    types_source: set[str],
-    types_candidate: set[str],
     profile_source: dict[str, float],
     profile_candidate: dict[str, float],
+    reach_source: float = 0.0,
+    reach_candidate: float = 0.0,
 ) -> float:
-    general = _replacement_coverage(profile_source, profile_candidate)
-    true_source = types_source & TRUE_DAMAGE_TYPES
-    if not true_source:
-        return general
-    type_cov = len(true_source & types_candidate) / len(true_source)
-    blend = REPLACEMENT_TRUE_DAMAGE_BLEND
-    return blend * type_cov + (1.0 - blend) * general
+    """Damage similarity: special-type match and throughput, times reach.
+
+    Special types (true, HP-based, DoT) are matched by amount, not by
+    presence. Type match and per-type throughput weigh equally. Candidates
+    that hit less of the map than the source are scaled down.
+    """
+    total_source = sum(v for v in profile_source.values() if v > 0)
+    if total_source <= 0:
+        return 0.0
+    # Per damage type, so Physical output cannot stand in for Magic.
+    throughput = _replacement_coverage(profile_source, profile_candidate)
+    special_source = {
+        k: v for k, v in profile_source.items() if k in SPECIAL_DAMAGE_TYPES
+    }
+    if special_source:
+        type_cov = _replacement_coverage(special_source, profile_candidate)
+        blend = REPLACEMENT_DAMAGE_TYPE_BLEND
+        base = blend * type_cov + (1.0 - blend) * throughput
+    else:
+        base = throughput
+    if reach_source > 0 and reach_candidate < reach_source:
+        base *= reach_candidate / reach_source
+    return base
 
 
 def _dedupe_ranked_tags(ranked: list[tuple[float, str]], limit: int = 5) -> list[str]:
@@ -3362,7 +3392,7 @@ def compute_replacement_scores(
     profiles: dict[str, dict[str, float]] = {}
     energy_provided: dict[str, float] = {}
     damage_profiles: dict[str, dict[str, float]] = {}
-    damage_types: dict[str, set[str]] = {}
+    damage_reach: dict[str, float] = {}
     debuff_profiles: dict[str, dict[str, float]] = {}
     cc_profiles: dict[str, dict[str, float]] = {}
     healing_profiles: dict[str, dict[str, float]] = {}
@@ -3381,7 +3411,7 @@ def compute_replacement_scores(
         sig_name = behavior["signature_skill_name"] if behavior else ""
         sig_section = hero.get("signature_section") or ""
         damage_profiles[hero["title"]] = _hero_damage_profile(hero, skills_by_title)
-        damage_types[hero["title"]] = provider_damage_types(hero)
+        damage_reach[hero["title"]] = _damage_reach(hero)
         debuff_profiles[hero["title"]] = _hero_debuff_profile(hero, skills_by_title)
         cc_profiles[hero["title"]], _ = _hero_cc_profile(
             hero, sig_section, sig_name, skills_by_title
@@ -3391,7 +3421,6 @@ def compute_replacement_scores(
         px = profiles[hero_x["title"]]
         ex = energy_provided[hero_x["title"]]
         dpx = damage_profiles[hero_x["title"]]
-        dtx = damage_types[hero_x["title"]]
         dbpx = debuff_profiles[hero_x["title"]]
         cpx = cc_profiles[hero_x["title"]]
         hpx = healing_profiles[hero_x["title"]]
@@ -3441,7 +3470,10 @@ def compute_replacement_scores(
             category_scores["damage"].append(
                 (
                     _damage_replacement_coverage(
-                        dtx, damage_types[hero_y["title"]], dpx, dpy
+                        dpx,
+                        dpy,
+                        damage_reach[hero_x["title"]],
+                        damage_reach[hero_y["title"]],
                     ),
                     hero_y["title"],
                     _damage_overlap_tags(dpx, dpy),

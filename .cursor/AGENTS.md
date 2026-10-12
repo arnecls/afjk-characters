@@ -372,6 +372,10 @@ excluded; candidates **2+ tiers below the source on every overlapping mode**
 are excluded. Synergy ranking is unchanged. **Buff/debuff/CC replacement
 profiles keep full targeting weights** (area, all units, etc.) so substitutes
 compare on maximum kit reach; synergy stat-buff scoring does not.
+**Damage replacement** blends special-type coverage (true damage, HP loss,
+DoT, max/lost HP-based; matched by amount) and per-type throughput 50/50,
+then scales by `candidate reach / source reach` when the candidate's widest
+enemy targeting is narrower.
 Assign every tag the hero is eligible for — there is no limit on
 tag count. Strong multi-role supports (e.g. Contess) legitimately carry
 many tags. Tags must still describe how the hero is played, not every

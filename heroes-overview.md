@@ -103,9 +103,9 @@ Aliceth provides Attack range to single targets `high` and Fatal blow immunity (
 
 **Damage**
 
-- Nara (100% `Physical` `HP loss`)
-- Frieren (81% `HP loss` `DoT`)
-- Saida (81% `HP loss` `DoT`)
+- Athalia (85% `Physical` `Lost HP-based damage`)
+- Kordan (81% `Physical` `Lost HP-based damage`)
+- Faramor (75% `Physical` `Lost HP-based damage` `DoT`)
 
 **Debuffs on enemies**
 
@@ -271,9 +271,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Gwyneth (100% `DoT` `Physical`)
 - Thador (100% `DoT` `Physical`)
-- Faramor (100% `DoT` `Physical`)
+- Faramor (90% `DoT` `Physical`)
+- Gwyneth (80% `DoT` `Physical`)
 
 **Debuffs on enemies**
 
@@ -416,8 +416,7 @@ Alsa also requires units **applying crowd control** to enemies
 **Best overall replacement**
 
 - Galahad (77% `Damage` `Debuffs on enemies`)
-- Zorya (64% `Damage` `Debuffs on enemies` `Crowd Control`)
-- Aster (58% `Damage` `Crowd Control`)
+- Zorya (56% `Damage` `Debuffs on enemies` `Crowd Control`)
 
 **Similar Skills**
 
@@ -427,9 +426,9 @@ Alsa also requires units **applying crowd control** to enemies
 
 **Damage**
 
-- Rolan (100% `Magic`)
 - Senea (100% `Magic`)
 - Frieren (100% `Magic`)
+- Saida (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -709,9 +708,9 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Shadewing**.
 
 **Best overall replacement**
 
-- Gwyneth (56% `Damage` `Crowd Control`)
+- Gwyneth (62% `Damage` `Crowd Control`)
+- Faramor (59% `Damage`)
 - Voracia (55% `Damage`)
-- Faramor (53% `Damage`)
 
 **Similar Skills**
 
@@ -722,8 +721,8 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Shadewing**.
 **Damage**
 
 - Frieren (100% `DoT` `Magic`)
-- Faramor (100% `DoT`)
-- Cyran (100% `DoT` `Magic`)
+- Gwyneth (100% `DoT`)
+- Thador (100% `DoT`)
 
 **Crowd Control**
 
@@ -833,11 +832,6 @@ Common buffers are **Gunnar**, **Twins**, **Smokey & Meerky**, or **Rolan**.
 
 ### Units that can act as a replacement for Aster
 
-**Best overall replacement**
-
-- Lamentis (59% `Damage` `Crowd Control`)
-- Orion (59% `Damage` `Crowd Control`)
-
 **Similar Skills**
 
 - Senea (45% `aoe-damage` `enemy-debuffer` `invincibility`)
@@ -846,9 +840,9 @@ Common buffers are **Gunnar**, **Twins**, **Smokey & Meerky**, or **Rolan**.
 
 **Damage**
 
-- Sylphira (100% `Magic` `True damage`)
-- Lamentis (100% `Magic` `True damage` `Max HP-based damage`)
-- Silven (98% `Magic` `True damage` `Max HP-based damage`)
+- Frieren (92% `Magic` `DoT` `True damage`)
+- Cyran (86% `Magic` `DoT` `True damage`)
+- Faramor (82% `DoT` `True damage`)
 
 **Debuffs on enemies**
 
@@ -1129,9 +1123,7 @@ Common buffers are **Rolan**, **Twins**, **Solise**, or **Contess**.
 
 **Best overall replacement**
 
-- Sylphira (70% `Damage` `Crowd Control`)
-- Baelran (68% `Damage` `Crowd Control`)
-- Himmel (66% `Damage` `Crowd Control`)
+- Himmel (52% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
@@ -1141,9 +1133,9 @@ Common buffers are **Rolan**, **Twins**, **Solise**, or **Contess**.
 
 **Damage**
 
-- Himmel (100% `True damage` `Physical`)
-- Sylphira (100% `True damage`)
 - Faramor (100% `True damage` `Lost HP-based damage` `Physical`)
+- Nara (75% `Physical` `True damage`)
+- Valka (74% `Physical` `True damage`)
 
 **Debuffs on enemies**
 
@@ -1417,10 +1409,6 @@ Common buffers are **Twins**, **Rolan**, **Lorsan**, or **Smokey & Meerky**.
 
 ### Units that can act as a replacement for Baelran
 
-**Best overall replacement**
-
-- Sylphira (51% `Debuffs on enemies` `Crowd Control` `Damage`)
-
 **Similar Skills**
 
 - Shemira (50% `hp-scaling`)
@@ -1429,9 +1417,9 @@ Common buffers are **Twins**, **Rolan**, **Lorsan**, or **Smokey & Meerky**.
 
 **Damage**
 
-- Frieren (100% `True damage`)
 - Himmel (100% `True damage` `Physical`)
 - Faramor (100% `True damage` `Physical`)
+- Athalia (100% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -1562,7 +1550,6 @@ extend stealth duration after own defeat
 
 **Best overall replacement**
 
-- Saida (57% `Debuffs on enemies`)
 - Cryonaia (55% `Damage`)
 
 **Similar Skills**
@@ -1574,7 +1561,7 @@ extend stealth duration after own defeat
 **Damage**
 
 - Frieren (100% `DoT` `Magic`)
-- Aster (100% `Magic` `DoT`)
+- Faramor (100% `DoT`)
 - Cyran (100% `DoT` `Magic`)
 
 **Debuffs on enemies**
@@ -1697,10 +1684,6 @@ Bonnie also requires units **dealing magic damage**
 
 ### Units that can act as a replacement for Bonnie
 
-**Best overall replacement**
-
-- Nerion (52% `Damage` `Crowd Control`)
-
 **Similar Skills**
 
 - Nerion (61% `backline-inhibit` `battle-start-burst` `enemy-debuffer`)
@@ -1709,9 +1692,9 @@ Bonnie also requires units **dealing magic damage**
 
 **Damage**
 
-- Rolan (100% `Magic`)
 - Senea (100% `Magic`)
 - Frieren (100% `Magic`)
+- Saida (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -1842,8 +1825,8 @@ These are the **4** strongest pairings:
 
 **Best overall replacement**
 
-- Lumont (58% `Crowd Control`)
-- Hepler (55% `Crowd Control`)
+- Lumont (53% `Crowd Control`)
+- Hepler (51% `Crowd Control`)
 
 **Similar Skills**
 
@@ -1853,9 +1836,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Himmel (99% `Max HP-based damage` `Physical`)
-- Alna (82% `Physical` `DoT`)
-- Karma (82% `Physical` `DoT`)
+- Himmel (94% `Max HP-based damage` `Physical`)
+- Alna (59% `Physical` `DoT`)
+- Karma (59% `Physical` `DoT`)
 
 **Debuffs on enemies**
 
@@ -1980,9 +1963,9 @@ Common buffers are **Evie**, **Thador**, **Kordan**, or **Kruger**.
 
 **Best overall replacement**
 
-- Natsu (69% `Damage` `Crowd Control` `Debuffs on enemies`)
-- Aster (67% `Damage` `Crowd Control` `Debuffs on enemies`)
-- Aurora (57% `Damage` `Crowd Control` `Debuffs on enemies`)
+- Aster (72% `Damage` `Crowd Control` `Debuffs on enemies`)
+- Lorsan (61% `Damage` `Crowd Control` `Debuffs on enemies`)
+- Berial (55% `Damage`)
 
 **Similar Skills**
 
@@ -1992,9 +1975,9 @@ Common buffers are **Evie**, **Thador**, **Kordan**, or **Kruger**.
 
 **Damage**
 
+- Aster (100% `Magic` `DoT`)
 - Cyran (100% `Magic` `DoT`)
 - Cryonaia (100% `Magic` `DoT`)
-- Voracia (100% `Magic` `DoT`)
 
 **Debuffs on enemies**
 
@@ -2116,10 +2099,6 @@ Common buffers are **Contess**, **Twins**, **Daimon**, or **Rolan**.
 
 ### Units that can act as a replacement for Callan
 
-**Best overall replacement**
-
-- Zorya (52% `Crowd Control` `Damage`)
-
 **Similar Skills**
 
 - Korin (50% `ally-shielder`)
@@ -2128,9 +2107,9 @@ Common buffers are **Contess**, **Twins**, **Daimon**, or **Rolan**.
 
 **Damage**
 
-- Rolan (100% `Magic`)
 - Senea (100% `Magic`)
 - Frieren (100% `Magic`)
+- Saida (100% `Magic`)
 
 **Crowd Control**
 
@@ -2403,7 +2382,7 @@ Common buffers are **Twins**, **Smokey & Meerky**, **Rolan**, or **Ravion**.
 
 - Frieren (100% `Magic`)
 - Saida (100% `Magic`)
-- Silven (100% `Magic`)
+- Sylphira (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -2537,8 +2516,8 @@ Common buffers are **Shadewing**, **Gunnar**, **Twins**, or **Kordan**.
 **Best overall replacement**
 
 - Gwyneth (80% `Damage` `Crowd Control`)
+- Arden (63% `Damage` `Crowd Control`)
 - Alna (58% `Damage` `Crowd Control`)
-- Faramor (55% `Damage`)
 
 **Similar Skills**
 
@@ -2943,8 +2922,8 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Twins**.
 **Damage**
 
 - Voracia (100% `DoT` `Magic`)
-- Cyran (72% `DoT` `Magic`)
-- Frieren (70% `DoT` `Magic`)
+- Gwyneth (90% `DoT`)
+- Faramor (87% `DoT`)
 
 ### Summary for Cryonaia
 
@@ -3058,8 +3037,8 @@ Common buffers are **Gunnar**, **Ravion**, **Twins**, or **Smokey & Meerky**.
 **Damage**
 
 - Frieren (100% `DoT` `Magic` `True damage`)
-- Lamentis (100% `Magic` `True damage`)
-- Korin (96% `True damage`)
+- Cryonaia (72% `DoT` `Magic`)
+- Voracia (72% `DoT` `Magic`)
 
 **Debuffs on enemies**
 
@@ -3214,7 +3193,7 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Senea (100% `Magic`)
+- Senea (100% `Magic` `True damage`)
 - Frieren (100% `Magic` `True damage`)
 - Aster (100% `Magic` `True damage`)
 
@@ -3497,9 +3476,9 @@ Dionel also requires units **buffing them**
 
 **Best overall replacement**
 
-- Frieren (72% `Damage` `Debuffs on enemies` `Crowd Control`)
-- Faramor (72% `Damage` `Debuffs on enemies`)
-- Nazrik (70% `Damage` `Debuffs on enemies`)
+- Frieren (71% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Faramor (63% `Damage` `Debuffs on enemies`)
+- Baelran (55% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
@@ -3510,8 +3489,8 @@ Dionel also requires units **buffing them**
 **Damage**
 
 - Himmel (100% `True damage` `Physical`)
-- Faramor (100% `True damage` `Physical`)
 - Athalia (100% `True damage` `Physical`)
+- Faramor (96% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -3644,8 +3623,7 @@ Dunlingr provides ATK (EX+5) to single targets `low`, Haste (EX+15) to single ta
 
 **Best overall replacement**
 
-- Sylphira (59% `Crowd Control` `Damage`)
-- Orion (51% `Crowd Control` `Damage`)
+- Sylphira (55% `Crowd Control` `Damage`)
 
 **Similar Skills**
 
@@ -3655,9 +3633,9 @@ Dunlingr provides ATK (EX+5) to single targets `low`, Haste (EX+15) to single ta
 
 **Damage**
 
-- Rolan (100% `Magic`)
 - Senea (100% `Magic`)
 - Frieren (100% `Magic`)
+- Saida (100% `Magic`)
 
 **Crowd Control**
 
@@ -3920,8 +3898,8 @@ Eryndor also requires units **putting debuffs** on enemies
 **Best overall replacement**
 
 - Senea (88% `Damage` `Similar Skills`)
-- Natsu (65% `Damage` `Similar Skills`)
-- Shemira (62% `Damage`)
+- Viperian (60% `Damage`)
+- Marcille (54% `Damage`)
 
 **Similar Skills**
 
@@ -3931,9 +3909,9 @@ Eryndor also requires units **putting debuffs** on enemies
 
 **Damage**
 
-- Rolan (100% `Magic`)
 - Senea (100% `Magic`)
 - Frieren (100% `Magic`)
+- Saida (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -4080,8 +4058,8 @@ These are the **4** strongest pairings:
 **Damage**
 
 - Athalia (100% `Physical`)
-- Chippy (100% `Physical`)
 - Florabelle (100% `Physical`)
+- Gwyneth (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -4382,9 +4360,9 @@ Faramor also requires units **grouping enemies** and/or units **buffing them**
 
 **Best overall replacement**
 
-- Orion (92% `Damage` `Debuffs on enemies` `Crowd Control`)
-- Nazrik (75% `Damage` `Debuffs on enemies` `Crowd Control`)
-- Frieren (61% `Damage` `Debuffs on enemies`)
+- Gwyneth (59% `Debuffs on enemies` `Crowd Control`)
+- Orion (56% `Debuffs on enemies` `Crowd Control`)
+- Frieren (54% `Damage` `Debuffs on enemies`)
 
 **Similar Skills**
 
@@ -4394,9 +4372,8 @@ Faramor also requires units **grouping enemies** and/or units **buffing them**
 
 **Damage**
 
-- Athalia (100% `True damage` `Lost HP-based damage` `Physical`)
-- Nara (98% `True damage` `Physical`)
-- Indris (95% `Physical` `True damage`)
+- Frieren (67% `True damage` `DoT`)
+- Nara (54% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -4930,7 +4907,7 @@ Galahad provides Shield to single targets `high`.
 **Best overall replacement**
 
 - Saida (64% `Damage` `Crowd Control` `Buffs on allies`)
-- Phraesto (52% `Damage` `Similar Skills` `Buffs on allies`)
+- Lucy (53% `Damage` `Buffs on allies`)
 
 **Buffs on allies**
 
@@ -4947,8 +4924,8 @@ Galahad provides Shield to single targets `high`.
 **Damage**
 
 - Saida (100% `Magic`)
-- Viperian (86% `Magic`)
-- Ludovic (85% `Magic`)
+- Marcille (100% `Magic`)
+- Lucy (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -5216,6 +5193,10 @@ Common buffers are **Twins**, **Rolan**, **Solise**, or **Contess**.
 
 ### Units that can act as a replacement for Granny Dahnie
 
+**Best overall replacement**
+
+- Hepler (51% `Crowd Control`)
+
 **Similar Skills**
 
 - Viperian (33% `energy-inhibitor` `hp-loss`)
@@ -5224,9 +5205,9 @@ Common buffers are **Twins**, **Rolan**, **Solise**, or **Contess**.
 
 **Damage**
 
-- Thoran (100% `Physical`)
-- Nara (100% `Physical`)
-- Harak (100% `Physical`)
+- Gwyneth (100% `Physical` `DoT`)
+- Thador (100% `Physical` `DoT`)
+- Alna (100% `Physical` `DoT`)
 
 **Debuffs on enemies**
 
@@ -5359,7 +5340,6 @@ These are the **4** strongest pairings:
 **Best overall replacement**
 
 - Phraesto (54% `Crowd Control`)
-- Hepler (51% `Crowd Control` `Damage`)
 - Faramor (51% `Crowd Control` `Damage`)
 
 **Similar Skills**
@@ -5517,7 +5497,7 @@ Common buffers are **Shadewing**, **Gunnar**, **Kordan**, or **Kruger**.
 
 **Damage**
 
-- Frieren (50% `DoT`)
+- Frieren (75% `DoT`)
 
 **Debuffs on enemies**
 
@@ -5756,8 +5736,7 @@ Common buffers are **Thador**, **Shadewing**, **Kruger**, or **Laios**.
 
 **Best overall replacement**
 
-- Nara (78% `Damage` `Crowd Control` `Similar Skills`)
-- Thoran (51% `Damage`)
+- Nara (64% `Damage` `Crowd Control` `Similar Skills`)
 
 **Similar Skills**
 
@@ -5767,9 +5746,9 @@ Common buffers are **Thador**, **Shadewing**, **Kruger**, or **Laios**.
 
 **Damage**
 
-- Mehira (100% `HP loss`)
-- Saida (100% `HP loss`)
 - Aliceth (100% `Physical` `HP loss`)
+- Saida (85% `HP loss`)
+- Nara (77% `Physical` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -6226,9 +6205,8 @@ Himmel provides Basic stats to multiple targets `average`, Direct healing to mul
 
 **Damage**
 
-- Faramor (100% `True damage` `Physical`)
-- Athalia (98% `True damage` `Physical`)
-- Frieren (97% `True damage`)
+- Frieren (61% `True damage`)
+- Faramor (58% `True damage` `Physical`)
 
 **Crowd Control**
 
@@ -6363,9 +6341,9 @@ Common buffers are **Twins**, **Rolan**, **Contess**, or **Daimon**.
 
 **Damage**
 
-- Kruger (100% `Physical`)
-- Valka (100% `Physical`)
-- Igor (100% `Physical`)
+- Himmel (100% `Physical` `Max HP-based damage`)
+- Brutus (100% `Physical` `Max HP-based damage`)
+- Ludovic (75% `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -6606,9 +6584,9 @@ battle-start ultimate summons an extra marker
 
 **Damage**
 
-- Gwyneth (100% `Physical`)
-- Athalia (100% `Physical`)
 - Kulu (100% `Physical`)
+- Nara (100% `Physical`)
+- Valka (99% `Physical`)
 
 **Debuffs on enemies**
 
@@ -7183,8 +7161,8 @@ Common buffers are **Rolan**, **Solise**, **Twins**, or **Ravion**.
 **Damage**
 
 - Gwyneth (100% `Physical` `DoT`)
+- Thador (100% `Physical` `DoT`)
 - Alna (100% `Physical` `DoT`)
-- Kruger (90% `Physical`)
 
 **Crowd Control**
 
@@ -7319,9 +7297,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Nazrik (100% `Physical` `True damage`)
-- Valka (100% `Physical` `True damage`)
 - Nara (100% `Physical` `True damage`)
+- Valka (99% `Physical` `True damage`)
+- Athalia (88% `Physical` `True damage`)
 
 **Debuffs on enemies**
 
@@ -7645,7 +7623,6 @@ These are the **4** strongest pairings:
 
 - Faramor (100% `Lost HP-based damage` `Physical`)
 - Athalia (100% `Physical` `Lost HP-based damage`)
-- Shakir (86% `Physical`)
 
 **Crowd Control**
 
@@ -7773,9 +7750,9 @@ Common buffers are **Rolan**, **Twins**, **Solise**, or **Parisa**.
 
 **Damage**
 
-- Frieren (100% `True damage`)
 - Himmel (100% `True damage` `Physical`)
 - Faramor (100% `True damage` `Physical`)
+- Athalia (100% `True damage` `Physical`)
 
 **Crowd Control**
 
@@ -8021,9 +7998,9 @@ Common buffers are **Ravion**, **Twins**, **Rolan**, or **Smokey & Meerky**.
 
 **Damage**
 
-- Gwyneth (100% `Physical`)
-- Athalia (100% `Physical`)
-- Kazim (100% `Physical`)
+- Igor (100% `Physical`)
+- Kazim (96% `Physical`)
+- Kruger (96% `Physical`)
 
 **Debuffs on enemies**
 
@@ -8227,7 +8204,7 @@ These are the **4** strongest pairings:
 - **Signature skill**: Omnisight (Mythic+)
 - **Movement**: moving (avg attack range 0.0 tiles); walk speed normal
 - **Behavior tags**: `aoe-damage` `high-initial-energy` `hp-scaling` `mass-cc` `summoner`
-- **Damage types**: Magic `high`, Max HP-based damage `average`, True damage `average`
+- **Damage types**: Magic `high`, Max HP-based damage `average`, True damage `high`
 
 #### Play overview
 
@@ -8316,9 +8293,9 @@ Common buffers are **Ravion**, **Smokey & Meerky**, **Rolan**, or **Twins**.
 
 **Damage**
 
-- Frieren (100% `Magic` `True damage`)
-- Cyran (100% `Magic` `True damage`)
-- Aster (99% `Magic` `True damage` `Max HP-based damage`)
+- Frieren (68% `Magic` `True damage`)
+- Cyran (64% `Magic` `True damage`)
+- Himmel (63% `True damage` `Max HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -8452,9 +8429,9 @@ Common buffers are **Shadewing**, **Rolan**, **Kruger**, or **Laios**.
 
 **Best overall replacement**
 
-- Kafra (81% `Damage` `Crowd Control`)
 - Pang (79% `Damage` `Crowd Control`)
 - Soren (78% `Damage` `Crowd Control` `Similar Skills`)
+- Faramor (78% `Damage`)
 
 **Similar Skills**
 
@@ -8584,9 +8561,9 @@ Lily May also requires units **buffing them**
 
 **Damage**
 
+- Senea (100% `Magic` `True damage`)
 - Frieren (100% `Magic` `True damage`)
 - Aster (100% `Magic` `True damage`)
-- Silven (100% `Magic` `True damage`)
 
 **Debuffs on enemies**
 
@@ -8732,8 +8709,8 @@ These are the **4** strongest pairings:
 **Damage**
 
 - Frieren (100% `DoT` `Magic`)
+- Thador (100% `DoT`)
 - Faramor (100% `DoT`)
-- Cyran (100% `DoT` `Magic`)
 
 **Debuffs on enemies**
 
@@ -9166,8 +9143,8 @@ Lucy provides Shield (Mythic+) to single targets `high` and Ranged DEF (EX+10) t
 **Damage**
 
 - Saida (100% `Magic`)
-- Sylphira (100% `Magic`)
 - Marcille (100% `Magic`)
+- Galahad (98% `Magic`)
 
 **Crowd Control**
 
@@ -9301,9 +9278,8 @@ Ludovic provides Direct healing to multiple targets `average` and Healing over t
 
 **Damage**
 
-- Rolan (97% `Magic` `HP loss`)
-- Saida (92% `Magic` `HP loss`)
-- Galahad (90% `Magic`)
+- Lamentis (70% `Magic` `Max HP-based damage`)
+- Himmel (62% `Max HP-based damage`)
 
 **Crowd Control**
 
@@ -9581,8 +9557,7 @@ These are the **4** strongest pairings:
 **Best overall replacement**
 
 - Thador (60% `Damage` `Debuffs on enemies` `Buffs on allies` `Energy provider`)
-- Ravion (54% `Debuffs on enemies` `Buffs on allies` `Damage`)
-- Kafra (51% `Damage` `Debuffs on enemies` `Crowd Control`)
+- Ravion (52% `Debuffs on enemies` `Buffs on allies`)
 
 **Buffs on allies**
 
@@ -9598,9 +9573,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Gunnar (100% `Physical`)
 - Himmel (100% `Physical`)
-- Gwyneth (100% `Physical`)
+- Thador (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -9735,10 +9710,6 @@ Marcille provides Direct healing to single targets `low`.
 
 ### Units that can act as a replacement for Marcille
 
-**Best overall replacement**
-
-- Natsu (64% `Damage`)
-
 **Healing**
 
 - Contess (100% `Direct healing` `Healing`)
@@ -9754,8 +9725,8 @@ Marcille provides Direct healing to single targets `low`.
 **Damage**
 
 - Saida (100% `Magic`)
-- Natsu (100% `Magic`)
-- Sylphira (92% `Magic`)
+- Lucy (86% `Magic`)
+- Natsu (86% `Magic`)
 
 **Crowd Control**
 
@@ -9878,9 +9849,9 @@ Common buffers are **Shadewing**, **Kordan**, **Kruger**, or **Laios**.
 
 **Best overall replacement**
 
-- Vala (82% `Damage` `Crowd Control`)
 - Faramor (64% `Damage` `Crowd Control`)
-- Nazrik (64% `Damage` `Crowd Control`)
+- Atalanta (60% `Crowd Control`)
+- Athalia (55% `Damage`)
 
 **Similar Skills**
 
@@ -10018,8 +9989,8 @@ Mehira provides HP loss modifier to multiple targets `high` and Haste to multipl
 **Damage**
 
 - Frieren (100% `DoT` `Magic` `HP loss`)
+- Aster (100% `DoT` `Magic`)
 - Saida (100% `Magic` `DoT` `HP loss`)
-- Phraesto (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -10277,9 +10248,8 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Shadewing**.
 
 **Best overall replacement**
 
-- Orion (55% `Damage`)
 - Voracia (51% `Damage`)
-- Silven (50% `Damage`)
+- Aster (50% `Damage`)
 
 **Similar Skills**
 
@@ -10398,8 +10368,8 @@ Nara provides Direct healing (Mythic+) in an area `low`.
 **Damage**
 
 - Frieren (100% `True damage` `HP loss`)
-- Valka (99% `True damage` `Physical`)
-- Faramor (75% `True damage` `Physical`)
+- Faramor (100% `True damage` `Physical`)
+- Valka (100% `True damage` `Physical`)
 
 **Crowd Control**
 
@@ -10658,9 +10628,7 @@ Common buffers are **Gunnar**, **Twins**, **Rolan**, or **Smokey & Meerky**.
 
 **Best overall replacement**
 
-- Faramor (62% `Damage`)
-- Kazim (59% `Damage` `Crowd Control`)
-- Vala (58% `Damage` `Crowd Control`)
+- Faramor (61% `Damage`)
 
 **Similar Skills**
 
@@ -10953,9 +10921,9 @@ Niru provides Direct healing to single targets `low`.
 
 **Damage**
 
-- Rolan (100% `Magic`)
-- Senea (100% `Magic`)
-- Saida (100% `Magic`)
+- Zorya (100% `Magic` `Lost HP-based damage`)
+- Ludovic (62% `Magic`)
+- Faramor (54% `Lost HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -11081,9 +11049,9 @@ Common buffers are **Evie**, **Thador**, **Kordan**, or **Kruger**.
 
 **Damage**
 
-- Senea (100% `Magic`)
 - Frieren (100% `Magic` `DoT`)
 - Aster (100% `Magic` `DoT`)
+- Saida (100% `Magic` `DoT`)
 
 **Debuffs on enemies**
 
@@ -11210,9 +11178,9 @@ Orion provides Shield to multiple targets `low`.
 
 **Best overall replacement**
 
-- Faramor (69% `Damage` `Debuffs on enemies`)
-- Frieren (62% `Damage` `Debuffs on enemies`)
-- Aster (61% `Damage`)
+- Phraesto (75% `Damage` `Debuffs on enemies` `Buffs on allies`)
+- Natsu (61% `Damage` `Crowd Control`)
+- Sylphira (60% `Damage`)
 
 **Buffs on allies**
 
@@ -11228,9 +11196,9 @@ Orion provides Shield to multiple targets `low`.
 
 **Damage**
 
-- Senea (100% `Magic`)
-- Aster (100% `Magic`)
-- Silven (100% `Magic`)
+- Saida (100% `Magic`)
+- Sylphira (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Debuffs on enemies**
 
@@ -11393,8 +11361,8 @@ These are the **4** strongest pairings:
 **Damage**
 
 - Frieren (100% `DoT` `HP loss`)
-- Rolan (85% `HP loss`)
-- Contess (82% `HP loss`)
+- Thador (81% `DoT`)
+- Alna (81% `DoT`)
 
 **Debuffs on enemies**
 
@@ -11527,8 +11495,8 @@ Pang provides ATK (Mythic+) to multiple targets `average`.
 **Best overall replacement**
 
 - Perseus (93% `Damage` `Crowd Control` `Buffs on allies`)
-- Kafra (77% `Damage` `Crowd Control`)
-- Silvina (74% `Debuffs on enemies` `Crowd Control`)
+- Lucca (74% `Damage` `Crowd Control`)
+- Faramor (72% `Damage` `Crowd Control`)
 
 **Buffs on allies**
 
@@ -12151,7 +12119,7 @@ Phraesto provides Damage taken to single targets `low`, Energy to single targets
 **Damage**
 
 - Frieren (100% `Magic`)
-- Mehira (100% `Magic`)
+- Aster (100% `Magic`)
 - Saida (100% `Magic`)
 
 **Debuffs on enemies**
@@ -12283,9 +12251,9 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Shadewing**.
 
 **Best overall replacement**
 
-- Lily May (57% `Damage` `Debuffs on enemies`)
 - Sylphira (56% `Damage`)
 - Aster (53% `Damage`)
+- Cyran (52% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
@@ -12295,7 +12263,7 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Shadewing**.
 
 **Damage**
 
-- Senea (100% `Magic`)
+- Senea (100% `Magic` `True damage`)
 - Frieren (100% `Magic` `True damage`)
 - Aster (100% `Magic` `True damage`)
 
@@ -12434,8 +12402,8 @@ These are the **4** strongest pairings:
 
 **Best overall replacement**
 
-- Thador (72% `Similar Skills` `Crowd Control` `Damage` `Buffs on allies` `Energy provider`)
-- Lyca (61% `Damage` `Buffs on allies` `Energy provider` `Debuffs on enemies`)
+- Thador (66% `Similar Skills` `Crowd Control` `Buffs on allies` `Energy provider` `Debuffs on enemies`)
+- Lyca (53% `Buffs on allies` `Energy provider` `Debuffs on enemies`)
 
 **Buffs on allies**
 
@@ -12451,9 +12419,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Thador (100% `Physical`)
 - Faramor (100% `Physical` `Lost HP-based damage`)
-- Peggy (100% `Physical`)
+- Athalia (100% `Physical` `Lost HP-based damage`)
+- Aliceth (100% `Physical` `Lost HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -12673,7 +12641,7 @@ Reinier provides ATK to single targets `low`, Direct healing to single targets `
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `slow`, damage `average`
+- **Signature skill (ult)**: speed `slow`, damage `high`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `average`
 
 ##### Ultimate
@@ -12740,9 +12708,9 @@ Common buffers are **Shadewing**, **Kordan**, **Kruger**, or **Laios**.
 
 **Best overall replacement**
 
-- Atalanta (83% `Damage` `Similar Skills` `Crowd Control`)
-- Soren (73% `Damage` `Crowd Control`)
-- Perseus (71% `Damage` `Crowd Control`)
+- Atalanta (73% `Damage` `Similar Skills` `Crowd Control`)
+- Soren (64% `Damage` `Crowd Control`)
+- Perseus (62% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
@@ -12752,9 +12720,9 @@ Common buffers are **Shadewing**, **Kordan**, **Kruger**, or **Laios**.
 
 **Damage**
 
-- Gunnar (100% `Physical`)
 - Himmel (100% `Physical`)
-- Gwyneth (100% `Physical`)
+- Alna (100% `Physical`)
+- Kulu (100% `Physical`)
 
 **Crowd Control**
 
@@ -12889,7 +12857,6 @@ These are the **4** strongest pairings:
 
 - Frieren (100% `Magic` `HP loss`)
 - Saida (100% `Magic` `HP loss`)
-- Galahad (93% `Magic`)
 
 **Crowd Control**
 
@@ -13183,9 +13150,7 @@ Saida provides Shield (Supreme+) to multiple targets `high`.
 
 **Damage**
 
-- Mehira (100% `Magic` `DoT` `HP loss`)
-- Phraesto (100% `Magic`)
-- Frieren (89% `Magic` `HP loss` `DoT`)
+- Frieren (76% `Magic` `HP loss` `DoT`)
 
 **Debuffs on enemies**
 
@@ -13583,8 +13548,8 @@ Scarlita provides Shield to single targets `low`.
 **Damage**
 
 - Himmel (100% `Physical`)
-- Gwyneth (100% `Physical`)
 - Thador (100% `Physical`)
+- Alna (100% `Physical`)
 
 **Crowd Control**
 
@@ -13642,7 +13607,7 @@ Scarlita provides Shield to single targets `low`.
 
 #### Skill overview
 
-- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, buffs `average`, debuffs `average`
+- **Signature skill (ult)**: speed `slow`, first cast speed `fast`, buffs `average`, debuffs `average`, damage `low`
 - **Non-ultimate**: speed `fast`, heal `average`, buffs `average`, damage `high`
 
 ##### Ultimate
@@ -13706,8 +13671,6 @@ Common buffers are **Twins**, **Smokey & Meerky**, **Gunnar**, or **Rolan**.
 **Best overall replacement**
 
 - Eryndor (62% `Similar Skills` `Debuffs on enemies`)
-- Aster (58% `Damage`)
-- Orion (56% `Damage`)
 
 **Similar Skills**
 
@@ -13717,9 +13680,9 @@ Common buffers are **Twins**, **Smokey & Meerky**, **Gunnar**, or **Rolan**.
 
 **Damage**
 
-- Frieren (100% `Magic`)
-- Aster (100% `Magic`)
-- Silven (100% `Magic`)
+- Frieren (100% `Magic` `True damage`)
+- Aster (92% `Magic` `True damage`)
+- Cyran (80% `Magic` `True damage`)
 
 **Debuffs on enemies**
 
@@ -13849,8 +13812,8 @@ Common buffers are **Twins**, **Shadewing**, **Rolan**, or **Kruger**.
 **Best overall replacement**
 
 - Kordan (77% `Damage` `Crowd Control`)
-- Atalanta (61% `Damage` `Debuffs on enemies` `Crowd Control`)
-- Kruger (60% `Damage` `Debuffs on enemies`)
+- Faramor (55% `Damage`)
+- Athalia (55% `Damage`)
 
 **Similar Skills**
 
@@ -14004,8 +13967,8 @@ These are the **4** strongest pairings:
 **Damage**
 
 - Frieren (100% `Magic` `DoT`)
-- Mehira (100% `Magic` `DoT`)
 - Saida (100% `Magic` `DoT`)
+- Cyran (100% `Magic` `DoT`)
 
 **Debuffs on enemies**
 
@@ -14285,7 +14248,7 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Shadewing**.
 
 **Best overall replacement**
 
-- Senea (80% `Damage` `Debuffs on enemies`)
+- Senea (79% `Damage` `Debuffs on enemies`)
 - Sylphira (64% `Damage` `Debuffs on enemies`)
 - Lamentis (57% `Damage` `Debuffs on enemies`)
 
@@ -14297,7 +14260,7 @@ Common buffers are **Evie**, **Kordan**, **Kruger**, or **Shadewing**.
 
 **Damage**
 
-- Senea (100% `Magic`)
+- Senea (100% `Magic` `True damage`)
 - Frieren (100% `Magic` `True damage`)
 - Aster (100% `Magic` `True damage`)
 
@@ -14418,9 +14381,8 @@ Silven also requires units **buffing them**
 
 **Best overall replacement**
 
-- Cyran (68% `Damage` `Crowd Control`)
-- Sylphira (68% `Damage` `Crowd Control`)
-- Orion (54% `Damage`)
+- Cyran (58% `Damage` `Crowd Control`)
+- Sylphira (58% `Damage` `Crowd Control`)
 
 **Similar Skills**
 
@@ -14430,9 +14392,9 @@ Silven also requires units **buffing them**
 
 **Damage**
 
-- Senea (100% `Magic`)
 - Aster (100% `Magic` `True damage` `Max HP-based damage`)
-- Sylphira (100% `Magic` `True damage`)
+- Lamentis (100% `Magic` `True damage` `Max HP-based damage`)
+- Sylphira (92% `Magic` `True damage`)
 
 **Crowd Control**
 
@@ -14977,9 +14939,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Rolan (100% `Magic`)
 - Senea (100% `Magic`)
 - Frieren (100% `Magic`)
+- Saida (100% `Magic`)
 
 ### Summary for Solise
 
@@ -15360,12 +15322,6 @@ Common buffers are **Ravion**, **Twins**, **Rolan**, or **Pandora**.
 
 ### Units that can act as a replacement for Sylphira
 
-**Best overall replacement**
-
-- Pippa (56% `Damage` `Debuffs on enemies`)
-- Baelran (53% `Damage` `Crowd Control`)
-- Orion (50% `Damage`)
-
 **Similar Skills**
 
 - Natsu (34% `high-initial-energy` `mass-cc`)
@@ -15374,9 +15330,9 @@ Common buffers are **Ravion**, **Twins**, **Rolan**, or **Pandora**.
 
 **Damage**
 
-- Athalia (100% `True damage`)
-- Orion (100% `Magic`)
-- Faramor (95% `True damage`)
+- Athalia (89% `True damage`)
+- Lamentis (84% `Magic` `True damage`)
+- Aster (80% `Magic` `True damage`)
 
 **Debuffs on enemies**
 
@@ -15493,9 +15449,8 @@ Taichi & Agumon provides ATK (Supreme+) in an area `high`.
 
 **Best overall replacement**
 
-- Estrilda (55% `Crowd Control` `Buffs on allies`)
-- Rolan (54% `Damage` `Crowd Control` `Buffs on allies`)
-- Granny Dahnie (53% `Damage` `Crowd Control`)
+- Estrilda (62% `Crowd Control` `Buffs on allies`)
+- Perseus (55% `Crowd Control` `Buffs on allies`)
 
 **Buffs on allies**
 
@@ -15511,9 +15466,9 @@ Taichi & Agumon provides ATK (Supreme+) in an area `high`.
 
 **Damage**
 
-- Harak (100% `Physical` `HP loss`)
-- Nara (100% `Physical` `HP loss`)
-- Yamato & Gabumon (100% `HP loss`)
+- Yamato & Gabumon (83% `HP loss`)
+- Frieren (69% `HP loss`)
+- Saida (69% `HP loss`)
 
 **Crowd Control**
 
@@ -15646,9 +15601,9 @@ Talene provides Direct healing to single targets `low`.
 
 **Damage**
 
-- Rolan (100% `Magic`)
 - Frieren (100% `Magic`)
-- Aster (100% `Magic`)
+- Saida (100% `Magic`)
+- Galahad (100% `Magic`)
 
 **Crowd Control**
 
@@ -15777,8 +15732,8 @@ Common buffers are **Rolan**, **Twins**, **Hugin**, or **Lorsan**.
 **Damage**
 
 - Frieren (100% `DoT` `Magic`)
-- Aster (100% `DoT` `Magic`)
-- Saida (100% `Magic` `DoT`)
+- Thador (100% `DoT`)
+- Cyran (100% `DoT` `Magic`)
 
 ### Summary for Tasi
 
@@ -16037,7 +15992,7 @@ These are the **4** strongest pairings:
 
 **Best overall replacement**
 
-- Himmel (54% `Crowd Control` `Healing`)
+- Himmel (52% `Crowd Control` `Healing`)
 
 **Healing**
 
@@ -16053,9 +16008,9 @@ These are the **4** strongest pairings:
 
 **Damage**
 
-- Gwyneth (100% `DoT` `Physical`)
 - Alna (100% `DoT` `Physical`)
 - Faramor (100% `DoT` `Physical`)
+- Frieren (84% `DoT`)
 
 **Crowd Control**
 
@@ -16183,9 +16138,9 @@ Common buffers are **Rolan**, **Solise**, **Twins**, or **Contess**.
 
 **Damage**
 
-- Aliceth (100% `Physical`)
-- Nara (100% `Physical`)
-- Granny Dahnie (100% `Physical`)
+- Gunnar (100% `Physical`)
+- Himmel (100% `Physical`)
+- Gwyneth (100% `Physical`)
 
 **Debuffs on enemies**
 
@@ -16747,8 +16702,8 @@ Vala also requires enemies **to be defeated**
 **Best overall replacement**
 
 - Nazrik (63% `Damage` `Crowd Control`)
-- Aster (59% `Damage` `Crowd Control`)
-- Orion (58% `Damage` `Crowd Control`)
+- Faramor (52% `Damage`)
+- Dionel (51% `Damage`)
 
 **Similar Skills**
 
@@ -17034,9 +16989,9 @@ Valka provides ATK SPD to multiple targets `average`.
 
 **Damage**
 
-- Frieren (100% `True damage`)
 - Himmel (100% `True damage` `Physical`)
 - Faramor (100% `True damage` `Physical`)
+- Nara (100% `True damage` `Physical`)
 
 **Debuffs on enemies**
 
@@ -17321,7 +17276,6 @@ Common buffers are **Evie**, **Thador**, **Kordan**, or **Kruger**.
 **Best overall replacement**
 
 - Saida (60% `Damage` `Debuffs on enemies`)
-- Galahad (53% `Damage`)
 - Ludovic (50% `Damage`)
 
 **Similar Skills**
@@ -17332,9 +17286,9 @@ Common buffers are **Evie**, **Thador**, **Kordan**, or **Kruger**.
 
 **Damage**
 
-- Rolan (100% `Magic` `HP loss`)
 - Frieren (100% `Magic` `HP loss`)
 - Saida (100% `Magic` `HP loss`)
+- Ludovic (100% `Magic` `HP loss`)
 
 **Debuffs on enemies**
 
@@ -17452,9 +17406,9 @@ Common buffers are **Evie**, **Thador**, **Gunnar**, or **Kordan**.
 
 **Damage**
 
-- Cryonaia (98% `DoT` `Magic`)
-- Frieren (78% `DoT` `Magic`)
-- Gwyneth (72% `DoT`)
+- Gwyneth (96% `DoT`)
+- Cryonaia (91% `DoT` `Magic`)
+- Frieren (89% `DoT` `Magic`)
 
 **Debuffs on enemies**
 
@@ -17574,11 +17528,6 @@ Common buffers are **Rolan**, **Twins**, **Solise**, or **Contess**.
 
 ### Units that can act as a replacement for Walker
 
-**Best overall replacement**
-
-- Kazim (54% `Similar Skills` `Damage` `Crowd Control` `Debuffs on enemies`)
-- Valen (54% `Crowd Control` `Damage`)
-
 **Similar Skills**
 
 - Kazim (66% `aoe-damage` `battle-start-burst` `mark-target` `mass-cc` `non-ult-utility`)
@@ -17587,9 +17536,9 @@ Common buffers are **Rolan**, **Twins**, **Solise**, or **Contess**.
 
 **Damage**
 
-- Himmel (100% `Physical`)
-- Gwyneth (100% `Physical`)
-- Thador (100% `Physical`)
+- Faramor (100% `Physical` `Lost HP-based damage`)
+- Ravion (100% `Physical` `Lost HP-based damage`)
+- Athalia (100% `Physical` `Lost HP-based damage`)
 
 **Debuffs on enemies**
 
@@ -17703,11 +17652,6 @@ Yamato & Gabumon provides Healing over time (Supreme+) in an area `high`.
 
 ### Units that can act as a replacement for Yamato & Gabumon
 
-**Best overall replacement**
-
-- Galahad (51% `Damage` `Crowd Control`)
-- Frieren (50% `Damage`)
-
 **Healing**
 
 - Evie (91% `Healing over time` `Healing`)
@@ -17723,8 +17667,8 @@ Yamato & Gabumon provides Healing over time (Supreme+) in an area `high`.
 **Damage**
 
 - Frieren (100% `HP loss` `DoT` `Magic`)
-- Taichi & Agumon (95% `HP loss`)
-- Galahad (92% `Magic`)
+- Cryonaia (60% `Magic` `DoT`)
+- Voracia (60% `Magic` `DoT`)
 
 **Crowd Control**
 
@@ -18106,9 +18050,9 @@ Zorya also requires allies **casting ultimates**
 
 **Damage**
 
-- Saida (94% `Magic`)
-- Lucy (94% `Magic`)
-- Niru (94% `Magic` `Lost HP-based damage`)
+- Kordan (96% `Lost HP-based damage`)
+- Faramor (80% `Lost HP-based damage`)
+- Athalia (80% `Lost HP-based damage`)
 
 **Debuffs on enemies**
 

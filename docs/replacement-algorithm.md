@@ -62,7 +62,9 @@ Instead of math-heavy profiles, this category uses curated [**Behavior Tags**](.
 ### Damage
 Damage profiles look at both the raw damage throughput and the *type* of damage (Physical, Magic, True damage, HP loss, DoT).
 - **True Damage Boost**: True damage and HP loss (which ignore Phys/Magic DEF and shields) are highly valued. Both outputs are multiplied by **1.5×** in the profile.
-- **Blend**: The final damage replacement score is a blend: **65%** based on matching True Damage types (True damage, HP loss), and **35%** based on general damage throughput coverage.
+- **Special types**: True damage, HP loss, DoT, Max HP-based damage and Lost HP-based damage are matched by *amount*: `min(Candidate / Source, 1.0)` per type, weighted by the Source amount. A small rider (e.g. 3 vs 40 true damage) earns only a small share of the credit.
+- **Blend**: The base score is **50%** special-type match and **50%** per-type throughput coverage (so Physical output cannot stand in for Magic). If the Source has no special types, the base score is the throughput coverage.
+- **Reach**: The base score is multiplied by `Candidate reach / Source reach` when the Candidate hits less of the map. Reach is the widest enemy targeting weight across all damage (Single target 1.5, Multiple targets / Arc 3, Area 4, All units 5). A wider Candidate is not penalized.
 
 ### Healing
 Healing profiles look at raw HP restored and the *method* of healing (Direct Burst vs. Healing Over Time).

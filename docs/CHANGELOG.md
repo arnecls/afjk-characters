@@ -69,6 +69,13 @@
 
 ### Fixed
 
+- Damage replacement: the old score checked only if a candidate has true
+  damage. It ignored the amount. Silven (3 true damage) matched Aster (40
+  true damage) almost fully. The score now compares the amounts.
+- Damage replacement: a candidate that hits fewer enemies than the source
+  now scores lower. Silven (single target) no longer replaces Aster (area).
+- Senea: the damage detector now finds her true damage. It missed two
+  texts.
 - Ravion: EX+10 now provides `Fatal blow save`.
 - Evie: the reveal text no longer counts as an ally provide.
 - The synergy tooltip works again with character pills.
@@ -105,6 +112,18 @@ changes.
 | berial, harak, igor, temesia | - Position set to roaming |
 | chippy, gerda, himmel, kafra, lenya, seth, sinbad, soren | - Position set to frontline |
 | lily-may, nara, niru | - Position set to ally backline |
+
+#### Damage replacements
+
+Aster: the damage replacements change from Sylphira, Lamentis and Silven to
+Frieren, Cyran and Faramor. The Damage lists of 64 other heroes also change.
+Senea does not appear for Aster. Her score is 0.45, which is below the
+minimum of 0.5. She has no DoT.
+
+| Character | What changed |
+|---|---|
+| silven | - Score as Aster replacement 0.99 to 0.10 |
+| senea | - True damage is now detected (42.8, was 0) |
 
 ### Implementation changes
 
@@ -146,6 +165,23 @@ changes.
 - Documented buff zones, temporary stat buffs and ATK dependency in
   `docs/synergy-algorithm.md` and `.cursor/MECHANICS.md`.
 - Regenerated `heroes-overview.md` and the site data.
+- Damage replacement: `_damage_replacement_coverage` in `scoring.py` now
+  takes the damage profiles and the reach of both heroes. The score is
+  `0.5 * type match + 0.5 * throughput`, multiplied by the reach ratio. The
+  ratio is 1 when the candidate reaches as far as the source.
+- The type match covers True damage, HP loss, DoT, Max HP-based damage and
+  Lost HP-based damage. It compares amounts per type. The throughput part
+  compares each damage type separately, so Physical cannot replace Magic.
+- Added `SPECIAL_DAMAGE_TYPES` and `REPLACEMENT_DAMAGE_TYPE_BLEND` (0.5).
+  Removed `REPLACEMENT_TRUE_DAMAGE_BLEND` (0.65).
+- `_text_has_max_hp_damage` ignores a trailing "and inflict ..." clause.
+  `_chunk_deals_enemy_damage` accepts "each <summon> deals N% (ATK-based)
+  true damage".
+- `ALGORITHM_VERSION` is now `local-analysis-v15`.
+- Added tests in `test_replacement.py`, `test_detector_seams.py` and
+  `test_pipeline_regressions.py`.
+- Documented the new score in `docs/replacement-algorithm.md` and
+  `.cursor/AGENTS.md`.
 
 #### Summoner tag fix
 
