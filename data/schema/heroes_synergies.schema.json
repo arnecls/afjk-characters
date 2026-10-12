@@ -84,6 +84,10 @@
         "protection_score": {
           "type": "number",
           "description": "Protection (ally invincibility / cheat death) component of the score."
+        },
+        "tile_buff_score": {
+          "type": "number",
+          "description": "Static-tile buffer component of the score: buffs only the ally placed 1 tile behind the provider receives."
         }
       }
     },

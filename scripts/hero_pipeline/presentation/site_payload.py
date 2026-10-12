@@ -295,8 +295,10 @@ def build_mix_synergy_index(view: Mapping[str, Any]) -> dict[str, Any]:
     grouping_uplift: dict[str, dict[str, float]] = {}
     temp_buff: dict[str, dict[str, float]] = {}
     protection: dict[str, dict[str, float]] = {}
+    tile_buff: dict[str, dict[str, float]] = {}
     distinct_allies: dict[str, int] = {}
     groupers: list[str] = []
+    tile_buffers: list[str] = []
     for hero in view["heroes"]:
         slug = hero["slug"]
         picks = hero["references"]["synergies"]
@@ -326,6 +328,13 @@ def build_mix_synergy_index(view: Mapping[str, Any]) -> dict[str, Any]:
         }
         if prots:
             protection[slug] = prots
+        tiles = {
+            pick["slug"]: round(float(pick["tile_buff_score"]), 4)
+            for pick in picks
+            if float(pick.get("tile_buff_score") or 0) > 0
+        }
+        if tiles:
+            tile_buff[slug] = tiles
         needed = max(
             (
                 int(special["distinct_allies"])
@@ -337,15 +346,20 @@ def build_mix_synergy_index(view: Mapping[str, Any]) -> dict[str, Any]:
         )
         if needed >= 2:
             distinct_allies[slug] = needed
-        if "enemy-grouping" in (hero["curated"].get("behavior_tags") or []):
+        tags = hero["curated"].get("behavior_tags") or []
+        if "enemy-grouping" in tags:
             groupers.append(slug)
+        if "static-tile-buffer" in tags:
+            tile_buffers.append(slug)
     return {
         "byReceiver": by_receiver,
         "groupingUplift": grouping_uplift,
         "tempBuff": temp_buff,
         "protection": protection,
+        "tileBuff": tile_buff,
         "distinctAllies": distinct_allies,
         "groupers": sorted(groupers),
+        "tileBuffers": sorted(tile_buffers),
     }
 
 

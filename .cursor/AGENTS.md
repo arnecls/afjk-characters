@@ -582,6 +582,14 @@ reviewing or fixing matches, work through both heroes in this order.
    receivers tagged `cheat-death`/`invincibility` get half. Only the best
    effect per pair counts, and Mix keeps only the best protected receiver
    per provider (`protection` index, `protection_score` pick field).
+   **Static-tile buffs:** Gunnar and Hugin buff the ally 1 tile behind them
+   (labels in `STATIC_TILE_BUFF_LABELS` in `scoring.py`; every
+   `static-tile-buffer` hero needs an entry). The tile part of a pair score
+   is `tile_buff_score` (Mix index `tileBuff`, `tileBuffers`); Gunnar's
+   tile-bound protection is in it, not in `protection`. Mix picks the best
+   team-wide placement (one receiver per buffer, one buffer per receiver,
+   buffers cannot stand behind each other) and credits the candidate's
+   marginal gain (`mixTileBuffCorrection`).
    Reason wording: `Protection via <label> (<targeting>, recurring|once)`.
 
 **Units benefitting most from** at the end of each Synergies block is the reverse index:

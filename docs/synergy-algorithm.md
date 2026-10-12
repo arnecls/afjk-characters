@@ -187,7 +187,32 @@ Score = `PROTECTION_BASE_MULT` × tier × carry weight × fragility multiplier
 
 A protector covers one ally. The Mix index carries `protection` (pick field
 `protection_score`), and Mix mode keeps only the provider's best protected
-receiver on the team (`mixProtectionCorrection`).
+receiver on the team (`mixProtectionCorrection`). Gunnar protects his field
+ally, so his protection is part of the static-tile buff score below instead.
+
+### Static-Tile Buffs (Mix mode)
+
+Gunnar and Hugin buff "the ally placed 1 tile behind" them. A tile buff
+reaches one ally, and that ally cannot also stand behind the other buffer.
+
+- **Tile labels**: `STATIC_TILE_BUFF_LABELS` in `scoring.py` lists the ally
+  buff and provide labels each `static-tile-buffer` hero grants on its tile
+  (Gunnar: ATK, ATK SPD, Range Increase, Invincible; Hugin: ATK, Energy).
+  Effects merge per label, so Hugin's ultimate ATK counts as tile-bound too.
+- **Tile score**: `tile_buff_score` = pair score − pair score without the
+  tile labels. The Mix index carries it as `tileBuff`, plus the buffer list
+  `tileBuffers`.
+- **Placement**: Mix mode searches every placement of the team's buffers:
+  each buffer buffs at most one teammate, each teammate stands behind at most
+  one buffer, and two buffers cannot stand behind each other. The best
+  placement maximises the summed (mark-weighted) tile score.
+- **Candidate value**: the base sum credits the candidate's tile buff to every
+  teammate. `mixTileBuffCorrection` replaces that with
+  `best(team + candidate) − best(team)`. This can move a teammate buffer onto
+  a new receiver. Example: with Gwyneth and Gunnar on the team, Hugin either
+  buffs Gunnar (Gunnar keeps Gwyneth) or buffs Gwyneth (Gunnar moves to
+  Hugin). The higher-scoring placement decides Hugin's value. A candidate
+  that a teammate buffer would rather buff also gains from that buffer.
 
 ---
 

@@ -2,70 +2,63 @@
 
 ## 2026-10-12
 
-### Fixes and improvements
+### New Features
 
-- Synergy: added the Protection path. Providers of ally invincibility or
-  cheat death (Gunnar, Alna, Aliceth, Ravion, Hepler) now score for strong,
-  fragile carries such as Gwyneth and Frieren. The score combines the
-  receiver's damage percentile (among non-tank and non-support heroes), its
-  fragility from roster-wide HP and DEF percentiles (0.7x to 1.3x), and the
-  protection tier (one-time saves count half). Gunnar gives no credit to
-  moving receivers, and receivers that already protect themselves get half.
-  Mix mode counts only a protector's best protected receiver. The afkj-data
-  exporter now writes `roster_percentiles` into `source.json`. Ravion's
-  EX+10 now provides `Fatal blow save`, and Evie's reveal text is no longer
-  an ally provide.
-- Synergy: Protection details. The path is automatic and needs no
-  `special_requires` entry. Only the best effect per pair scores. The base
-  multiplier (`PROTECTION_BASE_MULT`) is 16. Pandora is excluded because her
-  protected ally cannot act, and revives and spirit forms do not count. The
-  reason reads `Protection via <label> (<targeting>, recurring|once)`. The
-  Mix index carries `protection` (pick field `protection_score`), and the
-  synergies schema allows the new field. Gunnar now appears for Gwyneth, Alna
-  for Frieren and Sylphira, and Gunnar gives nothing to moving carries.
-- Tests and docs: added `scripts/test_protection_synergy.py`, extended
-  `scripts/test_mix_synergy_index.py`, and documented the path in
-  `docs/synergy-algorithm.md`, `.cursor/AGENTS.md` and `.cursor/GLOSSARY.md`.
-- Synergy: added buff zones. Ally buffs for a zone the provider places (for
-  example Estrilda's Pennon of Valor) carry a `zone_anchor`. The receiver's
-  battlefield position decides how much of the zone it stands in
-  (`BUFF_ZONE_REACH_WEIGHT`). Zone buffs score through the stat path scaled by
-  that reach, plus a presence credit for buffs the stat path did not credit.
-  An enemy-backline zone reaches a frontline receiver at 0.75.
-- Synergy: receivers that require temporary ally stat buffs (Perseus, Orion)
-  now value providers whose ally buffs are temporary. The qualifying stat set
-  was widened (for example Movement speed and rivalry DMG Boost / DMG
-  Reduction). Persistence is derived from the skill text. The score grows
-  with the number of distinct buff labels and how often they apply, and a
-  `distinct_allies` requirement needs buffs from that many different allies.
-- Synergy: Mix mode adds the zone grouping uplift when an enemy-grouping hero
-  is on the team, and gives a second temporary-buff provider a 1.5x bonus.
-  The Mix index now carries `groupingUplift`, `tempBuff` and
-  `distinctAllies`.
-- Synergy: ATK buffs now scale with how much a hero's skills depend on ATK.
-  The new `atk_dependency` scoring fact sums the `N% (ATK-based)` values in
-  the base skill text, times explicit hit counts. The multiplier is
-  `1 + min(1, atk_dependency / 1500)`, so 1.0x to 2.0x. It replaces the
-  share-based 1.75x. ATK buffs score for every hero with ATK-scaled skills,
-  even if ATK is not in their benefit stats. Max HP keeps the share-based
-  boost.
-- Synergy: Haste now scores for every receiver at a neutral weight (1.0x,
-  down from 1.25x) and is no longer penalised as implicit fuel. Receivers with
-  a fast signature skill that do not list ATK SPD match Haste only.
-- Synergy: `high-damage-ult` receivers (Frieren, Marcille, Shemira) are
-  exempt from the 0.45x implicit-fuel penalty for ally Energy, so Energy
-  still outranks Haste for them.
-- Added per-hero `battlefield_position` overrides (frontline, ally backline
-  or roaming) and the `zone_anchor` / `distinct_allies` fields in `ai.json`
-  and the schemas.
-- Documented buff zones, temporary stat buffs and the ATK dependency in
-  `docs/synergy-algorithm.md` and `.cursor/MECHANICS.md`.
-- Fixed `scripts/test_synergy_overflow.js`, which failed since the tooltip
-  started using character pills (missing `heroByName` in the test setup).
-- Regenerated `heroes-overview.md` and the site data (synergy lists, Mix
-  index).
+- Synergy: added the Protection path. A hero that gives an ally
+  invincibility or cheat death now scores for strong, fragile carries.
+  Examples of providers: Gunnar, Alna, Aliceth, Ravion, Hepler. Examples of
+  carries: Gwyneth, Frieren.
+- Protection score inputs:
+  - The damage percentile of the receiver. Tanks and supports are not
+    counted.
+  - The fragility of the receiver (0.7x to 1.3x). It comes from HP and DEF
+    percentiles across the roster.
+  - The protection tier. A one-time save counts half.
+- Protection special cases:
+  - Gunnar gives no credit to moving receivers.
+  - A receiver that protects itself gets half.
+  - Pandora is excluded, because her protected ally cannot act.
+  - Revives and spirit forms do not count.
+  - Only the best effect per pair scores.
+- The reason text reads `Protection via <label> (<targeting>, recurring|once)`.
+- Mix mode counts only the best protected receiver of a protector.
+- Mix mode: a static-tile buff (Gunnar, Hugin) reaches only the ally 1 tile
+  behind the buffer. Mix mode now picks the best placement of these buffs
+  for the team. A candidate gets the gain it adds to that placement, not its
+  tile buff once for each teammate. Gunnar's protection is part of his tile
+  buff. The Mix index carries `tileBuff` and `tileBuffers`.
+- Synergy: added buff zones. A provider can place a zone, for example
+  Estrilda's Pennon of Valor. The position of the receiver decides how much
+  of the zone it stands in. An enemy-backline zone reaches a frontline
+  receiver at 0.75.
+- Synergy: Perseus and Orion need temporary ally stat buffs. They now value
+  providers of temporary ally buffs. The list of qualifying stats is wider.
+  It includes Movement speed and rivalry DMG Boost / DMG Reduction.
+- Temporary buff score:
+  - It grows with the number of different buff labels.
+  - It grows with how often the buffs apply.
+  - A `distinct_allies` requirement needs buffs from that many allies.
+- Synergy: Mix mode adds a zone grouping bonus when the team has an
+  enemy-grouping hero. A second temporary-buff provider gets a 1.5x bonus.
+- Synergy: ATK buffs now scale with how much the skills of a hero depend on
+  ATK. The multiplier is 1.0x to 2.0x. It replaces the old fixed 1.75x.
+  ATK buffs now score for every hero with ATK-scaled skills.
+- Synergy: Haste now scores for every receiver at weight 1.0x (was 1.25x).
+  Haste is no longer a penalty for implicit fuel. A receiver with a fast
+  signature skill and no ATK SPD matches Haste only.
+- Synergy: Frieren, Marcille and Shemira keep ally Energy above Haste. The
+  0.45x implicit-fuel penalty does not apply to them.
+- Gunnar now appears for Gwyneth. Alna now appears for Frieren and Sylphira.
 
-### Character data changes
+### Fixed
+
+- Ravion: EX+10 now provides `Fatal blow save`.
+- Evie: the reveal text no longer counts as an ally provide.
+- The synergy tooltip works again with character pills.
+
+### Character changes
+
+#### Buff zones and requirements
 
 | Character | What changed |
 |---|---|
@@ -83,34 +76,59 @@
 | chippy, gerda, himmel, kafra, lenya, seth, sinbad, soren | - Position set to frontline |
 | lily-may, nara, niru | - Position set to ally backline |
 
+### Implementation changes
+
+- The Protection path is automatic. It needs no `special_requires` entry.
+- The constant `PROTECTION_BASE_MULT` is 16.
+- The Mix index has the new fields `protection`, `groupingUplift`,
+  `tempBuff` and `distinctAllies`. The pick field is `protection_score`.
+- The synergies schema allows the new `protection` field.
+- The new scoring fact `atk_dependency` sums the `N% (ATK-based)` values in
+  the base skill text. It multiplies them by explicit hit counts. The
+  multiplier is `1 + min(1, atk_dependency / 1500)`.
+- Max HP keeps its share-based boost.
+- Zone buffs score through the stat path. The reach of the zone scales the
+  score (`BUFF_ZONE_REACH_WEIGHT`). A presence credit covers buffs that the
+  stat path did not credit.
+- The code reads the persistence of a buff from the skill text.
+- The afkj-data exporter now writes `roster_percentiles` into `source.json`.
+- Added the per-hero override `battlefield_position` (frontline, ally
+  backline or roaming).
+- Added the fields `zone_anchor` and `distinct_allies` to `ai.json` and to
+  the schemas.
+- Added `scripts/test_protection_synergy.py`.
+- Extended `scripts/test_mix_synergy_index.py`.
+- Fixed `scripts/test_synergy_overflow.js`. It failed because `heroByName`
+  was missing from the test setup.
+- Documented the new paths in `docs/synergy-algorithm.md`,
+  `.cursor/AGENTS.md` and `.cursor/GLOSSARY.md`.
+- Documented buff zones, temporary stat buffs and ATK dependency in
+  `docs/synergy-algorithm.md` and `.cursor/MECHANICS.md`.
+- Regenerated `heroes-overview.md` and the site data.
+
 ## 2026-10-11
 
-### Fixes and improvements
+### New Features
 
-- Melee/ranged detection (`is_melee`) now follows the new definition in
-  `.cursor/MECHANICS.md` instead of the hero class: default attack range of
-  2 or less is melee, 4 or more is ranged, off-battlefield summoners take
-  their summon's type, and range 3 is decided by the shortest skill range.
-  Per-hero overrides cover the cases text cannot show.
-- Reclassified after review: Lily May is now ranged (jump-and-retreat);
-  Lucy, Mehira and Damian are now melee; Tasi is melee and dual-range;
-  Taichi & Agumon is melee and dual-range.
-- Removed the now redundant Berial (`is_melee`) and Vala (`is_dual_range`)
-  overrides; detection gives the same result.
-- Added the Map and Positioning sections to `.cursor/MECHANICS.md` (hex grid,
-  tile numbering, front/rear, range, movement patterns, melee rules).
-- Updated the counter skill and glossary references to the per-hero melee
-  overrides.
-- Replacement lists in `heroes-overview.md` shifted for heroes whose
-  melee/ranged role changed.
-- Web UI: the "score higher than" tooltip in "Units improving <hero>" now
-  lists units as character pills (portrait and name) with their score as
-  `x/5`, shown with one decimal and without a trailing `.0`.
-- Web UI: pills in the tooltip are clickable and open the hero page. The
-  tooltip stays open when the mouse moves into it. Clicking the trigger
-  text pins it until the user clicks outside.
+- The "score higher than" tooltip in "Units improving <hero>" now shows
+  character pills (portrait and name).
+- The score shows as `x/5`. It has one decimal and no trailing `.0`.
+- Pills in the tooltip are clickable. They open the hero page.
+- The tooltip stays open when the mouse moves into it.
+- A click on the trigger text pins the tooltip. A click outside closes it.
 
-### Character data changes
+### Fixed
+
+- Melee and ranged detection is more accurate. It follows the new
+  definition in `.cursor/MECHANICS.md`.
+- Reclassified after review:
+  - Lily May is now ranged (jump-and-retreat).
+  - Lucy, Mehira and Damian are now melee.
+  - Tasi is now melee and dual-range.
+  - Taichi & Agumon is now melee and dual-range.
+- Replacement lists changed for heroes with a new melee or ranged role.
+
+### Character changes
 
 | Character | What changed |
 |---|---|
@@ -121,30 +139,44 @@
 | taichi-agumon | - Now classified as melee and dual-range |
 | tasi | - Now classified as melee and dual-range |
 
+### Implementation changes
+
+- `is_melee` no longer uses the hero class. The rules are:
+  - A default attack range of 2 or less is melee.
+  - A range of 4 or more is ranged.
+  - A summoner off the battlefield takes the type of its summon.
+  - For range 3, the shortest skill range decides.
+- Per-hero overrides cover the cases that text cannot show.
+- Removed the Berial (`is_melee`) and Vala (`is_dual_range`) overrides.
+  Detection gives the same result.
+- Added the Map and Positioning sections to `.cursor/MECHANICS.md`. They
+  cover the hex grid, tile numbering, front and rear, range, movement
+  patterns and melee rules.
+- Updated the counter skill and the glossary for the melee overrides.
+- Regenerated the replacement lists in `heroes-overview.md`.
+
 ## 2026-10-02
 
-### New heroes
+### New Features
 
-- added Aster (Hypogean · Mage · Magic) — Chaos Observer — with full skill
-  analysis, roster entry, and portrait.
-- added Senea (Graveborn · Marksman · Magic) — Deathless Songstress — with
-  full skill analysis, roster entry, and portrait.
-- added Estrilda (Lightbearer · Rogue · Physical) — Knight of Valor — with
-  full skill analysis, roster entry, and portrait. Skill texts, upgrade tiers,
-  and release date (2026-10-09) come from the live wiki; Prydwen tiers are not
-  published yet.
+- Added Aster (Hypogean · Mage · Magic), Chaos Observer.
+- Added Senea (Graveborn · Marksman · Magic), Deathless Songstress.
+- Added Estrilda (Lightbearer · Rogue · Physical), Knight of Valor.
+- Each new hero has a full skill analysis, a roster entry and a portrait.
+- Estrilda: skill texts, upgrade tiers and release date (2026-10-09) come
+  from the live wiki. Prydwen tiers are not published yet.
 
-### Fixes and improvements
+### Fixed
 
-- Added Estrilda to the downloader's hero list
-- Fixed pipeline issues leading to failing character portrait downloads
-- Updated Karma play texts
-- synced Prydwen meta tiers with the live Prydwen pages: corrected stale
-  ratings for 21 heroes and added the missing ratings for Karma. Chippy,
-  Hammie, Taichi & Agumon and Yamato & Gabumon have no Prydwen rating yet and
-  stay unrated.
+- Character portraits now download without errors.
+- Updated the Karma play texts.
+- Synced the Prydwen meta tiers with the live Prydwen pages.
+  - Corrected stale ratings for 21 heroes.
+  - Added the missing ratings for Karma.
+  - Chippy, Hammie, Taichi & Agumon and Yamato & Gabumon have no Prydwen
+    rating yet. They stay unrated.
 
-### Character data changes
+### Character changes
 
 | Character | What changed |
 |---|---|
@@ -168,27 +200,28 @@
 | ulmus | - Refreshed relative stat ranks |
 | velara | - Refreshed relative stat ranks |
 
+### Implementation changes
+
+- Added Estrilda to the hero list of the downloader.
+- Fixed pipeline issues that made portrait downloads fail.
+
 ## 2026-09-24
 
-### Corrected hero data
+### New Features
 
-- repaired skill data and values for almost every character. Skill texts sourced
-  from the afk journey wiki were sometimes incomplete or incorrect. These have
-  been repaired, which resulted in several changes.
-- repaired the "stats steal" mechanic detection.
+- Merged and renamed damage types in the list view and in CSV exports.
+  Filtering by damage type is now easier.
 
-### Damage types
+### Fixed
 
-- renamed and merged damage types in the list view and CSV exports. This makes
-  it a lot easier to filter for different damage types.
-- fixed the detection of HP-loss, max-HP damage, lost-HP damage and true damage.
-  There was a lot of confusion about these damage types, which is now resolved.
+- Repaired skill data and values for almost every character. The wiki skill
+  texts were sometimes incomplete or incorrect.
+- Repaired the detection of the "stats steal" mechanic.
+- Fixed the detection of HP-loss, max-HP, lost-HP and true damage. These
+  damage types were often confused.
+- Updated the Karma portrait image.
 
-### Assets
-
-- updated the Karma portrait image.
-
-### Character data changes
+### Character changes
 
 | Character | What changed |
 |---|---|

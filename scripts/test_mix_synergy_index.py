@@ -18,6 +18,7 @@ sys.path.insert(0, str(SCRIPTS))
 from hero_pipeline import pipeline
 from hero_pipeline.presentation.project import project_roster
 from hero_pipeline.presentation.site_payload import build_mix_synergy_index
+from hero_pipeline.relationships import scoring
 from hero_pipeline.storage import load_config
 
 _CACHE: dict = {}
@@ -63,12 +64,35 @@ class MixSynergyIndexTests(unittest.TestCase):
 
     def test_protection_pairs(self) -> None:
         protection = index()["protection"]
-        self.assertGreater(protection["gwyneth"]["gunnar"], 0)
         self.assertGreater(protection["frieren"]["alna"], 0)
-        self.assertNotIn("gunnar", protection.get("sylphira", {}))
+        # Gunnar's protection is tile-bound and lives in tileBuff instead.
         for receivers in protection.values():
+            self.assertNotIn("gunnar", receivers)
             for value in receivers.values():
                 self.assertGreater(value, 0)
+
+    def test_tile_buff_pairs(self) -> None:
+        idx = index()
+        tile = idx["tileBuff"]
+        self.assertGreater(tile["gwyneth"]["gunnar"], 0)
+        self.assertGreater(tile["gwyneth"]["hugin"], 0)
+        # Hugin's ultimate Haste reaches any ally, so it stays outside.
+        self.assertLess(
+            tile["gwyneth"]["hugin"], idx["byReceiver"]["gwyneth"]["hugin"]
+        )
+        self.assertNotIn("gunnar", tile.get("sylphira", {}))
+        for receiver, providers in tile.items():
+            for provider, value in providers.items():
+                self.assertIn(provider, idx["tileBuffers"])
+                self.assertGreater(value, 0)
+                self.assertLessEqual(
+                    value, idx["byReceiver"][receiver][provider] + 1e-3
+                )
+
+    def test_tile_buffers_have_labels(self) -> None:
+        self.assertEqual(
+            index()["tileBuffers"], sorted(scoring.STATIC_TILE_BUFF_LABELS)
+        )
 
     def test_groupers(self) -> None:
         groupers = index()["groupers"]
@@ -99,7 +123,17 @@ const index = {
   tempBuff: { perseus: { isabella: 4, other: 3, x: 1 } },
   protection: { gwyneth: { gunnar: 6 }, frieren: { gunnar: 4 } },
 };
+const tiles = {
+  tileBuffers: ["gunnar", "hugin"],
+  tileBuff: {
+    gwyneth: { gunnar: 28, hugin: 3 },
+    gunnar: { hugin: 3 },
+    hugin: { gunnar: 9 },
+    carry: { gunnar: 10 },
+  },
+};
 const no = function () { return false; };
+const gwynethMarked = function (s) { return s === "gwyneth"; };
 const out = {
   noGrouper: mix.mixGroupingUplift(index, "estrilda", ["perseus"], no, 2),
   teamGrouper: mix.mixGroupingUplift(
@@ -120,6 +154,15 @@ const out = {
   protMarked: mix.mixProtectionCorrection(
     index, "gunnar", ["gwyneth", "frieren"],
     function (s) { return s === "frieren"; }, 2),
+  tileHugin: mix.mixTileBuffCorrection(
+    tiles, "hugin", ["gwyneth", "gunnar"], no, 2),
+  tileGunnar: mix.mixTileBuffCorrection(
+    tiles, "gunnar", ["gwyneth", "hugin"], no, 2),
+  tileCycle: mix.mixTileBuffCorrection(tiles, "gunnar", ["hugin"], no, 2),
+  tileReceiver: mix.mixTileBuffCorrection(tiles, "carry", ["gunnar"], no, 2),
+  tileNoBuffer: mix.mixTileBuffCorrection(tiles, "carry", ["gwyneth"], no, 2),
+  tileMarked: mix.mixTileBuffCorrection(
+    tiles, "hugin", ["gwyneth", "gunnar"], gwynethMarked, 2),
 };
 console.log(JSON.stringify(out));
 """
@@ -165,6 +208,26 @@ class MixJsHelperTests(unittest.TestCase):
         self.assertEqual(self.out["protTwo"], -4)
         # Marked frieren counts 8; gwyneth's 6 is removed.
         self.assertEqual(self.out["protMarked"], -6)
+
+    def test_tile_buffer_reaches_one_receiver(self) -> None:
+        # Gunnar keeps Gwyneth; Hugin only gains by buffing Gunnar (3)
+        # instead of the 3 + 3 the base sum credited.
+        self.assertEqual(self.out["tileHugin"], -3)
+        # Gunnar takes Gwyneth (28) and Hugin moves onto Gunnar (3 - 3):
+        # gain 28 instead of the 28 + 9 the base sum credited.
+        self.assertEqual(self.out["tileGunnar"], -9)
+
+    def test_tile_buffers_cannot_stand_behind_each_other(self) -> None:
+        # Gunnar -> Hugin (9) and Hugin -> Gunnar (3) cannot both hold.
+        self.assertEqual(self.out["tileCycle"], 0)
+
+    def test_tile_receiver_candidate_gains_free_buffer(self) -> None:
+        self.assertEqual(self.out["tileReceiver"], 10)
+        self.assertEqual(self.out["tileNoBuffer"], 0)
+
+    def test_tile_marked_receiver(self) -> None:
+        # Gwyneth counts double: base sum 6 + 3, marginal gain still 3.
+        self.assertEqual(self.out["tileMarked"], -6)
 
 
 if __name__ == "__main__":

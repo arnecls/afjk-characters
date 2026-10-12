@@ -483,6 +483,83 @@ window.AFKJ = window.AFKJ || {};
     return best - sum;
   }
 
+  // A static-tile buffer buffs only the ally placed 1 tile behind it: each
+  // buffer reaches one receiver, each receiver stands behind at most one
+  // buffer, and no two buffers can stand behind each other. Returns the
+  // best marked-weighted tile score over all such placements of `units`.
+  function mixBestTileAssignment(index, units, isMarked, markMult) {
+    const buffers = units.filter(function (slug) {
+      return index.tileBuffers.indexOf(slug) !== -1;
+    });
+    const behind = {};
+    const taken = {};
+    function formsCycle(provider, receiver) {
+      let cur = receiver;
+      while (behind[cur]) {
+        cur = behind[cur];
+        if (cur === provider) {
+          return true;
+        }
+      }
+      return false;
+    }
+    function search(i) {
+      if (i === buffers.length) {
+        return 0;
+      }
+      const provider = buffers[i];
+      let best = search(i + 1);
+      units.forEach(function (receiver) {
+        if (
+          receiver === provider ||
+          taken[receiver] ||
+          formsCycle(provider, receiver)
+        ) {
+          return;
+        }
+        const score =
+          mixIndexPair(index.tileBuff, receiver, provider) *
+          (isMarked(receiver) ? markMult : 1.0);
+        if (score <= 0) {
+          return;
+        }
+        taken[receiver] = true;
+        behind[provider] = receiver;
+        best = Math.max(best, score + search(i + 1));
+        delete taken[receiver];
+        delete behind[provider];
+      });
+      return best;
+    }
+    return search(0);
+  }
+
+  // The base sum credits the candidate's tile buff to every teammate.
+  // Replace that with the candidate's marginal gain to the best team-wide
+  // tile placement, which may move a teammate buffer onto another receiver.
+  function mixTileBuffCorrection(index, candidate, team, isMarked, markMult) {
+    if (!index || !index.tileBuff || !index.tileBuffers) {
+      return 0;
+    }
+    const withCandidate = team.concat([candidate]);
+    const hasBuffer = withCandidate.some(function (slug) {
+      return index.tileBuffers.indexOf(slug) !== -1;
+    });
+    if (!hasBuffer) {
+      return 0;
+    }
+    let counted = 0;
+    team.forEach(function (receiver) {
+      counted +=
+        mixIndexPair(index.tileBuff, receiver, candidate) *
+        (isMarked(receiver) ? markMult : 1.0);
+    });
+    const gain =
+      mixBestTileAssignment(index, withCandidate, isMarked, markMult) -
+      mixBestTileAssignment(index, team, isMarked, markMult);
+    return gain - counted;
+  }
+
   function getQualifyingMixFactions() {
     const state = window.AFKJ.state;
     const count = {};
@@ -759,6 +836,9 @@ window.AFKJ = window.AFKJ || {};
       state.mixSynergyIndex, slug, team, isMarked, markMult
     );
     total += mixProtectionCorrection(
+      state.mixSynergyIndex, slug, team, isMarked, markMult
+    );
+    total += mixTileBuffCorrection(
       state.mixSynergyIndex, slug, team, isMarked, markMult
     );
     if (hero) {
@@ -1739,6 +1819,8 @@ window.AFKJ = window.AFKJ || {};
     mixGroupingUplift: mixGroupingUplift,
     mixDistinctAlliesBonus: mixDistinctAlliesBonus,
     mixProtectionCorrection: mixProtectionCorrection,
+    mixBestTileAssignment: mixBestTileAssignment,
+    mixTileBuffCorrection: mixTileBuffCorrection,
     getQualifyingMixFactions: getQualifyingMixFactions,
     mixHeroSkillTags: mixHeroSkillTags,
     mixHeroBehaviorTags: mixHeroBehaviorTags,

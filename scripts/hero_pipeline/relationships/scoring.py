@@ -201,6 +201,16 @@ def _merge_effects(effects: list[EffectRecord]) -> list[EffectRecord]:
 TRUE_DAMAGE_TYPES = frozenset({"True damage", "HP loss"})
 DEFAULT_ROLE_CATEGORY = "specialist"
 STATIC_TILE_BUFFER_TAG = "static-tile-buffer"
+# Ally buff and provide labels a static-tile buffer grants only to the ally
+# placed 1 tile behind it. Every hero tagged static-tile-buffer needs an
+# entry. Merged effects keep one record per label, so a label listed here
+# also strips same-label buffs from other skills (Hugin's ultimate ATK).
+STATIC_TILE_BUFF_LABELS: dict[str, frozenset[str]] = {
+    "gunnar": frozenset(
+        {"ATK", "ATK SPD", "Range Increase", "Invincible", "Invincibility"}
+    ),
+    "hugin": frozenset({"ATK", "Energy"}),
+}
 
 STAT_TO_BUFF_LABELS: dict[str, list[str]] = {
     "ATK": ["ATK"],
@@ -511,6 +521,26 @@ def _provider_has_static_tile_buffer_tag(provider: HeroRecord) -> bool:
     if tags is not None:
         return STATIC_TILE_BUFFER_TAG in tags
     return _facts()._provider_has_static_tile_buffer_tag(provider)
+
+
+def provider_without_tile_buffs(provider: HeroRecord) -> HeroRecord | None:
+    """Provider minus its tile-bound ally buffs; None when it has none."""
+    provider = _as_mapping(provider)
+    labels = STATIC_TILE_BUFF_LABELS.get(provider.get("id") or "")
+    if not labels:
+        return None
+    stripped = dict(provider)
+    stripped["effects"] = [
+        e
+        for e in provider["effects"]
+        if e["targeting"] == "Self" or e["label"] not in labels
+    ]
+    stripped["special_effects"] = [
+        s
+        for s in provider.get("special_effects") or []
+        if s["targeting"] == "Self" or s["label"] not in labels
+    ]
+    return cast(HeroRecord, stripped)
 
 
 def receiver_has_summoner_tag(hero: HeroRecord) -> bool:
@@ -2267,12 +2297,36 @@ def synergy_pair_extras(
     behavior_by_title: dict[str, HeroBehaviorRecord],
     role_category: str | None = None,
 ) -> dict[str, float]:
-    """Mix-mode extras: zone grouping uplift and temp-buff enabler score."""
+    """Mix-mode extras: zone uplift, temp-buff, protection and tile scores."""
     receiver_behavior = behavior_by_title[receiver["title"]]
     provider_behavior = behavior_by_title.get(provider["title"])
     movement = receiver_behavior["movement"]
     speed = receiver_behavior["synergy_signature_speed"] or "average"
     extras: dict[str, float] = {}
+    without_tile = provider_without_tile_buffs(provider)
+    if without_tile is not None:
+        full, _ = score_combined_synergy(
+            provider,
+            receiver,
+            enabler_matchers,
+            receiver_behavior,
+            movement,
+            speed,
+            role_category,
+            provider_behavior,
+        )
+        rest, _ = score_combined_synergy(
+            without_tile,
+            receiver,
+            enabler_matchers,
+            receiver_behavior,
+            movement,
+            speed,
+            role_category,
+            provider_behavior,
+        )
+        if full - rest > 0:
+            extras["tile_buff_score"] = full - rest
     has_zone = any(e.get("zone_anchor") for e in provider["effects"])
     if has_zone:
         position = _behavior_position(receiver_behavior)
@@ -2320,7 +2374,10 @@ def synergy_pair_extras(
     )
     if temp_score > 0:
         extras["temp_buff_score"] = temp_score
-    protection, _ = score_protection_synergy(provider, receiver, movement)
+    # Tile-bound protection is part of tile_buff_score instead.
+    protection, _ = score_protection_synergy(
+        without_tile or provider, receiver, movement
+    )
     if protection > 0:
         extras["protection_score"] = protection
     return extras
@@ -3415,8 +3472,8 @@ def build_beneficiaries_index(
     return result
 
 
-# Picks carry zone_grouping_uplift / temp_buff_score when True (both are
-# optional number properties in the synergies schema).
+# Picks carry zone_grouping_uplift / temp_buff_score / protection_score /
+# tile_buff_score when True (optional numbers in the synergies schema).
 EMIT_PICK_EXTRAS = True
 
 

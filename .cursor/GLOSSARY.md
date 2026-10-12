@@ -938,7 +938,9 @@ death (Gunnar, Alna, Aliceth, Ravion, Hepler) for receivers that are strong
 carries and fragile (low roster-wide HP and DEF). It needs no
 `special_requires` entry. Gunnar-style `static-tile-buffer` providers give
 nothing to moving receivers, one-time saves score half, and Mix mode counts
-only the provider's best protected receiver. Reason pills read `Protection
+only the provider's best protected receiver. Gunnar's protection goes to his
+field ally, so Mix scores it with his other tile buffs (see
+[static-tile-buffer](#static-tile-buffer)). Reason pills read `Protection
 via <label> (<targeting>, recurring|once)`.
 
 Used in:
@@ -1357,8 +1359,18 @@ Behavior tag for heroes whose ally buffs depend on a specific placement tile.
 The synergy algorithm skips or downweights these buffs for moving or high
 movement receivers that are likely to leave the tile.
 
+Gunnar and Hugin buff the ally placed 1 tile behind them, so each tile buff
+reaches one ally, and one ally can stand behind only one of them. The labels
+they grant on that tile are in `STATIC_TILE_BUFF_LABELS` (`scoring.py`).
+Pair scores carry the tile part as `tile_buff_score` (Mix index
+`tileBuff`). Mix mode picks the best team-wide placement of the tile buffs
+and counts the gain from the candidate instead of crediting its tile buff to
+every teammate.
+
 Used in:
 
+- [Synergy scoring](scripts/hero_pipeline/relationships/scoring.py)
+- [Mix mode view](site/js/src/views-mix.js)
 - [Behavior tags data](data/hero_behavior_tags.json)
 - [Allowed tags schema](data/schema/tags.schema.json)
 - [Behavior rules](.cursor/AGENTS.md)
