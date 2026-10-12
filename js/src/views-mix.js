@@ -374,6 +374,92 @@ window.AFKJ = window.AFKJ || {};
     return byReceiver[receiverSlug][providerSlug] || 0;
   }
 
+  // Pure helpers for buff-zone grouping and distinct-ally scoring. They take
+  // the mix synergy index explicitly so they can be unit-tested in node.
+
+  function mixIndexPair(table, receiverSlug, providerSlug) {
+    const row = table && table[receiverSlug];
+    return (row && row[providerSlug]) || 0;
+  }
+
+  // True when any of the slugs is a hero tagged enemy-grouping.
+  function mixHasGrouper(index, slugs) {
+    const groupers = (index && index.groupers) || [];
+    return slugs.some(function (slug) {
+      return groupers.indexOf(slug) !== -1;
+    });
+  }
+
+  // Extra score when an enemy-backline buff zone reaches a frontline
+  // receiver at full weight because a grouper pulls enemies together.
+  // Pairs follow the base sum: candidate as provider for each teammate.
+  // A grouper candidate also lifts provider/receiver pairs already in
+  // the drop zone. A grouper already on the team lifts only the pairs
+  // involving the candidate. Marked receivers use the mark multiplier.
+  function mixGroupingUplift(index, candidate, team, isMarked, markMult) {
+    if (!index || !index.groupingUplift) {
+      return 0;
+    }
+    const candidateGroups = mixHasGrouper(index, [candidate]);
+    if (!candidateGroups && !mixHasGrouper(index, team)) {
+      return 0;
+    }
+    const factor = function (receiver) {
+      return isMarked(receiver) ? markMult : 1.0;
+    };
+    let total = 0;
+    team.forEach(function (receiver) {
+      total +=
+        mixIndexPair(index.groupingUplift, receiver, candidate) *
+        factor(receiver);
+    });
+    if (candidateGroups) {
+      team.forEach(function (receiver) {
+        team.forEach(function (provider) {
+          if (provider !== receiver) {
+            total +=
+              mixIndexPair(index.groupingUplift, receiver, provider) *
+              factor(receiver);
+          }
+        });
+      });
+    }
+    return total;
+  }
+
+  // Receivers that need temporary buffs from two different allies get
+  // x1.5 on the second distinct provider: add 0.5 * its temp-buff score.
+  // Applies when exactly one other team hero already provides one.
+  function mixDistinctAlliesBonus(index, candidate, team, isMarked, markMult) {
+    if (!index || !index.distinctAllies || !index.tempBuff) {
+      return 0;
+    }
+    let total = 0;
+    team.forEach(function (receiver) {
+      if (receiver === candidate) {
+        return;
+      }
+      if ((index.distinctAllies[receiver] || 0) < 2) {
+        return;
+      }
+      const own = mixIndexPair(index.tempBuff, receiver, candidate);
+      if (own <= 0) {
+        return;
+      }
+      const others = team.filter(function (slug) {
+        return (
+          slug !== receiver &&
+          slug !== candidate &&
+          mixIndexPair(index.tempBuff, receiver, slug) > 0
+        );
+      });
+      if (others.length === 1) {
+        total += 0.5 * own * (isMarked(receiver) ? markMult : 1.0);
+      }
+    });
+    return total;
+  }
+
   function getQualifyingMixFactions() {
     const state = window.AFKJ.state;
     const count = {};
@@ -640,6 +726,15 @@ window.AFKJ = window.AFKJ || {};
       const mult = mixMarked.has(receiverSlug) ? markMult : 1.0;
       total += score * mult;
     });
+    const isMarked = function (s) {
+      return mixMarked.has(s);
+    };
+    total += mixGroupingUplift(
+      state.mixSynergyIndex, slug, team, isMarked, markMult
+    );
+    total += mixDistinctAlliesBonus(
+      state.mixSynergyIndex, slug, team, isMarked, markMult
+    );
     if (hero) {
       total += computeMixFocusBonus(hero);
       const qualifying = getQualifyingMixFactions();
@@ -1614,6 +1709,9 @@ window.AFKJ = window.AFKJ || {};
     addHeroToMixZone: addHeroToMixZone,
     placeHeroInMixZone: placeHeroInMixZone,
     synergyScoreForPair: synergyScoreForPair,
+    mixHasGrouper: mixHasGrouper,
+    mixGroupingUplift: mixGroupingUplift,
+    mixDistinctAlliesBonus: mixDistinctAlliesBonus,
     getQualifyingMixFactions: getQualifyingMixFactions,
     mixHeroSkillTags: mixHeroSkillTags,
     mixHeroBehaviorTags: mixHeroBehaviorTags,
