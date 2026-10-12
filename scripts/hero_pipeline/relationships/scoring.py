@@ -243,7 +243,7 @@ _DEF_DEBUFF_PHYS = frozenset({"Phys DEF"})
 _DEF_DEBUFF_MAGIC = frozenset({"Magic DEF"})
 _DEF_DEBUFF_SHARED = frozenset({"DEF", "Damage taken"})
 _DEF_PENETRATION_BUFF = "DEF Penetration"
-HASTE_FOR_ATK_SPD_SCORE_MULT = 1.25
+HASTE_SCORE_MULT = 1.0
 MAX_SYNERGIES = 10
 FALLBACK_BENEFICIARIES_DISPLAY = 3
 PROXIMITY_MELEE_MAX_RANGE = 3.5
@@ -253,6 +253,8 @@ PROXIMITY_RECEIVER_WHITELIST: frozenset[str] = frozenset()
 PROXIMITY_PROVIDER_BLACKLIST: frozenset[str] = frozenset()
 SCALAR_SHARE_BOOST = 0.75
 SCALAR_BOUND_THRESHOLD = 0.5
+ATK_DEPENDENCY_REFERENCE = 1500.0
+ATK_DEPENDENCY_MAX_BONUS = 1.0
 SIGNATURE_FUEL_SPEED_MULT = {"slow": 1.6, "average": 1.2, "fast": 1.0}
 SIGNATURE_FUEL_ENERGY_MULT = {"slow": 1.3, "average": 1.05, "fast": 1.0}
 ENERGY_SYNERGY_SCORE_MULT = 0.72
@@ -526,7 +528,7 @@ BUFF_ZONE_REACH_WEIGHT: dict[tuple[str, str], float] = {
     ("enemy_backline", "enemy_backline"): 1.0,
     ("frontline", "enemy_backline"): 0.5,
     ("ally_backline", "enemy_backline"): 0.0,
-    ("enemy_backline", "frontline"): 0.5,
+    ("enemy_backline", "frontline"): 0.75,
     ("frontline", "frontline"): 1.0,
     ("ally_backline", "frontline"): 0.25,
     ("enemy_backline", "ally_backline"): 0.0,
@@ -620,7 +622,7 @@ SUMMON_TARGETING_WEIGHT = 3.0
 def buff_labels_for_stat(stat: str) -> list[tuple[str, float]]:
     """Buff labels that satisfy a benefit stat, (label, score multiplier), best first."""
     if stat == "ATK SPD":
-        return [("Haste", HASTE_FOR_ATK_SPD_SCORE_MULT), ("ATK SPD", 1.0)]
+        return [("Haste", HASTE_SCORE_MULT), ("ATK SPD", 1.0)]
     return [(label, 1.0) for label in STAT_TO_BUFF_LABELS.get(stat, [])]
 
 
@@ -1741,10 +1743,23 @@ def receiver_stat_bound(receiver: HeroRecord, stat: str) -> bool:
     return _receiver_scalar_share(receiver, stat) >= SCALAR_BOUND_THRESHOLD
 
 
+def atk_dependency_mult(receiver: HeroRecord) -> float:
+    """1.0x to 2.0x multiplier from how strongly skills scale on ATK."""
+    receiver = _as_mapping(receiver)
+    dependency = float(receiver.get("atk_dependency") or 0.0)
+    if dependency <= 0:
+        return 1.0
+    return 1.0 + min(
+        ATK_DEPENDENCY_MAX_BONUS, dependency / ATK_DEPENDENCY_REFERENCE
+    )
+
+
 def scalar_stat_score_mult(receiver: HeroRecord, stat: str) -> float:
     """Boost-only multiplier for ATK / Max HP buff synergy on scalar-bound kits."""
     if stat not in ("ATK", "Max HP"):
         return 1.0
+    if stat == "ATK":
+        return atk_dependency_mult(receiver)
     share = _receiver_scalar_share(receiver, stat)
     if share <= 0:
         return 1.0
@@ -1779,14 +1794,22 @@ def should_exclude_synergy(reasons: list[str], receiver: HeroRecord) -> bool:
 def _stats_for_synergy_scoring(
     receiver: HeroRecord, signature_speed: str
 ) -> list[tuple[str, bool]]:
-    """Return (stat, implicit) pairs to score for stat-buff synergies."""
+    """Return (stat, implicit) pairs to score for stat-buff synergies.
+
+    ATK scores for every receiver whose skills scale on ATK. ATK SPD is
+    always evaluated: receivers with a fast signature skill that do not list
+    it match Haste only (see ``_score_synergy_detail``).
+    """
     benefit = receiver_stats(receiver)
     implicit = set()
-    if signature_speed != "fast":
-        for stat in IMPLICIT_FUEL_STATS:
-            if stat not in benefit:
-                implicit.add(stat)
+    for stat in IMPLICIT_FUEL_STATS:
+        if stat in benefit:
+            continue
+        if stat == "ATK SPD" or signature_speed != "fast":
+            implicit.add(stat)
     stats: list[tuple[str, bool]] = [(s, False) for s in benefit]
+    if "ATK" not in benefit and float(_as_mapping(receiver).get("atk_dependency") or 0.0) > 0:
+        stats.append(("ATK", False))
     for stat in IMPLICIT_FUEL_STATS:
         if stat in implicit:
             stats.append((stat, True))
@@ -1857,6 +1880,12 @@ def _score_synergy_detail(
         if stat == "Shield" and (not receiver_benefits_from_shields(receiver)):
             continue
         label_prefs = buff_labels_for_stat(stat)
+        if (
+            stat == "ATK SPD"
+            and is_implicit
+            and signature_speed == "fast"
+        ):
+            label_prefs = [(l, m) for l, m in label_prefs if l == "Haste"]
         allowed = {label for label, _ in label_prefs}
         mult_by_label = dict(label_prefs)
         best_for_stat: tuple[float, str, str] | None = None
@@ -1915,7 +1944,7 @@ def _score_synergy_detail(
                     pts *= IMPLICIT_FUEL_BASE
             elif effect["label"] in SIGNATURE_FUEL_LABELS:
                 pts *= fuel_mult
-                if is_implicit:
+                if is_implicit and effect["label"] != "Haste":
                     pts *= IMPLICIT_FUEL_BASE
             cond = f", conditional ({effect["conditional"]})" if effect["conditional"] else ""
             fuel_tag = (
@@ -3506,6 +3535,7 @@ def load_scoring_inputs(
                 else None
             ),
             effective_ally_energy=float(scoring.get("effective_ally_energy") or 0),
+            atk_dependency=float(scoring.get("atk_dependency") or 0.0),
             shield_payoff=bool(scoring.get("shield_payoff")),
             ally_magic=(
                 tuple(scoring["ally_magic"]) if scoring.get("ally_magic") else None

@@ -43,7 +43,8 @@ Effects are ranked across the full roster (same effect label; e.g. comparing one
 The algorithm checks the receiver's **"Stats the unit benefits from"** and looks for matching buffs from the provider.
 
 ### Special Stat Interactions
-- **Haste & ATK SPD**: Haste increases attack speed. If a receiver wants ATK SPD, a Haste buff counts towards it and receives a **1.25× bonus multiplier**.
+- **Haste & ATK SPD**: Haste increases attack speed and is a universal high-value buff. A Haste buff has no weight bonus (1.0×) and scores for every receiver, whether or not the receiver lists ATK SPD. Receivers that neither list ATK SPD nor have a fast signature skill score Haste at full weight (the 0.45× implicit-fuel penalty applies only to plain ATK SPD and Energy); receivers with a fast signature skill that do not list ATK SPD match Haste only.
+- **ATK**: ATK buffs score for every receiver whose skills scale on ATK, scaled by the ATK dependency multiplier described below.
 - **Shields vs Max HP**: Shields extend survivability (a unit can take more damage before dying) but do not change the unit's Max HP value. Effects that scale on Max HP are unaffected by shields. Ally **Shield** buffs only score for receivers who explicitly benefit from **Shield** (typically heroes who self-shield in their kit), not for heroes who only scale on **Max HP**.
 - **Healing**: Heroes who consume or lose their own HP to cast skills (e.g., Talene) explicitly look for healers.
 
@@ -58,6 +59,13 @@ Heroes rely heavily on their "Signature Skill" (often their Ultimate). If a rece
 Heroes tagged **`high-damage-ult`** whose ultimate is their main damage spike—but who lack **`high-initial-energy`** or **`battle-start-ult`**—benefit more from ally Energy than from comparable Haste. For these receivers only, ally Energy (ongoing buffs and battle-start grants) receives an extra **2.25×** multiplier so batteries rank above Haste providers when effects are otherwise similar. Stronger Haste buffs or multi-effect providers can still win overall.
 
 Current tagged examples: Frieren, Marcille, Shemira. Natsu has both `high-damage-ult` and `high-initial-energy`, so this preference does not apply.
+
+### ATK Dependency
+How much a hero gains from an ATK buff depends on how strongly its skills scale on ATK. The scoring fact `atk_dependency` sums every `N% (ATK-based)` percentage in the base skill descriptions. A sentence is multiplied by its explicit `K times` hit count (default 1). Upgrade lines and companion-only sentences are not counted.
+
+ATK multiplier = `1 + min(1, atk_dependency / 1500)`, i.e. 1.0× (no ATK scaling) up to a hard cap of **2.0×**. Heroes with many ATK-scaled skills or high percentages (e.g. Perseus, Estrilda) reach the cap; heroes whose kit barely uses ATK (e.g. Mikola) stay near 1.0×. Max HP buffs keep the share-based boost (`SCALAR_SHARE_BOOST`).
+
+Because Haste is no longer penalised as implicit fuel, the Energy preference of `high-damage-ult` receivers (below) only outranks Haste of lower magnitude.
 
 ### Implicit Fuel
 Even if a hero doesn't explicitly list Energy or ATK SPD as a needed stat, if their signature skill is slow or average, the algorithm will still value these buffs at a reduced rate (0.45× base) because every hero benefits from casting their main skill faster.
@@ -100,7 +108,7 @@ Estrilda's zone) carry a `zone_anchor` in `ai.json`. Global buffs have none.
 
 | Zone \ Receiver | enemy_backline | frontline | ally_backline | roaming |
 |---|---|---|---|---|
-| enemy_backline | 1.0 | 0.5 | 0.0 | 0.5 |
+| enemy_backline | 1.0 | 0.75 | 0.0 | 0.5 |
 | frontline | 0.5 | 1.0 | 0.0 | 0.5 |
 | ally_backline | 0.0 | 0.25 | 1.0 | 0.0 |
 | roaming (caster) | 0.5 | 0.5 | 0.0 | 0.5 |
@@ -115,7 +123,7 @@ Estrilda's zone) carry a `zone_anchor` in `ai.json`. Global buffs have none.
   picks the column, the provider's anchor picks the row. Perseus benefits
   from Estrilda's zone; Estrilda does not benefit from Perseus's.
 - **Grouping uplift**: an enemy-backline zone reaches a frontline receiver at
-  only 0.5. `synergy_pair_extras` rescores that pair with the weight raised
+  only 0.75. `synergy_pair_extras` rescores that pair with the weight raised
   to 1.0 and stores the gain as `zone_grouping_uplift` on the pick (Mix index
   field `groupingUplift`). Mix mode adds it when an enemy-grouping hero is on
   the team.

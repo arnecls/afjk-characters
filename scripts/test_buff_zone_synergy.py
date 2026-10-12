@@ -113,8 +113,8 @@ class BuffZoneSynergyTests(unittest.TestCase):
             if e.get("zone_anchor") == "enemy_backline"
         )
         for receiver, share in (
-            ("perseus", 0.5),
-            ("orion", 0.5),
+            ("perseus", 0.75),
+            ("orion", 0.75),
             ("temesia", 0.5),
         ):
             with self.subTest(receiver=receiver):
@@ -125,11 +125,11 @@ class BuffZoneSynergyTests(unittest.TestCase):
                 )
                 self.assertEqual(weight, share)
         # Same effects, same label sets: Damage taken is the uncredited
-        # label for all three; its zone score halves from the back line.
+        # label for all three; its zone score scales with the 0.75 reach.
         full = zone_part("estrilda", "perseus", zone_override=1.0)[0]
         half = zone_part("estrilda", "perseus")[0]
         self.assertGreater(half, 0)
-        self.assertAlmostEqual(half * 2, full)
+        self.assertAlmostEqual(half / 0.75, full)
         temesia = zone_part("estrilda", "temesia")[0]
         self.assertGreater(temesia, 0)
 
@@ -137,6 +137,7 @@ class BuffZoneSynergyTests(unittest.TestCase):
         table = sc.BUFF_ZONE_REACH_WEIGHT
         self.assertEqual(table[("enemy_backline", "enemy_backline")], 1.0)
         self.assertEqual(table[("frontline", "enemy_backline")], 0.5)
+        self.assertEqual(table[("enemy_backline", "frontline")], 0.75)
         self.assertEqual(table[("ally_backline", "frontline")], 0.25)
         self.assertEqual(table[("enemy_backline", "ally_backline")], 0.0)
         self.assertEqual(table[("ally_backline", "ally_backline")], 1.0)

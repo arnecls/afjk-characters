@@ -294,6 +294,7 @@ def _extra_analysis_fields(
     behavior: Any,
     bundle: Mapping[str, Any],
     id_by_display: Mapping[str, str],
+    analysis: Mapping[str, Any],
 ) -> dict[str, Any]:
     effects: dict[str, dict[str, Any]] = {}
     skill_effect_magnitudes: dict[str, str] = {}
@@ -405,6 +406,12 @@ def _extra_analysis_fields(
         "early_battle_energy": gen.provider_early_battle_ally_energy(working),
         "effective_ally_energy": gen._hero_effective_ally_energy_provided(
             working
+        ),
+        "atk_dependency": gen.compute_atk_dependency(
+            [
+                str((skill.get("description") or {}).get("raw") or "")
+                for skill in (analysis.get("skills") or {}).values()
+            ]
         ),
         "shield_payoff": gen.receiver_benefits_from_external_shields(working),
         "ally_magic": gen.match_ally_enabled_magic_damage(working),
@@ -550,6 +557,7 @@ def _serialize_processed(
                 behavior=behavior_by_id[row["id"]],
                 bundle=snapshot["bundles"][row["id"]],
                 id_by_display=id_by_display,
+                analysis=analyses_by_id[row["id"]],
             )
         )
     return {"heroes": processed_heroes}

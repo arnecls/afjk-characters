@@ -456,8 +456,12 @@ class UltimateEnergyPreferenceTests(unittest.TestCase):
         gen._BEHAVIOR_TAGS = {"Carry": frozenset({"high-damage-ult"})}
         receiver = self._receiver("Carry")
         behavior = self._behavior(ult_speed="slow")
+        # Haste is weighted 1.5x for every receiver, so only a weaker Haste
+        # buff is outranked by a comparable Energy battery.
+        weak_haste = self._buff_provider("Haste")
+        weak_haste.effects[0].magnitude = "low"
         haste_score, _ = gen.score_synergy(
-            self._buff_provider("Haste"),
+            weak_haste,
             receiver,
             signature_speed="slow",
             receiver_behavior=behavior,

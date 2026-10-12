@@ -122,6 +122,7 @@ class ScoringFacts(TypedDict, total=False):
     early_battle_energy: list[Any] | None
     effective_ally_energy: float
     shield_payoff: bool
+    atk_dependency: float
     ally_magic: list[Any] | None
     ranged_damage: bool
     wide_area: bool

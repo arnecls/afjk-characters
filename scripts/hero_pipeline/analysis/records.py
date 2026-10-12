@@ -133,6 +133,7 @@ class HeroRecord(TypedDict, total=False):
     behavior_tags: frozenset[str]
     summon_profile: dict[str, Any]
     effective_ally_energy: float
+    atk_dependency: float
 
 
 class HeroBehaviorRecord(TypedDict, total=False):
