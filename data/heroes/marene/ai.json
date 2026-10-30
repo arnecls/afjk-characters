@@ -1,0 +1,553 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Marene - Roaring Tempest",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "fe31f903313a8c06e400f355b48da413bc0d9cc705e37d76a45a3febe61dfbaa",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "is_max_known": true,
+                "type": "damage",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "damage_type": "magic"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "is_max_known": true,
+                "type": "crowd_control",
+                "cc-type": "knock_up",
+                "duration": 4.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "is_max_known": true,
+                "type": "debuff",
+                "name": "Ranged DEF",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 20.0
+                  }
+                ],
+                "duration": 4.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "All units",
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "is_max_known": true,
+                "type": "dot",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 150.0
+                  }
+                ],
+                "damage_type": "true",
+                "tick": 0.5,
+                "duration": 4.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "base",
+                "immunity_type": "unaffected",
+                "timing": "on_ultimate",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
+            "special_provides": [
+              {
+                "label": "Invincibility",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "Marene remains invincible while casting the ultimate."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "c7e5c1d1a8bd77c4cf9c6988c6035356da4352db3565371887e175736d8879dc",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "Haste",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 100.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "buff",
+                    "ally": true
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "target": "enemy",
+                "target_count": -1,
+                "is_max_known": true,
+                "type": "dot",
+                "name": "DoT",
+                "label": "dot",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 125.0
+                  }
+                ],
+                "damage_type": "magic",
+                "tick": 0.5,
+                "duration": 2.0,
+                "anchor": "target_unit",
+                "area": "radius",
+                "area_count": 1
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "11246789b408550c7adad76c6c0c9f2eee9035ee553e4cc3c98012c427f75a17",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "target": "enemy",
+                "target_count": -1,
+                "is_max_known": true,
+                "type": "dot",
+                "name": "DoT",
+                "label": "dot",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 125.0
+                  }
+                ],
+                "damage_type": "magic",
+                "tick": 0.5,
+                "duration": 2.0,
+                "anchor": "target_unit",
+                "area": "radius",
+                "area_count": 2
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "bc045cb2fb1499da0f683578d9ae6ea1b54fa77736fdf0f42f2c571ffc5a2bea",
+        "is_max_known": true,
+        "tiers": {
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 10.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 30,
+                    "stack_comparison": "up_to"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "adfdc4c6b9e2c2bb411f642441c93fa9454d80afb7ac9fcde5a322a1bf8c8136",
+        "is_max_known": true,
+        "tiers": {
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 45.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0,
+                "conditions": [
+                  {
+                    "type": "skill_mode",
+                    "mode": "Windborne"
+                  }
+                ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "All units",
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "is_max_known": true,
+                "type": "dot",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 110.0
+                  }
+                ],
+                "damage_type": "true",
+                "tick": 1.0,
+                "duration": -1.0,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "skill_cast",
+                    "count": 30
+                  }
+                ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "All units",
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "is_max_known": true,
+                "type": "crowd_control",
+                "cc-type": "knock_up",
+                "tick": 5.0,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "skill_cast",
+                    "count": 30
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "mythic+",
+                "immunity_type": "steadfast",
+                "timing": "conditional",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
+            "special_provides": [
+              {
+                "label": "Form or stance active",
+                "tier": "mythic+",
+                "targeting": "Self",
+                "description": "At 60 Haste gained from allies, Marene enters Windborne: steadfast, 45% less damage taken, and 45% of enemy Ranged DEF ignored."
+              }
+            ],
+            "special_requires": []
+          },
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "All units",
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "is_max_known": true,
+                "type": "dot",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 130.0
+                  }
+                ],
+                "damage_type": "true",
+                "tick": 1.0,
+                "duration": -1.0,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "skill_cast",
+                    "count": 30
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "All units",
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "is_max_known": true,
+                "type": "dot",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 150.0
+                  }
+                ],
+                "damage_type": "true",
+                "tick": 1.0,
+                "duration": -1.0,
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "skill_cast",
+                    "count": 30
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+15": {
+            "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Instant defeat",
+                "tier": "ex+15",
+                "targeting": "All units",
+                "description": "The thunderstorm sweeps away enemies that are not steadfast or unaffected, below 35% HP and below 1000% of Marene's ATK in HP; they count as defeated."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "24b4756a5529d5debdadcd4f2cf3fc6747732157e22fadcb7d5873c843c3256f",
+        "is_max_known": true,
+        "tiers": {
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Area",
+                "target": "enemy",
+                "target_count": -1,
+                "is_max_known": true,
+                "type": "damage",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "damage_type": "true",
+                "anchor": "target_unit",
+                "area": "radius",
+                "area_count": 2
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Area",
+                "target": "enemy",
+                "target_count": -1,
+                "is_max_known": true,
+                "type": "crowd_control",
+                "cc-type": "stun",
+                "duration": 0.25,
+                "anchor": "target_unit",
+                "area": "radius",
+                "area_count": 2
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Area",
+                "target": "enemy",
+                "target_count": -1,
+                "is_max_known": true,
+                "type": "debuff",
+                "name": "Vitality",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 60.0
+                  }
+                ],
+                "duration": -1.0,
+                "anchor": "target_unit",
+                "area": "radius",
+                "area_count": 2,
+                "conditions": [
+                  {
+                    "type": "stack_count",
+                    "stacks": 15,
+                    "stack_comparison": "up_to"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "aoe-damage",
+    "dot-specialist",
+    "execute",
+    "heal-inhibitor",
+    "high-damage-ult",
+    "high-initial-energy",
+    "invincibility",
+    "mass-cc"
+  ],
+  "summon_profile": null,
+  "skill_summaries": {
+    "ultimate": "invincible global storm: HP-based damage, repeated knock up, Ranged DEF reduction, and rapid true damage strikes",
+    "skill1": "Passive: amplifies and keeps ally Haste buffs. Active: channel AoE gusts on enemies from front to back",
+    "skill2": "two AoE blade zones on the nearest and farthest enemies, dealing repeated magic damage",
+    "skill3": "ATK increase, stacking further with each strike activation",
+    "skill4": "ally Haste grants steadfast and damage reduction; strikes build a permanent true damage DoT field with knock up",
+    "skill5": "skill hits add true damage, a brief stun, and stacking Vitality reduction"
+  },
+  "play_overview": "[[Marene]] is a backline storm caster built around **Haste**. She amplifies Haste buffs from allies and keeps the bonus after they expire, so she wants **Haste-granting partners**. Enough ally Haste puts her into a **steadfast** state with heavy damage reduction. Her ultimate is invincible and keeps every enemy knocked up while lightning deals **true damage** many times per second. After enough strikes, a **permanent thunderstorm** covers the field with true damage, knock ups, and an execute on low-HP enemies. Her skill hits also stack Vitality reduction. She is weak when **no ally feeds her Haste** and when she is focused before her ultimate fires.",
+  "counter_overview": "In PVP, [[Marene]] reaches her ultimate fast and becomes **invincible** while a global storm keeps your whole team **knocked up** under rapid true damage. Cancel it with [[Lily May]] on the opening beat, because the storm cannot be interrupted once it starts. Later her strikes build a **permanent thunderstorm** that knocks up everyone every few seconds and sweeps away low-HP units, but Steadfast and Unaffected targets are exempt: bring [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Shakir]] or [[Sylphira]] for the late storm. She scales on Haste from her allies, so **pressure her Haste providers** before she turns steadfast. Her Magic DEF is lower than her Phys DEF, so delete her early with [[filter:magic-backline-assassin]] like [[Nerion]]."
+}

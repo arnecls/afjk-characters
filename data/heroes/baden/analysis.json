@@ -1,0 +1,1088 @@
+{
+  "schema_version": 2,
+  "id": "baden",
+  "display_name": "Baden",
+  "local": {
+    "long_name": "Baden - The Abomination",
+    "faction": "graveborn",
+    "class": "rogue",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2026-10-29",
+    "season": "Crown of Ashes",
+    "season_number": 7,
+    "skills": {
+      "Omen's Grasp": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Baden and all his phantoms attack a designated enemy in unison, delivering 4 successive strikes and keeping the target stunned throughout. The first 3 strikes each deal 150% (ATK-based) + 15% (SP-based) damage. The final strike deals 420% (ATK-based) + 50% (SP-based) true damage to the target and enemies within 1 tile of them. It also drains 200% (ATK-based) + 20% (SP-based) HP from the target and inflicts an equal amount of max HP reduction. This skill also prevents the target from recovering HP and Energy for 8s. Baden remains invincible while casting this skill. In Auto Battle, this skill prioritizes the weakest enemy.",
+          "active": [
+            "Baden and all his phantoms attack a designated enemy in unison, delivering 4 successive strikes and keeping the target stunned throughout.",
+            "The first 3 strikes each deal 150% (ATK-based) + 15% (SP-based) damage.",
+            "The final strike deals 420% (ATK-based) + 50% (SP-based) true damage to the target and enemies within 1 tile of them.",
+            "It also drains 200% (ATK-based) + 20% (SP-based) HP from the target and inflicts an equal amount of max HP reduction.",
+            "This skill also prevents the target from recovering HP and Energy for 8s.",
+            "Baden remains invincible while casting this skill.",
+            "In Auto Battle, this skill prioritizes the weakest enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt by the final strike to 440% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt by the final strike to 460% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt by the final strike to 480% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt by the final strike to 500% (ATK-based) + 50% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 550.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 500.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Max HP",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Healing",
+            "label": "debuff_healing"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Energy",
+            "label": "debuff_stat"
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_ultimate",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 400.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Healing",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Max HP",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Stun — Single target"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Wraithbrand": {
+        "category": "skill1",
+        "description": {
+          "raw": "Passive. When a battle starts, Baden curses enemies in a straight line in front of him, dealing 250% (ATK-based) + 30% (SP-based) true damage. The curse summons a phantom near an afflicted non-boss enemy the first time their HP ratio drops below 50%. For afflicted boss enemies, a phantom is summoned each time they lose HP equal to 600% of Baden's initial ATK. Phantoms use normal attacks and prioritize the enemy whose curse summoned them. They inherit 60% + 5% (SP-based) of Baden's basic stats and remain invincible. Each boss can generate up to 2 phantoms this way. Active. Baden impales his current target, stunning them for 3s and stealing 20% + 2% (SP-based) of their max HP, up to 200% + 20% (SP-based) of his ATK, along with 100 Energy. He then deals 240% (ATK-based) + 30% (SP-based) damage.",
+          "passive": [
+            "When a battle starts, Baden curses enemies in a straight line in front of him, dealing 250% (ATK-based) + 30% (SP-based) true damage.",
+            "The curse summons a phantom near an afflicted non-boss enemy the first time their HP ratio drops below 50%.",
+            "For afflicted boss enemies, a phantom is summoned each time they lose HP equal to 600% of Baden's initial ATK.",
+            "Phantoms use normal attacks and prioritize the enemy whose curse summoned them.",
+            "They inherit 60% + 5% (SP-based) of Baden's basic stats and remain invincible.",
+            "Each boss can generate up to 2 phantoms this way."
+          ],
+          "active": [
+            "Baden impales his current target, stunning them for 3s and stealing 20% + 2% (SP-based) of their max HP, up to 200% + 20% (SP-based) of his ATK, along with 100 Energy.",
+            "He then deals 240% (ATK-based) + 30% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt by the active strike to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt by the active strike to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt by the active strike to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 2,
+            "area_direction": "front",
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 3.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Max HP",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 600.0
+              }
+            ],
+            "duration": -1.0,
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Energy",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 100.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 100.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 330.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Basic stats",
+            "label": "buff_summon_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "duration": -1.0,
+            "persistence": "permanent"
+          }
+        ],
+        "cooldown": 9.0,
+        "initial_cooldown": 1.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Basic stats — Owned",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Single target",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Max HP — Single target",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Stun — Single target"
+          }
+        ]
+      },
+      "Soul Sunder": {
+        "category": "skill2",
+        "description": {
+          "raw": "Baden and his phantoms unleash 5 slashes in unison. The first 4 slashes deal a total of 260% (ATK-based) + 30% (SP-based) damage to the current target. The final slash sends out a sword shock, dealing 260% (ATK-based) + 30% (SP-based) damage to enemies within 2 tiles and reducing their Vitality by 20 + 2 (SP-based) for 8s. This effect stacks up to 3 times.",
+          "active": [
+            "Baden and his phantoms unleash 5 slashes in unison.",
+            "The first 4 slashes deal a total of 260% (ATK-based) + 30% (SP-based) damage to the current target.",
+            "The final slash sends out a sword shock, dealing 260% (ATK-based) + 30% (SP-based) damage to enemies within 2 tiles and reducing their Vitality by 20 + 2 (SP-based) for 8s.",
+            "This effect stacks up to 3 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "ncreases the total damage dealt by the first 4 slashes to 280% (ATK-based) + 30% (SP-based) and the damage dealt by the final slash to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the total damage dealt by the first 4 slashes to 300% (ATK-based) + 30% (SP-based) and the damage dealt by the final slash to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the total damage dealt by the first 4 slashes to 320% (ATK-based) + 30% (SP-based) and the damage dealt by the final slash to 320% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 350.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "debuff",
+            "name": "Vitality",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 9.0,
+        "initial_cooldown": 2.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Vitality — Area",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Baden increases his Penetration by 9 during battle, and by an extra 6 while any phantoms Baden created are on the battlefield.",
+          "active": [
+            "Baden increases his Penetration by 9 during battle, and by an extra 6 while any phantoms Baden created are on the battlefield."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Baden increases his Penetration by 12 during battle, and by an extra 8 while any phantoms Baden created are on the battlefield."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Baden increases his Penetration by 15 during battle, and by an extra 10 while any phantoms Baden created are on the battlefield."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
+            "type": "buff",
+            "name": "DEF Penetration",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 15.0
+              }
+            ],
+            "duration": -1.0,
+            "persistence": "temporary"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "DEF Penetration — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Revenant's Due": {
+        "category": "skill4",
+        "description": {
+          "raw": "When a battle starts, the Wraithbrand curse deals 100% increased damage with a guaranteed critical strike, and inflicts max HP reduction equal to 70% of the actual damage dealt. Each phantom summoned by the curse steals 15% of its target's ATK, granting that amount to both Baden and itself. The ATK gained from each steal cannot exceed 15% of Baden's initial ATK.",
+          "active": [
+            "When a battle starts, the Wraithbrand curse deals 100% increased damage with a guaranteed critical strike, and inflicts max HP reduction equal to 70% of the actual damage dealt.",
+            "Each phantom summoned by the curse steals 15% of its target's ATK, granting that amount to both Baden and itself.",
+            "The ATK gained from each steal cannot exceed 15% of Baden's initial ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the ATK stolen to 17% of the target's ATK and the cap for each steal to 17% of Baden's initial ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Baden immediately summons a phantom to fight alongside him when a battle starts.",
+                "This phantom prioritizes his current target."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the ATK stolen to 20% of the target's ATK and the cap for each steal to 20% of Baden's initial ATK."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 2,
+            "area_direction": "front",
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 500.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 2,
+            "area_direction": "front",
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
+            "type": "debuff",
+            "name": "Max HP",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 70.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "duration": -1.0,
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_summon_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "duration": -1.0,
+            "persistence": "permanent"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Owned",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Self (EX+5)",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Owned (EX+5)",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Self (EX+15)",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Owned (EX+15)",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Single target",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Max HP — path",
+            "polarity": "debuff"
+          },
+          {
+            "label": "ATK — Single target (EX+5)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "ATK — Single target (EX+15)",
+            "polarity": "debuff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "When Baden is defeated, if any phantoms he created remain on the battlefield, he possesses one of them and will not be prioritized by enemies for the next 8s, and damage taken is reduced by 35%. This effect can trigger up to 3 times per battle.",
+          "active": [
+            "When Baden is defeated, if any phantoms he created remain on the battlefield, he possesses one of them and will not be prioritized by enemies for the next 8s, and damage taken is reduced by 35%.",
+            "This effect can trigger up to 3 times per battle."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "defeat",
+                "self": true
+              }
+            ],
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 35.0
+              }
+            ],
+            "duration": 8.0,
+            "persistence": "temporary"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Baden remains invincible while casting the ultimate."
+        },
+        {
+          "label": "Summoning",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "The battle-start curse summons an invincible phantom near a cursed non-boss enemy the first time it drops below 50% HP (bosses: up to 2)."
+        },
+        {
+          "label": "Stat steal",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "The active impale steals 20% of the target's max HP (capped by ATK) and 100 Energy."
+        },
+        {
+          "label": "Energy steal",
+          "tier": "base",
+          "targeting": "Single target",
+          "description": "The active impale steals 100 Energy from the current target."
+        },
+        {
+          "label": "Summoning",
+          "tier": "ex+10",
+          "targeting": "Self",
+          "description": "Baden immediately summons a phantom that fights alongside him when a battle starts."
+        },
+        {
+          "label": "Cheat death",
+          "tier": "supreme+",
+          "targeting": "Self",
+          "description": "When defeated with a phantom on the field, Baden possesses it, is not prioritized by enemies for 8s, and takes 35% less damage (up to 3 times)."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Single target"
+      ],
+      [
+        "true",
+        "Area"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "max_hp",
+      "energy",
+      "def_penetration"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "baden",
+    "display_name": "Baden",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Baden and all his phantoms attack a designated enemy in unison, delivering 4 successive strikes and keeping the target stunned throughout.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The first 3 strikes each deal 150% (ATK-based) + 15% (SP-based) damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The final strike deals 420% (ATK-based) + 50% (SP-based) true damage to the target and enemies within 1 tile of them.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "It also drains 200% (ATK-based) + 20% (SP-based) HP from the target and inflicts an equal amount of max HP reduction.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "This skill also prevents the target from recovering HP and Energy for 8s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Baden remains invincible while casting this skill.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "In Auto Battle, this skill prioritizes the weakest enemy.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by the final strike to 440% (ATK-based) + 50% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by the final strike to 460% (ATK-based) + 50% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by the final strike to 480% (ATK-based) + 50% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by the final strike to 500% (ATK-based) + 50% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "When a battle starts, Baden curses enemies in a straight line in front of him, dealing 250% (ATK-based) + 30% (SP-based) true damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The curse summons a phantom near an afflicted non-boss enemy the first time their HP ratio drops below 50%.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "For afflicted boss enemies, a phantom is summoned each time they lose HP equal to 600% of Baden's initial ATK.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Phantoms use normal attacks and prioritize the enemy whose curse summoned them.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "They inherit 60% + 5% (SP-based) of Baden's basic stats and remain invincible.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Each boss can generate up to 2 phantoms this way.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Baden impales his current target, stunning them for 3s and stealing 20% + 2% (SP-based) of their max HP, up to 200% + 20% (SP-based) of his ATK, along with 100 Energy.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "He then deals 240% (ATK-based) + 30% (SP-based) damage.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by the active strike to 260% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by the active strike to 280% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by the active strike to 300% (ATK-based) + 30% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Baden and his phantoms unleash 5 slashes in unison.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The first 4 slashes deal a total of 260% (ATK-based) + 30% (SP-based) damage to the current target.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The final slash sends out a sword shock, dealing 260% (ATK-based) + 30% (SP-based) damage to enemies within 2 tiles and reducing their Vitality by 20 + 2 (SP-based) for 8s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This effect stacks up to 3 times.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "ncreases the total damage dealt by the first 4 slashes to 280% (ATK-based) + 30% (SP-based) and the damage dealt by the final slash to 280% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the total damage dealt by the first 4 slashes to 300% (ATK-based) + 30% (SP-based) and the damage dealt by the final slash to 300% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the total damage dealt by the first 4 slashes to 320% (ATK-based) + 30% (SP-based) and the damage dealt by the final slash to 320% (ATK-based) + 30% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Baden increases his Penetration by 9 during battle, and by an extra 6 while any phantoms Baden created are on the battlefield.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Baden increases his Penetration by 12 during battle, and by an extra 8 while any phantoms Baden created are on the battlefield.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Baden increases his Penetration by 15 during battle, and by an extra 10 while any phantoms Baden created are on the battlefield.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When a battle starts, the Wraithbrand curse deals 100% increased damage with a guaranteed critical strike, and inflicts max HP reduction equal to 70% of the actual damage dealt.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Each phantom summoned by the curse steals 15% of its target's ATK, granting that amount to both Baden and itself.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "The ATK gained from each steal cannot exceed 15% of Baden's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the ATK stolen to 17% of the target's ATK and the cap for each steal to 17% of Baden's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Baden immediately summons a phantom to fight alongside him when a battle starts.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "This phantom prioritizes his current target.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the ATK stolen to 20% of the target's ATK and the cap for each steal to 20% of Baden's initial ATK.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "When Baden is defeated, if any phantoms he created remain on the battlefield, he possesses one of them and will not be prioritized by enemies for the next 8s, and damage taken is reduced by 35%.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "This effect can trigger up to 3 times per battle.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "dcbe4be34071e98be4f30d2b6d2cad9c5e9c792edd580b70b45957b8c0220cea",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
+  }
+}

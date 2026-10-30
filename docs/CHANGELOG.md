@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-10-30
+
+### New Features
+
+- Added Baden (Graveborn · Rogue · Physical), The Abomination.
+- Added Marene (Celestial · Mage · Magic), Roaring Tempest.
+
+### Character changes
+
+| Character | What changed |
+|---|---|
+| baden | - Added as new hero |
+| marene | - Added as new hero |
+| aster, athalia, faramor, lenya, lily-may, salazer, seth, shadewing, silvina, sinbad, soren, sylphira, walker | - Refreshed relative stat ranks |
+
 ## 2026-10-12
 
 ### New Features

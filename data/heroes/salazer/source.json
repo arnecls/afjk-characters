@@ -254,7 +254,7 @@
         "basic": "high",
         "offensive": "low",
         "defensive": "high",
-        "other": "average"
+        "other": "low"
       },
       "stats": {
         "HP": "high",
@@ -265,9 +265,9 @@
         "ATK SPD": "low"
       },
       "roster_percentiles": {
-        "HP": 0.8203,
-        "Phys DEF": 0.8125,
-        "Magic DEF": 0.7969
+        "HP": 0.8231,
+        "Phys DEF": 0.8154,
+        "Magic DEF": 0.8
       }
     }
   }

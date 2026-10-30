@@ -260,8 +260,8 @@
       },
       "roster_percentiles": {
         "HP": 0.5,
-        "Phys DEF": 0.5391,
-        "Magic DEF": 0.5078
+        "Phys DEF": 0.5385,
+        "Magic DEF": 0.5077
       }
     }
   }

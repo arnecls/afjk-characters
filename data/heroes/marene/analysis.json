@@ -1,0 +1,967 @@
+{
+  "schema_version": 2,
+  "id": "marene",
+  "display_name": "Marene",
+  "local": {
+    "long_name": "Marene - Roaring Tempest",
+    "faction": "celestial",
+    "class": "mage",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": false,
+    "is_dual_range": false,
+    "default_range": 10,
+    "release_date": "2026-10-29",
+    "season": "Crown of Ashes",
+    "season_number": 7,
+    "skills": {
+      "Storm's Wrath": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Marene soars into the air and summons a storm that lasts for 4s. It immediately deals damage to all enemies equal to 30% + 3% (SP-based) of their HP, up to 500% + 50% (SP-based) of her ATK. While the storm is active, Marene continuously knocks all enemies into the air, reducing their Ranged DEF by 20. Additionally, Marene activates Tempest Eye 2 times per second, calling down lightning strikes that deal 110% (ATK-based) + 15% (SP-based) true damage to all enemies. The activation frequency scales with her Haste, up to a maximum of 8 activations per second. Marene remains invincible when casting this skill.",
+          "active": [
+            "Marene soars into the air and summons a storm that lasts for 4s.",
+            "It immediately deals damage to all enemies equal to 30% + 3% (SP-based) of their HP, up to 500% + 50% (SP-based) of her ATK.",
+            "While the storm is active, Marene continuously knocks all enemies into the air, reducing their Ranged DEF by 20.",
+            "Additionally, Marene activates Tempest Eye 2 times per second, calling down lightning strikes that deal 110% (ATK-based) + 15% (SP-based) true damage to all enemies.",
+            "The activation frequency scales with her Haste, up to a maximum of 8 activations per second.",
+            "Marene remains invincible when casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 120% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 130% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 140% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 150% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 165.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "crowd_control",
+            "cc-type": "knock_up",
+            "duration": 4.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "debuff",
+            "name": "Ranged DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 150.0
+              }
+            ],
+            "duration": 4.0,
+            "tick": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 150.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_ultimate",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 500.0,
+        "skill_card_tags": [
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "Ranged DEF — All units",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Knock up — All units"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Gathering Gale": {
+        "category": "skill1",
+        "description": {
+          "raw": "Passive. Marene amplifies the Haste buffs her allies grant her by 100% and retains the Haste gained even after those buffs expire. Haste bonuses from the same buff do not stack. Active. Marene channels her Tempest Eye for 2s, activating it 2 times per second. Each activation generates a small gust of wind at an enemy's position, dealing 110% (ATK-based) + 15% (SP-based) damage to enemies within 1 tile of the target. Targets are selected from front to back, prioritizing different enemies. The activation frequency scales with her Haste, up to a maximum of 8 activations per second.",
+          "passive": [
+            "Marene amplifies the Haste buffs her allies grant her by 100% and retains the Haste gained even after those buffs expire.",
+            "Haste bonuses from the same buff do not stack."
+          ],
+          "active": [
+            "Marene channels her Tempest Eye for 2s, activating it 2 times per second.",
+            "Each activation generates a small gust of wind at an enemy's position, dealing 110% (ATK-based) + 15% (SP-based) damage to enemies within 1 tile of the target.",
+            "Targets are selected from front to back, prioritizing different enemies.",
+            "The activation frequency scales with her Haste, up to a maximum of 8 activations per second."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 115% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 120% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 125% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "buff",
+                "ally": true
+              }
+            ],
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 100.0
+              }
+            ],
+            "duration": -1.0,
+            "persistence": "permanent"
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 125.0
+              }
+            ],
+            "duration": 2.0,
+            "tick": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 140.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 14.0,
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "Magic"
+          },
+          {
+            "label": "Haste — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Twin Cyclone": {
+        "category": "skill2",
+        "description": {
+          "raw": "Marene conjures 2 clusters of wind blades and launches them at the nearest and farthest enemies, respectively. The blades circle and slash at their targets for 2s, dealing 110% (ATK-based) + 15% (SP-based) damage to the targets and enemies within 2 tiles of them every 0.5s.",
+          "active": [
+            "Marene conjures 2 clusters of wind blades and launches them at the nearest and farthest enemies, respectively.",
+            "The blades circle and slash at their targets for 2s, dealing 110% (ATK-based) + 15% (SP-based) damage to the targets and enemies within 2 tiles of them every 0.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt to 115% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt to 120% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt to 125% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 125.0
+              }
+            ],
+            "duration": 2.0,
+            "tick": 0.5
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 140.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 16.0,
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "Magic"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Marene increases her ATK by 6%. Each activation of Tempest Eye increases her ATK by an extra 0.6%, stacking up to 30 times.",
+          "active": [
+            "Marene increases her ATK by 6%.",
+            "Each activation of Tempest Eye increases her ATK by an extra 0.6%, stacking up to 30 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Marene increases her ATK by 8%.",
+                "Each activation of Tempest Eye increases her ATK by an extra 0.8%, stacking up to 30 times."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Marene increases her ATK by 10%.",
+                "Each activation of Tempest Eye increases her ATK by an extra 1%, stacking up to 30 times."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 30,
+                "stack_comparison": "up_to"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "duration": -1.0,
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Aeon Tempest": {
+        "category": "skill4",
+        "description": {
+          "raw": "When the Haste bonus Marene gains from allies reaches 60, she enters Windborne state, becoming steadfast and taking 45% less damage and ignoring 45% of enemies' Ranged DEF when dealing damage. Once her Tempest Eye has activated 30 times, she unleashes a massive thunderstorm that permanently covers the battlefield. It deals 110% (ATK-based) true damage to all enemies every second and unleashes powerful gusts every 5s that knock all enemies into the air and destroy all obstacles.",
+          "active": [
+            "When the Haste bonus Marene gains from allies reaches 60, she enters Windborne state, becoming steadfast and taking 45% less damage and ignoring 45% of enemies' Ranged DEF when dealing damage.",
+            "Once her Tempest Eye has activated 30 times, she unleashes a massive thunderstorm that permanently covers the battlefield.",
+            "It deals 110% (ATK-based) true damage to all enemies every second and unleashes powerful gusts every 5s that knock all enemies into the air and destroy all obstacles."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the damage dealt per second to 130% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the damage dealt per second to 150% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "The thunderstorm can sweep enemies off the battlefield.",
+                "This effect only applies to enemies who are neither steadfast nor unaffected, with remaining HP below 1000% of Marene's ATK and an HP ratio below 35%.",
+                "Enemies swept away this way cannot return to the battlefield and are considered defeated."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "skill_mode",
+                "mode": "Windborne"
+              }
+            ],
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 45.0
+              }
+            ],
+            "duration": -1.0,
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "skill_cast",
+                "count": 30
+              }
+            ],
+            "type": "dot",
+            "damage_type": "dot",
+            "name": "DoT",
+            "label": "dot",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 150.0
+              }
+            ],
+            "duration": -1.0,
+            "tick": 1.0
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "skill_cast",
+                "count": 30
+              }
+            ],
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 150.0
+              }
+            ]
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "skill_cast",
+                "count": 30
+              }
+            ],
+            "type": "crowd_control",
+            "cc-type": "knock_up"
+          },
+          {
+            "type": "immunity",
+            "tier": "mythic+",
+            "immunity_type": "steadfast",
+            "timing": "conditional",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "DoT"
+          },
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "DoT (EX+5)"
+          },
+          {
+            "label": "True damage (EX+5)"
+          },
+          {
+            "label": "DoT (EX+10)"
+          },
+          {
+            "label": "True damage (EX+10)"
+          },
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Knock up — All units"
+          },
+          {
+            "label": "Steadfast — Self"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "The small gusts summoned by Gathering Gale and the wind blades created by Twin Cyclone are infused with lightning. Each hit deals an extra 30% (ATK-based) true damage and stuns the target for 0.25s, and permanently reduces the target's Vitality by 4, stacking up to 15 times.",
+          "active": [
+            "The small gusts summoned by Gathering Gale and the wind blades created by Twin Cyclone are infused with lightning.",
+            "Each hit deals an extra 30% (ATK-based) true damage and stuns the target for 0.25s, and permanently reduces the target's Vitality by 4, stacking up to 15 times."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "type": "crowd_control",
+            "cc-type": "stun",
+            "duration": 0.25
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "conditions": [
+              {
+                "type": "stack_count",
+                "stacks": 15,
+                "stack_comparison": "up_to"
+              }
+            ],
+            "type": "debuff",
+            "name": "Vitality",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "Vitality — Area",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Stun — Area"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Marene remains invincible while casting the ultimate."
+        },
+        {
+          "label": "Form or stance active",
+          "tier": "mythic+",
+          "targeting": "Self",
+          "description": "At 60 Haste gained from allies, Marene enters Windborne: steadfast, 45% less damage taken, and 45% of enemy Ranged DEF ignored."
+        },
+        {
+          "label": "Instant defeat",
+          "tier": "ex+15",
+          "targeting": "All units",
+          "description": "The thunderstorm sweeps away enemies that are not steadfast or unaffected, below 35% HP and below 1000% of Marene's ATK in HP; they count as defeated."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "magic",
+        "All units, Area"
+      ],
+      [
+        "dot",
+        "All units, Area"
+      ],
+      [
+        "true",
+        "All units, Area"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "haste",
+      "max_hp"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "marene",
+    "display_name": "Marene",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Magic",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Marene soars into the air and summons a storm that lasts for 4s.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "It immediately deals damage to all enemies equal to 30% + 3% (SP-based) of their HP, up to 500% + 50% (SP-based) of her ATK.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "While the storm is active, Marene continuously knocks all enemies into the air, reducing their Ranged DEF by 20.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Additionally, Marene activates Tempest Eye 2 times per second, calling down lightning strikes that deal 110% (ATK-based) + 15% (SP-based) true damage to all enemies.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "The activation frequency scales with her Haste, up to a maximum of 8 activations per second.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Marene remains invincible when casting this skill.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by Tempest Eye through this skill to 120% (ATK-based) + 15% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by Tempest Eye through this skill to 130% (ATK-based) + 15% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by Tempest Eye through this skill to 140% (ATK-based) + 15% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by Tempest Eye through this skill to 150% (ATK-based) + 15% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Marene amplifies the Haste buffs her allies grant her by 100% and retains the Haste gained even after those buffs expire.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Haste bonuses from the same buff do not stack.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Marene channels her Tempest Eye for 2s, activating it 2 times per second.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Each activation generates a small gust of wind at an enemy's position, dealing 110% (ATK-based) + 15% (SP-based) damage to enemies within 1 tile of the target.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Targets are selected from front to back, prioritizing different enemies.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "The activation frequency scales with her Haste, up to a maximum of 8 activations per second.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by Tempest Eye through this skill to 115% (ATK-based) + 15% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by Tempest Eye through this skill to 120% (ATK-based) + 15% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Increases the damage dealt by Tempest Eye through this skill to 125% (ATK-based) + 15% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Marene conjures 2 clusters of wind blades and launches them at the nearest and farthest enemies, respectively.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "The blades circle and slash at their targets for 2s, dealing 110% (ATK-based) + 15% (SP-based) damage to the targets and enemies within 2 tiles of them every 0.5s.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 115% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 120% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the damage dealt to 125% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Marene increases her ATK by 6%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each activation of Tempest Eye increases her ATK by an extra 0.6%, stacking up to 30 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Marene increases her ATK by 8%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each activation of Tempest Eye increases her ATK by an extra 0.8%, stacking up to 30 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Marene increases her ATK by 10%.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Each activation of Tempest Eye increases her ATK by an extra 1%, stacking up to 30 times.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "When the Haste bonus Marene gains from allies reaches 60, she enters Windborne state, becoming steadfast and taking 45% less damage and ignoring 45% of enemies' Ranged DEF when dealing damage.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Once her Tempest Eye has activated 30 times, she unleashes a massive thunderstorm that permanently covers the battlefield.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "It deals 110% (ATK-based) true damage to all enemies every second and unleashes powerful gusts every 5s that knock all enemies into the air and destroy all obstacles.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the damage dealt per second to 130% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Increases the damage dealt per second to 150% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "The thunderstorm can sweep enemies off the battlefield.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "This effect only applies to enemies who are neither steadfast nor unaffected, with remaining HP below 1000% of Marene's ATK and an HP ratio below 35%.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Enemies swept away this way cannot return to the battlefield and are considered defeated.",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "The small gusts summoned by Gathering Gale and the wind blades created by Twin Cyclone are infused with lightning.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "Each hit deals an extra 30% (ATK-based) true damage and stuns the target for 0.25s, and permanently reduces the target's Vitality by 4, stacking up to 15 times.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "529f848809a0b33fbf26645f9207d8979bc3e7ae64860955d1a99489768570e3",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
+  }
+}

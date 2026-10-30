@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "id": "baden",
+  "display_name": "Baden",
+  "source": {
+    "title": "Baden - The Abomination",
+    "name": "Baden",
+    "tags": "Graveborn · Rogue · Physical",
+    "faction": "Graveborn",
+    "class": "Rogue",
+    "damage_type": "Physical",
+    "description": "A Rogue who commands phantoms in battle, striking enemies down with various combat techniques.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Omen's Grasp",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "400"
+        },
+        "description": {
+          "raw": "Baden and all his phantoms attack a designated enemy in unison, delivering 4 successive strikes and keeping the target stunned throughout. The first 3 strikes each deal 150% (ATK-based) + 15% (SP-based) damage. The final strike deals 420% (ATK-based) + 50% (SP-based) true damage to the target and enemies within 1 tile of them. It also drains 200% (ATK-based) + 20% (SP-based) HP from the target and inflicts an equal amount of max HP reduction. This skill also prevents the target from recovering HP and Energy for 8s. Baden remains invincible while casting this skill. In Auto Battle, this skill prioritizes the weakest enemy.",
+          "active": [
+            "Baden and all his phantoms attack a designated enemy in unison, delivering 4 successive strikes and keeping the target stunned throughout.",
+            "The first 3 strikes each deal 150% (ATK-based) + 15% (SP-based) damage.",
+            "The final strike deals 420% (ATK-based) + 50% (SP-based) true damage to the target and enemies within 1 tile of them.",
+            "It also drains 200% (ATK-based) + 20% (SP-based) HP from the target and inflicts an equal amount of max HP reduction.",
+            "This skill also prevents the target from recovering HP and Energy for 8s.",
+            "Baden remains invincible while casting this skill.",
+            "In Auto Battle, this skill prioritizes the weakest enemy."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt by the final strike to 440% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt by the final strike to 460% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt by the final strike to 480% (ATK-based) + 50% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt by the final strike to 500% (ATK-based) + 50% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Baden and his phantoms unleash a powerful attack on a designated enemy, preventing the target from recovering HP and Energy for a duration."
+      },
+      {
+        "section": "Skill1",
+        "name": "Wraithbrand",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "9s",
+          "Initial Cooldown": "1s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Passive. When a battle starts, Baden curses enemies in a straight line in front of him, dealing 250% (ATK-based) + 30% (SP-based) true damage. The curse summons a phantom near an afflicted non-boss enemy the first time their HP ratio drops below 50%. For afflicted boss enemies, a phantom is summoned each time they lose HP equal to 600% of Baden's initial ATK. Phantoms use normal attacks and prioritize the enemy whose curse summoned them. They inherit 60% + 5% (SP-based) of Baden's basic stats and remain invincible. Each boss can generate up to 2 phantoms this way. Active. Baden impales his current target, stunning them for 3s and stealing 20% + 2% (SP-based) of their max HP, up to 200% + 20% (SP-based) of his ATK, along with 100 Energy. He then deals 240% (ATK-based) + 30% (SP-based) damage.",
+          "passive": [
+            "When a battle starts, Baden curses enemies in a straight line in front of him, dealing 250% (ATK-based) + 30% (SP-based) true damage.",
+            "The curse summons a phantom near an afflicted non-boss enemy the first time their HP ratio drops below 50%.",
+            "For afflicted boss enemies, a phantom is summoned each time they lose HP equal to 600% of Baden's initial ATK.",
+            "Phantoms use normal attacks and prioritize the enemy whose curse summoned them.",
+            "They inherit 60% + 5% (SP-based) of Baden's basic stats and remain invincible.",
+            "Each boss can generate up to 2 phantoms this way."
+          ],
+          "active": [
+            "Baden impales his current target, stunning them for 3s and stealing 20% + 2% (SP-based) of their max HP, up to 200% + 20% (SP-based) of his ATK, along with 100 Energy.",
+            "He then deals 240% (ATK-based) + 30% (SP-based) damage."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt by the active strike to 260% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt by the active strike to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt by the active strike to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Baden curses enemies in a straight line in front of him when a battle starts, summoning phantoms to assist him when their HP is low."
+      },
+      {
+        "section": "Skill2",
+        "name": "Soul Sunder",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "9s",
+          "Initial Cooldown": "2s",
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Baden and his phantoms unleash 5 slashes in unison. The first 4 slashes deal a total of 260% (ATK-based) + 30% (SP-based) damage to the current target. The final slash sends out a sword shock, dealing 260% (ATK-based) + 30% (SP-based) damage to enemies within 2 tiles and reducing their Vitality by 20 + 2 (SP-based) for 8s. This effect stacks up to 3 times.",
+          "active": [
+            "Baden and his phantoms unleash 5 slashes in unison.",
+            "The first 4 slashes deal a total of 260% (ATK-based) + 30% (SP-based) damage to the current target.",
+            "The final slash sends out a sword shock, dealing 260% (ATK-based) + 30% (SP-based) damage to enemies within 2 tiles and reducing their Vitality by 20 + 2 (SP-based) for 8s.",
+            "This effect stacks up to 3 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "ncreases the total damage dealt by the first 4 slashes to 280% (ATK-based) + 30% (SP-based) and the damage dealt by the final slash to 280% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the total damage dealt by the first 4 slashes to 300% (ATK-based) + 30% (SP-based) and the damage dealt by the final slash to 300% (ATK-based) + 30% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the total damage dealt by the first 4 slashes to 320% (ATK-based) + 30% (SP-based) and the damage dealt by the final slash to 320% (ATK-based) + 30% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Baden and his phantoms unleash multiple strikes on enemies."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Baden increases his Penetration by 9 during battle, and by an extra 6 while any phantoms Baden created are on the battlefield.",
+          "active": [
+            "Baden increases his Penetration by 9 during battle, and by an extra 6 while any phantoms Baden created are on the battlefield."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Baden increases his Penetration by 12 during battle, and by an extra 8 while any phantoms Baden created are on the battlefield."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Baden increases his Penetration by 15 during battle, and by an extra 10 while any phantoms Baden created are on the battlefield."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Increase Penetration during battle."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Revenant's Due",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When a battle starts, the Wraithbrand curse deals 100% increased damage with a guaranteed critical strike, and inflicts max HP reduction equal to 70% of the actual damage dealt. Each phantom summoned by the curse steals 15% of its target's ATK, granting that amount to both Baden and itself. The ATK gained from each steal cannot exceed 15% of Baden's initial ATK.",
+          "active": [
+            "When a battle starts, the Wraithbrand curse deals 100% increased damage with a guaranteed critical strike, and inflicts max HP reduction equal to 70% of the actual damage dealt.",
+            "Each phantom summoned by the curse steals 15% of its target's ATK, granting that amount to both Baden and itself.",
+            "The ATK gained from each steal cannot exceed 15% of Baden's initial ATK."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the ATK stolen to 17% of the target's ATK and the cap for each steal to 17% of Baden's initial ATK."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Baden immediately summons a phantom to fight alongside him when a battle starts.",
+                "This phantom prioritizes his current target."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the ATK stolen to 20% of the target's ATK and the cap for each steal to 20% of Baden's initial ATK."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Enhances Wraithbrand's curse and allows phantoms to steal a portion of their target's ATK when summoned."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {},
+        "description": {
+          "raw": "When Baden is defeated, if any phantoms he created remain on the battlefield, he possesses one of them and will not be prioritized by enemies for the next 8s, and damage taken is reduced by 35%. This effect can trigger up to 3 times per battle.",
+          "active": [
+            "When Baden is defeated, if any phantoms he created remain on the battlefield, he possesses one of them and will not be prioritized by enemies for the next 8s, and damage taken is reduced by 35%.",
+            "This effect can trigger up to 3 times per battle."
+          ]
+        },
+        "description_lite": "Baden possesses a phantom when he is about to be defeated."
+      }
+    ],
+    "range": 1,
+    "release_date": "2026-10-29",
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "fast",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "low",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "high",
+        "Haste": "high",
+        "ATK SPD": "high"
+      },
+      "roster_percentiles": {
+        "HP": 0.6692,
+        "Phys DEF": 0.6154,
+        "Magic DEF": 0.6231
+      }
+    }
+  }
+}

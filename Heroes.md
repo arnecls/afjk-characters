@@ -10585,3 +10585,169 @@ Whenever Ride Down brings Estrilda to the enemy's edge of the battlefield, she p
 *Unlocks at Supreme+*
 
 After Piercing Onslaught ends, Estrilda recovers 300% (ATK-based) HP and gains a 300% (ATK-based) shield. After Ride Down ends, she gains 25 Penetration and 20% ATK for 15s.
+
+## Baden - The Abomination
+
+*Graveborn · Rogue · Physical*
+
+A Rogue who commands phantoms in battle, striking enemies down with various combat techniques.
+
+### Ultimate
+
+**Omen's Grasp**
+*Unlocks at Level 1*
+
+- Skill Range: Global
+- Initial Energy: 400
+
+Baden and all his phantoms attack a designated enemy in unison, delivering 4 successive strikes and keeping the target stunned throughout. The first 3 strikes each deal 150% (ATK-based) + 15% (SP-based) damage. The final strike deals 420% (ATK-based) + 50% (SP-based) true damage to the target and enemies within 1 tile of them. It also drains 200% (ATK-based) + 20% (SP-based) HP from the target and inflicts an equal amount of max HP reduction. This skill also prevents the target from recovering HP and Energy for 8s. Baden remains invincible while casting this skill. In Auto Battle, this skill prioritizes the weakest enemy.
+
+- Level 2 — Unlocks at Level 51: Increases the damage dealt by the final strike to 440% (ATK-based) + 50% (SP-based).
+- Level 3 — Unlocks at Level 111: Increases the damage dealt by the final strike to 460% (ATK-based) + 50% (SP-based).
+- Level 4 — Unlocks at Level 171: Increases the damage dealt by the final strike to 480% (ATK-based) + 50% (SP-based).
+- Level 5 — Unlocks at Level 231: Increases the damage dealt by the final strike to 500% (ATK-based) + 50% (SP-based).
+
+### Skill1
+
+**Wraithbrand**
+*Unlocks at Level 11*
+
+- Cooldown: 9s
+- Initial Cooldown: 1s
+- Skill Range: 1 tile
+
+Passive. When a battle starts, Baden curses enemies in a straight line in front of him, dealing 250% (ATK-based) + 30% (SP-based) true damage. The curse summons a phantom near an afflicted non-boss enemy the first time their HP ratio drops below 50%. For afflicted boss enemies, a phantom is summoned each time they lose HP equal to 600% of Baden's initial ATK. Phantoms use normal attacks and prioritize the enemy whose curse summoned them. They inherit 60% + 5% (SP-based) of Baden's basic stats and remain invincible. Each boss can generate up to 2 phantoms this way. Active. Baden impales his current target, stunning them for 3s and stealing 20% + 2% (SP-based) of their max HP, up to 200% + 20% (SP-based) of his ATK, along with 100 Energy. He then deals 240% (ATK-based) + 30% (SP-based) damage.
+
+- Level 2 — Unlocks at Level 71: Increases the damage dealt by the active strike to 260% (ATK-based) + 30% (SP-based).
+- Level 3 — Unlocks at Level 131: Increases the damage dealt by the active strike to 280% (ATK-based) + 30% (SP-based).
+- Level 4 — Unlocks at Level 191: Increases the damage dealt by the active strike to 300% (ATK-based) + 30% (SP-based).
+
+### Skill2
+
+**Soul Sunder**
+*Unlocks at Level 31*
+
+- Cooldown: 9s
+- Initial Cooldown: 2s
+- Skill Range: 1 tile
+
+Baden and his phantoms unleash 5 slashes in unison. The first 4 slashes deal a total of 260% (ATK-based) + 30% (SP-based) damage to the current target. The final slash sends out a sword shock, dealing 260% (ATK-based) + 30% (SP-based) damage to enemies within 2 tiles and reducing their Vitality by 20 + 2 (SP-based) for 8s. This effect stacks up to 3 times.
+
+- Level 2 — Unlocks at Level 91: ncreases the total damage dealt by the first 4 slashes to 280% (ATK-based) + 30% (SP-based) and the damage dealt by the final slash to 280% (ATK-based) + 30% (SP-based).
+- Level 3 — Unlocks at Level 151: Increases the total damage dealt by the first 4 slashes to 300% (ATK-based) + 30% (SP-based) and the damage dealt by the final slash to 300% (ATK-based) + 30% (SP-based).
+- Level 4 — Unlocks at Level 211: Increases the total damage dealt by the first 4 slashes to 320% (ATK-based) + 30% (SP-based) and the damage dealt by the final slash to 320% (ATK-based) + 30% (SP-based).
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Baden increases his Penetration by 9 during battle, and by an extra 6 while any phantoms Baden created are on the battlefield.
+
+- Level 2: Baden increases his Penetration by 12 during battle, and by an extra 8 while any phantoms Baden created are on the battlefield.
+- Level 3: Baden increases his Penetration by 15 during battle, and by an extra 10 while any phantoms Baden created are on the battlefield.
+
+### Ex. Skill
+
+**Revenant's Due**
+*Unlocks at Mythic+*
+
+- Skill Range: Global
+
+When a battle starts, the Wraithbrand curse deals 100% increased damage with a guaranteed critical strike, and inflicts max HP reduction equal to 70% of the actual damage dealt. Each phantom summoned by the curse steals 15% of its target's ATK, granting that amount to both Baden and itself. The ATK gained from each steal cannot exceed 15% of Baden's initial ATK.
+
+- Level 2 — Unlocks at EX. +5: Increases the ATK stolen to 17% of the target's ATK and the cap for each steal to 17% of Baden's initial ATK.
+- Level 3 — Unlocks at EX. +10: Baden immediately summons a phantom to fight alongside him when a battle starts. This phantom prioritizes his current target.
+- Level 4 — Unlocks at EX. +15: Increases the ATK stolen to 20% of the target's ATK and the cap for each steal to 20% of Baden's initial ATK.
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+When Baden is defeated, if any phantoms he created remain on the battlefield, he possesses one of them and will not be prioritized by enemies for the next 8s, and damage taken is reduced by 35%. This effect can trigger up to 3 times per battle.
+
+## Marene - Roaring Tempest
+
+*Celestial · Mage · Magic*
+
+A hotheaded Mage who unleashes raging storms to vanquish her enemies.
+
+### Ultimate
+
+**Storm's Wrath**
+*Unlocks at Level 1*
+
+- Skill Range: Global
+- Initial Energy: 500
+
+Marene soars into the air and summons a storm that lasts for 4s. It immediately deals damage to all enemies equal to 30% + 3% (SP-based) of their HP, up to 500% + 50% (SP-based) of her ATK. While the storm is active, Marene continuously knocks all enemies into the air, reducing their Ranged DEF by 20. Additionally, Marene activates Tempest Eye 2 times per second, calling down lightning strikes that deal 110% (ATK-based) + 15% (SP-based) true damage to all enemies. The activation frequency scales with her Haste, up to a maximum of 8 activations per second. Marene remains invincible when casting this skill.
+
+- Level 2 — Unlocks at Level 51: Increases the damage dealt by Tempest Eye through this skill to 120% (ATK-based) + 15% (SP-based).
+- Level 3 — Unlocks at Level 111: Increases the damage dealt by Tempest Eye through this skill to 130% (ATK-based) + 15% (SP-based).
+- Level 4 — Unlocks at Level 171: Increases the damage dealt by Tempest Eye through this skill to 140% (ATK-based) + 15% (SP-based).
+- Level 5 — Unlocks at Level 231: Increases the damage dealt by Tempest Eye through this skill to 150% (ATK-based) + 15% (SP-based).
+
+### Skill1
+
+**Gathering Gale**
+*Unlocks at Level 11*
+
+- Cooldown: 14s
+- Skill Range: Global
+
+Passive. Marene amplifies the Haste buffs her allies grant her by 100% and retains the Haste gained even after those buffs expire. Haste bonuses from the same buff do not stack. Active. Marene channels her Tempest Eye for 2s, activating it 2 times per second. Each activation generates a small gust of wind at an enemy's position, dealing 110% (ATK-based) + 15% (SP-based) damage to enemies within 1 tile of the target. Targets are selected from front to back, prioritizing different enemies. The activation frequency scales with her Haste, up to a maximum of 8 activations per second.
+
+- Level 2 — Unlocks at Level 71: Increases the damage dealt by Tempest Eye through this skill to 115% (ATK-based) + 15% (SP-based).
+- Level 3 — Unlocks at Level 131: Increases the damage dealt by Tempest Eye through this skill to 120% (ATK-based) + 15% (SP-based).
+- Level 4 — Unlocks at Level 191: Increases the damage dealt by Tempest Eye through this skill to 125% (ATK-based) + 15% (SP-based).
+
+### Skill2
+
+**Twin Cyclone**
+*Unlocks at Level 31*
+
+- Cooldown: 16s
+- Skill Range: Global
+
+Marene conjures 2 clusters of wind blades and launches them at the nearest and farthest enemies, respectively. The blades circle and slash at their targets for 2s, dealing 110% (ATK-based) + 15% (SP-based) damage to the targets and enemies within 2 tiles of them every 0.5s.
+
+- Level 2 — Unlocks at Level 91: Increases the damage dealt to 115% (ATK-based) + 15% (SP-based).
+- Level 3 — Unlocks at Level 151: Increases the damage dealt to 120% (ATK-based) + 15% (SP-based).
+- Level 4 — Unlocks at Level 211: Increases the damage dealt to 125% (ATK-based) + 15% (SP-based).
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Marene increases her ATK by 6%. Each activation of Tempest Eye increases her ATK by an extra 0.6%, stacking up to 30 times.
+
+- Level 2: Marene increases her ATK by 8%. Each activation of Tempest Eye increases her ATK by an extra 0.8%, stacking up to 30 times.
+- Level 3: Marene increases her ATK by 10%. Each activation of Tempest Eye increases her ATK by an extra 1%, stacking up to 30 times.
+
+### Ex. Skill
+
+**Aeon Tempest**
+*Unlocks at Mythic+*
+
+- Skill Range: Global
+
+When the Haste bonus Marene gains from allies reaches 60, she enters Windborne state, becoming steadfast and taking 45% less damage and ignoring 45% of enemies' Ranged DEF when dealing damage. Once her Tempest Eye has activated 30 times, she unleashes a massive thunderstorm that permanently covers the battlefield. It deals 110% (ATK-based) true damage to all enemies every second and unleashes powerful gusts every 5s that knock all enemies into the air and destroy all obstacles.
+
+- Level 2 — Unlocks at EX. +5: Increases the damage dealt per second to 130% (ATK-based).
+- Level 3 — Unlocks at EX. +10: Increases the damage dealt per second to 150% (ATK-based).
+- Level 4 — Unlocks at EX. +15: The thunderstorm can sweep enemies off the battlefield. This effect only applies to enemies who are neither steadfast nor unaffected, with remaining HP below 1000% of Marene's ATK and an HP ratio below 35%. Enemies swept away this way cannot return to the battlefield and are considered defeated.
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+- Skill Range: Global
+
+The small gusts summoned by Gathering Gale and the wind blades created by Twin Cyclone are infused with lightning. Each hit deals an extra 30% (ATK-based) true damage and stuns the target for 0.25s, and permanently reduces the target's Vitality by 4, stacking up to 15 times.

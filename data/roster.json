@@ -1168,6 +1168,24 @@
       "aliases": [
         "Estrilda"
       ]
+    },
+    {
+      "id": "baden",
+      "display_name": "Baden",
+      "title": "Baden - The Abomination",
+      "order": 129,
+      "aliases": [
+        "Baden"
+      ]
+    },
+    {
+      "id": "marene",
+      "display_name": "Marene",
+      "title": "Marene - Roaring Tempest",
+      "order": 130,
+      "aliases": [
+        "Marene"
+      ]
     }
   ]
 }

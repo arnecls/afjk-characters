@@ -103,7 +103,7 @@ FANDOM_HEADER = (
 HERO_NAMES = [
     "Aliceth", "Alna", "Alsa", "Antandra", "Arden", "Aster", "Atalanta",
     "Athalia",
-    "Aurora", "Baelran", "Berial", "Bonnie", "Brutus", "Bryon", "Callan",
+    "Aurora", "Baden", "Baelran", "Berial", "Bonnie", "Brutus", "Bryon", "Callan",
     "Carolina", "Cassadee", "Cecia", "Chippy", "Contess", "Cryonaia", "Cyran",
     "Daimon", "Damian", "Dionel", "Dunlingr", "Eironn", "Elijah & Lailah",
     "Eryndor", "Estrilda", "Evie", "Faramor", "Fay", "Florabelle", "Frieren", "Galahad", "Gerda",
@@ -112,7 +112,7 @@ HERO_NAMES = [
     "Kafra", "Karma", "Kazim", "Koko", "Kordan", "Korin", "Kruger", "Kulu", "Laios",
     "Lamentis", "Lenya",
     "Lily May", "Lorsan", "Lucca", "Lucius", "Lucy", "Ludovic", "Lumont",
-    "Lyca", "Marcille", "Marilee", "Mehira", "Mikola", "Mirael", "Nara",
+    "Lyca", "Marcille", "Marene", "Marilee", "Mehira", "Mikola", "Mirael", "Nara",
     "Natsu", "Nazrik", "Nerion", "Niru", "Odie", "Orion", "Pandora", "Pang", "Parisa",
     "Perseus", "Peggy", "Phraesto", "Pippa", "Ravion", "Reinier", "Rhys", "Rowan",
     "Rolan", "Saida", "Salazer", "Satrana", "Scarlita", "Senea", "Seth", "Shadewing",
