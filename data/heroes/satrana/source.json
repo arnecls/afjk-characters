@@ -224,9 +224,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Increases ignite damage by 100%.",
+                "The effects that previously required igniting 5 heroes now trigger after igniting 4 heroes."
               ]
             }
           ]

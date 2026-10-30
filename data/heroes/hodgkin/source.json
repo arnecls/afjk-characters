@@ -233,9 +233,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Hodgkin gains 400 initial Energy.",
+                "During Cannon Fire, for each enemy hit by the cannon at least 2 times, he recovers 150 Energy and reduces that enemy's Vitality by 80 for 10s."
               ]
             }
           ]

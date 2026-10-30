@@ -507,9 +507,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Temesia takes 30% less damage while charging.",
+                "Her Iron Heel skill also deals extra damage equal to 30% of the target's max HP while granting her a 300% (ATK-based) shield.",
+                "The extra damage cannot exceed 600% (ATK-based)."
               ]
             }
           ]
@@ -538,9 +540,72 @@
                 "value": 1.0
               }
             ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "Max HP-based damage (Supreme+ Lv2)"
+          },
+          {
+            "label": "Damage taken — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
           {
             "label": "Phys DEF",
             "polarity": "debuff"
@@ -571,6 +636,10 @@
         "Area, Single target"
       ],
       [
+        "max_hp",
+        "Single target"
+      ],
+      [
         "true",
         "Area"
       ]
@@ -578,6 +647,8 @@
     "benefit_stats": [
       "atk",
       "atk_spd",
+      "max_hp",
+      "shield",
       "energy"
     ],
     "scalar_stat_shares": {
@@ -752,14 +823,24 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Temesia takes 30% less damage while charging.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Her Iron Heel skill also deals extra damage equal to 30% of the target's max HP while granting her a 300% (ATK-based) shield.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "The extra damage cannot exceed 600% (ATK-based).",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "64ea2e769ffbda732d94f329633e5b6f9ca5fb63be57dacd4c7545d255eaa5dc",
+    "inputs_hash": "a1fc104982513793abc93b6427f07f9f244901038f5e9e6106119794525a5e5e",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

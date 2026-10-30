@@ -2482,7 +2482,7 @@ def _skill_card_tag_for_effect(
 def _canonical_skill_card_chip_key(tag: str) -> str:
     stripped = tag.strip()
     tier_match = re.search(
-        r"\s*\((Legendary\+|Mythic\+|Supreme\+|EX\+\d+)\)\s*$",
+        r"\s*\((Legendary\+|Mythic\+|Supreme\+(?: Lv2)?|EX\+\d+)\)\s*$",
         stripped,
         flags=re.I,
     )

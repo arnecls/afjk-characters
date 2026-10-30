@@ -29,6 +29,7 @@ TIER_ORDER = {
     "EX+10": 4,
     "EX+15": 5,
     "Supreme+": 6,
+    "Supreme+ Lv2": 7,
 }
 TARGETING_PRIORITY = {
     "Self": 0,

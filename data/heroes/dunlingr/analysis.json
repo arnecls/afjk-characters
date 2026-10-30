@@ -412,9 +412,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "If Dunlingr is alive, each time the order effect of his Bell ends or its duration is refreshed, an extra effect will be triggered based on the Bell's active order: Spellbind: Reduces all enemies' Energy by 150 and their Haste by 10 for 8s.",
+                "Curelock: Reduces all enemies' HP by 150% (ATK-based) and their Vitality by 50 for 8s."
               ]
             }
           ]
@@ -457,9 +458,85 @@
               }
             ],
             "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "debuff",
+            "name": "Energy",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 150.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "debuff",
+            "name": "Haste",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 10.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "damage",
+            "damage_type": "hp_loss",
+            "name": "HP loss",
+            "label": "damage_hp_loss",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 150.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "debuff",
+            "name": "Vitality",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "HP loss (Supreme+ Lv2)"
+          },
           {
             "label": "ATK SPD — All units",
             "polarity": "buff"
@@ -467,6 +544,18 @@
           {
             "label": "Lifedrain — All units",
             "polarity": "buff"
+          },
+          {
+            "label": "Energy — All units (Supreme+ Lv2)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Haste — All units (Supreme+ Lv2)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Vitality — All units (Supreme+ Lv2)",
+            "polarity": "debuff"
           }
         ]
       }
@@ -492,6 +581,10 @@
       [
         "magic",
         "All units, Area"
+      ],
+      [
+        "hp_loss",
+        "All units"
       ],
       [
         "lost_hp",
@@ -637,14 +730,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "If Dunlingr is alive, each time the order effect of his Bell ends or its duration is refreshed, an extra effect will be triggered based on the Bell's active order: Spellbind: Reduces all enemies' Energy by 150 and their Haste by 10 for 8s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Curelock: Reduces all enemies' HP by 150% (ATK-based) and their Vitality by 50 for 8s.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "ad03cab5cbaf4509b4525319d4bddd59b5238ab86a42784bb79483a05fd0ef1e",
+    "inputs_hash": "8d96bfe45298500baba0bc7566fb38223d6337904176ca8134d2afb57bc0e5ad",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

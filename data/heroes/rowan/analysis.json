@@ -431,16 +431,42 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Rowan upgrades his Energy potion into a super Energy potion.",
+                "It works the same way as the original Energy potion, but upon restoring the target's Energy, it also increases their ATK by 30% for 6s.",
+                "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her."
               ]
             }
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "duration": 6.0,
+            "persistence": "temporary"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "ATK (Supreme+ Lv2)",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -467,6 +493,7 @@
       ]
     ],
     "benefit_stats": [
+      "atk",
       "haste",
       "energy"
     ],
@@ -627,14 +654,24 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Rowan upgrades his Energy potion into a super Energy potion.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "It works the same way as the original Energy potion, but upon restoring the target's Energy, it also increases their ATK by 30% for 6s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "6ef47202242e35e3b6b2abe40165964ab201db4012c5d90125f22803bca8962f",
+    "inputs_hash": "6b51a18fd7f1504126f3201ace93111f69ad410b35d99bc2ef160f37c724886d",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

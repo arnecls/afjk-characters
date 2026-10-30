@@ -229,9 +229,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Temesia takes 30% less damage while charging.",
+                "Her Iron Heel skill also deals extra damage equal to 30% of the target's max HP while granting her a 300% (ATK-based) shield.",
+                "The extra damage cannot exceed 600% (ATK-based)."
               ]
             }
           ]

@@ -227,9 +227,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Salazer increases the damage of Spirit Shackles by 60%.",
+                "Each time an enemy that he has previously imprisoned is defeated, grants him a shield equal to 100% of that enemy's max HP.",
+                "The shield lasts for 15s, and its value cannot exceed 1500% of Salazer's ATK."
               ]
             }
           ]

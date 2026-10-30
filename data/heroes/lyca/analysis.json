@@ -421,9 +421,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Lyca gains 300 extra Initial Energy.",
+                "She extends the duration of Nebula Reflection from her Comet Archery by 7s and makes each meteor summoned by allied attacks deal extra damage equal to 40% of her ATK."
               ]
             }
           ]
@@ -452,9 +453,52 @@
                 "value": 25.0
               }
             ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 300.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "Magic (Supreme+ Lv2)"
+          },
+          {
+            "label": "Energy — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
           {
             "label": "Phys DEF",
             "polarity": "debuff"
@@ -470,10 +514,15 @@
       [
         "physical",
         "All units, Area, Single target"
+      ],
+      [
+        "magic",
+        "Single target"
       ]
     ],
     "benefit_stats": [
-      "atk_spd"
+      "atk_spd",
+      "energy"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -612,14 +661,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Lyca gains 300 extra Initial Energy.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "She extends the duration of Nebula Reflection from her Comet Archery by 7s and makes each meteor summoned by allied attacks deal extra damage equal to 40% of her ATK.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "1083f763b1d2e30eb041111b6c3c3c58ab2a03794e258a7b4ad20e31e9f29e56",
+    "inputs_hash": "dba52cac56e8750efa46c6385224d77959e9f6192a833e1f0f61bc8811af1e4f",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

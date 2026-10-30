@@ -318,11 +318,13 @@ class TemporaryBuffSynergyTests(unittest.TestCase):
                 return hero
         raise AssertionError(f"hero not found: {prefix}")
 
-    def test_rowan_permanent_buffs_do_not_count_for_perseus(self):
-        # Rowan's potion permanently raises ally DEF, so it never expires.
+    def test_rowan_only_level_2_potion_counts_for_perseus(self):
+        # Rowan's potion permanently raises ally DEF, so it never
+        # expires. Only the Level 2 super Energy potion grants a
+        # temporary ATK buff, so it is the single counted buff.
         rowan = self._hero("Rowan")
         result = self.go._ally_stat_buff_synergy(rowan, "")
-        self.assertIsNone(result)
+        self.assertIsNotNone(result)
 
     def test_pandora_temporary_buff_counts_for_perseus(self):
         pandora = self._hero("Pandora")

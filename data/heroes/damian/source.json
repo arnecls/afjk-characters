@@ -227,9 +227,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "If a toy chariot is present when Damian casts \"Emergency Support!\", its healing effect expands to cover the entire battlefield, and Damian can heal an extra ally.",
+                "If no toy chariot is present, Damian instead restores 300% (ATK-based) HP to 1 extra weakest ally."
               ]
             }
           ]

@@ -227,9 +227,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Rowan upgrades his Energy potion into a super Energy potion.",
+                "It works the same way as the original Energy potion, but upon restoring the target's Energy, it also increases their ATK by 30% for 6s.",
+                "If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her."
               ]
             }
           ]

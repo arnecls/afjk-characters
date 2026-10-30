@@ -224,6 +224,18 @@
           "raw": "Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vicious Bite.",
           "active": [
             "Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vicious Bite."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
+              "text": [
+                "When Harak enters feast mode at the start of battle, his attack animation speed increases by 300% and he gains 200 Energy.",
+                "His ATK and HP also increase by 60% for 12s.",
+                "He then attempts to cast Tidal Assault on his current target without triggering its cooldown.",
+                "While in feast mode, Harak takes 25% less damage, and whenever he deals damage, he deals extra damage equal to 8% of the target's lost HP, up to 160% (ATK-based)."
+              ]
+            }
           ]
         },
         "description_lite": "Upon assisting or defeating a number of units, Harak recovers Energy from casting Vicious Bite."

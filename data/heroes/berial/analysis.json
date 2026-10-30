@@ -449,16 +449,40 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Berial reduces the per-enemy cooldown of Silhouette summons from Shadow Reflection to 8s.",
+                "After summoning his first Silhouette, the Energy loss inflicted by Berial and his Silhouettes increases by 50%.",
+                "Once 3 Silhouettes have been summoned, they no longer lose HP over time."
               ]
             }
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Energy",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Energy (Supreme+ Lv2)",
+            "polarity": "debuff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -653,14 +677,24 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Berial reduces the per-enemy cooldown of Silhouette summons from Shadow Reflection to 8s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "After summoning his first Silhouette, the Energy loss inflicted by Berial and his Silhouettes increases by 50%.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Once 3 Silhouettes have been summoned, they no longer lose HP over time.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "b634ff2346641658cd2fb213863e63e067f8ed9d2938678ed52a59e1a9ab8eec",
+    "inputs_hash": "3e47ab4721363815e7b761d8d7b516c3e67685735089449d86ae4d5919b32b62",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

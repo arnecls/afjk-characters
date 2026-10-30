@@ -215,6 +215,19 @@
           "raw": "Silvina also reduces the target's Vitality by 60 for 3s with each Whirl Assault.",
           "active": [
             "Silvina also reduces the target's Vitality by 60 for 3s with each Whirl Assault."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
+              "text": [
+                "Silvina increases the damage dealt by First Strike by an extra 250% (ATK-based).",
+                "While Blade Vortex is active, she gains 50 ATK SPD.",
+                "Her normal attacks against the enemy marked by First Strike also deal extra damage equal to 12% (ATK-based) of the target's lost HP.",
+                "The estra damage cannot exceed 240% (ATK-based).",
+                "If an allied Isabella is deployed, whenever Silvina gains a shield from Shield of Light, she also grants Isabella a shield of equal value."
+              ]
+            }
           ]
         },
         "description_lite": "Silvina reduces the target's Vitality with each Whirl Assault."

@@ -250,7 +250,7 @@ Alsa increases the damage of Vigorous Slam by 50% (ATK-based) after dealing dama
 
 Rolling Boulder deals an extra 180% (ATK-based) damage to enemies recently affected by multiple control effects.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Every time Rolling Boulder triggers on a total of 4 enemies, Alsa summons a massive boulder that crashes into the 2-tile area with the most enemies, dealing 250% (ATK-based) damage and reducing the Magic DEF of enemies hit by 30% for 10s.
 
 ## Antandra - Desert Fury
 
@@ -335,7 +335,7 @@ Antandra rushes next to the guarded ally when their HP ratio drops below 50% for
 
 Each enemy hit by Shield Assault increases 10% of Antandra's Phys DEF, up to 6 stacks.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Antandra increases the shield value her guarded ally receives from Shield Formation by 40% of her current HP. While the shield is active, the guarded ally also heals Antandra for 60% of the damage they deal.
 
 ## Arden - Oak Sage
 
@@ -502,7 +502,7 @@ Sweet Encounter can be cast 2 times in a row when a battle starts, prioritizing 
 
 Atalanta recovers 10% of max HP every time an enemy is directly hit by Wild Sniper.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): While casting Sweet Encounter, makes Atalanta unaffected and increases her Haste by 60. If Sweet Encounter knocks the target enemy into another, reduces both enemies' Phys DEF by 40% for 8s.
 
 ## Athalia - Harbinger of Justice
 
@@ -829,7 +829,7 @@ If non-summoned enemies remain isolated for over 3s, they lose 180 Energy and ge
 
 Increases the hiding duration after being defeated by 10s.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Berial reduces the per-enemy cooldown of Silhouette summons from Shadow Reflection to 8s. After summoning his first Silhouette, the Energy loss inflicted by Berial and his Silhouettes increases by 50%. Once 3 Silhouettes have been summoned, they no longer lose HP over time.
 
 ## Bonnie - Obsidian Claws
 
@@ -1079,7 +1079,7 @@ Elona deals 350% (ATK-based) damage to the enemy and stuns them for 3s when Bryo
 
 Bryon generates two leaves beside Elona if the falcon is on the battlefield when Leafblade Gale is cast.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Elona's thunderbolt attacks now jump to 2 enemies within 2 tiles. Each time Elona lands 3 hits with her normal attacks or skills, Bryon's Haste permanently increases by 15, up to a maximum of 120.
 
 ## Callan - Grim Soulkeeper
 
@@ -1163,7 +1163,7 @@ When Callan or any non-summoned ally's HP falls below 30%, he lets out a wrathfu
 
 When gaining a shield, Callan recovers HP equal to 15% of the shield's max value.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Callan enhances the shield granted by Restless Guardian at the start of the battle, increasing its value to 600% (HP-based) and raising the percentage of incoming damage it absorbs to 80% for allies within 2 tiles. After the shield expires, he gets back up 50% faster.
 
 ## Carolina - Candlelight Specter
 
@@ -1329,7 +1329,7 @@ Cassadee grants temporary blessings to all allies in the path of Running Tide, e
 
 Cassadee reduces the Magic DEF of enemies hit by Running Tide by 20% for 10s.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Cassadee enhances the blessing of Tidal Strength, making its effect permanent and granting extra 30 Penetration to the blessed ally. The extra magic damage from the blessing can trigger up to 18 times per second.
 
 ## Cecia - Requiem of Thorns
 
@@ -1412,7 +1412,7 @@ Cecia entangles an enemy with reinforced Thorns, dealing 60% (ATK-based) damage 
 
 Reduces the required normal attacks to trigger Agonizing Puncture by 1.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Cecia gains 500 initial Energy. When she casts her Ultimate, she permanently steals 2% of basic stats every second from entangled enemies. The amount stolen for each stat cannot exceed 50% of Cecia's initial value for that stat. Cecia shares all stolen stats with Mr. Carlyle.
 
 ## Chippy - Acorn Knight
 
@@ -1633,7 +1633,7 @@ Cryonaia deals 60% (ATK-based) damage to enemies each time they are brought into
 
 While the Frost Shield is active, Cryonaia instantly freezes and defeats enemies within the domain of Eternal Winter if their current HP is below 300% of her ATK and their HP percentage is lower than 15%.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Within the domain of Eternal Winter, Cryonaia's ice storms move 37.5% faster and deal damage once every 0.25s. While inside the domain, Cryonaia also gains 60% damage reduction, and dealing damage to enemies triggers extra magic damage equal to 4% of the target's current HP. The extra magic damage cannot exceed 40% (ATK-based).
 
 ## Cyran - Umbral Weaver
 
@@ -1879,7 +1879,7 @@ Damian's toy chariot activates a music halo when it responds to Emergency Suppor
 
 When casting Explode, my chariot! the blind duration is increased to 7s when the toy chariot's HP ratio is above 50%.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): If a toy chariot is present when Damian casts "Emergency Support!", its healing effect expands to cover the entire battlefield, and Damian can heal an extra ally. If no toy chariot is present, Damian instead restores 300% (ATK-based) HP to 1 extra weakest ally.
 
 ## Dionel - Venus of Dawn
 
@@ -1963,7 +1963,7 @@ Dionel summons a light spear after a short delay, dealing 200% (ATK-based) true 
 
 Dionel increases Execution by 20 within the duration of Nectar Feast if it's been activated.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): When Dionel casts Nectar Feast, he drinks the divine nectar 50% faster. While the divine nectar effect is active, he gains a shield that absorbs 60% (HP-based) damage. When he reaches max Intoxication stacks, his Execution increases by 25 further.
 
 ## Dunlingr - Eternal Voice
 
@@ -2046,7 +2046,7 @@ Dunlingr protects the farthest non-summoned ally, ensuring they are not affected
 
 Upon casting Echo of Silence, Dunlingr grants all allies 50 ATK SPD for 6s if the order is set to e Spellbind, or provides them with 25 Life Drain for 6s if the order is set to Curelock.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): If Dunlingr is alive, each time the order effect of his Bell ends or its duration is refreshed, an extra effect will be triggered based on the Bell's active order: Spellbind: Reduces all enemies' Energy by 150 and their Haste by 10 for 8s. Curelock: Reduces all enemies' HP by 150% (ATK-based) and their Vitality by 50 for 8s.
 
 ## Eironn - Stormsword
 
@@ -2624,7 +2624,7 @@ Grants a Natural Blessing to allied summons upon their entrance to the battlefie
 
 Allied Bulbsprites in their giant form are immune to control effects.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Overgrowth has its cooldown reduced to 5s and can simultaneously affect Smashy, Swifty and Spiny. Meanwhile, allied summons in their giant form gain extra ATK equal to 40% (ATK-based).
 
 ## Frieren - The Legendary Mage
 
@@ -2873,7 +2873,7 @@ Gerda increases the healing received from the allied hot spring by 120%. Each ti
 
 When Gerda stomps the ground during Spring Therapy, she stuns enemies for 2s instead of interrupting them.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): When an ally enters Gerda's hot spring area for the first time, they gain a shield that can absorb 300% (ATK-based) damage. For every 3 instances of healing the ally receives from the hot spring, they gain an extra shield that absorbs 150% (ATK-based) damage. The total shield value from this skill cannot exceed 450% (ATK-based) per ally at once.
 
 ## Granny Dahnie - Forest Guardian
 
@@ -2956,7 +2956,7 @@ When Granny Dahnie's HP ratio is lower than 50%, the Glimmerbloom Shield grows b
 
 Granny Dahnie recovers 120% (ATK-based) HP when shooting seeds using Seed Cannon.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Shooting a Parasitic Seed instantly restores Granny Dahnie's Energy by 100. While shooting the Parasitic Seed, Granny Dahnie's Haste increased by 150, and the ATK reduction the seed inflicts on enemies is further increased by 70%..
 
 ## Gunnar - Iron Doom
 
@@ -3254,6 +3254,8 @@ Upon assisting or defeating a unit, Harak gains 60% of their ATK and 60% of thei
 *Unlocks at Supreme+*
 
 Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vicious Bite.
+
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): When Harak enters feast mode at the start of battle, his attack animation speed increases by 300% and he gains 200 Energy. His ATK and HP also increase by 60% for 12s. He then attempts to cast Tidal Assault on his current target without triggering its cooldown. While in feast mode, Harak takes 25% less damage, and whenever he deals damage, he deals extra damage equal to 8% of the target's lost HP, up to 160% (ATK-based).
 
 ## Hepler - Master of Forms
 
@@ -3584,7 +3586,7 @@ Hodgkin summons 2 Dead Tide Warriors affected by voidbound magic around him when
 
 Hodgkin reduces the Phys DEF of enemies hit by the cannon by 15%, up to 2 stacks, for 10s.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Hodgkin gains 400 initial Energy. During Cannon Fire, for each enemy hit by the cannon at least 2 times, he recovers 150 Energy and reduces that enemy's Vitality by 80 for 10s.
 
 ## Hugin - Maverick Smith
 
@@ -3830,7 +3832,7 @@ Each time Indris triggers the exposed weakness damage bonus, he increases his AT
 
 After hitting an enemy with Arcane Binding, Indris's normal attacks can trigger the exposed weakness damage bonus without cooldown for 5s.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Within 4s after Indris breaks an enemy's weakness, each of his normal attack arrow that hits the affected enemy deals extra physical damage equal to 5% of the enemy's max HP. The damage cannot exceed 150% of Indris' ATK.
 
 ## Isabella - The Taken Soul
 
@@ -3912,6 +3914,8 @@ When Isabella casts her Ultimate, she also debuffs the enemy hero who has dealt 
 *Unlocks at Supreme+*
 
 Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF, or Magic DEF by at least 15%, or increases their ATK SPD, Haste, or Vitality by at least 15, Isabella gains an extra stack of the corresponding spell note.
+
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Whenever Isabella records a spell note, she gains an extra 60 Energy, up to a total of 600 Energy gained this way. In addition, the stat boost provided by each spell note stack increases by 25%. If an allied Silvina is deployed, Isabella treats her as an additional companion.
 
 ## Kafra - Gale Rider
 
@@ -4732,7 +4736,7 @@ Lenya unlocks her full potential once a duel begins, increasing her Crit DMG Boo
 
 Reduces damage taken from enemies other than her target by 35%.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): When a battle starts, Lenya gains a shield that absorbs 800% (ATK-based) damage. While the shield is active, she gains 25 Crit and 40 Crit DMG Boost. The shield value increases by 800% (ATK-based) whenever Lenya cast her Ultimate. Additionally, each time Lenya wins a duel, she recovers 300 Energy.
 
 ## Lily May - Twilight Tracker
 
@@ -4897,7 +4901,7 @@ Lorsan recovers 200% (ATK-based) of HP for all allies when Stormbound Chain brea
 
 While Zephyr's Embrace is active, the protected target becomes unaffected.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Lorsan can cast Stormbound Chain 5 times. Each time Stormbound Chain transfers damage, it also inflicts max HP reduction equal to 20% of the transferred damage. Whenever Stormbound Chain breaks, the ally dealing the most damage gains Zephyr's Embrace for 4.5s. If the ally already has this effect, its duration will be extended by 4.5s.
 
 ## Lucca - Stalwart Fighter
 
@@ -4982,7 +4986,7 @@ Lucca maintains a solid fighting stance, remaining Steadfast during battle. For 
 
 Lucca recovers 15% (HP-based) HP when casting Courageous Call.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Lucca increases the Phys & Magic DEF of adjacent allies placed behind him during Battle Preparation by 30%. During battle, whenever these allies take melee damage, Lucca immediately casts his Ultimate on eligible attackers without consuming Energy. This effect can trigger only once per battle.
 
 ## Lucius - The Lightbringer
 
@@ -5322,7 +5326,7 @@ Lumont slams the ground with totem 3 times after receiving damage equal to 40% o
 
 Lumont recovers 7% (HP-based) HP per second while shielded by Totem Ward.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): The first time Lumont casts Totem Slam, he gains a Totem Ward shield equal to 500% (ATK-based) and permanently enhances War Stomp, increasing its stun duration by 1s.
 
 ## Lyca - Keeper of Glades
 
@@ -5408,7 +5412,7 @@ Lyca summons meteors when a battle starts, directing them to attack targets with
 
 Lyca reduces the target's Phys DEF by 25% for 6s if they are hit by Comet Archery.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Lyca gains 300 extra Initial Energy. She extends the duration of Nebula Reflection from her Comet Archery by 7s and makes each meteor summoned by allied attacks deal extra damage equal to 40% of her ATK.
 
 ## Marcille - Elven Mage
 
@@ -5824,7 +5828,7 @@ Mirael uses Fireball Singe as her normal attack for the rest of the battle after
 
 Mirael increases the burning duration of Bone Sear by 4s.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Increases Bone Sear's cooldown by 12 and the number of enemies it burns by 3. Bone Sear also increases Mirael's ATK SPD by 300 for 18s.
 
 ## Nara - Wrathful Wraith
 
@@ -5907,7 +5911,7 @@ After defeating an enemy hero with Crimson Vengeance, Nara releases a 2-tile sho
 
 After defating an enemy with Crimson Vengeance, Nara instantly recovers 250 Energy.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): When casting Phantom Chains, becomes Unaffected for 3s and permanently reduces the target's Vitality by 30. Also inflicts max HP reduction equal to 20% of the target's max HP. The max HP reduction cannot exceed 250% of the Nara's ATK and lasts until the end of battle.
 
 ## Natsu - Fire Dragon Slayer Mage
 
@@ -6236,7 +6240,7 @@ Niru casts Ultimate on the nearest ally without consuming Energy when a battle s
 
 Niru's Soul Reaping prevents the enemy from recovering HP for 8s.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Replaces normal attacks with Spirit Devour, which deals only 75% of the skill's original damage. When Spirit Devour heals Shemira or Daimon, it also increases their Phys DEF and Magic DEF by 60% for 8s.
 
 ## Odie - Desert Defender
 
@@ -6645,7 +6649,7 @@ Parisa marks the nearest enemy in a symmetrical position with a flower when a ba
 
 Reduces the required normal attacks to trigger Flower Power by 1.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Floral Inspiration no longer has an initial cooldown. After this skill is cast for the first time, Floral Inspiration targets 1 extra allies, prioritizing those who have dealt the most normal attack damage.
 
 ## Perseus - Chosen Champion
 
@@ -7220,7 +7224,7 @@ Rhys gains bonus movement speed when moving on the battlefield. He reaches the m
 
 Reduces the cooldown of Defensive Stance to 3s.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Rhys' Ultimate now stops time until he finishes firing all bullets. If cast while Blast Ammo is loaded, he increases his Crit DMG Boost by 120 and movement speed by 60%, lasting until he's affected by a control effect..
 
 ## Rowan - The Roamer
 
@@ -7305,7 +7309,7 @@ After selling 3 health potions, Rowan places a super health potion that recovers
 
 Rowan places 1 more health potion when a battle starts using Smart Stall.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Rowan upgrades his Energy potion into a super Energy potion. It works the same way as the original Energy potion, but upon restoring the target's Energy, it also increases their ATK by 30% for 6s. If Peggy is on the battlefield, Rowan also prepares an additional super health potion for her.
 
 ## Rolan - First Crown
 
@@ -7550,7 +7554,7 @@ Salazer immerses himself in the power of the Spirits and casts Enraptured Whip 1
 
 Salazer recovers 150% (ATK-based) HP for every imprisoned enemy.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Salazer increases the damage of Spirit Shackles by 60%. Each time an enemy that he has previously imprisoned is defeated, grants him a shield equal to 100% of that enemy's max HP. The shield lasts for 15s, and its value cannot exceed 1500% of Salazer's ATK.
 
 ## Satrana - Ember Enchantress
 
@@ -7632,7 +7636,7 @@ When an enemy hero is ignited, the magic damage taken by Satrana is reduced by 1
 
 Vixen Rush's cooldown is removed when all enemy heroes are ignited or when a total of 5 enemy heroes have been ignited.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Increases ignite damage by 100%. The effects that previously required igniting 5 heroes now trigger after igniting 4 heroes.
 
 ## Scarlita - Herald of Compassion
 
@@ -7715,7 +7719,7 @@ Scarlita deals true damage if there are at least 4 surviving non-summoned allies
 
 Scarlita increases an allied hero's Phys DEF and Magic DEF when using Valkyrie Spirit to protect them, with the amount equal to 50% of Scarlita's own Phys DEF and Magic DEF.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): If an ally's shield ratio drops below 20% while Scarlita is still in the air during Sanctified Verdict, she instantly grants them a shield that blocks 120% (HP-based) damage for 10s. This effect can trigger once per battle. If the shield is not activated by the time Scarlita descends from midair, Sanctified Verdict's ground smash will affect the entire battlefield and deals 75% more damage.
 
 ## Seth - Swift Shadow
 
@@ -8199,6 +8203,8 @@ Silvina gains a shield that can block up to 450% (ATK-based) damage after castin
 
 Silvina also reduces the target's Vitality by 60 for 3s with each Whirl Assault.
 
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Silvina increases the damage dealt by First Strike by an extra 250% (ATK-based). While Blade Vortex is active, she gains 50 ATK SPD. Her normal attacks against the enemy marked by First Strike also deal extra damage equal to 12% (ATK-based) of the target's lost HP. The estra damage cannot exceed 240% (ATK-based). If an allied Isabella is deployed, whenever Silvina gains a shield from Shield of Light, she also grants Isabella a shield of equal value.
+
 ## Sinbad - Seaside Savant
 
 *Lightbearer · Rogue · Physical*
@@ -8606,7 +8612,7 @@ Soren gains 60 Haste and recovers 4% of his max HP and 40 Energy per second for 
 
 Increases the knockback distance of the Repel Sweep to 2 tiles when Deflecting Swing is triggered, dealing extra damage equal to 50% of the blocked damage.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): If an enemy hit by Whirlwind Swing or Repel Sweep collides with an any unit, terrain, or battlefield boundaries while being knocked back, restores 80 Energy to Soren. This also grants Soren a shield equal to 100% (ATK-based) for the rest of the battle and refreshes the cooldown of Deflecting Swing. This effect can be triggered once per skill cast.
 
 ## Sylphira - Sovereign of Song
 
@@ -9017,7 +9023,7 @@ Temesia permanently becomes Unaffected after casting Knight's Heart 2 times, tur
 
 Reduces the enemy's Phys DEF by 1% when hit by Knight's Heart, up to 6 stacks.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Temesia takes 30% less damage while charging. Her Iron Heel skill also deals extra damage equal to 30% of the target's max HP while granting her a 300% (ATK-based) shield. The extra damage cannot exceed 600% (ATK-based).
 
 ## Thador - Ironsworn General
 
@@ -9429,7 +9435,7 @@ Vala blends into the darkness when the marked enemy is defeated, making her unta
 
 Vala increases her damage dealt to the marked enemy by 10%.
 
-- Level 2: Unlock {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Enemies marked by Notice Beforehand deal 20% less damage. While in Skyblaster mode, Vala gains 100 more Energy every time she attacks the marked enemy. In Sword mode, she instead gains an extra 30 Execution.
 
 ## Valen - Roving Swordsman
 
@@ -9515,7 +9521,7 @@ Valen gains permanent Invigoration. When casting Thunder Swordwork during Invigo
 
 Valen inflicts a 3s stun with his Fury Thunder Strike.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Valen gains 500 initial Energy. Whenever his lightning deals damage to an enemy, he gains 60 extra Energy and reduces that enemy's Haste by 20 and movement speed by 30 for 2s.
 
 ## Valka - Forsaken Blade
 
@@ -9596,7 +9602,7 @@ Upon taking Ultimate skill damage from an enemy within her attack range, Valka i
 
 While shield granted by Spectral Bulwark is active, Valka recovers 50 extra Energy from launching normal attacks.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Valka's Ultimate damage increases by 0.6% with each point of her ATK SPD and Haste. Whenever she casts her Ultimate, she also gains a shield as if Spectral Bulwark had triggered, with a shield value of 30% (HP-based).
 
 ## Velara - Pale Votary
 
@@ -9764,7 +9770,7 @@ Viperian burns 30% (HP-based) HP 10s into a battle if his HP ratio is above 90%,
 
 Darkvipers return when the possessed enemies are defeated, recovering 14% (HP-based) HP and 80 Energy for Viperian.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Damage dealt by Darkvipers benefits from 10 extra Life Drain. The first time an enemy's HP percentage falls below 60%, Viperian sends out an extra Darkviper, prioritizing enemies who are not already possessed by a Darkviper, or who have dealt the most damage. Each enemy can be possessed by up to 2 Darkvipers at the same time.
 
 ## Voracia - Feastweaver
 
@@ -9928,7 +9934,7 @@ Walker throws a grenade at each of the 3 enemies when a battle starts, then uses
 
 Walker gains a shield equal to 20% of max HP when dealing damage to the targeted enemy for the first time. This shield lasts till the target is defeated.
 
-- Level 2: Level 2 (Unlocks with {{Item|Shadow Essence
+- Level 2 — Unlocks at Supreme+ (100 Shadow Essence): Walker increases his Crit by 20. When his normal attack deals critical damage to an enemy carrying a bounty, increases the damage of this attack by 60% and grants it 100 Life Drain.
 
 ## Yamato & Gabumon - Cool Duo
 

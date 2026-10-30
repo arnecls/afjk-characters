@@ -132,6 +132,47 @@ class FandomParseTests(unittest.TestCase):
         hero = sources_web._parse_fandom_hero(wikitext, "Aliceth")
         self.assertEqual(hero["skills"][0]["meta"]["Cooldown"], "6s")
 
+    def _enhance_force_levels(self, buff_line: str) -> list[dict]:
+        wikitext = (
+            "{{Character Infobox\n|name = Walker\n}}\n"
+            "{{Skill\n|type   = Enhance Force\n|name   = Enhance Force\n"
+            "|cd     = 0\n|full   = Walker gains a shield.\n|buffs  =\n"
+            f"{buff_line}\n}}}}\n"
+        )
+        hero = sources_web._parse_fandom_hero(wikitext, "Walker")
+        return hero["skills"][0]["description"]["upgrades"]
+
+    def test_level_2_nested_item_template_keeps_text(self) -> None:
+        levels = self._enhance_force_levels(
+            "* Level 2 (Unlocks with {{Item|Shadow Essence|x=100|size=20}}): "
+            "Walker increases his Crit by {{b|20}}."
+        )
+        self.assertEqual(
+            levels,
+            [
+                {
+                    "level": "2",
+                    "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
+                    "text": ["Walker increases his Crit by 20."],
+                }
+            ],
+        )
+
+    def test_level_2_unlock_format_is_parsed(self) -> None:
+        levels = self._enhance_force_levels(
+            "* Unlock {{Item|Shadow Essence|x=100|size=20}}: "
+            "Enemies deal {{b|20%}} less damage."
+        )
+        self.assertEqual(levels[0]["level"], "2")
+        self.assertEqual(
+            levels[0]["unlock"], "Unlocks at Supreme+ (100 Shadow Essence)"
+        )
+        self.assertEqual(levels[0]["text"], ["Enemies deal 20% less damage."])
+
+    def test_normalize_keeps_nested_template_pipes(self) -> None:
+        inner = "|buffs =\n* A {{Item|X|x=1|size=2}} b"
+        self.assertEqual(sources_web._normalize_infobox_inner(inner), inner)
+
 
 class ProcessWikitextTests(unittest.TestCase):
     def test_color_buzz_highlight_becomes_plain_value(self) -> None:

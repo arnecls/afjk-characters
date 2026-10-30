@@ -387,9 +387,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Cassadee enhances the blessing of Tidal Strength, making its effect permanent and granting extra 30 Penetration to the blessed ally.",
+                "The extra magic damage from the blessing can trigger up to 18 times per second."
               ]
             }
           ]
@@ -413,9 +414,31 @@
                 "value": 20.0
               }
             ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "DEF Penetration",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "DEF Penetration (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
           {
             "label": "Magic DEF — path",
             "polarity": "debuff"
@@ -608,14 +631,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Cassadee enhances the blessing of Tidal Strength, making its effect permanent and granting extra 30 Penetration to the blessed ally.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "The extra magic damage from the blessing can trigger up to 18 times per second.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "96dc1a86d2d09084ec84c5bb236dbf1addd19eb81d6ee9111999010471af850d",
+    "inputs_hash": "daad2016a9c529c14a0d18941232eeb44f5e7c5c2c05df4c3c38c7ff047150d7",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

@@ -401,16 +401,62 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Rhys' Ultimate now stops time until he finishes firing all bullets.",
+                "If cast while Blast Ammo is loaded, he increases his Crit DMG Boost by 120 and movement speed by 60%, lasting until he's affected by a control effect.."
               ]
             }
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Crit DMG Boost",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 120.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Movement speed",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Crit DMG Boost — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Movement speed — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -610,14 +656,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Rhys' Ultimate now stops time until he finishes firing all bullets.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "If cast while Blast Ammo is loaded, he increases his Crit DMG Boost by 120 and movement speed by 60%, lasting until he's affected by a control effect..",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "540700543f6f8f373e2d7eb05ed66aff93a4641d79c4f5cc073edb41d9a88dbb",
+    "inputs_hash": "d1b551f4914fa6857faf74bb7edd0b71da34adcd19403eeec031a536b6550e69",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

@@ -234,9 +234,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Overgrowth has its cooldown reduced to 5s and can simultaneously affect Smashy, Swifty and Spiny.",
+                "Meanwhile, allied summons in their giant form gain extra ATK equal to 40% (ATK-based)."
               ]
             }
           ]

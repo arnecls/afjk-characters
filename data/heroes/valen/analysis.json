@@ -395,9 +395,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Valen gains 500 initial Energy.",
+                "Whenever his lightning deals damage to an enemy, he gains 60 extra Energy and reduces that enemy's Haste by 20 and movement speed by 30 for 2s."
               ]
             }
           ]
@@ -414,9 +415,73 @@
             "type": "crowd_control",
             "cc-type": "stun",
             "duration": 3.0
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 500.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Haste",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Movement speed",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 30.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "Energy — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste (Supreme+ Lv2)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Movement speed (Supreme+ Lv2)",
+            "polarity": "debuff"
+          },
           {
             "label": "Stun — Area"
           }
@@ -460,7 +525,8 @@
       ]
     ],
     "benefit_stats": [
-      "atk"
+      "atk",
+      "energy"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -609,14 +675,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Valen gains 500 initial Energy.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Whenever his lightning deals damage to an enemy, he gains 60 extra Energy and reduces that enemy's Haste by 20 and movement speed by 30 for 2s.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "3f1ab7a2b0fffb852f70150746d3fd8b1bb83c0c80b5edbd96c07f95ff506f0b",
+    "inputs_hash": "eba2998b70166da29acd5b5476d602304a524f37b942054ffae0270922afb8fc",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

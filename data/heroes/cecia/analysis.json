@@ -576,16 +576,87 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Cecia gains 500 initial Energy.",
+                "When she casts her Ultimate, she permanently steals 2% of basic stats every second from entangled enemies.",
+                "The amount stolen for each stat cannot exceed 50% of Cecia's initial value for that stat.",
+                "Cecia shares all stolen stats with Mr.",
+                "Carlyle."
               ]
             }
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 500.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Basic stats",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "All units",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "zone",
+            "target_count": -1,
+            "area_count": -1,
+            "type": "debuff",
+            "name": "Basic stats",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 2.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Basic stats — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Basic stats — All units (Supreme+ Lv2)",
+            "polarity": "debuff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -617,7 +688,10 @@
       ]
     ],
     "benefit_stats": [
+      "atk",
       "atk_spd",
+      "max_hp",
+      "energy",
       "def_penetration",
       "physical_def",
       "magic_def"
@@ -869,14 +943,34 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Cecia gains 500 initial Energy.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "When she casts her Ultimate, she permanently steals 2% of basic stats every second from entangled enemies.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "The amount stolen for each stat cannot exceed 50% of Cecia's initial value for that stat.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Cecia shares all stolen stats with Mr.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Carlyle.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "e5e965243686a5e08092d7dd82939f27891c0486500cb8a2bae6e879da45e418",
+    "inputs_hash": "00e94004ee48028c35cbd3ce2a9a7527f73137d3dd34a24a174cd2ca1153d6c1",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

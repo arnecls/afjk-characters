@@ -258,7 +258,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "dd6060d260b2a27b290949e99b303e6d49c5e8831ab99fe5ce00ce6aef7551e1",
+        "source_hash": "cb4853f7fae277559a1691d11272399503284fb5b594cff231f1164e98b5c9f6",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -276,6 +276,32 @@
                 "target_count": 1
               }
             ],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [],
+            "summon_effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Owned summons",
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ],
+                "persistence": "temporary"
+              }
+            ],
+            "immunities": [],
             "special_provides": [],
             "special_requires": []
           }

@@ -228,9 +228,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "When casting Phantom Chains, becomes Unaffected for 3s and permanently reduces the target's Vitality by 30.",
+                "Also inflicts max HP reduction equal to 20% of the target's max HP.",
+                "The max HP reduction cannot exceed 250% of the Nara's ATK and lasts until the end of battle."
               ]
             }
           ]

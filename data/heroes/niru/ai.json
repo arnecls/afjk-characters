@@ -221,7 +221,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "401c109d78ed0cb1b1f1ce3eca9684d137a948182fb1f419b872cc104d599685",
+        "source_hash": "666af173ac34337a96a7a4abf6c0d56ab483ef3151942dcb0159e24ff33d938b",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -243,6 +243,52 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Phys DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "duration": 8.0,
+                "persistence": "temporary"
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Magic DEF",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "duration": 8.0,
+                "persistence": "temporary"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       }
@@ -254,7 +300,8 @@
     "assassin",
     "battle-start-ult",
     "heal-inhibitor",
-    "hp-scaling"
+    "hp-scaling",
+    "temporary-stat-buffer"
   ],
   "summon_profile": null,
   "skill_summaries": {

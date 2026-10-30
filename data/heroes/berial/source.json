@@ -226,9 +226,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Berial reduces the per-enemy cooldown of Silhouette summons from Shadow Reflection to 8s.",
+                "After summoning his first Silhouette, the Energy loss inflicted by Berial and his Silhouettes increases by 50%.",
+                "Once 3 Silhouettes have been summoned, they no longer lose HP over time."
               ]
             }
           ]

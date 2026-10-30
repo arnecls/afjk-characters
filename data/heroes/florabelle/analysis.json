@@ -415,14 +415,33 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Overgrowth has its cooldown reduced to 5s and can simultaneously affect Smashy, Swifty and Spiny.",
+                "Meanwhile, allied summons in their giant form gain extra ATK equal to 40% (ATK-based)."
               ]
             }
           ]
         },
         "effects": [
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Owned summons",
+            "is_max_known": true,
+            "target": "own_summons",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_summon_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ],
+            "persistence": "temporary"
+          },
           {
             "type": "immunity",
             "tier": "supreme+",
@@ -435,6 +454,10 @@
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "ATK — Owned (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
           {
             "label": "Immune — Owned"
           }
@@ -654,14 +677,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Overgrowth has its cooldown reduced to 5s and can simultaneously affect Smashy, Swifty and Spiny.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Meanwhile, allied summons in their giant form gain extra ATK equal to 40% (ATK-based).",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "b214e8fd9944b8af4ca8489b8b883bac0bf65e4cf88f3d6500c75f7b433eba1c",
+    "inputs_hash": "f14b26112c9931217784f8044a74a534b368acb92f43f9385337450d8d17f2e7",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

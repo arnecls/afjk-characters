@@ -223,9 +223,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "If an enemy hit by Whirlwind Swing or Repel Sweep collides with an any unit, terrain, or battlefield boundaries while being knocked back, restores 80 Energy to Soren.",
+                "This also grants Soren a shield equal to 100% (ATK-based) for the rest of the battle and refreshes the cooldown of Deflecting Swing.",
+                "This effect can be triggered once per skill cast."
               ]
             }
           ]

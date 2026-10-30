@@ -302,7 +302,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "d0f179d4e338359e79b678ccb85eb3b1423cb916f60ef98f0d6de2bce96b35b5",
+        "source_hash": "c258de32eb4fced95f81a6e51e25cc2d1875010782b0e4a8c3ad087c6383d40f",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -321,6 +321,37 @@
                   {
                     "type": "percentage",
                     "value": 15.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Area",
+                "target": "ally",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 600.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "battle_start"
                   }
                 ]
               }

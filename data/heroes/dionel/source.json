@@ -226,9 +226,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "When Dionel casts Nectar Feast, he drinks the divine nectar 50% faster.",
+                "While the divine nectar effect is active, he gains a shield that absorbs 60% (HP-based) damage.",
+                "When he reaches max Intoxication stacks, his Execution increases by 25 further."
               ]
             }
           ]

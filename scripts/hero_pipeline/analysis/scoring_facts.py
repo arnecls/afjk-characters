@@ -191,6 +191,7 @@ DEFINING_TIER_SCORE_MULT = {
     "EX+10": 1.6,
     "EX+15": 1.8,
     "Supreme+": 1.7,
+    "Supreme+ Lv2": 1.8,
 }
 
 # Replacement scoring: per-category similarity between heroes as substitutes.

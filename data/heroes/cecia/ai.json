@@ -379,11 +379,73 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "c94e9d48b0ccb6a40e0f17a6357ac6b9dc30f463e5ee94b3593b2f15c9481f23",
+        "source_hash": "c22eda73645dad57af393992b8777c3e5785025d3b7a1b5658bd3c416bde775f",
         "is_max_known": true,
         "tiers": {
           "base": {
             "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Energy",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 500.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Basic stats",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "All units",
+                "target": "enemy",
+                "area": "zone",
+                "target_count": -1,
+                "area_count": -1,
+                "type": "debuff",
+                "name": "Basic stats",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 2.0
+                  }
+                ]
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -396,6 +458,7 @@
   "behavior_tags": [
     "dot-specialist",
     "enemy-debuffer",
+    "high-initial-energy",
     "mass-cc",
     "summoner"
   ],

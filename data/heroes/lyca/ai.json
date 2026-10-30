@@ -308,7 +308,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "2c786ca0769e2a01e4726dc65f0c26e4c1d7f5400e3cbe87c6077a4e529c03ff",
+        "source_hash": "2616d21311e69d399754fe9979deced517133e52e8550a7f8bea9c1b81a5507f",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -343,6 +343,50 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Energy",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 300.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       }
@@ -351,6 +395,7 @@
   "behavior_tags": [
     "ally-buffer",
     "energy-provider",
+    "high-initial-energy",
     "temporary-stat-buffer"
   ],
   "summon_profile": null,
@@ -363,5 +408,5 @@
     "skill5": "ultimate hit reduces target Phys DEF"
   },
   "play_overview": "[[Lyca]] opens by **buffing all allies' attack speed** and fueling the first cast with bonus Energy for quick tempo. Her line shot lets nearby allies **summon meteors on normal attacks**, stacking area pressure alongside her ultimate volleys. AoE meteor rain also **shaves enemy Phys DEF**, and passive meteors assist throughout the fight while battle Haste keeps her rotation moving. Ultimate hits **deepen the DEF shred**, letting dealers exploit softened targets over time. She shines when **allies stay within ultimate range** and attack often enough to proc meteors on every cycle. Spread formations or **allies outside her line** waste her attack-speed package and meteor summons.",
-  "counter_overview": "[[Lyca]] **buffs all allies' attack speed**, fuels the opener with **bonus Energy**, and layers **meteor pressure plus Phys DEF shred** so physical carries spike. The fight snowballs once meteors and shred are online \u2014 end her package early. **Delete [[Lyca]]** before the first blessing cycle with [[filter:backline-assassin]] like [[Ravion]] or [[Himmel]], or inhibit her buffed carry with [[filter:backline-inhibit]] like [[Bonnie]]. **Race** your own carry with [[filter:energy-provider]] like [[Thador]] or [[Hugin]] so her tempo buff never decides the pace."
+  "counter_overview": "[[Lyca]] **buffs all allies' attack speed**, fuels the opener with **bonus Energy**, and layers **meteor pressure plus Phys DEF shred** so physical carries spike. The fight snowballs once meteors and shred are online — end her package early. **Delete [[Lyca]]** before the first blessing cycle with [[filter:backline-assassin]] like [[Ravion]] or [[Himmel]], or inhibit her buffed carry with [[filter:backline-inhibit]] like [[Bonnie]]. **Race** your own carry with [[filter:energy-provider]] like [[Thador]] or [[Hugin]] so her tempo buff never decides the pace."
 }

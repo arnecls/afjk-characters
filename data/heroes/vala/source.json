@@ -231,9 +231,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Unlock {{Item|Shadow Essence"
+                "Enemies marked by Notice Beforehand deal 20% less damage.",
+                "While in Skyblaster mode, Vala gains 100 more Energy every time she attacks the marked enemy.",
+                "In Sword mode, she instead gains an extra 30 Execution."
               ]
             }
           ]

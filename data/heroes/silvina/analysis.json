@@ -365,6 +365,19 @@
           "raw": "Silvina also reduces the target's Vitality by 60 for 3s with each Whirl Assault.",
           "active": [
             "Silvina also reduces the target's Vitality by 60 for 3s with each Whirl Assault."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
+              "text": [
+                "Silvina increases the damage dealt by First Strike by an extra 250% (ATK-based).",
+                "While Blade Vortex is active, she gains 50 ATK SPD.",
+                "Her normal attacks against the enemy marked by First Strike also deal extra damage equal to 12% (ATK-based) of the target's lost HP.",
+                "The estra damage cannot exceed 240% (ATK-based).",
+                "If an allied Isabella is deployed, whenever Silvina gains a shield from Shield of Light, she also grants Isabella a shield of equal value."
+              ]
+            }
           ]
         },
         "effects": [
@@ -384,9 +397,80 @@
                 "value": 60.0
               }
             ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 250.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 50.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "normal_attack",
+                "self": true
+              }
+            ],
+            "type": "damage",
+            "damage_type": "lost_hp",
+            "name": "Lost HP-based damage",
+            "label": "damage_lost_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "Physical (Supreme+ Lv2)"
+          },
+          {
+            "label": "Lost HP-based damage (Supreme+ Lv2)"
+          },
+          {
+            "label": "ATK SPD — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
           {
             "label": "Vitality",
             "polarity": "debuff"
@@ -415,9 +499,14 @@
       [
         "physical",
         "Single target"
+      ],
+      [
+        "lost_hp",
+        "Single target"
       ]
     ],
     "benefit_stats": [
+      "atk_spd",
       "shield",
       "crit"
     ],
@@ -546,11 +635,36 @@
         "Supreme+",
         "Silvina also reduces the target's Vitality by 60 for 3s with each Whirl Assault.",
         "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Silvina increases the damage dealt by First Strike by an extra 250% (ATK-based).",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "While Blade Vortex is active, she gains 50 ATK SPD.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Her normal attacks against the enemy marked by First Strike also deal extra damage equal to 12% (ATK-based) of the target's lost HP.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "The estra damage cannot exceed 240% (ATK-based).",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "If an allied Isabella is deployed, whenever Silvina gains a shield from Shield of Light, she also grants Isabella a shield of equal value.",
+        "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "a6972a10237530215d227efd6adaae4d43743c8a7b3613d58107db96228875c7",
+    "inputs_hash": "c9c8af557e6ec06919942778af9064d7b50d1c9d1468fe1b6e841f7164c5f93e",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

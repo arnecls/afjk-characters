@@ -493,9 +493,9 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Every time Rolling Boulder triggers on a total of 4 enemies, Alsa summons a massive boulder that crashes into the 2-tile area with the most enemies, dealing 250% (ATK-based) damage and reducing the Magic DEF of enemies hit by 30% for 10s."
               ]
             }
           ]
@@ -503,11 +503,18 @@
         "effects": [
           {
             "tier": "supreme+",
-            "targeting_label": "Single target",
+            "targeting_label": "Area",
             "is_max_known": true,
             "target": "enemy",
-            "area": "single",
-            "target_count": 1,
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "conditions": [
+              {
+                "type": "count",
+                "count": 4
+              }
+            ],
             "type": "damage",
             "damage_type": "magic",
             "name": "Magic",
@@ -515,7 +522,31 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 180.0
+                "value": 250.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "conditions": [
+              {
+                "type": "count",
+                "count": 4
+              }
+            ],
+            "type": "debuff",
+            "name": "Magic DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
               }
             ]
           }
@@ -523,6 +554,13 @@
         "skill_card_tags": [
           {
             "label": "Magic"
+          },
+          {
+            "label": "Magic (Supreme+ Lv2)"
+          },
+          {
+            "label": "Magic DEF — Area (Supreme+ Lv2)",
+            "polarity": "debuff"
           }
         ]
       }
@@ -744,14 +782,14 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Every time Rolling Boulder triggers on a total of 4 enemies, Alsa summons a massive boulder that crashes into the 2-tile area with the most enemies, dealing 250% (ATK-based) damage and reducing the Magic DEF of enemies hit by 30% for 10s.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "a2deda89cf689e1da7ed92ea00618f0832eee4f8b60a447345fb489cfbc0bb80",
+    "inputs_hash": "d29000dce58c341ebc79fa06348a9f31cd8599d1b5639ac71cdaa69b52c5902d",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

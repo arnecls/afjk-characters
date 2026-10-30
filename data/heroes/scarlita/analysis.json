@@ -457,16 +457,46 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "If an ally's shield ratio drops below 20% while Scarlita is still in the air during Sanctified Verdict, she instantly grants them a shield that blocks 120% (HP-based) damage for 10s.",
+                "This effect can trigger once per battle.",
+                "If the shield is not activated by the time Scarlita descends from midair, Sanctified Verdict's ground smash will affect the entire battlefield and deals 75% more damage."
               ]
             }
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "duration_gate",
+                "gate": "once_per_battle"
+              }
+            ],
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 120.0
+              }
+            ],
+            "duration": 10.0
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Shield (Supreme+ Lv2)",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -492,8 +522,8 @@
       "energy"
     ],
     "scalar_stat_shares": {
-      "atk": 0.7272727272727273,
-      "max_hp": 0.2727272727272727
+      "atk": 0.6666666666666666,
+      "max_hp": 0.3333333333333333
     },
     "id": "scarlita",
     "display_name": "Scarlita",
@@ -659,14 +689,24 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "If an ally's shield ratio drops below 20% while Scarlita is still in the air during Sanctified Verdict, she instantly grants them a shield that blocks 120% (HP-based) damage for 10s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "This effect can trigger once per battle.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "If the shield is not activated by the time Scarlita descends from midair, Sanctified Verdict's ground smash will affect the entire battlefield and deals 75% more damage.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "18ba111116124b078723f32e9fdf8afd7fc5fbf978aba2cd34c05107f63efa20",
+    "inputs_hash": "6ff231f9fff46b650a051e852873117d2176a18c381c7e8b98a469b8ce8bb960",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

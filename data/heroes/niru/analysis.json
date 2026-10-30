@@ -352,9 +352,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Replaces normal attacks with Spirit Devour, which deals only 75% of the skill's original damage.",
+                "When Spirit Devour heals Shemira or Daimon, it also increases their Phys DEF and Magic DEF by 60% for 8s."
               ]
             }
           ]
@@ -370,9 +371,55 @@
             "type": "debuff",
             "name": "Healing",
             "label": "debuff_healing"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Phys DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "duration": 8.0,
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Magic DEF",
+            "label": "buff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "duration": 8.0,
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "Magic DEF (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Phys DEF (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
           {
             "label": "Healing",
             "polarity": "debuff"
@@ -568,14 +615,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Replaces normal attacks with Spirit Devour, which deals only 75% of the skill's original damage.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "When Spirit Devour heals Shemira or Daimon, it also increases their Phys DEF and Magic DEF by 60% for 8s.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "95cf6d05f673dce423e4db017f27d64ac7dd17e0dc40cad4e0842848dfbb9c2d",
+    "inputs_hash": "a079a6f2f02397d1359f2703825f98f077d06fbb2714efe5cbbd3c89458f3a65",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

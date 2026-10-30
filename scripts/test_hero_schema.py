@@ -52,6 +52,8 @@ class EnumMappingTests(unittest.TestCase):
         self.assertEqual(hs.to_display_damage_type("dot"), "DoT")
 
     def test_tier_round_trip(self):
+        self.assertEqual(hs.to_schema_tier("Supreme+ Lv2"), "supreme+_2")
+        self.assertEqual(hs.to_display_tier("supreme+_2"), "Supreme+ Lv2")
         self.assertEqual(hs.to_schema_tier("Legendary+"), "legendary+")
         self.assertEqual(hs.to_display_tier("legendary+"), "Legendary+")
         self.assertEqual(hs.to_display_tier("ex+10"), "EX+10")

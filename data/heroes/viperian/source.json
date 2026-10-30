@@ -231,9 +231,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Damage dealt by Darkvipers benefits from 10 extra Life Drain.",
+                "The first time an enemy's HP percentage falls below 60%, Viperian sends out an extra Darkviper, prioritizing enemies who are not already possessed by a Darkviper, or who have dealt the most damage.",
+                "Each enemy can be possessed by up to 2 Darkvipers at the same time."
               ]
             }
           ]

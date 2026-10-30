@@ -346,8 +346,29 @@ def _normalize_infobox_inner(inner: str) -> str:
     pipe_field = re.compile(r"(?<=\S)\|(?=[a-zA-Z_][a-zA-Z0-9_]*\s*=)")
     out_lines: list[str] = []
     for line in inner.split("\n"):
-        if pipe_field.search(line):
-            segments = pipe_field.split(line)
+        # Split only at template depth 0 so that nested templates such as
+        # {{Item|Shadow Essence|x=100}} keep their own parameters.
+        cuts: list[int] = []
+        depth = 0
+        i = 0
+        while i < len(line):
+            two = line[i : i + 2]
+            if two in ("{{", "[["):
+                depth += 1
+                i += 2
+                continue
+            if two in ("}}", "]]"):
+                depth = max(0, depth - 1)
+                i += 2
+                continue
+            if depth == 0 and line[i] == "|":
+                m = pipe_field.match(line, i)
+                if m:
+                    cuts.append(i)
+            i += 1
+        if cuts:
+            bounds = [0, *cuts, len(line)]
+            segments = [line[bounds[k] : bounds[k + 1]] for k in range(len(bounds) - 1)]
             out_lines.append(segments[0])
             for seg in segments[1:]:
                 out_lines.append(seg if seg.startswith("|") else f"|{seg}")
@@ -490,6 +511,28 @@ def _parse_level_upgrades(buffs_text: str) -> list[dict]:
             out.append(
                 {"level": str(seq), "unlock": f"Unlocks at R{m.group(1)}",
                  "text": process_wikitext(m.group(2))}
+            )
+            continue
+        m = re.match(
+            r"^Level (\d+)\s*\(Unlocks with \{\{Item\|([^|}]+)\|x=(\d+)[^}]*\}\}\):"
+            r"\s*([\s\S]+)$",
+            raw,
+        )
+        if m:
+            out.append(
+                {"level": m.group(1),
+                 "unlock": f"Unlocks at Supreme+ ({m.group(3)} {m.group(2).strip()})",
+                 "text": process_wikitext(m.group(4))}
+            )
+            continue
+        m = re.match(
+            r"^Unlock \{\{Item\|([^|}]+)\|x=(\d+)[^}]*\}\}:\s*([\s\S]+)$", raw
+        )
+        if m:
+            out.append(
+                {"level": str(seq),
+                 "unlock": f"Unlocks at Supreme+ ({m.group(2)} {m.group(1).strip()})",
+                 "text": process_wikitext(m.group(3))}
             )
             continue
         m = re.match(r"^Level (\d+):\s*([\s\S]+)$", raw)

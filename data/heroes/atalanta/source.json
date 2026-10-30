@@ -229,9 +229,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "While casting Sweet Encounter, makes Atalanta unaffected and increases her Haste by 60.",
+                "If Sweet Encounter knocks the target enemy into another, reduces both enemies' Phys DEF by 40% for 8s."
               ]
             }
           ]

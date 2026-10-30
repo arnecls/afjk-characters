@@ -275,11 +275,38 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "42336043befa8144142845f97dc9da459cea11c24f8a47ddc7a50bc5cfe667c5",
+        "source_hash": "fa60f0edfba6c0cf4983ba7ad311a7050272cfdacdd11344ce39bb9fc401d219",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
             "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 300.0
+                  }
+                ],
+                "duration": 18.0,
+                "persistence": "temporary"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

@@ -242,9 +242,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Elona's thunderbolt attacks now jump to 2 enemies within 2 tiles.",
+                "Each time Elona lands 3 hits with her normal attacks or skills, Bryon's Haste permanently increases by 15, up to a maximum of 120."
               ]
             }
           ]

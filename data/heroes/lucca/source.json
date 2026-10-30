@@ -226,9 +226,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Lucca increases the Phys & Magic DEF of adjacent allies placed behind him during Battle Preparation by 30%.",
+                "During battle, whenever these allies take melee damage, Lucca immediately casts his Ultimate on eligible attackers without consuming Energy.",
+                "This effect can trigger only once per battle."
               ]
             }
           ]

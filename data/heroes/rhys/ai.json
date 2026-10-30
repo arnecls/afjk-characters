@@ -244,11 +244,55 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "ae0d6e6baa3f0ba5cccdafd6597408967a34fdc24c143e7e9ae9ea8bfe56317a",
+        "source_hash": "3bf6b7efb69b8ced29b2b3e881cc37967928ab28e8bb68e13ef7c9a24ba55c24",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
             "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Crit DMG Boost",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 120.0
+                  }
+                ],
+                "persistence": "temporary"
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Movement speed",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "persistence": "temporary"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

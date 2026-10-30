@@ -228,9 +228,9 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Every time Rolling Boulder triggers on a total of 4 enemies, Alsa summons a massive boulder that crashes into the 2-tile area with the most enemies, dealing 250% (ATK-based) damage and reducing the Magic DEF of enemies hit by 30% for 10s."
               ]
             }
           ]
