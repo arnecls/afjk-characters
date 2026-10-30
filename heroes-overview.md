@@ -1346,7 +1346,7 @@ These are the **4** strongest pairings:
 
 #### Counter proposal
 
-In PVP, [[Baden]] curses the line in front of him with **true damage** at battle start, and every cursed unit that drops below half HP spawns an **invincible phantom**. His ultimate locks your weakest unit in a stun combo while he is **invincible**, then blocks its healing and Energy for several seconds. Cancel that ultimate with [[Lily May]], and do not spend burst while the combo plays out. Phantoms cannot be killed and let him **possess one on defeat**, so expect to kill him several times and keep lasting wide ultimates like [[Shemira]] or [[Frieren]] running while enemies stop targeting him. His Phys DEF and Magic DEF are both high, so delete him with true-damage melee like [[Himmel]] or [[Zorya]].
+In PVP, [[Baden]] curses the line in front of him with **true damage** at battle start, and each cursed unit that first drops below half HP spawns an **invincible phantom**. The curse only covers that one line, so keep your carries out of the lane facing him and kill him before cursed units fall low enough to spawn phantoms. His early ultimate locks your weakest unit in a stun combo while he is **invincible**, then blocks its healing and Energy, so cancel it with [[Lily May]] and hold burst until the combo ends. He has few defensive tools outside that cast, and both his DEFs are high, so delete him with true-damage melee like [[Himmel]] or [[Zorya]]. If he falls with a phantom alive he **possesses it** and enemies stop prioritizing him for a few seconds, so keep lasting wide ultimates like [[Shemira]] or [[Frieren]] running.
 
 #### Stats overview
 
@@ -4145,7 +4145,7 @@ Eryndor also requires units **putting debuffs** on enemies
 
 #### Counter proposal
 
-In PVP, [[Estrilda]] casts **Ride Down** at battle start, shoving one of your front units to your back edge, and her ultimate then stuns everything in three charge lines while she is **invincible**. Answer the shove with [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Callan]] on the opening beat. Do not burst or interrupt during the charges; punish her when they end and she stands exposed at the edge. Her Phys DEF and Magic DEF are both high, so use true-damage melee like [[Himmel]] or [[Zorya]] instead of a plain damage dump.
+In PVP, [[Estrilda]] opens with **Ride Down**, an **unaffected** charge that charm or stun cannot stop, shoving one of your front units to your back edge and planting a banner there that boosts her allies' ATK and damage reduction. The banner only reaches allies within 2 tiles, so wall off your front with [[Kulu]]'s lane debris or a tank like [[Hepler]] to keep melee partners such as [[Orion]] or [[Perseus]] from following her. Protect the pushed unit with [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Callan]] on the opening beat. She then stands alone at your edge with little sustain, so kill her before her **invincible** triple-charge ultimate and do not burst during the charges. Both her DEFs are high, so prefer true-damage melee like [[Himmel]] or [[Zorya]].
 
 #### Stats overview
 
@@ -9996,7 +9996,7 @@ Marcille provides Direct healing to single targets `low`.
 
 #### Counter proposal
 
-In PVP, [[Marene]] reaches her ultimate fast and becomes **invincible** while a global storm keeps your whole team **knocked up** under rapid true damage. Cancel it with [[Lily May]] on the opening beat, because the storm cannot be interrupted once it starts. Later her strikes build a **permanent thunderstorm** that knocks up everyone every few seconds and sweeps away low-HP units, but Steadfast and Unaffected targets are exempt: bring [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Shakir]] or [[Sylphira]] for the late storm. She scales on Haste from her allies, so **pressure her Haste providers** before she turns steadfast. Her Magic DEF is lower than her Phys DEF, so delete her early with [[filter:magic-backline-assassin]] like [[Nerion]].
+In PVP, [[Marene]] casts an **invincible** global storm about five seconds in that keeps your whole team knocked up under true damage, and ally-fed **Haste** lets her skills keep shredding even when her ultimate is blocked, so [[Dunlingr]] or [[Lily May]] alone only slow her. Her later **thunderstorm** executes low-HP units unless they are Steadfast or Unaffected: field [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Perseus]] or [[Sylphira]] for the repeated knock ups. The proven answer is **Silence after the storm** from [[Orion]] or [[Contess]], because a silenced Marene deals little damage. Keep that silencer alive through the opener with [[Rolan]]'s max HP and [[Hepler]]'s protection, since her true damage skips shields. Time the Silence between [[Alna]]'s control-immunity cycles when Alna guards her.
 
 #### Stats overview
 
