@@ -422,7 +422,7 @@
             "value": [
               {
                 "type": "percentage",
-                "value": 210.0
+                "value": 500.0
               }
             ]
           },
@@ -482,9 +482,9 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "The first time Lumont casts Totem Slam, he gains a Totem Ward shield equal to 500% (ATK-based) and permanently enhances War Stomp, increasing its stun duration by 1s."
               ]
             }
           ]
@@ -508,11 +508,37 @@
             ],
             "duration": 2.0,
             "tick": 1.0
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "duration_gate",
+                "gate": "first_time"
+              }
+            ],
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 500.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
           {
             "label": "HoT — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self (Supreme+ Lv2)",
             "polarity": "buff"
           }
         ]
@@ -533,8 +559,8 @@
       "shield"
     ],
     "scalar_stat_shares": {
-      "atk": 0.9166666666666666,
-      "max_hp": 0.08333333333333333
+      "atk": 0.9230769230769231,
+      "max_hp": 0.07692307692307693
     },
     "id": "lumont",
     "display_name": "Lumont",
@@ -695,14 +721,14 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "The first time Lumont casts Totem Slam, he gains a Totem Ward shield equal to 500% (ATK-based) and permanently enhances War Stomp, increasing its stun duration by 1s.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "563e4bfb626f13b1d2bcc8bb1c51761ad6de42e2353765eca8dbf8b932157da2",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "f27c0f45c1d2364fdaba8efc8b1912258e2160918583cc7f9208a101860eb965",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

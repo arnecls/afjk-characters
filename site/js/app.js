@@ -175,6 +175,7 @@ function shortAscensionTierName(tierName){const trimmed=tierName.trim();if(trimm
 if(lower==="legendary+"){return"L+";}
 if(lower==="mythic+"){return"M+";}
 if(lower==="supreme+"){return"S+";}
+if(lower==="supreme+ lv2"){return"S+2";}
 return core;}
 return trimmed;}
 function formatAscensionTierDisplay(tierSuffix){if(!tierSuffix){return"";}
@@ -249,7 +250,7 @@ if(labelLower.startsWith(statLower+" ")){return tryChipify(stat)+escapeHtml(labe
 return null;}
 function unwrapBackticks(text){const trimmed=text.trim();const match=trimmed.match(/^`([^`]+)`$/);return match?match[1].trim():trimmed;}
 function promoteStrongToDamageChips(html){return html.replace(/<strong>([^<]+)<\/strong>/g,function(_match,name){const chip=tryChipify(name.trim());return chip!==null?chip:"<strong>"+name+"</strong>";});}
-const ASCENSION_TIER_SUFFIX_RE=/\s*(\((?:Legendary\+|Mythic\+|Supreme\+|EX\+\d+)\))\s*$/i;function parseEffectLabelParts(label){let text=(label||"").trim();let tier="";const tierMatch=text.match(ASCENSION_TIER_SUFFIX_RE);if(tierMatch){tier=tierMatch[1];text=text.slice(0,tierMatch.index).trim();}
+const ASCENSION_TIER_SUFFIX_RE=/\s*(\((?:Legendary\+|Mythic\+|Supreme\+(?: Lv2)?|EX\+\d+)\))\s*$/i;function parseEffectLabelParts(label){let text=(label||"").trim();let tier="";const tierMatch=text.match(ASCENSION_TIER_SUFFIX_RE);if(tierMatch){tier=tierMatch[1];text=text.slice(0,tierMatch.index).trim();}
 return{base:text,tier:tier};}
 function injectTierIntoChipHtml(chipHtml,tier){if(!tier||!chipHtml){return chipHtml;}
 const closeIdx=chipHtml.lastIndexOf("</span>");if(closeIdx===-1){return chipHtml+formatMergedTierSuffix(tier);}
@@ -544,7 +545,7 @@ chips.renderSkillCardTags(tags)+"</div>";}
 html+="</div></div>";});html+="</div>";return html;}
 function skillCardChipKey(raw){const text=skillCardTagLabel(raw);if(!text){return"";}
 let tag=text.trim();if(!tag){return"";}
-const tierMatch=tag.match(/\s*\((legendary\+|mythic\+|supreme\+|ex\+\d+)\)\s*$/i);let tierKey="";if(tierMatch){tierKey=":"+tierMatch[1].toLowerCase();tag=tag.slice(0,tierMatch.index).trim();}
+const tierMatch=tag.match(/\s*\((legendary\+|mythic\+|supreme\+(?: lv2)?|ex\+\d+)\)\s*$/i);let tierKey="";if(tierMatch){tierKey=":"+tierMatch[1].toLowerCase();tag=tag.slice(0,tierMatch.index).trim();}
 const singleMatch=tag.match(/\s*(?:—|–)\s*single target\s*$/i);let singleKey="";if(singleMatch){singleKey=":single target";tag=tag.slice(0,singleMatch.index).trim();}
 const areaMatch=tag.match(/\s*(?:—|–)\s*(area|arc|all units|multiple targets|path)\s*$/i);let areaKey="";if(areaMatch){areaKey=":"+areaMatch[1].trim().toLowerCase();tag=tag.slice(0,areaMatch.index).trim();}
 let selfKey="";if(/\s*(?:—|–)\s*self\s*$/i.test(tag)){selfKey=":self";tag=tag.replace(/\s*(?:—|–)\s*self\s*$/i,"").trim();}

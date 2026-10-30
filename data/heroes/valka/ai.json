@@ -174,47 +174,47 @@
                 "targeting_label": "Multiple targets",
                 "is_max_known": true,
                 "target": "ally",
-            "area": "radius",
+                "area": "radius",
                 "target_count": 3,
-            "area_count": 1,
-            "conditions": [
+                "area_count": 1,
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ],
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 50.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
               {
-                "type": "battle_phase",
-                "phase": "start_of_battle"
-              }
-            ],
-            "type": "buff",
-            "name": "ATK SPD",
-            "label": "buff_offensive",
-            "value": [
-              {
-                "type": "flat",
-                "value": 50.0
-              }
-            ],
-            "persistence": "permanent"
-          },
-          {
-            "tier": "base",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "conditions": [
-              {
-                "type": "battle_phase",
-                "phase": "start_of_battle"
-              }
-            ],
-            "type": "shield",
-            "name": "Shield",
-            "value": [
-              {
-                "type": "percentage",
-                "value": 90.0
-              }
-            ]
+                "tier": "base",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ],
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 90.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],
@@ -229,26 +229,26 @@
         "is_max_known": true,
         "tiers": {
           "legendary+": {
-        "effects": [
-          {
-            "tier": "legendary+",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "ATK SPD",
-            "label": "buff_offensive",
-            "value": [
+            "effects": [
               {
-                "type": "flat",
-                "value": 30.0
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
-            "persistence": "permanent"
-          }
-        ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -309,33 +309,33 @@
                 "type": "buff",
                 "name": "Lifedrain",
                 "label": "buff_stat",
-            "value": [
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 60.0
+                  }
+                ],
+                "duration": 10.0,
+                "persistence": "temporary"
+              },
               {
-                "type": "flat",
-                "value": 60.0
-              }
-            ],
-            "duration": 10.0,
-            "persistence": "temporary"
-          },
-          {
-            "tier": "ex+10",
-            "targeting_label": "Self",
-            "is_max_known": true,
-            "target": "self",
-            "area": "single",
-            "target_count": 1,
-            "type": "buff",
-            "name": "ATK SPD",
-            "label": "buff_offensive",
-            "value": [
-              {
-                "type": "flat",
-                "value": 80.0
-              }
-            ],
-            "duration": 10.0,
-            "persistence": "temporary"
+                "tier": "ex+10",
+                "targeting_label": "Self",
+                "is_max_known": true,
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 80.0
+                  }
+                ],
+                "duration": 10.0,
+                "persistence": "temporary"
               }
             ],
             "summon_effects": [],
@@ -346,7 +346,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "88cc89f87048117be199e3a347f386563328763ea1752f7ed2000a1a8eed0103",
+        "source_hash": "263304f5c626d481d8338134f5c7f8e4e77fd0e22e8f46d325a4502f8680cb5d",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -358,26 +358,50 @@
                 "target": "self",
                 "area": "single",
                 "target_count": 1,
-            "conditions": [
-              {
-                "type": "status_condition",
-                "status": "active_shield"
-              },
-              {
-                "type": "trigger_condition",
-                "trigger": "normal_attack"
-              }
-            ],
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_shield"
+                  },
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "normal_attack"
+                  }
+                ],
                 "type": "buff",
-            "name": "Energy",
-            "label": "buff_stat",
-            "value": [
-              {
-                "type": "flat",
-                "value": 50.0
+                "name": "Energy",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 50.0
+                  }
+                ],
+                "persistence": "temporary"
               }
             ],
-            "persistence": "temporary"
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

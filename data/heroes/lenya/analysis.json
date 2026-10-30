@@ -456,9 +456,12 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "When a battle starts, Lenya gains a shield that absorbs 800% (ATK-based) damage.",
+                "While the shield is active, she gains 25 Crit and 40 Crit DMG Boost.",
+                "The shield value increases by 800% (ATK-based) whenever Lenya cast her Ultimate.",
+                "Additionally, each time Lenya wins a duel, she recovers 300 Energy."
               ]
             }
           ]
@@ -481,11 +484,103 @@
               }
             ],
             "persistence": "permanent"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "battle_start"
+              }
+            ],
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 800.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Crit",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 25.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Crit DMG Boost",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 800.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 300.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
           {
             "label": "Damage taken — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Crit — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Crit DMG Boost — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self (Supreme+ Lv2)",
             "polarity": "buff"
           }
         ]
@@ -505,8 +600,10 @@
       "atk",
       "haste",
       "max_hp",
+      "shield",
       "crit",
-      "crit_dmg_boost"
+      "crit_dmg_boost",
+      "energy"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -670,14 +767,29 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "When a battle starts, Lenya gains a shield that absorbs 800% (ATK-based) damage.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "While the shield is active, she gains 25 Crit and 40 Crit DMG Boost.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "The shield value increases by 800% (ATK-based) whenever Lenya cast her Ultimate.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Additionally, each time Lenya wins a duel, she recovers 300 Energy.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "64afb0617b548e1f413bc195c002ca7f40c4ffb2ac1b176658c742d5607c0ed6",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "f8e81396a8f523ed21d028f156f6ace4d689576b00cae9ab546a6fee85d1da0b",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

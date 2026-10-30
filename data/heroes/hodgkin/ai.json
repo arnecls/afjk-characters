@@ -236,7 +236,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "51c8f2457169d06f3e36fe4a66ce51c4ea0df0879446dd3de666afe792bd5d6f",
+        "source_hash": "6d716a9ff2372cca1bcec4a458030b71ef2c3dabc5cd0fc645dc43541bd3f080",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -265,6 +265,67 @@
                   }
                 ],
                 "duration": 10
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Energy",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 400.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "energy",
+                "name": "Energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 150.0
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Area",
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "debuff",
+                "name": "Vitality",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 80.0
+                  }
+                ],
+                "duration": 10.0
               }
             ],
             "summon_effects": [],

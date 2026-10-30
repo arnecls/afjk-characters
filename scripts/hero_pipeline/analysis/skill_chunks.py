@@ -38,6 +38,8 @@ def parse_level_tier(line: str, section: str) -> str:
     if section == "Unlocks at Legendary+":
         return "Legendary+"
     if section == "Unlocks at Supreme+":
+        if "Shadow Essence" in line:
+            return "Supreme+ Lv2"
         return "Supreme+"
     return SECTION_TIERS.get(section, "base")
 

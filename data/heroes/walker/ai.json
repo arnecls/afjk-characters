@@ -317,7 +317,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "b70c09258e8ad73e0901664d898641153ac95a7450e9dfeef7c58ef2653dae5f",
+        "source_hash": "831db6f20282cd3ff7c72226deb80e5a8d036471dff3af6eaa67568134dd49b0",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -349,6 +349,82 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Crit",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage dealt",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "normal_attack",
+                    "self": true
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Lifedrain",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 100.0
+                  }
+                ],
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "normal_attack",
+                    "self": true
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       }
@@ -357,6 +433,7 @@
   "behavior_tags": [
     "aoe-damage",
     "battle-start-burst",
+    "life-drain",
     "mark-target",
     "mass-cc",
     "non-ult-utility"

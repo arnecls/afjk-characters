@@ -220,9 +220,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "If Dunlingr is alive, each time the order effect of his Bell ends or its duration is refreshed, an extra effect will be triggered based on the Bell's active order: Spellbind: Reduces all enemies' Energy by 150 and their Haste by 10 for 8s.",
+                "Curelock: Reduces all enemies' HP by 150% (ATK-based) and their Vitality by 50 for 8s."
               ]
             }
           ]
@@ -258,9 +259,9 @@
         "ATK SPD": "average"
       },
       "roster_percentiles": {
-        "HP": 0.9375,
-        "Phys DEF": 0.9297,
-        "Magic DEF": 0.9375
+        "HP": 0.9385,
+        "Phys DEF": 0.9308,
+        "Magic DEF": 0.9385
       }
     }
   }

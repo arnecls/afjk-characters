@@ -327,7 +327,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "79620af524c4a643df758900ef6acd4fe4d641ce66f3864f198f8bc7916370de",
+        "source_hash": "a26d4c15aea4ec3c69daa60123e5d548ec904d09916a8d5ef270f2031958e449",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -360,6 +360,69 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Haste",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 60.0
+                  }
+                ],
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "cast",
+                    "self": true
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Multiple targets",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 2,
+                "type": "debuff",
+                "name": "Phys DEF",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ],
+                "duration": 8.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "immunity",
+                "immunity_type": "unaffected",
+                "timing": "on_skill"
+              }
+            ],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       }
@@ -380,5 +443,5 @@
     "skill5": "direct ultimate hit heals self"
   },
   "play_overview": "[[Atalanta]] opens with **rapid chained casts** of knockbacks and explosive shots before settling into normal pacing. Her ultimate dashes forward, then fires a penetrating line shot through several foes. Hitting different enemies raises her Haste, and a direct ultimate hit heals her. Explosive splash carries only partial damage, so the main strike matters more than grouped chip. Frontlines that block her line or end the opening burst leave her without a clean follow-up.",
-  "counter_overview": "[[Atalanta]] opens with chained battle-start knockbacks and explosives, then dashes into a penetrating line that heals on a clean hit. She relocates too often for a single-target assassin pin, so use lasting coverage like [[Shemira]] or [[Frieren]] and [[Lily May]] to catch the ultimate wind-up. Blunt the opener knockbacks with [[filter:steadfast]] like [[Igor]] or [[Gunnar]], plus [[filter:unaffected]] like [[Callan]] or [[Sylphira]] on that opening beat. Keep a sturdy frontline so her line shot never finds a clean lane."
+  "counter_overview": "[[Atalanta]] opens with chained battle-start knockbacks and explosives, then dashes into a penetrating line that heals on a clean hit. She relocates too often for a single-target assassin pin, so use lasting coverage like [[Shemira]] or [[Frieren]] and [[Lily May]] to catch the ultimate wind-up. Blunt the opener knockbacks with [[filter:steadfast]] like [[Igor]] or [[Gunnar]], plus [[filter:unaffected]] like [[Callan]] or [[Sylphira]] on that opening beat. Keep a sturdy frontline so her line shot never finds a clean lane. She is **Unaffected** while casting Sweet Encounter, so do not bank on CC or interrupts there."
 }

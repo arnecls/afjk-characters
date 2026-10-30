@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "id": "marene",
+  "display_name": "Marene",
+  "source": {
+    "title": "Marene - Roaring Tempest",
+    "name": "Marene",
+    "tags": "Celestial · Mage · Magic",
+    "faction": "Celestial",
+    "class": "Mage",
+    "damage_type": "Magic",
+    "description": "A hotheaded Mage who unleashes raging storms to vanquish her enemies.",
+    "skills": [
+      {
+        "section": "Ultimate",
+        "name": "Storm's Wrath",
+        "unlock": "Unlocks at Level 1",
+        "meta": {
+          "Skill Range": "Global",
+          "Initial Energy": "500"
+        },
+        "description": {
+          "raw": "Marene soars into the air and summons a storm that lasts for 4s. It immediately deals damage to all enemies equal to 30% + 3% (SP-based) of their HP, up to 500% + 50% (SP-based) of her ATK. While the storm is active, Marene continuously knocks all enemies into the air, reducing their Ranged DEF by 20. Additionally, Marene activates Tempest Eye 2 times per second, calling down lightning strikes that deal 110% (ATK-based) + 15% (SP-based) true damage to all enemies. The activation frequency scales with her Haste, up to a maximum of 8 activations per second. Marene remains invincible when casting this skill.",
+          "active": [
+            "Marene soars into the air and summons a storm that lasts for 4s.",
+            "It immediately deals damage to all enemies equal to 30% + 3% (SP-based) of their HP, up to 500% + 50% (SP-based) of her ATK.",
+            "While the storm is active, Marene continuously knocks all enemies into the air, reducing their Ranged DEF by 20.",
+            "Additionally, Marene activates Tempest Eye 2 times per second, calling down lightning strikes that deal 110% (ATK-based) + 15% (SP-based) true damage to all enemies.",
+            "The activation frequency scales with her Haste, up to a maximum of 8 activations per second.",
+            "Marene remains invincible when casting this skill."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 120% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 130% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 140% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 150% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Marene summons a storm that continuously knocks all enemies into the air. At the same time, she activates Tempest Eye to deal true damage to enemies."
+      },
+      {
+        "section": "Skill1",
+        "name": "Gathering Gale",
+        "unlock": "Unlocks at Level 11",
+        "meta": {
+          "Cooldown": "14s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Passive. Marene amplifies the Haste buffs her allies grant her by 100% and retains the Haste gained even after those buffs expire. Haste bonuses from the same buff do not stack. Active. Marene channels her Tempest Eye for 2s, activating it 2 times per second. Each activation generates a small gust of wind at an enemy's position, dealing 110% (ATK-based) + 15% (SP-based) damage to enemies within 1 tile of the target. Targets are selected from front to back, prioritizing different enemies. The activation frequency scales with her Haste, up to a maximum of 8 activations per second.",
+          "passive": [
+            "Marene amplifies the Haste buffs her allies grant her by 100% and retains the Haste gained even after those buffs expire.",
+            "Haste bonuses from the same buff do not stack."
+          ],
+          "active": [
+            "Marene channels her Tempest Eye for 2s, activating it 2 times per second.",
+            "Each activation generates a small gust of wind at an enemy's position, dealing 110% (ATK-based) + 15% (SP-based) damage to enemies within 1 tile of the target.",
+            "Targets are selected from front to back, prioritizing different enemies.",
+            "The activation frequency scales with her Haste, up to a maximum of 8 activations per second."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 115% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 120% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Increases the damage dealt by Tempest Eye through this skill to 125% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Marene receives stronger Haste buffs. When this skill is used actively, Marene repeatedly activates Tempest Eye for a duration to deal damage to enemies."
+      },
+      {
+        "section": "Skill2",
+        "name": "Twin Cyclone",
+        "unlock": "Unlocks at Level 31",
+        "meta": {
+          "Cooldown": "16s",
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "Marene conjures 2 clusters of wind blades and launches them at the nearest and farthest enemies, respectively. The blades circle and slash at their targets for 2s, dealing 110% (ATK-based) + 15% (SP-based) damage to the targets and enemies within 2 tiles of them every 0.5s.",
+          "active": [
+            "Marene conjures 2 clusters of wind blades and launches them at the nearest and farthest enemies, respectively.",
+            "The blades circle and slash at their targets for 2s, dealing 110% (ATK-based) + 15% (SP-based) damage to the targets and enemies within 2 tiles of them every 0.5s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the damage dealt to 115% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the damage dealt to 120% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the damage dealt to 125% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Marene launches a cluster of wind blades at each of the nearest and furthest enemies, dealing continuous AoE damage."
+      },
+      {
+        "section": "Unlocks at Legendary+",
+        "name": "Hero Focus",
+        "unlock": "Unlocks at Legendary+",
+        "meta": {
+          "Skill Range": "1 tile"
+        },
+        "description": {
+          "raw": "Marene increases her ATK by 6%. Each activation of Tempest Eye increases her ATK by an extra 0.6%, stacking up to 30 times.",
+          "active": [
+            "Marene increases her ATK by 6%.",
+            "Each activation of Tempest Eye increases her ATK by an extra 0.6%, stacking up to 30 times."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Marene increases her ATK by 8%.",
+                "Each activation of Tempest Eye increases her ATK by an extra 0.8%, stacking up to 30 times."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Marene increases her ATK by 10%.",
+                "Each activation of Tempest Eye increases her ATK by an extra 1%, stacking up to 30 times."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Marene increases her ATK during battle, with a further increase each time Tempest Eye activates."
+      },
+      {
+        "section": "Ex. Skill",
+        "name": "Aeon Tempest",
+        "unlock": "Unlocks at Mythic+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "When the Haste bonus Marene gains from allies reaches 60, she enters Windborne state, becoming steadfast and taking 45% less damage and ignoring 45% of enemies' Ranged DEF when dealing damage. Once her Tempest Eye has activated 30 times, she unleashes a massive thunderstorm that permanently covers the battlefield. It deals 110% (ATK-based) true damage to all enemies every second and unleashes powerful gusts every 5s that knock all enemies into the air and destroy all obstacles.",
+          "active": [
+            "When the Haste bonus Marene gains from allies reaches 60, she enters Windborne state, becoming steadfast and taking 45% less damage and ignoring 45% of enemies' Ranged DEF when dealing damage.",
+            "Once her Tempest Eye has activated 30 times, she unleashes a massive thunderstorm that permanently covers the battlefield.",
+            "It deals 110% (ATK-based) true damage to all enemies every second and unleashes powerful gusts every 5s that knock all enemies into the air and destroy all obstacles."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the damage dealt per second to 130% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Increases the damage dealt per second to 150% (ATK-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "The thunderstorm can sweep enemies off the battlefield.",
+                "This effect only applies to enemies who are neither steadfast nor unaffected, with remaining HP below 1000% of Marene's ATK and an HP ratio below 35%.",
+                "Enemies swept away this way cannot return to the battlefield and are considered defeated."
+              ]
+            }
+          ]
+        },
+        "description_lite": "Marene becomes steadfast and takes less damage once her Haste bonus reaches a certain amount. After Tempest Eye activates enough times, she summons a massive thunderstorm that continuously deals damage to enemies and periodically knocks them into the air."
+      },
+      {
+        "section": "Unlocks at Supreme+",
+        "name": "Enhance Force",
+        "unlock": "Unlocks at Supreme+",
+        "meta": {
+          "Skill Range": "Global"
+        },
+        "description": {
+          "raw": "The small gusts summoned by Gathering Gale and the wind blades created by Twin Cyclone are infused with lightning. Each hit deals an extra 30% (ATK-based) true damage and stuns the target for 0.25s, and permanently reduces the target's Vitality by 4, stacking up to 15 times.",
+          "active": [
+            "The small gusts summoned by Gathering Gale and the wind blades created by Twin Cyclone are infused with lightning.",
+            "Each hit deals an extra 30% (ATK-based) true damage and stuns the target for 0.25s, and permanently reduces the target's Vitality by 4, stacking up to 15 times."
+          ]
+        },
+        "description_lite": "Gathering Gale and Twin Cyclone deal extra true damage and briefly stun their targets."
+      }
+    ],
+    "range": 10,
+    "release_date": "2026-10-29",
+    "role_category": "damage_dealer"
+  },
+  "external": {
+    "walk_speed": "normal",
+    "stat_ranks": {
+      "categories": {
+        "basic": "high",
+        "offensive": "high",
+        "defensive": "high",
+        "other": "high"
+      },
+      "stats": {
+        "HP": "high",
+        "ATK": "high",
+        "Phys DEF": "high",
+        "Magic DEF": "average",
+        "Haste": "high",
+        "ATK SPD": "high"
+      },
+      "roster_percentiles": {
+        "HP": 0.3692,
+        "Phys DEF": 0.2154,
+        "Magic DEF": 0.1769
+      }
+    }
+  }
+}

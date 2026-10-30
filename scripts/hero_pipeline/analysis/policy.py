@@ -155,6 +155,7 @@ def effective_defaults() -> PipelinePolicy:
                 "EX+10": 1.6,
                 "EX+15": 1.8,
                 "Supreme+": 1.7,
+                "Supreme+ Lv2": 1.8,
             },
             "proximity_melee_max_range": 3.5,
             "proximity_default_aura_radius": 2.0,

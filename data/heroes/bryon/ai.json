@@ -290,11 +290,37 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "cf786c607bbb91b0ef1237ea5f3ff10434adb4872894e572af98551c0b5295c1",
+        "source_hash": "bf0bac438e2b5d5b0a8b55d4a13b344a72b1ba005033fbae06d0b28cc78a715d",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
             "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Haste",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 120.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

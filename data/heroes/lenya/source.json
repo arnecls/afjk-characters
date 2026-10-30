@@ -228,9 +228,12 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "When a battle starts, Lenya gains a shield that absorbs 800% (ATK-based) damage.",
+                "While the shield is active, she gains 25 Crit and 40 Crit DMG Boost.",
+                "The shield value increases by 800% (ATK-based) whenever Lenya cast her Ultimate.",
+                "Additionally, each time Lenya wins a duel, she recovers 300 Energy."
               ]
             }
           ]
@@ -261,14 +264,14 @@
         "HP": "low",
         "ATK": "average",
         "Phys DEF": "low",
-        "Magic DEF": "average",
+        "Magic DEF": "low",
         "Haste": "low",
         "ATK SPD": "average"
       },
       "roster_percentiles": {
-        "HP": 0.2305,
-        "Phys DEF": 0.4531,
-        "Magic DEF": 0.4297
+        "HP": 0.2269,
+        "Phys DEF": 0.4538,
+        "Magic DEF": 0.4308
       }
     }
   }

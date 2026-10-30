@@ -281,14 +281,14 @@
         "HP": "high",
         "ATK": "high",
         "Phys DEF": "high",
-        "Magic DEF": "average",
+        "Magic DEF": "high",
         "Haste": "average",
         "ATK SPD": "high"
       },
       "roster_percentiles": {
-        "HP": 0.4453,
-        "Phys DEF": 0.2773,
-        "Magic DEF": 0.2344
+        "HP": 0.4462,
+        "Phys DEF": 0.2808,
+        "Magic DEF": 0.2385
       }
     }
   }

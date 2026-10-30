@@ -412,9 +412,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "If a toy chariot is present when Damian casts \"Emergency Support!\", its healing effect expands to cover the entire battlefield, and Damian can heal an extra ally.",
+                "If no toy chariot is present, Damian instead restores 300% (ATK-based) HP to 1 extra weakest ally."
               ]
             }
           ]
@@ -437,9 +438,30 @@
             "type": "crowd_control",
             "cc-type": "blind",
             "duration": 7.0
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
+          {
+            "label": "Direct healing (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
           {
             "label": "Blind — Single target"
           }
@@ -625,14 +647,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "If a toy chariot is present when Damian casts \"Emergency Support!\", its healing effect expands to cover the entire battlefield, and Damian can heal an extra ally.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "If no toy chariot is present, Damian instead restores 300% (ATK-based) HP to 1 extra weakest ally.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "fd3d14e064ae43a72006508eda6b50d1b3a07011a84ed6f43f5e077b65c62286",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "60cb8ddea317e94eb960e8df372f1a244102f8303bd1cd3308d1eb336536042a",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

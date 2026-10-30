@@ -299,7 +299,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "05b5d7e19b3b3865521de37967798717e67858c60d3998e34048b2effc1dd029",
+        "source_hash": "a567250b621ecefacc0ca17e30d761490ce1ab69b661e65224702cdebe3d4e10",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -321,6 +321,84 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Energy",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 500.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "energy",
+                "name": "Energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 60.0
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Haste",
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 20.0
+                  }
+                ],
+                "duration": 2.0
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Movement speed",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "duration": 2.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       }
@@ -328,6 +406,7 @@
   },
   "behavior_tags": [
     "aoe-damage",
+    "high-initial-energy",
     "mass-cc"
   ],
   "summon_profile": null,

@@ -365,7 +365,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "99127021c9648ea66bf931556e3d8371a8d8b8099252cff588ac531a107550ee",
+        "source_hash": "a6f6c72a192c1890e5328c220135d28c86830407bf8344f3a1ad51ae598dd088",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -393,13 +393,73 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Area",
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "damage",
+                "damage_type": "magic",
+                "name": "Magic",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 250.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "count",
+                    "count": 4
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Area",
+                "target": "enemy",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 2,
+                "type": "debuff",
+                "name": "Magic DEF",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "duration": 10.0,
+                "conditions": [
+                  {
+                    "type": "count",
+                    "count": 4
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       }
     }
   },
   "behavior_tags": [
+    "aoe-damage",
     "battlefield-modification",
+    "enemy-debuffer",
     "self-repositioner"
   ],
   "summon_profile": null,

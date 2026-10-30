@@ -1034,6 +1034,9 @@ window.AFKJ = window.AFKJ || {};
       if (lower === "supreme+") {
         return "S+";
       }
+      if (lower === "supreme+ lv2") {
+        return "S+2";
+      }
       return core;
     }
     return trimmed;
@@ -1453,7 +1456,7 @@ window.AFKJ = window.AFKJ || {};
     });
   }
 
-  const ASCENSION_TIER_SUFFIX_RE = /\s*(\((?:Legendary\+|Mythic\+|Supreme\+|EX\+\d+)\))\s*$/i;
+  const ASCENSION_TIER_SUFFIX_RE = /\s*(\((?:Legendary\+|Mythic\+|Supreme\+(?: Lv2)?|EX\+\d+)\))\s*$/i;
 
   function parseEffectLabelParts(label) {
     let text = (label || "").trim();

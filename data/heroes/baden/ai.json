@@ -1,0 +1,800 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Baden - The Abomination",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "00198d5d8fbddc9297aa6c691e1070e378b5744c7ce88c3daecb97824e48de65",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "crowd_control",
+                "cc-type": "stun"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "damage",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 150.0
+                  }
+                ],
+                "damage_type": "physical"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "target": "enemy",
+                "target_count": -1,
+                "is_max_known": true,
+                "type": "damage",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 500.0
+                  }
+                ],
+                "damage_type": "true",
+                "anchor": "target_unit",
+                "area": "radius",
+                "area_count": 1
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "heal",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ],
+                "healing_type": "direct"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "debuff",
+                "name": "Max HP",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "debuff",
+                "name": "Healing",
+                "label": "healing",
+                "duration": 8.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "debuff",
+                "name": "Energy",
+                "label": "debuff_stat",
+                "duration": 8.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "base",
+                "immunity_type": "unaffected",
+                "timing": "on_ultimate",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
+            "special_provides": [
+              {
+                "label": "Invincibility",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "Baden remains invincible while casting the ultimate."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "ae0fc64a48106181cf58cba66740b15a6bb95aa7a05df503b896611635e59123",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "target": "enemy",
+                "target_count": -1,
+                "is_max_known": true,
+                "type": "damage",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 250.0
+                  }
+                ],
+                "damage_type": "true",
+                "area": "path",
+                "area_direction": "front",
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "crowd_control",
+                "cc-type": "stun",
+                "duration": 3.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "debuff",
+                "name": "Max HP",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "Max HP",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "debuff",
+                "name": "Energy",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 100.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "energy",
+                "name": "Energy",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 100.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "damage",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ],
+                "damage_type": "physical"
+              }
+            ],
+            "summon_effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Owned summons",
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "Basic stats",
+                "label": "buff_summon_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0
+              }
+            ],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Summoning",
+                "tier": "base",
+                "targeting": "Single target",
+                "description": "The battle-start curse summons an invincible phantom near a cursed non-boss enemy the first time it drops below 50% HP (bosses: up to 2)."
+              },
+              {
+                "label": "Stat steal",
+                "tier": "base",
+                "targeting": "Single target",
+                "description": "The active impale steals 20% of the target's max HP (capped by ATK) and 100 Energy."
+              },
+              {
+                "label": "Energy steal",
+                "tier": "base",
+                "targeting": "Single target",
+                "description": "The active impale steals 100 Energy from the current target."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "0947dc34b4d1e48ce5c97816a6614fdfed908289d4d9fa9b91a8a7dab7228836",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "damage",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 320.0
+                  }
+                ],
+                "damage_type": "physical"
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "target": "enemy",
+                "target_count": -1,
+                "is_max_known": true,
+                "type": "damage",
+                "name": "Physical",
+                "label": "damage_normal",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 320.0
+                  }
+                ],
+                "damage_type": "physical",
+                "anchor": "caster",
+                "area": "radius",
+                "area_count": 2
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "target": "enemy",
+                "target_count": -1,
+                "is_max_known": true,
+                "type": "debuff",
+                "name": "Vitality",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 20.0
+                  }
+                ],
+                "duration": 8.0,
+                "anchor": "caster",
+                "area": "radius",
+                "area_count": 2
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "f17a80f500ca001273b25d8e84619595ff33b631f678a799a8c2edcc27143810",
+        "is_max_known": true,
+        "tiers": {
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "DEF Penetration",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 15.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0
+              },
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "DEF Penetration",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 10.0
+                  }
+                ],
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_state"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "fcc687ab510f8a8f950b8e9ec60b1ca04bab9e14f24dae0a2c12592687e65f41",
+        "is_max_known": true,
+        "tiers": {
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Area",
+                "target": "enemy",
+                "target_count": -1,
+                "is_max_known": true,
+                "type": "damage",
+                "name": "True damage",
+                "label": "damage_true",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 500.0
+                  }
+                ],
+                "damage_type": "true",
+                "area": "path",
+                "area_direction": "front",
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Area",
+                "target": "enemy",
+                "target_count": -1,
+                "is_max_known": true,
+                "type": "debuff",
+                "name": "Max HP",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 70.0
+                  }
+                ],
+                "area": "path",
+                "area_direction": "front",
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "debuff",
+                "name": "ATK",
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0
+              }
+            ],
+            "summon_effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Owned summons",
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_summon_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0
+              }
+            ],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Stat steal",
+                "tier": "mythic+",
+                "targeting": "Single target",
+                "description": "Each curse phantom steals 15% of its target's ATK for both itself and Baden."
+              }
+            ],
+            "special_requires": []
+          },
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "debuff",
+                "name": "ATK",
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 17.0
+                  }
+                ]
+              },
+              {
+                "tier": "ex+5",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 17.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0
+              }
+            ],
+            "summon_effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Owned summons",
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_summon_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 17.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0
+              }
+            ],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Summoning",
+                "tier": "ex+10",
+                "targeting": "Self",
+                "description": "Baden immediately summons a phantom that fights alongside him when a battle starts."
+              }
+            ],
+            "special_requires": []
+          },
+          "ex+15": {
+            "effects": [
+              {
+                "tier": "ex+15",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "debuff",
+                "name": "ATK",
+                "label": "debuff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ]
+              },
+              {
+                "tier": "ex+15",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0
+              }
+            ],
+            "summon_effects": [
+              {
+                "tier": "ex+15",
+                "targeting_label": "Owned summons",
+                "target": "own_summons",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_summon_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "permanent",
+                "duration": -1.0
+              }
+            ],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "baa085382b2ac7a569bb126c5fae46644d5fda4a859d6a9d0edbaddc7f289359",
+        "is_max_known": true,
+        "tiers": {
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "is_max_known": true,
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 35.0
+                  }
+                ],
+                "duration": 8.0,
+                "persistence": "temporary",
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "defeat",
+                    "self": true
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [
+              {
+                "label": "Cheat death",
+                "tier": "supreme+",
+                "targeting": "Self",
+                "description": "When defeated with a phantom on the field, Baden possesses it, is not prioritized by enemies for 8s, and takes 35% less damage (up to 3 times)."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "assassin",
+    "battle-start-burst",
+    "cheat-death",
+    "enemy-debuffer",
+    "energy-inhibitor",
+    "heal-inhibitor",
+    "invincibility",
+    "non-ult-utility",
+    "summoner"
+  ],
+  "summon_profile": {
+    "has_ranged_summons": false,
+    "sources": [
+      {
+        "section": "Skill1",
+        "tier": "base"
+      },
+      {
+        "section": "Ex. Skill",
+        "tier": "ex+10"
+      }
+    ]
+  },
+  "skill_summaries": {
+    "ultimate": "invincible stun combo on the weakest enemy: true damage splash, HP drain, max HP reduction, and heal and Energy block",
+    "skill1": "Passive: battle-start line true damage; wounded cursed enemies spawn summons. Active: stun, then steal max HP and Energy",
+    "skill2": "single-target multi-hit, then AoE damage with stacking Vitality reduction",
+    "skill3": "battle DEF penetration increase, higher while summons are on the battlefield",
+    "skill4": "opening true damage crits and cuts max HP; summons steal ATK for themselves and the caster; battle-start summon",
+    "skill5": "on defeat, possesses a summon with damage reduction and lower enemy focus"
+  },
+  "play_overview": "[[Baden]] opens each fight by cursing the enemy line in front of him with **true damage**. Every cursed enemy that drops below half HP spawns an **invincible phantom** that fights beside him. His ultimate locks the weakest enemy in a **stunned combo** that ends with true damage, an HP drain, and a **heal and Energy block**. His skills steal max HP, Energy, and ATK, so he grows stronger while phantoms stay on the field. When he falls with a phantom alive, he **possesses it** and keeps fighting with less damage taken. He wants a full enemy line in front of him at battle start to spread the curse. He struggles when he is **burst before phantoms appear**.",
+  "counter_overview": "In PVP, [[Baden]] curses the line in front of him with **true damage** at battle start, and every cursed unit that drops below half HP spawns an **invincible phantom**. His ultimate locks your weakest unit in a stun combo while he is **invincible**, then blocks its healing and Energy for several seconds. Cancel that ultimate with [[Lily May]], and do not spend burst while the combo plays out. Phantoms cannot be killed and let him **possess one on defeat**, so expect to kill him several times and keep lasting wide ultimates like [[Shemira]] or [[Frieren]] running while enemies stop targeting him. His Phys DEF and Magic DEF are both high, so delete him with true-damage melee like [[Himmel]] or [[Zorya]]."
+}

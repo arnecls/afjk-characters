@@ -224,9 +224,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Replaces normal attacks with Spirit Devour, which deals only 75% of the skill's original damage.",
+                "When Spirit Devour heals Shemira or Daimon, it also increases their Phys DEF and Magic DEF by 60% for 8s."
               ]
             }
           ]
@@ -262,9 +263,9 @@
         "ATK SPD": "low"
       },
       "roster_percentiles": {
-        "HP": 0.7578,
-        "Phys DEF": 0.75,
-        "Magic DEF": 0.75
+        "HP": 0.7615,
+        "Phys DEF": 0.7538,
+        "Magic DEF": 0.7538
       }
     }
   }

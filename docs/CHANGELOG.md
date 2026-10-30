@@ -1,5 +1,62 @@
 # Changelog
 
+## 2026-10-30
+
+### New Features
+
+- Added Baden (Graveborn · Rogue · Physical), The Abomination.
+- Added the Level 2 Enhance Force upgrade for 41 heroes. It unlocks at
+  Supreme+ with 100 Shadow Essence. The hero pages show its text and
+  chips as "Supreme+ Lv2".
+- Synergy: the Supreme+ Lv2 tier scores like the strongest defining tier,
+  with a multiplier of 1.8.
+
+### Fixed
+
+- The Level 2 Enhance Force text was empty for 38 heroes. It now shows the
+  full text.
+- Vala now shows her Level 2 Enhance Force text, which uses a different
+  wiki format.
+
+### Character changes
+
+| Character | What changed |
+|---|---|
+| baden | - Added as new hero |
+| marene | - Added as new hero |
+| alsa, antandra, atalanta, berial, bryon, callan, cassadee, cecia, cryonaia, damian, dionel, dunlingr, florabelle, gerda, granny-dahnie, harak, hodgkin, indris, isabella, lenya, lorsan, lucca, lumont, lyca, mirael, nara, niru, parisa, rhys, rowan, salazer, satrana, scarlita, silvina, soren, temesia, vala, valen, valka, viperian, walker | - Added the Level 2 Enhance Force text<br>- Added the Level 2 effects, except for Parisa and Satrana, which have no numeric effect |
+| lyca, valen, cecia | - Added the tag `high-initial-energy` |
+| niru, rowan | - Added the tag `temporary-stat-buffer` |
+| harak | - Added the tag `battle-start-burst` |
+| walker, viperian | - Added the tag `life-drain` |
+| dunlingr | - Added the tag `energy-inhibitor` |
+| nara | - Added the tag `enemy-debuffer` |
+| alsa | - Added the tags `aoe-damage` and `enemy-debuffer` |
+| atalanta, nara, lenya, cryonaia, harak, temesia | - Updated the counter text for the Level 2 upgrade |
+| aster, athalia, faramor, lenya, lily-may, salazer, seth, shadewing, silvina, sinbad, soren, sylphira, walker | - Refreshed relative stat ranks |
+
+### Implementation changes
+
+- `sources_web.py`: `_normalize_infobox_inner` now splits fields only
+  outside nested templates. Before, `{{Item|Shadow Essence|x=100}}` cut the
+  Level 2 text.
+- `sources_web.py`: `_parse_level_upgrades` reads both the
+  `Level 2 (Unlocks with ...)` format and the `Unlock {{Item|...}}` format.
+  The unlock label is "Unlocks at Supreme+ (100 Shadow Essence)".
+- Added the tier `supreme+_2`, shown as `Supreme+ Lv2`. It sorts after
+  `Supreme+` and has a defining-tier multiplier of 1.8. The change covers
+  `serialize.py`, `project.py`, `scoring.py`, `scoring_facts.py`,
+  `policy.py`, `game_properties.schema.json` and the site chips.
+- `skill_chunks.py`: a Supreme+ upgrade that needs Shadow Essence gets the
+  tier `Supreme+ Lv2`.
+- `crowd_control.py`: the CC check now skips text such as "hitting an enemy
+  with Arcane Binding". The text names a skill and does not apply CC.
+- Added the season Veil of Memories (2026-09-23) to `seasons.json`.
+- Added tests for both wiki formats and for the tier mapping.
+- `download` also changed other skill texts and the order of `roster.json`.
+  Only the Level 2 upgrades were kept. The wiki text for Harak Skill1 was
+  cut, so the earlier text stays.
+
 ## 2026-10-12
 
 ### New Features

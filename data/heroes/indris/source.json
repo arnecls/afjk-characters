@@ -229,9 +229,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Within 4s after Indris breaks an enemy's weakness, each of his normal attack arrow that hits the affected enemy deals extra physical damage equal to 5% of the enemy's max HP.",
+                "The damage cannot exceed 150% of Indris' ATK."
               ]
             }
           ]
@@ -267,9 +268,9 @@
         "ATK SPD": "high"
       },
       "roster_percentiles": {
-        "HP": 0.1055,
-        "Phys DEF": 0.1133,
-        "Magic DEF": 0.0742
+        "HP": 0.1038,
+        "Phys DEF": 0.1115,
+        "Magic DEF": 0.0731
       }
     }
   }

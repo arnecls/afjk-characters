@@ -383,16 +383,41 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Increases Bone Sear's cooldown by 12 and the number of enemies it burns by 3.",
+                "Bone Sear also increases Mirael's ATK SPD by 300 for 18s."
               ]
             }
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 300.0
+              }
+            ],
+            "duration": 18.0,
+            "persistence": "temporary"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -539,14 +564,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Increases Bone Sear's cooldown by 12 and the number of enemies it burns by 3.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Bone Sear also increases Mirael's ATK SPD by 300 for 18s.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "b6e0d6d13016464c441689108d48f58947e1f93cfec1188c62a35cd5a60bd22d",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "c83635cb90d371273185b700055edc8fb97cb96042ebf64a2fcfc020c6c7e75b",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

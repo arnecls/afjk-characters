@@ -290,7 +290,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "81d25d0676b4fd9ec6c67ad5f0f56e4c7559cf934fc748615678a8628136dc79",
+        "source_hash": "578661b45623c1b244e69b3e0b9841c580047a9f76af0bc2c116a17b60c7079f",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -313,6 +313,36 @@
                 ],
                 "duration": 2,
                 "tick": 1.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 500.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  }
+                ]
               }
             ],
             "summon_effects": [],

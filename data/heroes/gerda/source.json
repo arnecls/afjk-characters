@@ -224,9 +224,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "When an ally enters Gerda's hot spring area for the first time, they gain a shield that can absorb 300% (ATK-based) damage.",
+                "For every 3 instances of healing the ally receives from the hot spring, they gain an extra shield that absorbs 150% (ATK-based) damage.",
+                "The total shield value from this skill cannot exceed 450% (ATK-based) per ally at once."
               ]
             }
           ]
@@ -262,9 +264,9 @@
         "ATK SPD": "high"
       },
       "roster_percentiles": {
-        "HP": 0.9062,
-        "Phys DEF": 0.9453,
-        "Magic DEF": 0.9531
+        "HP": 0.9077,
+        "Phys DEF": 0.9462,
+        "Magic DEF": 0.9538
       }
     }
   }

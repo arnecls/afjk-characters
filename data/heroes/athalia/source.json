@@ -249,7 +249,7 @@
     "walk_speed": "fast",
     "stat_ranks": {
       "categories": {
-        "basic": "average",
+        "basic": "low",
         "offensive": "high",
         "defensive": "average",
         "other": "high"
@@ -263,9 +263,9 @@
         "ATK SPD": "average"
       },
       "roster_percentiles": {
-        "HP": 0.0547,
-        "Phys DEF": 0.4688,
-        "Magic DEF": 0.4453
+        "HP": 0.0538,
+        "Phys DEF": 0.4692,
+        "Magic DEF": 0.4462
       }
     }
   }

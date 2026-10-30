@@ -350,7 +350,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "f5387315158f154d380481fa69efd89dcc09c8bd5beba1b26770796b74264aa5",
+        "source_hash": "79cc656944613016692f5c9fed8b1713f28871db4663e5c586f401e116819633",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -373,6 +373,53 @@
                 "name": "Phys DEF",
                 "label": "buff_defensive",
                 "persistence": "unknown"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 40.0
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "name": "Direct healing",
+                "healing_type": "direct",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "status_condition",
+                    "status": "active_shield"
+                  }
+                ]
               }
             ],
             "summon_effects": [],

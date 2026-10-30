@@ -226,9 +226,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Cassadee enhances the blessing of Tidal Strength, making its effect permanent and granting extra 30 Penetration to the blessed ally.",
+                "The extra magic damage from the blessing can trigger up to 18 times per second."
               ]
             }
           ]
@@ -264,9 +265,9 @@
         "ATK SPD": "low"
       },
       "roster_percentiles": {
-        "HP": 0.1406,
-        "Phys DEF": 0.1719,
-        "Magic DEF": 0.5859
+        "HP": 0.1385,
+        "Phys DEF": 0.1692,
+        "Magic DEF": 0.5846
       }
     }
   }

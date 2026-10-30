@@ -226,9 +226,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Valka's Ultimate damage increases by 0.6% with each point of her ATK SPD and Haste.",
+                "Whenever she casts her Ultimate, she also gains a shield as if Spectral Bulwark had triggered, with a shield value of 30% (HP-based)."
               ]
             }
           ]
@@ -264,9 +265,9 @@
         "ATK SPD": "high"
       },
       "roster_percentiles": {
-        "HP": 0.6875,
-        "Phys DEF": 0.8359,
-        "Magic DEF": 0.8438
+        "HP": 0.6923,
+        "Phys DEF": 0.8385,
+        "Magic DEF": 0.8462
       }
     }
   }

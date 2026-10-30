@@ -256,6 +256,8 @@ def cc_described_on_referenced_skill(
             rf"(?:his|her|their) {escaped} skill\b",
             rf"enhanc\w+ {escaped}\b",
             rf"granted by {escaped}\b",
+            rf"hit(?:s|ting)? (?:an |the )?(?:enemy|enemies|target) "
+            rf"with {escaped}\b",
         )
         if any(re.search(pat, text, re.I) for pat in patterns):
             return True

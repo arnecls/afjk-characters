@@ -295,7 +295,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "54823f5b45928d2147d5494fc17ab941c6d79aace6784be35d8e45fc9f833080",
+        "source_hash": "ce140b1c764c4e49e5b18b9513d2ec57f68c9bd93a506ae0790dca010c51e920",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -311,6 +311,44 @@
                 "target": "ally",
                 "area": "single",
                 "target_count": 1
+              }
+            ],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Max HP",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "immunity",
+                "immunity_type": "unaffected",
+                "timing": "on_skill",
+                "duration": 4.5
               }
             ],
             "special_provides": [],

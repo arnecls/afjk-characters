@@ -226,9 +226,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Walker increases his Crit by 20.",
+                "When his normal attack deals critical damage to an enemy carrying a bounty, increases the damage of this attack by 60% and grants it 100 Life Drain."
               ]
             }
           ]
@@ -256,7 +257,7 @@
         "other": "average"
       },
       "stats": {
-        "HP": "high",
+        "HP": "average",
         "ATK": "low",
         "Phys DEF": "average",
         "Magic DEF": "average",
@@ -264,9 +265,9 @@
         "ATK SPD": "high"
       },
       "roster_percentiles": {
-        "HP": 0.5625,
-        "Phys DEF": 0.5234,
-        "Magic DEF": 0.4922
+        "HP": 0.5615,
+        "Phys DEF": 0.5231,
+        "Magic DEF": 0.4923
       }
     }
   }

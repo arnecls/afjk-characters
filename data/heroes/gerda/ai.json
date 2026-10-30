@@ -252,7 +252,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "7e4aafe85a6bb9ed802e1b3b3dbe29df0ce5986b3fa670b60b251ddf01f5e57a",
+        "source_hash": "36056399c7a79338f600ceaa2a43a8a269198948fd1bc8df4bd49b53e47faa1b",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -268,6 +268,54 @@
                 "type": "crowd_control",
                 "cc-type": "stun",
                 "duration": 2.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Area",
+                "target": "ally",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "duration_gate",
+                    "gate": "first_time"
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Area",
+                "target": "ally",
+                "area": "radius",
+                "target_count": -1,
+                "area_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 150.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

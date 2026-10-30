@@ -540,9 +540,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Valka's Ultimate damage increases by 0.6% with each point of her ATK SPD and Haste.",
+                "Whenever she casts her Ultimate, she also gains a shield as if Spectral Bulwark had triggered, with a shield value of 30% (HP-based)."
               ]
             }
           ]
@@ -575,11 +576,31 @@
               }
             ],
             "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
           {
             "label": "Energy — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Self (Supreme+ Lv2)",
             "polarity": "buff"
           }
         ]
@@ -609,8 +630,8 @@
       "energy"
     ],
     "scalar_stat_shares": {
-      "atk": 0.5,
-      "max_hp": 0.5
+      "atk": 0.47058823529411764,
+      "max_hp": 0.5294117647058824
     },
     "id": "valka",
     "display_name": "Valka",
@@ -806,14 +827,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Valka's Ultimate damage increases by 0.6% with each point of her ATK SPD and Haste.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Whenever she casts her Ultimate, she also gains a shield as if Spectral Bulwark had triggered, with a shield value of 30% (HP-based).",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "ce492414a09e5b9f06a4a7a2686480261967cc82814adcd9009e8f72b8fdeaf8",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "a33ab017a1cf452ed84f843d516d87afd4ec77b52e85b2b6ffd72ddb078868b7",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

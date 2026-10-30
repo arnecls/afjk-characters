@@ -243,9 +243,13 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Cecia gains 500 initial Energy.",
+                "When she casts her Ultimate, she permanently steals 2% of basic stats every second from entangled enemies.",
+                "The amount stolen for each stat cannot exceed 50% of Cecia's initial value for that stat.",
+                "Cecia shares all stolen stats with Mr.",
+                "Carlyle."
               ]
             }
           ]
@@ -281,8 +285,8 @@
         "ATK SPD": "low"
       },
       "roster_percentiles": {
-        "HP": 0.5547,
-        "Phys DEF": 0.5312,
+        "HP": 0.5538,
+        "Phys DEF": 0.5308,
         "Magic DEF": 0.5
       }
     }

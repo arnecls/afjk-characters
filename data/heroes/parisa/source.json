@@ -219,9 +219,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Floral Inspiration no longer has an initial cooldown.",
+                "After this skill is cast for the first time, Floral Inspiration targets 1 extra allies, prioritizing those who have dealt the most normal attack damage."
               ]
             }
           ]
@@ -257,9 +258,9 @@
         "ATK SPD": "high"
       },
       "roster_percentiles": {
-        "HP": 0.0391,
-        "Phys DEF": 0.0781,
-        "Magic DEF": 0.2578
+        "HP": 0.0385,
+        "Phys DEF": 0.0769,
+        "Magic DEF": 0.2615
       }
     }
   }

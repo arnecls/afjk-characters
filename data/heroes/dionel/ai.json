@@ -246,7 +246,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "eb02834b9529f12bdf438a02a26426985f8cfc623b4597208b0fd32dd307cae9",
+        "source_hash": "35666764bfa1640ec2cf93c048f25e3015b0fbffdd7fc325238431bacaa539b8",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -265,6 +265,48 @@
                   {
                     "type": "flat",
                     "value": 20.0
+                  }
+                ],
+                "persistence": "temporary"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Execution",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 25.0
                   }
                 ],
                 "persistence": "temporary"

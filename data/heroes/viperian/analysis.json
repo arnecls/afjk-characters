@@ -489,9 +489,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Damage dealt by Darkvipers benefits from 10 extra Life Drain.",
+                "The first time an enemy's HP percentage falls below 60%, Viperian sends out an extra Darkviper, prioritizing enemies who are not already possessed by a Darkviper, or who have dealt the most damage.",
+                "Each enemy can be possessed by up to 2 Darkvipers at the same time."
               ]
             }
           ]
@@ -543,6 +545,24 @@
               }
             ],
             "persistence": "unknown"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 10.0
+              }
+            ],
+            "persistence": "permanent"
           }
         ],
         "skill_card_tags": [
@@ -552,6 +572,10 @@
           },
           {
             "label": "Energy — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Lifedrain — Self (Supreme+ Lv2)",
             "polarity": "buff"
           }
         ]
@@ -742,14 +766,24 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Damage dealt by Darkvipers benefits from 10 extra Life Drain.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "The first time an enemy's HP percentage falls below 60%, Viperian sends out an extra Darkviper, prioritizing enemies who are not already possessed by a Darkviper, or who have dealt the most damage.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Each enemy can be possessed by up to 2 Darkvipers at the same time.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "dfd60f64ef688c9695728a89a395bc9af984063db2d01a6040eac13e00b6a988",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "e62b2857be7d25f18e95fe33edb85b729704e2cc87e15f30da18a480aa7a47b1",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

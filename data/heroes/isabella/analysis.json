@@ -526,11 +526,45 @@
           "raw": "Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF, or Magic DEF by at least 15%, or increases their ATK SPD, Haste, or Vitality by at least 15, Isabella gains an extra stack of the corresponding spell note.",
           "active": [
             "Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF, or Magic DEF by at least 15%, or increases their ATK SPD, Haste, or Vitality by at least 15, Isabella gains an extra stack of the corresponding spell note."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
+              "text": [
+                "Whenever Isabella records a spell note, she gains an extra 60 Energy, up to a total of 600 Energy gained this way.",
+                "In addition, the stat boost provided by each spell note stack increases by 25%.",
+                "If an allied Silvina is deployed, Isabella treats her as an additional companion."
+              ]
+            }
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Energy — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -724,11 +758,26 @@
         "Supreme+",
         "Whenever Isabella's companion receives a buff that increases their ATK, Phys DEF, or Magic DEF by at least 15%, or increases their ATK SPD, Haste, or Vitality by at least 15, Isabella gains an extra stack of the corresponding spell note.",
         "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "Whenever Isabella records a spell note, she gains an extra 60 Energy, up to a total of 600 Energy gained this way.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "In addition, the stat boost provided by each spell note stack increases by 25%.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "If an allied Silvina is deployed, Isabella treats her as an additional companion.",
+        "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "e4ab818556b6254d7a7375faa6011c92a7486993ab9fd99da80de0d975821059",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "3350b86006989983e075b819e6d8fc4a036fcd86f587f51c5e526e1b1072607f",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

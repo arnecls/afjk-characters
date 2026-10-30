@@ -231,9 +231,12 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Lorsan can cast Stormbound Chain 5 times.",
+                "Each time Stormbound Chain transfers damage, it also inflicts max HP reduction equal to 20% of the transferred damage.",
+                "Whenever Stormbound Chain breaks, the ally dealing the most damage gains Zephyr's Embrace for 4.5s.",
+                "If the ally already has this effect, its duration will be extended by 4.5s."
               ]
             }
           ]
@@ -269,9 +272,9 @@
         "ATK SPD": "average"
       },
       "roster_percentiles": {
-        "HP": 0.0703,
-        "Phys DEF": 0.1641,
-        "Magic DEF": 0.3359
+        "HP": 0.0692,
+        "Phys DEF": 0.1615,
+        "Magic DEF": 0.3385
       }
     }
   }

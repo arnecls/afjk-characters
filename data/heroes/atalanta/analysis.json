@@ -486,9 +486,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "While casting Sweet Encounter, makes Atalanta unaffected and increases her Haste by 60.",
+                "If Sweet Encounter knocks the target enemy into another, reduces both enemies' Phys DEF by 40% for 8s."
               ]
             }
           ]
@@ -516,12 +517,75 @@
                 "value": 10.0
               }
             ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "cast",
+                "self": true
+              }
+            ],
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "debuff",
+            "name": "Phys DEF",
+            "label": "debuff_defensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 40.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "supreme+_2",
+            "immunity_type": "unaffected",
+            "timing": "on_skill",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
           }
         ],
         "skill_card_tags": [
           {
             "label": "Direct healing — Self",
             "polarity": "buff"
+          },
+          {
+            "label": "Haste — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Phys DEF — Multiple targets (Supreme+ Lv2)",
+            "polarity": "debuff"
+          },
+          {
+            "label": "Unaffected — Self (Supreme+ Lv2)"
           }
         ]
       }
@@ -722,14 +786,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "While casting Sweet Encounter, makes Atalanta unaffected and increases her Haste by 60.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "If Sweet Encounter knocks the target enemy into another, reduces both enemies' Phys DEF by 40% for 8s.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "434471de05ee39dfbaee73c26462e07b667f05695a8045b15c91c2e19504e817",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "b762c6e8e715add56fc811aa45c79b2ef6728e68a97d9c1bbf21e9f92a3c1d3b",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

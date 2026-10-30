@@ -222,9 +222,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Increases Bone Sear's cooldown by 12 and the number of enemies it burns by 3.",
+                "Bone Sear also increases Mirael's ATK SPD by 300 for 18s."
               ]
             }
           ]
@@ -260,9 +261,9 @@
         "ATK SPD": "low"
       },
       "roster_percentiles": {
-        "HP": 0.0195,
-        "Phys DEF": 0.0625,
-        "Magic DEF": 0.1016
+        "HP": 0.0192,
+        "Phys DEF": 0.0615,
+        "Magic DEF": 0.1
       }
     }
   }

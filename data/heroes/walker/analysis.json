@@ -514,9 +514,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Walker increases his Crit by 20.",
+                "When his normal attack deals critical damage to an enemy carrying a bounty, increases the damage of this attack by 60% and grants it 100 Life Drain."
               ]
             }
           ]
@@ -543,11 +544,91 @@
                 "value": 20.0
               }
             ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Crit",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 20.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "normal_attack",
+                "self": true
+              }
+            ],
+            "type": "buff",
+            "name": "Damage dealt",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "normal_attack",
+                "self": true
+              }
+            ],
+            "type": "buff",
+            "name": "Lifedrain",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 100.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
           {
             "label": "Shield — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Crit — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage dealt — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Lifedrain — Self (Supreme+ Lv2)",
             "polarity": "buff"
           }
         ]
@@ -749,14 +830,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Walker increases his Crit by 20.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "When his normal attack deals critical damage to an enemy carrying a bounty, increases the damage of this attack by 60% and grants it 100 Life Drain.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "e807e70b7d96fa76e13f1967684a94c700e5d5ad0326569bbddc913a4322381e",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "6841c001d1106d4396ce58770647dac312c62e4f14a9f9e8ecc25b95f039725e",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

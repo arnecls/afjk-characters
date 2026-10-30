@@ -241,7 +241,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "0a9f64d70aea195f26d3d9b9cc7b6b64ed94c7c58417ef7c1fbe26526fec1f91",
+        "source_hash": "d18d87f2bdee6bc3b7e056946e6b5992ba4d31bd36f3c5e4dfd51d5231bf94db",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -263,6 +263,31 @@
                 "type": "crowd_control",
                 "cc-type": "blind",
                 "duration": 7.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "heal",
+                "name": "Direct healing",
+                "healing_type": "direct",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ]
               }
             ],
             "summon_effects": [],

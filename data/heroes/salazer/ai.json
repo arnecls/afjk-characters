@@ -258,7 +258,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "e749aaedd8edd3435cae6061d28d07df70346566eb76f8b1db8c592ad0dd3320",
+        "source_hash": "e0963f28be2baca6a06831609f76fd3b445578530fa845a28dedb213d57bb06c",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -279,6 +279,49 @@
                     "value": 150.0
                   }
                 ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage dealt",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 60.0
+                  }
+                ],
+                "persistence": "permanent"
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 100.0
+                  }
+                ],
+                "duration": 15.0
               }
             ],
             "summon_effects": [],

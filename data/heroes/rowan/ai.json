@@ -276,11 +276,38 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "359966f88a1b4eaa552edfc15f93bd10f4082a791245e17796602db53fbef09d",
+        "source_hash": "1cfc7dd963a8181780da42d4387f048fa4771b1e2e5bcc229eaa891d89150d41",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
             "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "ATK",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "duration": 6.0,
+                "persistence": "temporary"
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],
@@ -292,7 +319,8 @@
   },
   "behavior_tags": [
     "ally-healer",
-    "energy-provider"
+    "energy-provider",
+    "temporary-stat-buffer"
   ],
   "summon_profile": null,
   "skill_summaries": {

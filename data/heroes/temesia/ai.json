@@ -342,7 +342,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "08c303b834eb27e3b08b9352678f5b2546bf521e99e90b1526f94b77aa8f2efa",
+        "source_hash": "c22a7a73abd1383868e3ebd3c99facfd27171ea7682c3f704d30e2b091507341",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -376,6 +376,66 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Damage taken",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "temporary"
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
+                "label": "damage_max_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 30.0
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "shield",
+                "name": "Shield",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 300.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       }
@@ -399,5 +459,5 @@
     "skill5": "charge hits reduce target Phys DEF"
   },
   "play_overview": "[[Temesia]] charges through the field, dealing path damage and knocking down enemies on her mounted leap ultimate. Direction changes trigger interrupting kicks that weaken foes in her path. Adjacent sword attacks scale on the target's ATK, punishing high-damage frontliners. Repeated charges grant Unaffected status and true damage, while charge hits reduce enemy Phys DEF. Battle ATK grows after the first ultimate, but blocked paths or knockdown resistance blunt her momentum.",
-  "counter_overview": "[[Temesia]] charges the farthest enemy with path damage and mounted knockdown leaps, then gains permanent Unaffected and true damage after enough ultimate charges. She relocates too often for assassin pins, and late Unaffected wastes generic CC. Use lasting wide ultimates like [[Shemira]] or [[Frieren]], catch the leap wind-up with [[Lily May]], and answer knockdown with [[filter:steadfast]] like [[Igor]] or [[Gunnar]]. A separate [[filter:unaffected]] like [[Shakir]] or [[Sylphira]] helps only when its window overlaps the leap; end the fight before her charge count locks Unaffected."
+  "counter_overview": "[[Temesia]] charges the farthest enemy with path damage and mounted knockdown leaps, then gains permanent Unaffected and true damage after enough ultimate charges. She relocates too often for assassin pins, and late Unaffected wastes generic CC. Use lasting wide ultimates like [[Shemira]] or [[Frieren]], catch the leap wind-up with [[Lily May]], and answer knockdown with [[filter:steadfast]] like [[Igor]] or [[Gunnar]]. A separate [[filter:unaffected]] like [[Shakir]] or [[Sylphira]] helps only when its window overlaps the leap; end the fight before her charge count locks Unaffected. She takes **reduced damage while charging**, so wait for the landing rather than trading into the charge."
 }

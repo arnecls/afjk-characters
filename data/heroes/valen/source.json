@@ -226,9 +226,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Valen gains 500 initial Energy.",
+                "Whenever his lightning deals damage to an enemy, he gains 60 extra Energy and reduces that enemy's Haste by 20 and movement speed by 30 for 2s."
               ]
             }
           ]
@@ -264,9 +265,9 @@
         "ATK SPD": "high"
       },
       "roster_percentiles": {
-        "HP": 0.6328,
-        "Phys DEF": 0.7734,
-        "Magic DEF": 0.625
+        "HP": 0.6308,
+        "Phys DEF": 0.7769,
+        "Magic DEF": 0.6308
       }
     }
   }

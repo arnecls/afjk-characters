@@ -38,6 +38,7 @@ _TIER = {
     "ex+10": "EX+10",
     "ex+15": "EX+15",
     "supreme+": "Supreme+",
+    "supreme+_2": "Supreme+ Lv2",
     "seasonal": "Seasonal",
 }
 
@@ -320,6 +321,7 @@ DEFINING_TIER_SCORE_MULT = {
     "EX+10": 1.6,
     "EX+15": 1.8,
     "Supreme+": 1.7,
+    "Supreme+ Lv2": 1.8,
 }
 REPLACEMENT_MIN_SCORE = 0.5
 REPLACEMENT_MAX = 3

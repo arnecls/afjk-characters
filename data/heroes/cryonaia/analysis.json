@@ -409,16 +409,75 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Within the domain of Eternal Winter, Cryonaia's ice storms move 37.5% faster and deal damage once every 0.25s.",
+                "While inside the domain, Cryonaia also gains 60% damage reduction, and dealing damage to enemies triggers extra magic damage equal to 4% of the target's current HP.",
+                "The extra magic damage cannot exceed 40% (ATK-based)."
               ]
             }
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "damage",
+                "self": true
+              }
+            ],
+            "type": "damage",
+            "damage_type": "magic",
+            "name": "Magic",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 4.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Magic (Supreme+ Lv2)"
+          },
+          {
+            "label": "Damage taken — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -470,6 +529,7 @@
     "benefit_stats": [
       "atk",
       "haste",
+      "max_hp",
       "shield"
     ],
     "scalar_stat_shares": {
@@ -674,14 +734,24 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Within the domain of Eternal Winter, Cryonaia's ice storms move 37.5% faster and deal damage once every 0.25s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "While inside the domain, Cryonaia also gains 60% damage reduction, and dealing damage to enemies triggers extra magic damage equal to 4% of the target's current HP.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "The extra magic damage cannot exceed 40% (ATK-based).",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "dba2df8ec35486c5b6df4058c19f58e27c317767fac21cb5e9b7a5b429737098",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "db445ed7a29c8433f4c78840d433042db096403ee214bb1668f4bc2464e80a60",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

@@ -319,7 +319,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "e262ca18a2794fe09215521916ab73bb37494b2da5914a6b68dd12c889854549",
+        "source_hash": "9f67454321297a83aab2a8a422b85c23deee28e1482bd41a877adf4788fa9a31",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -352,6 +352,61 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Vitality",
+                "label": "debuff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 30.0
+                  }
+                ]
+              },
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Max HP",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "immunity",
+                "immunity_type": "unaffected",
+                "timing": "on_skill",
+                "duration": 3.0
+              }
+            ],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       }
@@ -360,6 +415,7 @@
   "behavior_tags": [
     "ally-healer",
     "assassin",
+    "enemy-debuffer",
     "execute",
     "heal-inhibitor",
     "high-initial-energy",
@@ -375,5 +431,5 @@
     "skill5": "recover energy after defeating enemy with ultimate"
   },
   "play_overview": "[[Nara]] strikes a hero for **scaling damage against low HP ratios**, then yanks out-of-range foes **into melee** for a knock-up combo and rapid follow-up attacks. Each assist or defeat **grows her ATK**, and an ultimate kill **releases a shockwave** that damages enemies and heals allies while refunding energy on the finisher. She blends **assassin burst with team sustain** when fights produce kills and wounded targets she can reach. Pulling isolated carries and chaining knock-up strikes define her win condition against backline-heavy formations that leave squishy targets exposed. She needs **access to wounded or isolated targets** and enough energy to cycle her pull-strike loop repeatedly through the fight. **Tanky frontlines or foes that stay in range** deny her execute angle, shockwave value, and the energy refund that keeps her assassin tempo alive through longer trades.",
-  "counter_overview": "[[Nara]] yanks **out-of-range heroes into melee** for knock-up follow-ups, then **executes low-HP targets** with a fast ultimate that can shockwave-heal and refund energy on the finisher. She snowballs ATK off assists and kills. Keep fragile carries **inside her attack range** so the pull never arms, or blunt the yank with [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Ravion]] or [[Shakir]]. Kill her before the execute loop with high-damage melee like [[Himmel]] or [[Shakir]], and cancel Crimson Vengeance with [[Lily May]] when she winds up on a wounded mark."
+  "counter_overview": "[[Nara]] yanks **out-of-range heroes into melee** for knock-up follow-ups, then **executes low-HP targets** with a fast ultimate that can shockwave-heal and refund energy on the finisher. She snowballs ATK off assists and kills. Keep fragile carries **inside her attack range** so the pull never arms, or blunt the yank with [[filter:steadfast]] like [[Igor]] or [[Gunnar]], and [[filter:unaffected]] like [[Ravion]] or [[Shakir]]. Kill her before the execute loop with high-damage melee like [[Himmel]] or [[Shakir]], and cancel Crimson Vengeance with [[Lily May]] when she winds up on a wounded mark. She is **Unaffected** while casting Phantom Chains, so punish before or after the pull instead."
 }

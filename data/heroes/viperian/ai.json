@@ -300,7 +300,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "3fb83e31df4b56934f350c693952c27ad8d7de8c7d432f78ccd68ad855dfd452",
+        "source_hash": "d78dee093a2ceb70af6cdcfa3c06587a0c7def3e680b718ebf97bb262c9fcd7d",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -357,6 +357,32 @@
             "immunities": [],
             "special_provides": [],
             "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "Lifedrain",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 10.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
           }
         }
       }
@@ -366,7 +392,8 @@
     "aoe-damage",
     "dot-specialist",
     "energy-inhibitor",
-    "hp-loss"
+    "hp-loss",
+    "life-drain"
   ],
   "summon_profile": null,
   "skill_summaries": {

@@ -108,9 +108,12 @@ class RenderSiteTests(unittest.TestCase):
         sinbad = next(hero for hero in payload["heroes"] if hero["slug"] == "sinbad")
         cats = [row["category"] for row in sinbad["sections"]["replacements"]]
         # Batch-d audit (2026-09-22) re-homed the mark provide to
-        # Skill1 with corrected text; the scorer yields Similar
-        # Skills + Damage buckets and no Debuffs bucket.
-        self.assertEqual(cats, ["Similar Skills", "Damage"])
+        # Skill1 with corrected text. Dunlingr's Level 2 Enhance Force
+        # adds Energy, Haste and Vitality debuffs, so a Debuffs bucket
+        # with Dunlingr follows Similar Skills and Damage.
+        self.assertEqual(
+            cats, ["Similar Skills", "Damage", "Debuffs on enemies"]
+        )
         similar = next(
             row
             for row in sinbad["sections"]["replacements"]

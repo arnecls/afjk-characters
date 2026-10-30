@@ -530,9 +530,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Shooting a Parasitic Seed instantly restores Granny Dahnie's Energy by 100.",
+                "While shooting the Parasitic Seed, Granny Dahnie's Haste increased by 150, and the ATK reduction the seed inflicts on enemies is further increased by 70%.."
               ]
             }
           ]
@@ -554,12 +555,77 @@
                 "value": 120.0
               }
             ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 100.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Haste",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 150.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "ATK",
+            "label": "debuff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 70.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
           {
             "label": "Direct healing — Self",
             "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Haste — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK (Supreme+ Lv2)",
+            "polarity": "debuff"
           }
         ]
       }
@@ -583,6 +649,8 @@
       ]
     ],
     "benefit_stats": [
+      "haste",
+      "energy",
       "physical_def",
       "magic_def"
     ],
@@ -748,14 +816,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Shooting a Parasitic Seed instantly restores Granny Dahnie's Energy by 100.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "While shooting the Parasitic Seed, Granny Dahnie's Haste increased by 150, and the ATK reduction the seed inflicts on enemies is further increased by 70%..",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "c759cdca5ef1305eb6d3a84813d8d1249cf1d7ac38cbc642c72c4273941954f2",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "c483139fd61dca7a9249f9f9db843d9571e7e109ffaefceab7177fed28950252",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

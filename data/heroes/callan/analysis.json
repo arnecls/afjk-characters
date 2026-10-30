@@ -400,9 +400,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Callan enhances the shield granted by Restless Guardian at the start of the battle, increasing its value to 600% (HP-based) and raising the percentage of incoming damage it absorbs to 80% for allies within 2 tiles.",
+                "After the shield expires, he gets back up 50% faster."
               ]
             }
           ]
@@ -424,11 +425,38 @@
                 "value": 15.0
               }
             ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "ally",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 2,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "battle_start"
+              }
+            ],
+            "type": "shield",
+            "name": "Shield",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 600.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
           {
             "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Shield — Area (Supreme+ Lv2)",
             "polarity": "buff"
           }
         ]
@@ -485,8 +513,8 @@
       "shield"
     ],
     "scalar_stat_shares": {
-      "atk": 0.625,
-      "max_hp": 0.375
+      "atk": 0.5882352941176471,
+      "max_hp": 0.4117647058823529
     },
     "id": "callan",
     "display_name": "Callan",
@@ -652,14 +680,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Callan enhances the shield granted by Restless Guardian at the start of the battle, increasing its value to 600% (HP-based) and raising the percentage of incoming damage it absorbs to 80% for allies within 2 tiles.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "After the shield expires, he gets back up 50% faster.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "285ec58f50a96d07cf63dde1ca8f2ec966f15b37d6dd3854e6c700675450c3b4",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "dd0384e4faa6e4963d792a2fe9e83f961fc7cff048790c961c30ed070af5dfef",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

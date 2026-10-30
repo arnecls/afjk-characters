@@ -349,11 +349,44 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "d2725e936b93dc194768202a0499ffe6e41011fb3d58d055ff1005eaabdfd09d",
+        "source_hash": "c6e7a95ba4ec9ce24d7569b064ec59814ff6e07f61fa2cab0bd9bceb68cfa212",
         "is_max_known": true,
         "tiers": {
           "base": {
             "effects": [],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "damage",
+                "damage_type": "max_hp",
+                "name": "Max HP-based damage",
+                "label": "damage_max_hp",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 5.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "normal_attack",
+                    "self": true
+                  }
+                ]
+              }
+            ],
             "summon_effects": [],
             "immunities": [],
             "special_provides": [],

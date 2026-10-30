@@ -228,9 +228,10 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Callan enhances the shield granted by Restless Guardian at the start of the battle, increasing its value to 600% (HP-based) and raising the percentage of incoming damage it absorbs to 80% for allies within 2 tiles.",
+                "After the shield expires, he gets back up 50% faster."
               ]
             }
           ]
@@ -266,9 +267,9 @@
         "ATK SPD": "average"
       },
       "roster_percentiles": {
-        "HP": 0.9141,
-        "Phys DEF": 0.8828,
-        "Magic DEF": 0.8906
+        "HP": 0.9154,
+        "Phys DEF": 0.8846,
+        "Magic DEF": 0.8923
       }
     }
   }

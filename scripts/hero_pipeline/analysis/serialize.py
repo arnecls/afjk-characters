@@ -227,6 +227,8 @@ def to_schema_tier(display: str) -> str:
         return token.lower()
     if match := re.fullmatch(r"Paragon (\d+)", token, re.IGNORECASE):
         return f"paragon_{match.group(1)}"
+    if re.fullmatch(r"Supreme\+ Lv2", token, re.IGNORECASE):
+        return "supreme+_2"
     if token.endswith("+"):
         return token.lower()
     return _display_phrase_to_schema(token)
@@ -241,6 +243,8 @@ def to_display_tier(schema: str) -> str:
         return f"R{match.group(1)}"
     if match := re.fullmatch(r"paragon_(\d+)", schema):
         return f"Paragon {match.group(1)}"
+    if schema == "supreme+_2":
+        return "Supreme+ Lv2"
     if schema.endswith("+"):
         return schema.capitalize()
     return _schema_token_to_title(schema)

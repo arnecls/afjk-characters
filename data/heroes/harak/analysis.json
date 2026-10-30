@@ -450,6 +450,18 @@
           "raw": "Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vicious Bite.",
           "active": [
             "Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vicious Bite."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
+              "text": [
+                "When Harak enters feast mode at the start of battle, his attack animation speed increases by 300% and he gains 200 Energy.",
+                "His ATK and HP also increase by 60% for 12s.",
+                "He then attempts to cast Tidal Assault on his current target without triggering its cooldown.",
+                "While in feast mode, Harak takes 25% less damage, and whenever he deals damage, he deals extra damage equal to 8% of the target's lost HP, up to 160% (ATK-based)."
+              ]
+            }
           ]
         },
         "effects": [
@@ -460,6 +472,12 @@
             "target": "self",
             "area": "single",
             "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "battle_start"
+              }
+            ],
             "type": "buff",
             "name": "Energy",
             "label": "buff_stat",
@@ -469,12 +487,158 @@
                 "value": 700.0
               }
             ],
-            "persistence": "permanent"
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "battle_start"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 300.0
+              }
+            ],
+            "duration": 12.0,
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "battle_start"
+              }
+            ],
+            "type": "buff",
+            "name": "ATK",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 60.0
+              }
+            ],
+            "duration": 12.0,
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "battle_start"
+              }
+            ],
+            "type": "buff",
+            "name": "Max HP",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 300.0
+              }
+            ],
+            "duration": 12.0,
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 25.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "status_condition",
+                "status": "active_state"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "lost_hp",
+            "name": "Lost HP-based damage",
+            "label": "damage_lost_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 8.0
+              }
+            ]
           }
         ],
         "skill_card_tags": [
           {
+            "label": "Lost HP-based damage (Supreme+ Lv2)"
+          },
+          {
             "label": "Energy — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "ATK SPD — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Max HP — Self (Supreme+ Lv2)",
             "polarity": "buff"
           }
         ]
@@ -517,6 +681,8 @@
       ]
     ],
     "benefit_stats": [
+      "atk",
+      "atk_spd",
       "haste",
       "max_hp",
       "crit",
@@ -702,11 +868,31 @@
         "Supreme+",
         "Upon assisting or defeating 2 units, Harak recovers 700 Energy from casting Vicious Bite.",
         "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "When Harak enters feast mode at the start of battle, his attack animation speed increases by 300% and he gains 200 Energy.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "His ATK and HP also increase by 60% for 12s.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "He then attempts to cast Tidal Assault on his current target without triggering its cooldown.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "While in feast mode, Harak takes 25% less damage, and whenever he deals damage, he deals extra damage equal to 8% of the target's lost HP, up to 160% (ATK-based).",
+        "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "dc5e7ea8f0d090bc0ecd655772f7adca938cab4d5d960f133cea632bae06bd51",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "7ee757cf6eff5724658b5a4d84d28eedaa7ce9b44911236ff1260ff2ddcfdd00",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

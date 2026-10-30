@@ -293,7 +293,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "cd90b54a22c9c8832583de273b819991a0946fe720452a1133d4a1a436347075",
+        "source_hash": "5bce5602b983300030aea29fc0ef4f6743a4d695e0b45fdc195b87164dfef2f2",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -308,6 +308,31 @@
                 "description": "Increases the hiding duration after being defeated by 10s."
               }
             ],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "area": "single",
+                "target_count": 1,
+                "type": "debuff",
+                "name": "Energy",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
             "special_requires": []
           }
         }

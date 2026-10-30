@@ -251,7 +251,7 @@
         }
       },
       "Unlocks at Supreme+": {
-        "source_hash": "5bfe79e12d9c4cec5bdbad9b428022786614519bd4dbfb7fb20177b8ef6698cb",
+        "source_hash": "f90e8b155954762571e1871f241f1875d77f30ebc2433b81d125b0074de5de7c",
         "is_max_known": true,
         "tiers": {
           "supreme+": {
@@ -274,6 +274,32 @@
                     "value": 20.0
                   }
                 ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "supreme+_2": {
+            "effects": [
+              {
+                "tier": "supreme+_2",
+                "is_max_known": true,
+                "targeting_label": "Single target",
+                "target": "ally",
+                "area": "single",
+                "target_count": 1,
+                "type": "buff",
+                "name": "DEF Penetration",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 30.0
+                  }
+                ],
+                "persistence": "permanent"
               }
             ],
             "summon_effects": [],

@@ -525,9 +525,11 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Unlock {{Item|Shadow Essence"
+                "Enemies marked by Notice Beforehand deal 20% less damage.",
+                "While in Skyblaster mode, Vala gains 100 more Energy every time she attacks the marked enemy.",
+                "In Sword mode, she instead gains an extra 30 Execution."
               ]
             }
           ]
@@ -550,12 +552,77 @@
               }
             ],
             "persistence": "permanent"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage dealt",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ]
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Energy",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "flat",
+                "value": 100.0
+              }
+            ],
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Execution",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 30.0
+              }
+            ],
+            "persistence": "temporary"
           }
         ],
         "skill_card_tags": [
           {
             "label": "Damage dealt — Self",
             "polarity": "buff"
+          },
+          {
+            "label": "Energy — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Execution — Self (Supreme+ Lv2)",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage dealt — Single target (Supreme+ Lv2)",
+            "polarity": "debuff"
           }
         ]
       }
@@ -606,7 +673,9 @@
     ],
     "benefit_stats": [
       "atk",
-      "haste"
+      "haste",
+      "execution",
+      "energy"
     ],
     "scalar_stat_shares": {
       "atk": 1.0
@@ -800,14 +869,24 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Unlock {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Enemies marked by Notice Beforehand deal 20% less damage.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "While in Skyblaster mode, Vala gains 100 more Energy every time she attacks the marked enemy.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "In Sword mode, she instead gains an extra 30 Execution.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "8b24e87b8cb5cc222548f044baf70281f96b8cfe4cba12009b8bedd6ae5c57c2",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "85fd01146db8485dc696b7ab6ed8f3424041674b34f881f22c507ebd7f351961",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

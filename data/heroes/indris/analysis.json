@@ -503,16 +503,46 @@
           "upgrades": [
             {
               "level": "2",
-              "unlock": null,
+              "unlock": "Unlocks at Supreme+ (100 Shadow Essence)",
               "text": [
-                "Level 2 (Unlocks with {{Item|Shadow Essence"
+                "Within 4s after Indris breaks an enemy's weakness, each of his normal attack arrow that hits the affected enemy deals extra physical damage equal to 5% of the enemy's max HP.",
+                "The damage cannot exceed 150% of Indris' ATK."
               ]
             }
           ]
         },
-        "effects": [],
-        "passive_only": true,
-        "skill_card_tags": []
+        "effects": [
+          {
+            "tier": "supreme+_2",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "normal_attack",
+                "self": true
+              }
+            ],
+            "type": "damage",
+            "damage_type": "max_hp",
+            "name": "Max HP-based damage",
+            "label": "damage_max_hp",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 5.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Max HP-based damage (Supreme+ Lv2)"
+          }
+        ]
       }
     },
     "synergy_profile": {
@@ -727,14 +757,19 @@
         "Unlocks at Supreme+"
       ],
       [
-        "Supreme+",
-        "Level 2 (Unlocks with {{Item|Shadow Essence",
+        "Supreme+ Lv2",
+        "Within 4s after Indris breaks an enemy's weakness, each of his normal attack arrow that hits the affected enemy deals extra physical damage equal to 5% of the enemy's max HP.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+ Lv2",
+        "The damage cannot exceed 150% of Indris' ATK.",
         "Unlocks at Supreme+"
       ]
     ]
   },
   "provenance": {
-    "inputs_hash": "80017fdf8a7216f3b5b701d9800f1c544076e83dfd21412a4accd4fced5b822a",
-    "algorithm_hash": "599eda6b00d263501c878dd93e1db546cdea014b63d3e82132fdf1c598d6a279"
+    "inputs_hash": "9d14e4b11c74b9dd4a9d8350ec0eef061b50f43ac09b7023e6d96a13a05b32ad",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }
