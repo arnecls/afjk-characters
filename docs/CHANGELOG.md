@@ -33,6 +33,7 @@
 | nara | - Added the tag `enemy-debuffer` |
 | alsa | - Added the tags `aoe-damage` and `enemy-debuffer` |
 | atalanta, nara, lenya, cryonaia, harak, temesia | - Updated the counter text for the Level 2 upgrade |
+| 126 heroes (most of the roster) | - Rewrote the first sentences of the counter text<br>- The new opening names the main PVP threat or the window to stop the hero<br>- The opening no longer repeats the play overview |
 | aster, athalia, faramor, lenya, lily-may, salazer, seth, shadewing, silvina, sinbad, soren, sylphira, walker | - Refreshed relative stat ranks |
 
 ### Implementation changes
