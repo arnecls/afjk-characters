@@ -389,7 +389,7 @@ window.AFKJ = window.AFKJ || {};
       return "";
     }
     const tierMatch = tag.match(
-      /\s*\((legendary\+|mythic\+|supreme\+|ex\+\d+)\)\s*$/i
+      /\s*\((legendary\+|mythic\+|supreme\+(?: lv2)?|ex\+\d+)\)\s*$/i
     );
     let tierKey = "";
     if (tierMatch) {
