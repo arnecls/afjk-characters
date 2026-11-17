@@ -118,7 +118,7 @@ HERO_NAMES = [
     "Rolan", "Saida", "Salazer", "Satrana", "Scarlita", "Senea", "Seth", "Shadewing",
     "Shakir",
     "Shemira", "Silven", "Silvina", "Sinbad", "Smokey & Meerky", "Solise",
-    "Sonja", "Soren", "Sylphira", "Taichi & Agumon", "Talene", "Tasi", "Temesia", "Thador",
+    "Sonja", "Soren", "Sylphira", "Taichi & Agumon", "Talene", "Tasi", "Temesia", "Thador", "Thane",
     "Thoran", "Tilaya", "Ulmus", "Vala", "Valen", "Valka", "Velara",
     "Viperian", "Voracia", "Walker", "Yamato & Gabumon", "Zandrok", "Zanie", "Zorya",
 ]

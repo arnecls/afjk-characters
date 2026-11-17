@@ -235,7 +235,13 @@
     ],
     "range": 1,
     "release_date": "2026-10-09",
-    "role_category": "damage_dealer"
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "A+",
+      "dream_realm": "B",
+      "dream_realm_endless": "B"
+    },
+    "role_category": "specialist"
   },
   "external": {
     "walk_speed": "fast",

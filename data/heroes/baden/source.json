@@ -244,6 +244,12 @@
     ],
     "range": 1,
     "release_date": "2026-10-29",
+    "prydwen_tiers": {
+      "afk_stages": "C",
+      "pvp": "A+",
+      "dream_realm": "B",
+      "dream_realm_endless": "A+"
+    },
     "role_category": "damage_dealer"
   },
   "external": {

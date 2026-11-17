@@ -1,0 +1,835 @@
+{
+  "schema_version": 2,
+  "id": "thane",
+  "display_name": "Thane",
+  "local": {
+    "long_name": "Thane - The Exalted",
+    "faction": "lightbearer",
+    "class": "warrior",
+    "role_category": "damage_dealer",
+    "is_energy_provider": false,
+    "is_melee": true,
+    "is_dual_range": false,
+    "default_range": 1,
+    "release_date": "2026-11-13",
+    "season": "Veil of Memories",
+    "season_number": 8,
+    "skills": {
+      "Thousandfold Edge": {
+        "category": "ultimate",
+        "description": {
+          "raw": "Thane becomes invincible and unleashes 8 slashes on random enemies across the battlefield. Each slash deals 210% (ATK-based) + 25% (SP-based) damage and applies a Sword Mark. After the final slash, he detonates all Sword Marks, dealing 200% (ATK-based) + 20% (SP-based) true damage to enemies within 1 tiles. If an enemy takes damage from multiple Sword Mark detonations, subsequent hits deal 50% less damage. Each duel Thane successfully completes adds 2 slashes to this skill. After he completes 3 duels, his swordsmanship reaches perfection, and this skill counts as a normal attack.",
+          "active": [
+            "Thane becomes invincible and unleashes 8 slashes on random enemies across the battlefield.",
+            "Each slash deals 210% (ATK-based) + 25% (SP-based) damage and applies a Sword Mark.",
+            "After the final slash, he detonates all Sword Marks, dealing 200% (ATK-based) + 20% (SP-based) true damage to enemies within 1 tiles.",
+            "If an enemy takes damage from multiple Sword Mark detonations, subsequent hits deal 50% less damage.",
+            "Each duel Thane successfully completes adds 2 slashes to this skill.",
+            "After he completes 3 duels, his swordsmanship reaches perfection, and this skill counts as a normal attack."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 51",
+              "text": [
+                "Increases slash damage to 220% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 111",
+              "text": [
+                "Increases slash damage to 230% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 171",
+              "text": [
+                "Increases slash damage to 240% (ATK-based) + 25% (SP-based)."
+              ]
+            },
+            {
+              "level": "5",
+              "unlock": "Unlocks at Level 231",
+              "text": [
+                "Increases slash damage to 250% (ATK-based) + 25% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Multiple targets",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 3,
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 275.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "radius",
+            "target_count": -1,
+            "area_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 250.0
+              }
+            ]
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "on_ultimate",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "initial_energy": 400.0,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "True damage"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Duelist's Gambit": {
+        "category": "skill1",
+        "description": {
+          "raw": "After a battle starts, Thane blinks to the rearmost enemy hero in his column and challenges them to a duel. He then repeats this in the column to his left, followed by the column to his right. Each duel lasts for 4s. During the duel, both heroes prioritize attacking each other and can only use normal attacks. If Thane has at least 20% HP remaining when the duel ends, the duel is considered successfully completed, restoring 50% + 5% (SP-based) of Thane's max HP and permanently increasing his basic stats by 12% + 1.5% (SP-based). Thane remains unaffected during duels. After he completes 3 duels, his unaffected status lasts until the end of the battle.",
+          "active": [
+            "After a battle starts, Thane blinks to the rearmost enemy hero in his column and challenges them to a duel.",
+            "He then repeats this in the column to his left, followed by the column to his right.",
+            "Each duel lasts for 4s.",
+            "During the duel, both heroes prioritize attacking each other and can only use normal attacks.",
+            "If Thane has at least 20% HP remaining when the duel ends, the duel is considered successfully completed, restoring 50% + 5% (SP-based) of Thane's max HP and permanently increasing his basic stats by 12% + 1.5% (SP-based).",
+            "Thane remains unaffected during duels.",
+            "After he completes 3 duels, his unaffected status lasts until the end of the battle."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 71",
+              "text": [
+                "Thane permanently increases his basic stats by 13% + 1.5% (SP-based) upon successfully completing a duel."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 131",
+              "text": [
+                "Thane permanently increases his basic stats bv 14% + 1.5% (SP-based) upon successfully completing a duel."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 191",
+              "text": [
+                "Thane permanently increases his basic stats bv 15% + 1.5% (SP-based) upon successfully completing a duel."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
+            "type": "crowd_control",
+            "cc-type": "taunt",
+            "duration": 4.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "battle_phase",
+                "phase": "start_of_battle"
+              }
+            ],
+            "type": "crowd_control",
+            "cc-type": "silence",
+            "duration": 4.0
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "heal",
+            "healing_type": "direct",
+            "name": "Direct healing",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ]
+          },
+          {
+            "tier": "base",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Basic stats",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 15.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "type": "immunity",
+            "tier": "base",
+            "immunity_type": "unaffected",
+            "timing": "conditional",
+            "targeting_label": "Self",
+            "target": "self",
+            "area": "single",
+            "target_count": 1
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Direct healing — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Basic stats — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Silence — Single target"
+          },
+          {
+            "label": "Taunt — Single target"
+          },
+          {
+            "label": "Unaffected — Self"
+          }
+        ]
+      },
+      "Crosscut Flurry": {
+        "category": "skill2",
+        "description": {
+          "raw": "Thane slashes at his target 3 times from different directions. Each slash hits enemies along a 3-tile line through the target, dealing 120% (ATK-based) + 15% (SP-based) damage. This skill counts as a normal attack. Its cooldown resets whenever Thane begins a duel.",
+          "active": [
+            "Thane slashes at his target 3 times from different directions.",
+            "Each slash hits enemies along a 3-tile line through the target, dealing 120% (ATK-based) + 15% (SP-based) damage.",
+            "This skill counts as a normal attack.",
+            "Its cooldown resets whenever Thane begins a duel."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at Level 91",
+              "text": [
+                "Increases the impact damage to 130% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at Level 151",
+              "text": [
+                "Increases the impact damage to 140% (ATK-based) + 15% (SP-based)."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at Level 211",
+              "text": [
+                "Increases the impact damage to 150% (ATK-based) + 15% (SP-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "base",
+            "targeting_label": "Area",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "path",
+            "target_count": -1,
+            "area_count": 3,
+            "area_direction": "selected_target",
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 165.0
+              }
+            ]
+          }
+        ],
+        "cooldown": 6.0,
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          }
+        ]
+      },
+      "Hero Focus": {
+        "category": "skill3",
+        "description": {
+          "raw": "Thane increases his ATK SPD by 15 during battle, and by an extra 9 after successfully completing 1 duel.",
+          "active": [
+            "Thane increases his ATK SPD by 15 during battle, and by an extra 9 after successfully completing 1 duel."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": null,
+              "text": [
+                "Thane increases his ATK SPD by 20 during battle, and by an extra 12 after successfully completing 1 duel."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": null,
+              "text": [
+                "Thane increases his ATK SPD by 25 during battle, and by an extra 15 after successfully completing 1 duel."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "legendary+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "ATK SPD",
+            "label": "buff_offensive",
+            "value": [
+              {
+                "type": "flat",
+                "value": 40.0
+              }
+            ],
+            "persistence": "permanent"
+          }
+        ],
+        "skill_range": 1,
+        "skill_card_tags": [
+          {
+            "label": "ATK SPD — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Phantom Riposte": {
+        "category": "skill4",
+        "description": {
+          "raw": "Thane takes 50% less damage from enemies' non-normal attacks. Whenever he is about to take damage from a non-normal attack, he summons a phantom that counterattacks the attacker, dealing 160% (ATK-based) damage. Each enemy can trigger this effect only once every 3s.",
+          "active": [
+            "Thane takes 50% less damage from enemies' non-normal attacks.",
+            "Whenever he is about to take damage from a non-normal attack, he summons a phantom that counterattacks the attacker, dealing 160% (ATK-based) damage.",
+            "Each enemy can trigger this effect only once every 3s."
+          ],
+          "upgrades": [
+            {
+              "level": "2",
+              "unlock": "Unlocks at EX. +5",
+              "text": [
+                "Increases the damage dealt by phantom slashes to 180% (ATK-based)."
+              ]
+            },
+            {
+              "level": "3",
+              "unlock": "Unlocks at EX. +10",
+              "text": [
+                "Crosscut Flurry summons one extra phantom for each duel Thane has successfully completed.",
+                "These phantoms dash through the target, dealing 180% (ATK-based) damage.",
+                "All phantoms also deal an extra 100% (ATK-based) true damage.",
+                "After Thane successfully completes 2 duels, every hit of Crosscut Flurry is guaranteed to critically strike, with each point of Crit further increasing its critical damage by 1."
+              ]
+            },
+            {
+              "level": "4",
+              "unlock": "Unlocks at EX. +15",
+              "text": [
+                "Increases the damage dealt by phantom slashes to 200% (ATK-based)."
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "tier": "mythic+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "damage"
+              }
+            ],
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 50.0
+              }
+            ],
+            "persistence": "permanent"
+          },
+          {
+            "tier": "mythic+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "conditions": [
+              {
+                "type": "trigger_condition",
+                "trigger": "damage"
+              }
+            ],
+            "type": "damage",
+            "damage_type": "physical",
+            "name": "Physical",
+            "label": "damage_normal",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ]
+          },
+          {
+            "tier": "ex+10",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "damage",
+            "damage_type": "true",
+            "name": "True damage",
+            "label": "damage_true",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 200.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Physical"
+          },
+          {
+            "label": "Physical (EX+5)"
+          },
+          {
+            "label": "Physical (EX+10)"
+          },
+          {
+            "label": "True damage (EX+10)"
+          },
+          {
+            "label": "Physical (EX+15)"
+          },
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          }
+        ]
+      },
+      "Enhance Force": {
+        "category": "skill5",
+        "description": {
+          "raw": "Thane identifies the weaknesses of enemies he attacks. For 15s, he deals 20% more damage to these enemies and takes 20% less damage from them; they also take 12% more damage from normal attacks.",
+          "active": [
+            "Thane identifies the weaknesses of enemies he attacks.",
+            "For 15s, he deals 20% more damage to these enemies and takes 20% less damage from them; they also take 12% more damage from normal attacks."
+          ]
+        },
+        "effects": [
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage dealt",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "duration": 15.0,
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Self",
+            "is_max_known": true,
+            "target": "self",
+            "area": "single",
+            "target_count": 1,
+            "type": "buff",
+            "name": "Damage taken",
+            "label": "buff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 20.0
+              }
+            ],
+            "duration": 15.0,
+            "persistence": "temporary"
+          },
+          {
+            "tier": "supreme+",
+            "targeting_label": "Single target",
+            "is_max_known": true,
+            "target": "enemy",
+            "area": "single",
+            "target_count": 1,
+            "type": "debuff",
+            "name": "Damage taken",
+            "label": "debuff_stat",
+            "value": [
+              {
+                "type": "percentage",
+                "value": 12.0
+              }
+            ]
+          }
+        ],
+        "skill_card_tags": [
+          {
+            "label": "Damage dealt — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Self",
+            "polarity": "buff"
+          },
+          {
+            "label": "Damage taken — Single target",
+            "polarity": "debuff"
+          }
+        ]
+      }
+    },
+    "synergy_profile": {
+      "provides": [
+        {
+          "label": "Invincibility",
+          "tier": "base",
+          "targeting": "Self",
+          "description": "Thane is invincible while unleashing the ultimate slashes."
+        }
+      ],
+      "requires": []
+    },
+    "damage_entries": [
+      [
+        "physical",
+        "Area, Multiple targets, Single target"
+      ],
+      [
+        "true",
+        "Area, Single target"
+      ]
+    ],
+    "benefit_stats": [
+      "atk",
+      "atk_spd",
+      "max_hp",
+      "physical_def",
+      "magic_def"
+    ],
+    "scalar_stat_shares": {
+      "atk": 1.0
+    },
+    "id": "thane",
+    "display_name": "Thane",
+    "positional_tile_buff_labels": [],
+    "proximity_aura_buff_labels": [],
+    "proximity_aura_radius": null,
+    "primary_damage_type": "Physical",
+    "signature_calculated": "ultimate",
+    "skill_chunks": [
+      [
+        "base",
+        "Thane becomes invincible and unleashes 8 slashes on random enemies across the battlefield.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each slash deals 210% (ATK-based) + 25% (SP-based) damage and applies a Sword Mark.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "After the final slash, he detonates all Sword Marks, dealing 200% (ATK-based) + 20% (SP-based) true damage to enemies within 1 tiles.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "If an enemy takes damage from multiple Sword Mark detonations, subsequent hits deal 50% less damage.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Each duel Thane successfully completes adds 2 slashes to this skill.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "After he completes 3 duels, his swordsmanship reaches perfection, and this skill counts as a normal attack.",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases slash damage to 220% (ATK-based) + 25% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases slash damage to 230% (ATK-based) + 25% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases slash damage to 240% (ATK-based) + 25% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "Increases slash damage to 250% (ATK-based) + 25% (SP-based).",
+        "Ultimate"
+      ],
+      [
+        "base",
+        "After a battle starts, Thane blinks to the rearmost enemy hero in his column and challenges them to a duel.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "He then repeats this in the column to his left, followed by the column to his right.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Each duel lasts for 4s.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "During the duel, both heroes prioritize attacking each other and can only use normal attacks.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "If Thane has at least 20% HP remaining when the duel ends, the duel is considered successfully completed, restoring 50% + 5% (SP-based) of Thane's max HP and permanently increasing his basic stats by 12% + 1.5% (SP-based).",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Thane remains unaffected during duels.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "After he completes 3 duels, his unaffected status lasts until the end of the battle.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Thane permanently increases his basic stats by 13% + 1.5% (SP-based) upon successfully completing a duel.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Thane permanently increases his basic stats bv 14% + 1.5% (SP-based) upon successfully completing a duel.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Thane permanently increases his basic stats bv 15% + 1.5% (SP-based) upon successfully completing a duel.",
+        "Skill1"
+      ],
+      [
+        "base",
+        "Thane slashes at his target 3 times from different directions.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Each slash hits enemies along a 3-tile line through the target, dealing 120% (ATK-based) + 15% (SP-based) damage.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "This skill counts as a normal attack.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Its cooldown resets whenever Thane begins a duel.",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 130% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 140% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "base",
+        "Increases the impact damage to 150% (ATK-based) + 15% (SP-based).",
+        "Skill2"
+      ],
+      [
+        "Legendary+",
+        "Thane increases his ATK SPD by 15 during battle, and by an extra 9 after successfully completing 1 duel.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Thane increases his ATK SPD by 20 during battle, and by an extra 12 after successfully completing 1 duel.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Legendary+",
+        "Thane increases his ATK SPD by 25 during battle, and by an extra 15 after successfully completing 1 duel.",
+        "Unlocks at Legendary+"
+      ],
+      [
+        "Mythic+",
+        "Thane takes 50% less damage from enemies' non-normal attacks.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Whenever he is about to take damage from a non-normal attack, he summons a phantom that counterattacks the attacker, dealing 160% (ATK-based) damage.",
+        "Ex. Skill"
+      ],
+      [
+        "Mythic+",
+        "Each enemy can trigger this effect only once every 3s.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+5",
+        "Increases the damage dealt by phantom slashes to 180% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "Crosscut Flurry summons one extra phantom for each duel Thane has successfully completed.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "These phantoms dash through the target, dealing 180% (ATK-based) damage.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "All phantoms also deal an extra 100% (ATK-based) true damage.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+10",
+        "After Thane successfully completes 2 duels, every hit of Crosscut Flurry is guaranteed to critically strike, with each point of Crit further increasing its critical damage by 1.",
+        "Ex. Skill"
+      ],
+      [
+        "EX+15",
+        "Increases the damage dealt by phantom slashes to 200% (ATK-based).",
+        "Ex. Skill"
+      ],
+      [
+        "Supreme+",
+        "Thane identifies the weaknesses of enemies he attacks.",
+        "Unlocks at Supreme+"
+      ],
+      [
+        "Supreme+",
+        "For 15s, he deals 20% more damage to these enemies and takes 20% less damage from them; they also take 12% more damage from normal attacks.",
+        "Unlocks at Supreme+"
+      ]
+    ]
+  },
+  "provenance": {
+    "inputs_hash": "eb5c4966c1e8236e3fea75503fec4ab414bf501847f444471741fdeb5d7d405c",
+    "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
+  }
+}
