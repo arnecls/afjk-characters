@@ -1,0 +1,493 @@
+{
+  "schema_version": 1,
+  "skill_effects": {
+    "title": "Thane - The Exalted",
+    "skills": {
+      "Ultimate": {
+        "source_hash": "09935fa8c0f3d8b72645d7c0b85e955a68e6036ea07da14e07c713e9b68e1d32",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Multiple targets",
+                "target": "enemy",
+                "is_max_known": true,
+                "type": "damage",
+                "damage_type": "physical",
+                "label": "damage_normal",
+                "name": "Physical",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 250.0
+                  }
+                ],
+                "area": "single",
+                "target_count": 8
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "target": "enemy",
+                "is_max_known": true,
+                "type": "damage",
+                "damage_type": "true",
+                "label": "damage_true",
+                "name": "True damage",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ],
+                "area": "radius",
+                "area_count": 1,
+                "target_count": -1,
+                "anchor": "target_unit"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "base",
+                "immunity_type": "unaffected",
+                "timing": "on_ultimate",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
+            "special_provides": [
+              {
+                "label": "Invincibility",
+                "tier": "base",
+                "targeting": "Self",
+                "description": "Thane is invincible while unleashing the ultimate slashes."
+              }
+            ],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill1": {
+        "source_hash": "b0e85e61570785083a15b1edfc692c7b68aa0cb699d85eb635bfb7a6047b2eea",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "is_max_known": true,
+                "type": "crowd_control",
+                "cc-type": "taunt",
+                "duration": 4.0,
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "is_max_known": true,
+                "type": "crowd_control",
+                "cc-type": "silence",
+                "duration": 4.0,
+                "area": "single",
+                "target_count": 1,
+                "conditions": [
+                  {
+                    "type": "battle_phase",
+                    "phase": "start_of_battle"
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "target": "self",
+                "is_max_known": true,
+                "type": "heal",
+                "area": "single",
+                "target_count": 1,
+                "healing_type": "direct",
+                "name": "Direct healing",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
+                  }
+                ]
+              },
+              {
+                "tier": "base",
+                "targeting_label": "Self",
+                "target": "self",
+                "is_max_known": true,
+                "type": "buff",
+                "area": "single",
+                "target_count": 1,
+                "name": "Basic stats",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 15.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [
+              {
+                "type": "immunity",
+                "tier": "base",
+                "immunity_type": "unaffected",
+                "timing": "conditional",
+                "targeting_label": "Self",
+                "target": "self",
+                "area": "single",
+                "target_count": 1
+              }
+            ],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Skill2": {
+        "source_hash": "8d5fdbe255a7236d19d34db946ecaeebe5c2e572537ffe99b1bec1fbc5ddf996",
+        "is_max_known": true,
+        "tiers": {
+          "base": {
+            "effects": [
+              {
+                "tier": "base",
+                "targeting_label": "Area",
+                "target": "enemy",
+                "is_max_known": true,
+                "type": "damage",
+                "damage_type": "physical",
+                "label": "damage_normal",
+                "name": "Physical",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 150.0
+                  }
+                ],
+                "area": "path",
+                "area_direction": "selected_target",
+                "area_count": 3,
+                "target_count": -1
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Legendary+": {
+        "source_hash": "86f9e562ad99c43f2258c66a3bda3413f841d887cace20d0faa4b999ae9a5795",
+        "is_max_known": true,
+        "tiers": {
+          "legendary+": {
+            "effects": [
+              {
+                "tier": "legendary+",
+                "targeting_label": "Self",
+                "target": "self",
+                "is_max_known": true,
+                "type": "buff",
+                "area": "single",
+                "target_count": 1,
+                "name": "ATK SPD",
+                "label": "buff_offensive",
+                "value": [
+                  {
+                    "type": "flat",
+                    "value": 40.0
+                  }
+                ],
+                "persistence": "permanent"
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Ex. Skill": {
+        "source_hash": "84d1a2172004d52e4dd6beec2da02105079075e4e25e6ea7299bdf06fc1c5a92",
+        "is_max_known": true,
+        "tiers": {
+          "mythic+": {
+            "effects": [
+              {
+                "tier": "mythic+",
+                "targeting_label": "Self",
+                "target": "self",
+                "is_max_known": true,
+                "type": "buff",
+                "area": "single",
+                "target_count": 1,
+                "name": "Damage taken",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 50.0
+                  }
+                ],
+                "persistence": "permanent",
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "damage"
+                  }
+                ]
+              },
+              {
+                "tier": "mythic+",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "is_max_known": true,
+                "type": "damage",
+                "damage_type": "physical",
+                "label": "damage_normal",
+                "name": "Physical",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 160.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "damage"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+5": {
+            "effects": [
+              {
+                "tier": "ex+5",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "is_max_known": true,
+                "type": "damage",
+                "damage_type": "physical",
+                "label": "damage_normal",
+                "name": "Physical",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 180.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "damage"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+10": {
+            "effects": [
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "is_max_known": true,
+                "type": "damage",
+                "damage_type": "physical",
+                "label": "damage_normal",
+                "name": "Physical",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 180.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "damage"
+                  }
+                ]
+              },
+              {
+                "tier": "ex+10",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "is_max_known": true,
+                "type": "damage",
+                "damage_type": "true",
+                "label": "damage_true",
+                "name": "True damage",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 100.0
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          },
+          "ex+15": {
+            "effects": [
+              {
+                "tier": "ex+15",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "is_max_known": true,
+                "type": "damage",
+                "damage_type": "physical",
+                "label": "damage_normal",
+                "name": "Physical",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 200.0
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "trigger_condition",
+                    "trigger": "damage"
+                  }
+                ]
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      },
+      "Unlocks at Supreme+": {
+        "source_hash": "f349c9e9a4c1a7d1d4d1f38202c1e31039171faaefe086d2c7ec2f604f555ad0",
+        "is_max_known": true,
+        "tiers": {
+          "supreme+": {
+            "effects": [
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "target": "self",
+                "is_max_known": true,
+                "type": "buff",
+                "area": "single",
+                "target_count": 1,
+                "name": "Damage dealt",
+                "label": "buff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "temporary",
+                "duration": 15.0
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Self",
+                "target": "self",
+                "is_max_known": true,
+                "type": "buff",
+                "area": "single",
+                "target_count": 1,
+                "name": "Damage taken",
+                "label": "buff_defensive",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 20.0
+                  }
+                ],
+                "persistence": "temporary",
+                "duration": 15.0
+              },
+              {
+                "tier": "supreme+",
+                "targeting_label": "Single target",
+                "target": "enemy",
+                "is_max_known": true,
+                "type": "debuff",
+                "name": "Damage taken",
+                "label": "debuff_stat",
+                "value": [
+                  {
+                    "type": "percentage",
+                    "value": 12.0
+                  }
+                ],
+                "area": "single",
+                "target_count": 1,
+                "duration": 15.0
+              }
+            ],
+            "summon_effects": [],
+            "immunities": [],
+            "special_provides": [],
+            "special_requires": []
+          }
+        }
+      }
+    }
+  },
+  "behavior_tags": [
+    "backline-inhibit",
+    "cc-immunity",
+    "counterattack",
+    "high-damage-ult",
+    "invincibility",
+    "self-repositioner"
+  ],
+  "summon_profile": null,
+  "skill_summaries": {
+    "ultimate": "invincible barrage of physical hits on random enemies that applies marks, then detonates them for AoE true damage; more hits per completed duel",
+    "skill1": "battle-start teleport duels against the rearmost enemy in each column: taunt and silence, unaffected, with heal and permanent stat gain on success",
+    "skill2": "line AoE multi-hit physical damage that counts as a normal attack; cooldown resets when a duel starts",
+    "skill3": "battle ATK SPD increase, higher after a completed duel",
+    "skill4": "reduced damage from non-normal attacks with a counterattack, stronger with duel-scaled extra hits that deal true damage and guarantee crits",
+    "skill5": "damage dealt increase and damage taken reduction against attacked enemies, which also take extra damage from normal attacks"
+  },
+  "play_overview": "[[Thane]] opens the fight by **blinking to the rearmost enemy** in each column and forcing a short duel. While dueling he is **unaffected**, and every duel he survives with enough HP heals him and **permanently raises his stats**. Each completed duel also adds hits to his **invincible ultimate**, which marks random enemies and detonates the marks for AoE true damage. Between duels his line slashes keep pressure on the front. He shines against a rear line that cannot burst him early, and he wants **all duels completed with HP to spare**. He struggles when he is **burst below the duel threshold** or when enemies ignore the taunt and finish him first.",
+  "counter_overview": "[[Thane]] snowballs only if he leaves each duel above its HP threshold, so the matchup is settled in the opening seconds. The rearmost unit in each column is taunted and silenced for the duel, so put a sturdy unit there instead of your carry. Skills and CC will not stop him while he is **unaffected**, so burst him below the survival threshold during the duel with [[Himmel]] or [[Shakir]]. Once his duels are done his ultimate runs while he is **invincible**, so hold burst until it ends instead of spending it mid-cast. Cut the heal that each duel grants with [[filter:heal-inhibitor]] like [[Gwyneth]]."
+}

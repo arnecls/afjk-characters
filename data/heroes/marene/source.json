@@ -114,7 +114,8 @@
         "unlock": "Unlocks at Level 31",
         "meta": {
           "Cooldown": "16s",
-          "Skill Range": "Global"
+          "Skill Range": "Global",
+          "Initial Cooldown": "3s"
         },
         "description": {
           "raw": "Marene conjures 2 clusters of wind blades and launches them at the nearest and farthest enemies, respectively. The blades circle and slash at their targets for 2s, dealing 110% (ATK-based) + 15% (SP-based) damage to the targets and enemies within 2 tiles of them every 0.5s.",
@@ -243,6 +244,12 @@
     ],
     "range": 10,
     "release_date": "2026-10-29",
+    "prydwen_tiers": {
+      "afk_stages": "S+",
+      "pvp": "S+",
+      "dream_realm": "B",
+      "dream_realm_endless": "B"
+    },
     "role_category": "damage_dealer"
   },
   "external": {

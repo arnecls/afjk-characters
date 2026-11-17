@@ -6,7 +6,7 @@
     "long_name": "Estrilda - Knight of Valor",
     "faction": "lightbearer",
     "class": "rogue",
-    "role_category": "damage_dealer",
+    "role_category": "specialist",
     "is_energy_provider": false,
     "is_melee": true,
     "is_dual_range": false,
@@ -862,7 +862,7 @@
     ]
   },
   "provenance": {
-    "inputs_hash": "1c6b9fbc2f1c77c63531b3c08c6ddfa6d996009d46267bb722fac702ad033657",
+    "inputs_hash": "af79663cd859a4c0b4e2afb600fb5faabcae470f614356156b4bba54dda0371f",
     "algorithm_hash": "4da9e3b9b2cf3ea91557744e63082ab4400456c1e41846b33287121daeafbc76"
   }
 }

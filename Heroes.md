@@ -10716,6 +10716,7 @@ Passive. Marene amplifies the Haste buffs her allies grant her by 100% and retai
 *Unlocks at Level 31*
 
 - Cooldown: 16s
+- Initial Cooldown: 3s
 - Skill Range: Global
 
 Marene conjures 2 clusters of wind blades and launches them at the nearest and farthest enemies, respectively. The blades circle and slash at their targets for 2s, dealing 110% (ATK-based) + 15% (SP-based) damage to the targets and enemies within 2 tiles of them every 0.5s.
@@ -10757,3 +10758,83 @@ When the Haste bonus Marene gains from allies reaches 60, she enters Windborne s
 - Skill Range: Global
 
 The small gusts summoned by Gathering Gale and the wind blades created by Twin Cyclone are infused with lightning. Each hit deals an extra 30% (ATK-based) true damage and stuns the target for 0.25s, and permanently reduces the target's Vitality by 4, stacking up to 15 times.
+
+## Thane - The Exalted
+
+*Lightbearer · Warrior · Physical*
+
+A master Lightbearer swordsman who dominates the battlefield with swift, precise strikes. He constantly hones his skills through sparring.
+
+### Ultimate
+
+**Thousandfold Edge**
+*Unlocks at Level 1*
+
+- Skill Range: Global
+- Initial Energy: 400
+
+Thane becomes invincible and unleashes 8 slashes on random enemies across the battlefield. Each slash deals 210% (ATK-based) + 25% (SP-based) damage and applies a Sword Mark. After the final slash, he detonates all Sword Marks, dealing 200% (ATK-based) + 20% (SP-based) true damage to enemies within 1 tiles. If an enemy takes damage from multiple Sword Mark detonations, subsequent hits deal 50% less damage. Each duel Thane successfully completes adds 2 slashes to this skill. After he completes 3 duels, his swordsmanship reaches perfection, and this skill counts as a normal attack.
+
+- Level 2 — Unlocks at Level 51: Increases slash damage to 220% (ATK-based) + 25% (SP-based).
+- Level 3 — Unlocks at Level 111: Increases slash damage to 230% (ATK-based) + 25% (SP-based).
+- Level 4 — Unlocks at Level 171: Increases slash damage to 240% (ATK-based) + 25% (SP-based).
+- Level 5 — Unlocks at Level 231: Increases slash damage to 250% (ATK-based) + 25% (SP-based).
+
+### Skill1
+
+**Duelist's Gambit**
+*Unlocks at Level 11*
+
+- Skill Range: Global
+
+After a battle starts, Thane blinks to the rearmost enemy hero in his column and challenges them to a duel. He then repeats this in the column to his left, followed by the column to his right. Each duel lasts for 4s. During the duel, both heroes prioritize attacking each other and can only use normal attacks. If Thane has at least 20% HP remaining when the duel ends, the duel is considered successfully completed, restoring 50% + 5% (SP-based) of Thane's max HP and permanently increasing his basic stats by 12% + 1.5% (SP-based). Thane remains unaffected during duels. After he completes 3 duels, his unaffected status lasts until the end of the battle.
+
+- Level 2 — Unlocks at Level 71: Thane permanently increases his basic stats by 13% + 1.5% (SP-based) upon successfully completing a duel.
+- Level 3 — Unlocks at Level 131: Thane permanently increases his basic stats bv 14% + 1.5% (SP-based) upon successfully completing a duel.
+- Level 4 — Unlocks at Level 191: Thane permanently increases his basic stats bv 15% + 1.5% (SP-based) upon successfully completing a duel.
+
+### Skill2
+
+**Crosscut Flurry**
+*Unlocks at Level 31*
+
+- Cooldown: 6s
+- Skill Range: 1 tile
+
+Thane slashes at his target 3 times from different directions. Each slash hits enemies along a 3-tile line through the target, dealing 120% (ATK-based) + 15% (SP-based) damage. This skill counts as a normal attack. Its cooldown resets whenever Thane begins a duel.
+
+- Level 2 — Unlocks at Level 91: Increases the impact damage to 130% (ATK-based) + 15% (SP-based).
+- Level 3 — Unlocks at Level 151: Increases the impact damage to 140% (ATK-based) + 15% (SP-based).
+- Level 4 — Unlocks at Level 211: Increases the impact damage to 150% (ATK-based) + 15% (SP-based).
+
+### Unlocks at Legendary+
+
+**Hero Focus**
+*Unlocks at Legendary+*
+
+- Skill Range: 1 tile
+
+Thane increases his ATK SPD by 15 during battle, and by an extra 9 after successfully completing 1 duel.
+
+- Level 2: Thane increases his ATK SPD by 20 during battle, and by an extra 12 after successfully completing 1 duel.
+- Level 3: Thane increases his ATK SPD by 25 during battle, and by an extra 15 after successfully completing 1 duel.
+
+### Ex. Skill
+
+**Phantom Riposte**
+*Unlocks at Mythic+*
+
+- Skill Range: Global
+
+Thane takes 50% less damage from enemies' non-normal attacks. Whenever he is about to take damage from a non-normal attack, he summons a phantom that counterattacks the attacker, dealing 160% (ATK-based) damage. Each enemy can trigger this effect only once every 3s.
+
+- Level 2 — Unlocks at EX. +5: Increases the damage dealt by phantom slashes to 180% (ATK-based).
+- Level 3 — Unlocks at EX. +10: Crosscut Flurry summons one extra phantom for each duel Thane has successfully completed. These phantoms dash through the target, dealing 180% (ATK-based) damage. All phantoms also deal an extra 100% (ATK-based) true damage. After Thane successfully completes 2 duels, every hit of Crosscut Flurry is guaranteed to critically strike, with each point of Crit further increasing its critical damage by 1.
+- Level 4 — Unlocks at EX. +15: Increases the damage dealt by phantom slashes to 200% (ATK-based).
+
+### Unlocks at Supreme+
+
+**Enhance Force**
+*Unlocks at Supreme+*
+
+Thane identifies the weaknesses of enemies he attacks. For 15s, he deals 20% more damage to these enemies and takes 20% less damage from them; they also take 12% more damage from normal attacks.

@@ -38,7 +38,7 @@ Task progress:
 - [ ] 2. Read play overview, skills, tags, PVP tiers, DEF ranks for each hero
 - [ ] 3. Run validation gates 1–6
 - [ ] 4. Apply Explicit counters + high-PVP naming for [[pills]]
-- [ ] 5. Write 3–5 sentences with [[Display Name]] markers
+- [ ] 5. Write 3–5 sentences with [[Display Name]] markers; intro follows the Intro rule (no repeat of play_overview)
 - [ ] 6. Update hero_counter_overviews.json
 - [ ] 7. Extend Explicit counters if a reusable named combo was confirmed
 - [ ] 8. Run just render-site; spot-check character pills on site
@@ -60,12 +60,47 @@ Keys use display names from `heroes-overview.md` (e.g. Twins, Lily May).
 
 Per hero, **3–5 sentences**, under ~900 characters:
 
-1. PVP threat — what to watch for (PVP / Arena OK)
+1. Intro (1–2 sentences) — the main PVP aspect to watch for. See **Intro
+   rule** below.
 2. Fight flow — how the matchup tends to play out
 3. Counter hints — short comp directions with `[[Hero]]` pills
 
 Use **bold** sparingly for key threats and levers. Every `[[Name]]` must match
 a roster display name exactly.
+
+#### Intro rule — no repeat of the play overview
+
+The counter text is read right after `play_overview`. The reader already knows
+the kit, so the intro must **not restate** any mechanic that `play_overview`
+states. Judge by mechanic, not only by wording: a reworded description of the
+same curse, summon, aura or ultimate is still a repeat.
+
+Write the intro as a **different, PVP-specific view** of the hero. Pick one:
+
+- **Win condition** — what the hero needs to win the matchup (for example, enough
+  summons alive after the opening seconds).
+- **Stop window** — when the hero can be stopped (for example, before phantoms
+  appear, or after an invincible window ends). Gate 1 and Gate 4 still apply.
+- **Deciding matchup trait** — lane position, timing, or target priority that
+  decides fights against this hero (for example, the carries standing inside an
+  aura are the real target).
+
+Intro checklist:
+
+- Do not list the kit again. One mechanic name for orientation is fine; a
+  mechanic list is not.
+- Vary the opening words across heroes. Do not open many entries with the same
+  frame ("[[Hero]] is decided by…", "The window to act…").
+- Define any term the later sentences use, or reuse the term in plain words, so
+  no later sentence has a dangling reference ("that loop", "the rain").
+- Later sentences must not repeat the intro or `play_overview` either. Apply the
+  same check to the fight-flow and hint sentences.
+- Counter-first check: if you deleted the intro, the text must still add new
+  information beyond `play_overview`.
+
+When refreshing existing text, rewrite only a repeating intro. Leave an intro
+that already adds a PVP view (for example a timing window that `play_overview`
+does not state) unchanged.
 
 ### 3. Validation gates (required every run)
 
@@ -504,6 +539,8 @@ Display: `[[Hero]]` → character pills; `[[filter:id]]` → linked filter chips
 ### 8. Verify
 
 - Entry length 80–1000 chars; 3–6 sentences
+- Intro does not restate any mechanic from `play_overview`; it gives a win
+  condition, stop window, or deciding matchup trait; no dangling terms later
 - All `[[Hero]]` markers resolve to roster names; all `[[filter:id]]` resolve
   to `data/counter_filter_combos.json` (`just validate` counter overview)
 - Example heroes after `like` must match the combo’s filter set

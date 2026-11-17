@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-11-17
+
+### New Features
+
+- Added Thane (Lightbearer · Warrior · Physical), The Exalted. Prydwen has
+  no tiers for him yet.
+
+### Fixed
+
+- Estrilda, Baden and Marene now show their Prydwen tiers.
+- Estrilda now has the Prydwen role "specialist".
+
+### Character changes
+
+| Character | What changed |
+|---|---|
+| thane | - Added as new hero |
+| estrilda | - Added the Prydwen tiers: AFK Stages C, PVP A+, Dream Realm B, Dream Realm Endless B<br>- Changed the role to specialist |
+| baden | - Added the Prydwen tiers: AFK Stages C, PVP A+, Dream Realm B, Dream Realm Endless A+ |
+| marene | - Added the Prydwen tiers: AFK Stages S+, PVP S+, Dream Realm B, Dream Realm Endless B<br>- Added an initial cooldown of 3s to one skill |
+
+### Implementation changes
+
+- `sources_web.py`: added Thane to `HERO_NAMES`.
+- `test_per_hero_storage.py`: the roster size is now 132 heroes.
+- Thane has no Prydwen page yet. The role falls back to the class.
+
 ## 2026-10-30
 
 ### New Features

@@ -215,7 +215,8 @@ advice, or copied source prose.
 Invoke [counter](../counter/SKILL.md) after the analysis data and play
 overview are available. Apply all validation gates: hittability, role and
 damage type, protected allies, threat/delete timing, high mobility, and
-mid-fight placement. Resolve every named hero and filter marker.
+mid-fight placement. Follow the intro rule: the counter intro must not repeat
+the play overview. Resolve every named hero and filter marker.
 
 ### 4.5 Signature and sparse corrections
 
