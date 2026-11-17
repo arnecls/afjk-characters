@@ -260,9 +260,9 @@
         "ATK SPD": "high"
       },
       "roster_percentiles": {
-        "HP": 0.5808,
-        "Phys DEF": 0.6462,
-        "Magic DEF": 0.6692
+        "HP": 0.5763,
+        "Phys DEF": 0.6412,
+        "Magic DEF": 0.6641
       }
     }
   }
